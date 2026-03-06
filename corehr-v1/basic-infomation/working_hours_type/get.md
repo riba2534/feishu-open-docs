@@ -6,366 +6,60 @@ updateTime: "1735280526000"
 
 # 查询单个工时制度
 
-根据 ID 查询单个工时制度。{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=working_hours_type&method=get)
-
-:::html
-<md-alert type="error">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="warn">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="tip">
-
-</md-alert>
-:::
-
+根据 ID 查询单个工时制度。
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/corehr/v1/working_hours_types/:working_hours_type_id</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>GET</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[1000 次/分钟、50 次/秒](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="corehr:common_data.preset_data:read" desc="获取预置数据信息" support_app_types="custom,isv" tags="">获取预置数据信息</md-perm>
-            <md-perm name="corehr:corehr:readonly" desc="获取核心人事信息" support_app_types="custom,isv" tags="">获取核心人事信息</md-perm>
-            <md-perm name="corehr:corehr" desc="更新核心人事信息" support_app_types="custom" tags="">更新核心人事信息</md-perm>
-            <md-perm name="corehr:common_data.preset_data:write" desc="更新预置数据信息" support_app_types="custom" tags="">更新预置数据信息</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/corehr/v1/working_hours_types/:working_hours_type_id |
+| HTTP Method | GET |
+| 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | custom,isv |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `corehr:common_data.preset_data:read` 获取预置数据信息 `corehr:corehr:readonly` 获取核心人事信息 `corehr:corehr` 更新核心人事信息 `corehr:common_data.preset_data:write` 更新预置数据信息 |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
-
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
 
 
 ### 路径参数
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >working_hours_type_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	工时制度 ID
-- 可通过[批量查询工时制度](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/working_hours_type/list)获取
-
-**示例值**："1212"
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
-
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `working_hours_type_id` | `string` | 工时制度 ID - 可通过[批量查询工时制度](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/working_hours_type/list)获取<br>**示例值**："1212" |
 
 
 ## 响应
 
 
-
-
-
 ### 响应体
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误码，非 0 表示失败
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >data</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	\-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >working_hours_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >working_hours_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	工时制度信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	工时制度 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	编码
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >lang</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	名称信息的语言
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	名称信息的内容
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >country_region_id_list</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	国家/地区 ID 列表
-- 可通过[查询国家/地区信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-country_region/search)获取
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >default_for_job</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	职务默认值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >active</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否启用
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >custom_fields</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >object_field_data\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	自定义字段
-- 具体支持的对象请参考[自定义字段说明](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom-fields-guide)
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >field_name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段名
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(如123, 123.23, "true", [\"id1\",\"id2\"], "2006-01-02 15:04:05")
-	</md-dt-td>
-</md-dt-tr>
-
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `code` | `int` | 错误码，非 0 表示失败 |
+| `msg` | `string` | 错误描述 |
+| `data` | `\-` | \- |
+| &nbsp;&nbsp;└ `working_hours_type` | `working_hours_type` | 工时制度信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 工时制度 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `code` | `string` | 编码 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n\[\]` | 名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 名称信息的语言 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 名称信息的内容 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `country_region_id_list` | `string\[\]` | 国家/地区 ID 列表 - 可通过[查询国家/地区信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-country_region/search)获取 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `default_for_job` | `boolean` | 职务默认值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `active` | `boolean` | 是否启用 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `custom_fields` | `object_field_data\[\]` | 自定义字段 - 具体支持的对象请参考[自定义字段说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom-fields-guide) |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `field_name` | `string` | 字段名 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(如123, 123.23, "true", [\"id1\",\"id2\"], "2006-01-02 15:04:05") |
 
 
 ### 响应体示例
-:::html
-<md-code-json>
+
+```json
 {
     "code": 0,
     "msg": "success",
@@ -393,9 +87,6 @@ updateTime: "1735280526000"
         }
     }
 }
-</md-code-json>
-:::
-
-
+```
 
 

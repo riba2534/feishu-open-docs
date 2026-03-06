@@ -13,72 +13,14 @@ updateTime: "1730257094000"
 
 
 ## 字段说明
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 30%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 50%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
 
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `items` | `list_member\[\]` | 群成员列表 |
+| ∟ `member_id_type` | `string` | 成员的用户 ID 类型，ID 类型包括 `open_id`、`user_id`、`union_id`。了解更多参见[用户身份概述](https://open.larkoffice.com/document/home/user-identity-introduction/introduction)。 |
+| ∟ `member_id` | `string` | 成员的用户 ID，ID 类型与 member_id_type 取值一致。 |
+| ∟ `name` | `string` | 群成员的名字 |
 
-<md-tr>
-	<md-td>
-	&nbsp;<md-text type="field-name" >items</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >list_member\[\]</md-text>
-	</md-td>
-	<md-td>
-	群成员列表
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >member_id_type</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	成员的用户 ID 类型，ID 类型包括 `open_id`、`user_id`、`union_id`。了解更多参见[用户身份概述](/ssl:ttdoc/home/user-identity-introduction/introduction)。
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >member_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	成员的用户 ID，ID 类型与 member_id_type 取值一致。
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >name</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	群成员的名字
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 
 ### 数据示例
 ```json

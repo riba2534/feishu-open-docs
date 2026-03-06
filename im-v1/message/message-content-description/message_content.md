@@ -6,11 +6,11 @@ updateTime: "1749830594000"
 
 # 接收消息内容结构
 
-调用消息的查询接口（如[获取会话历史消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/list)、[获取指定消息的内容](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/get)等）时，返回结果可能包含多种类型消息的内容（`content`）。本文将介绍接收消息内容时，可能返回的消息类型与内容。
+调用消息的查询接口（如[获取会话历史消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/list)、[获取指定消息的内容](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/get)等）时，返回结果可能包含多种类型消息的内容（`content`）。本文将介绍接收消息内容时，可能返回的消息类型与内容。
 
 ## 示例
 
-如下[获取指定消息的内容](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/get)的返回结果中：
+如下[获取指定消息的内容](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/get)的返回结果中：
 
 - `msg_type`：消息类型，数据类型为 string。例如返回 text 表示文本消息。
 - `content`：消息内容，数据类型为 string，取值为 JSON 结构。
@@ -56,7 +56,7 @@ updateTime: "1749830594000"
 
 内容说明：
 - 文本消息中超链接的格式为 `[超链接文本](超链接地址)`，如：`[飞书开放平台](https://open.feishu.cn)`。对于邮箱类型的超链接，格式为 `[邮箱文本](mailto:邮箱地址)`。
-- 文本消息中的 @ 会被替换为 `@_user_X` 形式的内容，表示被 @ 的用户或机器人的序号。例如，第 3 个被 @ 到的成员，值为 `@_user_3`。在实际调用接口时，如果文本消息内 @ 了用户，则可以在返回结果的 `mentions` 字段中获取具体被 @ 的用户或机器人的信息。关于 `mentions` 字段的说明，可参见[消息管理概述](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/intro)中的 `mentions` 字段介绍。 
+- 文本消息中的 @ 会被替换为 `@_user_X` 形式的内容，表示被 @ 的用户或机器人的序号。例如，第 3 个被 @ 到的成员，值为 `@_user_3`。在实际调用接口时，如果文本消息内 @ 了用户，则可以在返回结果的 `mentions` 字段中获取具体被 @ 的用户或机器人的信息。关于 `mentions` 字段的说明，可参见[消息管理概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/intro)中的 `mentions` 字段介绍。 
 - 粗体、下划线等文本样式将被忽略，仅显示文本内容。
 
 
@@ -65,7 +65,7 @@ updateTime: "1749830594000"
 ### 富文本 post
 
 :::warning
-**注意**：获取富文本消息时，其内容（包括[发送消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)的响应体中的消息内容）与发送时的内容 **不完全一致**。富文本消息的 `md` 标签仅支持发送，在获取消息内容时将不包含此标签，系统会根据 `md` 中的内容转换为其他标签。此外，引用、有序、无序列表会简化成文本标签（text）进行输出。
+**注意**：获取富文本消息时，其内容（包括[发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)的响应体中的消息内容）与发送时的内容 **不完全一致**。富文本消息的 `md` 标签仅支持发送，在获取消息内容时将不包含此标签，系统会根据 `md` 中的内容转换为其他标签。此外，引用、有序、无序列表会简化成文本标签（text）进行输出。
 :::
 
 
@@ -167,7 +167,7 @@ updateTime: "1749830594000"
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| user_id | string | 被 @ 的用户或机器人的序号。例如，第 3 个被 @ 到的成员值为 `@_user_3`；@ 成员的详细信息可在响应字段 `mentions` 中根据序号获取，详情参见[消息管理概述](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/intro)中的 `mentions` 字段介绍 |
+| user_id | string | 被 @ 的用户或机器人的序号。例如，第 3 个被 @ 到的成员值为 `@_user_3`；@ 成员的详细信息可在响应字段 `mentions` 中根据序号获取，详情参见[消息管理概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/intro)中的 `mentions` 字段介绍 |
 | user\_name | string | 用户姓名 |
 | style | []string | 文本内容样式。可能值为 `bold`（加粗）、`underline`（下划线）、`lineThrough`（删除线） 与 `italic`（斜体）。不返回表示文本无样式 |
 
@@ -175,20 +175,20 @@ updateTime: "1749830594000"
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| image_key | string | 图片的唯一标识。由机器人自己上传的、用于发送消息的图片，支持下载，详情参见[下载图片](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/get)|
+| image_key | string | 图片的唯一标识。由机器人自己上传的、用于发送消息的图片，支持下载，详情参见[下载图片](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/get)|
 
 - **media：视频** 
  
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| file_key | string | 视频文件的唯一标识。由机器人自己上传的文件支持下载，详情参见[下载文件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/get)|
-| image_key | string | 视频封面图片的唯一标识。由机器人自己上传的、用于发送消息的图片，支持下载，详情参见[下载图片](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/get) |
+| file_key | string | 视频文件的唯一标识。由机器人自己上传的文件支持下载，详情参见[下载文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/get)|
+| image_key | string | 视频封面图片的唯一标识。由机器人自己上传的、用于发送消息的图片，支持下载，详情参见[下载图片](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/get) |
 
 - **emotion：表情** 
 
 | 字段 | 类型 | 描述 |
 | --- | ---| --- |
-| emoji_type | string | 表情类型。部分可选值参见[表情文案](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-reaction/emojis-introduce) |
+| emoji_type | string | 表情类型。部分可选值参见[表情文案](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-reaction/emojis-introduce) |
 
 
 - **code_block：代码块** 
@@ -213,7 +213,7 @@ updateTime: "1749830594000"
 
 | 字段 | 类型 | 描述 |
 | --- | ---| --- |
-| image_key | string | 图片唯一标识。由机器人自己上传的图片支持下载，详情参见[下载图片](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/get)，此外也支持调用[获取消息中的资源文件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-resource/get)接口，获取图片类型的文件。|
+| image_key | string | 图片唯一标识。由机器人自己上传的图片支持下载，详情参见[下载图片](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/get)，此外也支持调用[获取消息中的资源文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-resource/get)接口，获取图片类型的文件。|
 
 ### 文件 file
 
@@ -226,7 +226,7 @@ updateTime: "1749830594000"
 
 | 字段 | 类型 | 描述 |
 | --- | ---| --- |
-| file_key | string | 文件唯一标识。由机器人自己上传的文件支持下载，详情参见[下载文件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/get)。|
+| file_key | string | 文件唯一标识。由机器人自己上传的文件支持下载，详情参见[下载文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/get)。|
 | file_name | string | 文件名。 |
 
 ### 文件夹 folder
@@ -254,7 +254,7 @@ updateTime: "1749830594000"
 
 | 字段 | 类型 | 描述 |
 | --- | ---| --- |
-| file_key | string | 文件唯一标识。由机器人自己上传的文件支持下载，详情参见[下载文件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/get)。|
+| file_key | string | 文件唯一标识。由机器人自己上传的文件支持下载，详情参见[下载文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/get)。|
 | duration | int | 音频时长，单位：毫秒。 |
 
 
@@ -271,8 +271,8 @@ updateTime: "1749830594000"
 
 | 字段 | 类型 | 描述 |
 | --- | ---| --- |
-| file_key | string | 文件唯一标识。由机器人自己上传的文件支持下载，详情参见[下载文件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/get)。|
-| image_key | string | 视频封面图片的唯一表示。由机器人自己上传的、用于发送消息的图片支持下载，详情参见[下载图片](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/get)。|
+| file_key | string | 文件唯一标识。由机器人自己上传的文件支持下载，详情参见[下载文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/get)。|
+| image_key | string | 视频封面图片的唯一表示。由机器人自己上传的、用于发送消息的图片支持下载，详情参见[下载图片](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/get)。|
 | file_name | string | 文件名。 |
 | duration | int | 视频时长，单位：毫秒。 |
 
@@ -292,7 +292,7 @@ updateTime: "1749830594000"
 ### 卡片 interactive
 
 :::warning
-- 接收到的卡片结构与卡片实际 JSON 结构不一致，暂不支持返回原始卡片 JSON。了解卡片结构，参考[卡片 JSON 结构](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-v2-structure)。
+- 接收到的卡片结构与卡片实际 JSON 结构不一致，暂不支持返回原始卡片 JSON。了解卡片结构，参考[卡片 JSON 结构](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-v2-structure)。
 - 暂不支持返回 JSON 2.0 结构卡片的具体内容。
 :::
 
@@ -493,7 +493,7 @@ updateTime: "1749830594000"
 
 | 字段 | 类型 | 描述 |
 | --- | ---| --- |
-| chat_id | string | 群 ID。调用[获取群信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat/get) 接口，可基于群 ID 查询群信息。|
+| chat_id | string | 群 ID。调用[获取群信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat/get) 接口，可基于群 ID 查询群信息。|
 
 ### 个人名片 share_user
 
@@ -505,7 +505,7 @@ updateTime: "1749830594000"
 
 | 字段 | 类型 | 描述 |
 | --- | ---| --- |
-| user_id | string | 用户的 open_id。调用[获取单个用户信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/get)接口，可基于用户的 open_id 查询用户信息。|
+| user_id | string | 用户的 open_id。调用[获取单个用户信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/get)接口，可基于用户的 open_id 查询用户信息。|
 
 ### 系统消息 system
 根据系统消息模板 `template` 中的变量 `{xxx}`，取相应的变量名参数值。
@@ -593,7 +593,7 @@ updateTime: "1749830594000"
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| task_id | string | 任务 ID，使用此 ID 可以对任务进行操作，详情参见[任务概述](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/task-v1/task/overview)。 |
+| task_id | string | 任务 ID，使用此 ID 可以对任务进行操作，详情参见[任务概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/task-v1/task/overview)。 |
 | summary | post | 富文本格式的任务标题。具体内容结构说明，参见上文 **富文本 post** 章节。 |
 | due_time | string | 任务截止时间，毫秒级时间戳。 |
 
@@ -618,7 +618,7 @@ updateTime: "1749830594000"
     "content": "Merged and Forwarded Message"
 }
 ```
-消息内容固定为 `Merged and Forwarded Message`，用于标识该消息为合并转发消息。你可调用[获取指定消息的内容](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/get)接口，获取合并转发消息中的子消息。
+消息内容固定为 `Merged and Forwarded Message`，用于标识该消息为合并转发消息。你可调用[获取指定消息的内容](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/get)接口，获取合并转发消息中的子消息。
 
 
 

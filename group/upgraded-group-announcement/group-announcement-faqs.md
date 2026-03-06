@@ -7,7 +7,7 @@ updateTime: "1739793614000"
 # 群公告常见问题
 
 ## 如何插入表格（table）并向表格中写内容？
-调用[创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，在指定 Parent Block 下创建一个 Table Block。
+调用[创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，在指定 Parent Block 下创建一个 Table Block。
 
 ```bash
 curl --location --request POST 'https://{domain}/open-apis/docx/v1/chats/:chat_id/announcement/blocks/:block_id/children' \
@@ -70,11 +70,11 @@ curl --location --request POST 'https://{domain}/open-apis/docx/v1/chats/:chat_i
 }
 ```
 	
-其中 data.children 数组中存放了按照从左到右、从上到下顺序遍历得到的单元格 Table Cell 的 Block ID。接下来，你可继续调用[创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，指定 Table Block 为 Parent Cell，对指定单元格添加内容。
+其中 data.children 数组中存放了按照从左到右、从上到下顺序遍历得到的单元格 Table Cell 的 Block ID。接下来，你可继续调用[创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，指定 Table Block 为 Parent Cell，对指定单元格添加内容。
 
 ## 如何插入电子表格（sheet）并往单元格填充内容？
 
-1. 调用[创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，在指定 Parent Block 下创建 Sheet Block，指定电子表格的行数量和列数量。
+1. 调用[创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，在指定 Parent Block 下创建 Sheet Block，指定电子表格的行数量和列数量。
 	```bash
     curl --location --request POST 'https://{domain}/open-apis/docx/v1/chats/:chat_id/announcement/blocks/:block_id/children' \
     --header 'Authorization: {Authorization}' \
@@ -116,7 +116,7 @@ curl --location --request POST 'https://{domain}/open-apis/docx/v1/chats/:chat_i
     }
     ```
 
-2. 返回的 `sheet.token` 的值为电子表格的 token 和电子表格工作表的 ID 的组合。你可继续调用[电子表格相关接口](/ssl:ttdoc/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/overview)继续操作该表格。以下示例展示在该电子表格中写入数据。
+2. 返回的 `sheet.token` 的值为电子表格的 token 和电子表格工作表的 ID 的组合。你可继续调用[电子表格相关接口](https://open.larkoffice.com/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/overview)继续操作该表格。以下示例展示在该电子表格中写入数据。
     ```bash
     curl --location --request PUT 'https://open.feishu.cn/open-apis/sheets/v2/spreadsheets/LxvrsycFwhQYfrt8oYQcwVabcef/values' \
     --header 'Authorization: Bearer t-g10474apW3IFUPQGV362IPSAGELJO2SQWL5abcef' \
@@ -155,7 +155,7 @@ curl --location --request POST 'https://{domain}/open-apis/docx/v1/chats/:chat_i
 
 **第一步：创建图片 Block**
 
-调用[创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，在指定的 Parent Block 下创建 Image Block：
+调用[创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，在指定的 Parent Block 下创建 Image Block：
 
 ```bash
 curl --location --request POST '{url}' \
@@ -200,7 +200,7 @@ curl --location --request POST '{url}' \
 
 **第二步：上传图片素材**
 
-调用[上传图片素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)接口，使用步骤一返回的 Image BlockID 作为 `parent_node` 上传素材：
+调用[上传图片素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)接口，使用步骤一返回的 Image BlockID 作为 `parent_node` 上传素材：
 
 ```bash
 curl --location --request POST '{url}' \
@@ -227,7 +227,7 @@ curl --location --request POST '{url}' \
 
 **第三步：设置图片 Block 的素材**
 
-调用[批量更新群公告块的内容](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block/batch_update)接口，指定 `replace_image` 操作，将步骤二返回的图片素材 ID 设置到对应的 Image Block：
+调用[批量更新群公告块的内容](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block/batch_update)接口，指定 `replace_image` 操作，将步骤二返回的图片素材 ID 设置到对应的 Image Block：
 
 ``` bash
 curl --location --request PATCH '{url}' \
@@ -248,7 +248,7 @@ curl --location --request PATCH '{url}' \
 
 **第一步：创建一个空的文件 Block**
 
-调用[创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，在指定 Parent Block 下创建一个空的 File Block：
+调用[创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，在指定 Parent Block 下创建一个空的 File Block：
 
 ```bash
 curl --location --request POST '{url}' \
@@ -293,15 +293,13 @@ curl --location --request POST '{url}' \
 }
 ```
 
-:::html
-<md-alert type="tip">
-**注意：** 与 Image Block 不同，在创建 File Block 成功后，接口会返回 View Block，这是因为每个 File Block 对应都会有一个 View Block 来控制其视图形式，即 View Block 是 File Block 的 Parent。
-</md-alert>
-:::
+
+> **Tip**: **注意：** 与 Image Block 不同，在创建 File Block 成功后，接口会返回 View Block，这是因为每个 File Block 对应都会有一个 View Block 来控制其视图形式，即 View Block 是 File Block 的 Parent。
+
 
 **第二步：上传文件素材**
 
-调用[上传素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)接口，使用步骤一返回的 File Block 的 ID `doxcn1Bx1WOlcqzLqTD2UUYiA7g` 作为 `parent_node` 的值，将素材文件上传至该 File Block 中：
+调用[上传素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)接口，使用步骤一返回的 File Block 的 ID `doxcn1Bx1WOlcqzLqTD2UUYiA7g` 作为 `parent_node` 的值，将素材文件上传至该 File Block 中：
 
 ```bash
 curl --location --request POST '{url}' \
@@ -328,7 +326,7 @@ curl --location --request POST '{url}' \
 
 **第三步：设置文件 Block 的素材**
 
-调用[批量更新群公告块的内容](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block/batch_update)接口，指定 `replace_file` 操作，将步骤二返回的素材 ID 设置到对应的 File Block。以更新块为例：
+调用[批量更新群公告块的内容](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block/batch_update)接口，指定 `replace_file` 操作，将步骤二返回的素材 ID 设置到对应的 File Block。以更新块为例：
 
 
 ``` bash
@@ -347,13 +345,11 @@ curl --location --request PATCH '{url}' \
 ```
 ## 如何插入@用户元素？
 
-:::html
-<md-alert type="warn">
-通过调用 OpenAPI 来@用户，不会向该用户发送通知。
-</md-alert>
-:::
 
-@用户是 Text Block 中的一个内容实体。如果要 @ 某个用户，可以调用[创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，在指定父亲 Block 下创建 Text Block，并在 Text Block 中指定要 @ 的用户 ID：
+> **Warning**: 通过调用 OpenAPI 来@用户，不会向该用户发送通知。
+
+
+@用户是 Text Block 中的一个内容实体。如果要 @ 某个用户，可以调用[创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，在指定父亲 Block 下创建 Text Block，并在 Text Block 中指定要 @ 的用户 ID：
 ```bash
 # https://{domain}/open-apis/docx/v1/chats/:chat_id/announcement/blocks/:block_id/children?revision_id=-1
 curl --location --request POST '{url}' \
@@ -435,7 +431,7 @@ curl --location --request POST '{url}' \
     "text_element_style": object(TextElementStyle)
 }
 ```
-如要向群公告插入一个公式，可调用[创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，请求体示例如下：
+如要向群公告插入一个公式，可调用[创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，请求体示例如下：
 
 ```json
 {
@@ -469,7 +465,7 @@ curl --location --request POST '{url}' \
 ```
 ## 如何往高亮块（Callout Block）中填充内容？
 
-调用[创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，其中路径参数 `block_id` 填写 Callout BlockID，请求体 `children` 填充高亮块的内容。例如，在高亮块内容的第一行插入文本块：
+调用[创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，其中路径参数 `block_id` 填写 Callout BlockID，请求体 `children` 填充高亮块的内容。例如，在高亮块内容的第一行插入文本块：
 ```json
 curl --location --request POST '{url}' \
 --header 'Authorization: {Authorization}' \ 
@@ -511,7 +507,7 @@ curl --location --request POST '{url}' \
 
 **第一步：创建 Grid block**
 
-调用[创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，在指定 Parent block 下创建 Grid block，该 Grid 共计有两列。
+调用[创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，在指定 Parent block 下创建 Grid block，该 Grid 共计有两列。
 
 **Request**
 ```bash
@@ -534,11 +530,8 @@ curl --location --request PATCH '{url}' \
 
 **Response**
 
-:::html
-<md-alert type="tip">
-在创建 Grid block 成功后，接口会返回 Grid block 的 `block_id` 以及 `children` 等，`children` 即 Grid Column Block，由于 Request 指定要创建两列，因此 `children` 数组中会有两个 `block_id`，接下来可以使用这些 `block_id` 往 Grid Column block 中继续添加 Children block。
-</md-alert>
-:::
+
+> **Tip**: 在创建 Grid block 成功后，接口会返回 Grid block 的 `block_id` 以及 `children` 等，`children` 即 Grid Column Block，由于 Request 指定要创建两列，因此 `children` 数组中会有两个 `block_id`，接下来可以使用这些 `block_id` 往 Grid Column block 中继续添加 Children block。
 
 
 ```bash
@@ -568,7 +561,7 @@ curl --location --request PATCH '{url}' \
 
 **第二步：在第一列 Grid Column Block 中插入内容**
 
-调用[创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，在指定 Grid Column Block 下插入一个文本 Block。
+调用[创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口，在指定 Grid Column Block 下插入一个文本 Block。
 
 **Request**
 
@@ -603,11 +596,9 @@ curl --location --request POST '{url}' \
 
 **Response**
 
-:::html
-<md-alert type="warn">
-在第一步创建 Grid Block 时，系统会自动往每个 Grid Column Block 下添加一个空 Text Block，如果不需要默认的空白 Text Block，可以在第 2 步添加完内容后，自行删除该 Text Block。
-</md-alert>
-:::
+
+> **Warning**: 在第一步创建 Grid Block 时，系统会自动往每个 Grid Column Block 下添加一个空 Text Block，如果不需要默认的空白 Text Block，可以在第 2 步添加完内容后，自行删除该 Text Block。
+
 
 ```bash
 {
@@ -650,7 +641,7 @@ curl --location --request POST '{url}' \
 ```
 ## 如何获取群公告中的图片&附件？
 
-1. 调用[获取群公告所有块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block/list)接口，分页获取群公告所有块的富文本内容。
+1. 调用[获取群公告所有块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block/list)接口，分页获取群公告所有块的富文本内容。
     ```bash
     curl --location 'https://{domain}/open-apis/docx/v1/chats/oc_5ad11d72b830411d72b836c20/announcement/blocks' \
     --header 'Authorization: {Authorization}'
@@ -729,35 +720,33 @@ curl --location --request POST '{url}' \
         "msg": "success"
     }
     ```
-    :::html
-    <md-alert type="tip">
-    此接口为分页接口，如果 has_more 为 true，则表示下次遍历时可采用返回值中的 page_token 查询下一分页的群公告内容。
-    </md-alert>
-    :::
+    
+> **Tip**: 此接口为分页接口，如果 has_more 为 true，则表示下次遍历时可采用返回值中的 page_token 查询下一分页的群公告内容。
+
 -
 2. 在返回数据中：
     * `"block_type": 27` 的块为图片块，块中 `image.token` 的值为图片的 token。
     * `"block_type": 23` 的块为文件块，块中 `file.token` 的值为文件的 token。
    
-   你可基于图片和文件的 token，调用[下载素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/download)接口下载对应的图片和文件。
+   你可基于图片和文件的 token，调用[下载素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/download)接口下载对应的图片和文件。
 
 
 ## 服务端 OpenAPI 接口限频阈值是多少？
 
-具体请查阅对应接口文档，比如[批量更新群公告块的内容](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block/batch_update)接口频率限制为每个应用 5 次/秒。
+具体请查阅对应接口文档，比如[批量更新群公告块的内容](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block/batch_update)接口频率限制为每个应用 5 次/秒。
 ## 群公告 OpenAPI 支持哪些类型 Block？
 
-群公告块的数据结构与文档中块的数据结构格式相同，可查看[文档中块的数据结构](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/data-structure/block)中 BlockType 小节。
+群公告块的数据结构与文档中块的数据结构格式相同，可查看[文档中块的数据结构](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/data-structure/block)中 BlockType 小节。
 
 ## 新创建群组中的群公告还没有 Block，该如何添加 Block？
 
 新创建的群公告有 Block，该 Block 为 Page Block。
 
-创建群组后，接口会返回 `chat_id`，`chat_id` 也是该群公告页面块（Page Block）的 `block_id`，因此你可以通过指定 `chat_id` 调用[创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口来添加 Block。
+创建群组后，接口会返回 `chat_id`，`chat_id` 也是该群公告页面块（Page Block）的 `block_id`，因此你可以通过指定 `chat_id` 调用[创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)接口来添加 Block。
 
 ## 获取群公告所有块接口是按什么顺序返回 Block 的？
 
-[获取群公告所有块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block/list)接口返回的 items 是一个 [1,N] (N>=1) 的 Block 数组。数组中元素的次序按公告文档内容先序遍历结果进行排列，其中索引为 0 的元素是群公告根节点。
+[获取群公告所有块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block/list)接口返回的 items 是一个 [1,N] (N>=1) 的 Block 数组。数组中元素的次序按公告文档内容先序遍历结果进行排列，其中索引为 0 的元素是群公告根节点。
 
 
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/1751e4f87b25d5704b0e6b05cec9ea00_e8fQNTK7nR.png?height=436&lazyload=true&width=1123)
@@ -768,13 +757,11 @@ curl --location --request POST '{url}' \
 
 ## 群公告有服务端的 SDK 吗？
 
-:::html
-<md-alert type="tip">
-SDK 的建设滞后于最新的 API，比如 API 已支持返回某新类型的 Block，但 SDK 尚未支持解析，但会保证其向前兼容。
-</md-alert>
-:::
 
-如何接入并使用 SDK 可见[服务端 SDK 概述](/ssl:ttdoc/ukTMukTMukTM/uETO1YjLxkTN24SM5UjN)。
+> **Tip**: SDK 的建设滞后于最新的 API，比如 API 已支持返回某新类型的 Block，但 SDK 尚未支持解析，但会保证其向前兼容。
+
+
+如何接入并使用 SDK 可见[服务端 SDK 概述](https://open.larkoffice.com/document/ukTMukTMukTM/uETO1YjLxkTN24SM5UjN)。
 
 目前 SDK 支持 Java、Python、Go 和 Node.js 语言，群公告 API 的 SDK 源码地址如下：
 
@@ -801,10 +788,9 @@ SDK 的建设滞后于最新的 API，比如 API 已支持返回某新类型的 
 - 使用指引：[GitHub - larksuite/oapi-sdk-node.js](https://github.com/larksuite/node-sdk/blob/main/README.zh.md)
 
 
-
 ## 如何读取群公告中电子表格块的详细内容？
 
-1. 调用[获取群公告所有块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block/list)接口，获取电子表格块的 token。若调用成功，预计将返回以下格式数据。
+1. 调用[获取群公告所有块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block/list)接口，获取电子表格块的 token。若调用成功，预计将返回以下格式数据。
   
    其中返回的 `sheet.token` 的值 `B3hasMxsshByaEtZxAwcVfWxnSe_Ml1QzO` 为电子表格的唯一标识（spreadsheet_token）和电子表格工作表的唯一标识（sheet_id）的组合。
    
@@ -856,7 +842,6 @@ SDK 的建设滞后于最新的 API，比如 API 已支持返回某新类型的 
     ```
 
 
-
-2. 基于步骤一获取的电子表格的唯一标识（spreadsheet_token）和电子表格工作表的唯一标识（sheet_id），调用电子表格的[读取单个范围](/ssl:ttdoc/ukTMukTMukTM/ugTMzUjL4EzM14COxMTN)接口，获取表格中的数据。了解请求示例和响应体示例请直接参考该接口文档。
+2. 基于步骤一获取的电子表格的唯一标识（spreadsheet_token）和电子表格工作表的唯一标识（sheet_id），调用电子表格的[读取单个范围](https://open.larkoffice.com/document/ukTMukTMukTM/ugTMzUjL4EzM14COxMTN)接口，获取表格中的数据。了解请求示例和响应体示例请直接参考该接口文档。
 
 

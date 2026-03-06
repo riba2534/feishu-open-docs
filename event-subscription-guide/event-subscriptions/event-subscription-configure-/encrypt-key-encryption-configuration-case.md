@@ -16,7 +16,7 @@ updateTime: "1749205897000"
 
 ## 使用长连接方式接收事件
 
-长连接方式内封装了鉴权逻辑，只在建连时进行鉴权，后续事件推送均为明文数据，无需再处理解密和验签逻辑。因此，如果你配置的事件订阅方式为 **使用长连接接收事件**，只需保持本地服务器建立长连接，在事件触发时即可接收到来自飞书开放平台的事件消息请求。如下图所示，接收到 `im.message.receive_v1` 事件，即[接收消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件。
+长连接方式内封装了鉴权逻辑，只在建连时进行鉴权，后续事件推送均为明文数据，无需再处理解密和验签逻辑。因此，如果你配置的事件订阅方式为 **使用长连接接收事件**，只需保持本地服务器建立长连接，在事件触发时即可接收到来自飞书开放平台的事件消息请求。如下图所示，接收到 `im.message.receive_v1` 事件，即[接收消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件。
 
 ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/0db79227cb678a8619e9e776378511e7_AwSQdK74UC.png?height=456&lazyload=true&maxWidth=600&width=2544)
 
@@ -28,54 +28,12 @@ updateTime: "1749205897000"
 
 当你本地服务器接收到开放平台推送的事件时（不包括请求网址校验），如果需要确保这个请求的来源是飞书开放平台而非伪造，有两种方式进行安全校验：签名校验和 Verification Token 校验。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:25%">校验方式</md-th>
-<md-th style="width:75%">使用说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>**签名校验**</md-td>
-<md-td>
-如果你在飞书应用内配置了 Encrypt Key 加密策略，需使用签名校验，这种校验方式相对复杂，但是安全性高，且无需解密和解析事件即可完成安全校验。校验方式如下：
-  
-1. 获取 `encrypt_key`。
-    
-   在应用管理平台的 **事件与回调 > 加密策略** 页面，可以查看 `encrypt_key`。
-    
-   ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/c55d4e199d3ccb0a19ef6e808e66ffa4_G68AoPJBVI.png?height=650&lazyload=true&maxWidth=400&width=2152)
+| 校验方式 | 使用说明 |
+| --- | --- |
+| **签名校验** | 如果你在飞书应用内配置了 Encrypt Key 加密策略，需使用签名校验，这种校验方式相对复杂，但是安全性高，且无需解密和解析事件即可完成安全校验。校验方式如下：    1. 获取 `encrypt_key`。         在应用管理平台的 **事件与回调 > 加密策略** 页面，可以查看 `encrypt_key`。         ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/c55d4e199d3ccb0a19ef6e808e66ffa4_G68AoPJBVI.png?height=650&lazyload=true&maxWidth=400&width=2152) 2. 校验请求来源，示例代码可参考下文[签名校验示例代码](#签名校验示例代码)。         - 将请求头 `X-Lark-Request-Timestamp`、`X-Lark-Request-Nonce` 与 `encrypt_key` 拼接后，按照 `encode('utf-8')` 编码得到 `byte[] b1`，再拼接上请求的原始 body（指[事件结构](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM#d040d74d)定义的原始 body，不同事件的原始 body 不同），得到一个 `byte[] b`。         - 将 `b` 用 sha256 算法得到字符串 `s`， 校验 `s` 是否和请求头 `X-Lark-Signature` 一致。      > **Info**: 该方式无需解密事件可完成安全校验，但获取事件内容仍需解密，事件解密操作参考下文[事件解密](#事件解密)。 |
+| **Verification Token 校验** | 飞书应用默认配置了 Verification Token，你可以在业务服务器内接收事件请求，并在请求体中获取 Verification Token 值，将该值与飞书应用内的 Verification Token 值进行比对，取值相同则说明该请求来自飞书开放平台的指定应用。    - 这种校验方式简单，但是安全性较低，在未配置 Encrypt Key 加密策略的前提下，会明文传输 Verification Token，存在数据泄露风险。 - Verification Token 可以在应用管理平台的 **事件与回调 > 加密策略** 页面获取，并与事件中解析出的 Verification Token 进行对比。          ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/2b1083f55a16409385da9470b386801a_p0YlKE017s.png?height=640&lazyload=true&maxWidth=400&width=2134)    > **Info**: 如果应用已配置了 Encrypt Key 加密策略，则推荐使用签名校验方式，如果仍需获取 Verification Token，则必须先解密事件才能获取。事件解密操作参考下文[事件解密](#事件解密)。 |
 
-2. 校验请求来源，示例代码可参考下文[签名校验示例代码](#签名校验示例代码)。
-    
-   - 将请求头 `X-Lark-Request-Timestamp`、`X-Lark-Request-Nonce` 与 `encrypt_key` 拼接后，按照 `encode('utf-8')` 编码得到 `byte[] b1`，再拼接上请求的原始 body（指[事件结构](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM#d040d74d)定义的原始 body，不同事件的原始 body 不同），得到一个 `byte[] b`。
-    
-   - 将 `b` 用 sha256 算法得到字符串 `s`， 校验 `s` 是否和请求头 `X-Lark-Signature` 一致。  
-  
-<md-alert>该方式无需解密事件可完成安全校验，但获取事件内容仍需解密，事件解密操作参考下文[事件解密](#事件解密)。</md-alert>
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>**Verification Token 校验**</md-td>
-<md-td>
-飞书应用默认配置了 Verification Token，你可以在业务服务器内接收事件请求，并在请求体中获取 Verification Token 值，将该值与飞书应用内的 Verification Token 值进行比对，取值相同则说明该请求来自飞书开放平台的指定应用。
-  
-- 这种校验方式简单，但是安全性较低，在未配置 Encrypt Key 加密策略的前提下，会明文传输 Verification Token，存在数据泄露风险。
-- Verification Token 可以在应用管理平台的 **事件与回调 > 加密策略** 页面获取，并与事件中解析出的 Verification Token 进行对比。
-    
-    ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/2b1083f55a16409385da9470b386801a_p0YlKE017s.png?height=640&lazyload=true&maxWidth=400&width=2134)
-  
-<md-alert>如果应用已配置了 Encrypt Key 加密策略，则推荐使用签名校验方式，如果仍需获取 Verification Token，则必须先解密事件才能获取。事件解密操作参考下文[事件解密](#事件解密)。</md-alert>
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 #### 签名校验示例代码
 

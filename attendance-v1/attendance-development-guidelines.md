@@ -62,7 +62,7 @@ updateTime: "1721719975000"
 ## 名词解释
 **employee_id**
 
-雇员 ID，含义同 user_id，详细解释请参见[名词解释](/ssl:ttdoc/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)。
+雇员 ID，含义同 user_id，详细解释请参见[名词解释](https://open.larkoffice.com/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)。
 
 ## 错误信息
 响应体msg                                                                   | msg解释             | 处理方案                    |

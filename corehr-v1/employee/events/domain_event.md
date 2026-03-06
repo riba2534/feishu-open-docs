@@ -8,465 +8,62 @@ updateTime: "1752649030000"
 
 人员领域事件变更，通过业务界面、开放平台接口对个人信息、工作信息（雇佣信息）、任职信息、兼职信息等进行操作时会触发相应事件{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=employee&event=domain_event)
 
-:::html
-<md-alert type="error">
 
-</md-alert>
-:::
+> **Warning**: - [【批量查询员工信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/batch_get)、[【搜索员工信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/search) 等数据查询存在一定延迟，不建议收到事件后立即查询以上接口。请在收到事件后，延迟 5~10 秒后查询。
+> - 兼职（event_type=4）的事件会延迟 10 秒发送。
+> - 当前事件是基于对象纬度触发，单次操作可能会产生多个事件，如入职、异动等 bpm 表单场景。
 
-:::html
-<md-alert type="warn">
-- [【批量查询员工信息】](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/batch_get)、[【搜索员工信息】](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/search) 等数据查询存在一定延迟，不建议收到事件后立即查询以上接口。请在收到事件后，延迟 5~10 秒后查询。
-- 兼职（event_type=4）的事件会延迟 10 秒发送。
-- 当前事件是基于对象纬度触发，单次操作可能会产生多个事件，如入职、异动等 bpm 表单场景。
-</md-alert>
-:::
 
-:::html
-<md-alert type="tip">
-- 该事件触发场景：
-  - 人事系统：添加人员、修改任职信息、修改雇佣信息、修改个人信息、修改兼职信息、发起异动、导入编辑等业务操作
-  - 开放平台：调用创建、更新个人信息、雇佣信息、任职信息，发起异动、添加人员等接口时
-- 计算字段的变更不会触发该事件
-- 事件在重试、补偿等情况下可能会重复发送，订阅者请注意自行实现幂等逻辑
-   
-</md-alert>
-:::
-
+> **Tip**: - 该事件触发场景：
+>   - 人事系统：添加人员、修改任职信息、修改雇佣信息、修改个人信息、修改兼职信息、发起异动、导入编辑等业务操作
+>   - 开放平台：调用创建、更新个人信息、雇佣信息、任职信息，发起异动、添加人员等接口时
+> - 计算字段的变更不会触发该事件
+> - 事件在重试、补偿等情况下可能会重复发送，订阅者请注意自行实现幂等逻辑
 
 
 ## 事件
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>事件类型</md-th>
-      <md-td>corehr.employee.domain_event_v2</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-    <md-th>
-            权限要求
-            <md-tooltip type="info">订阅该事件所需的权限，开启其中任意一项权限即可订阅</md-tooltip>
-            
-    </md-th>
-      <md-td>
-            <md-perm name="corehr:employee.event:read" desc="获取人员领域事件" support_app_types="custom" tags="">获取人员领域事件</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>推送方式</md-th>
-      <md-td>
-            <md-tag mode="inline" type="push-webhook" href="/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM" >Webhook</md-tag>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
 
+| 项目 | 值 |
+| --- | --- |
+| 事件类型 | corehr.employee.domain_event_v2 |
+| 支持的应用类型 | custom |
+| 权限要求             订阅该事件所需的权限，开启其中任意一项权限即可订阅 | `corehr:employee.event:read` 获取人员领域事件 |
+| 推送方式 | `Webhook` |
 
 
 ### 事件体
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
-      
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >schema</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	事件模式
-	</md-dt-td>
-</md-dt-tr>
 
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >header</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >event_header</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	事件头
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >event_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	事件 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >event_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	事件类型
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >create_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	事件创建时间戳（单位：毫秒）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >token</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	事件 Token
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >app_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >tenant_key</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	租户 Key
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >event</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	\-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >event_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	事件类型
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >员工入职</md-enum-item>
-<md-enum-item key="2" >更新人员信息</md-enum-item>
-<md-enum-item key="4" >员工兼职变动</md-enum-item>
-<md-enum-item key="5" >员工主任职变动</md-enum-item>
-<md-enum-item key="7" >员工离职</md-enum-item>
-<md-enum-item key="8" >自定义组织记录变动</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >sub_event_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	子事件类型
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1001" >新入职</md-enum-item>
-<md-enum-item key="2001" >更新人员信息</md-enum-item>
-<md-enum-item key="4001" >创建兼职</md-enum-item>
-<md-enum-item key="4002" >编缉兼职（更新兼职的任一字段就会触发该事件，包括更新【结束日期】）</md-enum-item>
-<md-enum-item key="4003" >撤销兼职（弃用）</md-enum-item>
-<md-enum-item key="4004" >结束兼职（目前含义为数据变更，即首次设置【结束日期】时会触发）</md-enum-item>
-<md-enum-item key="4005" >删除兼职</md-enum-item>
-<md-enum-item key="5001" >添加异动</md-enum-item>
-<md-enum-item key="5002" >编辑异动信息</md-enum-item>
-<md-enum-item key="5003" >撤销异动</md-enum-item>
-<md-enum-item key="7001" >离职通过</md-enum-item>
-<md-enum-item key="7002" >撤销离职</md-enum-item>
-<md-enum-item key="8001" >新增第一条记录</md-enum-item>
-<md-enum-item key="8002" >新增第一条之后的自定义组织记录</md-enum-item>
-<md-enum-item key="8003" >编辑自定义组织记录</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >operator_user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	操作用户 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >opt_scene</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	业务场景
-- 标识触发此事件操作场景：系统页面操作、开发平台接口操作等
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >opt_desc</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	操作描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >opt_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	操作时间戳，单位：秒
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >opt_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	操作 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >employment_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	被操作人的雇佣 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >data</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >employee_domain_event_data\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	变更数据
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `1000`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	变更实体的 ID
-- 雇佣ID，个人信息ID
-- 特殊：
-  - 任职记录版本ID：请使用[批量查询员工任职](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/employees-job_data/batch_get)获取任职记录，对照 version_id 字段查找对象
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >entity</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	变更实体标识，如：
-- job_data: 任职信息
-- person：个人信息
-- employment：雇佣信息
-- email: 邮箱
-- person_name：姓名
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >agg_entity</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	聚合实体标识，如：
-- job_data: 任职信息
-- person：个人信息
-- employment：雇佣信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >agg_entity_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	聚合实体 ID，父对象 ID，如：
-- person：个人信息 ID
-- employment：雇佣 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >opt_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	操作类型
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >新增</md-enum-item>
-<md-enum-item key="2" >修改</md-enum-item>
-<md-enum-item key="3" >删除</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >fields</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段标识，ApiName
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `1000`
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `schema` | `string` | 事件模式 |
+| `header` | `event_header` | 事件头 |
+| &nbsp;&nbsp;└ `event_id` | `string` | 事件 ID |
+| &nbsp;&nbsp;└ `event_type` | `string` | 事件类型 |
+| &nbsp;&nbsp;└ `create_time` | `string` | 事件创建时间戳（单位：毫秒） |
+| &nbsp;&nbsp;└ `token` | `string` | 事件 Token |
+| &nbsp;&nbsp;└ `app_id` | `string` | 应用 ID |
+| &nbsp;&nbsp;└ `tenant_key` | `string` | 租户 Key |
+| `event` | `\-` | \- |
+| &nbsp;&nbsp;└ `event_type` | `int` | 事件类型<br>**可选值有**：<br>- `1`: 员工入职 - `2`: 更新人员信息 - `4`: 员工兼职变动 - `5`: 员工主任职变动 - `7`: 员工离职 - `8`: 自定义组织记录变动 |
+| &nbsp;&nbsp;└ `sub_event_type` | `int` | 子事件类型<br>**可选值有**：<br>- `1001`: 新入职 - `2001`: 更新人员信息 - `4001`: 创建兼职 - `4002`: 编缉兼职（更新兼职的任一字段就会触发该事件，包括更新【结束日期】） - `4003`: 撤销兼职（弃用） - `4004`: 结束兼职（目前含义为数据变更，即首次设置【结束日期】时会触发） - `4005`: 删除兼职 - `5001`: 添加异动 - `5002`: 编辑异动信息 - `5003`: 撤销异动 - `7001`: 离职通过 - `7002`: 撤销离职 - `8001`: 新增第一条记录 - `8002`: 新增第一条之后的自定义组织记录 - `8003`: 编辑自定义组织记录 |
+| &nbsp;&nbsp;└ `operator_user_id` | `string` | 操作用户 ID |
+| &nbsp;&nbsp;└ `opt_scene` | `string` | 业务场景 - 标识触发此事件操作场景：系统页面操作、开发平台接口操作等 |
+| &nbsp;&nbsp;└ `opt_desc` | `string` | 操作描述 |
+| &nbsp;&nbsp;└ `opt_time` | `string` | 操作时间戳，单位：秒 |
+| &nbsp;&nbsp;└ `opt_id` | `string` | 操作 ID |
+| &nbsp;&nbsp;└ `employment_id` | `string` | 被操作人的雇佣 ID |
+| &nbsp;&nbsp;└ `data` | `employee_domain_event_data\[\]` | 变更数据<br>**数据校验规则**：<br>- 长度范围：`0` ～ `1000` |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 变更实体的 ID - 雇佣ID，个人信息ID - 特殊：   - 任职记录版本ID：请使用[批量查询员工任职](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employees-job_data/batch_get)获取任职记录，对照 version_id 字段查找对象 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `entity` | `string` | 变更实体标识，如： - job_data: 任职信息 - person：个人信息 - employment：雇佣信息 - email: 邮箱 - person_name：姓名 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `agg_entity` | `string` | 聚合实体标识，如： - job_data: 任职信息 - person：个人信息 - employment：雇佣信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `agg_entity_id` | `string` | 聚合实体 ID，父对象 ID，如： - person：个人信息 ID - employment：雇佣 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `opt_type` | `int` | 操作类型<br>**可选值有**：<br>- `1`: 新增 - `2`: 修改 - `3`: 删除 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `fields` | `string\[\]` | 字段标识，ApiName<br>**数据校验规则**：<br>- 长度范围：`0` ～ `1000` |
 
 
 ### 事件体示例
-:::html
-<md-code-json>
+
+```json
 {
     "schema": "2.0",
     "header": {
@@ -500,35 +97,22 @@ updateTime: "1752649030000"
         ]
     }
 }
-</md-code-json>
-:::
-
-
-
-
+```
 
 
 ### 事件订阅示例代码
 
-事件订阅流程可参考：[事件订阅概述](/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM)，新手入门可参考：[教程](/ssl:ttdoc/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/develop-an-echo-bot/introduction)
+事件订阅流程可参考：[事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)，新手入门可参考：[教程](https://open.larkoffice.com/document/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/develop-an-echo-bot/introduction)
 
-:::html
-<div style="margin-bottom: 4px;display: flex;column-gap: 4px;align-items: center;">
-  <md-text type='field-name'>订阅方式</md-text>
-  <md-tooltip>
-    <ul class="md_render-table_solid md_render-table">
-      <li><b>长连接方式（推荐）：</b>无需发布到公网地址，在本地开发环境中即可接收事件回调，且无需处理加解密逻辑。</li>
-      <li><b>发送至开发者服务器：</b>需要提供服务器公网地址。</li>
-    </ul>
-  </md-tooltip>
-</div>
-:::
 
-:::html
-<md-code-tabs>
-  <md-code-tab-group title="使用长连接接收事件">
-	
-    <md-code-tab-panel sdkType="golang-sdk">
+`订阅方式`
+
+
+长连接方式（推荐）：无需发布到公网地址，在本地开发环境中即可接收事件回调，且无需处理加解密逻辑。
+发送至开发者服务器：需要提供服务器公网地址。
+
+
+```
 package main
 
 import (
@@ -564,10 +148,10 @@ func main() {
 		panic(err)
 	}
 }
+```
 
-    </md-code-tab-panel>
 
-    <md-code-tab-panel sdkType="python-sdk">
+```
 # SDK 使用说明 SDK user guide：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/python--sdk/preparations-before-development
 import lark_oapi as lark
 
@@ -590,11 +174,10 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
 
-    </md-code-tab-panel>
 
-    <md-code-tab-panel sdkType="java-sdk">
-
+```
 package com.example.sample;
 
 import com.lark.oapi.core.utils.Jsons;
@@ -624,9 +207,10 @@ public class Sample {
         client.start();
     }
 }
-    </md-code-tab-panel>
+```
 
-    <md-code-tab-panel sdkType="nodejs-sdk">
+
+```
 // SDK 使用说明 SDK user guide：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/nodejs-sdk/preparation-before-development
 import * as Lark from '@larksuiteoapi/node-sdk';
 const baseConfig = {
@@ -644,12 +228,10 @@ wsClient.start({
         }
     })
 });
-    </md-code-tab-panel>
+```
 
-  </md-code-tab-group>
-  <md-code-tab-group title="将事件推送至开发者服务器">
-	
-    <md-code-tab-panel sdkType="golang-sdk">
+
+```
 package main
 
 import (
@@ -682,10 +264,10 @@ func main() {
 		panic(err)
 	}
 }
+```
 
-    </md-code-tab-panel>
 
-    <md-code-tab-panel sdkType="python-sdk">
+```
 # SDK 使用说明 SDK user guide：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/python--sdk/preparations-before-development
 from flask import Flask
 from lark_oapi.adapter.flask import *
@@ -711,11 +293,10 @@ def event():
 
 if __name__ == "__main__":
     app.run(port=7777)
+```
 
-    </md-code-tab-panel>
 
-    <md-code-tab-panel sdkType="java-sdk">
-
+```
 package com.lark.oapi.sample.event;
 
 import com.lark.oapi.core.utils.Jsons;
@@ -755,9 +336,10 @@ public class EventController {
         servletAdapter.handleEvent(request, response, EVENT_DISPATCHER);
     }
 }
-    </md-code-tab-panel>
+```
 
-    <md-code-tab-panel sdkType="nodejs-sdk">
+
+```
 // SDK 使用说明 SDK user guide：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/nodejs-sdk/preparation-before-development
 import http from 'http';
 import * as lark from '@larksuiteoapi/node-sdk';
@@ -777,8 +359,5 @@ const server = http.createServer();
 // 创建路由处理器 Create route handler
 server.on('request', lark.adaptDefault('/webhook/event', eventDispatcher));
 server.listen(3000);
-    </md-code-tab-panel>
+```
 
-  </md-code-tab-group>
-</md-code-tabs>
-:::

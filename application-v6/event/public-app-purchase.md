@@ -5,11 +5,9 @@ updateTime: "1743508113000"
 ---
 
 # 应用商店应用购买
-:::html
-<md-alert type="tip">
-了解事件订阅的使用场景和配置流程，请点击查看 [事件订阅概述](/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM)
-</md-alert>
-:::
+
+> **Tip**: 了解事件订阅的使用场景和配置流程，请点击查看 [事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)
+
 用户购买应用商店付费应用成功后发送给应用ISV的通知事件。
 
 - 订阅条件：只有应用商店应用才能订阅此事件。自建应用无此事件。
@@ -42,25 +40,17 @@ updateTime: "1743508113000"
 
 ### 事件订阅示例代码
 
-事件订阅流程可参考：[事件订阅概述](/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM)，新手入门可参考：[教程](/ssl:ttdoc/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/develop-an-echo-bot/introduction)
+事件订阅流程可参考：[事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)，新手入门可参考：[教程](https://open.larkoffice.com/document/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/develop-an-echo-bot/introduction)
 
-:::html
-<div style="margin-bottom: 4px;display: flex;column-gap: 4px;align-items: center;">
-  <md-text type='field-name'>订阅方式</md-text>
-  <md-tooltip>
-    <ul class="md_render-table_solid md_render-table">
-      <li><b>长连接方式（推荐）：</b>无需发布到公网地址，在本地开发环境中即可接收事件回调，且无需处理加解密逻辑。</li>
-      <li><b>发送至开发者服务器：</b>需要提供服务器公网地址。</li>
-    </ul>
-  </md-tooltip>
-</div>
-:::
 
-:::html
-<md-code-tabs>
-  <md-code-tab-group title="使用长连接接收事件">
-	
-    <md-code-tab-panel sdkType="golang-sdk">
+`订阅方式`
+
+
+长连接方式（推荐）：无需发布到公网地址，在本地开发环境中即可接收事件回调，且无需处理加解密逻辑。
+发送至开发者服务器：需要提供服务器公网地址。
+
+
+```
 package main
 
 import (
@@ -96,10 +86,10 @@ func main() {
 		panic(err)
 	}
 }
+```
 
-    </md-code-tab-panel>
 
-    <md-code-tab-panel sdkType="python-sdk">
+```
 # SDK 使用说明 SDK user guide：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/python--sdk/preparations-before-development
 import lark_oapi as lark
 
@@ -122,11 +112,10 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
 
-    </md-code-tab-panel>
 
-    <md-code-tab-panel sdkType="java-sdk">
-
+```
 package com.example.sample;
 
 import java.nio.charset.StandardCharsets;
@@ -156,9 +145,10 @@ public class Sample {
         client.start();
     }
 }
-    </md-code-tab-panel>
+```
 
-    <md-code-tab-panel sdkType="nodejs-sdk">
+
+```
 // SDK 使用说明 SDK user guide：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/nodejs-sdk/preparation-before-development
 import * as Lark from '@larksuiteoapi/node-sdk';
 const baseConfig = {
@@ -176,12 +166,10 @@ wsClient.start({
         }
     })
 });
-    </md-code-tab-panel>
+```
 
-  </md-code-tab-group>
-  <md-code-tab-group title="将事件推送至开发者服务器">
-	
-    <md-code-tab-panel sdkType="golang-sdk">
+
+```
 package main
 
 import (
@@ -214,10 +202,10 @@ func main() {
 		panic(err)
 	}
 }
+```
 
-    </md-code-tab-panel>
 
-    <md-code-tab-panel sdkType="python-sdk">
+```
 # SDK 使用说明 SDK user guide：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/python--sdk/preparations-before-development
 from flask import Flask
 from lark_oapi.adapter.flask import *
@@ -243,11 +231,10 @@ def event():
 
 if __name__ == "__main__":
     app.run(port=7777)
+```
 
-    </md-code-tab-panel>
 
-    <md-code-tab-panel sdkType="java-sdk">
-
+```
 package com.lark.oapi.sample.event;
 
 import java.nio.charset.StandardCharsets;
@@ -287,9 +274,10 @@ public class EventController {
         servletAdapter.handleEvent(request, response, EVENT_DISPATCHER);
     }
 }
-    </md-code-tab-panel>
+```
 
-    <md-code-tab-panel sdkType="nodejs-sdk">
+
+```
 // SDK 使用说明 SDK user guide：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/nodejs-sdk/preparation-before-development
 import http from 'http';
 import * as lark from '@larksuiteoapi/node-sdk';
@@ -309,8 +297,5 @@ const server = http.createServer();
 // 创建路由处理器 Create route handler
 server.on('request', lark.adaptDefault('/webhook/event', eventDispatcher));
 server.listen(3000);
-    </md-code-tab-panel>
+```
 
-  </md-code-tab-group>
-</md-code-tabs>
-:::

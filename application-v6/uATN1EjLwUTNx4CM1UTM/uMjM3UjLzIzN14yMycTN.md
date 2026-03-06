@@ -9,131 +9,32 @@ updateTime: "1731902094000"
 该接口用于查询用户可用的应用列表，只能被企业自建应用调用。
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/application/v1/user/visible_apps</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>GET</md-td>
-    </md-tr>
-    
-    
-    <md-tr>
-      <md-th>
- 权限要求
- <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-</md-th>
-      <md-td>
-        <md-perm href="/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">获取用户可用的应用</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
-### 请求头
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 18%;">名称</md-th>  
-      <md-th style="width: 15%;">类型</md-th>  
-       <md-th style="width: 15%;">必填</md-th>  
-      <md-th>描述</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>Authorization</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
- 
-**值格式**："Bearer `access_token`"
 
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-          
- [了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-	</md-td>
-</md-tr>
-     <md-tr> 
-      <md-td>Content-Type</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-     <md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-   
-  </md-tbody> 
-</md-table>
-:::
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/application/v1/user/visible_apps |
+| HTTP Method | GET |
+| 权限要求  调用该 API 所需的权限。开启其中任意一项权限即可调用 | 获取用户可用的应用 |
+
+### 请求头
+
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token`   **值格式**："Bearer `access_token`" **示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"             [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
+
 
 ### 请求参数
 
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 18%;">参数</md-th>  
-      <md-th style="width: 15%;">类型</md-th>  
-       <md-th style="width: 15%;">必填</md-th>  
-      <md-th>说明</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>page_token</md-td>  
-      <md-td>string</md-td>  
-      <md-td>否</md-td> 
-      <md-td>分页起始位置标示，不填表示从头开始。</md-td>
-    </md-tr>
-    <md-tr> 
-      <md-td>page_size</md-td>  
-      <md-td>int</md-td>  
-      <md-td>否</md-td> 
-      <md-td>单页需求最大个数（最大 100），0 自动最大个数。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>lang</md-td>  
-      <md-td>string</md-td>  
-      <md-td>否</md-td> 
-      <md-td>优先展示的应用信息的语言版本。
-- zh_cn：简体中文
-- zh_hk：繁体中文（中国香港）
-- zh_tw：繁体中文（中国台湾）
-- en_us：英文
-- ja_jp：日文
-- ko_kr：韩语
-- es_es：西班牙语
-- pt-br：葡萄牙语（巴西）
-- th_th：泰语
-- vi_vn：越南语
-- id_id：印尼语</md-td>
-	</md-tr>
-	<md-tr>
-	  <md-td>open_id</md-td>  
-	  <md-td>string</md-td>  
-	  <md-td>否</md-td> 
-	  <md-td>目标用户 open_id。</md-td>
-	</md-tr>
-	<md-tr>
-	  <md-td>user_id</md-td>  
-	  <md-td>string</md-td>  
-	  <md-td>否</md-td> 
-	  <md-td>目标用户 user_id，与 open_id 至少给其中之一，user_id 优先于 open_id。</md-td>
-	</md-tr>
-  </md-tbody> 
-</md-table>
-:::
+
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| page_token | string | 否 | 分页起始位置标示，不填表示从头开始。 |
+| page_size | int | 否 | 单页需求最大个数（最大 100），0 自动最大个数。 |
+| lang | string | 否 | 优先展示的应用信息的语言版本。 - zh_cn：简体中文 - zh_hk：繁体中文（中国香港） - zh_tw：繁体中文（中国台湾） - en_us：英文 - ja_jp：日文 - ko_kr：韩语 - es_es：西班牙语 - pt-br：葡萄牙语（巴西） - th_th：泰语 - vi_vn：越南语 - id_id：印尼语 |
+| open_id | string | 否 | 目标用户 open_id。 |
+| user_id | string | 否 | 目标用户 user_id，与 open_id 至少给其中之一，user_id 优先于 open_id。 |
+
 
 ## 响应
 

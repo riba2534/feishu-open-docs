@@ -12,8 +12,8 @@ updateTime: "1733108014000"
 
 
 
- 发送文件消息，使用到两个OpenAPI：[上传文件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/create)
-和[发送消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)。
+ 发送文件消息，使用到两个OpenAPI：[上传文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/create)
+和[发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)。
 
 ```java
 package im
@@ -106,7 +106,7 @@ func SendFile(client *lark.Client, request *SendFileRequest) (*SendFileResponse,
 ## [发送图片消息](https://github.com/larksuite/oapi-sdk-go-demo/blob/main/composite_api/im/send_image.go)
 
 
- 发送图片消息，使用到两个OpenAPI：[上传图片](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)和[发送消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)。
+ 发送图片消息，使用到两个OpenAPI：[上传图片](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)和[发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)。
 
 ```java
 package im
@@ -195,7 +195,7 @@ func SendImage(client *lark.Client, request *SendImageRequest) (*SendImageRespon
        
 
 
- 获取部门下所有用户列表，使用到两个OpenAPI：[获取子部门列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/children)和[获取部门直属用户列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/find_by_department)。
+ 获取部门下所有用户列表，使用到两个OpenAPI：[获取子部门列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/children)和[获取部门直属用户列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/find_by_department)。
 
 ```java
 package contact
@@ -279,7 +279,7 @@ func ListUserByDepartment(client *lark.Client, request *ListUserByDepartmentRequ
 ## [创建多维表格同时添加数据表](https://github.com/larksuite/oapi-sdk-go-demo/blob/main/composite_api/base/create_app_and_tables.go)
       
       
- 创建多维表格同时添加数据表，使用到两个 OpenAPI：[创建多维表格](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app/create)和[新增一个数据表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table/create)：
+ 创建多维表格同时添加数据表，使用到两个 OpenAPI：[创建多维表格](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app/create)和[新增一个数据表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table/create)：
 
       
 ```java
@@ -364,7 +364,7 @@ func CreateAppAndTables(client *lark.Client, request *CreateAppAndTablesRequest)
 ## [复制粘贴某个范围的单元格数据](https://github.com/larksuite/oapi-sdk-go-demo/blob/main/composite_api/sheets/copy_and_paste_by_range.go)
 
 
- 复制粘贴某个范围的单元格数据，使用到两个OpenAPI：[读取单个范围](/ssl:ttdoc/ukTMukTMukTM/ugTMzUjL4EzM14COxMTN)和[向单个范围写入数据](/ssl:ttdoc/ukTMukTMukTM/uAjMzUjLwIzM14CMyMTN)。
+ 复制粘贴某个范围的单元格数据，使用到两个OpenAPI：[读取单个范围](https://open.larkoffice.com/document/ukTMukTMukTM/ugTMzUjL4EzM14COxMTN)和[向单个范围写入数据](https://open.larkoffice.com/document/ukTMukTMukTM/uAjMzUjLwIzM14CMyMTN)。
 
 
 ```java
@@ -461,7 +461,7 @@ func CopyAndPasteRange(client *lark.Client, request *CopyAndPasteByRangeRequest)
     
     
 
-下载指定范围单元格的所有素材列表，使用到两个OpenAPI：[读取单个范围](/ssl:ttdoc/ukTMukTMukTM/ugTMzUjL4EzM14COxMTN)和[下载素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/download)：
+下载指定范围单元格的所有素材列表，使用到两个OpenAPI：[读取单个范围](https://open.larkoffice.com/document/ukTMukTMukTM/ugTMzUjL4EzM14COxMTN)和[下载素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/download)：
 
 
     

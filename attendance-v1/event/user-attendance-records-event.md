@@ -5,11 +5,9 @@ updateTime: "1725246795000"
 ---
 
 # 打卡流水
-:::html
-<md-alert type="tip">
-了解事件订阅的使用场景和配置流程，请点击查看 [事件订阅概述](/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM)
-</md-alert>
-:::
+
+> **Tip**: 了解事件订阅的使用场景和配置流程，请点击查看 [事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)
+
 
 **事件**
 

@@ -53,104 +53,23 @@ updateTime: "1720166882000"
 
 - 方式一：调用接口获取
 
-	- [创建用户组](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group/create)，成功创建会返回用户组 ID。
-	- [查询用户组列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group/simplelist)，获取用户组 ID。
+	- [创建用户组](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group/create)，成功创建会返回用户组 ID。
+	- [查询用户组列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group/simplelist)，获取用户组 ID。
 
 - 方式二：从管理后台查看
 
 	企业管理员可以登录[管理后台](https://feishu.cn/admin/index)，在 **组织架构 > 用户组管理** 页面，点击指定用户组的 **查看用户组详情** 按钮，即可查看用户组 ID。
 
 
-
 ## 用户组字段说明
 
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 20%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 50%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >group_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-用户组 ID，是租户内用户组的唯一标识。使用说明：
-- group_id 可在[创建用户组](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group/create)时自定义，若不自定义则由系统自动生成。
-- 已创建的用户组，不允许修改 group_id。
-- 通过 group_id，你可以调用[查询指定用户组](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group/get)接口，获取用户组详细信息。
-- 你可以调用[查询用户组列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group/simplelist)，获取当前租户内所有用户组的 ID 及其他配置信息。
-
-**自定义`group_id`时，数据校验规则如下：**
-
-- 最大长度：`64` 字符
-- 校验规则：数字、大小写字母的组合，不能包含空格
-
-**示例值**："g122817"
-	</md-td>
-</md-tr>
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >name</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-用户组的名字。租户内唯一。
-      
-**数据校验规则：** 最大长度为 `100` 字符
-      
-**示例值**："IT 外包组"  
-
-	</md-td>
-</md-tr>
-    
-    <md-tr>
-	<md-td>
-	<md-text type="field-name" >description</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-用户组描述信息。
-      
-**数据校验规则：** 最大长度为 `500` 字符
-      
-**示例值**："IT 外包用户组，需要进行细粒度权限管控"
-
-	</md-td>
-</md-tr>
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >type</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-用户组的类型。
-  
-**可选值有：**
-
-- 1：普通用户组。该枚举值在用户组 API 内全局适用。
-- 2：动态用户组。该枚举值仅在查询类的用户组 API 内适用。查询类 API 包括[查询指定用户组](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group/get)、[查询用户组列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group/simplelist)、[查询用户所属用户组](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group/member_belong)。
-      
-	</md-td>
-</md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `group_id` | `string` | 用户组 ID，是租户内用户组的唯一标识。使用说明： - group_id 可在[创建用户组](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group/create)时自定义，若不自定义则由系统自动生成。 - 已创建的用户组，不允许修改 group_id。 - 通过 group_id，你可以调用[查询指定用户组](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group/get)接口，获取用户组详细信息。 - 你可以调用[查询用户组列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group/simplelist)，获取当前租户内所有用户组的 ID 及其他配置信息。 **自定义`group_id`时，数据校验规则如下：** - 最大长度：`64` 字符 - 校验规则：数字、大小写字母的组合，不能包含空格 **示例值**："g122817" |
+| `name` | `string` | 用户组的名字。租户内唯一。        **数据校验规则：** 最大长度为 `100` 字符        **示例值**："IT 外包组" |
+| `description` | `string` | 用户组描述信息。        **数据校验规则：** 最大长度为 `500` 字符        **示例值**："IT 外包用户组，需要进行细粒度权限管控" |
+| `type` | `int` | 用户组的类型。    **可选值有：** - 1：普通用户组。该枚举值在用户组 API 内全局适用。 - 2：动态用户组。该枚举值仅在查询类的用户组 API 内适用。查询类 API 包括[查询指定用户组](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group/get)、[查询用户组列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group/simplelist)、[查询用户所属用户组](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group/member_belong)。 |
 
 
 ## 数据示例

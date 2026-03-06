@@ -7,7 +7,7 @@ updateTime: "1717678066000"
 # Document
 
 描述一篇文档的富文本内容，由标题和正文两部分组成。[富文本内容获取
-](/ssl:ttdoc/ukTMukTMukTM/uUDM2YjL1AjN24SNwYjN) 
+](https://open.larkoffice.com/document/ukTMukTMukTM/uUDM2YjL1AjN24SNwYjN) 
 
 ```json
 {
@@ -68,7 +68,7 @@ updateTime: "1717678066000"
 
 | 字段   | 类型     | 说明                                                         |
 | ------ | -------- | ------------------------------------------------------------ |
-| blocks | []object | 文档结构是按行排列的，每行内容是一个 Block，详见[文档数据结构概述](/ssl:ttdoc/ukTMukTMukTM/uAzM5YjLwMTO24CMzkjN) |
+| blocks | []object | 文档结构是按行排列的，每行内容是一个 Block，详见[文档数据结构概述](https://open.larkoffice.com/document/ukTMukTMukTM/uAzM5YjLwMTO24CMzkjN) |
 
 # Block
 
@@ -445,7 +445,7 @@ LaTeX 公式。
 
 # ImageItem
 
-单次写操作图片和附件最多 50 个，单个图片最大 20M。本地图片需要先通过[上传素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)或[分片上传素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_prepare)进行上传，支持jpg、jpeg、bmp、png 和 gif 格式。
+单次写操作图片和附件最多 50 个，单个图片最大 20M。本地图片需要先通过[上传素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)或[分片上传素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_prepare)进行上传，支持jpg、jpeg、bmp、png 和 gif 格式。
 
 **字段说明** :  
 
@@ -459,7 +459,7 @@ LaTeX 公式。
 
 # File
 
-单次写操作图片和附件最多 50 个。本地文件需要先通过[上传素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)或[分片上传素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_prepare)进行上传。
+单次写操作图片和附件最多 50 个。本地文件需要先通过[上传素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)或[分片上传素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_prepare)进行上传。
 
 ```json
 {
@@ -666,7 +666,7 @@ LaTeX 公式。
 
 # Sheet
 
-文档内的数据表格。通过[获取文档富文本内容](/ssl:ttdoc/ukTMukTMukTM/uUDM2YjL1AjN24SNwYjN)拿到的sheet token为token_tableId 的形式提供，在调用电子表格接口时，需要拆开后再使用，否则会报错。[电子表格内容读写API](/ssl:ttdoc/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/overview)。 创建支持两种方式，二选一：
+文档内的数据表格。通过[获取文档富文本内容](https://open.larkoffice.com/document/ukTMukTMukTM/uUDM2YjL1AjN24SNwYjN)拿到的sheet token为token_tableId 的形式提供，在调用电子表格接口时，需要拆开后再使用，否则会报错。[电子表格内容读写API](https://open.larkoffice.com/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/overview)。 创建支持两种方式，二选一：
 
 1. 通过token深拷贝，token只允许doc内电子表格，不允许独立电子表格
 2. 指定rowSize和columnSize创建空sheet
@@ -691,7 +691,7 @@ LaTeX 公式。
 
 # Bitable
 
-文档内的多维表格，通过[获取文档富文本内容](/ssl:ttdoc/ukTMukTMukTM/uUDM2YjL1AjN24SNwYjN)拿到token。[多维表格内容读写API](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/bitable-overview)。创建支持两种方式，二选一：
+文档内的多维表格，通过[获取文档富文本内容](https://open.larkoffice.com/document/ukTMukTMukTM/uUDM2YjL1AjN24SNwYjN)拿到token。[多维表格内容读写API](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/bitable-overview)。创建支持两种方式，二选一：
 
 1. 通过 token+viewType 深拷贝，token只允许doc内多维表格，不允许独立多维表格
 2. 不带 token，通过 viewType 创建空 bitable
@@ -805,7 +805,7 @@ Jira，包括 Jira filter 和 Jira issue。目前不支持写入
 
 | fields                 | type     | Remark |
 | ---------------------- | -------- | ------ |
-| calloutEmojiId         | string   | 高亮块表情支持以下：[Emoji 枚举表](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/emoji)    |
+| calloutEmojiId         | string   | 高亮块表情支持以下：[Emoji 枚举表](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/emoji)    |
 | calloutBackgroundColor | RGBColor    | 高亮块背景色（分为深色系和浅色系，与边框色深浅色系对应） |
 | calloutBorderColor     | RGBColor    | 高亮块边框色（分为深色系和浅色系，与背景色深浅色系对应） |
 | calloutTextColor		 | RGBColor	| 高亮块内文字颜色 | 

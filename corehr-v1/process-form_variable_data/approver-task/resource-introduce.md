@@ -12,58 +12,13 @@ updateTime: "1734434269000"
 
 ## 字段说明
 
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 30%;">名称</md-dt-th>
-      <md-dt-th style="width: 30%;">类型</md-dt-th>
-      <md-dt-th style="width: 40%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
-        
-            <md-dt-tr level="0">
-                <md-dt-td>approver_id</md-dt-td>
-                <md-dt-td>string</md-dt-td>
-                <md-dt-td>审批任务id
 
-**示例值：** 7410781046418966060</md-dt-td>
-            </md-dt-tr>
-            
-            <md-dt-tr level="0">
-                <md-dt-td>process_id</md-dt-td>
-                <md-dt-td>string</md-dt-td>
-                <md-dt-td>流程id
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| approver_id | string | 审批任务id<br>**示例值：** 7410781046418966060 |
+| process_id | string | 流程id<br>**示例值：** 7410781046418966060 |
+| approver_status | int | 任务状态<br>**示例值：** 1<br>**可选值有：** - `-2` : 跳过 - `-1` : 发起 - `0` : 未开始 - `1` : 进行中 - `2` : 已拒绝 - `3` : 已通过 - `4` : 被撤回 - `5` : 抄送 - `6` : 表单提交 - `12` : 失败 - `14` : 已回退 - `16` : 发起撤销 |
 
-**示例值：** 7410781046418966060</md-dt-td>
-            </md-dt-tr>
-            
-            <md-dt-tr level="0">
-                <md-dt-td>approver_status</md-dt-td>
-                <md-dt-td>int</md-dt-td>
-                <md-dt-td>任务状态
-
-**示例值：** 1
-
-**可选值有：**
-- `-2` : 跳过
-- `-1` : 发起
-- `0` : 未开始
-- `1` : 进行中
-- `2` : 已拒绝
-- `3` : 已通过
-- `4` : 被撤回
-- `5` : 抄送
-- `6` : 表单提交
-- `12` : 失败
-- `14` : 已回退
-- `16` : 发起撤销</md-dt-td>
-            </md-dt-tr>
-            
-        </md-dt-tbody>
-</md-dt-table>
-:::
 ## 数据示例
 ```json
  {

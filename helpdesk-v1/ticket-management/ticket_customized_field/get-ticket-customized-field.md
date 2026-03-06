@@ -9,544 +9,77 @@ updateTime: "1741783349000"
 该接口用于获取工单自定义字段详情。
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/helpdesk/v1/ticket_customized_fields/:ticket_customized_field_id</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>GET</md-td>
-    </md-tr>
-       <md-tr>
-     <md-th>支持的应用类型</md-th>
-      <md-td>
-	  <md-app-support types="custom"></md-app-support>
-      </md-td>
-   </md-tr>
 
-
-    <md-tr>
-      <md-th>
- 权限要求
- <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-</md-th>
-      <md-td>
-<md-perm name="helpdesk:all:readonly" desc="获取服务台资源详情" support_app_types="custom" tags="">获取服务台资源详情</md-perm>
-</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/helpdesk/v1/ticket_customized_fields/:ticket_customized_field_id |
+| HTTP Method | GET |
+| 支持的应用类型 | custom |
+| 权限要求  调用该 API 所需的权限。开启其中任意一项权限即可调用 | `helpdesk:all:readonly` 获取服务台资源详情 |
 
 
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 18%;">名称</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-       <md-th style="width: 15%;">必填</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
 
-[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-</md-td>
-</md-tr>
-     <md-tr>
-      <md-td>Content-Type</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      <md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+> **Tip**: 服务台请求Header中还需添加“服务台token”参数：
+>   
+>   Key: X-Lark-Helpdesk-Authorization
+>   
+>   Value: base64(helpdesk_id:helpdesk_token)，通过base64加密将helpdesk_id和helpdesk_token用':'连接而成的字符串。
+>   
+>   [了解更多：获取与使用服务台token](https://open.larkoffice.com/document/ukTMukTMukTM/ugDOyYjL4gjM24CO4IjN)
 
-:::html
-<md-alert type="tip">
-服务台请求Header中还需添加“服务台token”参数：
-  
-  Key: X-Lark-Helpdesk-Authorization
-  
-  Value: base64(helpdesk_id:helpdesk_token)，通过base64加密将helpdesk_id和helpdesk_token用':'连接而成的字符串。
-  
-  [了解更多：获取与使用服务台token](/ssl:ttdoc/ukTMukTMukTM/ugDOyYjL4gjM24CO4IjN)
-</md-alert>
-:::
 
 ### 路径参数
-:::html
-<md-table>
-  <md-thead>
-      <tr>
-      <md-th style="width: 30%;">名称</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-      <md-th >描述</md-th>
-      </tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >ticket_customized_field_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	工单自定义字段ID
-
-**示例值**："6948728206392295444"
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
-
-
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `ticket_customized_field_id` | `string` | 工单自定义字段ID **示例值**："6948728206392295444" |
 
 
 ## 响应
 
 
-
 ### 响应体
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 40%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 30%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >code</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	错误码，非 0 表示失败
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	错误描述
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >data</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >ticket_customized_field</md-text>
-	</md-td>
-	<md-td>
-	\-
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >ticket_customized_field_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	工单自定义字段ID
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >helpdesk_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	服务台ID
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >key_name</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	键名
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >display_name</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	名称
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >position</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	字段在列表后台管理列表中的位置
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >field_type</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	类型
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >description</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	描述
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >visible</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-td>
-	<md-td>
-	是否可见
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >editable</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-td>
-	<md-td>
-	是否可以修改
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >required</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-td>
-	<md-td>
-	是否必填
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >created_at</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	创建时间
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >updated_at</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	更新时间
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >created_by</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >ticket_user</md-text>
-	</md-td>
-	<md-td>
-	创建用户
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	用户ID
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >avatar_url</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	用户头像url
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >name</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	用户名
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >email</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	用户邮箱
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >updated_by</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >ticket_user</md-text>
-	</md-td>
-	<md-td>
-	更新用户
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	用户ID
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >avatar_url</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	用户头像url
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >name</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	用户名
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >email</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	用户邮箱
-	</md-td>
-</md-tr>
-
-<md-tr>
-	<md-td>
-	<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >dropdown_options</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >dropdown_option</md-text>
-	</md-td>
-	<md-td>
-	下拉列表选项
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >children</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >dropdown_option[]</md-text>
-	</md-td>
-	<md-td>
-	选项列表
-	</md-td>
-</md-tr>
-    
- <md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >tag</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	选项ID
-	</md-td>
-</md-tr>
-    
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >display_name</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	展示名称
-	</md-td>
-</md-tr>    
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >children</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >dropdown_option[]</md-text>
-	</md-td>
-	<md-td>
-	同上：选项列表，只适用于多层下拉列表（最多可以设置三级下拉列表）
-	</md-td>
-</md-tr> 
-    
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >dropdown_allow_multiple</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-td>
-	<md-td>
-	是否支持多选，仅在字段类型是dropdown的时候有效
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `code` | `int` | 错误码，非 0 表示失败 |
+| `msg` | `string` | 错误描述 |
+| `data` | `ticket_customized_field` | \- |
+| ∟ `ticket_customized_field_id` | `string` | 工单自定义字段ID |
+| ∟ `helpdesk_id` | `string` | 服务台ID |
+| ∟ `key_name` | `string` | 键名 |
+| ∟ `display_name` | `string` | 名称 |
+| ∟ `position` | `string` | 字段在列表后台管理列表中的位置 |
+| ∟ `field_type` | `string` | 类型 |
+| ∟ `description` | `string` | 描述 |
+| ∟ `visible` | `boolean` | 是否可见 |
+| ∟ `editable` | `boolean` | 是否可以修改 |
+| ∟ `required` | `boolean` | 是否必填 |
+| ∟ `created_at` | `string` | 创建时间 |
+| ∟ `updated_at` | `string` | 更新时间 |
+| ∟ `created_by` | `ticket_user` | 创建用户 |
+| ∟ `id` | `string` | 用户ID |
+| ∟ `avatar_url` | `string` | 用户头像url |
+| ∟ `name` | `string` | 用户名 |
+| ∟ `email` | `string` | 用户邮箱 |
+| ∟ `updated_by` | `ticket_user` | 更新用户 |
+| ∟ `id` | `string` | 用户ID |
+| ∟ `avatar_url` | `string` | 用户头像url |
+| ∟ `name` | `string` | 用户名 |
+| ∟ `email` | `string` | 用户邮箱 |
+| ∟ `dropdown_options` | `dropdown_option` | 下拉列表选项 |
+| ∟ `children` | `dropdown_option[]` | 选项列表 |
+| ∟ `tag` | `string` | 选项ID |
+| ∟ `display_name` | `string` | 展示名称 |
+| ∟ `children` | `dropdown_option[]` | 同上：选项列表，只适用于多层下拉列表（最多可以设置三级下拉列表） |
+| ∟ `dropdown_allow_multiple` | `boolean` | 是否支持多选，仅在字段类型是dropdown的时候有效 |
 
 
 ### 响应体示例
@@ -602,55 +135,13 @@ updateTime: "1741783349000"
 ```
 
 
-
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>154000</md-td>
-  <md-td>Bad request, please check your request body</md-td>
-  <md-td>请求不合法，请检查参数</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>401</md-td>
-  <md-td>154001</md-td>
-  <md-td>Unauthorized, please check you have the correct access</md-td>
-  <md-td>检查Authorization 和 X-Lark-Helpdesk-Authorization 是否正确，应用和服务台属于同一租户</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>154003</md-td>
-  <md-td>Please check you have the correct access</md-td>
-  <md-td>检查是否申请正确权限</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>155000</md-td>
-  <md-td>Internal error</md-td>
-  <md-td>内部错误，请联系我们</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
-
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 154000 | Bad request, please check your request body | 请求不合法，请检查参数 |
+| 401 | 154001 | Unauthorized, please check you have the correct access | 检查Authorization 和 X-Lark-Helpdesk-Authorization 是否正确，应用和服务台属于同一租户 |
+| 403 | 154003 | Please check you have the correct access | 检查是否申请正确权限 |
+| 500 | 155000 | Internal error | 内部错误，请联系我们 |
 
 

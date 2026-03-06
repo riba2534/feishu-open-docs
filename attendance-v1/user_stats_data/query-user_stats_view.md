@@ -6,527 +6,85 @@ updateTime: "1723544574000"
 
 # 查询统计设置
 
-查询考勤统计支持的日度统计或月度统计的统计表头。报表的表头信息可以在考勤统计-[报表](https://example.feishu.cn/people/workforce-management/manage/statistics/report)中查询到具体的报表信息，此接口专门用于查询表头数据。注意此接口和[查询统计表头](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_stats_field/query)基本相同，区别点在于在兼容历史统计视图模型（历史统计数据模型可以按用户ID设置，后续统计升级为仅支持租户维度）{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=attendance&version=v1&resource=user_stats_view&method=query)
-
-:::html
-<md-alert type="error">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="warn">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="tip">
-
-</md-alert>
-:::
-
+查询考勤统计支持的日度统计或月度统计的统计表头。报表的表头信息可以在考勤统计-[报表](https://example.feishu.cn/people/workforce-management/manage/statistics/report)中查询到具体的报表信息，此接口专门用于查询表头数据。注意此接口和[查询统计表头](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_stats_field/query)基本相同，区别点在于在兼容历史统计视图模型（历史统计数据模型可以按用户ID设置，后续统计升级为仅支持租户维度）
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/attendance/v1/user_stats_views/query</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[50 次/秒](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="attendance:task" desc="写入打卡数据" support_app_types="custom,isv" tags="">写入打卡数据</md-perm>
-            <md-perm name="attendance:task:readonly" desc="导出打卡数据" support_app_types="custom" tags="">导出打卡数据</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/attendance/v1/user_stats_views/query |
+| HTTP Method | POST |
+| 接口频率限制 | [50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | custom,isv |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `attendance:task` 写入打卡数据 `attendance:task:readonly` 导出打卡数据 |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
-
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
 
 ### 查询参数
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;" >描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >employee_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	响应体中的 user_id 的员工ID类型。如果没有后台管理权限，可使用[通过手机号或邮箱获取用户 ID](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)
-
-**示例值**：employee_id
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="employee_id" >员工 employee ID，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的用户 ID</md-enum-item>
-<md-enum-item key="employee_no" >员工工号，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的工号</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `employee_type` | `string` | 是 | 响应体中的 user_id 的员工ID类型。如果没有后台管理权限，可使用[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)<br>**示例值**：employee_id<br>**可选值有**：<br>- `employee_id`: 员工 employee ID，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的用户 ID - `employee_no`: 员工工号，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的工号 |
 
 
 ### 请求体
 
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >locale</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	语言类型
-
-**示例值**："zh"
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="en" >英语</md-enum-item>
-<md-enum-item key="ja" >日语</md-enum-item>
-<md-enum-item key="zh" >中文</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >stats_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	统计类型
-
-**示例值**："daily"
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="daily" >日度统计</md-enum-item>
-<md-enum-item key="month" >月度统计</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	操作者的用户id，对应employee_type
-
-* 必填字段(系统升级后，新系统要求必填)
-
-**示例值**："dd31248a"
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
-
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `locale` | `string` | 是 | 语言类型<br>**示例值**："zh"<br>**可选值有**：<br>- `en`: 英语 - `ja`: 日语 - `zh`: 中文 |
+| `stats_type` | `string` | 是 | 统计类型<br>**示例值**："daily"<br>**可选值有**：<br>- `daily`: 日度统计 - `month`: 月度统计 |
+| `user_id` | `string` | 否 | 操作者的用户id，对应employee_type<br>* 必填字段(系统升级后，新系统要求必填)<br>**示例值**："dd31248a" |
 
 
 ### 请求体示例
-:::html
-<md-code-json>
+
+```json
 {
     "locale": "zh",
     "stats_type": "daily",
     "user_id": "dd31248a"
 }
-</md-code-json>
-:::
-
+```
 
 
 ## 响应
 
 
-
-
-
 ### 响应体
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误码，非 0 表示失败
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >data</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	\-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >view</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >user_stats_view</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	统计视图
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >view_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	视图 ID，可用于[更新统计设置](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_stats_view/update) 
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >stats_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	视图类型
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="daily" >日度统计</md-enum-item>
-<md-enum-item key="month" >月度统计</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	操作者的用户id，对应employee_type
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >items</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >item\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	用户设置字段
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	标题编号
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >title</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	标题名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >child_items</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >child_item\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	子标题
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	子标题编号
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	开关字段，0：关闭，1：开启
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >title</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	子标题名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >column_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	列类型
-* `0`：未知（默认）
-* `1`：复选框
-* `2`：文本
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >read_only</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否只读
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >min_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	最小值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >max_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	最大值
-	</md-dt-td>
-</md-dt-tr>
-
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `code` | `int` | 错误码，非 0 表示失败 |
+| `msg` | `string` | 错误描述 |
+| `data` | `\-` | \- |
+| &nbsp;&nbsp;└ `view` | `user_stats_view` | 统计视图 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `view_id` | `string` | 视图 ID，可用于[更新统计设置](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_stats_view/update) |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `stats_type` | `string` | 视图类型<br>**可选值有**：<br>- `daily`: 日度统计 - `month`: 月度统计 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 操作者的用户id，对应employee_type |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `items` | `item\[\]` | 用户设置字段 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `code` | `string` | 标题编号 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `title` | `string` | 标题名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `child_items` | `child_item\[\]` | 子标题 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `code` | `string` | 子标题编号 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 开关字段，0：关闭，1：开启 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `title` | `string` | 子标题名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `column_type` | `int` | 列类型 * `0`：未知（默认） * `1`：复选框 * `2`：文本 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `read_only` | `boolean` | 是否只读 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `min_value` | `string` | 最小值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `max_value` | `string` | 最大值 |
 
 
 ### 响应体示例
-:::html
-<md-code-json>
+
+```json
 {
     "code": 0,
     "msg": "",
@@ -879,60 +437,16 @@ updateTime: "1723544574000"
         }
     }
 }
-</md-code-json>
-:::
-
+```
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1220001</md-td>
-  <md-td>param is invalis</md-td>
-  <md-td>入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW)</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1220002</md-td>
-  <md-td>tenant_id is empty</md-td>
-  <md-td>请检查入参中的 tenant_access_token是否正确</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1228000</md-td>
-  <md-td>历史错误码，不再使用</md-td>
-  <md-td>-</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1220600</md-td>
-  <md-td>通用错误信息</md-td>
-  <md-td>通用错误信息包含多条，详细的错误信息以及处理建议可参见 [错误信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines)</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
-
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 1220001 | param is invalis | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220002 | tenant_id is empty | 请检查入参中的 tenant_access_token是否正确 |
+| 500 | 1228000 | 历史错误码，不再使用 | - |
+| 400 | 1220600 | 通用错误信息 | 通用错误信息包含多条，详细的错误信息以及处理建议可参见 [错误信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines) |
 
 

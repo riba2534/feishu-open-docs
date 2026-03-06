@@ -12,48 +12,27 @@ updateTime: "1753076559000"
 
 ### 通讯录权限范围和应用可用范围有什么区别？
 
-通讯录权限范围和应用可用范围是两个不同的概念，请注意区分。两者区别说明如下所示，详细的介绍参考[通讯录权限范围介绍](/ssl:ttdoc/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)、[配置应用可用范围](/ssl:ttdoc/home/introduction-to-scope-and-authorization/availability)。
+通讯录权限范围和应用可用范围是两个不同的概念，请注意区分。两者区别说明如下所示，详细的介绍参考[通讯录权限范围介绍](https://open.larkoffice.com/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)、[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。
 
-- 通讯录权限范围定义了应用在调用通讯录 API 时可获取的部门、用户的数据范围。应用无法访问不在通讯录权限范围内的数据。例如，以应用身份调用[修改用户部分信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/patch)接口修改用户信息时，该用户必须要在应用的通讯录权限范围内。
+- 通讯录权限范围定义了应用在调用通讯录 API 时可获取的部门、用户的数据范围。应用无法访问不在通讯录权限范围内的数据。例如，以应用身份调用[修改用户部分信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/patch)接口修改用户信息时，该用户必须要在应用的通讯录权限范围内。
 - 应用可用范围定义了可以使用该应用的企业成员范围，不在该范围内的企业成员无权限使用该应用。例如，应用可用范围包含用户 A，不包含用户 B，则用户 A 可以在飞书客户端搜索到并使用该应用，但用户 B 无法搜索到并使用该应用。
 
 ### 调用通讯录接口需要哪些权限？
 通讯录目前包含成员、部门、用户组等几大模块，每个模块都会提供对应的 API 接口，便于你进行智能化的系统对接。当你使用接口时，相关权限要求主要分为三类。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:25%">权限类型</md-th>
-<md-th style="width:75%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>接口权限要求</md-td>
-<md-td>定义应用有无权限调用该接口。如果没有权限，则无法访问接口。</md-td>
-</md-tr>
+| 权限类型 | 说明 |
+| --- | --- |
+| 接口权限要求 | 定义应用有无权限调用该接口。如果没有权限，则无法访问接口。 |
+| 通讯录权限范围 | 定义应用可以查询或操作的部门和用户的数据范围。当你调用接口获取或操作某数据时，如果没有该数据的通讯录权限，则会报错提示无权限。更多信息可参见[权限范围详解](https://open.larkoffice.com/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority) 。 |
+| 字段权限要求 | 由于某些实体（例如用户）对不同字段的敏感度不同（例如用户的手机号相对比较敏感），要获取该类字段则需要申请额外的权限。如果没有指定字段的获取权限，则无法获取该字段的信息。 |
 
-<md-tr>
-<md-td>通讯录权限范围</md-td>
-<md-td>定义应用可以查询或操作的部门和用户的数据范围。当你调用接口获取或操作某数据时，如果没有该数据的通讯录权限，则会报错提示无权限。更多信息可参见[权限范围详解](/ssl:ttdoc/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority) 。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>字段权限要求</md-td>
-<md-td>由于某些实体（例如用户）对不同字段的敏感度不同（例如用户的手机号相对比较敏感），要获取该类字段则需要申请额外的权限。如果没有指定字段的获取权限，则无法获取该字段的信息。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 对于接口权限和字段权限的要求，你可以通过相应的 API 文档获取。如下图：
 
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/198b5bc9ac85e435bea64fc11e912b1f_EyYQtBLO4o.png?height=1254&lazyload=true&maxWidth=600&width=1708)
 
-场景示例：某开发者需要调用 [创建用户](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/create) 接口，向企业中添加用户。
+场景示例：某开发者需要调用 [创建用户](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/create) 接口，向企业中添加用户。
 1. 该开发者需要为应用开通创建用户 API 的 **更新通讯录** 权限。
 2. 由于需要将用户添加到某个（或多个）部门下，因此该开发者需要确保应用的通讯录权限范围包含待加入的部门。
 3. 调用接口创建用户后，响应结果中会包含用户 ID 等敏感字段，如需成功获取这些敏感字段，还需要为应用开通敏感字段的权限。
@@ -64,8 +43,8 @@ updateTime: "1753076559000"
 - 问题原因：应用未申请接口或事件所需的权限，或对应的用户不在应用的通讯录权限范围内。
 - 排查方案：
 
-	1. 确保应用已开通了调用接口所需的接口权限，以及 user_id、邮箱、手机号等敏感信息的字段权限。如何申请 API 权限，参见[申请 API 权限](/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN)。
-	2. 确保应用配置的通讯录权限范围包含了所要查询的用户。如何配置通讯录权限范围，参见[权限范围详解](/ssl:ttdoc/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。
+	1. 确保应用已开通了调用接口所需的接口权限，以及 user_id、邮箱、手机号等敏感信息的字段权限。如何申请 API 权限，参见[申请 API 权限](https://open.larkoffice.com/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN)。
+	2. 确保应用配置的通讯录权限范围包含了所要查询的用户。如何配置通讯录权限范围，参见[权限范围详解](https://open.larkoffice.com/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。
 
 
 ### tenant_access_token 与 user_accss_token 的权限差异是什么？
@@ -73,30 +52,29 @@ updateTime: "1753076559000"
 二者获取或操作数据时，权限过滤范围不一样。
 
 - `tenant_access_token` 基于应用的通讯录权限范围进行权限的过滤。例如，调用接口获取部门 A 信息时，会检查部门 A 是否在应用的通讯录权限范围内。
-	- 应用开发者可以在[开发者后台](https://open.feishu.cn/app)为自己的应用配置通讯录权限范围。详情参见[权限范围详解](/ssl:ttdoc/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。
+	- 应用开发者可以在[开发者后台](https://open.feishu.cn/app)为自己的应用配置通讯录权限范围。详情参见[权限范围详解](https://open.larkoffice.com/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。
 	- 企业管理员可以在[管理后台](https://www.feishu.cn/admin/appCenter/manage) > **工作台** > **应用管理** 页面，进入指定应用配置页来调整应用的 **通讯录设置**。
 
 - `user_accss_token` 基于用户的可见组织架构范围来做权限过滤。用户可见的组织架构范围为 App 端上 **通讯录 > 组织架构** 部分可见的信息。企业管理员可以在 [管理后台](https://www.feishu.cn/admin) > **安全** > **成员权限** 页面，配置 **组织架构可见范围**。
 
-在部分接口中，使用 tenant_access_token 和 user_access_token 存在一定的差异，具体可参见 API 文档的置顶说明。例如[获取单个部门信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/get)。
+在部分接口中，使用 tenant_access_token 和 user_access_token 存在一定的差异，具体可参见 API 文档的置顶说明。例如[获取单个部门信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/get)。
 
 ### 如何获取企业全部员工的信息？
 
 开放平台目前没有单独的接口可以直接获得全部员工信息。如果你需要获取企业内全部员工的信息，可以按照以下操作获取。
 1. 确保调用 API 的应用已开启了全部员工的通讯录权限范围。
-2. 调用[获取子部门列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/children)接口，设置 `fetch_child` 值为 `true`，递归获取企业内所有部门 ID。
-3. 根据获取到的部门 ID 列表，调用[获取部门直属用户列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/find_by_department)接口，来获得全部员工的相关信息。
+2. 调用[获取子部门列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/children)接口，设置 `fetch_child` 值为 `true`，递归获取企业内所有部门 ID。
+3. 根据获取到的部门 ID 列表，调用[获取部门直属用户列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/find_by_department)接口，来获得全部员工的相关信息。
 
 ### 如何获取根部门下的员工信息？
 
 1. 确保调用 API 的应用通讯录权限范围设置为全部员工，或包含了根部门下的所有员工。
-2. 调用[获取部门直属用户列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/find_by_department)接口，设置参数 `department_id` 为 `0`，获得根部门下的员工信息。
-
+2. 调用[获取部门直属用户列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/find_by_department)接口，设置参数 `department_id` 为 `0`，获得根部门下的员工信息。
 
 
 ## 用户 ID 相关
 
-### 为什么调用[通过手机号或邮箱获取用户 ID](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)接口不返回用户 ID？
+### 为什么调用[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)接口不返回用户 ID？
 
 导致不返回用户 ID 的原因有多种，你可以按照以下思路进行排查。
 
@@ -108,15 +86,15 @@ updateTime: "1753076559000"
     
 3. 如果用户已离职，且调用接口时请求参数 include_resigned 取值为 false（表示查询结果不包含离职员工的用户信息），则不会返回离职用户 ID。
 
-4. 企业自建应用获取用户的 user_id 时，必须开通 **获取用户 user ID（contact:user.employee_id:readonly）** 权限。如未开通，需登录[开发者后台](https://open.feishu.cn/app) ，在应用详情页的 **开发配置 > 权限管理 > API 权限** 功能页开通权限，并需要发布应用使配置生效。如何申请 API 权限的详细介绍参见[申请 API 权限](/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN)。
+4. 企业自建应用获取用户的 user_id 时，必须开通 **获取用户 user ID（contact:user.employee_id:readonly）** 权限。如未开通，需登录[开发者后台](https://open.feishu.cn/app) ，在应用详情页的 **开发配置 > 权限管理 > API 权限** 功能页开通权限，并需要发布应用使配置生效。如何申请 API 权限的详细介绍参见[申请 API 权限](https://open.larkoffice.com/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN)。
 
 	![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/1c2e6ab4f9586528a5a5bc4a0d33df2e_psY8abdqIe.png?height=934&lazyload=true&maxWidth=600&width=2800)
     
-5. 如果应用没有某一用户的数据权限，则无法返回该用户的 ID，你可登录[开发者后台](https://open.feishu.cn/app) ，在应用详情页的 **开发配置 > 权限管理 > 数据权限** 功能页查看 **通讯录权限范围** 内是否有待查询的用户，如果没有则需要在 **通讯录权限范围** 内添加上该用户，并需要发布应用使配置生效。具体操作参考[配置应用数据权限](/ssl:ttdoc/home/introduction-to-scope-and-authorization/configure-app-data-permissions)。
+5. 如果应用没有某一用户的数据权限，则无法返回该用户的 ID，你可登录[开发者后台](https://open.feishu.cn/app) ，在应用详情页的 **开发配置 > 权限管理 > 数据权限** 功能页查看 **通讯录权限范围** 内是否有待查询的用户，如果没有则需要在 **通讯录权限范围** 内添加上该用户，并需要发布应用使配置生效。具体操作参考[配置应用数据权限](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/configure-app-data-permissions)。
 
 	![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/65290f5a398dbf3052757e60436eac5e_o4NBozbl7H.png?height=698&lazyload=true&maxWidth=600&width=2882)
     
-    **注意**：如果通讯录权限范围设置的是 **与应用的可用范围一致**，则你需要在应用发布阶段（点击 **应用发布 > 版本管理与发布 > 创建版本** 后的 **版本详情** 页面内）配置应用的可用范围，并发布应用使配置生效。具体操作参考[配置应用可用范围](/ssl:ttdoc/home/introduction-to-scope-and-authorization/availability)。
+    **注意**：如果通讯录权限范围设置的是 **与应用的可用范围一致**，则你需要在应用发布阶段（点击 **应用发布 > 版本管理与发布 > 创建版本** 后的 **版本详情** 页面内）配置应用的可用范围，并发布应用使配置生效。具体操作参考[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。
 
 	![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/886c6d3c277b4b421d51d7277e8c394a_5GsfuJhHMn.png?height=1164&lazyload=true&maxWidth=600&width=2882)
 
@@ -132,12 +110,12 @@ updateTime: "1753076559000"
 
 ### user_id 是否可以更新？
 
-可以。你可以调用[更新用户ID](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/update_user_id)接口进行更新。
+可以。你可以调用[更新用户ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/update_user_id)接口进行更新。
 
 
 ### 如何获取 user_id？
 
-- 方式一：通过邮箱或手机号获取。获取方式见接口[使用手机号或邮箱获取用户 ID](/ssl:ttdoc/ukTMukTMukTM/uUzMyUjL1MjM14SNzITN)。
+- 方式一：通过邮箱或手机号获取。获取方式见接口[使用手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/ukTMukTMukTM/uUzMyUjL1MjM14SNzITN)。
 - 方式二：登录[管理后台](https://www.feishu.cn/admin)，在组织架构中找到具体用户并点击查看用户详情，在用户详情中获取用户 ID。
 
 
@@ -154,14 +132,14 @@ updateTime: "1753076559000"
 
 ### 搜索用户接口为什么获取不到返回值？
 
-如果调用[搜索用户](/ssl:ttdoc/ukTMukTMukTM/uMTM4UjLzEDO14yMxgTN)接口获取不到返回值，你可以通过以下方式排查原因：
+如果调用[搜索用户](https://open.larkoffice.com/document/ukTMukTMukTM/uMTM4UjLzEDO14yMxgTN)接口获取不到返回值，你可以通过以下方式排查原因：
 -  确认待搜索的用户可以在飞书客户端的搜索栏中搜索到，且该用户不是外部用户或离职人员。
 -  如果调用 API 时设置了分页查询参数 `page_token`，则需要确认该参数的值填写正确。
 
 
 ### 为什么不能通过手机号、邮箱获取到指定用户信息？
 
-你需要排查调用 API 的应用通讯录权限范围包含待查询的用户。如果通讯录范围不包含待查询的用户，则调用 API 时会返回邮箱或手机号不存在的报错提示。如何设置通讯录权限范围，可参见[权限范围详解](/ssl:ttdoc/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。
+你需要排查调用 API 的应用通讯录权限范围包含待查询的用户。如果通讯录范围不包含待查询的用户，则调用 API 时会返回邮箱或手机号不存在的报错提示。如何设置通讯录权限范围，可参见[权限范围详解](https://open.larkoffice.com/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。
 
 
 ### 用户什么时候会被自动拉入部门群？
@@ -181,14 +159,14 @@ updateTime: "1753076559000"
 
 ### 如何查询离职员工的信息？
 
-1. 调用[通过手机号或邮箱获取用户 ID](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)接口，查询包含离职员工的用户信息（`include_resigned` 取值为 `true`）。
-2. 调用[获取单个用户信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/get)接口，通过离职员工的用户 ID 获取具体信息。
+1. 调用[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)接口，查询包含离职员工的用户信息（`include_resigned` 取值为 `true`）。
+2. 调用[获取单个用户信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/get)接口，通过离职员工的用户 ID 获取具体信息。
 
 ## 用户接口相关
 
 ### 如何理解用户属性中的自定义字段？
 
-在 [创建用户](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/create) 和 [获取单个用户信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/get) 接口中，包含了用户自定义字段（custom_attrs），该字段是对用户属性的扩展，用于为企业提供根据自身需求灵活扩展用户描述的能力。自定义字段根据取值语法的不同，主要分为：文本类型、网页类型、枚举类型、图片类型、用户类型。
+在 [创建用户](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/create) 和 [获取单个用户信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/get) 接口中，包含了用户自定义字段（custom_attrs），该字段是对用户属性的扩展，用于为企业提供根据自身需求灵活扩展用户描述的能力。自定义字段根据取值语法的不同，主要分为：文本类型、网页类型、枚举类型、图片类型、用户类型。
 :::note
 如需调用 API 时使用该自定义字段，则需要确保：
 1. 企业管理员在[管理后台](http://www.feishu.cn/admin/contacts/employee-field-new/custom) > **组织架构** > **字段管理** > **字段设置** 页面，点击 **API 调用设置** 并开启 **允许开放平台通讯录 API 调用** 的开关。
@@ -196,62 +174,24 @@ updateTime: "1753076559000"
 :::
 各类型自定义字段详细介绍如下表所示。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:25%">类型</md-th>
-<md-th style="width:75%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>文本类型</md-td>
-<md-td>纯文本用户属性。该类型字段只有一个 string 类型的 value，取值对应接口内 `value` 的 `text` 字段。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>网页类型</md-td>
-<md-td>包含文本和跳转链接的用户属性。该属性如果展示在成员名片页，可实现点击跳转的效果。在相应的接口内，使用该类型字段时需要配置：
-  
-- 标题文字，取值对应接口内 `value` 的 `text` 字段。
-- 跳转链接，取值对应接口内 `value` 的 `url` 字段。
-
-由于 PC 端的跳转链接可能和移动端不一样，所以接口单独设置了 `pc_url` 字段作为 PC 端的跳转链接，如果不设置该值，则 PC 端的跳转链接为 `url` 字段。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>枚举类型</md-td>
-<md-td>包含一个或多个选项的用户属性。例如 **员工类型** 字段，可以设置正式、外包、顾问等企业成员类型枚举值，当为用户设置属性时只能在这些选项中选择。当你在接口内设置该类型的自定义字段时，需要在接口 `value` 的 `option_id` 字段内传入选项名（即管理员在管理后台配置的某个选项的名称）。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>图片类型</md-td>
-<md-td>该类型与枚举类型相似，不同的是对应的选项数据必须是图片，用于在成员名片页展示其对应的图片。当你在接口内设置该类型的自定义字段时，需要在接口 `value` 的 `option_id` 字段内传入图片 id（管理员可从管理后台查询到对应的图片 id）。
-<md-alert type="tip" icon="none">**说明**：图片类型内测中，如需了解可咨询开放平台技术支持。</md-alert>
-</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>用户类型</md-td>
-<md-td>该类型主要用于在成员名片页展示对企业其他人员的引用，从而实现成员名片页之间的跳转。例如将 **张三** 的 HRBP 字段展示为 **李四**，并支持点击跳转至李四的名片页。当你在接口内设置该类型的自定义字段时，需要在接口 `generic_user` 中设置对应的用户 user_id（`id`）和用户类型（`type`）。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
+| 类型 | 描述 |
+| --- | --- |
+| 文本类型 | 纯文本用户属性。该类型字段只有一个 string 类型的 value，取值对应接口内 `value` 的 `text` 字段。 |
+| 网页类型 | 包含文本和跳转链接的用户属性。该属性如果展示在成员名片页，可实现点击跳转的效果。在相应的接口内，使用该类型字段时需要配置：    - 标题文字，取值对应接口内 `value` 的 `text` 字段。 - 跳转链接，取值对应接口内 `value` 的 `url` 字段。 由于 PC 端的跳转链接可能和移动端不一样，所以接口单独设置了 `pc_url` 字段作为 PC 端的跳转链接，如果不设置该值，则 PC 端的跳转链接为 `url` 字段。 |
+| 枚举类型 | 包含一个或多个选项的用户属性。例如 **员工类型** 字段，可以设置正式、外包、顾问等企业成员类型枚举值，当为用户设置属性时只能在这些选项中选择。当你在接口内设置该类型的自定义字段时，需要在接口 `value` 的 `option_id` 字段内传入选项名（即管理员在管理后台配置的某个选项的名称）。 |
+| 图片类型 | 该类型与枚举类型相似，不同的是对应的选项数据必须是图片，用于在成员名片页展示其对应的图片。当你在接口内设置该类型的自定义字段时，需要在接口 `value` 的 `option_id` 字段内传入图片 id（管理员可从管理后台查询到对应的图片 id）。 > **Tip**: **说明**：图片类型内测中，如需了解可咨询开放平台技术支持。 |
+| 用户类型 | 该类型主要用于在成员名片页展示对企业其他人员的引用，从而实现成员名片页之间的跳转。例如将 **张三** 的 HRBP 字段展示为 **李四**，并支持点击跳转至李四的名片页。当你在接口内设置该类型的自定义字段时，需要在接口 `generic_user` 中设置对应的用户 user_id（`id`）和用户类型（`type`）。 |
 
 
 ### 如何使用创建用户接口中的 enterprise_email 字段？
 
-[创建用户](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/create)接口中的 `enterprise_email` 字段表示设置用户的企业邮箱。企业邮箱的域名需要企业在管理后台申请并开启。如果企业没有开启对应域名的企业邮箱，当你在创建用户接口内设置用户企业邮箱时会操作失败，此时需要你联系企业管理员确认企业是否在后台启用了该域名的企业邮箱。
-
+[创建用户](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/create)接口中的 `enterprise_email` 字段表示设置用户的企业邮箱。企业邮箱的域名需要企业在管理后台申请并开启。如果企业没有开启对应域名的企业邮箱，当你在创建用户接口内设置用户企业邮箱时会操作失败，此时需要你联系企业管理员确认企业是否在后台启用了该域名的企业邮箱。
 
 
 ### 如何理解获取用户列表接口？
 
-[获取用户列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/list)接口是用于获取某个部门下的直属用户列表，其数据的获取受到通讯录权限范围的限制，说明如下：
+[获取用户列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/list)接口是用于获取某个部门下的直属用户列表，其数据的获取受到通讯录权限范围的限制，说明如下：
 
 - 如果请求带上了部门 ID，接口首先会检查应用是否有该部门的通讯录权限。如果有，则会返回该部门下的直属成员信息。
 
@@ -268,19 +208,19 @@ updateTime: "1753076559000"
 ### 如何获取父部门下所有员工的通讯录信息？
 
 目前不支持通过一个接口来获取父部门下所有员工的通讯录信息，你可以通过接口组合实现：
-1. 调用[获取部门信息列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/list)接口，获取父部门下所有部门的 `department_id`。
-2. 调用[获取部门直属用户列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/find_by_department)接口，获取每个部门下员工的通讯录信息。
+1. 调用[获取部门信息列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/list)接口，获取父部门下所有部门的 `department_id`。
+2. 调用[获取部门直属用户列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/find_by_department)接口，获取每个部门下员工的通讯录信息。
 
 
 ### 为什么获取到的 department_id 有的带 od- 前缀，有的不带？
 
-- 问题场景：通过[获取单个部门信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/get)接口获取到 `department_id`，有时带有 `od-` 前缀，有时不带。
+- 问题场景：通过[获取单个部门信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/get)接口获取到 `department_id`，有时带有 `od-` 前缀，有时不带。
 
-- 解决方案：请确认各请求之间是否指定了不同的 `department_id_type`，如果 `department_id_type` 取值为 `open_department_id`，则会带有 `od-` 前缀。关于 `department_id` 的详细介绍，参见[通用参数](/ssl:ttdoc/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)。
+- 解决方案：请确认各请求之间是否指定了不同的 `department_id_type`，如果 `department_id_type` 取值为 `open_department_id`，则会带有 `od-` 前缀。关于 `department_id` 的详细介绍，参见[通用参数](https://open.larkoffice.com/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)。
 
 
 ### 如何理解获取部门信息列表接口？
-[获取部门信息列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/list) 接口用于获取部门下的子部门信息，其数据的获取受到通讯录权限范围的限制：
+[获取部门信息列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/list) 接口用于获取部门下的子部门信息，其数据的获取受到通讯录权限范围的限制：
 - 如果请求带上了父部门 ID，接口首先会检查应用是否有该部门的通讯录权限，如果有，则返回该部门下的子部门信息，并根据 `fetch_child` 的取值来决定是否递归查询子部门信息。
 
 	根部门的部门 ID 为 0，如果请求时父部门 ID 传值 0，则接口会校验应用是否有全员权限。
@@ -292,25 +232,24 @@ updateTime: "1753076559000"
 因此建议你在使用该接口时，应该结合通讯录的权限以及要获取的数据，来决定请求中是否带上父部门 ID。
 
 
-
 ## 错误排查
 
 ### 使用批量获取信息接口时，没有获取到完整的信息，但是仍提示执行成功是什么原因？ 
 
 - 问题场景：使用批量获取信息接口时，只返回部分信息，没有返回全部批量信息，并且接口提示任务执行成功（`msg` 返回 `success`）。
 
-- 问题原因：批量接口的返回值是指当前批量任务的执行情况，代表是否执行，而非是否执行成功，因此接口返回的 msg 为 success 仅表示接口成功执行了。你可以通过[查询批量任务执行状态](/ssl:ttdoc/ukTMukTMukTM/uUDOwUjL1gDM14SN4ATN)接口获取任务详细的执行情况。
+- 问题原因：批量接口的返回值是指当前批量任务的执行情况，代表是否执行，而非是否执行成功，因此接口返回的 msg 为 success 仅表示接口成功执行了。你可以通过[查询批量任务执行状态](https://open.larkoffice.com/document/ukTMukTMukTM/uUDOwUjL1gDM14SN4ATN)接口获取任务详细的执行情况。
 
 ### 新增用户接口返回 email and mobile account conflict 是什么原因？
 
-- 问题场景：调用[新增用户](/ssl:ttdoc/ukTMukTMukTM/uMzNz4yM3MjLzczM)接口返回 `email and mobile account conflict` 报错。
+- 问题场景：调用[新增用户](https://open.larkoffice.com/document/ukTMukTMukTM/uMzNz4yM3MjLzczM)接口返回 `email and mobile account conflict` 报错。
 - 问题原因：如果使用手机号和邮箱分别注册了两个不同的账号，则手机号和邮箱分别对应登录凭证不同的两个账号。此时新增用户，同时设置手机号与邮箱，则接口无法判断应当关联到哪一个账号上，从而报上述错误。
 - 解决方案：注销其中一个账号，再尝试新增用户。
 
 
 ### 新增用户接口返回 department id xxxxxxxx is not exist 是什么原因？
 
-- 问题场景：调用[新增用户](/ssl:ttdoc/ukTMukTMukTM/uMzNz4yM3MjLzczM)返回 `department id xxxxxxxx is not exist` 报错。
+- 问题场景：调用[新增用户](https://open.larkoffice.com/document/ukTMukTMukTM/uMzNz4yM3MjLzczM)返回 `department id xxxxxxxx is not exist` 报错。
 - 解决方案：
 	1. 确认写入的 `department id` 是否存在。
 	2. 确认是否误用了 `open_department_id`。`open_department_id` 和 `department_id` 是两个不同的 ID。

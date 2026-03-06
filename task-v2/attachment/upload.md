@@ -11,251 +11,45 @@ updateTime: "1699252091000"
 上传请求体的格式为"form-data"。若希望上传多个附件，则提供多个"file"字段即可。返回的附件顺序将会与输入的file顺序保持一致。
 
 目前资源类型仅支持"task", `resource_id`需要填写任务的GUID。
-{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=task&version=v2&resource=attachment&method=upload)
 
-:::html
-<md-alert type="tip">
-为任务上传附件需要任务的可编辑权限
-</md-alert>
-:::
 
-:::html
-<md-alert type="warn">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="error">
-
-</md-alert>
-:::
-
+> **Tip**: 为任务上传附件需要任务的可编辑权限
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/task/v2/attachments/upload</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[10 次/秒](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="task:attachment:write" desc="查看、创建、删除任务附件" support_app_types="custom,isv" tags="">查看、创建、删除任务附件</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/task/v2/attachments/upload |
+| HTTP Method | POST |
+| 接口频率限制 | [10 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | custom,isv |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `task:attachment:write` 查看、创建、删除任务附件 |
+| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
-或
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
-
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>
-
-**示例值**："multipart/form-data; boundary=---7MA4YWxkTrZu0gW"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token` 或 `user_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **示例值**："multipart/form-data; boundary=---7MA4YWxkTrZu0gW" |
 
 
 ### 查询参数
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;" >描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >user_id_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	用户 ID 类型
-
-**示例值**：open_id
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="open_id" >标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)</md-enum-item>
-<md-enum-item key="union_id" >标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id)</md-enum-item>
-<md-enum-item key="user_id" >标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[了解更多：如何获取 User ID？](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)</md-enum-item>
-</md-enum>
-
-**默认值**：`open_id`
-
-**当值为 `user_id`，字段权限要求**：
-<md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `user_id_type` | `string` | 否 | 用户 ID 类型<br>**示例值**：open_id<br>**可选值有**：<br>- `open_id`: 标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid) - `union_id`: 标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id) - `user_id`: 标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[了解更多：如何获取 User ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)<br>**默认值**：`open_id`<br>**当值为 `user_id`，字段权限要求**： `contact:user.employee_id:readonly` 获取用户 user ID |
 
 
 ### 请求体
 
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >resource_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	附件归属资源的类型
-
-**示例值**："task"
-
-**默认值**：`task`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >resource_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	附件要归属资源的id。例如，要给任务添加附件，这里要填入任务GUID。任务GUID可以通过[任务相关接口](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/overview)获得。
-
-**示例值**："fe96108d-b004-4a47-b2f8-6886e758b3a5"
-
-**数据校验规则**：
-
-- 最大长度：`100` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >file</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >file</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	要上传的文件，单请求支持最多5个文件。上传结果的顺序将和请求中文件的顺序保持一致。
-
-**示例值**：file binary
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
-
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `resource_type` | `string` | 否 | 附件归属资源的类型<br>**示例值**："task"<br>**默认值**：`task` |
+| `resource_id` | `string` | 是 | 附件要归属资源的id。例如，要给任务添加附件，这里要填入任务GUID。任务GUID可以通过[任务相关接口](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/overview)获得。<br>**示例值**："fe96108d-b004-4a47-b2f8-6886e758b3a5"<br>**数据校验规则**：<br>- 最大长度：`100` 字符 |
+| `file` | `file` | 是 | 要上传的文件，单请求支持最多5个文件。上传结果的顺序将和请求中文件的顺序保持一致。<br>**示例值**：file binary |
 
 
 ### 请求体示例
@@ -278,255 +72,35 @@ Content-Type: application/octet-stream
 ```
 
 
-
 ## 响应
 
 
-
-
-
 ### 响应体
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误码，非 0 表示失败
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >data</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	\-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >items</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >attachment\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	上传的附件列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >guid</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	附件GUID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >file_token</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	附件在云文档系统中的token
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	附件名
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >size</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	附件的字节大小
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >resource</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >resource</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	附件归属的资源
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	资源类型
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	资源ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >uploader</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >member</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	附件上传者
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	表示member的id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	成员的类型
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >role</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	成员角色
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >is_cover</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否是封面图
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >uploaded_at</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	上传时间戳(ms)
-	</md-dt-td>
-</md-dt-tr>
-
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `code` | `int` | 错误码，非 0 表示失败 |
+| `msg` | `string` | 错误描述 |
+| `data` | `\-` | \- |
+| &nbsp;&nbsp;└ `items` | `attachment\[\]` | 上传的附件列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `guid` | `string` | 附件GUID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `file_token` | `string` | 附件在云文档系统中的token |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `string` | 附件名 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `size` | `int` | 附件的字节大小 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `resource` | `resource` | 附件归属的资源 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 资源类型 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 资源ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `uploader` | `member` | 附件上传者 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 表示member的id |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 成员的类型 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `role` | `string` | 成员角色 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `is_cover` | `boolean` | 是否是封面图 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `uploaded_at` | `string` | 上传时间戳(ms) |
 
 
 ### 响应体示例
-:::html
-<md-code-json>
+
+```json
 {
     "code": 0,
     "msg": "success",
@@ -552,60 +126,16 @@ Content-Type: application/octet-stream
         ]
     }
 }
-</md-code-json>
-:::
-
+```
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1470400</md-td>
-  <md-td>请求参数有误。</md-td>
-  <md-td>查看返回中的`msg` 确定具体原因。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>1470403</md-td>
-  <md-td>资源不存在或已删除。</md-td>
-  <md-td>确认资源是否还存在。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>404</md-td>
-  <md-td>1470404</md-td>
-  <md-td>缺少上传附件的权限。</md-td>
-  <md-td>确认调用身份拥有上传的权限。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1470500</md-td>
-  <md-td>服务器错误。</md-td>
-  <md-td>使用同样请求重试调用接口。如果持续返回错误，可以联系技术支持排查问题。</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
-
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 1470400 | 请求参数有误。 | 查看返回中的`msg` 确定具体原因。 |
+| 403 | 1470403 | 资源不存在或已删除。 | 确认资源是否还存在。 |
+| 404 | 1470404 | 缺少上传附件的权限。 | 确认调用身份拥有上传的权限。 |
+| 500 | 1470500 | 服务器错误。 | 使用同样请求重试调用接口。如果持续返回错误，可以联系技术支持排查问题。 |
 
 

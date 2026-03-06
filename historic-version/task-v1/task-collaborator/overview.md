@@ -10,8 +10,5 @@ updateTime: "1671785921000"
 
 
     
-:::html
-<md-alert type="tip">
-执行者相关的事件请查看[任务信息变更](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/task-v1/task/events/updated)。
-</md-alert>
-:::
+
+> **Tip**: 执行者相关的事件请查看[任务信息变更](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/task-v1/task/events/updated)。

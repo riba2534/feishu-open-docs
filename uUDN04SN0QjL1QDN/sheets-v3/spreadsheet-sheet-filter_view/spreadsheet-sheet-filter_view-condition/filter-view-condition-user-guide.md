@@ -8,7 +8,7 @@ updateTime: "1719483725000"
 
 筛选视图允许用户在独立界面按特定筛选条件筛选数据，查看筛选结果，不影响其他协作者的操作。筛选范围内的每一列都可以设置筛选条件。
 本文档介绍电子表格筛选视图中筛选条件的相关参数和方法列表。
-本文档介绍电子表格筛选视图中的筛选条件说明，要了解直接在工作表中创建、获取筛选等能力，参考[筛选指南](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter/filter-user-guide)。
+本文档介绍电子表格筛选视图中的筛选条件说明，要了解直接在工作表中创建、获取筛选等能力，参考[筛选指南](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter/filter-user-guide)。
 
 ## 注意事项
 
@@ -20,7 +20,7 @@ updateTime: "1719483725000"
 ### 筛选视图 ID **filter_view_id**
 
 `filter_view_id` 是一个筛选视图的唯一标识。可以通过以下方式获取：
-- 通过[查询筛选视图](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view/query)接口获取
+- 通过[查询筛选视图](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view/query)接口获取
 - 在电子表格中进入一个筛选视图后，从链接地址中获取。如下图所示，该视图的筛选视图 ID 为 `ZnwY6af6dP`
 
 	![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/7dfc5150be99cc383140b956129e125b_tx9g91RaPp.png?height=613&lazyload=true&maxWidth=700&width=1626)
@@ -133,114 +133,13 @@ updateTime: "1719483725000"
 
 ## 方法列表
 
-以下为筛选条件的方法列表。其中，“商店”代表应用商店应用；“自建”代表企业自建应用，了解更多应用相关信息，参考[应用类型简介](/ssl:ttdoc/home/app-types-introduction/overview)。了解调用服务端 API 的流程，参考[流程概述](/ssl:ttdoc/uMzNwEjLzcDMx4yM3ATM/ugzNwEjL4cDMx4CO3ATM)。
-:::html
-<md-table>
-    <md-thead>
-<tr>
-    <md-th style="width: 35%;"><b>方法 (API)</md-th>
-    <md-th style="width: 30%;"><b>权限要求（满足任一）</md-th>
-    <md-th style="width: 20%;"><b>访问凭证</md-th>
-    <md-th style="width: 10%;"><b>商店</md-th>
-    <md-th style="width: 10%;"><b>自建</md-th>
-</tr>
-    </md-thead>
-    <md-tbody>
-<md-tr>
-    <md-td>
-<md-text type="field-name">`POST` [创建筛选条件](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/create)/open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions</md-text>
-    </md-td>
-    <md-td>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件
-" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
- <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user">user_access_token</md-tag>
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-<md-tr>
-    <md-td>
-<md-text type="field-name">`PUT` [更新筛选条件](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/update) /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions/:condition_id</md-text>
-    </md-td>
-    <md-td>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件
-" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
- <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user">user_access_token</md-tag>
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
+以下为筛选条件的方法列表。其中，“商店”代表应用商店应用；“自建”代表企业自建应用，了解更多应用相关信息，参考[应用类型简介](https://open.larkoffice.com/document/home/app-types-introduction/overview)。了解调用服务端 API 的流程，参考[流程概述](https://open.larkoffice.com/document/uMzNwEjLzcDMx4yM3ATM/ugzNwEjL4cDMx4CO3ATM)。
 
+| 方法 (API) | 权限要求（满足任一） | 访问凭证 | 商店 | 自建 |
+| --- | --- | --- | --- | --- |
+| ``POST` [创建筛选条件](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/create)/open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions` | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| ``PUT` [更新筛选条件](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/update) /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions/:condition_id` | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| ``GET` [查询筛选条件](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/query) /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions/query` | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `drive:drive:readonly` 查看、评论和下载云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 `sheets:spreadsheet:readonly` 查看、评论和导出电子表格 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| ``GET` [获取筛选条件](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/get)/open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions/:condition_id` | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `drive:drive:readonly` 查看、评论和下载云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 `sheets:spreadsheet:readonly` 查看、评论和导出电子表格 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| ``DELETE` [删除筛选条件](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/delete) /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions/:condition_id` | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
 
-<md-tr>
-    <md-td>
-<md-text type="field-name">`GET` [查询筛选条件](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/query) /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions/query</md-text>
-    </md-td>
-    <md-td>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-            <md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm>
-            <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            <md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm>
-      
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user">user_access_token</md-tag>
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-
-
-<md-tr>
-    <md-td>
-<md-text type="field-name">`GET` [获取筛选条件](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/get)/open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions/:condition_id</md-text>
-    </md-td>
-    <md-td>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-            <md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm>
-            <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            <md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm>
-      
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user">user_access_token</md-tag>
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-
-
-<md-tr>
-    <md-td>
-<md-text type="field-name">`DELETE` [删除筛选条件](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/delete) /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions/:condition_id</md-text>
-    </md-td>
-    <md-td>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件
-" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
- <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user">user_access_token</md-tag>
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-
-
-
-
-    </md-tbody>
-</md-table>
-
-:::

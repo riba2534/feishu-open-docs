@@ -22,13 +22,13 @@ updateTime: "1732848720000"
 ### app_ticket
 
 `app_ticket` 是商店应用使用到的一个字段，用于提升商店应用的安全性。
-调用[接口](/ssl:ttdoc/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/app_access_token)获取商店应用的 `app_access_token` 时，需要携带 `app_ticket` 作为请求参数之一。该字段的获取方式如下：
+调用[接口](https://open.larkoffice.com/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/app_access_token)获取商店应用的 `app_access_token` 时，需要携带 `app_ticket` 作为请求参数之一。该字段的获取方式如下：
 
-1. 创建商店应用后，为应用配置[事件订阅](/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM)，订阅 [app_ticket 事件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/application-v6/event/app_ticket-events)。
+1. 创建商店应用后，为应用配置[事件订阅](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)，订阅 [app_ticket 事件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/application-v6/event/app_ticket-events)。
 
 	订阅后，飞书开放平台会以 1 次/小时的频率自动向应用推送 `app_ticket`。
     
-2. （可选）调用 [重新获取 app_ticket](/ssl:ttdoc/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/app_ticket_resend) 接口，主动触发 [app_ticket 事件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/application-v6/event/app_ticket-events)。
+2. （可选）调用 [重新获取 app_ticket](https://open.larkoffice.com/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/app_ticket_resend) 接口，主动触发 [app_ticket 事件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/application-v6/event/app_ticket-events)。
 
 
 ## 企业相关
@@ -54,7 +54,7 @@ open_department_id 是由开放平台自动生成的部门 ID，固定以 `od-` 
 
 ## 用户相关
 
-飞书对用户身份体系有充分地设计，为了满足不同开发场景的需求，飞书设置了 `user_id`、`open_id` 和 `union_id` 等不同的用户标识。详细的介绍，请参考[用户相关的 ID 概念](/ssl:ttdoc/home/user-identity-introduction/introduction)。
+飞书对用户身份体系有充分地设计，为了满足不同开发场景的需求，飞书设置了 `user_id`、`open_id` 和 `union_id` 等不同的用户标识。详细的介绍，请参考[用户相关的 ID 概念](https://open.larkoffice.com/document/home/user-identity-introduction/introduction)。
 
 开发一个应用时，合理的 ID 选择逻辑如下：
 - 创建的应用不存在跨应用的数据关联互通场景，使用 `open_id` 即可。
@@ -71,27 +71,27 @@ open_department_id 是由开放平台自动生成的部门 ID，固定以 `od-` 
 - 用户访问凭证，参数名 `user_access_token`。
 
 
-了解如何获取访问凭证，请参考[获取访问凭证](/ssl:ttdoc/ukTMukTMukTM/uMTNz4yM1MjLzUzM)。
+了解如何获取访问凭证，请参考[获取访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)。
 
-了解飞书开放平台的权限体系，可以参考[访问权限介绍](/ssl:ttdoc/home/introduction-to-scope-and-authorization/overview)。
+了解飞书开放平台的权限体系，可以参考[访问权限介绍](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/overview)。
 
 ### app_access_token
 
 `app_access_token` 是应用身份的短期令牌，开放平台根据 `app_access_token` 识别调用方的应用身份。
 
-如何获取 `app_access_token`，参考[商店应用获取 app_access_token](/ssl:ttdoc/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/app_access_token)、[自建应用获取 app_access_token](/ssl:ttdoc/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/app_access_token_internal)。
+如何获取 `app_access_token`，参考[商店应用获取 app_access_token](https://open.larkoffice.com/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/app_access_token)、[自建应用获取 app_access_token](https://open.larkoffice.com/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/app_access_token_internal)。
 
 ### tenant_access_token
 
-`tenant_access_token` 是应用访问凭证，使用该凭证将以应用身份调用 API，可读写的数据范围由应用自身的[数据权限范围](/ssl:ttdoc/home/introduction-to-scope-and-authorization/configure-app-data-permissions)决定。
+`tenant_access_token` 是应用访问凭证，使用该凭证将以应用身份调用 API，可读写的数据范围由应用自身的[数据权限范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/configure-app-data-permissions)决定。
 
-如何获取 `tenant_access_token`，参考[商店应用获取 tenant_access_token](/ssl:ttdoc/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token)、[自建应用获取 tenant_access_token](/ssl:ttdoc/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token_internal)。
+如何获取 `tenant_access_token`，参考[商店应用获取 tenant_access_token](https://open.larkoffice.com/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token)、[自建应用获取 tenant_access_token](https://open.larkoffice.com/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token_internal)。
 
 ### user_access_token
 
 `user_access_token` 是用户访问凭证。使用该凭证将以用户身份调用 API，可读写的数据范围由用户可读写的数据范围决定。
 
-如何获取 `user_access_token`。参考[获取 user_access_token](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/get-user-access-token)。
+如何获取 `user_access_token`。参考[获取 user_access_token](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/get-user-access-token)。
 
 
 ## 其他

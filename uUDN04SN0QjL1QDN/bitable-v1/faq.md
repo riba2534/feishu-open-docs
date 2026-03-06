@@ -9,9 +9,9 @@ updateTime: "1736314121000"
 ## 1. 如何在多维表格中上传附件？
 
 
-**第 1 步**：调用[上传素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)或[分片上传素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_prepare)接口将附件上传至多维表格，获取文件的 file_token。
+**第 1 步**：调用[上传素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)或[分片上传素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_prepare)接口将附件上传至多维表格，获取文件的 file_token。
 
-**第 2 步**：调用[新增记录](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/create)或[更新记录](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/update)接口，将 file_token 的值传入多维表格中。请求示例如下所示：
+**第 2 步**：调用[新增记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/create)或[更新记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/update)接口，将 file_token 的值传入多维表格中。请求示例如下所示：
 
 
 :::note
@@ -53,15 +53,15 @@ file_token 仅支持在当前多维表格中使用，要上传附件至其他多
 
 ## 2. 如何下载多维表格中的附件？
 
-**第 1 步**：调用[查询记录](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)获取多维表格中附件的 file_token。
+**第 1 步**：调用[查询记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)获取多维表格中附件的 file_token。
 
 
-**第 2 步**：调用[下载素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/download)或者[获取素材临时下载链接](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/batch_get_tmp_download_url)接口下载附件。
+**第 2 步**：调用[下载素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/download)或者[获取素材临时下载链接](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/batch_get_tmp_download_url)接口下载附件。
 
 
 若多维表格开启了高级权限，你需要添加 extra 参数作为 URL 查询参数鉴权。你可通过以下方式获取 extra 参数：
 
-1. 调用[查询记录](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)接口，响应示例中会返回附件的下载链接，如下所示：
+1. 调用[查询记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)接口，响应示例中会返回附件的下载链接，如下所示：
     ```json
     {
       "code": 0,
@@ -104,7 +104,7 @@ file_token 仅支持在当前多维表格中使用，要上传附件至其他多
 
 上述这些错误码表示未找到到标识各类 ID 对应的资源。你可参考以下方法解决：
 
-1. 确认 ID 是否正确。你可参考[多维表格概述](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/bitable-overview)标获取各类资源的 ID
+1. 确认 ID 是否正确。你可参考[多维表格概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/bitable-overview)标获取各类资源的 ID
 2. 如果 ID 对应的资源刚创建完成后出现此类报错，可能是遇到了服务器的主从延迟问题。你可尝试等待几秒之后重试。
 
 ## 4. 调用查询记录接口成功，数据返回为空，但实际多维表格存在数据，该如何解决？
@@ -121,7 +121,7 @@ file_token 仅支持在当前多维表格中使用，要上传附件至其他多
      ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/9f3353931fafeea16a39f0eb887db175_0tjzC9P3zU.png?height=728&lazyload=true&maxWidth=550&width=890)
     
     **注意**：
-    在 **添加文档应用** 前，你需确保目标应用至少开通了一个多维表格的 [API 权限](/ssl:ttdoc/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/scope-list)。否则你将无法在文档应用窗口搜索到目标应用。    
+    在 **添加文档应用** 前，你需确保目标应用至少开通了一个多维表格的 [API 权限](https://open.larkoffice.com/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/scope-list)。否则你将无法在文档应用窗口搜索到目标应用。    
 
 - 你也可以在 **多维表格高级权限设置** 中添加用户或一个包含应用的群组, 给予这个群自定义的读写等权限。  
 
@@ -168,7 +168,7 @@ file_token 仅支持在当前多维表格中使用，要上传附件至其他多
 
     ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/036152cbc21520eb106eae1e3329bdec_haAdeKitl7.png?height=561&lazyload=true&maxWidth=350&width=518)
 
-2. 筛选该自动编号。例如要查询第 10~20 行数据，则筛选小于 21、大于 9 的编号，然后调用[查询记录](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)接口，请求体如下所示：
+2. 筛选该自动编号。例如要查询第 10~20 行数据，则筛选小于 21、大于 9 的编号，然后调用[查询记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)接口，请求体如下所示：
 
     ```json
     {
@@ -196,11 +196,11 @@ file_token 仅支持在当前多维表格中使用，要上传附件至其他多
     }
     ```
     
-你也可以调用[批量获取记录](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/batch_get)接口，使用记录的 Record ID 来查询，获取多条记录的数据。
+你也可以调用[批量获取记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/batch_get)接口，使用记录的 Record ID 来查询，获取多条记录的数据。
 
 ## 9. 如何获取多维表格指定数据表的总记录数（或总行数）？
 
-你可以调用[查询记录](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)接口，在请求体中将 `conditions` 字段设为空或不设置，以下为请求体示例：
+你可以调用[查询记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)接口，在请求体中将 `conditions` 字段设为空或不设置，以下为请求体示例：
 
 ```json
 {

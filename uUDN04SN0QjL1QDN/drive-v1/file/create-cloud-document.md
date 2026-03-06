@@ -9,115 +9,36 @@ updateTime: "1729589863000"
 
 ## 创建文档
 
-:::html
-<md-table>
-<md-thead>
-<tr>
-<md-th style="width: 20%;">操作</md-th>
-<md-th style="width: 80%;">文档地址</md-th>
-</tr>
-</md-thead>
-<md-tbody>
-  
-<md-tr>
-<md-td>
-创建文档（docx）
-</md-td>
-<md-td>
-[https://open.feishu.cn/document/server-docs/docs/docs/docx-v1/document/create](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document/create)
-</md-td>
-</md-tr>
 
-<md-tr>
-<md-td>
-基于模板创建文档
-</md-td>
-<md-td>
-[https://open.feishu.cn/document/server-docs/docs/drive-v1/file/copy](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/copy)
-</md-td>
-</md-tr>
+| 操作 | 文档地址 |
+| --- | --- |
+| 创建文档（docx） | [https://open.feishu.cn/document/server-docs/docs/docs/docx-v1/document/create](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document/create) |
+| 基于模板创建文档 | [https://open.feishu.cn/document/server-docs/docs/drive-v1/file/copy](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/copy) |
 
-</md-tbody>
-
-</md-table>
-:::
 
 ## 创建电子表格
 
-:::html
-<md-table>
-<md-thead>
-<tr>
-<md-th style="width: 20%;">操作</md-th>
-<md-th style="width: 80%;">文档地址</md-th>
-</tr>
-</md-thead>
-<md-tbody>
-  
-<md-tr>
-<md-td>
-创建电子表格（sheet）
-</md-td>
-<md-td>
-[https://open.feishu.cn/document/server-docs/docs/sheets-v3/spreadsheet/create](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet/create)
-</md-td>
-</md-tr>
 
-<md-tr>
-<md-td>
-基于模板创建电子表格
-</md-td>
-<md-td>
-[https://open.feishu.cn/document/server-docs/docs/drive-v1/file/copy](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/copy)
-</md-td>
-</md-tr>
+| 操作 | 文档地址 |
+| --- | --- |
+| 创建电子表格（sheet） | [https://open.feishu.cn/document/server-docs/docs/sheets-v3/spreadsheet/create](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet/create) |
+| 基于模板创建电子表格 | [https://open.feishu.cn/document/server-docs/docs/drive-v1/file/copy](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/copy) |
 
-</md-tbody>
-
-</md-table>
-:::
 
 ## 创建多维表格
 
-:::html
-<md-table>
-<md-thead>
-<tr>
-<md-th style="width: 20%;">操作</md-th>
-<md-th style="width: 80%;">文档地址</md-th>
-</tr>
-</md-thead>
-<md-tbody>
-  
-<md-tr>
-<md-td>
-创建多维表格（bitable）
-</md-td>
-<md-td>
-[https://open.feishu.cn/document/server-docs/docs/bitable-v1/app/create](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app/create)
-</md-td>
-</md-tr>
 
-<md-tr>
-<md-td>
-基于模板创建电子表格
-</md-td>
-<md-td>
-[https://open.feishu.cn/document/server-docs/docs/drive-v1/file/copy](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/copy)
-</md-td>
-</md-tr>
-
-</md-tbody>
-
-</md-table>
-:::
+| 操作 | 文档地址 |
+| --- | --- |
+| 创建多维表格（bitable） | [https://open.feishu.cn/document/server-docs/docs/bitable-v1/app/create](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app/create) |
+| 基于模板创建电子表格 | [https://open.feishu.cn/document/server-docs/docs/drive-v1/file/copy](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/copy) |
 
 
 ### 常见问题
 
 #### 1. 如何直接通过云文档模板创建云文档？
 
-模板其实也是一篇云文档，可以先通过模板链接获取该模板的 token 作为文件 token，再调用 [复制文件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/copy) 接口创建云文档。
+模板其实也是一篇云文档，可以先通过模板链接获取该模板的 token 作为文件 token，再调用 [复制文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/copy) 接口创建云文档。
 
 示例：如下图，假定「工作周报」该模板的访问链接是 `https://{domain}/docx/ke6jdf477ohCVVxzANnc56abcef`，那么你可通过 `ke6jdf477ohCVVxzANnc56abcef` 这个 `document_id` 作为源文件 token 调用复制文件接口，创建一篇新文档。
 

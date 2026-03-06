@@ -6,655 +6,69 @@ updateTime: "1755603227000"
 
 # 查询一次性支付授予记录
 
-根据筛选条件查询一次性支付授予记录{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=compensation&version=v1&resource=lump_sum_payment&method=query)
+根据筛选条件查询一次性支付授予记录
 
-:::html
-<md-alert type="tip">
-请求体中的多个筛选项为”且“的关系
-</md-alert>
-:::
 
-:::html
-<md-alert type="warn">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="error">
-
-</md-alert>
-:::
-
+> **Tip**: 请求体中的多个筛选项为”且“的关系
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/compensation/v1/lump_sum_payment/query</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[10 次/秒](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="corehr:compensation.lump_sum_payment:read" desc="一次性支付读权限" support_app_types="custom" tags="">一次性支付读权限</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-        <md-perm name="corehr:compensation_lump_sum_payment.binding_period_offboarding_type:read" desc="获取一次性支付的绑定期内离职信息" support_app_types="custom" tags="">获取一次性支付的绑定期内离职信息</md-perm>
-        <md-perm name="corehr:compensation_lump_sum_payment.return_amount_after_tax:read" desc="获取一次性支付的应退回金额（税后）" support_app_types="custom" tags="">获取一次性支付的应退回金额（税后）</md-perm>
-        <md-perm name="corehr:compensation_lump_sum_payment.return_amount_before_tax:read" desc="获取一次性支付的应退回金额（税前）" support_app_types="custom" tags="">获取一次性支付的应退回金额（税前）</md-perm>
-        <md-perm name="corehr:compensation_lump_sum_payment_detail.belong_time:read" desc="获取一次性支付金额的申请发放日期" support_app_types="custom" tags="">获取一次性支付金额的申请发放日期</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/compensation/v1/lump_sum_payment/query |
+| HTTP Method | POST |
+| 接口频率限制 | [10 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | custom |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:compensation.lump_sum_payment:read` 一次性支付读权限 |
+| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:compensation_lump_sum_payment.binding_period_offboarding_type:read` 获取一次性支付的绑定期内离职信息 `corehr:compensation_lump_sum_payment.return_amount_after_tax:read` 获取一次性支付的应退回金额（税后） `corehr:compensation_lump_sum_payment.return_amount_before_tax:read` 获取一次性支付的应退回金额（税前） `corehr:compensation_lump_sum_payment_detail.belong_time:read` 获取一次性支付金额的申请发放日期 |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
-
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
 
 ### 查询参数
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;" >描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >page_size</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	分页大小
-
-**示例值**：10
-
-**数据校验规则**：
-
-- 取值范围：`1` ～ `500`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >page_token</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果
-
-**示例值**：eVQrYzJBNDNONlk4VFZBZVlSdzlKdFJ4bVVHVExENDNKVHoxaVdiVnViQT0=
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >user_id_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	用户 ID 类型
-
-**示例值**：open_id
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="open_id" >标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)</md-enum-item>
-<md-enum-item key="union_id" >标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id)</md-enum-item>
-<md-enum-item key="user_id" >标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[了解更多：如何获取 User ID？](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)</md-enum-item>
-<md-enum-item key="people_corehr_id" >以people_corehr_id来识别用户</md-enum-item>
-</md-enum>
-
-**默认值**：`open_id`
-
-**当值为 `user_id`，字段权限要求**：
-<md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `page_size` | `int` | 是 | 分页大小<br>**示例值**：10<br>**数据校验规则**：<br>- 取值范围：`1` ～ `500` |
+| `page_token` | `string` | 否 | 分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果<br>**示例值**：eVQrYzJBNDNONlk4VFZBZVlSdzlKdFJ4bVVHVExENDNKVHoxaVdiVnViQT0= |
+| `user_id_type` | `string` | 是 | 用户 ID 类型<br>**示例值**：open_id<br>**可选值有**：<br>- `open_id`: 标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid) - `union_id`: 标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id) - `user_id`: 标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[了解更多：如何获取 User ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id) - `people_corehr_id`: 以people_corehr_id来识别用户<br>**默认值**：`open_id`<br>**当值为 `user_id`，字段权限要求**： `contact:user.employee_id:readonly` 获取用户 user ID |
 
 
 ### 请求体
 
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >ids</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	一次性支付记录 id，可通过本接口获取
-
-**示例值**：["7337149697626801708"]
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `500`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >unique_ids</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	一次性支付记录 unique_id，unique_id 在创建时由上游指定
-
-**示例值**：["7337149697626801708"]
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `500`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >user_ids</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	员工id，具体类型由入参中的 user_id_type 指定
-
-**示例值**：["7337149697626801708"]
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `500`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >item_ids</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	薪酬项 id（通过[【查询薪酬项】](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/compensation-v1/item/list)) 接口进行查询）
-
-**示例值**：["7337149697626801708"]
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `500`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >create_time_gte</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	创建时间大于等于值（东八区）
-
-**示例值**："2023-04-01 12:34:56"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >create_time_lte</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	创建时间小于等于（东八区）
-
-**示例值**："2023-04-01 12:34:56"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >modify_time_gte</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	更新时间大于等于值（东八区）
-
-**示例值**："2023-04-01 12:34:56"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >modify_time_lte</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	更新时间小于等于值（东八区）
-
-**示例值**："2023-04-01 12:34:56"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >company_ids</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	合同主体 id（通过[【查询合同主体】](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/company/list) 接口进行查询）
-
-**示例值**：["7337149697626801708"]
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `500`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >service_company_ids</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	任职公司 id（通过[【查询任职公司】](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/company/list) 接口进行查询）
-
-**示例值**：["7337149697626801708"]
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `500`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >department_ids</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	部门 id（部门id仅支持people_corehr_department_id，通过[【查询部门】](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/department/batch_get)接口进行查询）
-
-**示例值**：["7337149697626801708"]
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `500`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >job_family_ids</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	序列 id（通过 [【查询序列】](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/job_family/list)接口进行查询）
-
-**示例值**：["7337149697626801708"]
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `500`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >job_level_ids</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	职级 id（通过 [【查询职级】](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/job_level/list)接口进行查询）
-
-**示例值**：["7337149697626801708"]
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `500`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >work_location_ids</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	工作地点 id（通过 [【查询工作地点】](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/location/list) 接口进行查询）
-
-**示例值**：["7337149697626801708"]
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `500`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >employee_type_ids</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	员工类型 id（可通过 [【查询员工类型】](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/employee_type/list) 接口进行查询）
-
-**示例值**：["7337149697626801708"]
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `500`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >onboard_date_gte</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	员工入职日期大于等于值
-
-**示例值**："2023-04-01"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >onboard_date_lte</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	员工入职日期小于等于值
-
-**示例值**："2023-04-01"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >offboard_date_gte</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	员工离职日期大于等于值
-
-**示例值**："2023-04-01"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >offboard_date_lte</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	员工离职日期小于等于值
-
-**示例值**："2023-04-01"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
-
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `ids` | `string\[\]` | 否 | 一次性支付记录 id，可通过本接口获取<br>**示例值**：["7337149697626801708"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `500` |
+| `unique_ids` | `string\[\]` | 否 | 一次性支付记录 unique_id，unique_id 在创建时由上游指定<br>**示例值**：["7337149697626801708"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `500` |
+| `user_ids` | `string\[\]` | 否 | 员工id，具体类型由入参中的 user_id_type 指定<br>**示例值**：["7337149697626801708"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `500` |
+| `item_ids` | `string\[\]` | 否 | 薪酬项 id（通过[【查询薪酬项】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/compensation-v1/item/list)) 接口进行查询）<br>**示例值**：["7337149697626801708"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `500` |
+| `create_time_gte` | `string` | 否 | 创建时间大于等于值（东八区）<br>**示例值**："2023-04-01 12:34:56"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| `create_time_lte` | `string` | 否 | 创建时间小于等于（东八区）<br>**示例值**："2023-04-01 12:34:56"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| `modify_time_gte` | `string` | 否 | 更新时间大于等于值（东八区）<br>**示例值**："2023-04-01 12:34:56"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| `modify_time_lte` | `string` | 否 | 更新时间小于等于值（东八区）<br>**示例值**："2023-04-01 12:34:56"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| `company_ids` | `string\[\]` | 否 | 合同主体 id（通过[【查询合同主体】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/company/list) 接口进行查询）<br>**示例值**：["7337149697626801708"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `500` |
+| `service_company_ids` | `string\[\]` | 否 | 任职公司 id（通过[【查询任职公司】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/company/list) 接口进行查询）<br>**示例值**：["7337149697626801708"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `500` |
+| `department_ids` | `string\[\]` | 否 | 部门 id（部门id仅支持people_corehr_department_id，通过[【查询部门】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/department/batch_get)接口进行查询）<br>**示例值**：["7337149697626801708"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `500` |
+| `job_family_ids` | `string\[\]` | 否 | 序列 id（通过 [【查询序列】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/job_family/list)接口进行查询）<br>**示例值**：["7337149697626801708"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `500` |
+| `job_level_ids` | `string\[\]` | 否 | 职级 id（通过 [【查询职级】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/job_level/list)接口进行查询）<br>**示例值**：["7337149697626801708"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `500` |
+| `work_location_ids` | `string\[\]` | 否 | 工作地点 id（通过 [【查询工作地点】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/location/list) 接口进行查询）<br>**示例值**：["7337149697626801708"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `500` |
+| `employee_type_ids` | `string\[\]` | 否 | 员工类型 id（可通过 [【查询员工类型】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/employee_type/list) 接口进行查询）<br>**示例值**：["7337149697626801708"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `500` |
+| `onboard_date_gte` | `string` | 否 | 员工入职日期大于等于值<br>**示例值**："2023-04-01"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| `onboard_date_lte` | `string` | 否 | 员工入职日期小于等于值<br>**示例值**："2023-04-01"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| `offboard_date_gte` | `string` | 否 | 员工离职日期大于等于值<br>**示例值**："2023-04-01"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| `offboard_date_lte` | `string` | 否 | 员工离职日期小于等于值<br>**示例值**："2023-04-01"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
 
 
 ### 请求体示例
-:::html
-<md-code-json>
+
+```json
 {
     "ids": [
         "7337149697626801708"
@@ -698,602 +112,61 @@ updateTime: "1755603227000"
     "offboard_date_gte": "2023-04-01",
     "offboard_date_lte": "2023-04-01"
 }
-</md-code-json>
-:::
-
+```
 
 
 ## 响应
 
 
-
-
-
 ### 响应体
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误码，非 0 表示失败
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >data</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	\-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >page_token</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	分页标记，当 has_more 为 true 时，会同时返回新的 page_token，否则不返回 page_token
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >has_more</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否还有更多项
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >records</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >lump_sum_payment\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	一次性支付记录列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	一次性支付记录id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >unique_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	外部幂等id，由上游业务自由决定
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	员工id，具体类型由入参中的 user_id_type 指定
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >total_amount</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	总金额，字符串表达的数字
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >binding_period</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	绑定期，单位为月
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >currency_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	币种id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >issuance_frequency</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	发放次数
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >item_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	薪酬项id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >remark</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	备注
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >issuance_detail_text</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	发放规则描述文本
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >zh_cn</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	中文描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >en_us</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	英文描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >apply_source</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	申请来源
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >Offer薪酬创建</md-enum-item>
-<md-enum-item key="2" >导入</md-enum-item>
-<md-enum-item key="3" >调级调薪创建</md-enum-item>
-<md-enum-item key="4" >填报创建</md-enum-item>
-<md-enum-item key="5" >开放平台创建</md-enum-item>
-<md-enum-item key="6" >招聘内推创建</md-enum-item>
-<md-enum-item key="7" >自动化规则创建</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >return_amount_before_tax</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应退回金额（税前）
-
-**字段权限要求**：
-<md-perm name="corehr:compensation_lump_sum_payment.return_amount_before_tax:read" desc="获取一次性支付的应退回金额（税前）" support_app_types="custom" tags="">获取一次性支付的应退回金额（税前）</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >return_amount_after_tax</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应退回金额（税后）
-
-**字段权限要求**：
-<md-perm name="corehr:compensation_lump_sum_payment.return_amount_after_tax:read" desc="获取一次性支付的应退回金额（税后）" support_app_types="custom" tags="">获取一次性支付的应退回金额（税后）</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >binding_period_offboarding_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	绑定期内离职类型
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="yes" >绑定期内离职</md-enum-item>
-<md-enum-item key="no" >绑定期外离职</md-enum-item>
-<md-enum-item key="default" >无绑定期离职标识</md-enum-item>
-</md-enum>
-
-**字段权限要求**：
-<md-perm name="corehr:compensation_lump_sum_payment.binding_period_offboarding_type:read" desc="获取一次性支付的绑定期内离职信息" support_app_types="custom" tags="">获取一次性支付的绑定期内离职信息</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >create_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	创建时间
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >modify_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	更新时间
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >reference_period_start_date</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	所属期开始日期
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >reference_period_end_date</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	所属期结束日期
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >details</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >lump_sum_payment_detail\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	发放明细列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	一次性支付记录明细id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >record_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	一次性支付记录id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	员工id，具体类型由入参中的 user_id_type 指定
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >issuance_amount</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	一次性支付明细发放金额，可转数字的字符串
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >issuance_status</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	发放状态
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="to_be_issued" >应发放</md-enum-item>
-<md-enum-item key="not_issued" >不发放</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >issuance_way</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	发放方式
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="with_salary" >随工资发放</md-enum-item>
-<md-enum-item key="with_cash" >现金发放</md-enum-item>
-<md-enum-item key="with_year_end_bonus" >随年终奖发放</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >issuance_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	发放日期
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >currency_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	币种id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >belong_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	申请发放日期
-
-**字段权限要求**：
-<md-perm name="corehr:compensation_lump_sum_payment_detail.belong_time:read" desc="获取一次性支付金额的申请发放日期" support_app_types="custom" tags="">获取一次性支付金额的申请发放日期</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >create_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	创建时间
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >modify_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	更新时间
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >issuance_country_region_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	发放国家ID（可通过[查询国家/地区信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-country_region/search)进行查询）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >issuance_pay_group_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	发放薪资组ID（可通过[获取薪资组基本信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/payroll-v1/paygroup/list)
-进行查询）
-	</md-dt-td>
-</md-dt-tr>
-
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `code` | `int` | 错误码，非 0 表示失败 |
+| `msg` | `string` | 错误描述 |
+| `data` | `\-` | \- |
+| &nbsp;&nbsp;└ `page_token` | `string` | 分页标记，当 has_more 为 true 时，会同时返回新的 page_token，否则不返回 page_token |
+| &nbsp;&nbsp;└ `has_more` | `boolean` | 是否还有更多项 |
+| &nbsp;&nbsp;└ `records` | `lump_sum_payment\[\]` | 一次性支付记录列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 一次性支付记录id |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `unique_id` | `string` | 外部幂等id，由上游业务自由决定 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 员工id，具体类型由入参中的 user_id_type 指定 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `total_amount` | `string` | 总金额，字符串表达的数字 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `binding_period` | `int` | 绑定期，单位为月 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `currency_id` | `string` | 币种id |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `issuance_frequency` | `int` | 发放次数 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `item_id` | `string` | 薪酬项id |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `remark` | `string` | 备注 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `issuance_detail_text` | `i18n` | 发放规则描述文本 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh_cn` | `string` | 中文描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en_us` | `string` | 英文描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `apply_source` | `int` | 申请来源<br>**可选值有**：<br>- `1`: Offer薪酬创建 - `2`: 导入 - `3`: 调级调薪创建 - `4`: 填报创建 - `5`: 开放平台创建 - `6`: 招聘内推创建 - `7`: 自动化规则创建 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `return_amount_before_tax` | `string` | 应退回金额（税前）<br>**字段权限要求**： `corehr:compensation_lump_sum_payment.return_amount_before_tax:read` 获取一次性支付的应退回金额（税前） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `return_amount_after_tax` | `string` | 应退回金额（税后）<br>**字段权限要求**： `corehr:compensation_lump_sum_payment.return_amount_after_tax:read` 获取一次性支付的应退回金额（税后） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `binding_period_offboarding_type` | `string` | 绑定期内离职类型<br>**可选值有**：<br>- `yes`: 绑定期内离职 - `no`: 绑定期外离职 - `default`: 无绑定期离职标识<br>**字段权限要求**： `corehr:compensation_lump_sum_payment.binding_period_offboarding_type:read` 获取一次性支付的绑定期内离职信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `create_time` | `string` | 创建时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `modify_time` | `string` | 更新时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `reference_period_start_date` | `string` | 所属期开始日期 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `reference_period_end_date` | `string` | 所属期结束日期 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `details` | `lump_sum_payment_detail\[\]` | 发放明细列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 一次性支付记录明细id |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `record_id` | `string` | 一次性支付记录id |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 员工id，具体类型由入参中的 user_id_type 指定 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `issuance_amount` | `string` | 一次性支付明细发放金额，可转数字的字符串 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `issuance_status` | `string` | 发放状态<br>**可选值有**：<br>- `to_be_issued`: 应发放 - `not_issued`: 不发放 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `issuance_way` | `string` | 发放方式<br>**可选值有**：<br>- `with_salary`: 随工资发放 - `with_cash`: 现金发放 - `with_year_end_bonus`: 随年终奖发放 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `issuance_time` | `string` | 发放日期 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `currency_id` | `string` | 币种id |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `belong_time` | `string` | 申请发放日期<br>**字段权限要求**： `corehr:compensation_lump_sum_payment_detail.belong_time:read` 获取一次性支付金额的申请发放日期 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `create_time` | `string` | 创建时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `modify_time` | `string` | 更新时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `issuance_country_region_id` | `string` | 发放国家ID（可通过[查询国家/地区信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-country_region/search)进行查询） |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `issuance_pay_group_id` | `string` | 发放薪资组ID（可通过[获取薪资组基本信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/paygroup/list) 进行查询） |
 
 
 ### 响应体示例
-:::html
-<md-code-json>
+
+```json
 {
     "code": 0,
     "msg": "success",
@@ -1344,44 +217,14 @@ updateTime: "1755603227000"
         ]
     }
 }
-</md-code-json>
-:::
-
+```
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2290001</md-td>
-  <md-td>param is invalid</md-td>
-  <md-td>参数异常，请检查入参</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>2290002</md-td>
-  <md-td>server error</md-td>
-  <md-td>服务端异常，请稍后重试</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
-
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 2290001 | param is invalid | 参数异常，请检查入参 |
+| 500 | 2290002 | server error | 服务端异常，请稍后重试 |
 
 

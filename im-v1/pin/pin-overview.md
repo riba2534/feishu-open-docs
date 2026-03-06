@@ -12,59 +12,16 @@ updateTime: "1724405561000"
 
 ## 字段说明
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">名称</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:50%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-  
-<md-tr>
-<md-td>pin</md-td>
-<md-td>pin</md-td>
-<md-td>Pin 的操作信息</md-td>
-</md-tr>
 
-<md-tr>
-<md-td>└ message_id</md-td>
-<md-td>string</md-td>
-<md-td>Pin 的消息 ID</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ chat_id</md-td>
-<md-td>string</md-td>
-<md-td>Pin 消息所在的群聊 ID</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ operator_id</md-td>
-<md-td>string</md-td>
-<md-td>Pin 的操作人 ID</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ operator_id_type</md-td>
-<md-td>string</md-td>
-<md-td>Pin 的操作人 ID 类型。可能值有：
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| pin | pin | Pin 的操作信息 |
+| └ message_id | string | Pin 的消息 ID |
+| └ chat_id | string | Pin 消息所在的群聊 ID |
+| └ operator_id | string | Pin 的操作人 ID |
+| └ operator_id_type | string | Pin 的操作人 ID 类型。可能值有： - open_id：表示操作人为用户，此时 `operator_id` 返回值为用户的 open_id。 - app_id：表示操作人为应用，此时 `operator_id` 返回值为应用的 app_id。 |
+| └ create_time | string | Pin 的创建时间（毫秒级时间戳） |
 
-- open_id：表示操作人为用户，此时 `operator_id` 返回值为用户的 open_id。
-- app_id：表示操作人为应用，此时 `operator_id` 返回值为应用的 app_id。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ create_time</md-td>
-<md-td>string</md-td>
-<md-td>Pin 的创建时间（毫秒级时间戳）</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ## 数据示例
 

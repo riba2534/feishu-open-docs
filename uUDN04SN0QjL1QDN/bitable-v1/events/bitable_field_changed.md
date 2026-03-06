@@ -6,25 +6,11 @@ updateTime: "1763389781000"
 
 # 多维表格字段变更
 
-多维表格字段变更事件。被订阅的多维表格字段发生变更时，将会触发此事件。了解事件订阅的配置流程和使用场景，参考[事件概述](/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=drive&version=v1&resource=file&event=bitable_field_changed)
+多维表格字段变更事件。被订阅的多维表格字段发生变更时，将会触发此事件。了解事件订阅的配置流程和使用场景，参考[事件概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=drive&version=v1&resource=file&event=bitable_field_changed)
 
-:::html
-<md-alert type="error">
 
-</md-alert>
-:::
+> **Tip**: 被订阅的多维表格字段发生变更时，也将同时触发[文件编辑](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/event/file-edited)事件。
 
-:::html
-<md-alert type="warn">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="tip">
-被订阅的多维表格字段发生变更时，也将同时触发[文件编辑](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/event/file-edited)事件。
-</md-alert>
-:::
 
 ## 注意事项
 
@@ -33,1066 +19,103 @@ updateTime: "1763389781000"
 
 ## 前提条件
 
-添加该事件之前，你需确保已调用[订阅云文档事件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/subscribe)接口。
+添加该事件之前，你需确保已调用[订阅云文档事件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/subscribe)接口。
 
 ## 事件
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>事件类型</md-th>
-      <md-td>drive.file.bitable_field_changed_v1</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-    <md-th>
-            权限要求
-            <md-tooltip type="info">订阅该事件所需的权限，开启其中任意一项权限即可订阅</md-tooltip>
-            
-            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-            
-    </md-th>
-      <md-td>
-            <md-perm name="base:field:read" desc="获取字段信息" support_app_types="custom,isv" tags="">获取字段信息</md-perm>
-            <md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm>
-            <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-          字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>推送方式</md-th>
-      <md-td>
-            <md-tag mode="inline" type="push-webhook" href="/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM" >Webhook</md-tag>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
 
+| 项目 | 值 |
+| --- | --- |
+| 事件类型 | drive.file.bitable_field_changed_v1 |
+| 支持的应用类型 | custom,isv |
+| 权限要求             订阅该事件所需的权限，开启其中任意一项权限即可订阅 开启任一权限即可 | `base:field:read` 获取字段信息 `bitable:app` 查看、评论、编辑和管理多维表格 `drive:drive` 查看、评论、编辑和管理云空间中所有文件 |
+| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 推送方式 | `Webhook` |
 
 
 ### 事件体
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
-      
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >schema</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	事件模式
-	</md-dt-td>
-</md-dt-tr>
 
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >header</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >event_header</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	事件头
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >event_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	事件 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >event_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	事件类型
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >create_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	事件创建时间戳（单位：毫秒）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >token</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	事件 Token
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >app_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >tenant_key</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	租户 Key
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >event</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	\-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >file_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	云文档类型
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >file_token</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	多维表格 token
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >table_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	多维表格数据表 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >operator_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	用户 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >union_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	用户的 union id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	用户的 user id
-
-**字段权限要求**：
-<md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >open_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	用户的 open id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >action_list</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >bitable.table.field_action\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段变更操作类型列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >action</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段变更类型。枚举值有：
-- field_added：新增字段
-- field_edited：修改字段
-- field_deleted：删除字段
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >field_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >before_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >bitable.table.field_action.value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	操作前的字段值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段名字
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段类型
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >description</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >property</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >bitable.table.field_action.value.property</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段属性
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >formatter</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数字、公式字段的显示格式
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >date_formatter</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	日期、创建时间、最后更新时间字段的显示格式
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >auto_fill</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	日期字段中新纪录自动填写创建时间
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >multiple</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	人员字段中允许添加多个成员，单向关联、双向关联中允许添加多个记录
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >table_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	单向关联、双向关联字段中关联的数据表的ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >table_name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	单向关联、双向关联字段中关联的数据表的名字
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >back_field_name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	双向关联字段中关联的数据表中对应的双向关联字段的名字
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >input_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	地理位置输入限制
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >back_field_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	双向关联字段中关联的数据表中对应的双向关联字段的id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >auto_serial</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >bitable.table.field_action.value.property.auto_serial</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	自动编号类型
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	自动编号类型
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >options</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >bitable.table.field_action.value.property.auto_serial.options\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	自动编号规则列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="6">
-	<md-dt-td>
-	<md-text type="field-name" >type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	自动编号的可选规则项类型
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="6">
-	<md-dt-td>
-	<md-text type="field-name" >value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	与类型相对应的取值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >options</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >bitable.table.field_action.value.property.option\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	单选、多选字段的选项信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	选项名
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	选项 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >color</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	选项颜色
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >formula_expression</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	公式字段的公式表达式
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >after_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >bitable.table.field_action.value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	操作后的字段值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段名字
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段类型
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >description</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >property</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >bitable.table.field_action.value.property</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段属性
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >formatter</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数字、公式字段的显示格式
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >date_formatter</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	日期、创建时间、最后更新时间字段的显示格式
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >auto_fill</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	日期字段中新纪录自动填写创建时间
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >multiple</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	人员字段中允许添加多个成员，单向关联、双向关联中允许添加多个记录
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >table_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	单向关联、双向关联字段中关联的数据表的ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >table_name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	单向关联、双向关联字段中关联的数据表的名字
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >back_field_name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	双向关联字段中关联的数据表中对应的双向关联字段的名字
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >input_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	地理位置输入限制
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >back_field_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	双向关联字段中关联的数据表中对应的双向关联字段的id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >auto_serial</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >bitable.table.field_action.value.property.auto_serial</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	自动编号类型
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	自动编号类型
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >options</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >bitable.table.field_action.value.property.auto_serial.options\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	自动编号规则列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="6">
-	<md-dt-td>
-	<md-text type="field-name" >type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	自动编号的可选规则项类型
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="6">
-	<md-dt-td>
-	<md-text type="field-name" >value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	与类型相对应的取值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >options</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >bitable.table.field_action.value.property.option\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	单选、多选字段的选项信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	选项名
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	选项 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >color</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	选项颜色
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >formula_expression</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	公式字段的公式表达式
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >revision</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	多维表格数据表的版本号
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >subscriber_id_list</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >user_id\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	订阅用户 ID 列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >union_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	订阅者的 Union ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	订阅者的 User ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >open_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	订阅者的 Open ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >update_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段变更时间
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `schema` | `string` | 事件模式 |
+| `header` | `event_header` | 事件头 |
+| &nbsp;&nbsp;└ `event_id` | `string` | 事件 ID |
+| &nbsp;&nbsp;└ `event_type` | `string` | 事件类型 |
+| &nbsp;&nbsp;└ `create_time` | `string` | 事件创建时间戳（单位：毫秒） |
+| &nbsp;&nbsp;└ `token` | `string` | 事件 Token |
+| &nbsp;&nbsp;└ `app_id` | `string` | 应用 ID |
+| &nbsp;&nbsp;└ `tenant_key` | `string` | 租户 Key |
+| `event` | `\-` | \- |
+| &nbsp;&nbsp;└ `file_type` | `string` | 云文档类型 |
+| &nbsp;&nbsp;└ `file_token` | `string` | 多维表格 token |
+| &nbsp;&nbsp;└ `table_id` | `string` | 多维表格数据表 ID |
+| &nbsp;&nbsp;└ `operator_id` | `user_id` | 用户 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `union_id` | `string` | 用户的 union id |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 用户的 user id<br>**字段权限要求**： `contact:user.employee_id:readonly` 获取用户 user ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `open_id` | `string` | 用户的 open id |
+| &nbsp;&nbsp;└ `action_list` | `bitable.table.field_action\[\]` | 字段变更操作类型列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `action` | `string` | 字段变更类型。枚举值有： - field_added：新增字段 - field_edited：修改字段 - field_deleted：删除字段 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `field_id` | `string` | 字段 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `before_value` | `bitable.table.field_action.value` | 操作前的字段值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 字段 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `string` | 字段名字 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `int` | 字段类型 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `description` | `string` | 字段描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `property` | `bitable.table.field_action.value.property` | 字段属性 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `formatter` | `string` | 数字、公式字段的显示格式 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `date_formatter` | `string` | 日期、创建时间、最后更新时间字段的显示格式 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `auto_fill` | `boolean` | 日期字段中新纪录自动填写创建时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `multiple` | `boolean` | 人员字段中允许添加多个成员，单向关联、双向关联中允许添加多个记录 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `table_id` | `string` | 单向关联、双向关联字段中关联的数据表的ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `table_name` | `string` | 单向关联、双向关联字段中关联的数据表的名字 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `back_field_name` | `string` | 双向关联字段中关联的数据表中对应的双向关联字段的名字 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `input_type` | `string` | 地理位置输入限制 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `back_field_id` | `string` | 双向关联字段中关联的数据表中对应的双向关联字段的id |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `auto_serial` | `bitable.table.field_action.value.property.auto_serial` | 自动编号类型 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 自动编号类型 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `options` | `bitable.table.field_action.value.property.auto_serial.options\[\]` | 自动编号规则列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 自动编号的可选规则项类型 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 与类型相对应的取值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `options` | `bitable.table.field_action.value.property.option\[\]` | 单选、多选字段的选项信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `string` | 选项名 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 选项 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `color` | `int` | 选项颜色 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `formula_expression` | `string` | 公式字段的公式表达式 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `after_value` | `bitable.table.field_action.value` | 操作后的字段值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 字段 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `string` | 字段名字 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `int` | 字段类型 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `description` | `string` | 字段描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `property` | `bitable.table.field_action.value.property` | 字段属性 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `formatter` | `string` | 数字、公式字段的显示格式 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `date_formatter` | `string` | 日期、创建时间、最后更新时间字段的显示格式 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `auto_fill` | `boolean` | 日期字段中新纪录自动填写创建时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `multiple` | `boolean` | 人员字段中允许添加多个成员，单向关联、双向关联中允许添加多个记录 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `table_id` | `string` | 单向关联、双向关联字段中关联的数据表的ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `table_name` | `string` | 单向关联、双向关联字段中关联的数据表的名字 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `back_field_name` | `string` | 双向关联字段中关联的数据表中对应的双向关联字段的名字 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `input_type` | `string` | 地理位置输入限制 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `back_field_id` | `string` | 双向关联字段中关联的数据表中对应的双向关联字段的id |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `auto_serial` | `bitable.table.field_action.value.property.auto_serial` | 自动编号类型 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 自动编号类型 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `options` | `bitable.table.field_action.value.property.auto_serial.options\[\]` | 自动编号规则列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 自动编号的可选规则项类型 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 与类型相对应的取值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `options` | `bitable.table.field_action.value.property.option\[\]` | 单选、多选字段的选项信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `string` | 选项名 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 选项 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `color` | `int` | 选项颜色 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `formula_expression` | `string` | 公式字段的公式表达式 |
+| &nbsp;&nbsp;└ `revision` | `int` | 多维表格数据表的版本号 |
+| &nbsp;&nbsp;└ `subscriber_id_list` | `user_id\[\]` | 订阅用户 ID 列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `union_id` | `string` | 订阅者的 Union ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 订阅者的 User ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `open_id` | `string` | 订阅者的 Open ID |
+| &nbsp;&nbsp;└ `update_time` | `int` | 字段变更时间 |
 
 
 ### 事件体示例
-:::html
-<md-code-json>
+
+```json
 {
     "schema": "2.0",
     "header": {
@@ -1197,35 +220,22 @@ updateTime: "1763389781000"
         "update_time": 1663727688
     }
 }
-</md-code-json>
-:::
-
-
-
-
+```
 
 
 ### 事件订阅示例代码
 
-事件订阅流程可参考：[事件订阅概述](/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM)，新手入门可参考：[教程](/ssl:ttdoc/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/develop-an-echo-bot/introduction)
+事件订阅流程可参考：[事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)，新手入门可参考：[教程](https://open.larkoffice.com/document/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/develop-an-echo-bot/introduction)
 
-:::html
-<div style="margin-bottom: 4px;display: flex;column-gap: 4px;align-items: center;">
-  <md-text type='field-name'>订阅方式</md-text>
-  <md-tooltip>
-    <ul class="md_render-table_solid md_render-table">
-      <li><b>长连接方式（推荐）：</b>无需发布到公网地址，在本地开发环境中即可接收事件回调，且无需处理加解密逻辑。</li>
-      <li><b>发送至开发者服务器：</b>需要提供服务器公网地址。</li>
-    </ul>
-  </md-tooltip>
-</div>
-:::
 
-:::html
-<md-code-tabs>
-  <md-code-tab-group title="使用长连接接收事件">
-	
-    <md-code-tab-panel sdkType="golang-sdk">
+`订阅方式`
+
+
+长连接方式（推荐）：无需发布到公网地址，在本地开发环境中即可接收事件回调，且无需处理加解密逻辑。
+发送至开发者服务器：需要提供服务器公网地址。
+
+
+```
 package main
 
 import (
@@ -1261,10 +271,10 @@ func main() {
 		panic(err)
 	}
 }
+```
 
-    </md-code-tab-panel>
 
-    <md-code-tab-panel sdkType="python-sdk">
+```
 # SDK 使用说明 SDK user guide：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/python--sdk/preparations-before-development
 import lark_oapi as lark
 
@@ -1287,11 +297,10 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
 
-    </md-code-tab-panel>
 
-    <md-code-tab-panel sdkType="java-sdk">
-
+```
 package com.example.sample;
 
 import com.lark.oapi.core.utils.Jsons;
@@ -1321,9 +330,10 @@ public class Sample {
         client.start();
     }
 }
-    </md-code-tab-panel>
+```
 
-    <md-code-tab-panel sdkType="nodejs-sdk">
+
+```
 // SDK 使用说明 SDK user guide：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/nodejs-sdk/preparation-before-development
 import * as Lark from '@larksuiteoapi/node-sdk';
 const baseConfig = {
@@ -1341,12 +351,10 @@ wsClient.start({
         }
     })
 });
-    </md-code-tab-panel>
+```
 
-  </md-code-tab-group>
-  <md-code-tab-group title="将事件推送至开发者服务器">
-	
-    <md-code-tab-panel sdkType="golang-sdk">
+
+```
 package main
 
 import (
@@ -1379,10 +387,10 @@ func main() {
 		panic(err)
 	}
 }
+```
 
-    </md-code-tab-panel>
 
-    <md-code-tab-panel sdkType="python-sdk">
+```
 # SDK 使用说明 SDK user guide：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/python--sdk/preparations-before-development
 from flask import Flask
 from lark_oapi.adapter.flask import *
@@ -1408,11 +416,10 @@ def event():
 
 if __name__ == "__main__":
     app.run(port=7777)
+```
 
-    </md-code-tab-panel>
 
-    <md-code-tab-panel sdkType="java-sdk">
-
+```
 package com.lark.oapi.sample.event;
 
 import com.lark.oapi.core.utils.Jsons;
@@ -1452,9 +459,10 @@ public class EventController {
         servletAdapter.handleEvent(request, response, EVENT_DISPATCHER);
     }
 }
-    </md-code-tab-panel>
+```
 
-    <md-code-tab-panel sdkType="nodejs-sdk">
+
+```
 // SDK 使用说明 SDK user guide：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/nodejs-sdk/preparation-before-development
 import http from 'http';
 import * as lark from '@larksuiteoapi/node-sdk';
@@ -1474,8 +482,5 @@ const server = http.createServer();
 // 创建路由处理器 Create route handler
 server.on('request', lark.adaptDefault('/webhook/event', eventDispatcher));
 server.listen(3000);
-    </md-code-tab-panel>
+```
 
-  </md-code-tab-group>
-</md-code-tabs>
-:::

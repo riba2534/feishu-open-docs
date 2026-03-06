@@ -9,7 +9,7 @@ updateTime: "1752809909000"
 ## 1.  如何插入带内容的表格（table）？
 
 
-- 方式一：调用[创建嵌套块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-descendant/create)接口，在指定的 Parent Block 下创建 Table Block：
+- 方式一：调用[创建嵌套块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-descendant/create)接口，在指定的 Parent Block 下创建 Table Block：
 
   ```bash
   curl --location --request POST 'https://open.feishu.cn/open-apis/docx/v1/documents/:document_id/blocks/:block_id/descendant?document_revision_id=-1' \
@@ -91,7 +91,7 @@ updateTime: "1752809909000"
 
 - 方式二：先创建一个空表格，再填充内容：
 
-  1. 调用 [创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create) 接口，在指定 Parent Block 下创建一个 Table Block。
+  1. 调用 [创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create) 接口，在指定 Parent Block 下创建一个 Table Block。
   
   ```bash
   curl --location --request POST '{url}' \
@@ -153,10 +153,10 @@ updateTime: "1752809909000"
   }
   ```
 	
-    其中 data.children 数组中存放了按照从左到右、从上到下顺序遍历得到的单元格 Table Cell 的 Block ID。接下来，你可继续调用[创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create)接口，指定 Table Block 为 Parent Cell，对指定单元格添加内容。
+    其中 data.children 数组中存放了按照从左到右、从上到下顺序遍历得到的单元格 Table Cell 的 Block ID。接下来，你可继续调用[创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create)接口，指定 Table Block 为 Parent Cell，对指定单元格添加内容。
 ## 2. 如何插入电子表格（sheet）并往单元格填充内容？
 
-1. 调用 [创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create) 接口，在指定 Parent Block 下创建 Sheet Block，指定电子表格的行数量和列数量。
+1. 调用 [创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create) 接口，在指定 Parent Block 下创建 Sheet Block，指定电子表格的行数量和列数量。
     ```bash
     curl --location --request POST 'https://{domain}/open-apis/docx/v1/documents/:document_id/blocks/:block_id/children' \
     --header 'Authorization: {Authorization}' \
@@ -200,7 +200,7 @@ updateTime: "1752809909000"
         }
     ```
 
-2. 返回的 `sheet.token` 的值为电子表格的 token 和电子表格工作表的 ID 的组合。你可继续调用[电子表格相关接口](/ssl:ttdoc/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/overview)继续操作该表格。以下示例展示在该电子表格中写入数据。
+2. 返回的 `sheet.token` 的值为电子表格的 token 和电子表格工作表的 ID 的组合。你可继续调用[电子表格相关接口](https://open.larkoffice.com/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/overview)继续操作该表格。以下示例展示在该电子表格中写入数据。
     ```bash
     curl --location --request PUT 'https://open.feishu.cn/open-apis/sheets/v2/spreadsheets/LxvrsycFwhQYfrt8oYQcwVabcef/values' \
     --header 'Authorization: Bearer t-g10474apW3IFUPQGV362IPSAGELJO2SQWL5abcef' \
@@ -239,7 +239,7 @@ updateTime: "1752809909000"
 
 **第一步：创建图片 Block**
 
-调用 [创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create) 接口，在指定的 Parent Block 下创建 Image Block：
+调用 [创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create) 接口，在指定的 Parent Block 下创建 Image Block：
 
 ```bash
 curl --location --request POST '{url}' \
@@ -284,7 +284,7 @@ curl --location --request POST '{url}' \
 
 **第二步：上传图片素材**
 
-调用 [上传图片素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all) 接口，使用步骤一返回的 Image BlockID 作为 `parent_node` 上传素材：
+调用 [上传图片素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all) 接口，使用步骤一返回的 Image BlockID 作为 `parent_node` 上传素材：
 
 ```bash
 curl --location --request POST '{url}' \
@@ -311,7 +311,7 @@ curl --location --request POST '{url}' \
 
 **第三步：设置图片 Block 的素材**
 
-调用 [更新块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/patch) 或 [批量更新块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/batch_update) 接口，指定 `replace_image` 操作，将步骤二返回的图片素材 ID 设置到对应的 Image Block，以更新块为例：
+调用 [更新块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/patch) 或 [批量更新块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/batch_update) 接口，指定 `replace_image` 操作，将步骤二返回的图片素材 ID 设置到对应的 Image Block，以更新块为例：
 
 ``` bash
 curl --location --request PATCH '{url}' \
@@ -328,7 +328,7 @@ curl --location --request PATCH '{url}' \
 
 **第一步：创建一个空的文件 Block**
 
-调用 [创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create) 接口，在指定 Parent Block 下创建一个空的 File Block：
+调用 [创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create) 接口，在指定 Parent Block 下创建一个空的 File Block：
 
 ```bash
 curl --location --request POST '{url}' \
@@ -373,15 +373,13 @@ curl --location --request POST '{url}' \
 }
 ```
 
-:::html
-<md-alert type="tip">
-**注意：** 与 Image Block 不同，在创建 File Block 成功后，接口会返回 View Block，这是因为每个 File Block 对应都会有一个 View Block 来控制其视图形式，即 View Block 是 File Block 的 Parent。
-</md-alert>
-:::
+
+> **Tip**: **注意：** 与 Image Block 不同，在创建 File Block 成功后，接口会返回 View Block，这是因为每个 File Block 对应都会有一个 View Block 来控制其视图形式，即 View Block 是 File Block 的 Parent。
+
 
 **第二步：上传文件素材**
 
-调用[上传素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)接口，使用步骤一返回的 File Block 的 ID `doxcn1Bx1WOlcqzLqTD2UUYiA7g` 作为 `parent_node` 的值，将素材文件上传至该 File Block 中：
+调用[上传素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)接口，使用步骤一返回的 File Block 的 ID `doxcn1Bx1WOlcqzLqTD2UUYiA7g` 作为 `parent_node` 的值，将素材文件上传至该 File Block 中：
 
 ```bash
 curl --location --request POST '{url}' \
@@ -408,7 +406,7 @@ curl --location --request POST '{url}' \
 
 **第三步：设置文件 Block 的素材**
 
-调用 [更新块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/patch) 或 [批量更新块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/batch_update) 接口，指定 `replace_file` 操作，将步骤二返回的素材 ID 设置到对应的 File Block。以更新块为例：
+调用 [更新块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/patch) 或 [批量更新块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/batch_update) 接口，指定 `replace_file` 操作，将步骤二返回的素材 ID 设置到对应的 File Block。以更新块为例：
 
 ```bash
 ## 注意 URL 中的 block_id 路径参数需要与步骤一创建的 File Block ID 一致
@@ -425,13 +423,11 @@ curl --location --request PATCH '{url}' \
 ```
 ## 5. 如何插入@用户 元素？
 
-:::html
-<md-alert type="warn">
-通过调用 OpenAPI 来 @用户，不会向该用户发送通知。
-</md-alert>
-:::
 
-@用户是 Text Block 中的一个内容实体。如果要 @某个用户，可以调用 [创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create)接口，在指定父亲 Block 下创建 Text Block，并在 Text Block 中指定要 @ 的用户 ID：
+> **Warning**: 通过调用 OpenAPI 来 @用户，不会向该用户发送通知。
+
+
+@用户是 Text Block 中的一个内容实体。如果要 @某个用户，可以调用 [创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create)接口，在指定父亲 Block 下创建 Text Block，并在 Text Block 中指定要 @ 的用户 ID：
 ```json
 
 # https://{domain}/open-apis/docx/v1/documents/:document_id/blocks/:block_id/children?document_revision_id=-1
@@ -515,7 +511,7 @@ curl --location --request POST '{url}' \
     "text_element_style": object(TextElementStyle)
 }
 ```
-如要向文档插入一个公式，可调用[创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create)接口，请求体示例如下：
+如要向文档插入一个公式，可调用[创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create)接口，请求体示例如下：
 
 ```json
 {
@@ -549,7 +545,7 @@ curl --location --request POST '{url}' \
 ```
 ## 7. 如何往高亮块（Callout Block）中填充内容？
 
-调用 [创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create)接口，其中路径参数 `block_id` 填写 Callout BlockID，请求体 `children` 填充高亮块的内容。例如，在高亮块内容的第一行插入文本块：
+调用 [创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create)接口，其中路径参数 `block_id` 填写 Callout BlockID，请求体 `children` 填充高亮块的内容。例如，在高亮块内容的第一行插入文本块：
 ```json
 curl --location --request POST '{url}' \
 --header 'Authorization: {Authorization}' \ 
@@ -591,7 +587,7 @@ curl --location --request POST '{url}' \
 
 **第一步：创建 Grid block**
 
-调用 [创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create) 接口，在指定 Parent block 下创建 Grid block，该 Grid 共计有两列。
+调用 [创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create) 接口，在指定 Parent block 下创建 Grid block，该 Grid 共计有两列。
 
 **Request**
 ```bash
@@ -614,11 +610,8 @@ curl --location --request POST '{url}' \
 
 **Response**
 
-:::html
-<md-alert type="tip">
-在创建 Grid block 成功后，接口会返回 Grid block 的 `block_id` 以及 `children` 等，`children` 即 Grid Column Block，由于 Request 指定要创建两列，因此 `children` 数组中会有两个`block_id`，接下来可以使用这些`block_id`往 Grid Column block 中继续添加 Children block。
-</md-alert>
-:::
+
+> **Tip**: 在创建 Grid block 成功后，接口会返回 Grid block 的 `block_id` 以及 `children` 等，`children` 即 Grid Column Block，由于 Request 指定要创建两列，因此 `children` 数组中会有两个`block_id`，接下来可以使用这些`block_id`往 Grid Column block 中继续添加 Children block。
 
 
 ```bash
@@ -648,7 +641,7 @@ curl --location --request POST '{url}' \
 
 **第二步：在第一列 Grid Column Block 中插入内容**
 
-调用[创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create)接口，在指定 Grid Column Block 下插入一个文本 Block。
+调用[创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create)接口，在指定 Grid Column Block 下插入一个文本 Block。
 
 **Request**
 
@@ -683,11 +676,9 @@ curl --location --request POST '{url}' \
 
 **Response**
 
-:::html
-<md-alert type="warn">
-在第一步创建 Grid Block 时，系统会自动往每个 Grid Column Block 下添加一个空 Text Block，如果不需要默认的空白 Text Block，可以在第 2 步添加完内容后，自行删除该 Text Block。
-</md-alert>
-:::
+
+> **Warning**: 在第一步创建 Grid Block 时，系统会自动往每个 Grid Column Block 下添加一个空 Text Block，如果不需要默认的空白 Text Block，可以在第 2 步添加完内容后，自行删除该 Text Block。
+
 
 ```bash
 {
@@ -730,7 +721,7 @@ curl --location --request POST '{url}' \
 ```
 ## 9. 如何获取文档中的图片&附件？
 
-1. 调用[获取文档所有块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)接口，分页获取文档所有块的富文本内容。
+1. 调用[获取文档所有块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)接口，分页获取文档所有块的富文本内容。
     ```bash
     curl --location 'https://open.feishu.cn/open-apis/docx/v1/documents/:document_id/blocks' \
     --header 'Authorization: {Authorization}'
@@ -814,40 +805,39 @@ curl --location --request POST '{url}' \
     * `"block_type": 27` 的块为图片块，块中 `image.token` 的值为图片的 token。
     * `"block_type": 23` 的块为文件块，块中 `file.token` 的值为文件的 token。
    
-   你可基于图片和文件的 token，调用[下载素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/download)接口下载对应的图片和文件。
+   你可基于图片和文件的 token，调用[下载素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/download)接口下载对应的图片和文件。
 ## 10. 如何将 markdown 格式的内容写进飞书在线文档？
 
 若要将 Markdown/HTML 格式的内容写入到文档，需依次执行以下操作：
 
-1. 调用[创建文档](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document/create)接口创建一篇类型为 docx 的文档（若目标文档已存在，则无需此步骤）。
-2. 调用[转换为文档块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document/convert)接口将 Markdown/HTML 格式的内容转换为文档块。
-3. 调用[创建嵌套块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-descendant/create)接口将步骤二中返回的块批量插入到目标文档中。
-
+1. 调用[创建文档](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document/create)接口创建一篇类型为 docx 的文档（若目标文档已存在，则无需此步骤）。
+2. 调用[转换为文档块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document/convert)接口将 Markdown/HTML 格式的内容转换为文档块。
+3. 调用[创建嵌套块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-descendant/create)接口将步骤二中返回的块批量插入到目标文档中。
 
 
 **在上述接口调用过程中需注意以下事项：**
 
-- 将带表格的 Markdown/HTML 格式的内容转换为文档块后，在调用[创建嵌套块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-descendant/create)接口批量插入块到文档前，需先去除表格（Table）块中的 `merge_info` 字段。由于当前 `merge_info` 为只读属性，传入该字段会引发报错。
+- 将带表格的 Markdown/HTML 格式的内容转换为文档块后，在调用[创建嵌套块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-descendant/create)接口批量插入块到文档前，需先去除表格（Table）块中的 `merge_info` 字段。由于当前 `merge_info` 为只读属性，传入该字段会引发报错。
 
-- 将包含图片的 Markdown/HTML 格式的内容转换为文档块，并调用[创建嵌套块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-descendant/create)接口将图片（Image）块插入到文档后，需调用[上传图片素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)接口，以 Image BlockID 作为 `parent_node` 上传素材，接着调用[更新块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/patch)或[批量更新块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/batch_update)接口，指定 `replace_image` 操作，将图片素材 ID 设置到对应的 Image Block。
+- 将包含图片的 Markdown/HTML 格式的内容转换为文档块，并调用[创建嵌套块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-descendant/create)接口将图片（Image）块插入到文档后，需调用[上传图片素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)接口，以 Image BlockID 作为 `parent_node` 上传素材，接着调用[更新块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/patch)或[批量更新块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/batch_update)接口，指定 `replace_image` 操作，将图片素材 ID 设置到对应的 Image Block。
 
-- 当转换后的块数量过多时，需分批调用[创建嵌套块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-descendant/create)接口，单次调用[创建嵌套块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-descendant/create)接口最多可插入 1000 个块。
+- 当转换后的块数量过多时，需分批调用[创建嵌套块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-descendant/create)接口，单次调用[创建嵌套块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-descendant/create)接口最多可插入 1000 个块。
 ## 11. 服务端 OpenAPI 接口限频阈值是多少？
 
-具体请查阅对应接口文档，比如 [更新块的内容](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/patch)接口频率限制为每个应用 3 次/秒。
+具体请查阅对应接口文档，比如 [更新块的内容](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/patch)接口频率限制为每个应用 3 次/秒。
 ## 12. 文档 OpenAPI 支持哪些类型 Block？
 
-具体请查阅 [块的数据结构](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/data-structure/block) 中 BlockType  小节。
+具体请查阅 [块的数据结构](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/data-structure/block) 中 BlockType  小节。
 
  ## 13. 新创建的文档还没有 Block，该如何添加 Block ？
 
 新创建的文档有 Block，该 Block 为 Page Block。
 
-创建空文档成功后，接口会返回 `document_id`，`document_id`也是该文档页面块（Page Block）的 `block_id`，因此你可以通过指定 `document_id` 调用 [创建块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create)接口来添加 Block。
+创建空文档成功后，接口会返回 `document_id`，`document_id`也是该文档页面块（Page Block）的 `block_id`，因此你可以通过指定 `document_id` 调用 [创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create)接口来添加 Block。
 
 ## 14. 获取文档所有块接口是按什么顺序返回 Block 的？
 
-[获取文档所有块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)接口返回的 items 是一个 [1,N] (N>=1) 的 Block 数组。数组中元素的次序按文档内容先序遍历结果进行排列，其中索引为 0 的元素是文档根节点。
+[获取文档所有块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)接口返回的 items 是一个 [1,N] (N>=1) 的 Block 数组。数组中元素的次序按文档内容先序遍历结果进行排列，其中索引为 0 的元素是文档根节点。
 
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/f2781a250e0532e5d09fed46574eecd0_bnsLLioGHI.png?height=436&lazyload=true&width=1123)
 
@@ -857,7 +847,7 @@ curl --location --request POST '{url}' \
 
  ## 15. 如何更新文档标题？
 
-文档中的 Block 之间是树状关系，树的根 Block 是 Page Block，文档标题是 Page Block 的文本属性，并且 Page Block 的 BlockID 就是文档的 Token，因此若要更新文档标题，请调用 [更新块的内容](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/patch)接口，并指定为 `update_text_elements` 或 `update_text` 操作，其中请求的路径参数：
+文档中的 Block 之间是树状关系，树的根 Block 是 Page Block，文档标题是 Page Block 的文本属性，并且 Page Block 的 BlockID 就是文档的 Token，因此若要更新文档标题，请调用 [更新块的内容](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/patch)接口，并指定为 `update_text_elements` 或 `update_text` 操作，其中请求的路径参数：
 
 - `document_id`：填写新版文档的 Token，即 Page Block 的 BlockID
 - `block_id`：填写新版文档的 Token，即 Page Block 的 BlockID
@@ -879,11 +869,8 @@ curl --location --request PATCH '{url}' \
 ```
 ## 16. 文档有服务端的 SDK 吗？
 
-:::html
-<md-alert type="tip">
-SDK 的建设滞后于最新的 API，比如 API 已支持返回某新类型的 Block，但 SDK 尚未支持解析，但会保证其向前兼容。
-</md-alert>
-:::
+
+> **Tip**: SDK 的建设滞后于最新的 API，比如 API 已支持返回某新类型的 Block，但 SDK 尚未支持解析，但会保证其向前兼容。
 
 
 目前 SDK 支持 Java、Python、Go 和 Node.js 语言：
@@ -911,7 +898,7 @@ SDK 的建设滞后于最新的 API，比如 API 已支持返回某新类型的 
 - 使用指引：[GitHub - larksuite/oapi-sdk-node.js](https://github.com/larksuite/node-sdk/blob/main/README.zh.md)
 ## 17. 如何直接通过云文档模板创建文档？
 
-模板其实也是一篇文档，可以通过其链接中的 `document_id` 调用 [复制文件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/copy) 接口创建出一篇新文档。
+模板其实也是一篇文档，可以通过其链接中的 `document_id` 调用 [复制文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/copy) 接口创建出一篇新文档。
 如下图，假定「工作周报」该模板的访问链接是 `https://{domain}/docx/ke6jdf477ohCVVxzANnc56abcef`，那么你可通过 `ke6jdf477ohCVVxzANnc56abcef` 这个 `document_id` 去复制文件。
 
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/7a3f03605ba97f77371997814f9c38de_Nty18gpw48.png?height=373&lazyload=true&maxWidth=650&width=1272)
@@ -923,7 +910,7 @@ SDK 的建设滞后于最新的 API，比如 API 已支持返回某新类型的 
 
 ## 19. 如何读取文档中电子表格的内容，并继续插入一行数据？
 
-1. 调用 [获取文档所有块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)接口，获取电子表格块的 token。若调用成功，预计将返回以下格式数据。
+1. 调用 [获取文档所有块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)接口，获取电子表格块的 token。若调用成功，预计将返回以下格式数据。
   
    其中返回的 `sheet.token` 的值 `B3hasMxsshByaEtZxAwcVfWxnSe_Ml1QzO` 为电子表格的唯一标识（spreadsheet_token）和电子表格工作表的唯一标识（sheet_id）的组合。
    
@@ -975,16 +962,15 @@ SDK 的建设滞后于最新的 API，比如 API 已支持返回某新类型的 
     ```
 
 
+1. 基于步骤一获取的电子表格的唯一标识（spreadsheet_token）和电子表格工作表的唯一标识（sheet_id），调用电子表格的[读取单个范围](https://open.larkoffice.com/document/ukTMukTMukTM/ugTMzUjL4EzM14COxMTN)接口，获取表格中的数据。了解请求示例和响应体示例请直接参考该接口文档。
 
-1. 基于步骤一获取的电子表格的唯一标识（spreadsheet_token）和电子表格工作表的唯一标识（sheet_id），调用电子表格的[读取单个范围](/ssl:ttdoc/ukTMukTMukTM/ugTMzUjL4EzM14COxMTN)接口，获取表格中的数据。了解请求示例和响应体示例请直接参考该接口文档。
 
-
-1. 基于步骤一获取的电子表格的唯一标识（spreadsheet_token）和电子表格工作表的唯一标识（sheet_id），调用电子表格的[插入数据](/ssl:ttdoc/ukTMukTMukTM/uIjMzUjLyIzM14iMyMTN)接口，在指定范围的起始位置上方插入数据。了解请求示例和响应体示例请直接参考该接口文档。
+1. 基于步骤一获取的电子表格的唯一标识（spreadsheet_token）和电子表格工作表的唯一标识（sheet_id），调用电子表格的[插入数据](https://open.larkoffice.com/document/ukTMukTMukTM/uIjMzUjLyIzM14iMyMTN)接口，在指定范围的起始位置上方插入数据。了解请求示例和响应体示例请直接参考该接口文档。
 
 
 ## 20. 如何调用接口对文档中的多维表格进行调整？
 
-1. 调用[获取文档所有块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)接口，获取多维表格块的 token。若调用成功，预计将返回以下格式数据。
+1. 调用[获取文档所有块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)接口，获取多维表格块的 token。若调用成功，预计将返回以下格式数据。
 
   	其中返回的 `bitable.token` 的值`MMLLb4qYna4FrgsX5THc6EOTnT2_tblacTqz7wOURGpd` 为多维表格的唯一标识（app_token）和多维表格数据表的唯一标识（table_id）的组合。
 
@@ -1035,13 +1021,13 @@ SDK 的建设滞后于最新的 API，比如 API 已支持返回某新类型的 
     }
     ```
 
-1. 基于步骤一获取的多维表格的唯一标识（app_token）和多维表格数据表的唯一标识（table_id），调用[多维表格相关接口](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/bitable-overview#791c8e74)，对多维表格进行操作。
+1. 基于步骤一获取的多维表格的唯一标识（app_token）和多维表格数据表的唯一标识（table_id），调用[多维表格相关接口](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/bitable-overview#791c8e74)，对多维表格进行操作。
 
 ## 21. 如何获取源同步块的内容？
-文档中直接创建的同步块称为源同步块，源同步块的内容在其子孙列表中，可以通过[获取文档所有块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)接口直接拿到。
+文档中直接创建的同步块称为源同步块，源同步块的内容在其子孙列表中，可以通过[获取文档所有块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)接口直接拿到。
 
 ## 22. 如何获取引用同步块的内容？
-通过复制粘贴得到的同步块称为引用同步块，可先通过[获取文档所有块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)接口获取到引用同步块，引用同步块中记录了其引用的源同步块的文档 ID 和 Block ID。
+通过复制粘贴得到的同步块称为引用同步块，可先通过[获取文档所有块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)接口获取到引用同步块，引用同步块中记录了其引用的源同步块的文档 ID 和 Block ID。
 ```json
 {
     "block_id": "QtLFdCudXo96tPxFbtKcb9abcef",
@@ -1054,16 +1040,14 @@ SDK 的建设滞后于最新的 API，比如 API 已支持返回某新类型的 
     }
 }
 ```
-可使用 `source_document_id` 和 `source_block_id` 调用 [获取所有子块](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/get)接口，将查询参数 `with_descendant` 指定为 `true` 获取引用的源同步块的子孙块内容。
-:::html
-<md-alert>
-以应用身份(`tenant_access_token`)获取引用的源同步块内容时，需要应用有源文档的阅读权限。
+可使用 `source_document_id` 和 `source_block_id` 调用 [获取所有子块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/get)接口，将查询参数 `with_descendant` 指定为 `true` 获取引用的源同步块的子孙块内容。
 
-以用户身份(`user_access_token`)获取引用的源同步块内容时，需要用户有同步块的阅读权限。
-  
-查询同步块历史版本，需要有源文档的编辑权限。
-</md-alert>
-:::
+> **Info**: 以应用身份(`tenant_access_token`)获取引用的源同步块内容时，需要应用有源文档的阅读权限。
+> 
+> 以用户身份(`user_access_token`)获取引用的源同步块内容时，需要用户有同步块的阅读权限。
+>   
+> 查询同步块历史版本，需要有源文档的编辑权限。
+
 
 ```bash
 curl -i -X GET 'https://open.feishu.cn/open-apis/docx/v1/documents/WCR8dI68OoFVb9xk6kYcE3abcef/blocks/Zn9jdf1OqsMeUxbAhjXcqiabcef/children?with_descendants=true' \

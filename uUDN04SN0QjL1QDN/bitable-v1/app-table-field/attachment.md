@@ -7,16 +7,8 @@ updateTime: "1717678078000"
 # 附件字段说明
 
 
-:::html
+> **Tip**: 使用前请仔细阅读[素材概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/introduction)。
 
-<md-alert type="tip">
-
-使用前请仔细阅读[素材概述](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/introduction)。
-
-
-</md-alert>
-
-:::
 
 ## 数据结构
 | 字段名 | 字段描述|
@@ -49,10 +41,10 @@ updateTime: "1717678078000"
 ## 上传附件
 在多维表格中上传附件分 2 步
 
-1.调用[上传素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)或[分片上传素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_prepare)接口上传文件，上传成功之后获取到文件的 file_token；
+1.调用[上传素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)或[分片上传素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_prepare)接口上传文件，上传成功之后获取到文件的 file_token；
 
 
-2.调用[新增记录](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/create)或者[更新记录](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/update)将文件更新到记录中去；
+2.调用[新增记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/create)或者[更新记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/update)将文件更新到记录中去；
 
 
 **请求 body 说明：**
@@ -122,7 +114,7 @@ updateTime: "1717678078000"
 
 
 ## 下载附件
-1.调用[列出记录](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/list)查询出多维表格中附件的 file_token；
+1.调用[列出记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/list)查询出多维表格中附件的 file_token；
 
 **返回body**
 
@@ -174,5 +166,5 @@ updateTime: "1717678078000"
 ``` 
 
 
-2.调用[下载素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/download) 下载或者[获取素材临时下载链接](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/batch_get_tmp_download_url)，这2个接口已经支持多维表格。
+2.调用[下载素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/download) 下载或者[获取素材临时下载链接](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/batch_get_tmp_download_url)，这2个接口已经支持多维表格。
 

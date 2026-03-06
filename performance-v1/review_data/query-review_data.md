@@ -6,363 +6,56 @@ updateTime: "1741090280000"
 
 # 获取绩效结果
 
-获取被评估人在指定周期、指定项目中各个环节的评估结果信息，包含绩效所在的周期、项目、评估项、评估模版以及各环节评估数据等信息。{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=performance&version=v1&resource=review_data&method=query)
+获取被评估人在指定周期、指定项目中各个环节的评估结果信息，包含绩效所在的周期、项目、评估项、评估模版以及各环节评估数据等信息。
 
-:::html
-<md-alert type="error">
 
-</md-alert>
-:::
-
-:::html
-<md-alert type="warn">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="tip">
-若采用 `tenant_access_token` 的鉴权模式，推荐使用[获取绩效详情数据](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/performance-v2/review_data/query)
-接口获取更丰富的返回数据。
-</md-alert>
-:::
-
+> **Tip**: 若采用 `tenant_access_token` 的鉴权模式，推荐使用[获取绩效详情数据](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v2/review_data/query)
+> 接口获取更丰富的返回数据。
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/performance/v1/review_datas/query</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[20 次/分钟](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="performance:performance" desc="管理绩效数据" support_app_types="custom,isv" tags="">管理绩效数据</md-perm>
-            <md-perm name="performance:performance:readonly" desc="查看绩效数据" support_app_types="custom,isv" tags="">查看绩效数据</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/performance/v1/review_datas/query |
+| HTTP Method | POST |
+| 接口频率限制 | [20 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | custom,isv |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `performance:performance` 管理绩效数据 `performance:performance:readonly` 查看绩效数据 |
+| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
-或
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
-
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token` 或 `user_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
 
 ### 查询参数
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;" >描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >user_id_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	用户 ID 类型
-
-**示例值**：open_id
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="open_id" >标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)</md-enum-item>
-<md-enum-item key="union_id" >标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id)</md-enum-item>
-<md-enum-item key="user_id" >标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[了解更多：如何获取 User ID？](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)</md-enum-item>
-<md-enum-item key="people_admin_id" >以 people_admin_id 来识别用户</md-enum-item>
-</md-enum>
-
-**默认值**：`open_id`
-
-**当值为 `user_id`，字段权限要求**：
-<md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `user_id_type` | `string` | 否 | 用户 ID 类型<br>**示例值**：open_id<br>**可选值有**：<br>- `open_id`: 标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid) - `union_id`: 标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id) - `user_id`: 标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[了解更多：如何获取 User ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id) - `people_admin_id`: 以 people_admin_id 来识别用户<br>**默认值**：`open_id`<br>**当值为 `user_id`，字段权限要求**： `contact:user.employee_id:readonly` 获取用户 user ID |
 
 
 ### 请求体
 
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >start_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	周期开始时间最小值，毫秒时间戳，小于该时间开始的周期会被过滤掉
-<br>
-
-**注意**：当填写了 `semester_id_list` 参数时，此参数无效
-
-**示例值**："1430425599999"
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >end_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	周期结束时间最大值，毫秒时间戳，大于该时间结束的周期会被过滤掉
-<br>
-
-**注意**：当填写了 `semester_id_list` 参数时，此参数无效
-
-**示例值**："1630425599999"
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >stage_types</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	环节类型，目前仅支持终评环节、结果沟通环节、查看绩效结果环节（不传默认包含所有的环节）
-
-**示例值**：["leader_review"]
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="leader_review" >终评环节</md-enum-item>
-<md-enum-item key="communication_and_open_result" >结果沟通环节</md-enum-item>
-<md-enum-item key="view_result" >查看绩效结果环节</md-enum-item>
-</md-enum>
-
-**数据校验规则**：
-
-- 最大长度：`50`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >stage_progress</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	环节状态，填写时按照指定状态获取绩效结果，不填查询所有状态的绩效结果
-
-**示例值**：[1]
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="0" >未开始，任务的开始时间未到达</md-enum-item>
-<md-enum-item key="1" >待完成，任务的开始时间到达而截止时间未到达，且任务未完成</md-enum-item>
-<md-enum-item key="2" >已截止，任务的截止时间已到达，且任务未完成</md-enum-item>
-<md-enum-item key="3" >已完成，任务已完成</md-enum-item>
-<md-enum-item key="4" >已复议</md-enum-item>
-</md-enum>
-
-**数据校验规则**：
-
-- 最大长度：`50`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >semester_id_list</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	评估周期 ID 列表，可通过[获取周期](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/performance-v1/semester/list)接口获取
-
-**示例值**：["6992035450862224940"]
-
-**数据校验规则**：
-
-- 最大长度：`50`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >reviewee_user_id_list</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	被评估人 ID 列表，与入参 `user_id_type` 类型一致
-
-**示例值**：["ou_838b193464e10df19f1e1b3853698cca"]
-
-**数据校验规则**：
-
-- 最大长度：`50`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >updated_later_than</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	环节更新时间最早时间，毫秒时间戳，可筛选出在此时间之后，有内容提交的环节数据
-
-**示例值**："1630425599999"
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
-
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `start_time` | `string` | 是 | 周期开始时间最小值，毫秒时间戳，小于该时间开始的周期会被过滤掉<br>**注意**：当填写了 `semester_id_list` 参数时，此参数无效<br>**示例值**："1430425599999" |
+| `end_time` | `string` | 是 | 周期结束时间最大值，毫秒时间戳，大于该时间结束的周期会被过滤掉<br>**注意**：当填写了 `semester_id_list` 参数时，此参数无效<br>**示例值**："1630425599999" |
+| `stage_types` | `string\[\]` | 是 | 环节类型，目前仅支持终评环节、结果沟通环节、查看绩效结果环节（不传默认包含所有的环节）<br>**示例值**：["leader_review"]<br>**可选值有**：<br>- `leader_review`: 终评环节 - `communication_and_open_result`: 结果沟通环节 - `view_result`: 查看绩效结果环节<br>**数据校验规则**：<br>- 最大长度：`50` |
+| `stage_progress` | `int\[\]` | 否 | 环节状态，填写时按照指定状态获取绩效结果，不填查询所有状态的绩效结果<br>**示例值**：[1]<br>**可选值有**：<br>- `0`: 未开始，任务的开始时间未到达 - `1`: 待完成，任务的开始时间到达而截止时间未到达，且任务未完成 - `2`: 已截止，任务的截止时间已到达，且任务未完成 - `3`: 已完成，任务已完成 - `4`: 已复议<br>**数据校验规则**：<br>- 最大长度：`50` |
+| `semester_id_list` | `string\[\]` | 否 | 评估周期 ID 列表，可通过[获取周期](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v1/semester/list)接口获取<br>**示例值**：["6992035450862224940"]<br>**数据校验规则**：<br>- 最大长度：`50` |
+| `reviewee_user_id_list` | `string\[\]` | 是 | 被评估人 ID 列表，与入参 `user_id_type` 类型一致<br>**示例值**：["ou_838b193464e10df19f1e1b3853698cca"]<br>**数据校验规则**：<br>- 最大长度：`50` |
+| `updated_later_than` | `string` | 否 | 环节更新时间最早时间，毫秒时间戳，可筛选出在此时间之后，有内容提交的环节数据<br>**示例值**："1630425599999" |
 
 
 ### 请求体示例
-:::html
-<md-code-json>
+
+```json
 {
 	"reviewee_user_id_list":["ou_3245842393d09e9428ad4655da6e30b3"],
 	"start_time":"1430425599999",
@@ -372,1062 +65,94 @@ updateTime: "1741090280000"
 	"stage_progress":[0,1,2,3],
 	"updated_later_than":"1430425599999"
 }
-</md-code-json>
-:::
-
+```
 
 
 ## 响应
 
 
-
-
-
 ### 响应体
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误码，非 0 表示失败
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >data</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >review_data</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	\-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >semesters</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >semester\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	周期列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	周期 ID，详情可查看：[获取周期列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/performance-v1/semester/list)
-<!--
-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >year</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	周期年份
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >type_group</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	周期类型分组
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	周期类型-->
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	周期名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >zh-CN</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	周期中文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >en-US</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	周期英文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >progress</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	绩效评估周期 状态
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="initiating" >初始化</md-enum-item>
-<md-enum-item key="enabled" >已启动</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >start_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	周期开始时间，毫秒时间戳
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >end_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	周期结束时间，毫秒时间戳
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >create_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	周期创建时间，毫秒时间戳
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >modify_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	绩效评估周期 更新时间
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >create_user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	绩效评估周期 创建人 ID，与入参 user_id_type 类型一致
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >modify_user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	绩效评估周期 更新人 ID，与入参 user_id_type 类型一致
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >activities</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >activity\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	绩效评估项目列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	项目 ID，可通过[获取项目列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/performance-v2/activity/query)接口获取
-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	项目名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >zh-CN</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	项目中文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >en-US</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	项目英文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >semester_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	周期 ID，详情可查看：[获取周期列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/performance-v1/semester/list)
-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >indicators</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >indicator\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估项列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估项 ID，详情可查看：[获取评估项列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/performance-v2/indicator/query)
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估项名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >zh-CN</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估项中文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >en-US</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估项英文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >options</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >indicator_option\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估项等级列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	等级 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	等级名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >zh-CN</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	等级中文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >en-US</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	等级英文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >label</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	等级代号
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >templates</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >template\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估模板列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估模板 ID，详情可查看：[获取评估模板](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/performance-v2/review_template/query)
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	环节名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >zh-CN</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	环节中文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >en-US</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	环节英文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >stage</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	环节类型
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >units</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >unit\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估内容列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估内容 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估内容名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >zh-CN</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估内容中文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >en-US</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估内容英文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >fields</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >field\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估字段列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估字段 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估字段名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >zh-CN</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估字段中文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >en-US</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估字段英文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >indicator_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估项 ID，详情可查看：[获取评估项列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/performance-v2/indicator/query)
-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >parent_field_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	父级评估字段 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >datas</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >review_profile\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估数据列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >user</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	被评估人 ID，ID 类型请参考：[用户资源介绍](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/field-overview)
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >open_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	用户的 open_id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	用户的 user_id，与入参 `user_id_type` 类型一致
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >semester_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	周期 ID，详情可查看：[获取周期列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/performance-v1/semester/list)
-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >activity_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	项目 ID，详情可查看：[获取项目列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/performance-v2/activity/query)
-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >stages</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >review_stage\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	环节信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >stage_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	环节类型
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >progress</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	环节状态
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="0" >未开始，任务的开始时间未到达</md-enum-item>
-<md-enum-item key="1" >待完成，任务的开始时间到达而截止时间未到达，且任务未完成</md-enum-item>
-<md-enum-item key="2" >已截止，任务的截止时间已到达，且任务未完成</md-enum-item>
-<md-enum-item key="3" >已完成，任务已完成</md-enum-item>
-<md-enum-item key="4" >已复议，绩效结果已开通，且被评估人已发起复议</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >data</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >review_detail\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	环节填写内容
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >template_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估模板 ID，详情可查看：[获取评估模板](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/performance-v2/review_template/query)
-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >unit_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估内容 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >field_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估字段 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >reviewer_user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >user</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估人 ID，ID 类型请参考：[用户资源介绍](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/field-overview)
-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >open_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	用户的 open_id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	用户的 user_id，与入参 `user_id_type` 类型一致
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >submit_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	最后提交时间，毫秒时间戳
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >indicator_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估项 ID，详情可查看：[获取评估项列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/performance-v2/indicator/query)
- <br>
-
-**说明**：当 option_id 或 score 有值的时候有值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >option_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评估项结果等级 ID
- <br>
-
-**说明**：当前评估项是评级型评估项数据时有值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >score</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评分型评估项填写内容
- <br>
-
-**说明**：当前评估项是评分型评估项数据时有值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >text</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	填写项填写内容 
-<br>
-
-**说明**：当前评估项是填写项数据时有值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >perf_coefficient_result</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	绩效系数值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >richtext</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	富文本格式的填写内容，解析方式见 [editor](https://open.larkoffice.com/document/client-docs/gadget/component-component/basic-component/form/editor#51af2f4f)
-	</md-dt-td>
-</md-dt-tr>
-
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `code` | `int` | 错误码，非 0 表示失败 |
+| `msg` | `string` | 错误描述 |
+| `data` | `review_data` | \- |
+| &nbsp;&nbsp;└ `semesters` | `semester\[\]` | 周期列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 周期 ID，详情可查看：[获取周期列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v1/semester/list)<br>	 <br> 	 	`year` 	 	 	`int` 	 	 	周期年份 	 <br> 	 	`type_group` 	 	 	`string` 	 	 	周期类型分组 	 <br> 	 	`type` 	 	 	`string` 	 	 	周期类型 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n` | 周期名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh-CN` | `string` | 周期中文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en-US` | `string` | 周期英文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `progress` | `string` | 绩效评估周期 状态<br>**可选值有**：<br>- `initiating`: 初始化 - `enabled`: 已启动 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `start_time` | `string` | 周期开始时间，毫秒时间戳 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `end_time` | `string` | 周期结束时间，毫秒时间戳 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `create_time` | `string` | 周期创建时间，毫秒时间戳 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `modify_time` | `string` | 绩效评估周期 更新时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `create_user_id` | `string` | 绩效评估周期 创建人 ID，与入参 user_id_type 类型一致 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `modify_user_id` | `string` | 绩效评估周期 更新人 ID，与入参 user_id_type 类型一致 |
+| &nbsp;&nbsp;└ `activities` | `activity\[\]` | 绩效评估项目列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 项目 ID，可通过[获取项目列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v2/activity/query)接口获取 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n` | 项目名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh-CN` | `string` | 项目中文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en-US` | `string` | 项目英文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `semester_id` | `string` | 周期 ID，详情可查看：[获取周期列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v1/semester/list) |
+| &nbsp;&nbsp;└ `indicators` | `indicator\[\]` | 评估项列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 评估项 ID，详情可查看：[获取评估项列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v2/indicator/query) |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n` | 评估项名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh-CN` | `string` | 评估项中文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en-US` | `string` | 评估项英文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `options` | `indicator_option\[\]` | 评估项等级列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 等级 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n` | 等级名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh-CN` | `string` | 等级中文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en-US` | `string` | 等级英文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `label` | `string` | 等级代号 |
+| &nbsp;&nbsp;└ `templates` | `template\[\]` | 评估模板列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 评估模板 ID，详情可查看：[获取评估模板](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v2/review_template/query) |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n` | 环节名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh-CN` | `string` | 环节中文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en-US` | `string` | 环节英文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `stage` | `string` | 环节类型 |
+| &nbsp;&nbsp;└ `units` | `unit\[\]` | 评估内容列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 评估内容 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n` | 评估内容名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh-CN` | `string` | 评估内容中文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en-US` | `string` | 评估内容英文名称 |
+| &nbsp;&nbsp;└ `fields` | `field\[\]` | 评估字段列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 评估字段 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n` | 评估字段名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh-CN` | `string` | 评估字段中文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en-US` | `string` | 评估字段英文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `indicator_id` | `string` | 评估项 ID，详情可查看：[获取评估项列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v2/indicator/query) |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `parent_field_id` | `string` | 父级评估字段 ID |
+| &nbsp;&nbsp;└ `datas` | `review_profile\[\]` | 评估数据列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `user` | 被评估人 ID，ID 类型请参考：[用户资源介绍](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/field-overview) |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `open_id` | `string` | 用户的 open_id |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 用户的 user_id，与入参 `user_id_type` 类型一致 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `semester_id` | `string` | 周期 ID，详情可查看：[获取周期列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v1/semester/list) |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `activity_id` | `string` | 项目 ID，详情可查看：[获取项目列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v2/activity/query) |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `stages` | `review_stage\[\]` | 环节信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `stage_type` | `string` | 环节类型 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `progress` | `int` | 环节状态<br>**可选值有**：<br>- `0`: 未开始，任务的开始时间未到达 - `1`: 待完成，任务的开始时间到达而截止时间未到达，且任务未完成 - `2`: 已截止，任务的截止时间已到达，且任务未完成 - `3`: 已完成，任务已完成 - `4`: 已复议，绩效结果已开通，且被评估人已发起复议 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `data` | `review_detail\[\]` | 环节填写内容 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `template_id` | `string` | 评估模板 ID，详情可查看：[获取评估模板](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v2/review_template/query) |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `unit_id` | `string` | 评估内容 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `field_id` | `string` | 评估字段 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `reviewer_user_id` | `user` | 评估人 ID，ID 类型请参考：[用户资源介绍](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/field-overview) |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `open_id` | `string` | 用户的 open_id |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 用户的 user_id，与入参 `user_id_type` 类型一致 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `submit_time` | `string` | 最后提交时间，毫秒时间戳 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `indicator_id` | `string` | 评估项 ID，详情可查看：[获取评估项列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v2/indicator/query)  <br>**说明**：当 option_id 或 score 有值的时候有值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `option_id` | `string` | 评估项结果等级 ID  <br>**说明**：当前评估项是评级型评估项数据时有值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `score` | `string` | 评分型评估项填写内容  <br>**说明**：当前评估项是评分型评估项数据时有值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `text` | `string` | 填写项填写内容 <br>**说明**：当前评估项是填写项数据时有值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `perf_coefficient_result` | `string` | 绩效系数值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `richtext` | `string` | 富文本格式的填写内容，解析方式见 [editor](https://open.larkoffice.com/document/client-docs/gadget/component-component/basic-component/form/editor#51af2f4f) |
 
 
 ### 响应体示例
-:::html
-<md-code-json>
+
+```json
 {
   "code": 0,
   "data": {
@@ -1930,52 +655,15 @@ updateTime: "1741090280000"
   },
   "msg": "success"
 }
-</md-code-json>
-:::
-
+```
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1580101</md-td>
-  <md-td>internal error</md-td>
-  <md-td>请根据实际报错信息定位或咨询[技术支持](https://applink.feishu.cn/TLJpeNdW)</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1580102</md-td>
-  <md-td>param is invalid</md-td>
-  <md-td>检查参数是否正确，例如类型，大小</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1580901</md-td>
-  <md-td>tenant no license</md-td>
-  <md-td>请检查租户是否有席位</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
-
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 500 | 1580101 | internal error | 请根据实际报错信息定位或咨询[技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1580102 | param is invalid | 检查参数是否正确，例如类型，大小 |
+| 400 | 1580901 | tenant no license | 请检查租户是否有席位 |
 
 

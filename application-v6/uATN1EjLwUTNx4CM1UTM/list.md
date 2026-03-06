@@ -6,925 +6,92 @@ updateTime: "1752136594000"
 
 # 获取企业安装的应用
 
-该接口用于查询企业安装的应用列表，只能被企业自建应用调用。{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=application&version=v6&resource=application&method=list)
-
-:::html
-<md-alert type="error">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="warn">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="tip">
-
-</md-alert>
-:::
-
+该接口用于查询企业安装的应用列表，只能被企业自建应用调用。
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/application/v6/applications</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>GET</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[100 次/分钟](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="admin:app.info:readonly" desc="获取应用信息" support_app_types="custom" tags="">获取应用信息</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/application/v6/applications |
+| HTTP Method | GET |
+| 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | custom |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `admin:app.info:readonly` 获取应用信息 |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
-
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
 
 
 ### 查询参数
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;" >描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >page_size</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	分页大小
-
-**示例值**：50
-
-**默认值**：`50`
-
-**数据校验规则**：
-
-- 最大值：`50`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >page_token</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果
-
-**示例值**：AQD9/Rn9eij9Pm39ED40/dk53s4Ebp882DYfFaPFbz00L4CMZJrqGdzNyc8BcZtDbwVUvRmQTvyMYicnGWrde9X56TgdBuS+JKiSIkdexPw=
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >user_id_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	用户 ID 类型
-
-**示例值**：open_id
-
-**默认值**：`open_id`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >lang</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	应用的图标、描述、帮助文档链接是按照应用的主语言返回；其他内容（如应用权限、应用分类）按照该参数设定返回对应的语言。可选值有： zh_cn：中文 en_us：英文 ja_jp：日文  如不填写，则按照应用的主语言返回
-
-**示例值**：zh_cn
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >status</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	不传入代表全部返回。传入则按照这种应用状态返回。应用状态可选值有：0：停用状态1：启用状态 2：未启用状态
-
-**示例值**：0
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="0" >停用</md-enum-item>
-<md-enum-item key="1" >启用</md-enum-item>
-<md-enum-item key="2" >未启用</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >payment_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	不传入代表全部返回。传入则按照这种应用状态返回。 付费类型 可选值： 0：免费 1：付费
-
-**示例值**：0
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="0" >免费</md-enum-item>
-<md-enum-item key="1" >付费</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >owner_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	不传入代表全部返回。传入则按照这种应用状态返回。所有者类型，可选值： 0：飞书科技 1：飞书合作伙伴 2：企业内成员
-
-**示例值**：0
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="0" >飞书科技</md-enum-item>
-<md-enum-item key="1" >飞书合作伙伴</md-enum-item>
-<md-enum-item key="2" >企业内成员</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
-
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `page_size` | `int` | 否 | 分页大小<br>**示例值**：50<br>**默认值**：`50`<br>**数据校验规则**：<br>- 最大值：`50` |
+| `page_token` | `string` | 否 | 分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果<br>**示例值**：AQD9/Rn9eij9Pm39ED40/dk53s4Ebp882DYfFaPFbz00L4CMZJrqGdzNyc8BcZtDbwVUvRmQTvyMYicnGWrde9X56TgdBuS+JKiSIkdexPw= |
+| `user_id_type` | `string` | 否 | 用户 ID 类型<br>**示例值**：open_id<br>**默认值**：`open_id` |
+| `lang` | `string` | 是 | 应用的图标、描述、帮助文档链接是按照应用的主语言返回；其他内容（如应用权限、应用分类）按照该参数设定返回对应的语言。可选值有： zh_cn：中文 en_us：英文 ja_jp：日文  如不填写，则按照应用的主语言返回<br>**示例值**：zh_cn |
+| `status` | `int` | 否 | 不传入代表全部返回。传入则按照这种应用状态返回。应用状态可选值有：0：停用状态1：启用状态 2：未启用状态<br>**示例值**：0<br>**可选值有**：<br>- `0`: 停用 - `1`: 启用 - `2`: 未启用 |
+| `payment_type` | `int` | 否 | 不传入代表全部返回。传入则按照这种应用状态返回。 付费类型 可选值： 0：免费 1：付费<br>**示例值**：0<br>**可选值有**：<br>- `0`: 免费 - `1`: 付费 |
+| `owner_type` | `int` | 否 | 不传入代表全部返回。传入则按照这种应用状态返回。所有者类型，可选值： 0：飞书科技 1：飞书合作伙伴 2：企业内成员<br>**示例值**：0<br>**可选值有**：<br>- `0`: 飞书科技 - `1`: 飞书合作伙伴 - `2`: 企业内成员 |
 
 
 ## 响应
 
 
-
-
-
 ### 响应体
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误码，非 0 表示失败
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >data</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	\-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >app_list</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >application\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >app_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用的 app_id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >creator_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用创建者（所有者）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >status</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用状态
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="0" >停用状态</md-enum-item>
-<md-enum-item key="1" >启用状态</md-enum-item>
-<md-enum-item key="2" >未启用状态</md-enum-item>
-<md-enum-item key="3" >未知状态</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >scene_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用类型
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="0" >自建应用</md-enum-item>
-<md-enum-item key="1" >应用商店应用</md-enum-item>
-<md-enum-item key="2" >个人应用商店应用</md-enum-item>
-<md-enum-item key="3" >未知应用类型</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >payment_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	付费类型
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="0" >免费</md-enum-item>
-<md-enum-item key="1" >付费</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >create_source</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用创建来源(目前仅Base应用返回)
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="developer_console" >开发者后台</md-enum-item>
-<md-enum-item key="base" >多维表格自动化流程创建的应用</md-enum-item>
-<md-enum-item key="app_engine" >飞书 aPaaS</md-enum-item>
-<md-enum-item key="bot_builder" >机器人助手</md-enum-item>
-<md-enum-item key="aily" >aily(智能伙伴搭建平台)</md-enum-item>
-<md-enum-item key="unknown" >未知来源</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >redirect_urls</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	安全设置中的重定向 URL
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >online_version_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	发布在线上的应用版本 ID，若没有则为空
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >unaudit_version_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	在审核中的版本 ID，若没有则为空
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >app_name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >avatar_url</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用图标 url
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >description</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用默认描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >scopes</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >app_scope\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用权限列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >scope</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用权限
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >description</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用权限的国际化描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >level</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	权限等级描述
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >普通权限</md-enum-item>
-<md-enum-item key="2" >高级权限</md-enum-item>
-<md-enum-item key="3" >超敏感权限</md-enum-item>
-<md-enum-item key="0" >未知等级</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >back_home_url</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	后台主页地址
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >app_i18n_info\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用的国际化信息列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >i18n_key</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	国际化语言的 key
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="zh_cn" >中文</md-enum-item>
-<md-enum-item key="en_us" >英文</md-enum-item>
-<md-enum-item key="ja_jp" >日文</md-enum-item>
-<md-enum-item key="zh_hk" >繁体中文(中国香港)</md-enum-item>
-<md-enum-item key="zh_tw" >繁体中文(中国台湾)</md-enum-item>
-<md-enum-item key="id_id" >印度尼西亚语</md-enum-item>
-<md-enum-item key="ms_my" >马来语</md-enum-item>
-<md-enum-item key="de_de" >德语</md-enum-item>
-<md-enum-item key="es_es" >西班牙语</md-enum-item>
-<md-enum-item key="fr_fr" >法语</md-enum-item>
-<md-enum-item key="it_it" >意大利语</md-enum-item>
-<md-enum-item key="pt_br" >葡萄牙语(巴西)</md-enum-item>
-<md-enum-item key="vi_vn" >越南语</md-enum-item>
-<md-enum-item key="ru_ru" >俄语</md-enum-item>
-<md-enum-item key="th_th" >泰语</md-enum-item>
-<md-enum-item key="ko_kr" >韩语</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用国际化名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >description</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用国际化描述（副标题）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >help_use</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	国际化帮助文档链接
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >primary_language</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用主语言
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="zh_cn" >中文</md-enum-item>
-<md-enum-item key="en_us" >英文</md-enum-item>
-<md-enum-item key="ja_jp" >日文</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >common_categories</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用分类的国际化描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >owner</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >application.owner</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用的所有者信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用所有者类型
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="0" >飞书科技</md-enum-item>
-<md-enum-item key="1" >飞书合作伙伴</md-enum-item>
-<md-enum-item key="2" >企业内成员</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >owner_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用所有者ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用开发商名称(仅商店应用返回)
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >help_desk</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用开发商服务台链接(仅商店应用返回)
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >email</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用开发商的邮箱(仅商店应用返回)
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >phone</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用开发商的手机号(仅商店应用返回)
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >customer_service_account</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	客服账号，仅当商店应用配置了这种联系方式时才会返回
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >mobile_default_ability</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	移动端默认能力
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="gadget" >小程序</md-enum-item>
-<md-enum-item key="web_app" >网页应用</md-enum-item>
-<md-enum-item key="bot" >机器人</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >pc_default_ability</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	PC端默认能力
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="gadget" >小程序</md-enum-item>
-<md-enum-item key="web_app" >网页应用</md-enum-item>
-<md-enum-item key="bot" >机器人</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >page_token</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	分页标记，当 has_more 为 true 时，会同时返回新的 page_token，否则不返回 page_token
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >has_more</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否还有更多项
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >total_count</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	当前页面数据里，应用状态为“启用”的应用总数
-	</md-dt-td>
-</md-dt-tr>
-
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `code` | `int` | 错误码，非 0 表示失败 |
+| `msg` | `string` | 错误描述 |
+| `data` | `\-` | \- |
+| &nbsp;&nbsp;└ `app_list` | `application\[\]` | 应用列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `app_id` | `string` | 应用的 app_id |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `creator_id` | `string` | 应用创建者（所有者） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `status` | `int` | 应用状态<br>**可选值有**：<br>- `0`: 停用状态 - `1`: 启用状态 - `2`: 未启用状态 - `3`: 未知状态 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `scene_type` | `int` | 应用类型<br>**可选值有**：<br>- `0`: 自建应用 - `1`: 应用商店应用 - `2`: 个人应用商店应用 - `3`: 未知应用类型 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `payment_type` | `int` | 付费类型<br>**可选值有**：<br>- `0`: 免费 - `1`: 付费 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `create_source` | `string` | 应用创建来源(目前仅Base应用返回)<br>**可选值有**：<br>- `developer_console`: 开发者后台 - `base`: 多维表格自动化流程创建的应用 - `app_engine`: 飞书 aPaaS - `bot_builder`: 机器人助手 - `aily`: aily(智能伙伴搭建平台) - `unknown`: 未知来源 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `redirect_urls` | `string\[\]` | 安全设置中的重定向 URL |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `online_version_id` | `string` | 发布在线上的应用版本 ID，若没有则为空 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `unaudit_version_id` | `string` | 在审核中的版本 ID，若没有则为空 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `app_name` | `string` | 应用名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `avatar_url` | `string` | 应用图标 url |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `description` | `string` | 应用默认描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `scopes` | `app_scope\[\]` | 应用权限列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `scope` | `string` | 应用权限 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `description` | `string` | 应用权限的国际化描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `level` | `int` | 权限等级描述<br>**可选值有**：<br>- `1`: 普通权限 - `2`: 高级权限 - `3`: 超敏感权限 - `0`: 未知等级 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `back_home_url` | `string` | 后台主页地址 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `i18n` | `app_i18n_info\[\]` | 应用的国际化信息列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `i18n_key` | `string` | 国际化语言的 key<br>**可选值有**：<br>- `zh_cn`: 中文 - `en_us`: 英文 - `ja_jp`: 日文 - `zh_hk`: 繁体中文(中国香港) - `zh_tw`: 繁体中文(中国台湾) - `id_id`: 印度尼西亚语 - `ms_my`: 马来语 - `de_de`: 德语 - `es_es`: 西班牙语 - `fr_fr`: 法语 - `it_it`: 意大利语 - `pt_br`: 葡萄牙语(巴西) - `vi_vn`: 越南语 - `ru_ru`: 俄语 - `th_th`: 泰语 - `ko_kr`: 韩语 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `string` | 应用国际化名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `description` | `string` | 应用国际化描述（副标题） |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `help_use` | `string` | 国际化帮助文档链接 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `primary_language` | `string` | 应用主语言<br>**可选值有**：<br>- `zh_cn`: 中文 - `en_us`: 英文 - `ja_jp`: 日文 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `common_categories` | `string\[\]` | 应用分类的国际化描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `owner` | `application.owner` | 应用的所有者信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `int` | 应用所有者类型<br>**可选值有**：<br>- `0`: 飞书科技 - `1`: 飞书合作伙伴 - `2`: 企业内成员 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `owner_id` | `string` | 应用所有者ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `string` | 应用开发商名称(仅商店应用返回) |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `help_desk` | `string` | 应用开发商服务台链接(仅商店应用返回) |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `email` | `string` | 应用开发商的邮箱(仅商店应用返回) |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `phone` | `string` | 应用开发商的手机号(仅商店应用返回) |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `customer_service_account` | `string` | 客服账号，仅当商店应用配置了这种联系方式时才会返回 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `mobile_default_ability` | `string` | 移动端默认能力<br>**可选值有**：<br>- `gadget`: 小程序 - `web_app`: 网页应用 - `bot`: 机器人 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `pc_default_ability` | `string` | PC端默认能力<br>**可选值有**：<br>- `gadget`: 小程序 - `web_app`: 网页应用 - `bot`: 机器人 |
+| &nbsp;&nbsp;└ `page_token` | `string` | 分页标记，当 has_more 为 true 时，会同时返回新的 page_token，否则不返回 page_token |
+| &nbsp;&nbsp;└ `has_more` | `boolean` | 是否还有更多项 |
+| &nbsp;&nbsp;└ `total_count` | `int` | 当前页面数据里，应用状态为“启用”的应用总数 |
 
 
 ### 响应体示例
-:::html
-<md-code-json>
+
+```json
 {
     "code": 0,
     "msg": "success",
@@ -983,76 +150,18 @@ updateTime: "1752136594000"
         "total_count": 20
     }
 }
-</md-code-json>
-:::
-
+```
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>404</md-td>
-  <md-td>211005</md-td>
-  <md-td>invalid app id</md-td>
-  <md-td>检查 app id</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>211002</md-td>
-  <md-td>internal error</md-td>
-  <md-td>内部错误，请联系oncall</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>211001</md-td>
-  <md-td>invalid param</md-td>
-  <md-td>参数错误检查参数</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>211003</md-td>
-  <md-td>page token 错误</md-td>
-  <md-td>检查page token参数是否是之前返回的pagetoken</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>211004</md-td>
-  <md-td>page size 错误</md-td>
-  <md-td>检查是否超出限制</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>211006</md-td>
-  <md-td>权限缺失</md-td>
-  <md-td>检查权限是否满足要求</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
-
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 404 | 211005 | invalid app id | 检查 app id |
+| 500 | 211002 | internal error | 内部错误，请联系oncall |
+| 400 | 211001 | invalid param | 参数错误检查参数 |
+| 400 | 211003 | page token 错误 | 检查page token参数是否是之前返回的pagetoken |
+| 400 | 211004 | page size 错误 | 检查是否超出限制 |
+| 403 | 211006 | 权限缺失 | 检查权限是否满足要求 |
 
 

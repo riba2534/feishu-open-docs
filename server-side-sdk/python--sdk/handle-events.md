@@ -6,36 +6,18 @@ updateTime: "1732875615000"
 
 # 处理事件
 
-通过事件订阅功能，应用可以及时接收飞书中资源数据的变化，并根据变化情况做对应的业务处理，详情参见[事件概述](/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。在应用内订阅事件时，还需要在本地服务端建立与应用的连接，以便接收事件数据。服务端 SDK 封装了长连接方式，可以快速建立数据通道处理事件；你也可以选择自建 HTTP 服务器处理事件。两种方式介绍如下：
+通过事件订阅功能，应用可以及时接收飞书中资源数据的变化，并根据变化情况做对应的业务处理，详情参见[事件概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。在应用内订阅事件时，还需要在本地服务端建立与应用的连接，以便接收事件数据。服务端 SDK 封装了长连接方式，可以快速建立数据通道处理事件；你也可以选择自建 HTTP 服务器处理事件。两种方式介绍如下：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">订阅方式</md-th>
-<md-th style="width:70%">介绍</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-  
-<md-tr>
-<md-td>使用长连接接收事件</md-td>
-<md-td>该方式是飞书 SDK 内提供的能力，你可以通过集成飞书 SDK 与开放平台建立一条 WebSocket 全双工通道（你的服务器需要能够访问公网）。后续当应用订阅的事件发生时，开放平台会通过该通道向你的服务器发送消息。相较于传统的 Webhook 模式，长连接模式大大降低了接入成本，将原先 1 周左右的开发周期降低到 5 分钟。具体优势如下：测试阶段无需使用内网穿透工具，通过长连接模式在本地开发环境中即可接收事件回调。SDK 内封装了鉴权逻辑，只在建连时进行鉴权，后续事件推送均为明文数据，无需再处理解密和验签逻辑。只需保证运行环境具备访问公网能力即可，无需提供公网 IP 或域名。无需部署防火墙和配置白名单。</md-td>
-</md-tr>
 
-<md-tr>
-<md-td>将事件发送至开发者服务器</md-td>
-<md-td>传统的 Webhook 模式，该方式需要你提供用于接收事件消息的服务器公网地址。后续当应用订阅的事件发生时，开放平台会向服务器的公网地址发送 HTTP POST 请求，请求内包含事件数据。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
+| 订阅方式 | 介绍 |
+| --- | --- |
+| 使用长连接接收事件 | 该方式是飞书 SDK 内提供的能力，你可以通过集成飞书 SDK 与开放平台建立一条 WebSocket 全双工通道（你的服务器需要能够访问公网）。后续当应用订阅的事件发生时，开放平台会通过该通道向你的服务器发送消息。相较于传统的 Webhook 模式，长连接模式大大降低了接入成本，将原先 1 周左右的开发周期降低到 5 分钟。具体优势如下：测试阶段无需使用内网穿透工具，通过长连接模式在本地开发环境中即可接收事件回调。SDK 内封装了鉴权逻辑，只在建连时进行鉴权，后续事件推送均为明文数据，无需再处理解密和验签逻辑。只需保证运行环境具备访问公网能力即可，无需提供公网 IP 或域名。无需部署防火墙和配置白名单。 |
+| 将事件发送至开发者服务器 | 传统的 Webhook 模式，该方式需要你提供用于接收事件消息的服务器公网地址。后续当应用订阅的事件发生时，开放平台会向服务器的公网地址发送 HTTP POST 请求，请求内包含事件数据。 |
 
 
 ## （推荐）方式一：使用长连接接收事件
 
-如果事件订阅方式需要选择 **使用长连接接收事件**，则需要先使用 SDK 建立与应用的连接。本章节提供建立长连接的示例代码与代码解析，通过 SDK 建立长连接之后，你才能在应用的事件订阅方式中保存 **使用长连接接收事件** 方式。关于应用内配置事件订阅方式的介绍，参考[配置事件订阅方式](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/request-url-configuration-case)。
+如果事件订阅方式需要选择 **使用长连接接收事件**，则需要先使用 SDK 建立与应用的连接。本章节提供建立长连接的示例代码与代码解析，通过 SDK 建立长连接之后，你才能在应用的事件订阅方式中保存 **使用长连接接收事件** 方式。关于应用内配置事件订阅方式的介绍，参考[配置事件订阅方式](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/request-url-configuration-case)。
 
 ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/c5a72c50a0d1caf40bdc8718c911b8cd_MHMSb9cxef.png?height=580&lazyload=true&maxWidth=550&width=1224)
 ### 注意事项
@@ -79,7 +61,7 @@ if __name__ == "__main__":
 
 2. 通过 event_handler 的 `register_{事件版本}_{事件类型 或 customized_event}` 方法处理不同的事件。
 
-    在开发者后台应用详情页添加事件时（具体操作可参见[添加事件](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/subscription-event-case)），可获取事件的类型与版本信息。
+    在开发者后台应用详情页添加事件时（具体操作可参见[添加事件](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/subscription-event-case)），可获取事件的类型与版本信息。
 
 	![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/4dbc1cd97d95f1af949354ce3c350461_bidnBwXPPi.png?height=380&lazyload=true&maxWidth=600&width=1666)
 
@@ -107,7 +89,7 @@ if __name__ == "__main__":
 	- 使用 `.register_p1_customized_event("这里填入你要自定义订阅的事件类型，例如 out_approval", do_message_event)` 处理事件：
     	- **p1** 表示事件版本为 v1.0。
     	- **customized_event** 为固定的方法名称。
-    	- customized_event 方法内需要传入事件 Key（String 类型），例如[外出审批](/ssl:ttdoc/ukTMukTMukTM/uIDO24iM4YjLygjN/event/out-of-office)的事件类型为 out_approval。
+    	- customized_event 方法内需要传入事件 Key（String 类型），例如[外出审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/out-of-office)的事件类型为 out_approval。
 
     
     你也可以参考代码片段注释了解如何配置：
@@ -146,7 +128,7 @@ if __name__ == "__main__":
 
 如果事件订阅方式选择 **将事件发送至开发者服务器**，则需要设置事件请求地址，后续在事件发生时，开放平台会向该地址发送包含事件 JSON 数据的 HTTP POST 请求。为此你需要在项目中启动一个 HTTP 服务，然后把 HTTP 服务的 URL 绑定到应用的事件订阅中，以接收事件。
 
-本章节提供了使用 flask 启动 httpServer 的示例代码，如果你使用的是其他 Web 框架，只需处理 HTTP 出入参转换即可。以[接收消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件为例，接收事件订阅的示例代码如下：
+本章节提供了使用 flask 启动 httpServer 的示例代码，如果你使用的是其他 Web 框架，只需处理 HTTP 出入参转换即可。以[接收消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件为例，接收事件订阅的示例代码如下：
 
 ```python
 from flask import Flask
@@ -179,7 +161,7 @@ if __name__ == "__main__":
 
 代码片段解析：
 
-- 事件存在两类结构，v1.0 版本事件结构和 v2.0 版本事件结构。在处理事件需要注意所需的是哪种事件结构。在为应用[添加事件](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/subscription-event-case)时，可获取事件版本和事件类型信息。
+- 事件存在两类结构，v1.0 版本事件结构和 v2.0 版本事件结构。在处理事件需要注意所需的是哪种事件结构。在为应用[添加事件](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/subscription-event-case)时，可获取事件版本和事件类型信息。
     
     ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/4dbc1cd97d95f1af949354ce3c350461_bidnBwXPPi.png?height=380&lazyload=true&maxWidth=600&width=1666)
    

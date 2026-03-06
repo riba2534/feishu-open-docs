@@ -90,9 +90,9 @@ curl -v --location '{YOUR_CALLBACK_URL}' \
  	- 检查开放平台的请求是否访问到了请求地址对应的回调服务器，如果没有访问到回调服务器的记录，那么请检查回调服务器是否因配置了防火墙策略，导致请求无法访问。
  	- 检查配置的请求地址是否是公网可访问的。例如，你可以使用其他外部网络设备重新执行步骤 1 中的 curl 命令，测试是否可以正常返回 challenge 值。
 
-- 如果本地测试命令不能返回和请求体中相同 challenge code，请先参考[配置订阅方式](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/request-url-configuration-case)文档，编写正确的代码，然后重试。
+- 如果本地测试命令不能返回和请求体中相同 challenge code，请先参考[配置订阅方式](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/request-url-configuration-case)文档，编写正确的代码，然后重试。
 
-- 如果应用配置了 Encrypt Key（如下图），那么开放平台会推送加密后的 POST 请求。在请求地址对应的回调服务器内，需要按照[事件解密](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/encrypt-key-encryption-configuration-case#679e4309)文档，进行解密后再返回消息体中的 challenge code。
+- 如果应用配置了 Encrypt Key（如下图），那么开放平台会推送加密后的 POST 请求。在请求地址对应的回调服务器内，需要按照[事件解密](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/encrypt-key-encryption-configuration-case#679e4309)文档，进行解密后再返回消息体中的 challenge code。
 
 	![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/d9f071e1e59747482afafe2c2db3d5f5_FPozCJtDUD.png?height=708&lazyload=true&maxWidth=600&width=2280)
  
@@ -108,7 +108,7 @@ curl -v --location '{YOUR_CALLBACK_URL}' \
      
 ## Q：如何确认事件推送成功了？
 
-可以使用应用的[日志检索](/ssl:ttdoc/tools-and-resources/open-api-log-query#30d1c67a)功能查看事件推送的日志记录，返回状态 `SUCCESS` 表示推送成功。
+可以使用应用的[日志检索](https://open.larkoffice.com/document/tools-and-resources/open-api-log-query#30d1c67a)功能查看事件推送的日志记录，返回状态 `SUCCESS` 表示推送成功。
 
 ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/c394e9fbc44a3991446e9dee4175ce1c_eElUSqBOlJ.png?height=1260&lazyload=true&maxWidth=600&width=2274)
 

@@ -12,7 +12,7 @@ updateTime: "1655284306000"
 - 如要读取文档，应用需要具备查看文档的权限
 - 如要编辑文档，应用需要具备查看以及编辑文档的权限
 
-如果在请求接口时，应用不具备对应的权限，则会返回错误。详见：[应用权限](/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN)。
+如果在请求接口时，应用不具备对应的权限，则会返回错误。详见：[应用权限](https://open.larkoffice.com/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN)。
 
 
 ## 了解接口规则
@@ -29,4 +29,4 @@ updateTime: "1655284306000"
 ### 接口报错
 当请求不符合某些特定条件时会报错，如果因为部分参数不符合要求而导致报错，意味着当次请求所有的内容提交都失败了，不会对线上的数据造成影响。
 
-具体可参考：[服务端错误码说明](/ssl:ttdoc/ukTMukTMukTM/ugjM14COyUjL4ITN)
+具体可参考：[服务端错误码说明](https://open.larkoffice.com/document/ukTMukTMukTM/ugjM14COyUjL4ITN)

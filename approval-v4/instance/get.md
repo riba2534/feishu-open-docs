@@ -6,1102 +6,111 @@ updateTime: "1747033877000"
 
 # 获取单个审批实例详情
 
-通过审批实例 Code 获取指定审批实例的详细信息，包括审批实例的名称、创建时间、发起审批的用户、状态以及任务列表等信息。{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=approval&version=v4&resource=instance&method=get)
-
-:::html
-<md-alert type="error">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="warn">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="tip">
-
-</md-alert>
-:::
-
+通过审批实例 Code 获取指定审批实例的详细信息，包括审批实例的名称、创建时间、发起审批的用户、状态以及任务列表等信息。
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/approval/v4/instances/:instance_id</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>GET</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[1000 次/分钟、50 次/秒](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm>
-            <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-            <md-perm name="approval:instance" desc="查看、创建、更新、删除原生审批实例相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除原生审批实例相关信息</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/approval/v4/instances/:instance_id |
+| HTTP Method | GET |
+| 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | custom,isv |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `approval:approval` 查看、创建、更新、删除审批应用相关信息 `approval:approval:readonly` 访问审批应用 `approval:instance` 查看、创建、更新、删除原生审批实例相关信息 |
+| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
-
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
 
 
 ### 路径参数
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >instance_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批实例 Code。获取方式：
-
-- [创建审批实例](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/create) 后，从返回结果中获取审批实例 Code。如果在创建的时候传了 uuid 参数，则本参数也可以通过传 uuid 获取指定审批实例详情。
-- 调用[批量获取审批实例 ID](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/list)，获取指定审批定义内的审批实例 Code。
-- 调用[查询实例列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/query)，设置过滤条件查询指定的审批实例 Code。
-
-
-**示例值**："81D31358-93AF-92D6-7425-01A5D67C4E71"
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `instance_id` | `string` | 审批实例 Code。获取方式：<br>- [创建审批实例](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/create) 后，从返回结果中获取审批实例 Code。如果在创建的时候传了 uuid 参数，则本参数也可以通过传 uuid 获取指定审批实例详情。 - 调用[批量获取审批实例 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/list)，获取指定审批定义内的审批实例 Code。 - 调用[查询实例列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/query)，设置过滤条件查询指定的审批实例 Code。<br>**示例值**："81D31358-93AF-92D6-7425-01A5D67C4E71" |
 
 
 ### 查询参数
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;" >描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >locale</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	语言。默认值为[创建审批定义](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/create)时在 i18n_resources 参数中配置的 is_default 取值为 true 的语言。
-
-**示例值**：zh-CN
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="zh-CN" >中文</md-enum-item>
-<md-enum-item key="en-US" >英文</md-enum-item>
-<md-enum-item key="ja-JP" >日文</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	发起审批的用户 ID，ID 类型由 user_id_type 参数指定。
-
-**示例值**：f7cb567e
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >user_id_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	用户 ID 类型
-
-**示例值**：user_id
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="open_id" >标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)</md-enum-item>
-<md-enum-item key="union_id" >标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id)</md-enum-item>
-<md-enum-item key="user_id" >标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[了解更多：如何获取 User ID？](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)</md-enum-item>
-</md-enum>
-
-**默认值**：`open_id`
-
-**当值为 `user_id`，字段权限要求**：
-<md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
-
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `locale` | `string` | 否 | 语言。默认值为[创建审批定义](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/create)时在 i18n_resources 参数中配置的 is_default 取值为 true 的语言。<br>**示例值**：zh-CN<br>**可选值有**：<br>- `zh-CN`: 中文 - `en-US`: 英文 - `ja-JP`: 日文 |
+| `user_id` | `string` | 否 | 发起审批的用户 ID，ID 类型由 user_id_type 参数指定。<br>**示例值**：f7cb567e |
+| `user_id_type` | `string` | 否 | 用户 ID 类型<br>**示例值**：user_id<br>**可选值有**：<br>- `open_id`: 标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid) - `union_id`: 标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id) - `user_id`: 标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[了解更多：如何获取 User ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)<br>**默认值**：`open_id`<br>**当值为 `user_id`，字段权限要求**： `contact:user.employee_id:readonly` 获取用户 user ID |
 
 
 ## 响应
 
 
-
-
-
 ### 响应体
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误码，非 0 表示失败
-	</md-dt-td>
-</md-dt-tr>
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `code` | `int` | 错误码，非 0 表示失败 |
+| `msg` | `string` | 错误描述 |
+| `data` | `\-` | \- |
+| &nbsp;&nbsp;└ `approval_name` | `string` | 审批名称 |
+| &nbsp;&nbsp;└ `start_time` | `string` | 审批创建时间，毫秒级时间戳。 |
+| &nbsp;&nbsp;└ `end_time` | `string` | 审批完成时间，毫秒级时间戳。审批未完成时该参数值为 0。 |
+| &nbsp;&nbsp;└ `user_id` | `string` | 发起审批的用户 user_id |
+| &nbsp;&nbsp;└ `open_id` | `string` | 发起审批的用户 open_id |
+| &nbsp;&nbsp;└ `serial_number` | `string` | 审批单编号 |
+| &nbsp;&nbsp;└ `department_id` | `string` | 发起审批用户所在部门的 ID |
+| &nbsp;&nbsp;└ `status` | `string` | 审批实例状态<br>**可选值有**：<br>- `PENDING`: 审批中 - `APPROVED`: 通过 - `REJECTED`: 拒绝 - `CANCELED`: 撤回 - `DELETED`: 删除 |
+| &nbsp;&nbsp;└ `uuid` | `string` | 审批实例的唯一标识 id |
+| &nbsp;&nbsp;└ `form` | `string` | 审批表单控件 JSON 字符串，控件值详细说明参见本文下方 **控件值说明** 章节。 |
+| &nbsp;&nbsp;└ `task_list` | `instance_task\[\]` | 审批任务列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 审批任务 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 审批人的 user_id，自动通过、自动拒绝时该参数返回值为空。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `open_id` | `string` | 审批人的 open_id，自动通过、自动拒绝时该参数返回值为空。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `status` | `string` | 审批任务状态<br>**可选值有**：<br>- `PENDING`: 审批中 - `APPROVED`: 通过 - `REJECTED`: 拒绝 - `TRANSFERRED`: 已转交 - `DONE`: 完成 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `node_id` | `string` | 审批任务所属的审批节点 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `node_name` | `string` | 审批任务所属的审批节点名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `custom_node_id` | `string` | 审批任务所属的审批节点的自定义 ID。如果没设置自定义 ID，则不返回该参数值。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 审批方式<br>**可选值有**：<br>- `AND`: 会签 - `OR`: 或签 - `AUTO_PASS`: 自动通过 - `AUTO_REJECT`: 自动拒绝 - `SEQUENTIAL`: 按顺序 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `start_time` | `string` | 审批任务的开始时间，毫秒级时间戳。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `end_time` | `string` | 审批任务的完成时间，毫秒级时间戳。未完成时返回 0。 |
+| &nbsp;&nbsp;└ `comment_list` | `instance_comment\[\]` | 评论列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 评论 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 发表评论的用户 user_id |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `open_id` | `string` | 发表评论的用户 open_id |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `comment` | `string` | 评论内容 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `create_time` | `string` | 评论时间，毫秒级时间戳。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `files` | `file\[\]` | 评论附件 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `url` | `string` | 附件路径 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `file_size` | `int` | 附件大小。单位：字节 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `title` | `string` | 附件标题 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 附件类别<br>- image：图片 - attachment：附件，与上传时选择的类型一致 |
+| &nbsp;&nbsp;└ `timeline` | `instance_timeline\[\]` | 审批动态 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 动态类型。不同的动态类型，对应 ext 返回值也不同，具体参考以下各枚举值描述。<br>**可选值有**：<br>- `START`: 审批开始。对应的 ext 参数不会返回值。 - `PASS`: 通过。对应的 ext 参数不会返回值。 - `REJECT`: 拒绝。对应的 ext 参数不会返回值。 - `AUTO_PASS`: 自动通过。对应的 ext 参数不会返回值。 - `AUTO_REJECT`: 自动拒绝。对应的 ext 参数不会返回值。 - `REMOVE_REPEAT`: 去重。对应的 ext 参数不会返回值。 - `TRANSFER`: 转交。对应的 ext 参数返回的 user_id_list 包含被转交人的用户 ID。 - `ADD_APPROVER_BEFORE`: 前加签。对应的 ext 参数返回的 user_id_list 包含被加签人的用户 ID。 - `ADD_APPROVER`: 并加签。对应的 ext 参数返回的 user_id_list 包含被加签人的用户 ID。 - `ADD_APPROVER_AFTER`: 后加签。对应的 ext 参数返回的 user_id_list 包含被加签人的用户 ID。 - `DELETE_APPROVER`: 减签。对应的 ext 参数返回的 user_id_list 包含被加签人的用户 ID。 - `ROLLBACK_SELECTED`: 指定回退。对应的 ext 参数不会返回值。 - `ROLLBACK`: 全部回退。对应的 ext 参数不会返回值。 - `CANCEL`: 撤回。对应的 ext 参数不会返回值。 - `DELETE`: 删除。对应的 ext 参数不会返回值。 - `CC`: 抄送。对应的 ext 参数返回的 user_id 包含抄送人的用户 ID。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `create_time` | `string` | 发生时间，毫秒级时间戳。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 产生该动态的用户 user_id |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `open_id` | `string` | 产生该动态的用户 open_id |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `user_id_list` | `string\[\]` | 被抄送人列表，列表内包含的是用户 user_id。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `open_id_list` | `string\[\]` | 被抄送人列表，列表内包含的是用户 open_id。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `task_id` | `string` | 产生动态关联的任务 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `comment` | `string` | 理由 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `cc_user_list` | `instance_cc_user\[\]` | 抄送人列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 抄送人的 user_id |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `cc_id` | `string` | 审批实例内抄送唯一标识 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `open_id` | `string` | 抄送人的 open_id |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `ext` | `string` | 其他信息，JSON 格式，目前包括 user_id_list, user_id，open_id_list，open_id |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `node_key` | `string` | 产生审批任务的节点 key |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `files` | `file\[\]` | 审批附件 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `url` | `string` | 附件路径 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `file_size` | `int` | 附件大小。单位：字节 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `title` | `string` | 附件标题 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 附件类别<br>- image：图片 - attachment：附件，与上传时选择的类型一致 |
+| &nbsp;&nbsp;└ `modified_instance_code` | `string` | 修改的原实例 Code，仅在查询修改实例时显示该字段 |
+| &nbsp;&nbsp;└ `reverted_instance_code` | `string` | 撤销的原实例 Code，仅在查询撤销实例时显示该字段 |
+| &nbsp;&nbsp;└ `approval_code` | `string` | 审批定义 Code |
+| &nbsp;&nbsp;└ `reverted` | `boolean` | 单据是否被撤销 |
+| &nbsp;&nbsp;└ `instance_code` | `string` | 审批实例 Code |
 
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >data</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	\-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >approval_name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >start_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批创建时间，毫秒级时间戳。
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >end_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批完成时间，毫秒级时间戳。审批未完成时该参数值为 0。
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	发起审批的用户 user_id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >open_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	发起审批的用户 open_id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >serial_number</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批单编号
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >department_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	发起审批用户所在部门的 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >status</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批实例状态
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="PENDING" >审批中</md-enum-item>
-<md-enum-item key="APPROVED" >通过</md-enum-item>
-<md-enum-item key="REJECTED" >拒绝</md-enum-item>
-<md-enum-item key="CANCELED" >撤回</md-enum-item>
-<md-enum-item key="DELETED" >删除</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >uuid</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批实例的唯一标识 id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >form</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批表单控件 JSON 字符串，控件值详细说明参见本文下方 **控件值说明** 章节。
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >task_list</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >instance_task\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批任务列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批任务 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批人的 user_id，自动通过、自动拒绝时该参数返回值为空。
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >open_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批人的 open_id，自动通过、自动拒绝时该参数返回值为空。
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >status</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批任务状态
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="PENDING" >审批中</md-enum-item>
-<md-enum-item key="APPROVED" >通过</md-enum-item>
-<md-enum-item key="REJECTED" >拒绝</md-enum-item>
-<md-enum-item key="TRANSFERRED" >已转交</md-enum-item>
-<md-enum-item key="DONE" >完成</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >node_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批任务所属的审批节点 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >node_name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批任务所属的审批节点名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >custom_node_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批任务所属的审批节点的自定义 ID。如果没设置自定义 ID，则不返回该参数值。
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批方式
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="AND" >会签</md-enum-item>
-<md-enum-item key="OR" >或签</md-enum-item>
-<md-enum-item key="AUTO_PASS" >自动通过</md-enum-item>
-<md-enum-item key="AUTO_REJECT" >自动拒绝</md-enum-item>
-<md-enum-item key="SEQUENTIAL" >按顺序</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >start_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批任务的开始时间，毫秒级时间戳。
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >end_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批任务的完成时间，毫秒级时间戳。未完成时返回 0。
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >comment_list</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >instance_comment\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评论列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评论 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	发表评论的用户 user_id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >open_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	发表评论的用户 open_id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >comment</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评论内容
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >create_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评论时间，毫秒级时间戳。
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >files</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >file\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	评论附件
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >url</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	附件路径
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >file_size</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	附件大小。单位：字节
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >title</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	附件标题
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	附件类别
-
-- image：图片
-- attachment：附件，与上传时选择的类型一致
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >timeline</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >instance_timeline\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批动态
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	动态类型。不同的动态类型，对应 ext 返回值也不同，具体参考以下各枚举值描述。
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="START" >审批开始。对应的 ext 参数不会返回值。</md-enum-item>
-<md-enum-item key="PASS" >通过。对应的 ext 参数不会返回值。</md-enum-item>
-<md-enum-item key="REJECT" >拒绝。对应的 ext 参数不会返回值。</md-enum-item>
-<md-enum-item key="AUTO_PASS" >自动通过。对应的 ext 参数不会返回值。</md-enum-item>
-<md-enum-item key="AUTO_REJECT" >自动拒绝。对应的 ext 参数不会返回值。</md-enum-item>
-<md-enum-item key="REMOVE_REPEAT" >去重。对应的 ext 参数不会返回值。</md-enum-item>
-<md-enum-item key="TRANSFER" >转交。对应的 ext 参数返回的 user_id_list 包含被转交人的用户 ID。</md-enum-item>
-<md-enum-item key="ADD_APPROVER_BEFORE" >前加签。对应的 ext 参数返回的 user_id_list 包含被加签人的用户 ID。</md-enum-item>
-<md-enum-item key="ADD_APPROVER" >并加签。对应的 ext 参数返回的 user_id_list 包含被加签人的用户 ID。</md-enum-item>
-<md-enum-item key="ADD_APPROVER_AFTER" >后加签。对应的 ext 参数返回的 user_id_list 包含被加签人的用户 ID。</md-enum-item>
-<md-enum-item key="DELETE_APPROVER" >减签。对应的 ext 参数返回的 user_id_list 包含被加签人的用户 ID。</md-enum-item>
-<md-enum-item key="ROLLBACK_SELECTED" >指定回退。对应的 ext 参数不会返回值。</md-enum-item>
-<md-enum-item key="ROLLBACK" >全部回退。对应的 ext 参数不会返回值。</md-enum-item>
-<md-enum-item key="CANCEL" >撤回。对应的 ext 参数不会返回值。</md-enum-item>
-<md-enum-item key="DELETE" >删除。对应的 ext 参数不会返回值。</md-enum-item>
-<md-enum-item key="CC" >抄送。对应的 ext 参数返回的 user_id 包含抄送人的用户 ID。</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >create_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	发生时间，毫秒级时间戳。
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	产生该动态的用户 user_id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >open_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	产生该动态的用户 open_id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >user_id_list</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	被抄送人列表，列表内包含的是用户 user_id。
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >open_id_list</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	被抄送人列表，列表内包含的是用户 open_id。
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >task_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	产生动态关联的任务 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >comment</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	理由
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >cc_user_list</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >instance_cc_user\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	抄送人列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	抄送人的 user_id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >cc_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批实例内抄送唯一标识
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >open_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	抄送人的 open_id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >ext</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	其他信息，JSON 格式，目前包括 user_id_list, user_id，open_id_list，open_id
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >node_key</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	产生审批任务的节点 key
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >files</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >file\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批附件
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >url</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	附件路径
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >file_size</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	附件大小。单位：字节
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >title</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	附件标题
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	附件类别
-
-- image：图片
-- attachment：附件，与上传时选择的类型一致
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >modified_instance_code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	修改的原实例 Code，仅在查询修改实例时显示该字段
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >reverted_instance_code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	撤销的原实例 Code，仅在查询撤销实例时显示该字段
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >approval_code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批定义 Code
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >reverted</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	单据是否被撤销
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >instance_code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批实例 Code
-	</md-dt-td>
-</md-dt-tr>
-
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
 
 ### 控件值说明
 
@@ -1110,7 +119,7 @@ updateTime: "1747033877000"
 |input|单行文本控件|
 |textarea|多行文本控件|
 |date|日期控件。RFC3339 格式，示例值：2019-10-01T08:12:01+08:00。|
-|radio/radioV2|单选控件。value 对应的是选项文本，如果[关联外部选项](/ssl:ttdoc/ukTMukTMukTM/uADM4QjLwADO04CMwgDN)则对应的是选项 ID。|
+|radio/radioV2|单选控件。value 对应的是选项文本，如果[关联外部选项](https://open.larkoffice.com/document/ukTMukTMukTM/uADM4QjLwADO04CMwgDN)则对应的是选项 ID。|
 |address|地址控件。示例格式：`China/Beijing/Beijing/Chaoyang Qu/chang an jie`，如果地址控件允许输入详细地址，则最后一项为用户输入的详细地址。|
 
 以上控件的 JSON 示例值如下：
@@ -1143,7 +152,7 @@ updateTime: "1747033877000"
 
 |类型|说明|
 |-|-|
-|contact|联系人控件。value 包含的是用户 user_id；open_ids 包含的是用户 open_id。不同用户 ID 说明可参见[用户身份概述](/ssl:ttdoc/home/user-identity-introduction/introduction)。|
+|contact|联系人控件。value 包含的是用户 user_id；open_ids 包含的是用户 open_id。不同用户 ID 说明可参见[用户身份概述](https://open.larkoffice.com/document/home/user-identity-introduction/introduction)。|
 
 以上控件的 JSON 示例值如下：
 
@@ -1176,9 +185,9 @@ updateTime: "1747033877000"
 
 |类型|说明|
 |-|-|
-|connect| 关联审批控件。value 包含的是被关联的审批实例 Code，你可以调用[获取单个审批实例详情](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/get)接口，根据审批实例 Code 获取实例详情。|
+|connect| 关联审批控件。value 包含的是被关联的审批实例 Code，你可以调用[获取单个审批实例详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/get)接口，根据审批实例 Code 获取实例详情。|
 |attachment|附件控件。value 为附件地址。|
-|checkbox/checkboxV2|多选控件。value 对应的是选项文本，如果[关联外部选项](/ssl:ttdoc/ukTMukTMukTM/uADM4QjLwADO04CMwgDN)则对应的是选项 ID。|
+|checkbox/checkboxV2|多选控件。value 对应的是选项文本，如果[关联外部选项](https://open.larkoffice.com/document/ukTMukTMukTM/uADM4QjLwADO04CMwgDN)则对应的是选项 ID。|
 
 以上控件的 JSON 示例值如下：
 
@@ -1235,7 +244,7 @@ updateTime: "1747033877000"
 
 |类型|说明|
 |-|-|
-|document|文档控件。token 返回的是文档的 document_id，详细介绍参见[文档](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-overview#e18a49a1)；type 是文档类型；title 是文档标题；url 是文档链接。|
+|document|文档控件。token 返回的是文档的 document_id，详细介绍参见[文档](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-overview#e18a49a1)；type 是文档类型；title 是文档标题；url 是文档链接。|
 
 以上控件的 JSON 示例值如下：
 
@@ -1257,7 +266,7 @@ updateTime: "1747033877000"
 
 |类型|说明|
 |-|-|
-|department|部门控件。open_id 返回的是部门的 open_department_id，关于部门 open_department_id 的说明参见[部门 ID](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/field-overview#9c02ed7a)。|
+|department|部门控件。open_id 返回的是部门的 open_department_id，关于部门 open_department_id 的说明参见[部门 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/field-overview#9c02ed7a)。|
 
 ```json
 {
@@ -1423,8 +432,8 @@ updateTime: "1747033877000"
 ```
 
 ### 响应体示例
-:::html
-<md-code-json>
+
+```json
 {
     "code": 0,
     "msg": "success",
@@ -1510,82 +519,20 @@ updateTime: "1747033877000"
         "instance_code": "81D31358-93AF-92D6-7425-01A5D67C4E71"
     }
 }
-</md-code-json>
-:::
-
+```
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1390001</md-td>
-  <md-td>param is invalid</md-td>
-  <md-td>参数错误。排查方案：
-
-- 根据接口文档的参数说明，检查请求时传入的参数是否正确。
-
-- 如果传入的有表单参数（form），则需要检查该参数内传入的表单控件数据是否正确。如果报错信息内包含控件 ID（如 `控件= widget17261088448220001`），可以调用[查看指定审批定义](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/get)或者[获取单个审批实例详情](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/get)接口，获取响应参数 form 值，检索有问题的控件 ID，然后检查该控件的配置是否正确。</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 1390001 | param is invalid | 参数错误。排查方案： - 根据接口文档的参数说明，检查请求时传入的参数是否正确。 - 如果传入的有表单参数（form），则需要检查该参数内传入的表单控件数据是否正确。如果报错信息内包含控件 ID（如 `控件= widget17261088448220001`），可以调用[查看指定审批定义](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/get)或者[获取单个审批实例详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/get)接口，获取响应参数 form 值，检索有问题的控件 ID，然后检查该控件的配置是否正确。 |
+| 400 | 1395001 | There have been some errors. Please try again later | 服务出现错误。排查方案： 1. 参考接口文档的参数说明，检查请求时传入的参数是否正确。如果传入的有表单参数（form），则需要检查传入的表单控件数据是否正确。 2. 降低请求频率，并重试。如果重试仍然报错，请联系[技术支持](https://applink.feishu.cn/TLJpeNdW)。 |
+| 400 | 1390003 | instance code not found | 找不到审批实例 Code，检查传入的审批实例 Code 是否正确。 审批实例 Code 获取方式： - 调用[创建审批实例](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/create)接口后，从响应参数 instance_code 获取。 - 调用[批量获取审批实例 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/list)接口，获取所需的审批实例 Code。 - 调用[查询实例列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/query)，设置过滤条件查询指定的审批实例 Code。 |
+| 403 | 1390009 | no operation permission | 没有操作权限。请前往[飞书审批管理后台](https://www.feishu.cn/approval/admin/approvalList)，进入指定审批定义编辑页面，在流程设计里的审批操作权限内，检查操作权限是否正确配置。 |
+| 400 | 1390004 | user_id or open_id not found | 检查传入的 user_id 参数是否正确，user_id 的类型需要和 user_id_type 一致，且需要确保 ID 值正确。 |
 
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1395001</md-td>
-  <md-td>There have been some errors. Please try again later</md-td>
-  <md-td>服务出现错误。排查方案：
-
-1. 参考接口文档的参数说明，检查请求时传入的参数是否正确。如果传入的有表单参数（form），则需要检查传入的表单控件数据是否正确。
-
-2. 降低请求频率，并重试。如果重试仍然报错，请联系[技术支持](https://applink.feishu.cn/TLJpeNdW)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1390003</md-td>
-  <md-td>instance code not found</md-td>
-  <md-td>找不到审批实例 Code，检查传入的审批实例 Code 是否正确。
-
-审批实例 Code 获取方式：
-
-- 调用[创建审批实例](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/create)接口后，从响应参数 instance_code 获取。
-- 调用[批量获取审批实例 ID](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/list)接口，获取所需的审批实例 Code。
-- 调用[查询实例列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/query)，设置过滤条件查询指定的审批实例 Code。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>1390009</md-td>
-  <md-td>no operation permission</md-td>
-  <md-td>没有操作权限。请前往[飞书审批管理后台](https://www.feishu.cn/approval/admin/approvalList)，进入指定审批定义编辑页面，在流程设计里的审批操作权限内，检查操作权限是否正确配置。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1390004</md-td>
-  <md-td>user_id or open_id not found</md-td>
-  <md-td>检查传入的 user_id 参数是否正确，user_id 的类型需要和 user_id_type 一致，且需要确保 ID 值正确。</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
-
-更多错误码信息，参见[通用错误码](/ssl:ttdoc/ukTMukTMukTM/ugjM14COyUjL4ITN)。
+更多错误码信息，参见[通用错误码](https://open.larkoffice.com/document/ukTMukTMukTM/ugjM14COyUjL4ITN)。
 
 

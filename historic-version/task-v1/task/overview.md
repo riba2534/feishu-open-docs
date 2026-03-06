@@ -7,15 +7,10 @@ updateTime: "1671785838000"
 # 功能介绍
 针对任务资源提供的开放 API，可以支持任务的创建、更新、删除等操作。
 
-:::html
-<md-alert type="tip">
-[创建任务](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/task-v1/task/create)接口只能填充任务的基本信息，若想给任务添加执行者，关注者，提醒时间，请参考文档：[新增执行者](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/task-v1/task-collaborator/create)、[新增关注者](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/task-v1/task-follower/create)、[新增提醒时间](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/task-v1/task-reminder/create)
-</md-alert>
-:::
 
-:::html
-<md-alert type="tip">
-文档中有些结构体为非必填，但结构体中的某个字段为必填是正常现象。因为你可以不填这个结构体，但当你填了这个结构体时就必须要填这个字段。
-</md-alert>
-:::
+> **Tip**: [创建任务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/task-v1/task/create)接口只能填充任务的基本信息，若想给任务添加执行者，关注者，提醒时间，请参考文档：[新增执行者](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/task-v1/task-collaborator/create)、[新增关注者](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/task-v1/task-follower/create)、[新增提醒时间](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/task-v1/task-reminder/create)
+
+
+> **Tip**: 文档中有些结构体为非必填，但结构体中的某个字段为必填是正常现象。因为你可以不填这个结构体，但当你填了这个结构体时就必须要填这个字段。
+
 

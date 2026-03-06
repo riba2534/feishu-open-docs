@@ -26,36 +26,36 @@ updateTime: "1717383253000"
 
 自定义字段的设置相关接口包括：
 
-* [创建自定义字段](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/create)
-* [更新自定义字段](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/patch)
-* [获取自定义字段](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/get)
-* [列取自定义字段](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/list)
-* [将自定义字段加入资源](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/add)
-* [将自定义字段移出资源](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/remove)
+* [创建自定义字段](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/create)
+* [更新自定义字段](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/patch)
+* [获取自定义字段](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/get)
+* [列取自定义字段](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/list)
+* [将自定义字段加入资源](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/add)
+* [将自定义字段移出资源](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/remove)
 
 针对单选/多选两种类型的字段中的选项，支持：
-* [创建自定义字段选项](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field-option/create)
-* [更新自定义字段选项](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field-option/patch)
+* [创建自定义字段选项](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field-option/create)
+* [更新自定义字段选项](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field-option/patch)
 
-自定义字段的值类似于系统内建字段的值。在某个清单定义了自定义字段后，就可以给该清单里的任务设置字段值。比如，可以通过[更新任务](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/patch)接口来设置自定义字段的值，也可以通过[创建任务](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/create)接口在任务创建时就设置自定义字段的值。同时，用户可以通过[获取任务详情](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/get)接口查看该任务的自定义字段值。
+自定义字段的值类似于系统内建字段的值。在某个清单定义了自定义字段后，就可以给该清单里的任务设置字段值。比如，可以通过[更新任务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/patch)接口来设置自定义字段的值，也可以通过[创建任务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/create)接口在任务创建时就设置自定义字段的值。同时，用户可以通过[获取任务详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/get)接口查看该任务的自定义字段值。
 
 ## 数据模型和鉴权
 
 自定义字段和清单是多对多的关系。一个清单里可以定义多个自定义字段。一个自定义字段也可以被加入多个清单。
 
-自定义字段的权限是根据清单来定义的。一个用户对一个自定义字段有编辑/读取权限，就意味着至少存在一条用户-清单-自定义字段的关联关系，且用户对该清单有编辑/读取权限（关于清单的鉴权方式见[清单功能概述](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist/overview)）。如果用户和自定义字段之间存在多条“清单”的管理，用户对自定义字段的权限取其中最大的一条边的权限。因此[创建自定义字段](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/create)时，总是要关联到清单才能添加这些清单的自定义字段；也可以通过[将自定义字段加入资源](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/add)接口将某个自定义字段添加入其他的清单。添加后，清单界面的“字段设置”中就可以查看该字段；同时该清单的所有其他协作成员也会获取该字段的相应权限。如不希望一个字段在某个清单上显示，可以通过[将自定义字段移出资源](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/remove)接口将其移出。移出后，原清单的协作成员将失去该字段的权限，除非他们通过其他清单也能访问到该自定义字段。
+自定义字段的权限是根据清单来定义的。一个用户对一个自定义字段有编辑/读取权限，就意味着至少存在一条用户-清单-自定义字段的关联关系，且用户对该清单有编辑/读取权限（关于清单的鉴权方式见[清单功能概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist/overview)）。如果用户和自定义字段之间存在多条“清单”的管理，用户对自定义字段的权限取其中最大的一条边的权限。因此[创建自定义字段](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/create)时，总是要关联到清单才能添加这些清单的自定义字段；也可以通过[将自定义字段加入资源](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/add)接口将某个自定义字段添加入其他的清单。添加后，清单界面的“字段设置”中就可以查看该字段；同时该清单的所有其他协作成员也会获取该字段的相应权限。如不希望一个字段在某个清单上显示，可以通过[将自定义字段移出资源](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/remove)接口将其移出。移出后，原清单的协作成员将失去该字段的权限，除非他们通过其他清单也能访问到该自定义字段。
 
 例如，存在一个用户U1，对清单L1有编辑权限，对清单L2有阅读权限。L1拥有自定义字段F1，F2；L2拥有自定义字段F2和F3。则用户对F1和F2有编辑权限；对F3有阅读权限。如果还有一个清单L3，U1无法访问，L3拥有自定义字段F3和F4。则用户对F4无权限。但如果刚好有另外一个用户U2同时拥有对L1和L3的编辑权限。U2就获得了F4编辑权限。他可以将F4添加到L1中，之后U1就也对F4拥有可编辑权限了。如下图所示：
 
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/2d0d940e6a0b816c37b84abfa8aaf21f_Yjz98o77AK.png?height=1128&lazyload=true&maxWidth=500&width=1398)
 
-可以通过[列取自定义字段](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/list)接口查询调用身份所有有权限的自定义字段，或者通过指定清单GUID查看某一个清单中的自定义字段。
+可以通过[列取自定义字段](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/list)接口查询调用身份所有有权限的自定义字段，或者通过指定清单GUID查看某一个清单中的自定义字段。
 
 如果一个自定义字段被移出所有的清单，就意味着没有用户再可以访问到它。从用户视角看，被移出所有清单的自定义字段相当于被删除了。但目前并不支持直接删除自定义字段的操作。
 
-自定义字段的值同时归属于任务和自定义字段。用户要查看到一个任务的自定义字段值，必须满足用户对任务有读取权限（详见[任务功能概述](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/overview)，同时用户需要拥有自定义字段的读取权限；类似的，用户想要修改一个任务的自定义字段的值，必须同时拥有任务的编辑权限和自定义字段的编辑权限。
+自定义字段的值同时归属于任务和自定义字段。用户要查看到一个任务的自定义字段值，必须满足用户对任务有读取权限（详见[任务功能概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/overview)，同时用户需要拥有自定义字段的读取权限；类似的，用户想要修改一个任务的自定义字段的值，必须同时拥有任务的编辑权限和自定义字段的编辑权限。
 
-例如一个任务T有3个自定义字段的值F1，F2和F3。用户U1可以编辑T，同时对F1和F2有阅读权限，他可以通过[获取任务详情](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/get)接口查看到F1和F2对应的值，但F3的值对他不可见。
+例如一个任务T有3个自定义字段的值F1，F2和F3。用户U1可以编辑T，同时对F1和F2有阅读权限，他可以通过[获取任务详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/get)接口查看到F1和F2对应的值，但F3的值对他不可见。
 
 自定义字段的值也不可以删除，但可以“清空”，即设为“无”。
 
@@ -154,7 +154,7 @@ PATCH /task/v2/tasks/:task_guid
 ```
 表示设置一个人员类型的字段，字段支持多选，可以在写入值时填写多个用户的信息。
 
-人员类型的值用"member"表示。类似于[添加任务成员](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_members)中的成员格式，但不支持填写`role`,只能填写`id`和`type`。`type`只支持"user"，同时也是默认值，因此可以省略。`id`必须填写，其格式根据`user_id_type`参数来定义（见[功能概述](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/overview)中的"如何使用user_id_type修改用户ID格式？")，默认为"open_id"。
+人员类型的值用"member"表示。类似于[添加任务成员](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_members)中的成员格式，但不支持填写`role`,只能填写`id`和`type`。`type`只支持"user"，同时也是默认值，因此可以省略。`id`必须填写，其格式根据`user_id_type`参数来定义（见[功能概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/overview)中的"如何使用user_id_type修改用户ID格式？")，默认为"open_id"。
 
 ```
 PATCH /task/v2/tasks/:task_guid
@@ -301,7 +301,7 @@ PATCH /task/v2/tasks/:task_guid
 
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/cced3489eb55a2b84b11aa055d4790a9_PCApI3mDxw.png?height=596&lazyload=true&maxWidth=600&width=2108)
 
-选项存在顺序。可见选项在openapi中的返回顺序就是其在界面中的显示顺序。可以通过[创建自定义字段选项](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field-option/create)和[更新自定义字段选项](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field-option/patch)中的`insert_before`或者`insert_after`来调整选项的顺序，或者直接通过[更新自定义字段](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/patch)接口来直接设定可见选项的顺序。
+选项存在顺序。可见选项在openapi中的返回顺序就是其在界面中的显示顺序。可以通过[创建自定义字段选项](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field-option/create)和[更新自定义字段选项](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field-option/patch)中的`insert_before`或者`insert_after`来调整选项的顺序，或者直接通过[更新自定义字段](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/patch)接口来直接设定可见选项的顺序。
 
 ## 文本类型自定义字段
 

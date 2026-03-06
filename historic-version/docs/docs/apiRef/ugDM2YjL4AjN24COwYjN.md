@@ -7,107 +7,41 @@ updateTime: "1735541937000"
 # 创建旧版文档
 
 
-:::html
-<md-alert type="error">
-此接口已废弃，不允许应用再调用该接口，若继续调用将返回 95054 的错误码。
+> **Error**: 此接口已废弃，不允许应用再调用该接口，若继续调用将返回 95054 的错误码。
+> 
+> 要创建文档，请使用[创建文档](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document/create)接口。
 
-要创建文档，请使用[创建文档](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document/create)接口。
-</md-alert>
-:::
 该接口用于创建并初始化文档。
 
 ## 前提条件
-在使用此接口前，请仔细阅读[文档概述](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/docs-doc-overview)和[准备接入文档 API](/ssl:ttdoc/ukTMukTMukTM/ugzNzUjL4czM14CO3MTN/guide/getting-start)了解文档调用的规则和约束，确保你的文档数据不会丢失或出错。 
-文档数据结构定义可参考：[文档数据结构概述](/ssl:ttdoc/ukTMukTMukTM/uAzM5YjLwMTO24CMzkjN)。
+在使用此接口前，请仔细阅读[文档概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/docs-doc-overview)和[准备接入文档 API](https://open.larkoffice.com/document/ukTMukTMukTM/ugzNzUjL4czM14CO3MTN/guide/getting-start)了解文档调用的规则和约束，确保你的文档数据不会丢失或出错。 
+文档数据结构定义可参考：[文档数据结构概述](https://open.larkoffice.com/document/ukTMukTMukTM/uAzM5YjLwMTO24CMzkjN)。
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/doc/v2/create</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
 
-   <md-tr>
-     <md-th>支持的应用类型</md-th>
-      <md-td>
-	  <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-   </md-tr>
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/doc/v2/create |
+| HTTP Method | POST |
+| 支持的应用类型 | custom,isv |
+| 权限要求  调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `docs:doc` 查看、评论、编辑和管理文档 |
 
-
-    
-     <md-tr>
-	<md-th>
-权限要求
- <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-<div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-</md-th>
-   <md-td>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-<md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" support_app_types="custom,isv" tags="">查看、评论、编辑和管理文档</md-perm>
-</md-td>
- </md-tr>
-  </md-tbody>
-</md-table>
-:::
 ### 请求头
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 18%;">名称</md-th>  
-      <md-th style="width: 15%;">类型</md-th>  
-       <md-th style="width: 15%;">必填</md-th>  
-      <md-th>描述</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>Authorization</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-      	<md-td>
-<md-tag mode="inline" type="token-user">user_access_token</md-tag> 或 <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
- 
-**值格式**："Bearer `access_token`"
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-          
- [了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-	</md-td>
-</md-tr>
-     <md-tr> 
-      <md-td>Content-Type</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-     <md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-   
-  </md-tbody> 
-</md-table>
-:::
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `user_access_token` 或 `tenant_access_token`   **值格式**："Bearer `access_token`" **示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"             [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
 
 ::: note
-关于云文档接口的 AccessToken 调用说明详见 [云文档接口快速入门](/ssl:ttdoc/ukTMukTMukTM/uczNzUjL3czM14yN3MTN)
+关于云文档接口的 AccessToken 调用说明详见 [云文档接口快速入门](https://open.larkoffice.com/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN)
 :::
 <br>
 ### 请求体
 |参数|类型|必须|说明|来源|
 |--|-----|--|----|----|
-|FolderToken|string|否|文件夹 token，获取方式见[如何获取云文档资源相关 token](/ssl:ttdoc/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#08bb5df6)；空表示根目录，tenant_access_token应用权限仅允许操作应用创建的目录|post body json 字段 | 
-|Content|string|否|传入符合[文档数据结构](/ssl:ttdoc/ukTMukTMukTM/uAzM5YjLwMTO24CMzkjN)的字符串，若为空表示创建空文档|post body json 字段|
+|FolderToken|string|否|文件夹 token，获取方式见[如何获取云文档资源相关 token](https://open.larkoffice.com/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#08bb5df6)；空表示根目录，tenant_access_token应用权限仅允许操作应用创建的目录|post body json 字段 | 
+|Content|string|否|传入符合[文档数据结构](https://open.larkoffice.com/document/ukTMukTMukTM/uAzM5YjLwMTO24CMzkjN)的字符串，若为空表示创建空文档|post body json 字段|
 
 ### Curl 请求 Demo
 ```
@@ -139,142 +73,33 @@ curl -X POST 'https://open.feishu.cn/open-apis/doc/v2/create' \
 
 ### 错误码
 
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 15%;">错误码</md-th>  
-      <md-th style="width: 25%;">说明</md-th>  
-      <md-th style="width: 60%;">排查建议</md-th>  
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr>
-        <md-td>91401</md-td>
-        <md-td>PARAMERR</md-td>
-        <md-td>参数出现错误，检查参数有效性</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>91402</md-td>
-        <md-td>NOTEXIST</md-td>
-        <md-td>未找到，检查token是否有效</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>91403</md-td>
-        <md-td>FORBIDDEN</md-td>
-        <md-td>没有权限，检查是否有文档读权限</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>91404</md-td>
-        <md-td>LOGIN_REQUIRED</md-td>
-        <md-td>需要登录</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95001</md-td>
-        <md-td>internal error</md-td>
-        <md-td>内部错误，请稍后重试</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95003</md-td>
-        <md-td>internal error</md-td>
-        <md-td>内部错误，请稍后重试</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95005</md-td>
-        <md-td>internal error</md-td>
-        <md-td>内部错误，请稍后重试</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95006</md-td>
-        <md-td>Failed</md-td>
-        <md-td>文档未找到，检查token是否有效</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95007</md-td>
-        <md-td>Failed</md-td>
-        <md-td>文档已删除，已删除文件无法获取文档meta信息</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95008</md-td>
-        <md-td>FORBIDDEN</md-td>
-        <md-td>检查用户对文档、文件夹的权限</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95009</md-td>
-        <md-td>Failed</md-td>
-        <md-td>没有权限，检查是否有文档读权限。[添加文档权限](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/permission-member/create)</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95010</md-td>
-        <md-td>internal error</md-td>
-        <md-td>内部错误，请稍后重试</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95011</md-td>
-        <md-td>internal error</md-td>
-        <md-td>内部错误，请稍后重试</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95013</md-td>
-        <md-td>Failed</md-td>
-        <md-td>挂载文档失败：无效的folderToken、同一目录不能并发创建、目录无权限或超过目录文件数1500上限</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95017</md-td>
-        <md-td>具体错误信息</md-td>
-        <md-td>读取文档内容失败，检查revison是否正确</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95018</md-td>
-        <md-td>具体错误信息</md-td>
-        <md-td>解析文档内容失败，详见具体错误信息</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95020</md-td>
-        <md-td>具体错误信息</md-td>
-        <md-td>批量更新文档操作失败，详见具体错误信息</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95023</md-td>
-        <md-td>revision too old</md-td>
-        <md-td>版本号太老，请使用最新版本号</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95024</md-td>
-        <md-td>Failed</md-td>
-        <md-td>参数无效，检查参数有效性</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95025</md-td>
-        <md-td>Failed</md-td>
-        <md-td>解析请求失败，检查请求是否合法json</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95029</md-td>
-        <md-td>folder locked</md-td>
-        <md-td>不支持在同一文件夹下并发创建文档，同一文件夹下请串行调用该接口</md-td>
-    </md-tr>
-        <md-tr>
-        <md-td>95030</md-td>
-        <md-td>folder size exceeded limit</md-td>
-        <md-td>云空间目录下挂载数量超过限制</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95050</md-td>
-        <md-td>具体错误信息</md-td>
-        <md-td>保存文档内容失败，详见具体错误信息</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95051</md-td>
-        <md-td>具体错误信息</md-td>
-        <md-td>创建文档失败，详见具体错误信息</md-td>
-    </md-tr>
-        <md-tr>
-        <md-td>95054</md-td>
-        <md-td>this api is deprecated</md-td>
-        <md-td>此接口已废弃。请使用[创建文档](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document/create)接口创建新版文档。</md-td>
-    </md-tr>
-  </md-tbody> 
-</md-table>
-:::
-具体可参考：[服务端错误码说明](/ssl:ttdoc/ukTMukTMukTM/ugjM14COyUjL4ITN)
+
+| 错误码 | 说明 | 排查建议 |
+| --- | --- | --- |
+| 91401 | PARAMERR | 参数出现错误，检查参数有效性 |
+| 91402 | NOTEXIST | 未找到，检查token是否有效 |
+| 91403 | FORBIDDEN | 没有权限，检查是否有文档读权限 |
+| 91404 | LOGIN_REQUIRED | 需要登录 |
+| 95001 | internal error | 内部错误，请稍后重试 |
+| 95003 | internal error | 内部错误，请稍后重试 |
+| 95005 | internal error | 内部错误，请稍后重试 |
+| 95006 | Failed | 文档未找到，检查token是否有效 |
+| 95007 | Failed | 文档已删除，已删除文件无法获取文档meta信息 |
+| 95008 | FORBIDDEN | 检查用户对文档、文件夹的权限 |
+| 95009 | Failed | 没有权限，检查是否有文档读权限。[添加文档权限](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/permission-member/create) |
+| 95010 | internal error | 内部错误，请稍后重试 |
+| 95011 | internal error | 内部错误，请稍后重试 |
+| 95013 | Failed | 挂载文档失败：无效的folderToken、同一目录不能并发创建、目录无权限或超过目录文件数1500上限 |
+| 95017 | 具体错误信息 | 读取文档内容失败，检查revison是否正确 |
+| 95018 | 具体错误信息 | 解析文档内容失败，详见具体错误信息 |
+| 95020 | 具体错误信息 | 批量更新文档操作失败，详见具体错误信息 |
+| 95023 | revision too old | 版本号太老，请使用最新版本号 |
+| 95024 | Failed | 参数无效，检查参数有效性 |
+| 95025 | Failed | 解析请求失败，检查请求是否合法json |
+| 95029 | folder locked | 不支持在同一文件夹下并发创建文档，同一文件夹下请串行调用该接口 |
+| 95030 | folder size exceeded limit | 云空间目录下挂载数量超过限制 |
+| 95050 | 具体错误信息 | 保存文档内容失败，详见具体错误信息 |
+| 95051 | 具体错误信息 | 创建文档失败，详见具体错误信息 |
+| 95054 | this api is deprecated | 此接口已废弃。请使用[创建文档](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document/create)接口创建新版文档。 |
+
+具体可参考：[服务端错误码说明](https://open.larkoffice.com/document/ukTMukTMukTM/ugjM14COyUjL4ITN)

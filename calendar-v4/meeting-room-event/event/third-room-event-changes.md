@@ -9,339 +9,46 @@ updateTime: "1730688419000"
 当添加了第三方会议室的日程发生变动时（创建/更新/删除）触发此事件，其中更新日程时，仅当更新日程时间后触发此事件。
 
 :::note
-了解事件订阅的使用场景和配置流程，可参见[事件订阅概述](/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。
+了解事件订阅的使用场景和配置流程，可参见[事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。
 :::
 
 ## 事件
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>事件类型</md-th>
-      <md-td>third_party_meeting_room_event_created</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-    <md-th>
-            权限要求
-            <md-tooltip type="info">订阅该事件所需的权限，开启其中任意一项权限即可订阅</md-tooltip>
-            
-    </md-th>
-      <md-td>
-无
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>推送方式</md-th>
-      <md-td>
-            <md-tag mode="inline" type="push-webhook" href="/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM" >Webhook</md-tag>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 项目 | 值 |
+| --- | --- |
+| 事件类型 | third_party_meeting_room_event_created |
+| 支持的应用类型 | custom,isv |
+| 权限要求             订阅该事件所需的权限，开启其中任意一项权限即可订阅 | 无 |
+| 推送方式 | `Webhook` |
+
 
 ### 事件体
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: $$$meeting_room.v1.meeting_room.event.third_party_meeting_room_event_changes.message.body.table.param-column.width$$$;">名称</md-dt-th>
-      <md-dt-th style="width: $$$meeting_room.v1.meeting_room.event.third_party_meeting_room_event_changes.message.body.table.type-column.width$$$;">类型</md-dt-th>
-      <md-dt-th style="width: $$$meeting_room.v1.meeting_room.event.third_party_meeting_room_event_changes.message.body.table.desc-column.width$$$;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
-      
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >ts</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	事件发送的时间，一般近似于事件发生的时间。
-	</md-dt-td>
-</md-dt-tr>
-    
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >uuid</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	事件的唯一标识。
-	</md-dt-td>
-</md-dt-tr>
-    
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >token</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	即Verification Token。
-	</md-dt-td>
-</md-dt-tr>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	此事件此处始终为event_callback。
-	</md-dt-td>
-</md-dt-tr>
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `ts` | `string` | 事件发送的时间，一般近似于事件发生的时间。 |
+| `uuid` | `string` | 事件的唯一标识。 |
+| `token` | `string` | 即Verification Token。 |
+| `type` | `string` | 此事件此处始终为event_callback。 |
+| `event` | `\-` | \- |
+| &nbsp;&nbsp;└ `app_id` | `string` | 应用 ID |
+| &nbsp;&nbsp;└ `tenant_key` | `string` | 租户 Key |
+| &nbsp;&nbsp;└ `type` | `string` | 事件类型 |
+| &nbsp;&nbsp;└ `event_time` | `string` | 事件发生时间 |
+| &nbsp;&nbsp;└ `uid` | `string` | 日程的唯一标识 |
+| &nbsp;&nbsp;└ `original_time` | `int` | 重复日程的例外日程的唯一标识，时间戳格式。 |
+| &nbsp;&nbsp;└ `event_id` | `string` | 日程 ID，格式为 `{Uid}_{Original time}`，`{Uid}` 是日程的唯一标识，`{Original time}` 是日程实例原始时间，非重复性日程和重复性日程取值为 0，重复性日程的例外日程取值为具体时间戳。 |
+| &nbsp;&nbsp;└ `start` | `event_time` | 日程开始时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `time_stamp` | `string` | 日程开始时间戳 |
+| &nbsp;&nbsp;└ `end` | `event_time` | 日程结束时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `time_stamp` | `string` | 日程结束时间戳 |
+| &nbsp;&nbsp;└ `meeting_rooms` | `string\[\]` | 日程关联的会议室 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `open_id` | `string` | 会议室 ID |
+| &nbsp;&nbsp;└ `organizer` | `user_info` | 日程的组织者 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `open_id` | `string` | 标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。应用申请了 **获取用户 user ID（contact:user.employee_id:readonly）** 权限后才会返回。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `union_id` | `string` | 标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。 |
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >event</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	\-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >app_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >tenant_key</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	租户 Key
-	</md-dt-td>
-</md-dt-tr>
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	事件类型
-	</md-dt-td>
-</md-dt-tr>
-    
-
-    
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >event_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	事件发生时间
-	</md-dt-td>
-</md-dt-tr>
-    
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >uid</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	日程的唯一标识
-	</md-dt-td>
-</md-dt-tr>
-    
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >original_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	重复日程的例外日程的唯一标识，时间戳格式。
-	</md-dt-td>
-</md-dt-tr>
-
-    <md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >event_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-日程 ID，格式为 `{Uid}_{Original time}`，`{Uid}` 是日程的唯一标识，`{Original time}` 是日程实例原始时间，非重复性日程和重复性日程取值为 0，重复性日程的例外日程取值为具体时间戳。
-	</md-dt-td>
-</md-dt-tr>
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >start</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >event_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	日程开始时间
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >time_stamp</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	日程开始时间戳
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >end</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >event_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	日程结束时间
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >time_stamp</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	日程结束时间戳
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >meeting_rooms</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	日程关联的会议室
-	</md-dt-td>
-</md-dt-tr>
-    
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >open_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	会议室 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >organizer</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >user_info</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	日程的组织者
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >open_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。应用申请了 **获取用户 user ID（contact:user.employee_id:readonly）** 权限后才会返回。
-	</md-dt-td>
-</md-dt-tr>
-    
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >union_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
 
 ### 事件体示例
 
@@ -385,25 +92,17 @@ updateTime: "1730688419000"
 
 ### 事件订阅示例代码
 
-事件订阅流程可参考：[事件订阅概述](/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM)，新手入门可参考：[教程](/ssl:ttdoc/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/develop-an-echo-bot/introduction)
+事件订阅流程可参考：[事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)，新手入门可参考：[教程](https://open.larkoffice.com/document/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/develop-an-echo-bot/introduction)
 
-:::html
-<div style="margin-bottom: 4px;display: flex;column-gap: 4px;align-items: center;">
-  <md-text type='field-name'>订阅方式</md-text>
-  <md-tooltip>
-    <ul class="md_render-table_solid md_render-table">
-      <li><b>长连接方式（推荐）：</b>无需发布到公网地址，在本地开发环境中即可接收事件回调，且无需处理加解密逻辑。</li>
-      <li><b>发送至开发者服务器：</b>需要提供服务器公网地址。</li>
-    </ul>
-  </md-tooltip>
-</div>
-:::
 
-:::html
-<md-code-tabs>
-  <md-code-tab-group title="使用长连接接收事件">
-	
-    <md-code-tab-panel sdkType="golang-sdk">
+`订阅方式`
+
+
+长连接方式（推荐）：无需发布到公网地址，在本地开发环境中即可接收事件回调，且无需处理加解密逻辑。
+发送至开发者服务器：需要提供服务器公网地址。
+
+
+```
 package main
 
 import (
@@ -439,10 +138,10 @@ func main() {
 		panic(err)
 	}
 }
+```
 
-    </md-code-tab-panel>
 
-    <md-code-tab-panel sdkType="python-sdk">
+```
 # SDK 使用说明 SDK user guide：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/python--sdk/preparations-before-development
 import lark_oapi as lark
 
@@ -465,11 +164,10 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
 
-    </md-code-tab-panel>
 
-    <md-code-tab-panel sdkType="java-sdk">
-
+```
 package com.example.sample;
 
 import java.nio.charset.StandardCharsets;
@@ -499,9 +197,10 @@ public class Sample {
         client.start();
     }
 }
-    </md-code-tab-panel>
+```
 
-    <md-code-tab-panel sdkType="nodejs-sdk">
+
+```
 // SDK 使用说明 SDK user guide：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/nodejs-sdk/preparation-before-development
 import * as Lark from '@larksuiteoapi/node-sdk';
 const baseConfig = {
@@ -519,12 +218,10 @@ wsClient.start({
         }
     })
 });
-    </md-code-tab-panel>
+```
 
-  </md-code-tab-group>
-  <md-code-tab-group title="将事件推送至开发者服务器">
-	
-    <md-code-tab-panel sdkType="golang-sdk">
+
+```
 package main
 
 import (
@@ -557,10 +254,10 @@ func main() {
 		panic(err)
 	}
 }
+```
 
-    </md-code-tab-panel>
 
-    <md-code-tab-panel sdkType="python-sdk">
+```
 # SDK 使用说明 SDK user guide：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/python--sdk/preparations-before-development
 from flask import Flask
 from lark_oapi.adapter.flask import *
@@ -586,11 +283,10 @@ def event():
 
 if __name__ == "__main__":
     app.run(port=7777)
+```
 
-    </md-code-tab-panel>
 
-    <md-code-tab-panel sdkType="java-sdk">
-
+```
 package com.lark.oapi.sample.event;
 
 import java.nio.charset.StandardCharsets;
@@ -630,9 +326,10 @@ public class EventController {
         servletAdapter.handleEvent(request, response, EVENT_DISPATCHER);
     }
 }
-    </md-code-tab-panel>
+```
 
-    <md-code-tab-panel sdkType="nodejs-sdk">
+
+```
 // SDK 使用说明 SDK user guide：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/nodejs-sdk/preparation-before-development
 import http from 'http';
 import * as lark from '@larksuiteoapi/node-sdk';
@@ -652,8 +349,5 @@ const server = http.createServer();
 // 创建路由处理器 Create route handler
 server.on('request', lark.adaptDefault('/webhook/event', eventDispatcher));
 server.listen(3000);
-    </md-code-tab-panel>
+```
 
-  </md-code-tab-group>
-</md-code-tabs>
-:::

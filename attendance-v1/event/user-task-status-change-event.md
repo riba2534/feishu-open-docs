@@ -5,11 +5,9 @@ updateTime: "1724990077000"
 ---
 
 # 用户任务状态变更
-:::html
-<md-alert type="tip">
-了解事件订阅的使用场景和配置流程，请点击查看 [事件订阅概述](/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM)
-</md-alert>
-:::
+
+> **Tip**: 了解事件订阅的使用场景和配置流程，请点击查看 [事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)
+
 **事件**
 
 当用户任务变更后，推送该用户的任务状态变更消息。
@@ -32,8 +30,8 @@ updateTime: "1724990077000"
 |event|-|事件体|
 |&emsp;∟employee_id|string|[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的用户 ID|
 |&emsp;∟employee_no|string|[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的工号|
-|&emsp;∟group_id|string|考勤组 ID，可用于[按 ID 查询考勤组](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/group/get) |
-|&emsp;∟shift_id|string|班次 ID，可用于[按 ID 查询班次](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/shift/get)|
+|&emsp;∟group_id|string|考勤组 ID，可用于[按 ID 查询考勤组](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/group/get) |
+|&emsp;∟shift_id|string|班次 ID，可用于[按 ID 查询班次](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/shift/get)|
 |&emsp;∟date|int|日期，格式为yyyyMMdd|
 |&emsp;∟status_changes|list|状态变更数组|
 |&emsp;&emsp;∟before_status|string|变更前打卡结果，值为：【NoNeedCheck（无需打卡），SystemCheck（系统打卡），Normal（正常），Early（早退），Late（迟到），Lack（缺卡）】|

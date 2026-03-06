@@ -11,79 +11,21 @@ updateTime: "1743144529000"
 
 ## 事件概括
 流程事件指的是用户发起具体流程时，流程状态、流程节点状态、流程待办任务状态等流程相关信息发生变化的动作。可通过订阅流程事件的方式，获取流程实例完成相应事件后的流程数据状态
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width:30%">流程事件</md-th>
-      <md-th style="width:70%">触发时机</md-th>
-	</md-tr>
-  </md-thead>
-  <md-tbody>
-	<md-tr>
-		<md-td>[流程实例状态变化](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-status/events/update)</md-td>
-		<md-td>流程实例状态变化时会触发该事件</md-td>
-	</md-tr>
-	<md-tr>
-		<md-td>[流程实例信息变更](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process/events/updated)</md-td>
-		<md-td>流程中有审批人操作、流程数据更新、流程状态变化时会触发该事件</md-td>
-	</md-tr>
-	<md-tr>
-		<md-td>[流程节点状态变更](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-node/events/updated)</md-td>
-		<md-td>流程中节点状态变化时会触发该事件</md-td>
-	</md-tr>
-    <md-tr>
-		<md-td>[审批任务状态变更](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-approver/events/updated)</md-td>
-		<md-td>单个审批任务状态变化时会触发该事件</md-td>
-	</md-tr>
-    <md-tr>
-		<md-td>[抄送单据状态变更](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-cc/events/updated)</md-td>
-		<md-td>生成抄送单据后会触发该事件</md-td>
-	</md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 流程事件 | 触发时机 |
+| --- | --- |
+| [流程实例状态变化](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-status/events/update) | 流程实例状态变化时会触发该事件 |
+| [流程实例信息变更](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process/events/updated) | 流程中有审批人操作、流程数据更新、流程状态变化时会触发该事件 |
+| [流程节点状态变更](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-node/events/updated) | 流程中节点状态变化时会触发该事件 |
+| [审批任务状态变更](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-approver/events/updated) | 单个审批任务状态变化时会触发该事件 |
+| [抄送单据状态变更](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-cc/events/updated) | 生成抄送单据后会触发该事件 |
+
 
 ## 订阅步骤
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">步骤</md-th>
-<md-th style="width:70%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>1. 选择事件订阅方式</md-td>
-<md-td>
-事件订阅方式分为 **使用长连接接收事件** 和 **将事件发送至开发者服务器** 两种，你可以根据需要自行选择任一订阅方式。
-  
-
-<md-alert>如果你已经集成飞书 SDK，且正在开发的是企业自建应用，推荐你使用更加安全高效的长连接订阅方式。</md-alert>
-  
--   **使用长连接接收事件** 方式是飞书 SDK 内提供的能力，你可以通过集成飞书 SDK 与开放平台建立一条 WebSocket 全双工通道（你的服务器需要能够访问公网）。后续当应用订阅的事件发生时，开放平台会通过该通道向你的服务器发送消息。详细配置说明参见[使用长连接接收事件](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/request-url-configuration-case)。
-- **将事件发送至开发者服务器** 方式是传统的 Webhook 模式，该方式需要你提供用于接收事件消息的服务器公网地址。后续当应用订阅的事件发生时，开放平台会向服务器的公网地址发送 HTTP POST 请求，请求内包含事件数据。详细配置说明参见[将事件发送至开发者服务器](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/choose-a-subscription-mode/send-notifications-to-developers-server)。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>2. 添加所需事件</md-td>
-<md-td>完成事件订阅方式配置后，即可为应用添加所需订阅的事件，并发布应用使配置生效。具体操作参见[添加事件](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/subscription-event-case)。事件相关的概念介绍（包括事件订阅身份、事件版本、事件结构以及事件推送机制），参见下文[事件概念](#事件概念)。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>3. 接收事件</md-td>
-<md-td>
-根据不同的事件订阅方式接收事件：
-  
-- **使用长连接接收事件** 方式已经封装了鉴权逻辑，无需进行数据解密与验签操作，直接接收来自开放平台的事件请求即可。
-- **将事件发送至开发者服务器** 方式需要你根据应用的加密策略进行安全校验，如果是加密事件，需要先解密事件，再解析事件详情。具体操作参见[接收事件](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/encrypt-key-encryption-configuration-case)。
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
+| 步骤 | 说明 |
+| --- | --- |
+| 1. 选择事件订阅方式 | 事件订阅方式分为 **使用长连接接收事件** 和 **将事件发送至开发者服务器** 两种，你可以根据需要自行选择任一订阅方式。    > **Info**: 如果你已经集成飞书 SDK，且正在开发的是企业自建应用，推荐你使用更加安全高效的长连接订阅方式。    -   **使用长连接接收事件** 方式是飞书 SDK 内提供的能力，你可以通过集成飞书 SDK 与开放平台建立一条 WebSocket 全双工通道（你的服务器需要能够访问公网）。后续当应用订阅的事件发生时，开放平台会通过该通道向你的服务器发送消息。详细配置说明参见[使用长连接接收事件](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/request-url-configuration-case)。 - **将事件发送至开发者服务器** 方式是传统的 Webhook 模式，该方式需要你提供用于接收事件消息的服务器公网地址。后续当应用订阅的事件发生时，开放平台会向服务器的公网地址发送 HTTP POST 请求，请求内包含事件数据。详细配置说明参见[将事件发送至开发者服务器](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/choose-a-subscription-mode/send-notifications-to-developers-server)。 |
+| 2. 添加所需事件 | 完成事件订阅方式配置后，即可为应用添加所需订阅的事件，并发布应用使配置生效。具体操作参见[添加事件](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/subscription-event-case)。事件相关的概念介绍（包括事件订阅身份、事件版本、事件结构以及事件推送机制），参见下文[事件概念](#事件概念)。 |
+| 3. 接收事件 | 根据不同的事件订阅方式接收事件：    - **使用长连接接收事件** 方式已经封装了鉴权逻辑，无需进行数据解密与验签操作，直接接收来自开放平台的事件请求即可。 - **将事件发送至开发者服务器** 方式需要你根据应用的加密策略进行安全校验，如果是加密事件，需要先解密事件，再解析事件详情。具体操作参见[接收事件](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/encrypt-key-encryption-configuration-case)。 |

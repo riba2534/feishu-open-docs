@@ -7,117 +7,15 @@ updateTime: "1749798503000"
 # 查询条件用法
 
 ## 请求参数
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >filter</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >multi_filter_condition</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	查询条件
-	</md-dt-td>
-</md-dt-tr>
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `filter` | `multi_filter_condition` | 是 | 查询条件 |
+| &nbsp;&nbsp;└ `conditions` | `filter_condition\[\]` | 是 | 比较表达式列表，内容如 base_info.mobile eq `"\"+8613000000001\""`的比较条件，多个表达式之间的关系为且。<br>**数据校验规则**：<br>- 长度范围：`0` ～ `10` |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `field` | `string` | 是 | 筛选条件的左值，值为字段的参数名称。可选的筛选条件见下文 **支持查询的条件** 章节。<br>**示例值**："base_info.mobile" |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `operator` | `string` | 是 | 比较操作符。可选值有： - eq：等于，支持任何类型的左值 - in：属于任一<br>**示例值**："eq" |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 筛选条件的右值，为转义后的json字符串。 - eq匹配字符串，使用 `"\"str\""` - in匹配字符串列表，使用 `"[\"str\"]"` - eq匹配数字列表，使用 `"123"` - in匹配数字列表，使用 `"[123]"`<br>**示例值**："`\"8619922333322\"`" |
 
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >conditions</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >filter_condition\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	比较表达式列表，内容如 base_info.mobile eq `"\"+8613000000001\""`的比较条件，多个表达式之间的关系为且。
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `10`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >field</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	筛选条件的左值，值为字段的参数名称。可选的筛选条件见下文 **支持查询的条件** 章节。
-
-**示例值**："base_info.mobile"
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >operator</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	比较操作符。可选值有：
-- eq：等于，支持任何类型的左值
-- in：属于任一
-
-**示例值**："eq"
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	筛选条件的右值，为转义后的json字符串。<br>
-- eq匹配字符串，使用 `"\"str\""`
-- in匹配字符串列表，使用 `"[\"str\"]"`
-- eq匹配数字列表，使用 `"123"`
-- in匹配数字列表，使用 `"[123]"`
-
-**示例值**："`\"8619922333322\"`"
-	</md-dt-td>
-</md-dt-tr>
-
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
 
 ## 请求示例
 ```json 
@@ -164,9 +62,5 @@ updateTime: "1749798503000"
 - 当左值为int类型操作符为in时，值为int数组序列化后的值，即`"[1,2]"`
 - 当左值为string类型且操作符为eq时，值为string序列化后的字符串,即`"\"1\""`
 - 当左值为string类型操作符为in时，值为string数组序列化后的值，即`"[\"1\",\"2\"]"`
-
-
-
-
 
 

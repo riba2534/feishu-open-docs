@@ -41,17 +41,17 @@ item 的 ACL 字段是指该条数据的访问权限设置。
 ### 创建数据源（DataSource）
 创建搜索连接器的第一步是创建一个数据源（DataSouce）。除此之外，开发者可以通过 DataSouce 的 open API 管理（创建，删除，更新）被飞书搜索索引的数据源。数据源可见性会与创建该数据源的应用可见性绑定。
 
-调用接口可参考[创建数据源](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/search-v2/data_source/create)
+调用接口可参考[创建数据源](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/search-v2/data_source/create)
 ### 索引数据项（item）
 当数据源创建成功后，就可以将一条条数据索引给飞书搜索。数据 item 是对客户数据中一条数据的抽象描述，飞书搜索通过这种数据结构，可以理解该条具体数据的字段描述和访问权限。
 
-调用接口可参考[索引数据项](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/search-v2/data_source-item/create)
+调用接口可参考[索引数据项](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/search-v2/data_source-item/create)
 
 #### 数据项（item）的举例说明
 
 ![card.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/0d3dbd3dcb076c505462f6eaa4cacc65_yHD9vkQY7O.png?height=215&lazyload=true&width=392)
 
-根据[索引数据项](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/search-v2/data_source-item/create)文档中对请求 item 结构的描述，如果需要索引上述的卡片消息，请求的结构体如下：
+根据[索引数据项](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/search-v2/data_source-item/create)文档中对请求 item 结构的描述，如果需要索引上述的卡片消息，请求的结构体如下：
 
 ```json
 {

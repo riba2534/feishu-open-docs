@@ -6,6 +6,3 @@ updateTime: "1689128361000"
 
 # API 权限列表
 
-:::html
-<md-scope-list></md-scope-list>
-:::

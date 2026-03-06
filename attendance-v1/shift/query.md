@@ -6,879 +6,98 @@ updateTime: "1765183622000"
 
 # 按名称查询班次
 
-飞书人事管理后台中假勤设置-[班次配置](https://example.feishu.cn/people/workforce-management/setting/group/shifts)中的搜索班次名称功能，展示班次名称、打卡规则、弹性班次规则、休息规则等{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=attendance&version=v1&resource=shift&method=query)
-
-:::html
-<md-alert type="error">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="warn">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="tip">
-
-</md-alert>
-:::
-
+飞书人事管理后台中假勤设置-[班次配置](https://example.feishu.cn/people/workforce-management/setting/group/shifts)中的搜索班次名称功能，展示班次名称、打卡规则、弹性班次规则、休息规则等
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/attendance/v1/shifts/query</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[50 次/秒](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="attendance:task:readonly" desc="导出打卡数据" support_app_types="custom" tags="">导出打卡数据</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/attendance/v1/shifts/query |
+| HTTP Method | POST |
+| 接口频率限制 | [50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | custom |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `attendance:task:readonly` 导出打卡数据 |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
-
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
 
 
 ### 查询参数
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;" >描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >shift_name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	班次名称
-
-**示例值**：早班
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
-
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `shift_name` | `string` | 是 | 班次名称<br>**示例值**：早班 |
 
 
 ## 响应
 
 
-
-
-
 ### 响应体
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误码，非 0 表示失败
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >data</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >shift</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	\-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >shift_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	班次 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >shift_name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	班次名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >punch_times</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	打卡次数
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >sub_shift_leader_ids</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	无效字段，请勿使用
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >is_flexible</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否弹性打卡
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >flexible_minutes</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	弹性打卡时间,单位：分钟，设置【上班最多可晚到】与【下班最多可早走】时间，如果不设置flexible_rule则生效
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >flexible_rule</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >flexible_rule\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	弹性打卡时间设置
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >flexible_early_minutes</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	下班最多可早走，单位：分钟（上班早到几分钟，下班可早走几分钟）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >flexible_late_minutes</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	上班最多可晚到，单位：分钟（上班晚到几分钟，下班须晚走几分钟）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >no_need_off</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	不需要打下班卡
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >punch_time_rule</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >punch_time_rule\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	打卡规则
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >on_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	上班时间，格式为hh:mm
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >off_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	下班时间，格式为hh:mm。如果是第二天凌晨2点， 则为26:00
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >late_minutes_as_late</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	晚到多久记为迟到，单位：分钟
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >late_minutes_as_lack</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	晚到多久记为缺卡，单位：分钟
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >on_advance_minutes</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	最早多久可打上班卡，单位：分钟
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >early_minutes_as_early</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	早退多久记为早退，单位：分钟
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >early_minutes_as_lack</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	早退多久记为缺卡，单位：分钟
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >off_delay_minutes</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	最晚多久可打下班卡，单位：分钟
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >late_minutes_as_serious_late</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	晚到多久记为严重迟到，单位：分钟
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >no_need_on</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	true为需要打上班卡，false为不需要上班打卡。
-注意和接口创建时的区别：接口创建时，no_need_on传参false表示需要打上班卡，true为不需要打上班卡
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >no_need_off</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	true为需要打下班卡，false为不需要下班打卡。
-注意和接口创建时的区别：接口创建时，no_need_off传参false表示需要打下班卡，true为不需要打下班卡
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >late_off_late_on_rule</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >late_off_late_on_rule\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	晚走晚到规则（仅飞书人事企业版可用）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >late_off_minutes</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	晚走多久，单位：分钟
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >late_on_minutes</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	晚到多久，单位：分钟
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >rest_time_rule</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >rest_rule\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	休息规则
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >rest_begin_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	休息开始
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >rest_end_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	休息结束
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >overtime_rule</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >overtime_rule\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	加班时段（仅飞书人事企业版可用）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >on_overtime</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	开始时间
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >off_overtime</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	结束时间
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >day_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	日期类型，【是否弹性打卡 = ture】时，不可设置为“休息日”  可选值：1：工作日 2：休息日     示例值：（默认值）1
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >overtime_rest_time_rule</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >rest_rule\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	班外休息规则
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >rest_begin_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	休息开始
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >rest_end_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	休息结束
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >late_minutes_as_serious_late</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	晚到多久记为严重迟到（优先级比原有字段高）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >shift_middle_time_rule</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >shift_middle_time_rule</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	半天分割规则
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >middle_time_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	半天分割类型
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="0" >按全天班次时长（含休息）的中点分割</md-enum-item>
-<md-enum-item key="1" >按全天班次时长（不含休息）的中点分割</md-enum-item>
-<md-enum-item key="2" >按休息时间分割</md-enum-item>
-<md-enum-item key="3" >按固定时间点分割</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >fixed_middle_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	固定分割时间点（middle_time_type 为 3 时有效）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >shift_attendance_time_config</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >shift_attendance_time_config</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应出勤配置
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >attendance_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >number(float)</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应出勤时长
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >on_attendance_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >number(float)</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	上半天应出勤时长
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >off_attendance_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >number(float)</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	下半天应出勤时长
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >late_off_late_on_setting</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >late_off_late_on_setting</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	晚走次日晚到配置规则
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >late_off_base_on_time_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	当日晚走时间计算规则
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="0" >弹性规则</md-enum-item>
-<md-enum-item key="1" >固定规则</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >late_on_base_on_time_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	次日晚到时间计算规则
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="0" >固定规则</md-enum-item>
-<md-enum-item key="1" >弹性规则</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	班次id(更新班次时需要传递)
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >rest_time_flexible_configs</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >rest_time_flexible_config\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	休息弹性设置
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >need_flexible</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否开启休息弹性班次
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >late_mins</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	休息弹性向后弹的分钟数
-	</md-dt-td>
-</md-dt-tr>
-
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `code` | `int` | 错误码，非 0 表示失败 |
+| `msg` | `string` | 错误描述 |
+| `data` | `shift` | \- |
+| &nbsp;&nbsp;└ `shift_id` | `string` | 班次 ID |
+| &nbsp;&nbsp;└ `shift_name` | `string` | 班次名称 |
+| &nbsp;&nbsp;└ `punch_times` | `int` | 打卡次数 |
+| &nbsp;&nbsp;└ `sub_shift_leader_ids` | `string\[\]` | 无效字段，请勿使用 |
+| &nbsp;&nbsp;└ `is_flexible` | `boolean` | 是否弹性打卡 |
+| &nbsp;&nbsp;└ `flexible_minutes` | `int` | 弹性打卡时间,单位：分钟，设置【上班最多可晚到】与【下班最多可早走】时间，如果不设置flexible_rule则生效 |
+| &nbsp;&nbsp;└ `flexible_rule` | `flexible_rule\[\]` | 弹性打卡时间设置 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `flexible_early_minutes` | `int` | 下班最多可早走，单位：分钟（上班早到几分钟，下班可早走几分钟） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `flexible_late_minutes` | `int` | 上班最多可晚到，单位：分钟（上班晚到几分钟，下班须晚走几分钟） |
+| &nbsp;&nbsp;└ `no_need_off` | `boolean` | 不需要打下班卡 |
+| &nbsp;&nbsp;└ `punch_time_rule` | `punch_time_rule\[\]` | 打卡规则 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `on_time` | `string` | 上班时间，格式为hh:mm |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `off_time` | `string` | 下班时间，格式为hh:mm。如果是第二天凌晨2点， 则为26:00 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `late_minutes_as_late` | `int` | 晚到多久记为迟到，单位：分钟 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `late_minutes_as_lack` | `int` | 晚到多久记为缺卡，单位：分钟 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `on_advance_minutes` | `int` | 最早多久可打上班卡，单位：分钟 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `early_minutes_as_early` | `int` | 早退多久记为早退，单位：分钟 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `early_minutes_as_lack` | `int` | 早退多久记为缺卡，单位：分钟 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `off_delay_minutes` | `int` | 最晚多久可打下班卡，单位：分钟 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `late_minutes_as_serious_late` | `int` | 晚到多久记为严重迟到，单位：分钟 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `no_need_on` | `boolean` | true为需要打上班卡，false为不需要上班打卡。 注意和接口创建时的区别：接口创建时，no_need_on传参false表示需要打上班卡，true为不需要打上班卡 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `no_need_off` | `boolean` | true为需要打下班卡，false为不需要下班打卡。 注意和接口创建时的区别：接口创建时，no_need_off传参false表示需要打下班卡，true为不需要打下班卡 |
+| &nbsp;&nbsp;└ `late_off_late_on_rule` | `late_off_late_on_rule\[\]` | 晚走晚到规则（仅飞书人事企业版可用） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `late_off_minutes` | `int` | 晚走多久，单位：分钟 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `late_on_minutes` | `int` | 晚到多久，单位：分钟 |
+| &nbsp;&nbsp;└ `rest_time_rule` | `rest_rule\[\]` | 休息规则 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `rest_begin_time` | `string` | 休息开始 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `rest_end_time` | `string` | 休息结束 |
+| &nbsp;&nbsp;└ `overtime_rule` | `overtime_rule\[\]` | 加班时段（仅飞书人事企业版可用） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `on_overtime` | `string` | 开始时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `off_overtime` | `string` | 结束时间 |
+| &nbsp;&nbsp;└ `day_type` | `int` | 日期类型，【是否弹性打卡 = ture】时，不可设置为“休息日”  可选值：1：工作日 2：休息日     示例值：（默认值）1 |
+| &nbsp;&nbsp;└ `overtime_rest_time_rule` | `rest_rule\[\]` | 班外休息规则 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `rest_begin_time` | `string` | 休息开始 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `rest_end_time` | `string` | 休息结束 |
+| &nbsp;&nbsp;└ `late_minutes_as_serious_late` | `int` | 晚到多久记为严重迟到（优先级比原有字段高） |
+| &nbsp;&nbsp;└ `shift_middle_time_rule` | `shift_middle_time_rule` | 半天分割规则 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `middle_time_type` | `int` | 半天分割类型<br>**可选值有**：<br>- `0`: 按全天班次时长（含休息）的中点分割 - `1`: 按全天班次时长（不含休息）的中点分割 - `2`: 按休息时间分割 - `3`: 按固定时间点分割 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `fixed_middle_time` | `string` | 固定分割时间点（middle_time_type 为 3 时有效） |
+| &nbsp;&nbsp;└ `shift_attendance_time_config` | `shift_attendance_time_config` | 应出勤配置 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `attendance_time` | `number(float)` | 应出勤时长 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `on_attendance_time` | `number(float)` | 上半天应出勤时长 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `off_attendance_time` | `number(float)` | 下半天应出勤时长 |
+| &nbsp;&nbsp;└ `late_off_late_on_setting` | `late_off_late_on_setting` | 晚走次日晚到配置规则 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `late_off_base_on_time_type` | `int` | 当日晚走时间计算规则<br>**可选值有**：<br>- `0`: 弹性规则 - `1`: 固定规则 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `late_on_base_on_time_type` | `int` | 次日晚到时间计算规则<br>**可选值有**：<br>- `0`: 固定规则 - `1`: 弹性规则 |
+| &nbsp;&nbsp;└ `id` | `string` | 班次id(更新班次时需要传递) |
+| &nbsp;&nbsp;└ `rest_time_flexible_configs` | `rest_time_flexible_config\[\]` | 休息弹性设置 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `need_flexible` | `boolean` | 是否开启休息弹性班次 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `late_mins` | `int` | 休息弹性向后弹的分钟数 |
 
 
 ### 响应体示例
-:::html
-<md-code-json>
+
+```json
 {
     "code": 0,
     "msg": "success",
@@ -961,76 +180,18 @@ updateTime: "1765183622000"
         ]
     }
 }
-</md-code-json>
-:::
-
+```
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1220001</md-td>
-  <md-td>param is invalis</md-td>
-  <md-td>入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW)</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1220002</md-td>
-  <md-td>tenant_id is empty</md-td>
-  <md-td>请检查入参中的 tenant_access_token是否正确</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1225000</md-td>
-  <md-td>param is invalis</md-td>
-  <md-td>请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW)</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1226000</md-td>
-  <md-td>param is invalis</md-td>
-  <md-td>班次服务异常错误码，请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW)</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1226003</md-td>
-  <md-td>param is invalis</md-td>
-  <md-td>请参考实际返回的错误信息排查问题。例如“default shift are not allowed to change.”代表默认班次不能修改。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW)</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1220600</md-td>
-  <md-td>通用错误信息</md-td>
-  <md-td>通用错误信息包含多条，详细的错误信息以及处理建议可参见 [错误信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines)</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
-
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 1220001 | param is invalis | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220002 | tenant_id is empty | 请检查入参中的 tenant_access_token是否正确 |
+| 500 | 1225000 | param is invalis | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 500 | 1226000 | param is invalis | 班次服务异常错误码，请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1226003 | param is invalis | 请参考实际返回的错误信息排查问题。例如“default shift are not allowed to change.”代表默认班次不能修改。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220600 | 通用错误信息 | 通用错误信息包含多条，详细的错误信息以及处理建议可参见 [错误信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines) |
 
 

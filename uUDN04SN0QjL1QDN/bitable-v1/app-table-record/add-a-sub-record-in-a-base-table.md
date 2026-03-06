@@ -16,11 +16,11 @@ updateTime: "1735028102000"
 ## 流程说明
 
 添加子记录的整体流程如下所示：
-1. 调用[新增字段](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-field/create)接口，在多维表格中创建一个单向或双向关联字段，用于建立记录之间的关联关系。了解什么是单向或双向字段，参考飞书帮助中心文档：[使用多维表格单向关联字段](https://www.feishu.cn/hc/zh-CN/articles/361914682520-%E4%BD%BF%E7%94%A8%E5%A4%9A%E7%BB%B4%E8%A1%A8%E6%A0%BC%E5%8D%95%E5%90%91%E5%85%B3%E8%81%94%E5%AD%97%E6%AE%B5)、[使用多维表格双向关联字段](https://www.feishu.cn/hc/zh-CN/articles/653027931590-%E4%BD%BF%E7%94%A8%E5%A4%9A%E7%BB%B4%E8%A1%A8%E6%A0%BC%E5%8F%8C%E5%90%91%E5%85%B3%E8%81%94%E5%AD%97%E6%AE%B5)。
-1. 调用[查询记录](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)接口，获取已有的父记录的 ID。
-1. 调用[新增记录](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/create)接口，新增一条记录作为子记录，并确保该记录关联了已有的父记录。
-1. 调用[列出字段](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-field/list)接口，获取“单向关联字段”的字段 ID。
-1. 调用[更新视图](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-view/patch)接口，将 `hierarchy_config` 参数中的 `field_id` 设为“单向关联字段”的字段 ID，以更新表格视图的层级结构样式。
+1. 调用[新增字段](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-field/create)接口，在多维表格中创建一个单向或双向关联字段，用于建立记录之间的关联关系。了解什么是单向或双向字段，参考飞书帮助中心文档：[使用多维表格单向关联字段](https://www.feishu.cn/hc/zh-CN/articles/361914682520-%E4%BD%BF%E7%94%A8%E5%A4%9A%E7%BB%B4%E8%A1%A8%E6%A0%BC%E5%8D%95%E5%90%91%E5%85%B3%E8%81%94%E5%AD%97%E6%AE%B5)、[使用多维表格双向关联字段](https://www.feishu.cn/hc/zh-CN/articles/653027931590-%E4%BD%BF%E7%94%A8%E5%A4%9A%E7%BB%B4%E8%A1%A8%E6%A0%BC%E5%8F%8C%E5%90%91%E5%85%B3%E8%81%94%E5%AD%97%E6%AE%B5)。
+1. 调用[查询记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)接口，获取已有的父记录的 ID。
+1. 调用[新增记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/create)接口，新增一条记录作为子记录，并确保该记录关联了已有的父记录。
+1. 调用[列出字段](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-field/list)接口，获取“单向关联字段”的字段 ID。
+1. 调用[更新视图](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-view/patch)接口，将 `hierarchy_config` 参数中的 `field_id` 设为“单向关联字段”的字段 ID，以更新表格视图的层级结构样式。
 
 ## 操作步骤
 
@@ -28,7 +28,7 @@ updateTime: "1735028102000"
 
 ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/ed1bf13eaffaae51a96a153f4faa80be_7JxlJ32vkA.png?height=866&lazyload=true&maxWidth=500&width=1050)
 
-1. 调用[新增字段](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-field/create)接口，在多维表格数据表中创建一个单向关联字段，用于建立记录之间的关联关系。请求体如下所示：
+1. 调用[新增字段](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-field/create)接口，在多维表格数据表中创建一个单向关联字段，用于建立记录之间的关联关系。请求体如下所示：
     
     
     ```json
@@ -46,7 +46,7 @@ updateTime: "1735028102000"
    
    ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/5e8c72d4b11abd8d1f32d87651f33286_R5Tgu9HvDr.png?height=865&lazyload=true&maxWidth=500&width=1163)
 
-2. 调用[查询记录](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)接口，获取已有的父记录的 ID。请求体为空即可：
+2. 调用[查询记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)接口，获取已有的父记录的 ID。请求体为空即可：
 
     ```json
     {}
@@ -133,7 +133,7 @@ updateTime: "1735028102000"
     }
     ```
    
-1. 调用[新增记录](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/create)接口，新增一条记录作为子记录，并确保该记录关联了已有的父记录。请求体示例如下所示：
+1. 调用[新增记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/create)接口，新增一条记录作为子记录，并确保该记录关联了已有的父记录。请求体示例如下所示：
 
     ```json
     {
@@ -150,7 +150,7 @@ updateTime: "1735028102000"
     
     ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/1f27f151e95e8011daf5b50d5a6ce2fd_rdc40Je0KC.png?height=859&lazyload=true&maxWidth=500&width=1163)
 
-2. 调用[列出字段](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-field/list)接口，获取“单向关联字段”的字段 ID。若调用成功，接口将返回如下结构数据，其中 `fldfASqam8` 即为“单向关联字段”的字段 ID。
+2. 调用[列出字段](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-field/list)接口，获取“单向关联字段”的字段 ID。若调用成功，接口将返回如下结构数据，其中 `fldfASqam8` 即为“单向关联字段”的字段 ID。
     
     
     ```json
@@ -190,7 +190,7 @@ updateTime: "1735028102000"
     ```
     
     
-1. 调用[更新视图](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-view/patch)接口，参考如下请求示例，将 `hierarchy_config` 参数中的 `field_id` 设为“单向关联字段”的字段 ID，以更新表格视图的层级结构样式。
+1. 调用[更新视图](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-view/patch)接口，参考如下请求示例，将 `hierarchy_config` 参数中的 `field_id` 设为“单向关联字段”的字段 ID，以更新表格视图的层级结构样式。
 
 
     ```json

@@ -6,887 +6,98 @@ updateTime: "1721719963000"
 
 # 查询会议室配置
 
-查询一个范围内的会议室配置。{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=vc&version=v1&resource=room_config&method=query)
+查询一个范围内的会议室配置。
 
-:::html
-<md-alert type="error">
 
-</md-alert>
-:::
-
-:::html
-<md-alert type="warn">
-根据查询范围传入对应的参数
-</md-alert>
-:::
-
-:::html
-<md-alert type="tip">
-
-</md-alert>
-:::
-
+> **Warning**: 根据查询范围传入对应的参数
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/vc/v1/room_configs/query</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>GET</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="vc:room:readonly" desc="获取视频会议室信息" support_app_types="custom,isv" tags="">获取视频会议室信息</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/vc/v1/room_configs/query |
+| HTTP Method | GET |
+| 支持的应用类型 | custom,isv |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `vc:room:readonly` 获取视频会议室信息 |
+| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
-
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
 
 
 ### 查询参数
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;" >描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >scope</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	查询节点范围
-
-**示例值**：5
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >租户</md-enum-item>
-<md-enum-item key="2" >国家/地区</md-enum-item>
-<md-enum-item key="3" >城市</md-enum-item>
-<md-enum-item key="4" >建筑</md-enum-item>
-<md-enum-item key="5" >楼层</md-enum-item>
-<md-enum-item key="6" >会议室</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >country_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	国家/地区ID scope为2，3时需要此参数
-
-**示例值**："086"
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >district_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	城市ID scope为3时需要此参数
-
-**示例值**："001"
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >building_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	建筑ID scope为4，5时需要此参数
-
-**示例值**："22"
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >floor_name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	楼层 scope为5时需要此参数
-
-**示例值**："4"
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >room_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	会议室ID scope为6时需要此参数
-
-**示例值**："6383786266263"
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >user_id_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	用户 ID 类型
-
-**示例值**："open_id"
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="open_id" >标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)</md-enum-item>
-<md-enum-item key="union_id" >标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id)</md-enum-item>
-<md-enum-item key="user_id" >标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[了解更多：如何获取 User ID？](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)</md-enum-item>
-</md-enum>
-
-**默认值**：`open_id`
-
-**当值为 `user_id`，字段权限要求**：
-<md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
-
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `scope` | `int` | 是 | 查询节点范围<br>**示例值**：5<br>**可选值有**：<br>- `1`: 租户 - `2`: 国家/地区 - `3`: 城市 - `4`: 建筑 - `5`: 楼层 - `6`: 会议室 |
+| `country_id` | `string` | 否 | 国家/地区ID scope为2，3时需要此参数<br>**示例值**："086" |
+| `district_id` | `string` | 否 | 城市ID scope为3时需要此参数<br>**示例值**："001" |
+| `building_id` | `string` | 否 | 建筑ID scope为4，5时需要此参数<br>**示例值**："22" |
+| `floor_name` | `string` | 否 | 楼层 scope为5时需要此参数<br>**示例值**："4" |
+| `room_id` | `string` | 否 | 会议室ID scope为6时需要此参数<br>**示例值**："6383786266263" |
+| `user_id_type` | `string` | 否 | 用户 ID 类型<br>**示例值**："open_id"<br>**可选值有**：<br>- `open_id`: 标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid) - `union_id`: 标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id) - `user_id`: 标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[了解更多：如何获取 User ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)<br>**默认值**：`open_id`<br>**当值为 `user_id`，字段权限要求**： `contact:user.employee_id:readonly` 获取用户 user ID |
 
 
 ## 响应
 
 
-
 ### 响应体
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 40%;">名称</md-dt-th>
-      <md-dt-th style="width: 20%;">类型</md-dt-th>
-      <md-dt-th style="width: 40%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误码，非 0 表示失败
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >data</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >room_config</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	\-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >room_background</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	飞书会议室背景图
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >display_background</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	飞书签到板背景图
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >digital_signage</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >room_digital_signage</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	飞书会议室数字标牌
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >enable</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否开启数字标牌功能
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >mute</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否静音播放
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >start_display</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	在会议结束n分钟后开始播放，取值1~720（仅对飞书会议室数字标牌生效）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >stop_display</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	在日程会议开始前n分钟停止播放，取值1~720（仅对飞书会议室数字标牌生效）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >materials</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >room_digital_signage_material\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	素材列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	素材ID，当设置新素材时，无需传递该字段
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	素材名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >material_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	素材类型
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >图片</md-enum-item>
-<md-enum-item key="2" >视频</md-enum-item>
-<md-enum-item key="3" >GIF</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >url</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	素材url
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >duration</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	播放时长（单位sec），取值1~43200
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >cover</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	素材封面url
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >md5</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	素材文件md5
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >vid</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	素材文件vid
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >size</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	素材文件大小（单位byte）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >room_box_digital_signage</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >room_digital_signage</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	飞书投屏盒子数字标牌
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >enable</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否开启数字标牌功能
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >mute</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否静音播放
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >start_display</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	在会议结束n分钟后开始播放，取值1~720（仅对飞书会议室数字标牌生效）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >stop_display</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	在日程会议开始前n分钟停止播放，取值1~720（仅对飞书会议室数字标牌生效）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >materials</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >room_digital_signage_material\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	素材列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	素材ID，当设置新素材时，无需传递该字段
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	素材名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >material_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	素材类型
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >图片</md-enum-item>
-<md-enum-item key="2" >视频</md-enum-item>
-<md-enum-item key="3" >GIF</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >url</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	素材url
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >duration</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	播放时长（单位sec），取值1~43200
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >cover</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	素材封面url
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >md5</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	素材文件md5
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >vid</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	素材文件vid
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >size</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	素材文件大小（单位byte）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >room_status</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >room_status</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	会议室状态
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >status</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否启用会议室
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >schedule_status</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	会议室未来状态为启用或禁用
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >disable_start_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	禁用开始时间（unix时间，单位sec）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >disable_end_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	禁用结束时间（unix时间，单位sec，数值0表示永久禁用）
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >disable_reason</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	禁用原因
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >contact_ids</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	联系人列表，id类型由user_id_type参数决定
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >disable_notice</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否在禁用时发送通知给预定了该会议室的员工
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >resume_notice</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否在恢复启用时发送通知给联系人
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `code` | `int` | 错误码，非 0 表示失败 |
+| `msg` | `string` | 错误描述 |
+| `data` | `room_config` | \- |
+| &nbsp;&nbsp;└ `room_background` | `string` | 飞书会议室背景图 |
+| &nbsp;&nbsp;└ `display_background` | `string` | 飞书签到板背景图 |
+| &nbsp;&nbsp;└ `digital_signage` | `room_digital_signage` | 飞书会议室数字标牌 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `enable` | `boolean` | 是否开启数字标牌功能 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `mute` | `boolean` | 是否静音播放 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `start_display` | `int` | 在会议结束n分钟后开始播放，取值1~720（仅对飞书会议室数字标牌生效） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `stop_display` | `int` | 在日程会议开始前n分钟停止播放，取值1~720（仅对飞书会议室数字标牌生效） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `materials` | `room_digital_signage_material\[\]` | 素材列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 素材ID，当设置新素材时，无需传递该字段 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `string` | 素材名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `material_type` | `int` | 素材类型<br>**可选值有**：<br>- `1`: 图片 - `2`: 视频 - `3`: GIF |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `url` | `string` | 素材url |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `duration` | `int` | 播放时长（单位sec），取值1~43200 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `cover` | `string` | 素材封面url |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `md5` | `string` | 素材文件md5 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `vid` | `string` | 素材文件vid |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `size` | `string` | 素材文件大小（单位byte） |
+| &nbsp;&nbsp;└ `room_box_digital_signage` | `room_digital_signage` | 飞书投屏盒子数字标牌 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `enable` | `boolean` | 是否开启数字标牌功能 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `mute` | `boolean` | 是否静音播放 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `start_display` | `int` | 在会议结束n分钟后开始播放，取值1~720（仅对飞书会议室数字标牌生效） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `stop_display` | `int` | 在日程会议开始前n分钟停止播放，取值1~720（仅对飞书会议室数字标牌生效） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `materials` | `room_digital_signage_material\[\]` | 素材列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 素材ID，当设置新素材时，无需传递该字段 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `string` | 素材名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `material_type` | `int` | 素材类型<br>**可选值有**：<br>- `1`: 图片 - `2`: 视频 - `3`: GIF |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `url` | `string` | 素材url |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `duration` | `int` | 播放时长（单位sec），取值1~43200 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `cover` | `string` | 素材封面url |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `md5` | `string` | 素材文件md5 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `vid` | `string` | 素材文件vid |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `size` | `string` | 素材文件大小（单位byte） |
+| &nbsp;&nbsp;└ `room_status` | `room_status` | 会议室状态 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `status` | `boolean` | 是否启用会议室 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `schedule_status` | `boolean` | 会议室未来状态为启用或禁用 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `disable_start_time` | `string` | 禁用开始时间（unix时间，单位sec） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `disable_end_time` | `string` | 禁用结束时间（unix时间，单位sec，数值0表示永久禁用） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `disable_reason` | `string` | 禁用原因 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `contact_ids` | `string\[\]` | 联系人列表，id类型由user_id_type参数决定 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `disable_notice` | `boolean` | 是否在禁用时发送通知给预定了该会议室的员工 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `resume_notice` | `boolean` | 是否在恢复启用时发送通知给联系人 |
 
 
 ### 响应体示例
-:::html
-<md-code-json>
+
+```json
 {
     "code": 0,
     "msg": "success",
@@ -945,59 +156,16 @@ updateTime: "1721719963000"
         }
     }
 }
-</md-code-json>
-:::
-
+```
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>121001</md-td>
-  <md-td>internal error</md-td>
-  <md-td>服务器内部错误，如果重试无效可联系管理员</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>121002</md-td>
-  <md-td>not support</md-td>
-  <md-td>暂不支持该功能</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>121003</md-td>
-  <md-td>param error</md-td>
-  <md-td>参数错误，检查参数的取值范围（请按照上面字段说明自查）</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>404</md-td>
-  <md-td>121004</md-td>
-  <md-td>data not exist</md-td>
-  <md-td>无效的请求体，请确保请求方法、请求信息、请求数据格式等是正确的</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
-
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 500 | 121001 | internal error | 服务器内部错误，如果重试无效可联系管理员 |
+| 400 | 121002 | not support | 暂不支持该功能 |
+| 400 | 121003 | param error | 参数错误，检查参数的取值范围（请按照上面字段说明自查） |
+| 404 | 121004 | data not exist | 无效的请求体，请确保请求方法、请求信息、请求数据格式等是正确的 |
 
 

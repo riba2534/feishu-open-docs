@@ -6,25 +6,11 @@ updateTime: "1752203065000"
 
 # 创建运行
 
-该 API 用于在某个飞书 Aily 应用会话（Session）上创建一次运行（Run）。{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=aily&version=v1&resource=aily_session.run&method=create)
+该 API 用于在某个飞书 Aily 应用会话（Session）上创建一次运行（Run）。
 
-:::html
-<md-alert type="tip">
-更多信息及示例代码，可参考 [Aily OpenAPI 接入与接口说明](https://bytedance.larkoffice.com/wiki/UTU6wVTVGigefykjO1acAOOvnNc)。
-</md-alert>
-:::
 
-:::html
-<md-alert type="warn">
+> **Tip**: 更多信息及示例代码，可参考 [Aily OpenAPI 接入与接口说明](https://bytedance.larkoffice.com/wiki/UTU6wVTVGigefykjO1acAOOvnNc)。
 
-</md-alert>
-:::
-
-:::html
-<md-alert type="error">
-
-</md-alert>
-:::
 
 ## 实体概念说明
 
@@ -33,248 +19,41 @@ updateTime: "1752203065000"
 - **运行**（Run）：Aily 助手基于会话内消息进行意图判定、调用匹配的技能，并返回技能执行后的结果消息。
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/aily/v1/sessions/:aily_session_id/runs</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[100 次/分钟](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="aily:run:write" desc="创建运行" support_app_types="custom" tags="">创建运行</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/aily/v1/sessions/:aily_session_id/runs |
+| HTTP Method | POST |
+| 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | custom |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `aily:run:write` 创建运行 |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
-或
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
-
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-<md-tr>
-<md-td>X-Aily-BizUserID</md-td>
-<md-td>string</md-td>
-<md-td>否</md-td>
-<md-td>为标识创建会话的唯一用户 ID
-
-- 建议使用唯一内部 ID 或其他可标识用户唯一身份的字段（如飞书账号的 user_id），可用于分析来自 API 的具体用户
-
-**示例值**："ou_5ad573a6411d72b8305fda3a9c15c70e"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `64` 字符</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token` 或 `user_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
+| X-Aily-BizUserID | string | 否 | 为标识创建会话的唯一用户 ID - 建议使用唯一内部 ID 或其他可标识用户唯一身份的字段（如飞书账号的 user_id），可用于分析来自 API 的具体用户 **示例值**："ou_5ad573a6411d72b8305fda3a9c15c70e" **数据校验规则**： - 长度范围：`0` ～ `64` 字符 |
 
 
 ### 路径参数
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >aily_session_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	会话 ID；参考 [创建会话](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/aily-v1/aily_session/create) 接口
-
-**示例值**："session_4dfunz7sp1g8m"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `32` 字符
-- 正则校验：`session_[0-9a-hjkmnp-z]{1,24}`
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `aily_session_id` | `string` | 会话 ID；参考 [创建会话](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/aily-v1/aily_session/create) 接口<br>**示例值**："session_4dfunz7sp1g8m"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `32` 字符 - 正则校验：`session_[0-9a-hjkmnp-z]{1,24}` |
 
 
 ### 请求体
 
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >app_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	为 Aily 应用 ID（`spring_xxx__c`），可以在 Aily 应用开发页面的浏览器地址里获取
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `app_id` | `string` | 是 | 为 Aily 应用 ID（`spring_xxx__c`），可以在 Aily 应用开发页面的浏览器地址里获取<br>**示例值**："spring_449d72db2f__c"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `64` 字符 |
+| `skill_id` | `string` | 否 | 指定技能 ID（`skill_xxx`），可以在 Aily 技能配置页面的浏览器地址里获取<br>> 指定技能后、能够节省意图匹配的耗时<br>**示例值**："skill_6cc6166178ca"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `32` 字符 |
+| `skill_input` | `string` | 否 | 指定技能 ID 时可以同时指定技能输入<br>> 备注：常用于工作流技能内指定自定义参数，`skill_input` 需要配合 `skill_id` 同时传递才能生效<br>**示例值**："{\"key\": \"value\"}"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| `metadata` | `string` | 否 | 其他扩展的参数（JSON String）<br>> 备注：`metadata` 传递的参数，可以在后续 `GetRun` 调用中原样读取获得<br>**示例值**："{}"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
 
-**示例值**："spring_449d72db2f__c"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `64` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >skill_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	指定技能 ID（`skill_xxx`），可以在 Aily 技能配置页面的浏览器地址里获取
-
-> 指定技能后、能够节省意图匹配的耗时
-
-**示例值**："skill_6cc6166178ca"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `32` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >skill_input</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	指定技能 ID 时可以同时指定技能输入
-
-> 备注：常用于工作流技能内指定自定义参数，`skill_input` 需要配合 `skill_id` 同时传递才能生效
-
-**示例值**："{\"key\": \"value\"}"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >metadata</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	其他扩展的参数（JSON String）
-
-> 备注：`metadata` 传递的参数，可以在后续 `GetRun` 调用中原样读取获得
-
-**示例值**："{}"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
 
 **备注：**
 
@@ -283,243 +62,45 @@ updateTime: "1752203065000"
 > 活跃状态即 ：`status` 为 `QUEUED` | `IN_PROGRESS` | `REQUIRES_MESSAGE`
 
 
-
 ### 请求体示例
-:::html
-<md-code-json>
+
+```json
 {
     "app_id": "spring_449d72db2f__c",
     "skill_id": "skill_6cc6166178ca",
     "skill_input": "{\"key\": \"value\"}",
     "metadata": "{}"
 }
-</md-code-json>
-:::
-
+```
 
 
 ## 响应
 
 
-
-
-
 ### 响应体
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误码，非 0 表示失败
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >data</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	\-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >run</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >run</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	运行信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	运行 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >created_at</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	运行的创建时间，毫秒时间戳
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >app_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	应用 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >session_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	会话 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >status</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	状态
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >started_at</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	开始时间，毫秒时间戳
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >ended_at</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	结束时间，毫秒时间戳
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >error</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >run_error</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	失败时的错误信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误码
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >message</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >metadata</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	其他透传信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `code` | `int` | 错误码，非 0 表示失败 |
+| `msg` | `string` | 错误描述 |
+| `data` | `\-` | \- |
+| &nbsp;&nbsp;└ `run` | `run` | 运行信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 运行 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `created_at` | `string` | 运行的创建时间，毫秒时间戳 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `app_id` | `string` | 应用 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `session_id` | `string` | 会话 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `status` | `string` | 状态 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `started_at` | `string` | 开始时间，毫秒时间戳 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `ended_at` | `string` | 结束时间，毫秒时间戳 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `error` | `run_error` | 失败时的错误信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `code` | `string` | 错误码 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `message` | `string` | 错误信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `metadata` | `string` | 其他透传信息 |
 
 
 ### 响应体示例
-:::html
-<md-code-json>
+
+```json
 {
     "code": 0,
     "msg": "success",
@@ -540,36 +121,13 @@ updateTime: "1752203065000"
         }
     }
 }
-</md-code-json>
-:::
-
+```
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2700001</md-td>
-  <md-td>param is invalid</md-td>
-  <md-td>参数错误</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
-
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 2700001 | param is invalid | 参数错误 |
 
 

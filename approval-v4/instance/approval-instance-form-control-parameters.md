@@ -6,15 +6,15 @@ updateTime: "1764741396000"
 
 # 审批实例表单控件参数
 
-在调用[创建审批实例](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/create)接口时需要使用表单控件参数，你可以通过本文了解审批实例内各表单控件的参数说明。
+在调用[创建审批实例](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/create)接口时需要使用表单控件参数，你可以通过本文了解审批实例内各表单控件的参数说明。
 
 ## 准备工作
 
-审批实例的表单控件参数依据审批定义表单来配置，例如，审批定义的表单设计包括了 **单行文本** 和 **日期区间** 控件，则审批实例的表单控件参数就需要为 **单行文本** 和 **日期区间** 控件进行赋值。因此，在操作审批实例表单的控件参数前请先了解[审批定义表单控件参数](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/approval-definition-form-control-parameters)。
+审批实例的表单控件参数依据审批定义表单来配置，例如，审批定义的表单设计包括了 **单行文本** 和 **日期区间** 控件，则审批实例的表单控件参数就需要为 **单行文本** 和 **日期区间** 控件进行赋值。因此，在操作审批实例表单的控件参数前请先了解[审批定义表单控件参数](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/approval-definition-form-control-parameters)。
 
 ## 审批实例 API 不支持的控件
 
-[创建审批实例](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/create) API 未完全支持所有的审批表单控件，不支持的控件如下表所示。如果你必须使用 API 不支持的控件，则需前往[飞书审批管理后台](https://www.feishu.cn/approval/admin/approvalList?devMode=on)进进行操作。
+[创建审批实例](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/create) API 未完全支持所有的审批表单控件，不支持的控件如下表所示。如果你必须使用 API 不支持的控件，则需前往[飞书审批管理后台](https://www.feishu.cn/approval/admin/approvalList?devMode=on)进进行操作。
 
 **控件/控件组** | **Type**                    |
 | ---------- | --------------------------- |
@@ -33,42 +33,13 @@ updateTime: "1764741396000"
 
 审批实例的表单控件均包含的参数如下表所示。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:10%">参数</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:10%">是否必填</md-th>
-<md-th style="width:60%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>id</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>控件的 ID，需要与审批定义中的控件 ID 保持一致。</md-td>
-</md-tr>
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| id | string | 是 | 控件的 ID，需要与审批定义中的控件 ID 保持一致。 |
+| type | string | 是 | 控件类型。各控件类型取值参见下文 **不同控件的参数** 章节。 |
+| value | 不同控件的类型不同 | 是 | 控件的取值。不同控件 value 数据类型也不同，例如单行文本控件的 value 为字符串、联系人的 value 为数组。详情参见下文 **不同控件的参数** 章节。 |
 
-<md-tr>
-<md-td>type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>控件类型。各控件类型取值参见下文 **不同控件的参数** 章节。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>value</md-td>
-<md-td>不同控件的类型不同</md-td>
-<md-td>是</md-td>
-<md-td>控件的取值。不同控件 value 数据类型也不同，例如单行文本控件的 value 为字符串、联系人的 value 为数组。详情参见下文 **不同控件的参数** 章节。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ## 不同控件的参数
 
@@ -128,42 +99,13 @@ updateTime: "1764741396000"
 
 value 参数为 object 类型，包含参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:15%">参数</md-th>
-<md-th style="width:15%">类型</md-th>
-<md-th style="width:15%">是否必填</md-th>
-<md-th style="width:55%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>start</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>开始时间，需满足 RFC3339 格式。</md-td>
-</md-tr>
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| start | string | 是 | 开始时间，需满足 RFC3339 格式。 |
+| end | string | 是 | 结束时间，需满足 RFC3339 格式。 |
+| interval | float | 是 | 时长（天）。 |
 
-<md-tr>
-<md-td>end</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>结束时间，需满足 RFC3339 格式。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>interval</md-td>
-<md-td>float</md-td>
-<md-td>是</md-td>
-<md-td>时长（天）。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ### 单选
 
@@ -177,7 +119,7 @@ value 参数为 object 类型，包含参数说明：
 }
 ```
 
-其中， value 表示选项值，取值范围需要参考相应审批定义中 **单选** 控件 option 的 value 参数。你可以调用[查看指定审批定义](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/get)接口，从响应结果的 form 参数中，获取单选控件 option 的 value 取值。如果[关联外部选项](/ssl:ttdoc/ukTMukTMukTM/uADM4QjLwADO04CMwgDN)，则 value 需要传入外部选项的 options.id。
+其中， value 表示选项值，取值范围需要参考相应审批定义中 **单选** 控件 option 的 value 参数。你可以调用[查看指定审批定义](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/get)接口，从响应结果的 form 参数中，获取单选控件 option 的 value 取值。如果[关联外部选项](https://open.larkoffice.com/document/ukTMukTMukTM/uADM4QjLwADO04CMwgDN)，则 value 需要传入外部选项的 options.id。
 
 ### 多选
 
@@ -190,7 +132,7 @@ value 参数为 object 类型，包含参数说明：
     "value": ["k2b8mkx0-h71x5gl4321-1"] // string 类型的数组
 }
 ```
-其中， value 表示选项值，取值范围需要参考相应审批定义中 **多选** 控件 option 的 value 参数。你可以调用[查看指定审批定义](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/get)接口，从响应结果的 form 参数中，获取多选控件 option 的 value 取值。如果[关联外部选项](/ssl:ttdoc/ukTMukTMukTM/uADM4QjLwADO04CMwgDN)，则 value 需要传入外部选项的 options.id。
+其中， value 表示选项值，取值范围需要参考相应审批定义中 **多选** 控件 option 的 value 参数。你可以调用[查看指定审批定义](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/get)接口，从响应结果的 form 参数中，获取多选控件 option 的 value 取值。如果[关联外部选项](https://open.larkoffice.com/document/ukTMukTMukTM/uADM4QjLwADO04CMwgDN)，则 value 需要传入外部选项的 options.id。
 
 ### 数字
 
@@ -217,7 +159,7 @@ value 参数为 object 类型，包含参数说明：
 }
 ```
 
-其中，currency 表示货币种类，取值范围需要参考相应审批定义中 **金额** 控件的 value 参数。你可以调用[查看指定审批定义](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/get)接口，从响应结果的 form 参数中，获取金额控件可设置的货币种类。
+其中，currency 表示货币种类，取值范围需要参考相应审批定义中 **金额** 控件的 value 参数。你可以调用[查看指定审批定义](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/get)接口，从响应结果的 form 参数中，获取金额控件可设置的货币种类。
 
 ### 计算公式
 
@@ -243,7 +185,7 @@ value 参数为 object 类型，包含参数说明：
     "open_ids": ["ou_12345"] // string 类型的数组
 }
 ```
-其中，value 包含的是用户 user_id；open_ids 包含的是用户 open_id。不同用户 ID 说明可参见[用户身份概述](/ssl:ttdoc/home/user-identity-introduction/introduction)。
+其中，value 包含的是用户 user_id；open_ids 包含的是用户 open_id。不同用户 ID 说明可参见[用户身份概述](https://open.larkoffice.com/document/home/user-identity-introduction/introduction)。
 
 ### 关联审批
 
@@ -256,7 +198,7 @@ value 参数为 object 类型，包含参数说明：
     "value": ["19EAC829-F1CB-527F-BE2A-1330422E60C0"] // string 类型的数组
 }
 ```
-其中，value 包含的是被关联的审批实例 Code，你可以调用[获取单个审批实例详情](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/get)接口，根据审批实例 Code 获取实例详情。
+其中，value 包含的是被关联的审批实例 Code，你可以调用[获取单个审批实例详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/get)接口，根据审批实例 Code 获取实例详情。
 
 ### 文档控件
 
@@ -275,35 +217,12 @@ value 参数为 object 类型，包含参数说明：
 
 value 参数为 object 类型，包含参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:15%">参数</md-th>
-<md-th style="width:15%">类型</md-th>
-<md-th style="width:15%">是否必填</md-th>
-<md-th style="width:55%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>token</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>文档的 document_id，详细介绍参见[文档](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-overview#e18a49a1)。</md-td>
-</md-tr>
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| token | string | 是 | 文档的 document_id，详细介绍参见[文档](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-overview#e18a49a1)。 |
+| type | string | 是 | 文档类型，支持 `docx`。 |
 
-<md-tr>
-<md-td>type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>文档类型，支持 `docx`。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ### 附件
 
@@ -316,7 +235,7 @@ value 参数为 object 类型，包含参数说明：
     "value": ["D93653C3-2609-4EE0-8041-61DC1D84F0B5"] // string 类型的数组
 }
 ```
-其中，value 包含的是调用[上传文件](/ssl:ttdoc/ukTMukTMukTM/uUDOyUjL1gjM14SN4ITN)返回的文件 code。
+其中，value 包含的是调用[上传文件](https://open.larkoffice.com/document/ukTMukTMukTM/uUDOyUjL1gjM14SN4ITN)返回的文件 code。
 
 ### 图片
 
@@ -330,7 +249,7 @@ value 参数为 object 类型，包含参数说明：
 }
 ```
 
-其中，value 包含的是调用[上传文件](/ssl:ttdoc/ukTMukTMukTM/uUDOyUjL1gjM14SN4ITN)返回的文件 code。
+其中，value 包含的是调用[上传文件](https://open.larkoffice.com/document/ukTMukTMukTM/uUDOyUjL1gjM14SN4ITN)返回的文件 code。
 
 ### 明细/表格
 
@@ -370,7 +289,7 @@ value 参数为 object 类型，包含参数说明：
 }
 ```
 
-其中 value 为对象数组，通过 open_id 设置部门的 open_department_id。关于部门 open_department_id 的说明参见[部门资源介绍](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/field-overview#9c02ed7a)。
+其中 value 为对象数组，通过 open_id 设置部门的 open_department_id。关于部门 open_department_id 的说明参见[部门资源介绍](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/field-overview#9c02ed7a)。
 
 ### 电话
 
@@ -389,35 +308,12 @@ value 参数为 object 类型，包含参数说明：
 
 value 参数为 object 类型，包含参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:15%">参数</md-th>
-<md-th style="width:15%">类型</md-th>
-<md-th style="width:15%">是否必填</md-th>
-<md-th style="width:55%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>countryCode</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>区号。</md-td>
-</md-tr>
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| countryCode | string | 是 | 区号。 |
+| nationalNumber | string | 是 | 电话号。 |
 
-<md-tr>
-<md-td>nationalNumber</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>电话号。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ### 地址
 控件 type 为 address，JSON 数据示例：
@@ -435,42 +331,12 @@ value 参数为 object 类型，包含参数说明：
 
 value 参数为 []object 类型，参数说明如下：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">参数</md-th>
-<md-th style="width:15%">类型</md-th>
-<md-th style="width:15%">是否必填</md-th>
-<md-th style="width:55%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>value</md-td>
-<md-td>[]object</md-td>
-<md-td>是</md-td>
-<md-td>非出差控件组场景地址控件仅支持单个地址，传入多个时默认只取第一个</md-td>
-</md-tr>  
-  
-<md-tr>
-<md-td>└ id</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>区域ID, 可通过审批的地理库接口获取</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>└ detailAddress</md-td>
-<md-td>string</md-td>
-<md-td>否</md-td>
-<md-td>详细的地址，若表单配置中未开启填写详细地址，则会忽略该参数，即使传入也不会生效</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| value | []object | 是 | 非出差控件组场景地址控件仅支持单个地址，传入多个时默认只取第一个 |
+| └ id | string | 是 | 区域ID, 可通过审批的地理库接口获取 |
+| └ detailAddress | string | 否 | 详细的地址，若表单配置中未开启填写详细地址，则会忽略该参数，即使传入也不会生效 |
 
 
 ### 换班控件组
@@ -491,42 +357,13 @@ value 参数为 []object 类型，参数说明如下：
 
 value 参数为 object 类型，包含参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:15%">参数</md-th>
-<md-th style="width:15%">类型</md-th>
-<md-th style="width:15%">是否必填</md-th>
-<md-th style="width:55%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>shiftTime</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>换班时间，需满足 RFC3339 格式。</md-td>
-</md-tr>
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| shiftTime | string | 是 | 换班时间，需满足 RFC3339 格式。 |
+| returnTime | string | 是 | 对调日期，需满足 RFC3339 格式。 |
+| reason | string | 是 | 换班原因。 |
 
-<md-tr>
-<md-td>returnTime</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>对调日期，需满足 RFC3339 格式。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>reason</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>换班原因。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ### 请假控件组
 
@@ -583,165 +420,26 @@ value 参数为 object 类型，包含参数说明：
 ```
 
 **请假控件组包含参数说明：**
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">id</md-th>
-<md-th style="width:15%">类型</md-th>
-<md-th style="width:60%">JSON示例</md-th>
-<md-th style="width:45%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-  
-<md-tr>
-<md-td>id</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>控件组ID，固定为widgetLeaveGroupV2</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>控件组类型，固定为leaveGroupV2</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>value</md-td>
-<md-td>object[]</md-td>
-<md-td>是</md-td>
-<md-td>控件组的值，值为多个子控件值的列表</md-td>
-</md-tr>  
-</md-tbody>
-</md-table>
-:::
+
+| id | 类型 | JSON示例 | 描述 |
+| --- | --- | --- | --- |
+| id | string | 是 | 控件组ID，固定为widgetLeaveGroupV2 |
+| type | string | 是 | 控件组类型，固定为leaveGroupV2 |
+| value | object[] | 是 | 控件组的值，值为多个子控件值的列表 |
+
 
 value中包含的子控件值说明:
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:40%">id</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:55%">JSON示例</md-th>
-<md-th style="width:45%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-  
-<md-tr>
-<md-td>widgetLeaveGroupType</md-td>
-<md-td>radioV2</md-td>
-<md-td>
-```
-{
-  "id": "widgetLeaveGroupType",
-  "type": "radioV2",
-  "value": "7488925543484620819"
-}
-```  
-</md-td>
-<md-td>假期类型，具体格式可参考单选控件，选项由假勤接口获取，提单时必须包含该控件</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>widgetLeaveGroupStartTime</md-td>
-<md-td>date</md-td>
-<md-td>
-```
-{
-  "id": "widgetLeaveGroupStartTime",
-  "type": "date",
-  "value": "2019-10-01T08:12:01+08:00", // 需满足 RFC3339 格式的 string 类型
-}    
-```  
-</md-td>
-<md-td>请假开始时间，具体格式可参考日期控件，会根据假期类型自动取整,其中半天假小于12点则认为是上午，小时假则以半小时为粒度向前取整, 提单时必须包含该控件</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>widgetLeaveGroupEndTime</md-td>
-<md-td>date</md-td>
-<md-td>
-```
-{
-  "id": "widgetLeaveGroupEndTime",
-  "type": "date",
-  "value": "2019-10-01T08:12:01+08:00", // 需满足 RFC3339 格式的 string 类型
-}
-```  
-</md-td>
-<md-td>请假结束时间，具体格式可参考日期控件，会根据假期类型自动取整，其中半天假小于12点则认为是上午，小时假则以半小时为粒度向后取整</md-td>
-</md-tr>  
-  
-<md-tr>
-<md-td>widgetLeaveGroupReason</md-td>
-<md-td>textarea</md-td>
-<md-td>
-```
-{
-  "id": "widgetLeaveGroupReason",
-  "type": "textarea",
-  "value": "123123"
-}
-```  
-</md-td>
-<md-td>请假事由，具体格式可参考多行文本控件，哺乳假无需填写，其他情况则根据控件组配置中该控件是否可见以及必填判断</md-td>
-</md-tr>
 
-<md-tr>
-<md-td>widgetLeaveCertification</md-td>
-<md-td>image</md-td>
-<md-td>
-```
-{
-  "id":"widgetLeaveCertification",
-  "type":"image",
-  "value": ["D93653C3-2609-4EE0-8041-61DC1D84F0B5"]
-}
-```  
-</md-td>
-<md-td>请假证明，具体格式可参考图片控件，如果所选假期类型在假勤管理后台配置需要补充证明则必须传递该值，缺失会报错
-![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/8ab97ae490ac7c3f2008a3b554478c45_3qS7W30Qxv.png?height=546&lazyload=true&width=1654)
-</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>widgetLeaveGroupFeedingArrivingLate</md-td>
-<md-td>radioV2</md-td>
-<md-td>
-```
-{                                     
-  "id": "widgetLeaveGroupFeedingArrivingLate",
-  "type": "radioV2",
-  "value": "30"
-}
-```  
-</md-td>
-<md-td>上班晚到的分钟数，具体格式可参考单选控件，仅哺乳假需要填写，取值范围是0-120分钟，粒度是15分钟，选项从审批定义中该控件的option中获取</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>widgetLeaveGroupFeedingOffLeaveEarly</md-td>
-<md-td>radioV2</md-td>
-<md-td>
-```
-{                                     
-  "id": "widgetLeaveGroupFeedingOffLeaveEarly",
-  "type": "radioV2",
-  "value": "30"
-}   
-```  
-</md-td>
-<md-td>下班早走的分钟数，具体格式可参考单选控件，仅哺乳假需要填写，取值范围是0-120分钟，粒度是15分钟，选项即是分钟对应的字符串</md-td>
-</md-tr>  
- 
-</md-tbody>
-</md-table>
-:::
+| id | 类型 | JSON示例 | 描述 |
+| --- | --- | --- | --- |
+| widgetLeaveGroupType | radioV2 | ``` {   "id": "widgetLeaveGroupType",   "type": "radioV2",   "value": "7488925543484620819" } ``` | 假期类型，具体格式可参考单选控件，选项由假勤接口获取，提单时必须包含该控件 |
+| widgetLeaveGroupStartTime | date | ``` {   "id": "widgetLeaveGroupStartTime",   "type": "date",   "value": "2019-10-01T08:12:01+08:00", // 需满足 RFC3339 格式的 string 类型 }     ``` | 请假开始时间，具体格式可参考日期控件，会根据假期类型自动取整,其中半天假小于12点则认为是上午，小时假则以半小时为粒度向前取整, 提单时必须包含该控件 |
+| widgetLeaveGroupEndTime | date | ``` {   "id": "widgetLeaveGroupEndTime",   "type": "date",   "value": "2019-10-01T08:12:01+08:00", // 需满足 RFC3339 格式的 string 类型 } ``` | 请假结束时间，具体格式可参考日期控件，会根据假期类型自动取整，其中半天假小于12点则认为是上午，小时假则以半小时为粒度向后取整 |
+| widgetLeaveGroupReason | textarea | ``` {   "id": "widgetLeaveGroupReason",   "type": "textarea",   "value": "123123" } ``` | 请假事由，具体格式可参考多行文本控件，哺乳假无需填写，其他情况则根据控件组配置中该控件是否可见以及必填判断 |
+| widgetLeaveCertification | image | ``` {   "id":"widgetLeaveCertification",   "type":"image",   "value": ["D93653C3-2609-4EE0-8041-61DC1D84F0B5"] } ``` | 请假证明，具体格式可参考图片控件，如果所选假期类型在假勤管理后台配置需要补充证明则必须传递该值，缺失会报错 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/8ab97ae490ac7c3f2008a3b554478c45_3qS7W30Qxv.png?height=546&lazyload=true&width=1654) |
+| widgetLeaveGroupFeedingArrivingLate | radioV2 | ``` {                                        "id": "widgetLeaveGroupFeedingArrivingLate",   "type": "radioV2",   "value": "30" } ``` | 上班晚到的分钟数，具体格式可参考单选控件，仅哺乳假需要填写，取值范围是0-120分钟，粒度是15分钟，选项从审批定义中该控件的option中获取 |
+| widgetLeaveGroupFeedingOffLeaveEarly | radioV2 | ``` {                                        "id": "widgetLeaveGroupFeedingOffLeaveEarly",   "type": "radioV2",   "value": "30" }    ``` | 下班早走的分钟数，具体格式可参考单选控件，仅哺乳假需要填写，取值范围是0-120分钟，粒度是15分钟，选项即是分钟对应的字符串 |
+
 
 **特殊的参数校验报错信息**
 message                                            | 说明                           |
@@ -813,132 +511,23 @@ message                                            | 说明                     
 ```
 
 **加班控件组参数说明：**
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:15%">参数</md-th>
-<md-th style="width:15%">类型</md-th>
-<md-th style="width:15%">是否必填</md-th>
-<md-th style="width:55%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-  
-<md-tr>
-<md-td>id</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>控件组ID，固定为widgetWorkGroup</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>控件组类型，固定为workGroup</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>value</md-td>
-<md-td>object[]</md-td>
-<md-td>是</md-td>
-<md-td>控件组的值，值为多个子控件值的列表</md-td>
-</md-tr>  
-</md-tbody>
-</md-table>
-:::
+
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| id | string | 是 | 控件组ID，固定为widgetWorkGroup |
+| type | string | 是 | 控件组类型，固定为workGroup |
+| value | object[] | 是 | 控件组的值，值为多个子控件值的列表 |
+
 
 value中包含的子控件值说明:
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">id</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:60%">JSON示例</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-  
-<md-tr>
-<md-td>widgetWorkGroupOvertimeWorkers</md-td>
-<md-td>contact</md-td>
-<md-td>
-```
-{
-  "id":"widgetWorkGroupOvertimeWorkers",
-  "type":"contact",
-  "value": ["f8ca557e"], 
-  "open_ids": ["ou_12345"]
-}
-```  
-</md-td>
-<md-td>加班人员列表，具体格式可参考联系人控件，如果定义中配置「允许代多人提交」则该字段必填，如果是提交人给自己提交需填写提交人的ID</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>widgetWorkGroupType</md-td>
-<md-td>radioV2</md-td>
-<md-td>
-```
-{
-  "id": "widgetWorkGroupType",
-  "type": "radioV2",
-  "value": "7259635026038505475" // 对应的类型选项ID
-}
-```  
-</md-td>
-<md-td>加班类型，具体格式可参考单选控件，如果定义中关闭「关联加班规则」则需要填写该字段</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>widgetWorkGroupTimeRangeFieldList</md-td>
-<md-td>fieldList</md-td>
-<md-td>
-```
-{
-  "id":"widgetWorkGroupTimeRangeFieldList",
-  "type":"fieldList",
-  "value":[
-    [
-      {
-        "id":"widgetWorkGroupStartTime",
-        "type":"date",
-        "value":"2019-10-01T08:12:01+08:00"
-      },
-      {
-        "id":"widgetWorkGroupEndTime",
-        "type":"date",
-        "value":"2019-10-01T08:12:01+08:00"
-      }
-    ]
-  ]
-}
-```  
-</md-td>
-<md-td>加班时段，具体格式可参考明细控件，如果定义中打开「允许提交多个加班时段」则可以传多个，最多支持30个，否则只会取第一个，单次加班时长不可超过两天</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>widgetWorkGroupReason</md-td>
-<md-td>textarea</md-td>
-<md-td>
-```
-{
-  "id": "widgetWorkGroupReason",
-  "type": "textarea",
-  "value": "111"
-}
-```  
-</md-td>
-<md-td>加班事由，如果定义中配置了「加班事由」必填，则必须填写该字段</md-td>
-</md-tr>
 
-</md-tbody>
-</md-table>
-:::
+| id | 类型 | JSON示例 | 描述 |
+| --- | --- | --- | --- |
+| widgetWorkGroupOvertimeWorkers | contact | ``` {   "id":"widgetWorkGroupOvertimeWorkers",   "type":"contact",   "value": ["f8ca557e"],    "open_ids": ["ou_12345"] } ``` | 加班人员列表，具体格式可参考联系人控件，如果定义中配置「允许代多人提交」则该字段必填，如果是提交人给自己提交需填写提交人的ID |
+| widgetWorkGroupType | radioV2 | ``` {   "id": "widgetWorkGroupType",   "type": "radioV2",   "value": "7259635026038505475" // 对应的类型选项ID } ``` | 加班类型，具体格式可参考单选控件，如果定义中关闭「关联加班规则」则需要填写该字段 |
+| widgetWorkGroupTimeRangeFieldList | fieldList | ``` {   "id":"widgetWorkGroupTimeRangeFieldList",   "type":"fieldList",   "value":[     [       {         "id":"widgetWorkGroupStartTime",         "type":"date",         "value":"2019-10-01T08:12:01+08:00"       },       {         "id":"widgetWorkGroupEndTime",         "type":"date",         "value":"2019-10-01T08:12:01+08:00"       }     ]   ] } ``` | 加班时段，具体格式可参考明细控件，如果定义中打开「允许提交多个加班时段」则可以传多个，最多支持30个，否则只会取第一个，单次加班时长不可超过两天 |
+| widgetWorkGroupReason | textarea | ``` {   "id": "widgetWorkGroupReason",   "type": "textarea",   "value": "111" } ``` | 加班事由，如果定义中配置了「加班事由」必填，则必须填写该字段 |
+
 
 **特殊的参数校验报错信息**
 message                                                                            | 说明                           |
@@ -1002,135 +591,24 @@ message                                                                         
 ```
 
 **外出控件参数说明**
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:15%">参数</md-th>
-<md-th style="width:15%">类型</md-th>
-<md-th style="width:15%">是否必填</md-th>
-<md-th style="width:55%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-  
-<md-tr>
-<md-td>id</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>控件组ID，固定为widgetOutGroup</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>控件组Type，固定为outGroup</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>value</md-td>
-<md-td>object[]</md-td>
-<md-td>是</md-td>
-<md-td>控件组的值，值为多个子控件值的列表</md-td>
-</md-tr>
-  
-</md-tbody>
-</md-table>
-:::
+
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| id | string | 是 | 控件组ID，固定为widgetOutGroup |
+| type | string | 是 | 控件组Type，固定为outGroup |
+| value | object[] | 是 | 控件组的值，值为多个子控件值的列表 |
 
 
 value中包含的子控件值说明:
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">id</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:60%">JSON示例</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>widgetOutGroupType</md-td>
-<md-td>radioV2</md-td>
-<md-td>
-```
-{
-  "id": "widgetOutGroupType",
-  "type": "radioV2",
-  "value":  "me15yqrf-gmjgbml2vhp-0"      
-}
-```  
-</md-td>
-<md-td>外出类型，具体格式可参考单选控件，如果配置了「外出类型」则必填，外出时长单位会选取所选外出类型关联的单位，如果没有配置「外出类型」，则该字段无需填写，计算外出时长时会选取「外出时长」配置的单位</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>widgetOutGroupStartTime</md-td>
-<md-td>date</md-td>
-<md-td>
-```
-{
-  "id": "widgetOutGroupStartTime",
-  "type": "date",
-  "value":"2019-10-01T08:12:01+08:00"
-}
-```  
-</md-td>
-<md-td>外出开始时间，具体格式可参考日期控件，如果外出时长单位是半天假，则小于12点则认为是上午，否则认为是下午；如果单位是小时，则会按半小时的粒度向前取整</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>widgetOutGroupEndTime</md-td>
-<md-td>date</md-td>
-<md-td>
-```
-{
-  "id": "widgetOutGroupEndTime",
-  "type": "date",
-  "value":"2019-10-01T08:12:01+08:00"
-}
-```  
-</md-td>
-<md-td>外出结束时间，具体格式可参考日期控件，如果外出时长单位是半天假，则小于12点则认为是上午，否则认为是下午；如果单位是小时，则会按半小时的粒度向后取整</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>widgetOutGroupReason</md-td>
-<md-td>textarea</md-td>
-<md-td>
-```
-{
-  "id": "widgetOutGroupReason",
-  "type": "textarea",
-  "value":"123213"
-}
-```  
-</md-td>
-<md-td>外出事由，具体格式可参考多行文本控件，如果定义中「外出事由」必填，则必须填写该控件，如果定义配置无需填写，则无需填写该控件</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>widgetOutGroupImage</md-td>
-<md-td>image</md-td>
-<md-td>
-```
-{
-  "id":"widgetOutGroupImage",
-  "type":"image",
-  "value": ["D93653C3-2609-4EE0-8041-61DC1D84F0B5"]
-}   
-```  
-</md-td>
-<md-td>外出证明，具体格式可参考图片控件，如果定义中「外出拍照」必填，则必须填写该控件，如果定义配置无需填写，则无需填写该控件</md-td>
-</md-tr>
-  
-</md-tbody>
-</md-table>
-:::
+| id | 类型 | JSON示例 | 描述 |
+| --- | --- | --- | --- |
+| widgetOutGroupType | radioV2 | ``` {   "id": "widgetOutGroupType",   "type": "radioV2",   "value":  "me15yqrf-gmjgbml2vhp-0"       } ``` | 外出类型，具体格式可参考单选控件，如果配置了「外出类型」则必填，外出时长单位会选取所选外出类型关联的单位，如果没有配置「外出类型」，则该字段无需填写，计算外出时长时会选取「外出时长」配置的单位 |
+| widgetOutGroupStartTime | date | ``` {   "id": "widgetOutGroupStartTime",   "type": "date",   "value":"2019-10-01T08:12:01+08:00" } ``` | 外出开始时间，具体格式可参考日期控件，如果外出时长单位是半天假，则小于12点则认为是上午，否则认为是下午；如果单位是小时，则会按半小时的粒度向前取整 |
+| widgetOutGroupEndTime | date | ``` {   "id": "widgetOutGroupEndTime",   "type": "date",   "value":"2019-10-01T08:12:01+08:00" } ``` | 外出结束时间，具体格式可参考日期控件，如果外出时长单位是半天假，则小于12点则认为是上午，否则认为是下午；如果单位是小时，则会按半小时的粒度向后取整 |
+| widgetOutGroupReason | textarea | ``` {   "id": "widgetOutGroupReason",   "type": "textarea",   "value":"123213" } ``` | 外出事由，具体格式可参考多行文本控件，如果定义中「外出事由」必填，则必须填写该控件，如果定义配置无需填写，则无需填写该控件 |
+| widgetOutGroupImage | image | ``` {   "id":"widgetOutGroupImage",   "type":"image",   "value": ["D93653C3-2609-4EE0-8041-61DC1D84F0B5"] }    ``` | 外出证明，具体格式可参考图片控件，如果定义中「外出拍照」必填，则必须填写该控件，如果定义配置无需填写，则无需填写该控件 |
+
 
 **特殊的参数校验报错信息**
 

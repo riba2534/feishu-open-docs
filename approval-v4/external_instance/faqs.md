@@ -10,7 +10,7 @@ updateTime: "1745719551000"
 
 ## 实例的同步方式有何区别？
 
-[同步三方审批实例](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/create)时，需要选择同步方式（update_mode），包括全量同步（REPLACE）和增量同步（UPDATE），通过了解同步方式的区别，可以帮助你确认不同同步方式是否成功同步了数据。
+[同步三方审批实例](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/create)时，需要选择同步方式（update_mode），包括全量同步（REPLACE）和增量同步（UPDATE），通过了解同步方式的区别，可以帮助你确认不同同步方式是否成功同步了数据。
 
 - **增量同步（UPDATE）**
 
@@ -63,13 +63,13 @@ updateTime: "1745719551000"
 
 1. 查询目前用户的待办状态。
 
-	调用[查询用户的任务列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/task/query)接口，获取用户当前的任务列表，检查异常的审批任务是否在列表内，以及对应的状态是否正确。
+	调用[查询用户的任务列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/task/query)接口，获取用户当前的任务列表，检查异常的审批任务是否在列表内，以及对应的状态是否正确。
     
 2. 校验三方审批同步的时间，和历史同步请求记录进行对比，确保当前传入的同步时间是最新的时间。
 
-	调用[校验三方审批实例](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/check)接口，提交实例最新更新时间进行校验。如果服务端不存在该实例，或者服务端实例更新时间不是最新的，则返回对应实例 ID。
+	调用[校验三方审批实例](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/check)接口，提交实例最新更新时间进行校验。如果服务端不存在该实例，或者服务端实例更新时间不是最新的，则返回对应实例 ID。
     
-    [校验三方审批实例](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/check)接口校验逻辑说明：
+    [校验三方审批实例](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/check)接口校验逻辑说明：
     
     1. 传入接口所需请求参数后，系统首先校验审批实例 ID 是否存在。
 
@@ -125,19 +125,19 @@ updateTime: "1745719551000"
 
 ## 如何及时发现未同步的三方审批实例？
 
-通过设置定时任务，每间隔一段时间（例如 5 分钟）调用[校验三方审批实例](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/check)接口，将最近 5 分钟产生的实例通过该接口进行对比。如果数据在服务端不存在或者不是最新，则可以根据本接口返回的实例 ID、任务 ID，前往[同步三方审批实例](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/create)。
+通过设置定时任务，每间隔一段时间（例如 5 分钟）调用[校验三方审批实例](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/check)接口，将最近 5 分钟产生的实例通过该接口进行对比。如果数据在服务端不存在或者不是最新，则可以根据本接口返回的实例 ID、任务 ID，前往[同步三方审批实例](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/create)。
 
 ## 如何清理所有的异常数据、历史数据？
 
 :::warning
-该方式会将所有的审批实例、任务、抄送全部清除，新同步的审批也会置为已同意且不属于任何用户（所有用户无法通过 API 或审批列表查看到），且操作后数据不会恢复。因此，建议你先在[测试企业](/ssl:ttdoc/home/introduction-to-custom-app-development/testing-enterprise-and-personnel-functions)进行调试，符合预期后（如确认该操作后不会影响实际线上的审批业务）再应用于正式环境。
+该方式会将所有的审批实例、任务、抄送全部清除，新同步的审批也会置为已同意且不属于任何用户（所有用户无法通过 API 或审批列表查看到），且操作后数据不会恢复。因此，建议你先在[测试企业](https://open.larkoffice.com/document/home/introduction-to-custom-app-development/testing-enterprise-and-personnel-functions)进行调试，符合预期后（如确认该操作后不会影响实际线上的审批业务）再应用于正式环境。
 :::
 
-1. （可选）调用[查询用户的任务列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/task/query)接口，基于用户 ID 获取用户下所有的审批定义 Code 和审批实例 ID。
+1. （可选）调用[查询用户的任务列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/task/query)接口，基于用户 ID 获取用户下所有的审批定义 Code 和审批实例 ID。
 
     清理所有数据必须使用审批定义 Code 与审批实例 ID，如果你本地保存了可用的审批定义与实例信息，则无需调用当前接口进行查询。
 
-2. 调用[同步三方审批实例](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/create)接口，完成以下参数配置，清理所有数据。
+2. 调用[同步三方审批实例](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/create)接口，完成以下参数配置，清理所有数据。
 
 	- 传入已获取的审批定义 Code（approval_code）、审批实例 ID（instance_id）。
 	- update_mode 传入 REPLACE，表示全量更新。
@@ -150,7 +150,7 @@ updateTime: "1745719551000"
 
 ## 相关链接
 
-- 更多审批相关常见问题，参见[常见问题](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval-related-faqs)。
+- 更多审批相关常见问题，参见[常见问题](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval-related-faqs)。
 - 如遇问题始终无法解决，请请咨询[技术支持](https://applink.feishu.cn/TLJpeNdW)。
 
 

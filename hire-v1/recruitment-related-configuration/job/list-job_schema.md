@@ -6,1041 +6,105 @@ updateTime: "1724839011000"
 
 # 获取职位模板
 
-获取社招、校招职位模板中的职位字段，返回结果包括系统默认字段和自定义字段。招聘管理员可在「飞书招聘」-「设置」-「职位管理」-「职位字段管理」中修改职位模板。{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=hire&version=v1&resource=job_schema&method=list)
-
-:::html
-<md-alert type="error">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="warn">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="tip">
-
-</md-alert>
-:::
-
+获取社招、校招职位模板中的职位字段，返回结果包括系统默认字段和自定义字段。招聘管理员可在「飞书招聘」-「设置」-「职位管理」-「职位字段管理」中修改职位模板。
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/hire/v1/job_schemas</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>GET</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[10 次/秒](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="hire:job:readonly" desc="获取职位信息" support_app_types="custom,isv" tags="">获取职位信息</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/hire/v1/job_schemas |
+| HTTP Method | GET |
+| 接口频率限制 | [10 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | custom,isv |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `hire:job:readonly` 获取职位信息 |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
-
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
 
 
 ### 查询参数
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;" >描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >page_token</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果
-
-**示例值**：eyJvZmZzZXQiOjEwLCJ0aW1lc3RhbXAiOjE3MjQ2NTQ0OTc2OTd9
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >page_size</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	分页大小<br>
-**默认值**：10<br>
-**数据校验规则**：<br>
-* 最大值：100
-
-**示例值**：10
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >scenario</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	职位模板类型
-
-**示例值**：1
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >社招</md-enum-item>
-<md-enum-item key="2" >校招</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
-
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `page_token` | `string` | 否 | 分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果<br>**示例值**：eyJvZmZzZXQiOjEwLCJ0aW1lc3RhbXAiOjE3MjQ2NTQ0OTc2OTd9 |
+| `page_size` | `int` | 否 | 分页大小 **默认值**：10 **数据校验规则**： * 最大值：100<br>**示例值**：10 |
+| `scenario` | `int` | 否 | 职位模板类型<br>**示例值**：1<br>**可选值有**：<br>- `1`: 社招 - `2`: 校招 |
 
 
 ## 响应
 
 
-
-
-
 ### 响应体
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误码，非 0 表示失败
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >data</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	\-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >items</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >job_schema\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	职位模板列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	职位模板 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	职位模板名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >zh_cn</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	中文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >en_us</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	英文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >scenario_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	职位模板类型
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >社招</md-enum-item>
-<md-enum-item key="2" >校招</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >object_list</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >common_schema\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	模块列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	模块 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	模块名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >zh_cn</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	中文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >en_us</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	英文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >description</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	模块描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >zh_cn</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	中文描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >en_us</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	英文描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >setting</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >common_schema_setting</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	模块信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >object_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	类型，目前仅支持`11`
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >单行文本</md-enum-item>
-<md-enum-item key="2" >多行文本</md-enum-item>
-<md-enum-item key="3" >单选</md-enum-item>
-<md-enum-item key="4" >多选</md-enum-item>
-<md-enum-item key="5" >日期</md-enum-item>
-<md-enum-item key="6" >月份选择</md-enum-item>
-<md-enum-item key="7" >年份选择</md-enum-item>
-<md-enum-item key="8" >时间段</md-enum-item>
-<md-enum-item key="9" >数字</md-enum-item>
-<md-enum-item key="10" >默认字段</md-enum-item>
-<md-enum-item key="11" >模块</md-enum-item>
-<md-enum-item key="13" >附件</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >config</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >common_schema_config</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	模块配置信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >options</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >common_schema_option\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	选项信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="6">
-	<md-dt-td>
-	<md-text type="field-name" >key</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	选项 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="6">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	选项名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="7">
-	<md-dt-td>
-	<md-text type="field-name" >zh_cn</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	中文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="7">
-	<md-dt-td>
-	<md-text type="field-name" >en_us</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	英文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="6">
-	<md-dt-td>
-	<md-text type="field-name" >description</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	选项描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="7">
-	<md-dt-td>
-	<md-text type="field-name" >zh_cn</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	中文描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="7">
-	<md-dt-td>
-	<md-text type="field-name" >en_us</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	英文描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="6">
-	<md-dt-td>
-	<md-text type="field-name" >active_status</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否启用
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >已启用</md-enum-item>
-<md-enum-item key="2" >已停用</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >is_customized</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否是自定义模块<br>
-**可选值有**：<br>
-* `true`：自定义模块
-* `false`：系统默认模块
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >is_required</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否必填<br>
-**可选值有**：<br>
-* `true`：必填
-* `false`：非必填
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >active_status</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否启用
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >已启用</md-enum-item>
-<md-enum-item key="2" >已停用</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >children_list</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >common_schema_child\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >zh_cn</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	中文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >en_us</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	英文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >description</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >zh_cn</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	中文描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >en_us</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	英文描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >setting</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >common_schema_setting</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >object_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段类型，目前仅支持`1`/`2`/`3`/`4`/`5`/`9`/`10`
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >单行文本</md-enum-item>
-<md-enum-item key="2" >多行文本</md-enum-item>
-<md-enum-item key="3" >单选</md-enum-item>
-<md-enum-item key="4" >多选</md-enum-item>
-<md-enum-item key="5" >日期</md-enum-item>
-<md-enum-item key="6" >月份选择</md-enum-item>
-<md-enum-item key="7" >年份选择</md-enum-item>
-<md-enum-item key="8" >时间段</md-enum-item>
-<md-enum-item key="9" >数字</md-enum-item>
-<md-enum-item key="10" >默认字段</md-enum-item>
-<md-enum-item key="11" >模块</md-enum-item>
-<md-enum-item key="13" >附件</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >config</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >common_schema_config</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段配置信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="6">
-	<md-dt-td>
-	<md-text type="field-name" >options</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >common_schema_option\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	选项信息，当`object_type `为`3`（单选）或`4`（多选）时有值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="7">
-	<md-dt-td>
-	<md-text type="field-name" >key</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	选项 ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="7">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	选项名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="8">
-	<md-dt-td>
-	<md-text type="field-name" >zh_cn</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	中文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="8">
-	<md-dt-td>
-	<md-text type="field-name" >en_us</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	英文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="7">
-	<md-dt-td>
-	<md-text type="field-name" >description</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	选项描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="8">
-	<md-dt-td>
-	<md-text type="field-name" >zh_cn</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	中文描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="8">
-	<md-dt-td>
-	<md-text type="field-name" >en_us</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	英文描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="7">
-	<md-dt-td>
-	<md-text type="field-name" >active_status</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否启用
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >已启用</md-enum-item>
-<md-enum-item key="2" >已停用</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >parent_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	所属模块 ID，对应外层`object_list.id`字段
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >is_customized</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否是自定义字段<br>
-**可选值有**：<br>
-* `true`：自定义字段
-* `false`：系统默认字段
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >is_required</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否必填<br>
-**可选值有**：<br>
-* `true`：必填
-* `false`：非必填
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >active_status</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否启用
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >已启用</md-enum-item>
-<md-enum-item key="2" >已停用</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >has_more</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否还有更多项
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >page_token</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	分页标记，当 has_more 为 true 时，会同时返回新的 page_token，否则不返回 page_token
-	</md-dt-td>
-</md-dt-tr>
-
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `code` | `int` | 错误码，非 0 表示失败 |
+| `msg` | `string` | 错误描述 |
+| `data` | `\-` | \- |
+| &nbsp;&nbsp;└ `items` | `job_schema\[\]` | 职位模板列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 职位模板 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n` | 职位模板名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh_cn` | `string` | 中文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en_us` | `string` | 英文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `scenario_type` | `int` | 职位模板类型<br>**可选值有**：<br>- `1`: 社招 - `2`: 校招 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `object_list` | `common_schema\[\]` | 模块列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 模块 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n` | 模块名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh_cn` | `string` | 中文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en_us` | `string` | 英文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `description` | `i18n` | 模块描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh_cn` | `string` | 中文描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en_us` | `string` | 英文描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `setting` | `common_schema_setting` | 模块信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `object_type` | `int` | 类型，目前仅支持`11`<br>**可选值有**：<br>- `1`: 单行文本 - `2`: 多行文本 - `3`: 单选 - `4`: 多选 - `5`: 日期 - `6`: 月份选择 - `7`: 年份选择 - `8`: 时间段 - `9`: 数字 - `10`: 默认字段 - `11`: 模块 - `13`: 附件 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `config` | `common_schema_config` | 模块配置信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `options` | `common_schema_option\[\]` | 选项信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `key` | `string` | 选项 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n` | 选项名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh_cn` | `string` | 中文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en_us` | `string` | 英文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `description` | `i18n` | 选项描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh_cn` | `string` | 中文描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en_us` | `string` | 英文描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `active_status` | `int` | 是否启用<br>**可选值有**：<br>- `1`: 已启用 - `2`: 已停用 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_customized` | `boolean` | 是否是自定义模块 **可选值有**： * `true`：自定义模块 * `false`：系统默认模块 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_required` | `boolean` | 是否必填 **可选值有**： * `true`：必填 * `false`：非必填 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `active_status` | `int` | 是否启用<br>**可选值有**：<br>- `1`: 已启用 - `2`: 已停用 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `children_list` | `common_schema_child\[\]` | 字段列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 字段 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n` | 字段名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh_cn` | `string` | 中文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en_us` | `string` | 英文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `description` | `i18n` | 字段描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh_cn` | `string` | 中文描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en_us` | `string` | 英文描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `setting` | `common_schema_setting` | 字段信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `object_type` | `int` | 字段类型，目前仅支持`1`/`2`/`3`/`4`/`5`/`9`/`10`<br>**可选值有**：<br>- `1`: 单行文本 - `2`: 多行文本 - `3`: 单选 - `4`: 多选 - `5`: 日期 - `6`: 月份选择 - `7`: 年份选择 - `8`: 时间段 - `9`: 数字 - `10`: 默认字段 - `11`: 模块 - `13`: 附件 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `config` | `common_schema_config` | 字段配置信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `options` | `common_schema_option\[\]` | 选项信息，当`object_type `为`3`（单选）或`4`（多选）时有值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `key` | `string` | 选项 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n` | 选项名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh_cn` | `string` | 中文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en_us` | `string` | 英文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `description` | `i18n` | 选项描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh_cn` | `string` | 中文描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en_us` | `string` | 英文描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `active_status` | `int` | 是否启用<br>**可选值有**：<br>- `1`: 已启用 - `2`: 已停用 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `parent_id` | `string` | 所属模块 ID，对应外层`object_list.id`字段 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_customized` | `boolean` | 是否是自定义字段 **可选值有**： * `true`：自定义字段 * `false`：系统默认字段 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_required` | `boolean` | 是否必填 **可选值有**： * `true`：必填 * `false`：非必填 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `active_status` | `int` | 是否启用<br>**可选值有**：<br>- `1`: 已启用 - `2`: 已停用 |
+| &nbsp;&nbsp;└ `has_more` | `boolean` | 是否还有更多项 |
+| &nbsp;&nbsp;└ `page_token` | `string` | 分页标记，当 has_more 为 true 时，会同时返回新的 page_token，否则不返回 page_token |
 
 
 ### 响应体示例
-:::html
-<md-code-json>
+
+```json
 {
     "code": 0,
     "msg": "ok",
@@ -1130,44 +194,14 @@ updateTime: "1724839011000"
         "page_token": "1234452132"
     }
 }
-</md-code-json>
-:::
-
+```
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1002001</md-td>
-  <md-td>系统错误</md-td>
-  <md-td>请根据实际报错信息定位问题或联系[技术支持](https://applink.feishu.cn/TLJpeNdW)</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1002002</md-td>
-  <md-td>参数错误</md-td>
-  <md-td>检查参数是否正确，例如类型，大小</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
-
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 500 | 1002001 | 系统错误 | 请根据实际报错信息定位问题或联系[技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1002002 | 参数错误 | 检查参数是否正确，例如类型，大小 |
 
 

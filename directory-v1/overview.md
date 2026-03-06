@@ -10,7 +10,7 @@ updateTime: "1749798503000"
 - 创建、更新、查询、删除部门
 - 创建、更新、查询、离职、恢复员工
 
-你可以在 [API列表](/ssl:ttdoc/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/server-api-list) 中查看组织架构的具体开放能力
+你可以在 [API列表](https://open.larkoffice.com/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/server-api-list) 中查看组织架构的具体开放能力
 
 
 ## 适用场景
@@ -41,19 +41,19 @@ updateTime: "1749798503000"
 
 通讯录权限范围定义了应用调用组织架构接口能获取哪些部门和用户数据，不在应用获取通讯录范围内的数据是无法访问的。
 
-如下图所示，组织架构中有 A、B、C 三个部门，若一个应用只有 B 和 C 两个部门的通讯录权限，那么该应用就只能通过接口获取到 B 和 C 两个部门的数据，获取 A 部门就会报出没有权限的错误。有关通讯录权限范围的详细介绍，请参考[通讯录权限范围简介](/ssl:ttdoc/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。
+如下图所示，组织架构中有 A、B、C 三个部门，若一个应用只有 B 和 C 两个部门的通讯录权限，那么该应用就只能通过接口获取到 B 和 C 两个部门的数据，获取 A 部门就会报出没有权限的错误。有关通讯录权限范围的详细介绍，请参考[通讯录权限范围简介](https://open.larkoffice.com/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。
 ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/8840b4abe1ff3fe13d66f84691864759_Tiw9bHx1UH.png?height=704&lazyload=true&width=1280)
 
 ## 接入流程
 
 | 步骤              | 介绍                                                                                                                                                                                                                                                                                  |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 创建一个应用          | 如需创建企业自建应用，可参考 [自建应用的开发流程](/ssl:ttdoc/home/introduction-to-custom-app-development/self-built-application-development-process) <br> 如需创建应用商店应用，可参考 [开发和上架应用商店应用](/ssl:ttdoc/uMzNwEjLzcDMx4yM3ATM/uYzNwEjL2cDMx4iN3ATM)                           |
-| 调用API，对组织架构进行操作 | 调用 API 前，你需要先获取访问凭证并开启对应的权限，详情参见 [如何调用服务端API](/ssl:ttdoc/ukTMukTMukTM/uITNz4iM1MjLyUzM)<br> 你还可以在 [API 调试台](https://open.feishu.cn/api-explorer?from=guide)中快速调试这些 API ，使用方法参见[API 调试台使用指南](/ssl:ttdoc/tools-and-resources/api-explorer-guide) |
-| 监听事件，获知组织架构的变化  | 组织架构当前尚未提供事件，如需监听组织架构的变更，可以先使用 [通讯录事件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/resources)<br> 监听事件前，你需要先申请相应的权限，详情参见 [事件订阅概述](/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM)                                                                              |
+| 创建一个应用          | 如需创建企业自建应用，可参考 [自建应用的开发流程](https://open.larkoffice.com/document/home/introduction-to-custom-app-development/self-built-application-development-process) <br> 如需创建应用商店应用，可参考 [开发和上架应用商店应用](https://open.larkoffice.com/document/uMzNwEjLzcDMx4yM3ATM/uYzNwEjL2cDMx4iN3ATM)                           |
+| 调用API，对组织架构进行操作 | 调用 API 前，你需要先获取访问凭证并开启对应的权限，详情参见 [如何调用服务端API](https://open.larkoffice.com/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)<br> 你还可以在 [API 调试台](https://open.feishu.cn/api-explorer?from=guide)中快速调试这些 API ，使用方法参见[API 调试台使用指南](https://open.larkoffice.com/document/tools-and-resources/api-explorer-guide) |
+| 监听事件，获知组织架构的变化  | 组织架构当前尚未提供事件，如需监听组织架构的变更，可以先使用 [通讯录事件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/resources)<br> 监听事件前，你需要先申请相应的权限，详情参见 [事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)                                                                              |
 
 ## 频控要求
-不同的组织架构 OpenAPI 设定了不同级别的频控控制策略，你可以在每个接口文档中找到接口频率限制信息，[频控策略](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN) 文档中也说明了在调用 OpenAPI 遇到频控限制时应该如何处理。
+不同的组织架构 OpenAPI 设定了不同级别的频控控制策略，你可以在每个接口文档中找到接口频率限制信息，[频控策略](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) 文档中也说明了在调用 OpenAPI 遇到频控限制时应该如何处理。
 
 **频控策略概览**
 
@@ -65,32 +65,9 @@ updateTime: "1749798503000"
 **接口分类说明**
 
 接口的频率限制大概的逻辑如下：
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">接口类型</md-th>
-<md-th style="width:30%">频率限制 </md-th>
-<md-th style="width:50%">典型接口示例 </md-th>
-</md-tr>
-</md-thead>
 
-<md-tbody>
-<md-tr>
-<md-td>数据写入</md-td>
-<md-td>单企业单应用 5 次/秒</md-td>
-<md-td>创建员工、创建部门 </md-td>
-</md-tr>
-<md-tr>
-<md-td>数据修改</md-td>
-<md-td>单企业单应用 10 次/秒</md-td>
-<md-td>更新员工、离职员工、恢复离职员工、更新部门、删除部门</md-td>
-</md-tr>
-<md-tr>
-<md-td>数据读取</md-td>
-<md-td>单企业单应用 1000 次/分钟、50 次/秒</md-td>
-<md-td>批量获取员工信息、批量获取员工列表、搜索员工、批量获取部门信息、批量获取部门列表、搜索部门</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+| 接口类型 | 频率限制 | 典型接口示例 |
+| --- | --- | --- |
+| 数据写入 | 单企业单应用 5 次/秒 | 创建员工、创建部门 |
+| 数据修改 | 单企业单应用 10 次/秒 | 更新员工、离职员工、恢复离职员工、更新部门、删除部门 |
+| 数据读取 | 单企业单应用 1000 次/分钟、50 次/秒 | 批量获取员工信息、批量获取员工列表、搜索员工、批量获取部门信息、批量获取部门列表、搜索部门 |

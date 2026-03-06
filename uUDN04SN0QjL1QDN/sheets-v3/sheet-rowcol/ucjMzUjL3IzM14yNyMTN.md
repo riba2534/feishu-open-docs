@@ -13,92 +13,31 @@ updateTime: "1723618550000"
 - 一个工作表最少需有一行一列。你无法删除所有行或列。
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-          <md-th>基本</md-th>
-          <md-th></md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dimension_range  </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>DELETE </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[100 次/秒](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-   <md-tr>
-     <md-th>支持的应用类型</md-th>
-      <md-td>
-          <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-   </md-tr>
 
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dimension_range |
+| HTTP Method | DELETE |
+| 接口频率限制 | [100 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | custom,isv |
+| 权限要求  调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 |
 
-        <md-tr>
-      <md-th>
-权限要求
- <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-<div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-</md-th>
-      <md-td>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-<md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
 ### 请求头
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 18%;">名称</md-th>  
-      <md-th style="width: 15%;">类型</md-th>  
-       <md-th style="width: 15%;">必填</md-th>  
-      <md-th>描述</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>Authorization</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-              <md-td>
-通过访问凭证（access_token）对调用者身份进行鉴权。可选值：
-- <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>：        租户授权凭证。应用代表租户（即企业或团队）执行对应操作。示例值："Bearer t-7f1bcd13fc57d46bac21793aabcef"
-          
-- <md-tag mode="inline" type="token-user">user_access_token</md-tag>：用户授权凭证。应用代表用户执行对应操作。示例值："Bearer u-7f1bcd13fc57d46bac21793aabcef"
-了解更多，参考[获取访问凭证](/ssl:ttdoc/ukTMukTMukTM/uMTNz4yM1MjLzUzM)。
-        </md-td>
-</md-tr>
-     <md-tr> 
-      <md-td>Content-Type</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-     <md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-   
-  </md-tbody> 
-</md-table>
-:::
+
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | 通过访问凭证（access_token）对调用者身份进行鉴权。可选值： - `tenant_access_token`：        租户授权凭证。应用代表租户（即企业或团队）执行对应操作。示例值："Bearer t-7f1bcd13fc57d46bac21793aabcef"            - `user_access_token`：用户授权凭证。应用代表用户执行对应操作。示例值："Bearer u-7f1bcd13fc57d46bac21793aabcef" 了解更多，参考[获取访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)。 |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
+
 ### 路径参数
 |名称|类型|描述|
 |--|--|----|
-|spreadsheetToken|string| 电子表格的 token。可通过以下两种方式获取。了解更多，参考[电子表格概述](/ssl:ttdoc/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/overview)。<br>-  电子表格的 URL：https://sample.feishu.cn/sheets/==Iow7sNNEphp3WbtnbCscPqabcef== <br>- 调用[获取文件夹中的文件清单](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/list)|
+|spreadsheetToken|string| 电子表格的 token。可通过以下两种方式获取。了解更多，参考[电子表格概述](https://open.larkoffice.com/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/overview)。<br>-  电子表格的 URL：https://sample.feishu.cn/sheets/==Iow7sNNEphp3WbtnbCscPqabcef== <br>- 调用[获取文件夹中的文件清单](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/list)|
 ### 请求体
 |名称|类型|必须|描述&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;|
 |--|-----|--|----|
 |dimension|/|是|需要删除行列的范围信息。将删除 [startIndex,endIndex] 区间内的行或列|
-|&emsp;∟sheetId|string|是|工作表的 ID。调用[获取工作表](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet/query)获取 ID|
+|&emsp;∟sheetId|string|是|工作表的 ID。调用[获取工作表](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet/query)获取 ID|
 |&emsp;∟majorDimension|string|是|删除的维度。可选值：<br>- `ROWS`：行 <br>- `COLUMNS`：列|
 |&emsp;∟startIndex|int|是|要删除的行或列的起始位置，从 1 开始计数。若 `startIndex` 为 3，则从第 3 行或列开始删除。包含第 3 行或列。|
 |&emsp;∟endIndex|int|是|要删除的行或列结束的位置。从 1 开始计数。若 `endIndex` 为 7，则删除至第 7 行或列结束。包含第 7 行或列。<br>示例：当 `majorDimension` 为 `ROWS`、 `startIndex` 为 3、`endIndex` 为 7 时，则删除第 3、4、5、6、7 行的数据，共删除 5 行。|
@@ -147,4 +86,4 @@ curl --location --request DELETE 'https://open.feishu.cn/open-apis/sheets/v2/spr
 ```
 ### 错误码
 
-具体可参考：[服务端错误码说明](/ssl:ttdoc/ukTMukTMukTM/ugjM14COyUjL4ITN)
+具体可参考：[服务端错误码说明](https://open.larkoffice.com/document/ukTMukTMukTM/ugjM14COyUjL4ITN)

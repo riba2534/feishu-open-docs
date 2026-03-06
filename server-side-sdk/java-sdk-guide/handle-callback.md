@@ -5,31 +5,14 @@ updateTime: "1734071469000"
 ---
 
 # 处理回调
-通过回调订阅功能，应用可以及时接收并处理飞书中特定的交互行为（例如，飞书卡片交互、链接预览等），并根据交互结果做对应的业务处理，详情参见[回调概述](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/callback-overview)。在应用内订阅回调时，还需要在本地服务端建立与应用的连接，以便接收回调数据。服务端 SDK 封装了长连接方式，可以快速建立数据通道处理回调；你也可以选择自建 HTTP 服务器处理回调。两种方式介绍如下：
+通过回调订阅功能，应用可以及时接收并处理飞书中特定的交互行为（例如，飞书卡片交互、链接预览等），并根据交互结果做对应的业务处理，详情参见[回调概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/callback-overview)。在应用内订阅回调时，还需要在本地服务端建立与应用的连接，以便接收回调数据。服务端 SDK 封装了长连接方式，可以快速建立数据通道处理回调；你也可以选择自建 HTTP 服务器处理回调。两种方式介绍如下：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">订阅方式</md-th>
-<md-th style="width:70%">介绍</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-  
-<md-tr>
-<md-td>使用长连接接收回调</md-td>
-<md-td>该方式是飞书 SDK 内提供的能力，你可以通过集成飞书 SDK 与开放平台建立一条 WebSocket 全双工通道（你的服务器需要能够访问公网）。后续当应用订阅的回调发生时，开放平台会通过该通道向你的服务器发送消息。相较于传统的 Webhook 模式，长连接模式大大降低了接入成本，将原先 1 周左右的开发周期降低到 5 分钟。具体优势如下：测试阶段无需使用内网穿透工具，通过长连接模式在本地开发环境中即可接收回调。SDK 内封装了鉴权逻辑，只在建连时进行鉴权，后续回调推送均为明文数据，无需再处理解密和验签逻辑。只需保证运行环境具备访问公网能力即可，无需提供公网 IP 或域名。无需部署防火墙和配置白名单。</md-td>
-</md-tr>
 
-<md-tr>
-<md-td>将回调发送至开发者服务器</md-td>
-<md-td>传统的 Webhook 模式，该方式需要你提供用于接收回调消息的服务器公网地址。后续当应用订阅的回调发生时，开放平台会向服务器的公网地址发送 HTTP POST 请求，请求内包含回调数据。</md-td>
-</md-tr>
+| 订阅方式 | 介绍 |
+| --- | --- |
+| 使用长连接接收回调 | 该方式是飞书 SDK 内提供的能力，你可以通过集成飞书 SDK 与开放平台建立一条 WebSocket 全双工通道（你的服务器需要能够访问公网）。后续当应用订阅的回调发生时，开放平台会通过该通道向你的服务器发送消息。相较于传统的 Webhook 模式，长连接模式大大降低了接入成本，将原先 1 周左右的开发周期降低到 5 分钟。具体优势如下：测试阶段无需使用内网穿透工具，通过长连接模式在本地开发环境中即可接收回调。SDK 内封装了鉴权逻辑，只在建连时进行鉴权，后续回调推送均为明文数据，无需再处理解密和验签逻辑。只需保证运行环境具备访问公网能力即可，无需提供公网 IP 或域名。无需部署防火墙和配置白名单。 |
+| 将回调发送至开发者服务器 | 传统的 Webhook 模式，该方式需要你提供用于接收回调消息的服务器公网地址。后续当应用订阅的回调发生时，开放平台会向服务器的公网地址发送 HTTP POST 请求，请求内包含回调数据。 |
 
-</md-tbody>
-</md-table>
-:::
 
 ## 注意事项
 
@@ -53,14 +36,14 @@ updateTime: "1734071469000"
 
 ## （推荐）方式一：使用长连接接收回调
 
-如果回调订阅方式需要选择 **使用长连接接收回调**，则需要先使用 SDK 建立与应用的连接。本章节提供建立长连接的示例代码与代码解析，通过 SDK 建立长连接之后，你才能在应用的回调订阅方式中保存 **使用长连接接收回调** 方式。关于应用内配置回调订阅方式的介绍，参考[配置回调订阅方式](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/configure-callback-request-address)。
+如果回调订阅方式需要选择 **使用长连接接收回调**，则需要先使用 SDK 建立与应用的连接。本章节提供建立长连接的示例代码与代码解析，通过 SDK 建立长连接之后，你才能在应用的回调订阅方式中保存 **使用长连接接收回调** 方式。关于应用内配置回调订阅方式的介绍，参考[配置回调订阅方式](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/configure-callback-request-address)。
 
 ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/42e4555010cf4b41c536ad736229c742_VUwp0u83AC.png?height=490&lazyload=true&maxWidth=642&width=1234)
 
 ### 使用限制
 
 - 长连接模式仅支持企业自建应用。
-- [消息卡片回传交互（旧）](/ssl:ttdoc/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/configuring-card-callbacks/card-callback-structure)回调不支持 **使用长连接接收回调** 订阅方式，只能选择 **将回调发送至开发者服务器** 订阅方式。
+- [消息卡片回传交互（旧）](https://open.larkoffice.com/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/configuring-card-callbacks/card-callback-structure)回调不支持 **使用长连接接收回调** 订阅方式，只能选择 **将回调发送至开发者服务器** 订阅方式。
 - 每个应用最多建立 50 个连接（在配置长连接时，每初始化一个 client 就是一个连接）。
 
 ### 注意事项
@@ -69,7 +52,6 @@ updateTime: "1734071469000"
 - 长连接模式的消息推送为 **集群模式**，不支持广播，即如果同一应用部署了多个客户端（client），那么只有其中随机一个客户端会收到消息。
 
 ### 长连接代码
-
 
 
 ```java
@@ -125,7 +107,7 @@ public class Sample {
 代码实现说明：
 
 1. 通过 EventDispatcher.*newBuilder*() 初始化回调处理器（*EVENT_HANDLER*），注意**两个参数必须填空字符串**。
-1. 通过 *EVENT_HANDLER* 的 onXXXX() 方法监听不同的回调类型，上述示例中分别监听了 [卡片回传交互](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication) 和 [拉取链接预览数据](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure) 两个回调。
+1. 通过 *EVENT_HANDLER* 的 onXXXX() 方法监听不同的回调类型，上述示例中分别监听了 [卡片回传交互](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication) 和 [拉取链接预览数据](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure) 两个回调。
 1. 通过 new Client.Builder() 初始化长连接客户端，必填参数为应用的 APP_ID 和 APP_SECRET，可在[开发者后台](https://open.feishu.cn/app)获取。
    
    ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/f7f89950be7e57c2760a8b5b1f5e17c9_hQm8MzUvHZ.png?height=524&lazyload=true&maxWidth=642&width=3594)
@@ -194,7 +176,7 @@ public class Sample {
    
  2. 编写 Controller 注册卡片处理器。
 
-- 要基于新版卡片回传交互处理，你需订阅新版[卡片回传交互](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)，然后使用以下代码处理卡片行为：
+- 要基于新版卡片回传交互处理，你需订阅新版[卡片回传交互](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)，然后使用以下代码处理卡片行为：
 
 	![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/0a0011c41318dc68672bc26b7ac0c924_dmvWOlM0m8.png?height=280&lazyload=true&maxWidth=594&width=1372)
        
@@ -261,7 +243,7 @@ public class EventController {
   
 
 
-- 要基于旧版卡片回传交互处理，你需订阅旧版[消息卡片回传交互（旧）](/ssl:ttdoc/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/configuring-card-callbacks/card-callback-structure)，然后使用以下代码处理卡片行为：
+- 要基于旧版卡片回传交互处理，你需订阅旧版[消息卡片回传交互（旧）](https://open.larkoffice.com/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/configuring-card-callbacks/card-callback-structure)，然后使用以下代码处理卡片行为：
 
   ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/eccf7387b4feb939ba52878cb04d2882_masSC8AR3s.png?height=263&lazyload=true&maxWidth=694&width=1446)
 
@@ -312,7 +294,7 @@ public class EventController {
 
 如果你需要在卡片处理器内同步返回用于更新消息卡片的消息体，则可以使用以下方式进行处理。
 
-- 要基于新版卡片回传交互处理，你需订阅新版[卡片回传交互](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)，然后使用以下代码处理卡片行为：
+- 要基于新版卡片回传交互处理，你需订阅新版[卡片回传交互](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)，然后使用以下代码处理卡片行为：
 
 	![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/0a0011c41318dc68672bc26b7ac0c924_dmvWOlM0m8.png?height=280&lazyload=true&maxWidth=594&width=1372)
 
@@ -419,7 +401,7 @@ public class EventController {
 }
 ```
 
-- 要基于旧版卡片回传交互处理，你需订阅旧版[消息卡片回传交互（旧）](/ssl:ttdoc/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/configuring-card-callbacks/card-callback-structure)，然后使用以下代码处理卡片行为：
+- 要基于旧版卡片回传交互处理，你需订阅旧版[消息卡片回传交互（旧）](https://open.larkoffice.com/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/configuring-card-callbacks/card-callback-structure)，然后使用以下代码处理卡片行为：
 
   ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/eccf7387b4feb939ba52878cb04d2882_masSC8AR3s.png?height=263&lazyload=true&maxWidth=694&width=1446)
   

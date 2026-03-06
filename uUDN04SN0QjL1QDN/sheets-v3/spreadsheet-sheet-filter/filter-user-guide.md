@@ -9,7 +9,7 @@ updateTime: "1719483700000"
 
 
 :::note
-本文档介绍电子表格直接在工作表中创建、获取筛选等能力。要查看在筛选视图中的筛选条件说明，参考[筛选视图的筛选条件指南](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/filter-view-condition-user-guide)。
+本文档介绍电子表格直接在工作表中创建、获取筛选等能力。要查看在筛选视图中的筛选条件说明，参考[筛选视图的筛选条件指南](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/filter-view-condition-user-guide)。
 :::
 ## 注意事项
 
@@ -24,55 +24,14 @@ updateTime: "1719483700000"
 
 筛选范围用于设置筛选的应用范围，使用 `range` 参数表示。支持以下五种写法。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 25%;">range 写法</md-th>
-      <md-th style="width: 25%;">描述</md-th>
-      <md-th style="width: 15%;">示例</md-th>
-      <md-th>图示</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>&lt;sheetId&gt;</md-td>
-      <md-td>填写实际的工作表 ID，表示将筛选应用于整表。</md-td>
-      <md-td>0bdf12</md-td>
-      <md-td>/</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>&lt;sheetId&gt;!&lt;开始行&gt;:&lt;结束行&gt;</md-td>
-      <md-td>填写工作表 ID 和行数区间，表示将筛选应用于整行。</md-td>
-      <md-td>0bdf12!1:2</md-td>
-      <md-td>
-![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/94218c55f4bdb9c5b9af4a595c449007_W5EaNJW9QA.png?height=323&lazyload=true&maxWidth=222&width=1327)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>&lt;sheetId&gt;!&lt;开始列&gt;:&lt;结束列&gt;</md-td>
-      <md-td>填写工作表 ID 和列的区间，表示将筛选应用于整列。</md-td>
-      <md-td>0bdf12!A:B</md-td>
-      <md-td>      <md-td>![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/c6a46f088f63e2f4c81dc6bc41811b2c_ZkQTxGQ1m5.png?height=596&lazyload=true&maxWidth=222&width=534)</md-td>
-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>&lt;sheetId&gt;!&lt;开始单元格&gt;:&lt;结束单元格&gt;</md-td>
-      <md-td>填写工作表 ID 和单元格区间，表示将筛选应用于单元格选定的区域中。</md-td>
-      <md-td>0bdf12!A1:B5</md-td>
-      <md-td>![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/76498891d78bff326b0bcffe43427fa9_fUFkCG77Vw.png?height=484&lazyload=true&maxWidth=222&width=722)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>&lt;sheetId&gt;!&lt;开始单元格&gt;:&lt;结束列&gt;</md-td>
-           <md-td>填写工作表 ID 和起始单元格和结束列索引，表示将筛选应用于 ID 为 &lt;sheetId&gt; 的工作表中从开始单元格所在行到结束行的行范围、开始单元格所在列到结束列的列范围圈定的区域。</md-td>
-      <md-td>0bdf12!A2:B</md-td>
-      <md-td>
-![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/f727b1806cd1a5cbe6ceb74ecb6c2ed5_pyYMAKxMfB.png?height=564&lazyload=true&maxWidth=222&width=537)</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
 
-
+| range 写法 | 描述 | 示例 | 图示 |
+| --- | --- | --- | --- |
+| <sheetId> | 填写实际的工作表 ID，表示将筛选应用于整表。 | 0bdf12 | / |
+| <sheetId>!<开始行>:<结束行> | 填写工作表 ID 和行数区间，表示将筛选应用于整行。 | 0bdf12!1:2 | ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/94218c55f4bdb9c5b9af4a595c449007_W5EaNJW9QA.png?height=323&lazyload=true&maxWidth=222&width=1327) |
+| <sheetId>!<开始列>:<结束列> | 填写工作表 ID 和列的区间，表示将筛选应用于整列。 | 0bdf12!A:B | ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/c6a46f088f63e2f4c81dc6bc41811b2c_ZkQTxGQ1m5.png?height=596&lazyload=true&maxWidth=222&width=534) |
+| <sheetId>!<开始单元格>:<结束单元格> | 填写工作表 ID 和单元格区间，表示将筛选应用于单元格选定的区域中。 | 0bdf12!A1:B5 | ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/76498891d78bff326b0bcffe43427fa9_fUFkCG77Vw.png?height=484&lazyload=true&maxWidth=222&width=722) |
+| <sheetId>!<开始单元格>:<结束列> | 填写工作表 ID 和起始单元格和结束列索引，表示将筛选应用于 ID 为 <sheetId> 的工作表中从开始单元格所在行到结束行的行范围、开始单元格所在列到结束列的列范围圈定的区域。 | 0bdf12!A2:B | ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/f727b1806cd1a5cbe6ceb74ecb6c2ed5_pyYMAKxMfB.png?height=564&lazyload=true&maxWidth=222&width=537) |
 
 
 ### 筛选条件 condition
@@ -189,96 +148,11 @@ updateTime: "1719483700000"
 
 ## 方法列表
 
-以下为筛选的方法列表。其中，“商店”代表应用商店应用；“自建”代表企业自建应用，了解更多应用相关信息，参考[应用类型简介](/ssl:ttdoc/home/app-types-introduction/overview)。了解调用服务端 API 的流程，参考[流程概述](/ssl:ttdoc/uMzNwEjLzcDMx4yM3ATM/ugzNwEjL4cDMx4CO3ATM)。
-:::html
-<md-table>
-    <md-thead>
-<tr>
-    <md-th style="width: 35%;"><b>方法 (API)</md-th>
-    <md-th style="width: 30%;"><b>权限要求（满足任一）</md-th>
-    <md-th style="width: 20%;"><b>访问凭证</md-th>
-    <md-th style="width: 10%;"><b>商店</md-th>
-    <md-th style="width: 10%;"><b>自建</md-th>
-</tr>
-    </md-thead>
-    <md-tbody>
-<md-tr>
-    <md-td>
-<md-text type="field-name">`POST` [创建筛选](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter/create) /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter</md-text>
-    </md-td>
-    <md-td>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件
-" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
- <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user">user_access_token</md-tag>
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-<md-tr>
-    <md-td>
-<md-text type="field-name">`PUT` [更新筛选](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter/update) /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter</md-text>
-    </md-td>
-    <md-td>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件
-" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
- <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user">user_access_token</md-tag>
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
+以下为筛选的方法列表。其中，“商店”代表应用商店应用；“自建”代表企业自建应用，了解更多应用相关信息，参考[应用类型简介](https://open.larkoffice.com/document/home/app-types-introduction/overview)。了解调用服务端 API 的流程，参考[流程概述](https://open.larkoffice.com/document/uMzNwEjLzcDMx4yM3ATM/ugzNwEjL4cDMx4CO3ATM)。
 
-
-
-<md-tr>
-    <md-td>
-<md-text type="field-name">`GET` [获取筛选](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter/get) /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter</md-text>
-    </md-td>
-    <md-td>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-            <md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm>
-            <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            <md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm>
-      
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user">user_access_token</md-tag>
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-
-
-
-<md-tr>
-    <md-td>
-<md-text type="field-name">`DELETE` [删除筛选](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter/delete) /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter</md-text>
-    </md-td>
-    <md-td>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件
-" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
- <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user">user_access_token</md-tag>
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-
-
-
-
-    </md-tbody>
-</md-table>
-
-:::
+| 方法 (API) | 权限要求（满足任一） | 访问凭证 | 商店 | 自建 |
+| --- | --- | --- | --- | --- |
+| ``POST` [创建筛选](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter/create) /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter` | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| ``PUT` [更新筛选](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter/update) /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter` | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| ``GET` [获取筛选](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter/get) /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter` | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `drive:drive:readonly` 查看、评论和下载云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 `sheets:spreadsheet:readonly` 查看、评论和导出电子表格 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| ``DELETE` [删除筛选](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter/delete) /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter` | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 | `tenant_access_token` `user_access_token` | **✓** | **✓** |

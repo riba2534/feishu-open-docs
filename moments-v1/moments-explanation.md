@@ -38,8 +38,8 @@ updateTime: "1725018401000"
 > 是吗 #ExampleHashtag
 
 **转成：**
-:::html
-<md-code-json>
+
+```json
 [
     [
         {
@@ -68,8 +68,8 @@ updateTime: "1725018401000"
         }
     ]
 ]
-</md-code-json>
-:::
+```
+
 
 **例如：**
 
@@ -78,8 +78,8 @@ updateTime: "1725018401000"
 > [飞书链接](http://bytedance.feishu.cn) @程成
 
 **转成：**
-:::html
-<md-code-json>
+
+```json
 [
     [
         {
@@ -100,7 +100,6 @@ updateTime: "1725018401000"
         }
     ]
 ]
-</md-code-json>
-:::
+```
 
 

@@ -6,398 +6,58 @@ updateTime: "1621859616000"
 
 # 获取 Offer 申请表详细信息
 
-根据 Offer 申请表 ID，获取 Offer 申请表的详细信息{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=hire&version=v1&resource=offer_schema&method=get)
-
-:::html
-<md-alert type="error">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="warn">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="tip">
-
-</md-alert>
-:::
-
+根据 Offer 申请表 ID，获取 Offer 申请表的详细信息
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/hire/v1/offer_schemas/:offer_schema_id</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>GET</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
- 权限要求
- <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-</md-th>
-      <md-td>
-            <md-perm href="/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">获取 offer 申请表信息</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/hire/v1/offer_schemas/:offer_schema_id |
+| HTTP Method | GET |
+| 权限要求  调用该 API 所需的权限。开启其中任意一项权限即可调用 | 获取 offer 申请表信息 |
 
 
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 18%;">名称</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-       <md-th style="width: 15%;">必填</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
-
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-</md-td>
-</md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
 
 
 ### 路径参数
-:::html
-<md-table>
-  <md-thead>
-      <tr>
-      <md-th style="width: 30%;">名称</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-      <md-th >描述</md-th>
-      </tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >offer_schema_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	offer申请表的ID *必需属性
-
-**示例值**："1231231231231"
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
-
-
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `offer_schema_id` | `string` | offer申请表的ID *必需属性 **示例值**："1231231231231" |
 
 
 ## 响应
 
 
-
 ### 响应体
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 40%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 30%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >code</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	错误码，非 0 表示失败
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	错误描述
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >data</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >offer_schema</md-text>
-	</md-td>
-	<md-td>
-	\-
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	offer申请表ID
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >scenario</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	offer申请表使用场景
-
-**可选值有**：
-- `1`：Offer审批表
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >version</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	申请表版本
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >object_list</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >offer_schema_detail\[\]</md-text>
-	</md-td>
-	<md-td>
-	字段对象信息
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	字段ID
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >name</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >offer_schema_name</md-text>
-	</md-td>
-	<md-td>
-	字段名称
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >zh_cn</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	中文名
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >en_us</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	英文名
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >type</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	字段类型, text=单行文本, long_text=多行文本, select=单选, multi_select=多选, date_select=日期, number=数字
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >is_customized</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-td>
-	<md-td>
-	字段是否为自定义
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >option_list</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >offer_schema_detail_option\[\]</md-text>
-	</md-td>
-	<md-td>
-	单选/多选可选择字段的选项值
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >name</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >offer_schema_name</md-text>
-	</md-td>
-	<md-td>
-	名字
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >zh_cn</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	中文名
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >en_us</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	英文名
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >index</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	选项序号
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >active_status</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	选项当前是否启用
-
-**可选值有**：
-- `1`：进行中
-- `2`：已终止
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `code` | `int` | 错误码，非 0 表示失败 |
+| `msg` | `string` | 错误描述 |
+| `data` | `offer_schema` | \- |
+| ∟ `id` | `string` | offer申请表ID |
+| ∟ `scenario` | `int` | offer申请表使用场景 **可选值有**： - `1`：Offer审批表 |
+| ∟ `version` | `int` | 申请表版本 |
+| ∟ `object_list` | `offer_schema_detail\[\]` | 字段对象信息 |
+| ∟ `id` | `string` | 字段ID |
+| ∟ `name` | `offer_schema_name` | 字段名称 |
+| ∟ `zh_cn` | `string` | 中文名 |
+| ∟ `en_us` | `string` | 英文名 |
+| ∟ `type` | `string` | 字段类型, text=单行文本, long_text=多行文本, select=单选, multi_select=多选, date_select=日期, number=数字 |
+| ∟ `is_customized` | `boolean` | 字段是否为自定义 |
+| ∟ `option_list` | `offer_schema_detail_option\[\]` | 单选/多选可选择字段的选项值 |
+| ∟ `name` | `offer_schema_name` | 名字 |
+| ∟ `zh_cn` | `string` | 中文名 |
+| ∟ `en_us` | `string` | 英文名 |
+| ∟ `index` | `int` | 选项序号 |
+| ∟ `active_status` | `int` | 选项当前是否启用 **可选值有**： - `1`：进行中 - `2`：已终止 |
 
 
 ### 响应体示例
@@ -434,7 +94,5 @@ updateTime: "1621859616000"
     }
 }
 ```
-
-
 
 

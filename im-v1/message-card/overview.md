@@ -6,47 +6,21 @@ updateTime: "1737375067000"
 
 # 卡片资源概述
 
-飞书卡片能将结构化的内容以卡片形式嵌入至聊天消息、群置顶消息、链接预览等飞书协作场景中，提升信息传递效率。用户可以在卡片上通过简单交互完成业务处理，让业务系统触手可及。简而言之，飞书卡片可使应用的使用体验从“人找应用”，演变为“应用找人”。了解更多，参考[飞书卡片概述](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/feishu-card-overview)。
+飞书卡片能将结构化的内容以卡片形式嵌入至聊天消息、群置顶消息、链接预览等飞书协作场景中，提升信息传递效率。用户可以在卡片上通过简单交互完成业务处理，让业务系统触手可及。简而言之，飞书卡片可使应用的使用体验从“人找应用”，演变为“应用找人”。了解更多，参考[飞书卡片概述](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/feishu-card-overview)。
 
 消息业务针对卡片类的消息提供了一系列 API，使用这些 API 可以实现：
 
-- [更新应用发送的消息卡片](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/patch)
-- [延时更新消息卡片](/ssl:ttdoc/ukTMukTMukTM/uMDO1YjLzgTN24yM4UjN)
-- [发送仅特定人可见的消息卡片](/ssl:ttdoc/ukTMukTMukTM/uETOyYjLxkjM24SM5IjN)
-- [删除仅特定人可见的消息卡片](/ssl:ttdoc/ukTMukTMukTM/uITOyYjLykjM24iM5IjN)
+- [更新应用发送的消息卡片](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/patch)
+- [延时更新消息卡片](https://open.larkoffice.com/document/ukTMukTMukTM/uMDO1YjLzgTN24yM4UjN)
+- [发送仅特定人可见的消息卡片](https://open.larkoffice.com/document/ukTMukTMukTM/uETOyYjLxkjM24SM5IjN)
+- [删除仅特定人可见的消息卡片](https://open.larkoffice.com/document/ukTMukTMukTM/uITOyYjLykjM24iM5IjN)
 
 ## 字段说明
 
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 20%;">名称</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-      <md-th style="width: 15%;">必填</md-th>
-      <md-th style="width: 40%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
 
-
-<md-tr>
-	<md-td>
-	&nbsp;<md-text type="field-name" >content</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	是
-	</md-td>
-  <md-td>
-	消息内容为 JSON 格式的卡片结构转义成 String，卡片结构各字段说明请参考[卡片 JSON 结构](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-structure)。
-	</md-td>
-</md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `content` | `string` | 是 | 消息内容为 JSON 格式的卡片结构转义成 String，卡片结构各字段说明请参考[卡片 JSON 结构](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-structure)。 |
 
 
 ### 卡片 JSON 结构示例
@@ -151,5 +125,5 @@ updateTime: "1737375067000"
 
 ## 相关链接
 
-了解如何发送卡片消息、如何更新卡片消息，参见[发送卡片](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/send-feishu-card)、[更新卡片](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/update-feishu-card)。
+了解如何发送卡片消息、如何更新卡片消息，参见[发送卡片](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/send-feishu-card)、[更新卡片](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/update-feishu-card)。
 

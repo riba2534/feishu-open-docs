@@ -15,19 +15,19 @@ updateTime: "1742781451000"
 - 如果你订阅的多个事件全部接收不到，可能是在订阅事件时某一步骤出错。你需要按照以下步骤依次检查各项配置是否正常：
 
 
-	1. 在开发者后台的指定应用中，配置事件订阅方式、订阅事件并开通事件所需的权限。事件订阅详细步骤说明参见[事件概述](/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。
+	1. 在开发者后台的指定应用中，配置事件订阅方式、订阅事件并开通事件所需的权限。事件订阅详细步骤说明参见[事件概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。
 
 	2. 发布应用，使各项配置生效。具体操作参见：
 	
-    	- [发布企业自建应用](/ssl:ttdoc/home/introduction-to-custom-app-development/self-built-application-development-process#baf09c7d)
-    	- [发布商店应用](/ssl:ttdoc/uMzNwEjLzcDMx4yM3ATM/uYjMyUjL2IjM14iNyITN)
+    	- [发布企业自建应用](https://open.larkoffice.com/document/home/introduction-to-custom-app-development/self-built-application-development-process#baf09c7d)
+    	- [发布商店应用](https://open.larkoffice.com/document/uMzNwEjLzcDMx4yM3ATM/uYjMyUjL2IjM14iNyITN)
 
-	3. 调用[订阅审批事件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/subscribe)接口，订阅指定的审批定义 Code，订阅后应用才可以接收到该审批定义相关的事件数据。
+	3. 调用[订阅审批事件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/subscribe)接口，订阅指定的审批定义 Code，订阅后应用才可以接收到该审批定义相关的事件数据。
 
 
-- 如果是订阅的多个事件中，仅有某一条收不到，可以到通过[日志检索](/ssl:ttdoc/tools-and-resources/open-api-log-query)功能排查问题，可能是回调地址无法访问导致的。
+- 如果是订阅的多个事件中，仅有某一条收不到，可以到通过[日志检索](https://open.larkoffice.com/document/tools-and-resources/open-api-log-query)功能排查问题，可能是回调地址无法访问导致的。
 
-- 同一个审批事件在一个审批实例内是有序触发的，你的服务端接收事件消息后，需要及时响应事件，否则开放平台不会继续发送同类型的事件。详情参考[事件推送](/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM#521f7631)。
+- 同一个审批事件在一个审批实例内是有序触发的，你的服务端接收事件消息后，需要及时响应事件，否则开放平台不会继续发送同类型的事件。详情参考[事件推送](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM#521f7631)。
 
 	例如，监听审批事件后，如果收到了审批实例 A 的 **审批实例状态变更** 事件（状态变更为 PENDING），当服务端未及时响应时，开放平台将不会继续发送审批实例 A 的其他 **审批实例状态变更** 事件消息。
 

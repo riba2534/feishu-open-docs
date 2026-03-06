@@ -11,55 +11,35 @@ updateTime: "1742180543000"
 
 ## 前提条件
 
-在添加事件之前，需要先[配置订阅方式](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/request-url-configuration-case)。
+在添加事件之前，需要先[配置订阅方式](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/request-url-configuration-case)。
 
 ## 事件版本
 
-飞书开放平台提供的事件包括 v2.0 和 v1.0 两个版本，v2.0 版本的事件设置更全面、更合理。如果同时订阅不同版本的同一事件，会导致应用收到重复的事件，因此建议应用仅订阅 v2.0 版本的事件，取消订阅 v1.0 版本的事件。不同版本的事件结构说明参考[事件结构](/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM#d040d74d)。
+飞书开放平台提供的事件包括 v2.0 和 v1.0 两个版本，v2.0 版本的事件设置更全面、更合理。如果同时订阅不同版本的同一事件，会导致应用收到重复的事件，因此建议应用仅订阅 v2.0 版本的事件，取消订阅 v1.0 版本的事件。不同版本的事件结构说明参考[事件结构](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM#d040d74d)。
 
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/48e9fbd6718c0eddf33b06314d450cc5_57flNEqFAf.png?height=622&lazyload=true&maxWidth=600&width=1672)
 
 ## 订阅身份
 
 
-为了提升开放能力的安全性，飞书开放平台设计了访问凭证（access_token）机制，调用 API 获取应用资源时，需要通过 access_token 对调用者身份进行鉴权，即告知飞书当前是谁、以什么身份获取什么租户的数据。关于如何选择和获取不同类型 access token，参考 [获取访问凭证](/ssl:ttdoc/ukTMukTMukTM/uMTNz4yM1MjLzUzM)。相应在添加事件时，也需要依赖访问凭证机制，使用不同的身份订阅事件。
+为了提升开放能力的安全性，飞书开放平台设计了访问凭证（access_token）机制，调用 API 获取应用资源时，需要通过 access_token 对调用者身份进行鉴权，即告知飞书当前是谁、以什么身份获取什么租户的数据。关于如何选择和获取不同类型 access token，参考 [获取访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)。相应在添加事件时，也需要依赖访问凭证机制，使用不同的身份订阅事件。
 
 ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/03665d467803908f28da318452205aa0_cS1gUuGNWF.png?height=572&lazyload=true&maxWidth=600&width=1656)
 
 订阅身份介绍：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">订阅身份类型</md-th>
-<md-th style="width:40%">描述</md-th>
-<md-th style="width:40%">场景示例</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>应用身份订阅</md-td>
-<md-td>以 [tenant_access_token](/ssl:ttdoc/ukTMukTMukTM/uMTNz4yM1MjLzUzM#5aa2e490) 订阅事件，不需要用户登录，直接以应用身份获取事件数据，可获取的数据范围由应用自身的数据权限范围决定。</md-td>
-<md-td>假设有一个应用名为 “My bot”，该应用 [订阅云文档事件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/subscribe) 时，如果以 tenant_access_token 订阅，则仅能订阅 “My bot” 作为拥有者或者管理员的文档变更，无法感知其他文档变更。</md-td>
-</md-tr>
+| 订阅身份类型 | 描述 | 场景示例 |
+| --- | --- | --- |
+| 应用身份订阅 | 以 [tenant_access_token](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM#5aa2e490) 订阅事件，不需要用户登录，直接以应用身份获取事件数据，可获取的数据范围由应用自身的数据权限范围决定。 | 假设有一个应用名为 “My bot”，该应用 [订阅云文档事件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/subscribe) 时，如果以 tenant_access_token 订阅，则仅能订阅 “My bot” 作为拥有者或者管理员的文档变更，无法感知其他文档变更。 |
+| 用户身份订阅 | 以 [user_access_token](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM#5aa2e490) 订阅事件，需要用户登录并授权应用，可获取的事件数据由用户本人可见的数据权限范围决定。 | 假设有一个应用名为 “My bot”，该应用 [订阅云文档事件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/subscribe) 时，如果以 user_access_token 订阅，该 token 代表的用户是 “李健”，则仅能订阅 “李健” 作为拥有者或者管理员的文档变更，无法感知其他文档变更。 |
 
-<md-tr>
-<md-td>用户身份订阅</md-td>
-<md-td>以 [user_access_token](/ssl:ttdoc/ukTMukTMukTM/uMTNz4yM1MjLzUzM#5aa2e490) 订阅事件，需要用户登录并授权应用，可获取的事件数据由用户本人可见的数据权限范围决定。</md-td>
-<md-td>假设有一个应用名为 “My bot”，该应用 [订阅云文档事件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/subscribe) 时，如果以 user_access_token 订阅，该 token 代表的用户是 “李健”，则仅能订阅 “李健” 作为拥有者或者管理员的文档变更，无法感知其他文档变更。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 大多数事件均需要使用应用身份订阅，需要使用用户身份订阅的场景说明如下：
 
-- **[云文档](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/subscribe)**：该业务的事件支持通过应用身份或用户身份订阅，你需要根据实际场景选择适配的身份订阅。
-- **[日历](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar/subscription)**：该业务的事件只支持通过用户身份订阅。
-- **[邮箱](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-event/subscribe)**：该业务的事件只支持通过用户身份订阅（邮箱的事件订阅功能正在内测中，若无法使用请耐心等待）。
+- **[云文档](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/subscribe)**：该业务的事件支持通过应用身份或用户身份订阅，你需要根据实际场景选择适配的身份订阅。
+- **[日历](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar/subscription)**：该业务的事件只支持通过用户身份订阅。
+- **[邮箱](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-event/subscribe)**：该业务的事件只支持通过用户身份订阅（邮箱的事件订阅功能正在内测中，若无法使用请耐心等待）。
 
 ## 操作步骤
 

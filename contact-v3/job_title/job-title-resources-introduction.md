@@ -13,66 +13,16 @@ updateTime: "1720167803000"
 
 ## 字段说明
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">名称</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:50%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>job_title_id</md-td>
-<md-td>string</md-td>
-<md-td>职务 ID。</md-td>
-</md-tr>
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| job_title_id | string | 职务 ID。 |
+| name | string | 职务名称。 |
+| i18n_name | i18n_content[] | 多语言职务名称。 |
+| └ locale | string | 语言版本。例如： - zh_cn：中文 - en_us：英语 - ja_jp：日语 |
+| └ value | string | 多语言版本对应的值。 |
+| status | boolean | 是否启用职务。只有已启用的职务可以生效于用户的职务属性中。 **可选值有**：    - true：启用 - false：禁用 |
 
-<md-tr>
-<md-td>name</md-td>
-<md-td>string</md-td>
-<md-td>职务名称。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>i18n_name</md-td>
-<md-td>i18n_content[]</md-td>
-<md-td>多语言职务名称。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>└ locale</md-td>
-<md-td>string</md-td>
-<md-td>语言版本。例如：
-
-- zh_cn：中文
-- en_us：英语
-- ja_jp：日语</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ value</md-td>
-<md-td>string</md-td>
-<md-td>多语言版本对应的值。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>status</md-td>
-<md-td>boolean</md-td>
-<md-td>是否启用职务。只有已启用的职务可以生效于用户的职务属性中。
-
-**可选值有**：
-  
-- true：启用
-- false：禁用
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ## 数据示例
 

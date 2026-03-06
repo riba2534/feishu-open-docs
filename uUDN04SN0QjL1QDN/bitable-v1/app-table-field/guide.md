@@ -26,115 +26,18 @@ updateTime: "1751283836000"
 }
 ```
 参数描述如下所示：
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 30%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 50%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>field_id</md-td>
-      <md-td>string</md-td>
-      <md-td>字段 ID</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>field_name</md-td>
-      <md-td>string</md-td>
-      <md-td>字段名称</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>type</md-td>
-      <md-td>int</md-td>
-      <md-td>字段类型：相同类型用 ui_type 区分：
-        
-- 1：文本（默认值）、条码（需声明 <code>"ui_type": "Barcode"</code>）、邮箱（需声明<code>"ui_type": "Email"</code>)
-- 2：数字（默认值）、进度（需声明 <code>"ui_type": "Progress"</code>）、货币（需声明 <code>"ui_type": "Currency"</code>）、评分（需声明 <code>"ui_type": "Rating"</code>)
-- 3：单选
-- 4：多选
-- 5：日期
-- 7：复选框
-- 11：人员
-- 13：电话号码
-- 15：超链接
-- 17：附件
-- 18：单向关联
-- 19：查找引用
-- 20：公式
-- 21：双向关联
-- 22：地理位置
-- 23：群组
-- 24：流程
-- 1001：创建时间
-- 1002：最后更新时间
-- 1003：创建人
-- 1004：修改人
-- 1005：自动编号
-- 3001：按钮 
-        </md-td>
-    </md-tr>
-    <md-tr>
-  <md-td>description</md-td>
-  <md-td>string</md-td>
-  <md-td>对字段的更多说明。</md-td>
-</md-tr>
-<md-tr>
-  <md-td>is_primary</md-td>
-  <md-td>true/false</md-td>
-  <md-td>该字段是否是初始的索引字段。</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>property</md-td>
-      <md-td>object</md-td>
-      <md-td>字段属性，因字段类型而异。详情参考[字段编辑指南](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-field/guide)。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>ui_type</md-td>
-      <md-td>string</md-td>
-      <md-td>字段的 UI 类型：
-- "Text"：文本
-- "Email"：邮箱
-- "Barcode"：条码
-- "Number"：数字
-- "Progress"：进度
-- "Currency"：货币
-- "Rating"：评分
-- "SingleSelect"：单选
-- "MultiSelect"：多选
-- "DateTime"：日期
-- "Checkbox"：复选框
-- "User"：人员
-- "GroupChat"：群组
-- "Stage"：流程
-- "Phone"：电话号码
-- "Url"：超链接
-- "Attachment"：附件
-- "SingleLink"：单向关联
-- "Formula"：公式
-- "Lookup": 查找引用
-- "DuplexLink"：双向关联
-- "Location"：地理位置
-- "CreatedTime"：创建时间
-- "ModifiedTime"：最后更新时间
-- "CreatedUser"：创建人
-- "ModifiedUser"：修改人
-- "AutoNumber"：自动编号
-- "Button"：按钮
-      </md-td>
-    </md-tr>
-    <md-tr>
-  <md-td>is_hidden</md-td>
-  <md-td>true/false</md-td>
-  <md-td>字段是否是隐藏字段。</md-td>
-</md-tr>
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| field_id | string | 字段 ID |
+| field_name | string | 字段名称 |
+| type | int | 字段类型：相同类型用 ui_type 区分：          - 1：文本（默认值）、条码（需声明 "ui_type": "Barcode"）、邮箱（需声明"ui_type": "Email") - 2：数字（默认值）、进度（需声明 "ui_type": "Progress"）、货币（需声明 "ui_type": "Currency"）、评分（需声明 "ui_type": "Rating") - 3：单选 - 4：多选 - 5：日期 - 7：复选框 - 11：人员 - 13：电话号码 - 15：超链接 - 17：附件 - 18：单向关联 - 19：查找引用 - 20：公式 - 21：双向关联 - 22：地理位置 - 23：群组 - 24：流程 - 1001：创建时间 - 1002：最后更新时间 - 1003：创建人 - 1004：修改人 - 1005：自动编号 - 3001：按钮 |
+| description | string | 对字段的更多说明。 |
+| is_primary | true/false | 该字段是否是初始的索引字段。 |
+| property | object | 字段属性，因字段类型而异。详情参考[字段编辑指南](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-field/guide)。 |
+| ui_type | string | 字段的 UI 类型： - "Text"：文本 - "Email"：邮箱 - "Barcode"：条码 - "Number"：数字 - "Progress"：进度 - "Currency"：货币 - "Rating"：评分 - "SingleSelect"：单选 - "MultiSelect"：多选 - "DateTime"：日期 - "Checkbox"：复选框 - "User"：人员 - "GroupChat"：群组 - "Stage"：流程 - "Phone"：电话号码 - "Url"：超链接 - "Attachment"：附件 - "SingleLink"：单向关联 - "Formula"：公式 - "Lookup": 查找引用 - "DuplexLink"：双向关联 - "Location"：地理位置 - "CreatedTime"：创建时间 - "ModifiedTime"：最后更新时间 - "CreatedUser"：创建人 - "ModifiedUser"：修改人 - "AutoNumber"：自动编号 - "Button"：按钮 |
+| is_hidden | true/false | 字段是否是隐藏字段。 |
 
-  </md-tbody>
-</md-table>
-:::
 ## 索引字段说明
 
 数据表中，第一列为索引列，即索引字段。`"is_primary": true` 表示该字段为索引字段。索引不能被删除、移动或隐藏，且仅支持以下字段类型（type）：
@@ -158,75 +61,11 @@ updateTime: "1751283836000"
 不同接口支持的字段类型不同，具体请以对应接口文档的字段类型可选值为准。
 :::
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 50%;">字段类型 type 的枚举值</md-th>
-      <md-th style="width: 50%;">字段 UI 展示类型 <code>ui_type</code> 的枚举值</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>
-- 1：文本（默认值）、条码（需声明 <code>"ui_type": "Barcode"</code>）、邮箱（需声明<code>"ui_type": "Email"</code>)
-- 2：数字（默认值）、进度（需声明 <code>"ui_type": "Progress"</code>）、货币（需声明 <code>"ui_type": "Currency"</code>）、评分（需声明 <code>"ui_type": "Rating"</code>)
-- 3：单选
-- 4：多选
-- 5：日期
-- 7：复选框
-- 11：人员
-- 13：电话号码
-- 15：超链接
-- 17：附件
-- 18：单向关联
-- 19：查找引用
-- 20：公式
-- 21：双向关联
-- 22：地理位置
-- 23：群组
-- 24：流程（不支持通过写接口新增或编辑，仅支持读接口）
-- 1001：创建时间
-- 1002：最后更新时间
-- 1003：创建人
-- 1004：修改人
-- 1005：自动编号
-- 3001：按钮（不支持通过写接口新增或编辑，仅支持读接口）
-      </md-td>
-      <md-td>
-- "Text"：文本
-- "Email"：邮箱
-- "Barcode"：条码
-- "Number"：数字
-- "Progress"：进度
-- "Currency"：货币
-- "Rating"：评分
-- "SingleSelect"：单选
-- "MultiSelect"：多选
-- "DateTime"：日期
-- "Checkbox"：复选框
-- "User"：人员
-- "GroupChat"：群组
-- "Stage"：流程
-- "Phone"：电话号码
-- "Url"：超链接
-- "Attachment"：附件
-- "SingleLink"：单向关联
-- "Formula"：公式
-- "Lookup": 查找引用
-- "DuplexLink"：双向关联
-- "Location"：地理位置
-- "CreatedTime"：创建时间
-- "ModifiedTime"：最后更新时间
-- "CreatedUser"：创建人
-- "ModifiedUser"：修改人
-- "AutoNumber"：自动编号
-- "Button"：按钮
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 字段类型 type 的枚举值 | 字段 UI 展示类型 ui_type 的枚举值 |
+| --- | --- |
+| - 1：文本（默认值）、条码（需声明 "ui_type": "Barcode"）、邮箱（需声明"ui_type": "Email") - 2：数字（默认值）、进度（需声明 "ui_type": "Progress"）、货币（需声明 "ui_type": "Currency"）、评分（需声明 "ui_type": "Rating") - 3：单选 - 4：多选 - 5：日期 - 7：复选框 - 11：人员 - 13：电话号码 - 15：超链接 - 17：附件 - 18：单向关联 - 19：查找引用 - 20：公式 - 21：双向关联 - 22：地理位置 - 23：群组 - 24：流程（不支持通过写接口新增或编辑，仅支持读接口） - 1001：创建时间 - 1002：最后更新时间 - 1003：创建人 - 1004：修改人 - 1005：自动编号 - 3001：按钮（不支持通过写接口新增或编辑，仅支持读接口） | - "Text"：文本 - "Email"：邮箱 - "Barcode"：条码 - "Number"：数字 - "Progress"：进度 - "Currency"：货币 - "Rating"：评分 - "SingleSelect"：单选 - "MultiSelect"：多选 - "DateTime"：日期 - "Checkbox"：复选框 - "User"：人员 - "GroupChat"：群组 - "Stage"：流程 - "Phone"：电话号码 - "Url"：超链接 - "Attachment"：附件 - "SingleLink"：单向关联 - "Formula"：公式 - "Lookup": 查找引用 - "DuplexLink"：双向关联 - "Location"：地理位置 - "CreatedTime"：创建时间 - "ModifiedTime"：最后更新时间 - "CreatedUser"：创建人 - "ModifiedUser"：修改人 - "AutoNumber"：自动编号 - "Button"：按钮 |
+
 ## 字段的属性 property
 
 字段的属性指指定字段类型的更多功能属性。例如，对于人员类型的字段，是否要开启允许添加多个成员的功能属性。不同类型的字段对应的 `property` 结构不同。以下类型字段没有其他功能属性，其 `property` 均为 `null`：
@@ -256,53 +95,13 @@ updateTime: "1751283836000"
 
 条码字段的类型 `type` 为 `1` ，UI 展示类型 `ui_type` 为 `"Barcode"`。其功能属性如下所示：
 
-:::html
 
-<md-dt-table>
-<md-dt-thead>
-<md-dt-tr>
-<md-dt-th style="width: 40%;">名称</md-dt-th>
-<md-dt-th style="width: 20%;">类型</md-dt-th>
-<md-dt-th style="width: 10%;">必填</md-dt-th>
-<md-dt-th style="width: 30%;">描述</md-dt-th>
-</md-dt-tr>
-</md-dt-thead>
-<md-dt-tbody>
-<md-dt-tr level="0">
-<md-dt-td>
-<md-text type="field-name">allowed_edit_modes</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">allowed_edit_modes</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>条码字段的配置</md-dt-td>
-</md-dt-tr>
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `allowed_edit_modes` | `allowed_edit_modes` | 否 | 条码字段的配置 |
+| &nbsp;&nbsp;└ `manual` | `bool` | 否 | 是否允许手动录入。默认为 true。 |
+| &nbsp;&nbsp;└ `scan` | `bool` | 否 | 是否允许移动端录入。默认为 true。 |
 
-<md-dt-tr level="1">
-<md-dt-td>
-<md-text type="field-name">manual</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">bool</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>是否允许手动录入。默认为 true。</md-dt-td>
-</md-dt-tr>
-
-<md-dt-tr level="1">
-<md-dt-td>
-<md-text type="field-name">scan</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">bool</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>是否允许移动端录入。默认为 true。</md-dt-td>
-</md-dt-tr>
-</md-dt-tbody>
-</md-dt-table>
-:::
 
 #### 请求体示例
 
@@ -348,40 +147,11 @@ updateTime: "1751283836000"
 ### 数字字段
 
 数字字段的类型 `type` 为 `2`，无需声明 UI 展示类型 `ui_type` 。其功能属性如下所示：
-:::html
 
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 30%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 10%;">必填</md-th>
-      <md-th style="width: 40%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>formatter</md-td>
-      <md-td>string</md-td>
-      <md-td>否</md-td>
-      <md-td>数字的格式，默认为 "0.0"，枚举值如下所示： 
-- "0"：整数 
-- "0.0"：保留 1 位小数 
--"0.00"：保留 2 位小数 
-- "0.000"：保留 3 位小数 
-- "0.0000"：保留 4 位小数 
-- "1,000"：千分位 
-- "1,000.00"：千分位（小数点） 
-- "%"：百分比 
-- "0.00%"：百分比（小数点） 
-- "¥"：人民币
-- "¥0.00"：人民币（小数点） 
-- "$"：美元 
-- "$0.00"：美元（小数点）</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| formatter | string | 否 | 数字的格式，默认为 "0.0"，枚举值如下所示：  - "0"：整数  - "0.0"：保留 1 位小数  -"0.00"：保留 2 位小数  - "0.000"：保留 3 位小数  - "0.0000"：保留 4 位小数  - "1,000"：千分位  - "1,000.00"：千分位（小数点）  - "%"：百分比  - "0.00%"：百分比（小数点）  - "¥"：人民币 - "¥0.00"：人民币（小数点）  - "$"：美元  - "$0.00"：美元（小数点） |
+
 
 #### 请求体示例
 
@@ -421,66 +191,12 @@ updateTime: "1751283836000"
 
 货币字段的类型 `type` 为 `2`，UI 展示类型 `ui_type` 为 `"Currency"` 。其功能属性如下所示：
 
-:::html
 
-<md-dt-table>
-<md-dt-thead>
-<md-dt-tr>
-<md-dt-th style="width: 15%;">名称</md-dt-th>
-<md-dt-th style="width: 10%;">类型</md-dt-th>
-<md-dt-th style="width: 10%;">必填</md-dt-th>
-<md-dt-th style="width: 30%;">描述</md-dt-th>
-</md-dt-tr>
-</md-dt-thead>
-<md-dt-tbody>
-<md-dt-tr level="0">
-<md-dt-td>
-<md-text type="field-name">formatter</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">string</md-text>
-</md-dt-td>
-<md-dt-td>是</md-dt-td>
-<md-dt-td>货币的小数位数，枚举值如下所示： - "0"：整数 - "0.0"：1 位 - "0.00"：2 位 - "0.000"：3 位 - "0.0000"：4 位</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="0">
-<md-dt-td>
-<md-text type="field-name">currency_code</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">string</md-text>
-</md-dt-td>
-<md-dt-td>是</md-dt-td>
-<md-dt-td>货币的具体类型，枚举值如下所示：
-  - "CNY"：人民币，货币符号为 ¥ 
-  - "USD"：美元，货币符号为 $ 
-  - "EUR"：欧元，货币符号为 € 
-  - "GBP"：英镑，货币符号为 £ 
-  - "AED"：阿联酋迪拉姆，货币符号为 dh 
-  - "AUD"：澳大利亚元，货币符号为 $ 
-  - "BRL"：巴西雷亚尔，货币符号为 R$ 
-  - "CAD"：加拿大元，货币符号为 $ 
-  - "CHF"：瑞士法郎，货币符号为 CHF 
-  - "HKD"：港元，货币符号为 $ 
-  - "INR"：印度卢比，货币符号为 ₹ 
-  - "IDR"：印尼盾，货币符号为 Rp 
-  - "JPY"：日元，货币符号为 ¥ 
-  - "KRW"：韩元，货币符号为 ₩ 
-  - "MOP"：澳门元，货币符号为 MOP$ 
-  - "MXN"：墨西哥比索，货币符号为 $ 
-  - "MYR"：马来西亚令吉，货币符号为 RM 
-  - "PHP"：菲律宾比索，货币符号为 ₱ 
-  - "PLN"：波兰兹罗提，货币符号为 zł 
-  - "RUB"：俄罗斯卢布，货币符号为 ₽ 
-  - "SGD"：新加坡元，货币符号为 $ 
-  - "THB"：泰国铢，货币符号为 ฿ 
-  - "TRY"：土耳其里拉，货币符号为 ₺ 
-  - "TWD"：新台币，货币符号为 NT$ 
-  - "VND"：越南盾，货币符号为 ₫</md-dt-td>
-</md-dt-tr>
-</md-dt-tbody>
-</md-dt-table>
-:::
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `formatter` | `string` | 是 | 货币的小数位数，枚举值如下所示： - "0"：整数 - "0.0"：1 位 - "0.00"：2 位 - "0.000"：3 位 - "0.0000"：4 位 |
+| `currency_code` | `string` | 是 | 货币的具体类型，枚举值如下所示：   - "CNY"：人民币，货币符号为 ¥    - "USD"：美元，货币符号为 $    - "EUR"：欧元，货币符号为 €    - "GBP"：英镑，货币符号为 £    - "AED"：阿联酋迪拉姆，货币符号为 dh    - "AUD"：澳大利亚元，货币符号为 $    - "BRL"：巴西雷亚尔，货币符号为 R$    - "CAD"：加拿大元，货币符号为 $    - "CHF"：瑞士法郎，货币符号为 CHF    - "HKD"：港元，货币符号为 $    - "INR"：印度卢比，货币符号为 ₹    - "IDR"：印尼盾，货币符号为 Rp    - "JPY"：日元，货币符号为 ¥    - "KRW"：韩元，货币符号为 ₩    - "MOP"：澳门元，货币符号为 MOP$    - "MXN"：墨西哥比索，货币符号为 $    - "MYR"：马来西亚令吉，货币符号为 RM    - "PHP"：菲律宾比索，货币符号为 ₱    - "PLN"：波兰兹罗提，货币符号为 zł    - "RUB"：俄罗斯卢布，货币符号为 ₽    - "SGD"：新加坡元，货币符号为 $    - "THB"：泰国铢，货币符号为 ฿    - "TRY"：土耳其里拉，货币符号为 ₺    - "TWD"：新台币，货币符号为 NT$    - "VND"：越南盾，货币符号为 ₫ |
+
 
 #### 请求体示例
 
@@ -523,67 +239,14 @@ updateTime: "1751283836000"
 
 进度字段的类型 `type` 为 `2`，UI 展示类型 `ui_type` 为 `"Progress"` 。其功能属性如下所示：
 
-:::html
 
-<md-dt-table>
-<md-dt-thead>
-<md-dt-tr>
-<md-dt-th style="width: 15%;">名称</md-dt-th>
-<md-dt-th style="width: 10%;">类型</md-dt-th>
-<md-dt-th style="width: 10%;">必填</md-dt-th>
-<md-dt-th style="width: 30%;">描述</md-dt-th>
-</md-dt-tr>
-</md-dt-thead>
-<md-dt-tbody>
-<md-dt-tr level="0">
-<md-dt-td>
-<md-text type="field-name">formatter</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">string</md-text>
-</md-dt-td>
-<md-dt-td>是</md-dt-td>
-<md-dt-td>进度的格式，枚举值如下所示： 
- - "0"：整数，不保留小数
- - "0.0"：数值，保留一位小数 
-  - "0.00"：数值，保留两位小数 
-  - "0%"：百分比，保留整数 
-  - "0.0%"：百分比，保留一位小数 
-  - "0.00%"：百分比，保留两位小数</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="0">
-<md-dt-td>
-<md-text type="field-name">range_customize</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">bool</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>是否允许自定义进度条值，默认为 false。</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="0">
-<md-dt-td>
-<md-text type="field-name">min</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">number</md-text>
-</md-dt-td>
-<md-dt-td>range_customize 为 true 时必填</md-dt-td>
-<md-dt-td>进度的最小值</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="0">
-<md-dt-td>
-<md-text type="field-name">max</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">number</md-text>
-</md-dt-td>
-<md-dt-td>range_customize 为 true 时必填</md-dt-td>
-<md-dt-td>进度的最大值</md-dt-td>
-</md-dt-tr>
-</md-dt-tbody>
-</md-dt-table>
-:::
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `formatter` | `string` | 是 | 进度的格式，枚举值如下所示：   - "0"：整数，不保留小数  - "0.0"：数值，保留一位小数    - "0.00"：数值，保留两位小数    - "0%"：百分比，保留整数    - "0.0%"：百分比，保留一位小数    - "0.00%"：百分比，保留两位小数 |
+| `range_customize` | `bool` | 否 | 是否允许自定义进度条值，默认为 false。 |
+| `min` | `number` | range_customize 为 true 时必填 | 进度的最小值 |
+| `max` | `number` | range_customize 为 true 时必填 | 进度的最大值 |
+
 
 #### 请求体示例
 
@@ -629,80 +292,15 @@ updateTime: "1751283836000"
 ### 评分字段
 
 评分字段的类型 `type` 为 `2`，UI 展示类型 `ui_type` 为 `"Rating"` 。其功能属性如下所示：
-:::html
 
-<md-dt-table>
-<md-dt-thead>
-<md-dt-tr>
-<md-dt-th style="width: 18%;">名称</md-dt-th>
-<md-dt-th style="width: 15%;">类型</md-dt-th>
-<md-dt-th style="width: 10%;">必填</md-dt-th>
-<md-dt-th >描述</md-dt-th>
-</md-dt-tr>
-</md-dt-thead>
-<md-dt-tbody>
-<md-dt-tr level="0">
-<md-dt-td>
-<md-text type="field-name">formatter</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">string</md-text>
-</md-dt-td>
-<md-dt-td>是</md-dt-td>
-<md-dt-td>评分的格式，固定为 "0"</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="0">
-<md-dt-td>
-<md-text type="field-name">rating</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">rating</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>评分设置</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="1">
-<md-dt-td>
-<md-text type="field-name">symbol</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">string</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>评分的图标，默认为 "star"。枚举值如下所示： 
-- "star"：星星
-- "heart"：爱心 
-- "thumbsup"：赞 
-- "fire"：火 
-- "smile"：笑脸 
-- "lightning"：闪电 
-- "flower"：花 
-- "number"：数字</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="0">
-<md-dt-td>
-<md-text type="field-name">min</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">number</md-text>
-</md-dt-td>
-<md-dt-td>是</md-dt-td>
-<md-dt-td>评分的最小值，可以是 0 或 1。</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="0">
-<md-dt-td>
-<md-text type="field-name">max</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">number</md-text>
-</md-dt-td>
-<md-dt-td>是</md-dt-td>
-<md-dt-td>评分的最大值，为 1~10 之间的整数，包括 1 和 10。</md-dt-td>
-</md-dt-tr>
-</md-dt-tbody>
-</md-dt-table>
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `formatter` | `string` | 是 | 评分的格式，固定为 "0" |
+| `rating` | `rating` | 否 | 评分设置 |
+| &nbsp;&nbsp;└ `symbol` | `string` | 否 | 评分的图标，默认为 "star"。枚举值如下所示：  - "star"：星星 - "heart"：爱心  - "thumbsup"：赞  - "fire"：火  - "smile"：笑脸  - "lightning"：闪电  - "flower"：花  - "number"：数字 |
+| `min` | `number` | 是 | 评分的最小值，可以是 0 或 1。 |
+| `max` | `number` | 是 | 评分的最大值，为 1~10 之间的整数，包括 1 和 10。 |
 
-:::
 
 #### 请求体示例
 
@@ -752,61 +350,14 @@ updateTime: "1751283836000"
 ### 单选字段
 
 单选字段的类型 `type` 为 `3`。其功能属性如下所示：
-:::html
 
-<md-dt-table>
-<md-dt-thead>
-<md-dt-tr>
-<md-dt-th style="width: 20%;">名称</md-dt-th>
-<md-dt-th style="width: 20%;">类型</md-dt-th>
-<md-dt-th style="width: 10%;">必填</md-dt-th>
-<md-dt-th>描述</md-dt-th>
-</md-dt-tr>
-</md-dt-thead>
-<md-dt-tbody>
-<md-dt-tr level="0">
-<md-dt-td>
-<md-text type="field-name">options</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">app.table.field.property.option&lt;string&gt;[]</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>选项列表</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="1">
-<md-dt-td>
-<md-text type="field-name">id</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">string</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>选项 ID。对于新增字段接口，无需指定选项 ID</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="1">
-<md-dt-td>
-<md-text type="field-name">name</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">string</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>选项名称</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="1">
-<md-dt-td>
-<md-text type="field-name">color</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">int</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>选项颜色，默认从上一个选项的 color 开始依次递增。取值范围：0~54</md-dt-td>
-</md-dt-tr>
-</md-dt-tbody>
-</md-dt-table>
-:::
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `options` | `app.table.field.property.option<string>[]` | 否 | 选项列表 |
+| &nbsp;&nbsp;└ `id` | `string` | 否 | 选项 ID。对于新增字段接口，无需指定选项 ID |
+| &nbsp;&nbsp;└ `name` | `string` | 否 | 选项名称 |
+| &nbsp;&nbsp;└ `color` | `int` | 否 | 选项颜色，默认从上一个选项的 color 开始依次递增。取值范围：0~54 |
+
 
 #### 新增字段的请求体示例
 
@@ -943,61 +494,14 @@ updateTime: "1751283836000"
 ### 多选字段
 
 多选字段的类型 `type` 为 `4`。其功能属性如下所示：
-:::html
 
-<md-dt-table>
-<md-dt-thead>
-<md-dt-tr>
-<md-dt-th style="width: 20%;">名称</md-dt-th>
-<md-dt-th style="width: 20%;">类型</md-dt-th>
-<md-dt-th style="width: 10%;">必填</md-dt-th>
-<md-dt-th>描述</md-dt-th>
-</md-dt-tr>
-</md-dt-thead>
-<md-dt-tbody>
-<md-dt-tr level="0">
-<md-dt-td>
-<md-text type="field-name">options</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">app.table.field.property.option&lt;string&gt;[]</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>选项列表</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="1">
-<md-dt-td>
-<md-text type="field-name">id</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">string</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>选项 ID。对于新增字段接口，无需指定选项 ID</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="1">
-<md-dt-td>
-<md-text type="field-name">name</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">string</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>选项名称</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="1">
-<md-dt-td>
-<md-text type="field-name">color</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">int</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>选项颜色，默认从上一个选项的 color 开始依次递增。取值范围：0~54</md-dt-td>
-</md-dt-tr>
-</md-dt-tbody>
-</md-dt-table>
-:::
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `options` | `app.table.field.property.option<string>[]` | 否 | 选项列表 |
+| &nbsp;&nbsp;└ `id` | `string` | 否 | 选项 ID。对于新增字段接口，无需指定选项 ID |
+| &nbsp;&nbsp;└ `name` | `string` | 否 | 选项名称 |
+| &nbsp;&nbsp;└ `color` | `int` | 否 | 选项颜色，默认从上一个选项的 color 开始依次递增。取值范围：0~54 |
+
 #### 新增字段的请求体示例
 
 ```json
@@ -1133,37 +637,12 @@ updateTime: "1751283836000"
 ### 日期字段
 
 日期字段的类型 `type` 为 `5` 。其功能属性如下所示：
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">名称</md-th>
-      <md-th style="width: 10%;">类型</md-th>
-      <md-th style="width: 10%;">必填</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>date_formatter</md-td>
-      <md-td>string</md-td>
-      <md-td>否</md-td>
-      <md-td>日期格式，默认为 "yyyy/MM/dd"，枚举值如下所示：
-- "yyyy/MM/dd"：格式如 2021/01/30
-- "yyyy-MM-dd HH:mm"：2021-01-30 14:00
-- "MM-dd"：01-30
-- "MM/dd/yyyy"：01/30/2021
-- "dd/MM/yyyy"：30/01/2021</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>auto_fill</md-td>
-      <md-td>boolean</md-td>
-      <md-td>否</md-td>
-      <md-td>对于新记录，是否自动填写创建时间。默认为 false。</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| date_formatter | string | 否 | 日期格式，默认为 "yyyy/MM/dd"，枚举值如下所示： - "yyyy/MM/dd"：格式如 2021/01/30 - "yyyy-MM-dd HH:mm"：2021-01-30 14:00 - "MM-dd"：01-30 - "MM/dd/yyyy"：01/30/2021 - "dd/MM/yyyy"：30/01/2021 |
+| auto_fill | boolean | 否 | 对于新记录，是否自动填写创建时间。默认为 false。 |
+
 #### 请求体示例
 
 新增、更新字段的请求体示例如下所示：
@@ -1330,56 +809,12 @@ updateTime: "1751283836000"
 ### 公式字段
 
 公式字段的类型 `type` 为 `20`。其功能属性如下所示：
-:::html
 
-<md-dt-table>
-<md-dt-thead>
-<md-dt-tr>
-<md-dt-th style="width: 20%;">名称</md-dt-th>
-<md-dt-th style="width: 10%;">类型</md-dt-th>
-<md-dt-th style="width: 10%;">必填</md-dt-th>
-<md-dt-th>描述</md-dt-th>
-</md-dt-tr>
-</md-dt-thead>
-<md-dt-tbody>
-<md-dt-tr level="0">
-<md-dt-td>
-<md-text type="field-name">formatter</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">string</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>公式格式，默认为空。可以是数值、货币、或日期。可选值如下所示：
-  - "0"：整数 
-  - "0.0"：保留 1 位小数 
-  - "0.00"：保留 2 位小数 
-  - "1,000"：千分位 
-  - "1,000.00"：千分位（小数点） 
-  - "%"：百分比 
-  - "0.00%"：百分比（小数点） 
-  - "¥"：人民币 
-  - "¥0.00"：人民币（小数点） 
-  - "$"：美元 
-  - "$0.00"：美元（小数点） 
-  - "yyyy/MM/dd HH:mm"：2021/01/30 14:00 
-  - "yyyy/MM/dd"：2021/01/30
-  - "yyyy-MM-dd"：2021-01-30
-  - "MM-dd"：01-30</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="0">
-<md-dt-td>
-<md-text type="field-name">formula_expression</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">string</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>公式表达式。参考[飞书帮助中心](https://www.feishu.cn/hc/zh-CN/articles/360049067853-%E5%A4%9A%E7%BB%B4%E8%A1%A8%E6%A0%BC%E5%85%AC%E5%BC%8F%E5%AD%97%E6%AE%B5%E6%A6%82%E8%BF%B0)文档了解如何设置公式。</md-dt-td>
-</md-dt-tr>
-</md-dt-tbody>
-</md-dt-table>
-:::
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `formatter` | `string` | 否 | 公式格式，默认为空。可以是数值、货币、或日期。可选值如下所示：   - "0"：整数    - "0.0"：保留 1 位小数    - "0.00"：保留 2 位小数    - "1,000"：千分位    - "1,000.00"：千分位（小数点）    - "%"：百分比    - "0.00%"：百分比（小数点）    - "¥"：人民币    - "¥0.00"：人民币（小数点）    - "$"：美元    - "$0.00"：美元（小数点）    - "yyyy/MM/dd HH:mm"：2021/01/30 14:00    - "yyyy/MM/dd"：2021/01/30   - "yyyy-MM-dd"：2021-01-30   - "MM-dd"：01-30 |
+| `formula_expression` | `string` | 否 | 公式表达式。参考[飞书帮助中心](https://www.feishu.cn/hc/zh-CN/articles/360049067853-%E5%A4%9A%E7%BB%B4%E8%A1%A8%E6%A0%BC%E5%85%AC%E5%BC%8F%E5%AD%97%E6%AE%B5%E6%A6%82%E8%BF%B0)文档了解如何设置公式。 |
+
 #### 请求体示例
 
 新增或更新字段的请求体示例如下所示：
@@ -1417,35 +852,12 @@ updateTime: "1751283836000"
 ### 地理位置字段
 
 地理位置的类型 `type` 为 `22`。其功能属性如下所示：
-:::html
 
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 30%;">名称</md-th>
-<md-th style="width: 20%;">类型</md-th>
-<md-th style="width: 10%;">必填</md-th>
-<md-th style="width: 40%;">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>location</md-td>
-<md-td>app.field.property.location</md-td>
-<md-td>否</md-td>
-<md-td>地理位置输入方式</md-td>
-</md-tr>
-<md-tr>
-<md-td>input_type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>地理位置输入限制，可选值有： 
-- only_mobile：仅允许移动端实时定位 
-- not_limit：无限制，可输入任意地理位置</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| location | app.field.property.location | 否 | 地理位置输入方式 |
+| input_type | string | 是 | 地理位置输入限制，可选值有：  - only_mobile：仅允许移动端实时定位  - not_limit：无限制，可输入任意地理位置 |
+
 
 #### 请求体示例
 
@@ -1537,32 +949,11 @@ updateTime: "1751283836000"
 ### 创建时间、最后更新时间字段
 
 创建时间字段的类型 `type` 为 `1001`。最后更新时间字段的类型 `type` 为 `1002`。其功能属性相同，如下所示：
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">名称</md-th>
-      <md-th style="width: 10%;">类型</md-th>
-      <md-th style="width: 10%;">必填</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>date_formatter</md-td>
-      <md-td>string</md-td>
-      <md-td>否</md-td>
-      <md-td>日期格式，默认为 "yyyy/MM/dd"，枚举值如下所示：
-- "yyyy/MM/dd"：格式如 2021/01/30
-- "yyyy-MM-dd HH:mm"：2021-01-30 14:00
-- "MM-dd"：01-30
-- "MM/dd/yyyy"：01/30/2021
-- "dd/MM/yyyy"：30/01/2021</md-td>
-    </md-tr>
-    
-  </md-tbody>
-</md-table>
-:::
+
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| date_formatter | string | 否 | 日期格式，默认为 "yyyy/MM/dd"，枚举值如下所示： - "yyyy/MM/dd"：格式如 2021/01/30 - "yyyy-MM-dd HH:mm"：2021-01-30 14:00 - "MM-dd"：01-30 - "MM/dd/yyyy"：01/30/2021 - "dd/MM/yyyy"：30/01/2021 |
+
 
 #### 请求体示例
 
@@ -1599,80 +990,16 @@ updateTime: "1751283836000"
 ### 自动编号字段
 
 自动编号字段的类型 `type` 为 `1005`。其功能属性如下所示：
-:::html
-<md-dt-table>
-<md-dt-thead>
-<md-dt-tr>
-<md-dt-th style="width: 40%;">名称</md-dt-th>
-<md-dt-th style="width: 20%;">类型</md-dt-th>
-<md-dt-th style="width: 10%;">必填</md-dt-th>
-<md-dt-th style="width: 30%;">描述</md-dt-th>
-</md-dt-tr>
-</md-dt-thead>
-<md-dt-tbody>
-<md-dt-tr level="0">
-<md-dt-td>
-<md-text type="field-name">auto_serial</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">app.field.property.auto_serial</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>自动编号</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="1">
-<md-dt-td>
-<md-text type="field-name">type</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">string</md-text>
-</md-dt-td>
-<md-dt-td>是</md-dt-td>
-<md-dt-td>自动编号类型，可选值如下所示： - "custom"：自定义编号 - "auto_increment_number"：自增数字</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="1">
-<md-dt-td>
-<md-text type="field-name">reformat_existing_records</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">bool</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>是否将修改应用于已有编号，默认为 false。</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="1">
-<md-dt-td>
-<md-text type="field-name">options</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">app.field.property.auto_serial.options[]</md-text>
-</md-dt-td>
-<md-dt-td>否</md-dt-td>
-<md-dt-td>自定义编号规则列表</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="2">
-<md-dt-td>
-<md-text type="field-name">type</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">string</md-text>
-</md-dt-td>
-<md-dt-td>是</md-dt-td>
-<md-dt-td>规则类型，可选值如下所示： - "system_number"：自增数字的位数，范围为 1-9 - "fixed_text"：固定字符，最大字符长度为 20 - "created_time"：创建日期</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="2">
-<md-dt-td>
-<md-text type="field-name">value</md-text>
-</md-dt-td>
-<md-dt-td>
-<md-text type="field-type">string</md-text>
-</md-dt-td>
-<md-dt-td>是</md-dt-td>
-<md-dt-td>规则类型对应的值。 - 若规则类型为 `"type": "system_number"`，value 为范围在 1-9 的整数，表示自增数字的位数 - 若规则类型为 `"type": "fixed_text"`，value 为范围在 20 个字符以内的固定字符 - 若规则类型为 "type": "created_time"，value 用于指定日期的格式。可选值如下所示： - "yyyyMMdd"：日期为 20220130 的格式 - "yyyyMM"：日期为 202201 的格式 - "yyyy"：日期为 2022 的格式 - "MMdd"：日期为 130 的格式，表示 1 月 30 日 - "MM"：日期为 1 的格式，表示月份 - "dd"：日期为 30 的格式</md-dt-td>
-</md-dt-tr>
-</md-dt-tbody>
-</md-dt-table>
-:::
+
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `auto_serial` | `app.field.property.auto_serial` | 否 | 自动编号 |
+| &nbsp;&nbsp;└ `type` | `string` | 是 | 自动编号类型，可选值如下所示： - "custom"：自定义编号 - "auto_increment_number"：自增数字 |
+| &nbsp;&nbsp;└ `reformat_existing_records` | `bool` | 否 | 是否将修改应用于已有编号，默认为 false。 |
+| &nbsp;&nbsp;└ `options` | `app.field.property.auto_serial.options[]` | 否 | 自定义编号规则列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 是 | 规则类型，可选值如下所示： - "system_number"：自增数字的位数，范围为 1-9 - "fixed_text"：固定字符，最大字符长度为 20 - "created_time"：创建日期 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 规则类型对应的值。 - 若规则类型为 `"type": "system_number"`，value 为范围在 1-9 的整数，表示自增数字的位数 - 若规则类型为 `"type": "fixed_text"`，value 为范围在 20 个字符以内的固定字符 - 若规则类型为 "type": "created_time"，value 用于指定日期的格式。可选值如下所示： - "yyyyMMdd"：日期为 20220130 的格式 - "yyyyMM"：日期为 202201 的格式 - "yyyy"：日期为 2022 的格式 - "MMdd"：日期为 130 的格式，表示 1 月 30 日 - "MM"：日期为 1 的格式，表示月份 - "dd"：日期为 30 的格式 |
+
 #### 添加“自定义编号（custom）”示例
 
 调用新增或更新字段，添加“自定义编号（custom）”类型的自动编号字段，请求体示例如下所示：

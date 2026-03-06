@@ -38,78 +38,12 @@ updateTime: "1720167377000"
 
 ## 字段说明
 
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 20%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 50%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >unit_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-租户内单位的唯一标识。
-      
-- 在创建单位时支持自定义设置，若未自定义则由系统自动生成。
-- 创建单位后不允许修改 unit_id。
-      
-**自定义`unit_id`数据校验规则**：
-
-- 最大长度：`64` 字符。
-
-- 校验规则：允许数字、大小写字母的组合；不能包含空格。
-      
-**示例值**："BU121"
-	</md-td>
-</md-tr>
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >name</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	单位的名字，企业内唯一。
-      
-**数据校验规则：** 1 ~ 100 个字符。
-      
-**示例值**："消费者事业部"  
-
-	</md-td>
-</md-tr>
-    
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >unit_type</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-    
-    自定义的单位类型，创建后不允许修改。一个组织可以有多个不同的单位类型，例如 `子公司`、`事业部`、`BU` 等。
-      
-**数据校验规则：** 1 ~ 100 个字符。
-      
-	</md-td>
-</md-tr>
-
-    
-    
-  </md-tbody>
-</md-table>
-:::
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `unit_id` | `string` | 租户内单位的唯一标识。        - 在创建单位时支持自定义设置，若未自定义则由系统自动生成。 - 创建单位后不允许修改 unit_id。        **自定义`unit_id`数据校验规则**： - 最大长度：`64` 字符。 - 校验规则：允许数字、大小写字母的组合；不能包含空格。        **示例值**："BU121" |
+| `name` | `string` | 单位的名字，企业内唯一。        **数据校验规则：** 1 ~ 100 个字符。        **示例值**："消费者事业部" |
+| `unit_type` | `string` | 自定义的单位类型，创建后不允许修改。一个组织可以有多个不同的单位类型，例如 `子公司`、`事业部`、`BU` 等。        **数据校验规则：** 1 ~ 100 个字符。 |
 
 
 ## 数据示例

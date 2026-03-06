@@ -6,826 +6,84 @@ updateTime: "1752154988000"
 
 # 创建数据知识
 
-在 Aily 中添加单个数据知识{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=aily&version=v1&resource=app.data_asset&method=create)
+在 Aily 中添加单个数据知识
 
-:::html
-<md-alert type="tip">
-- 仅支持开发环境
-- 开发者需要 Aily 平台的应用协作者角色，包括管理员、开发者、运维人员
-- 使用应用身份仅支持[ Aily 平台](https://aily.feishu.cn)渠道的应用身份
-</md-alert>
-:::
 
-:::html
-<md-alert type="warn">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="error">
-
-</md-alert>
-:::
-
+> **Tip**: - 仅支持开发环境
+> - 开发者需要 Aily 平台的应用协作者角色，包括管理员、开发者、运维人员
+> - 使用应用身份仅支持[ Aily 平台](https://aily.feishu.cn)渠道的应用身份
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/aily/v1/apps/:app_id/data_assets</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[20 次/秒](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="aily:data_asset:write" desc="创建、更新、删除智能伙伴创建平台数据知识资产" support_app_types="custom" tags="">创建、更新、删除智能伙伴创建平台数据知识资产</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/aily/v1/apps/:app_id/data_assets |
+| HTTP Method | POST |
+| 接口频率限制 | [20 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | custom |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `aily:data_asset:write` 创建、更新、删除智能伙伴创建平台数据知识资产 |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
-或
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
-
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token` 或 `user_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
 
 ### 路径参数
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >app_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	Aily 平台的应用的APPID，可以直接从 Aily 应用的URL中获取。获取示例：/ai/{APPID}
-
-**示例值**："spring_dfasdf__c"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `app_id` | `string` | Aily 平台的应用的APPID，可以直接从 Aily 应用的URL中获取。获取示例：/ai/{APPID}<br>**示例值**："spring_dfasdf__c"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
 
 
 ### 查询参数
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;" >描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >tenant_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	应用环境，枚举值：
-- `online`：线上环境（默认值）
-- `dev`：开发环境；目前只支持 `dev`
-
-**示例值**：dev
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `tenant_type` | `string` | 否 | 应用环境，枚举值： - `online`：线上环境（默认值） - `dev`：开发环境；目前只支持 `dev`<br>**示例值**：dev<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
 
 
 ### 请求体
 
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >connect_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	连接类型
-
-**示例值**："direct"
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="import" >导入模式</md-enum-item>
-<md-enum-item key="direct" >直连模式</md-enum-item>
-</md-enum>
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >source_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	数据源类型
-
-**示例值**："file"
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="file" >文件，只支持导入模式</md-enum-item>
-<md-enum-item key="lark_wiki_space" >飞书知识空间，只支持直连模式</md-enum-item>
-<md-enum-item key="lark_doc" >飞书云文档，导入模式只支持docx</md-enum-item>
-<md-enum-item key="lark_helpdesk" >飞书服务台，只支持直连模式</md-enum-item>
-</md-enum>
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >import_knowledge_setting</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >data_asset_import_knowledge_setting</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	知识导入配置
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >chunk_setting</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >data_asset_knowledge_chunk_setting</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	知识切片配置
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >rule_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	切片规则
-
-**示例值**："intelligent"
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="separator" >按标识符</md-enum-item>
-<md-enum-item key="intelligent" >智能切片</md-enum-item>
-</md-enum>
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >separate_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	切片分割符类型
-
-**示例值**："paragraph"
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="paragraph" >段落分隔符："\n\n"、"\n"、空格</md-enum-item>
-<md-enum-item key="title" >标题分割符：######</md-enum-item>
-</md-enum>
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >size</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	分段最大长度（字符），按标识符切片时必须填写
-
-**示例值**：600
-
-**数据校验规则**：
-
-- 取值范围：`200` ～ `1000`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >overlap</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	分段重叠字符数，按标识符切片时必须填写，不能超过size的数值
-
-**示例值**：10
-
-**数据校验规则**：
-
-- 取值范围：`0` ～ `200`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >file</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >data_asset_import_knowledge_file</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	知识导入-文件
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >title</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	文件标题
-
-**示例值**："文件标题"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >token</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	上传文件获取到的token。和content二选一，优先使用token。
-
-**示例值**："bb690637b49440b08f39459a2fdcd2ca"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >content</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	文件内容。和token二选一，优先使用token。有长度限制，大文件优先使用token方式。
-
-**示例值**："这是文件内容"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `65536` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >mime_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	文件内容对应的 MIME 类型，必须填写
-可选值：
-- text/plain (.txt)
-- application/pdf (.pdf)
-- application/vnd.openxmlformats-officedocument.presentationml.presentation (.pptx)
-- application/vnd.openxmlformats-officedocument.wordprocessingml.document (.docx)
-
-**示例值**："application/pdf"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >url</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	文件源的URL
-
-**示例值**："https://document.com/1"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `65535` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >lark_doc</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >data_asset_import_knowledge_lark_doc</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	知识导入-飞书云文档
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	云文档类型
-
-**示例值**："docx"
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="doc" >飞书文档</md-enum-item>
-<md-enum-item key="file" >飞书文件</md-enum-item>
-<md-enum-item key="wiki" >飞书知识库</md-enum-item>
-<md-enum-item key="docx" >飞书新版文档</md-enum-item>
-<md-enum-item key="folder" >飞书文件夹</md-enum-item>
-</md-enum>
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >token</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	云文档token，可以通过[搜索云文档](https://open.larkoffice.com/document/server-docs/docs/drive-v1/search/document-search)API获取
-
-**示例值**："T8FAcuilgC1fdaxkt58vcp91xngh"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >with_sub_docs</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	是否包含子文档，只有wiki类型的云文档支持
-
-**示例值**：false
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >lark_wiki_space</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >data_asset_import_knowledge_wiki</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	知识导入-飞书知识空间
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >space_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	飞书知识空间ID，可以通过[搜索 Wiki](https://open.larkoffice.com/document/server-docs/docs/wiki-v2/search_wiki)API获取
-
-**示例值**："798546548961351"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >sub_docs</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >data_asset_import_knowledge_wiki_sub_doc\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	指定知识空间子节点时使用
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	云文档类型，只支持wiki中的云文档
-
-**示例值**："wiki"
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="wiki" >飞书知识库</md-enum-item>
-</md-enum>
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >token</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	云文档token，可以通过[搜索云文档](https://open.larkoffice.com/document/server-docs/docs/drive-v1/search/document-search)API获取
-
-**示例值**："T8FAcuilgC1fdaxkt58vcp91xngh"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >url</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	云文档链接
-
-**示例值**："https://cdas.feishu.cn/wiki/fdisu1"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `65535` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >url</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	知识空间URL
-
-**示例值**："https://ai-tenant.feishu-boe.cn/wiki/space/7283525110814736404"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `65535` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >lark_helpdesk</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >data_asset_import_knowledge_helpdesk</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	知识导入-飞书服务台
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >helpdesk_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	飞书服务台ID，可以通过[服务台-接入指南](https://open.larkoffice.com/document/server-docs/helpdesk-v1/access-guide) 获取
-
-**示例值**："123"
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `255` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >description</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >map&lt;string, string&gt;</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	数据知识描述信息
-
-**示例值**：{"zh_cn":"描述"}
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
-
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `connect_type` | `string` | 是 | 连接类型<br>**示例值**："direct"<br>**可选值有**：<br>- `import`: 导入模式 - `direct`: 直连模式<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| `source_type` | `string` | 是 | 数据源类型<br>**示例值**："file"<br>**可选值有**：<br>- `file`: 文件，只支持导入模式 - `lark_wiki_space`: 飞书知识空间，只支持直连模式 - `lark_doc`: 飞书云文档，导入模式只支持docx - `lark_helpdesk`: 飞书服务台，只支持直连模式<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| `import_knowledge_setting` | `data_asset_import_knowledge_setting` | 否 | 知识导入配置 |
+| &nbsp;&nbsp;└ `chunk_setting` | `data_asset_knowledge_chunk_setting` | 否 | 知识切片配置 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `rule_type` | `string` | 是 | 切片规则<br>**示例值**："intelligent"<br>**可选值有**：<br>- `separator`: 按标识符 - `intelligent`: 智能切片<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `separate_type` | `string` | 否 | 切片分割符类型<br>**示例值**："paragraph"<br>**可选值有**：<br>- `paragraph`: 段落分隔符："\n\n"、"\n"、空格 - `title`: 标题分割符：######<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `size` | `int` | 否 | 分段最大长度（字符），按标识符切片时必须填写<br>**示例值**：600<br>**数据校验规则**：<br>- 取值范围：`200` ～ `1000` |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `overlap` | `int` | 否 | 分段重叠字符数，按标识符切片时必须填写，不能超过size的数值<br>**示例值**：10<br>**数据校验规则**：<br>- 取值范围：`0` ～ `200` |
+| &nbsp;&nbsp;└ `file` | `data_asset_import_knowledge_file` | 否 | 知识导入-文件 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `title` | `string` | 否 | 文件标题<br>**示例值**："文件标题"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `token` | `string` | 否 | 上传文件获取到的token。和content二选一，优先使用token。<br>**示例值**："bb690637b49440b08f39459a2fdcd2ca"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `content` | `string` | 否 | 文件内容。和token二选一，优先使用token。有长度限制，大文件优先使用token方式。<br>**示例值**："这是文件内容"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `65536` 字符 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `mime_type` | `string` | 否 | 文件内容对应的 MIME 类型，必须填写 可选值： - text/plain (.txt) - application/pdf (.pdf) - application/vnd.openxmlformats-officedocument.presentationml.presentation (.pptx) - application/vnd.openxmlformats-officedocument.wordprocessingml.document (.docx)<br>**示例值**："application/pdf"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `url` | `string` | 否 | 文件源的URL<br>**示例值**："https://document.com/1"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `65535` 字符 |
+| &nbsp;&nbsp;└ `lark_doc` | `data_asset_import_knowledge_lark_doc` | 否 | 知识导入-飞书云文档 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 是 | 云文档类型<br>**示例值**："docx"<br>**可选值有**：<br>- `doc`: 飞书文档 - `file`: 飞书文件 - `wiki`: 飞书知识库 - `docx`: 飞书新版文档 - `folder`: 飞书文件夹<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `token` | `string` | 是 | 云文档token，可以通过[搜索云文档](https://open.larkoffice.com/document/server-docs/docs/drive-v1/search/document-search)API获取<br>**示例值**："T8FAcuilgC1fdaxkt58vcp91xngh"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `with_sub_docs` | `boolean` | 否 | 是否包含子文档，只有wiki类型的云文档支持<br>**示例值**：false |
+| &nbsp;&nbsp;└ `lark_wiki_space` | `data_asset_import_knowledge_wiki` | 否 | 知识导入-飞书知识空间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `space_id` | `string` | 是 | 飞书知识空间ID，可以通过[搜索 Wiki](https://open.larkoffice.com/document/server-docs/docs/wiki-v2/search_wiki)API获取<br>**示例值**："798546548961351"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `sub_docs` | `data_asset_import_knowledge_wiki_sub_doc\[\]` | 否 | 指定知识空间子节点时使用 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 是 | 云文档类型，只支持wiki中的云文档<br>**示例值**："wiki"<br>**可选值有**：<br>- `wiki`: 飞书知识库<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `token` | `string` | 是 | 云文档token，可以通过[搜索云文档](https://open.larkoffice.com/document/server-docs/docs/drive-v1/search/document-search)API获取<br>**示例值**："T8FAcuilgC1fdaxkt58vcp91xngh"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `url` | `string` | 否 | 云文档链接<br>**示例值**："https://cdas.feishu.cn/wiki/fdisu1"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `65535` 字符 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `url` | `string` | 否 | 知识空间URL<br>**示例值**："https://ai-tenant.feishu-boe.cn/wiki/space/7283525110814736404"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `65535` 字符 |
+| &nbsp;&nbsp;└ `lark_helpdesk` | `data_asset_import_knowledge_helpdesk` | 否 | 知识导入-飞书服务台 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `helpdesk_id` | `string` | 是 | 飞书服务台ID，可以通过[服务台-接入指南](https://open.larkoffice.com/document/server-docs/helpdesk-v1/access-guide) 获取<br>**示例值**："123"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| `description` | `map<string, string>` | 否 | 数据知识描述信息<br>**示例值**：{"zh_cn":"描述"} |
 
 
 ### 请求体示例
-:::html
-<md-code-json>
+
+```json
 {
     "connect_type": "direct",
     "source_type": "file",
@@ -867,402 +125,45 @@ updateTime: "1752154988000"
         "zh_cn": "描述"
     }
 }
-</md-code-json>
-:::
-
+```
 
 
 ## 响应
 
 
-
-
-
 ### 响应体
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误码，非 0 表示失败
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >data</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	\-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >data_asset</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >data_asset</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据知识
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >data_asset_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据知识ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >label</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >map&lt;string, string&gt;</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据知识标题
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >description</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >map&lt;string, string&gt;</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据知识描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >data_source_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据资源类型
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="excel" >excel</md-enum-item>
-<md-enum-item key="pdf" >pdf</md-enum-item>
-<md-enum-item key="pptx" >pptx</md-enum-item>
-<md-enum-item key="txt" >txt</md-enum-item>
-<md-enum-item key="docx" >docx</md-enum-item>
-<md-enum-item key="mysql" >mysql</md-enum-item>
-<md-enum-item key="postgresql" >postgresql</md-enum-item>
-<md-enum-item key="larkbase" >飞书多维表格</md-enum-item>
-<md-enum-item key="salesforce" >salesforce</md-enum-item>
-<md-enum-item key="fenxiangxiaoke" >分享逍客</md-enum-item>
-<md-enum-item key="qianchuan" >巨量千川</md-enum-item>
-<md-enum-item key="clickhouse" >clickhouse</md-enum-item>
-<md-enum-item key="databricks" >databricks</md-enum-item>
-<md-enum-item key="servicedesk" >飞书服务台</md-enum-item>
-<md-enum-item key="larkbiz_wiki" >飞书Wiki</md-enum-item>
-<md-enum-item key="larkbiz_doc" >旧版飞书云文档，目前已不支持</md-enum-item>
-<md-enum-item key="larkbiz_docs" >飞书docs</md-enum-item>
-<md-enum-item key="larkbiz_docx" >新版飞书云文档，当前创建的飞书云文档均为此类型</md-enum-item>
-<md-enum-item key="larkbiz_pdf" >云盘/wiki中的pdf文件pdf文件</md-enum-item>
-<md-enum-item key="larkbiz_word" >云盘/wiki中的.docx（Word）</md-enum-item>
-<md-enum-item key="larkbiz_pptx" >云盘/wiki中的.pptx（Powerpoint）</md-enum-item>
-<md-enum-item key="larkbiz_sheets" >飞书电子表格</md-enum-item>
-<md-enum-item key="larkbiz_base" >飞书多维表格</md-enum-item>
-<md-enum-item key="larkbiz_personalfolder" >飞书个人文件夹</md-enum-item>
-<md-enum-item key="larkbiz_sharedfolder" >飞书共享文件夹</md-enum-item>
-<md-enum-item key="object" >数据表</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >connect_status</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据连接状态
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="awaiting" >等待连接</md-enum-item>
-<md-enum-item key="syncing" >连接中</md-enum-item>
-<md-enum-item key="successful" >连接成功</md-enum-item>
-<md-enum-item key="continuously_syncing" >增量同步中</md-enum-item>
-<md-enum-item key="partially_successful" >部分成功</md-enum-item>
-<md-enum-item key="failed" >连接失败</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >tags</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >data_asset_tag\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据知识分类列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >data_asset_tag_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据知识分类名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据知识分类ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >items</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >data_asset_item\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据知识项列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >data_asset_item_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据知识项ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >api_name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据知识项标识
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >label</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >map&lt;string, string&gt;</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据知识项标题
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >description</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >map&lt;string, string&gt;</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据知识项描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >resources</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >data_asset_resource\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据知识资源
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >resource_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据知识资源ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >resource_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据知识资源类型
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="dataset" >数据视图</md-enum-item>
-<md-enum-item key="vector" >知识视图</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >connect_failed_reason</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	连接状态失败信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >connect_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据连接类型
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="import" >导入</md-enum-item>
-<md-enum-item key="direct" >直连</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >created_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	创建时间，毫秒时间戳
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >updated_time</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	更新时间，毫秒时间戳
-	</md-dt-td>
-</md-dt-tr>
-
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `code` | `int` | 错误码，非 0 表示失败 |
+| `msg` | `string` | 错误描述 |
+| `data` | `\-` | \- |
+| &nbsp;&nbsp;└ `data_asset` | `data_asset` | 数据知识 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `data_asset_id` | `string` | 数据知识ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `label` | `map<string, string>` | 数据知识标题 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `description` | `map<string, string>` | 数据知识描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `data_source_type` | `string` | 数据资源类型<br>**可选值有**：<br>- `excel`: excel - `pdf`: pdf - `pptx`: pptx - `txt`: txt - `docx`: docx - `mysql`: mysql - `postgresql`: postgresql - `larkbase`: 飞书多维表格 - `salesforce`: salesforce - `fenxiangxiaoke`: 分享逍客 - `qianchuan`: 巨量千川 - `clickhouse`: clickhouse - `databricks`: databricks - `servicedesk`: 飞书服务台 - `larkbiz_wiki`: 飞书Wiki - `larkbiz_doc`: 旧版飞书云文档，目前已不支持 - `larkbiz_docs`: 飞书docs - `larkbiz_docx`: 新版飞书云文档，当前创建的飞书云文档均为此类型 - `larkbiz_pdf`: 云盘/wiki中的pdf文件pdf文件 - `larkbiz_word`: 云盘/wiki中的.docx（Word） - `larkbiz_pptx`: 云盘/wiki中的.pptx（Powerpoint） - `larkbiz_sheets`: 飞书电子表格 - `larkbiz_base`: 飞书多维表格 - `larkbiz_personalfolder`: 飞书个人文件夹 - `larkbiz_sharedfolder`: 飞书共享文件夹 - `object`: 数据表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `connect_status` | `string` | 数据连接状态<br>**可选值有**：<br>- `awaiting`: 等待连接 - `syncing`: 连接中 - `successful`: 连接成功 - `continuously_syncing`: 增量同步中 - `partially_successful`: 部分成功 - `failed`: 连接失败 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `tags` | `data_asset_tag\[\]` | 数据知识分类列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `data_asset_tag_id` | `string` | 数据知识分类名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `string` | 数据知识分类ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `items` | `data_asset_item\[\]` | 数据知识项列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `data_asset_item_id` | `string` | 数据知识项ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `api_name` | `string` | 数据知识项标识 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `label` | `map<string, string>` | 数据知识项标题 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `description` | `map<string, string>` | 数据知识项描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `resources` | `data_asset_resource\[\]` | 数据知识资源 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `resource_id` | `string` | 数据知识资源ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `resource_type` | `string` | 数据知识资源类型<br>**可选值有**：<br>- `dataset`: 数据视图 - `vector`: 知识视图 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `connect_failed_reason` | `string` | 连接状态失败信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `connect_type` | `string` | 数据连接类型<br>**可选值有**：<br>- `import`: 导入 - `direct`: 直连 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `created_time` | `string` | 创建时间，毫秒时间戳 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `updated_time` | `string` | 更新时间，毫秒时间戳 |
 
 
 ### 响应体示例
-:::html
-<md-code-json>
+
+```json
 {
     "code": 0,
     "msg": "success",
@@ -1308,142 +209,26 @@ updateTime: "1752154988000"
         }
     }
 }
-</md-code-json>
-:::
-
+```
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2700001</md-td>
-  <md-td>param is invalid</md-td>
-  <md-td>参数错误，请结合说明文档排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>2701004</md-td>
-  <md-td>permission denied</md-td>
-  <md-td>无权限，请检查是否有开发者或者运维权限
-
-</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2700026</md-td>
-  <md-td>only support development environment</md-td>
-  <md-td>仅支持开发环境操作</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2700027</md-td>
-  <md-td>only supports uploading a single file</md-td>
-  <md-td>仅支持上传单个文件</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2700028</md-td>
-  <md-td>invalid chunk setting parameter</md-td>
-  <md-td>无效的切片参数</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2700029</md-td>
-  <md-td>the data source information is invalid</md-td>
-  <md-td>数据源信息无效</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2700030</md-td>
-  <md-td>data source not found</md-td>
-  <md-td>未找到数据源</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>2700031</md-td>
-  <md-td>import cloud document permission check failed</md-td>
-  <md-td>导入云文档权限检查失败，操作者需要有云文档的下载权限</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2700032</md-td>
-  <md-td>unsupported data connection type</md-td>
-  <md-td>不支持的数据连接类型，请结合文档排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2700033</md-td>
-  <md-td>unsupported data source type</md-td>
-  <md-td>不支持的数据源类型，请结合文档排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2700034</md-td>
-  <md-td>unsupported file types</md-td>
-  <md-td>不支持的文件类型</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2700460</md-td>
-  <md-td>failed to get doc meta</md-td>
-  <md-td>获取云文档元信息失败，请检查云文档参数是否正确以及操作者是否拥有相关文档的权限</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2700036</md-td>
-  <md-td>cloud document-related resources only support user identity calls</md-td>
-  <md-td>云文档相关资源仅支持用户身份调用</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2700472</md-td>
-  <md-td>some param miss or invalid</md-td>
-  <md-td>请求参数缺失或者不合法</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
-
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 2700001 | param is invalid | 参数错误，请结合说明文档排查 |
+| 403 | 2701004 | permission denied | 无权限，请检查是否有开发者或者运维权限 |
+| 400 | 2700026 | only support development environment | 仅支持开发环境操作 |
+| 400 | 2700027 | only supports uploading a single file | 仅支持上传单个文件 |
+| 400 | 2700028 | invalid chunk setting parameter | 无效的切片参数 |
+| 400 | 2700029 | the data source information is invalid | 数据源信息无效 |
+| 400 | 2700030 | data source not found | 未找到数据源 |
+| 403 | 2700031 | import cloud document permission check failed | 导入云文档权限检查失败，操作者需要有云文档的下载权限 |
+| 400 | 2700032 | unsupported data connection type | 不支持的数据连接类型，请结合文档排查 |
+| 400 | 2700033 | unsupported data source type | 不支持的数据源类型，请结合文档排查 |
+| 400 | 2700034 | unsupported file types | 不支持的文件类型 |
+| 400 | 2700460 | failed to get doc meta | 获取云文档元信息失败，请检查云文档参数是否正确以及操作者是否拥有相关文档的权限 |
+| 400 | 2700036 | cloud document-related resources only support user identity calls | 云文档相关资源仅支持用户身份调用 |
+| 400 | 2700472 | some param miss or invalid | 请求参数缺失或者不合法 |
 
 

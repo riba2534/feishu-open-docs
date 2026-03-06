@@ -6,7 +6,7 @@ updateTime: "1742180586000"
 
 # 使用长连接接收事件
 
-长连接是[飞书 SDK](/ssl:ttdoc/ukTMukTMukTM/uETO1YjLxkTN24SM5UjN) 内提供的能力，你可以在本地服务器集成飞书 SDK， 与开放平台建立一条 WebSocket 全双工通道（你的服务器需要能够访问公网）。后续当应用订阅的事件发生时，开放平台会通过该通道向你的服务器发送事件消息。
+长连接是[飞书 SDK](https://open.larkoffice.com/document/ukTMukTMukTM/uETO1YjLxkTN24SM5UjN) 内提供的能力，你可以在本地服务器集成飞书 SDK， 与开放平台建立一条 WebSocket 全双工通道（你的服务器需要能够访问公网）。后续当应用订阅的事件发生时，开放平台会通过该通道向你的服务器发送事件消息。
 
 ## 功能优势
 
@@ -23,21 +23,21 @@ updateTime: "1742180586000"
 
 在开始配置之前，你需要确保已了解以下注意事项：
 
-- 长连接模式仅支持企业自建应用。商店应用事件订阅方式参考[将事件发送至开发者服务器](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/choose-a-subscription-mode/send-notifications-to-developers-server)。
+- 长连接模式仅支持企业自建应用。商店应用事件订阅方式参考[将事件发送至开发者服务器](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/choose-a-subscription-mode/send-notifications-to-developers-server)。
 - 长连接模式下接收到消息后，需要在 3 秒内处理完成且不抛出异常，否则会触发超时重推机制。
 - 每个应用最多建立 50 个连接（在配置长连接时，每初始化一个 client 就是一个连接）。
 - 长连接模式的消息推送为 **集群模式**，不支持广播，即如果同一应用部署了多个客户端（client），那么只有 **其中随机一个** 客户端会收到消息。
 
 ## 上手体验
 
-开放平台提供了一键开发自动回复机器人的场景体验教程，你可以前往体验基于[接收消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件所搭建的机器人应用，详情参见：
+开放平台提供了一键开发自动回复机器人的场景体验教程，你可以前往体验基于[接收消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件所搭建的机器人应用，详情参见：
 
-- [一键快速开发自动回复机器人](/ssl:ttdoc/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/develop-an-echo-bot/introduction)
-- [自动回复机器人示例代码解释](/ssl:ttdoc/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/develop-an-echo-bot/explanation-of-example-code)
+- [一键快速开发自动回复机器人](https://open.larkoffice.com/document/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/develop-an-echo-bot/introduction)
+- [自动回复机器人示例代码解释](https://open.larkoffice.com/document/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/develop-an-echo-bot/explanation-of-example-code)
 
 ## 步骤一：集成 SDK
 
-以下提供了飞书 SDK 的 Golang、Python、Java、Node.js 示例代码，代码内以[接收消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件为例进行配置。通过飞书 SDK 除了可以实现事件订阅，还可以实现 API 调用、订阅回调，关于 SDK 详细介绍参见[服务端 SDK](/ssl:ttdoc/ukTMukTMukTM/uETO1YjLxkTN24SM5UjN)。
+以下提供了飞书 SDK 的 Golang、Python、Java、Node.js 示例代码，代码内以[接收消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件为例进行配置。通过飞书 SDK 除了可以实现事件订阅，还可以实现 API 调用、订阅回调，关于 SDK 详细介绍参见[服务端 SDK](https://open.larkoffice.com/document/ukTMukTMukTM/uETO1YjLxkTN24SM5UjN)。
 
 ### Golang
 
@@ -89,7 +89,7 @@ func main() {
 1. 通过 dispatcher.NewEventDispatcher() 初始化事件处理器（eventHandler），注意**两个参数必须填空字符串**。
 1. 通过 eventHandler 的 OnXXXX() 方法处理不同的事件。上述示例中分别监听了「接收消息 v1.0」和「接收消息 v2.0」两个事件。
     
-   **说明**：开放平台提供的事件包括 v1.0 和 v2.0 两个版本。两个版本的结构不同。在处理事件时，可通过[事件列表](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-list)文档或在开发者后台[添加事件](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/subscription-event-case)时，获取事件的类型与版本信息。
+   **说明**：开放平台提供的事件包括 v1.0 和 v2.0 两个版本。两个版本的结构不同。在处理事件时，可通过[事件列表](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-list)文档或在开发者后台[添加事件](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/subscription-event-case)时，获取事件的类型与版本信息。
 
    ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/4dbc1cd97d95f1af949354ce3c350461_4PX46ts1Hs.png?height=380&lazyload=true&maxWidth=600&width=1666)
    
@@ -145,7 +145,7 @@ if __name__ == "__main__":
 
 2. 通过 event_handler 的 `register_{事件版本}_{事件类型 或 customized_event}` 方法处理不同的事件。
 
-    在开发者后台应用详情页添加事件时（具体操作可参见[添加事件](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/subscription-event-case)），可获取事件的类型与版本信息。
+    在开发者后台应用详情页添加事件时（具体操作可参见[添加事件](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/subscription-event-case)），可获取事件的类型与版本信息。
 
 	![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/4dbc1cd97d95f1af949354ce3c350461_bidnBwXPPi.png?height=380&lazyload=true&maxWidth=600&width=1666)
 
@@ -173,7 +173,7 @@ if __name__ == "__main__":
 	- 使用 `.register_p1_customized_event("这里填入你要自定义订阅的事件类型，例如 out_approval", do_message_event)` 处理事件：
     	- **p1** 表示事件版本为 v1.0。
     	- **customized_event** 为固定的方法名称。
-    	- customized_event 方法内需要传入事件 Key（String 类型），例如[外出审批](/ssl:ttdoc/ukTMukTMukTM/uIDO24iM4YjLygjN/event/out-of-office)的事件类型为 out_approval。
+    	- customized_event 方法内需要传入事件 Key（String 类型），例如[外出审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/out-of-office)的事件类型为 out_approval。
 
     
     你也可以参考代码片段注释了解如何配置：
@@ -268,7 +268,7 @@ public class Sample {
 1. 通过 EventDispatcher.*newBuilder*() 初始化事件处理器（*EVENT_HANDLER*），注意**两个参数必须填空字符串**。
 1. 通过 *EVENT_HANDLER* 的 onXXXX() 方法处理不同的事件。上述示例中分别监听了「接收消息 v1.0」和「接收消息 v2.0」两个事件。
     
-   **说明**：开放平台提供的事件包括 v1.0 和 v2.0 两个版本。两个版本的结构不同。在处理事件时，可通过[事件列表](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-list)文档或在开发者后台[添加事件](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/subscription-event-case)时，获取事件的类型与版本信息。
+   **说明**：开放平台提供的事件包括 v1.0 和 v2.0 两个版本。两个版本的结构不同。在处理事件时，可通过[事件列表](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-list)文档或在开发者后台[添加事件](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/subscription-event-case)时，获取事件的类型与版本信息。
 
    ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/4dbc1cd97d95f1af949354ce3c350461_4PX46ts1Hs.png?height=380&lazyload=true&maxWidth=600&width=1666)
    
@@ -345,13 +345,13 @@ wsClient.start({
     
     1. 可选添加 domain 等其他参数，domain 默认为 `open.feishu.cn`。
         
-        Client 支持配置的参数参考[调用服务端 API](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/server-side-sdk/nodejs-sdk/invoke-server-api) 中的 **步骤一：创建并配置 API Client** 章节。
+        Client 支持配置的参数参考[调用服务端 API](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/nodejs-sdk/invoke-server-api) 中的 **步骤一：创建并配置 API Client** 章节。
 
 2. 基于 Client 完成初始化时，实例上的 start 方法用于启动长连接客户端。
     
     其中，start 函数中的 eventDispatcher 参数接收 EventDispatcher 实例，长连接客户端启动成功后，eventDispatcher.register 注册的相关事件 handler 会被执行。
     
-    如下示例代码部分，需要将 `'im.message.receive_v1'` 替换为需要处理的事件的 **事件类型**。**事件类型** 可参考指定事件的文档，例如，查阅[接收消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件文档可知，该事件的事件类型为 **im.message.receive_v1**。
+    如下示例代码部分，需要将 `'im.message.receive_v1'` 替换为需要处理的事件的 **事件类型**。**事件类型** 可参考指定事件的文档，例如，查阅[接收消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件文档可知，该事件的事件类型为 **im.message.receive_v1**。
     
     ```javascript
     wsClient.start({
@@ -389,4 +389,4 @@ wsClient.start({
 
 ## 常见问题
 
-配置过程中如遇问题，可参考[常见问题](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/event-subscriptions/faq)排查解决。
+配置过程中如遇问题，可参考[常见问题](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/event-subscriptions/faq)排查解决。

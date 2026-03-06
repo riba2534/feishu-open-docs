@@ -8,24 +8,24 @@ updateTime: "1726715538000"
 
 ## 常规使用
 
-使用[创建任务](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/create)接口创建一个任务。创建的同时，可以添加任务的初始成员，开始/截止时间，提醒时间等，也可以在创建的任务的同时将其加入1个或多个清单。
+使用[创建任务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/create)接口创建一个任务。创建的同时，可以添加任务的初始成员，开始/截止时间，提醒时间等，也可以在创建的任务的同时将其加入1个或多个清单。
 
-使用[获取任务详情](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/get)接口可以获取到一个任务的全部数据。
+使用[获取任务详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/get)接口可以获取到一个任务的全部数据。
 
-使用[删除任务](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/delete)接口可以删除一个任务。对删除的任务无法做任何操作。已删除的任务也无法恢复。
+使用[删除任务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/delete)接口可以删除一个任务。对删除的任务无法做任何操作。已删除的任务也无法恢复。
 
-使用[列取任务列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/list)接口可以获取调用者负责的所有任务。
+使用[列取任务列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/list)接口可以获取调用者负责的所有任务。
 
-使用[更新任务](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/patch)接口可以修改一个任务的属性，包括标题，描述，截止时间等。但对于任务成员、提醒时间和加入/移出清单有单独的接口。
+使用[更新任务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/patch)接口可以修改一个任务的属性，包括标题，描述，截止时间等。但对于任务成员、提醒时间和加入/移出清单有单独的接口。
 
-如要修改任务成员，需要使用[添加任务成员](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_members)
-和[移除任务成员](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/remove_members)接口。
+如要修改任务成员，需要使用[添加任务成员](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_members)
+和[移除任务成员](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/remove_members)接口。
 
-如要修改任务提醒，需要使用[添加任务提醒](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_reminders)和[移除任务提醒](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/remove_reminders)接口。
+如要修改任务提醒，需要使用[添加任务提醒](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_reminders)和[移除任务提醒](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/remove_reminders)接口。
 
-如要变更任务所在的清单，需要使用[任务加入清单](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_tasklist)和[任务移出清单]( /ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/remove_tasklist)接口。可以通过[列取任务所在清单](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/tasklists)接口查看一个任务所在的所有清单。
+如要变更任务所在的清单，需要使用[任务加入清单](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_tasklist)和[任务移出清单]( https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/remove_tasklist)接口。可以通过[列取任务所在清单](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/tasklists)接口查看一个任务所在的所有清单。
 
-如需要变更一个任务的依赖，可以使用[添加依赖](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_dependencies)和[移除依赖](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/remove_dependencies)接口。
+如需要变更一个任务的依赖，可以使用[添加依赖](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_dependencies)和[移除依赖](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/remove_dependencies)接口。
 
 ## 任务是如何鉴权的？
 如果调用接口获取/编辑任务数据时得到`1470403`错误码（无权限访问），可以阅读本节内容来检查接口使用的access_token对应的身份是否对任务数据有读取/编辑权限。
@@ -194,7 +194,7 @@ POST https://open.feishu.cn/open-apis/task/v2/tasks
 
 例如一个第三方工单系统通过api创建了飞书任务，并设置了自定义完成跳转链接。用户在飞书任务界面点击【完成任务】后，任务不会被设置为完成状态，而是引导用户跳转到第三方的工单系统的对应工单上。在这个界面上，用户可以按照工单的设置填写必要的信息，并完成工单。之后工单系统就可以调用任务的接口将任务设置为完成，实现飞书任务和三方工单系统的工单的完成状态一致。
 
-将任务设置为”自定义完成“的方式是设置任务的`custom_complete`字段。该字段可以在[创建任务](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/create)时设置，也可以通过[更新任务](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/patch)接口修改。
+将任务设置为”自定义完成“的方式是设置任务的`custom_complete`字段。该字段可以在[创建任务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/create)时设置，也可以通过[更新任务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/patch)接口修改。
 
 `custom_complete`字段有两种使用方式，格式如下：
 
@@ -272,7 +272,7 @@ POST https://open.feishu.cn/open-apis/task/v2/tasks
 * `FREQ=WEEKLY;INTERVAL=2`表示新任务截止时间会设为已完成任务截止时间的下两周的同一时刻。
 * `FREQ=MONTHLY;INTERVAL=1;WKST=MO;BYDAY=2FR`表示新任务截止时间会设为已完成任务截止时间的下个月的第二个周五的同一时刻。
 
-由于飞书任务只支持RRULE规范的子集，飞书任务并不能保证可以支持任意符合RFC5545规范的RRULE字符串。如果要构造一个飞书任务可用的`repeat_rule`，一个简单的方式是在飞书任务的界面上设置一个重复规则，然后调用[获取任务详情接口](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/get)得到其`repeat_rule`字符串。
+由于飞书任务只支持RRULE规范的子集，飞书任务并不能保证可以支持任意符合RFC5545规范的RRULE字符串。如果要构造一个飞书任务可用的`repeat_rule`，一个简单的方式是在飞书任务的界面上设置一个重复规则，然后调用[获取任务详情接口](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/get)得到其`repeat_rule`字符串。
 
 当对更新任务时，不能同时更新`repeat_rule`和`completed_at`。因为完成一个任务时会自动删除其重复规则（因此界面上已经完成的重复任务的重复规则提示会消失）。同时修改二者会导致未定义的行为，因此接口会对这样的请求直接报错。
 

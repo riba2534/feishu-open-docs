@@ -5,6 +5,3 @@ updateTime: "1686903640000"
 ---
 
 # 服务端 API 列表
-:::html
-<md-server-api-list></md-server-api-list>
-:::

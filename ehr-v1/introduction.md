@@ -15,22 +15,22 @@ updateTime: "1689925341000"
 2. 需先获取飞书开放平台的 ==tenant_access_token==
 >  
 > 获取 ==tenant_access_token== 的步骤
-> - Step 1：在「[飞书开放平台](https://open.feishu.cn/app/)」创建「[企业自建应用](/ssl:ttdoc/home/introduction-to-custom-app-development/self-built-application-development-process)」；
-> - Step 2：在「权限管理」页面打开飞书人事（标准版） Open API 的权限，并[申请上线](/ssl:ttdoc/uQjL04CN/ukzM04SOzQjL5MDN#%E5%9C%A8%E4%BC%81%E4%B8%9A%E5%86%85%E5%8F%91%E5%B8%83%E4%B8%8A%E7%BA%BF)，企业管理员审核后方可使用；
-> - Step 3：使用该应用的 API 访问凭证，调用[获取 tenant_access_token](/ssl:ttdoc/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token_internal) 接口，获取 token。
+> - Step 1：在「[飞书开放平台](https://open.feishu.cn/app/)」创建「[企业自建应用](https://open.larkoffice.com/document/home/introduction-to-custom-app-development/self-built-application-development-process)」；
+> - Step 2：在「权限管理」页面打开飞书人事（标准版） Open API 的权限，并[申请上线](https://open.larkoffice.com/document/uQjL04CN/ukzM04SOzQjL5MDN#%E5%9C%A8%E4%BC%81%E4%B8%9A%E5%86%85%E5%8F%91%E5%B8%83%E4%B8%8A%E7%BA%BF)，企业管理员审核后方可使用；
+> - Step 3：使用该应用的 API 访问凭证，调用[获取 tenant_access_token](https://open.larkoffice.com/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token_internal) 接口，获取 token。
 
 
 ### 接口列表
-#### [批量获取员工花名册信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/ehr/ehr-v1/employee/list)
+#### [批量获取员工花名册信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/ehr/ehr-v1/employee/list)
 根据员工飞书用户 ID/员工状态/雇员类型等搜索条件 ，批量获取员工花名册字段信息。
 
 - 最佳实践：获取所有「已离职实习生」的员工信息
   - 搜索条件：==status=5==（已离职），==type=2==（实习）
   - 请求地址：https://open.feishu.cn/open-apis/ehr/v1/employees?status=5&type=2&view=full
-#### [下载文件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/ehr/ehr-v1/attachment/get)
+#### [下载文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/ehr/ehr-v1/attachment/get)
 根据文件 token 下载文件
   - 最佳实践：下载员工张三的身份证照片
-    - 使用[批量获取员工花名册信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/ehr/ehr-v1/employee/list)接口查询张三的信息，返回中 `system_fields.id_photo.id` 的值是身份证照片的 token
+    - 使用[批量获取员工花名册信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/ehr/ehr-v1/employee/list)接口查询张三的信息，返回中 `system_fields.id_photo.id` 的值是身份证照片的 token
     - 使用下载文件接口，下载张三的身份证照片。请求地址：https://open.feishu.cn/open-apis/ehr/v1/attachments/8b3f3056515b4439a07858bd10cd0b80
 
 <br>

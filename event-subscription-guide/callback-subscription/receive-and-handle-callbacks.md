@@ -10,41 +10,19 @@ updateTime: "1749205906000"
 
 ## 使用长连接方式接收回调
 
-长连接方式内封装了鉴权逻辑，只在建连时进行鉴权，后续回调推送均为明文数据，无需再处理解密和验签逻辑。因此，如果你配置的回调订阅方式为 **使用长连接接收回调**，只需保持本地服务器建立长连接，在回调触发时即可接收到来自飞书开放平台的回调消息请求。如下图所示，接收到 `card.action.trigger` 回调，即[卡片回传交互](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)回调。
+长连接方式内封装了鉴权逻辑，只在建连时进行鉴权，后续回调推送均为明文数据，无需再处理解密和验签逻辑。因此，如果你配置的回调订阅方式为 **使用长连接接收回调**，只需保持本地服务器建立长连接，在回调触发时即可接收到来自飞书开放平台的回调消息请求。如下图所示，接收到 `card.action.trigger` 回调，即[卡片回传交互](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)回调。
 
 
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/4b8ab6eadce1922263608aa43260fcbc_e5Roy7fVd7.png?height=310&lazyload=true&maxWidth=650&width=2852)
 
 你的业务服务器接收回调请求后，需要在 3 秒内响应回调，以完成飞书客户端（前端）的交互行为。目前需要订阅回调的功能以及对应的回调结构、使用方式等说明参见下表。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">功能</md-th>
-<md-th style="width:40%">回调结构</md-th>
-<md-th style="width:40%">相关文档</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>链接预览</md-td>
-<md-td>实现链接预览功能必须订阅 **拉取链接预览数据** 回调，该回调对应的回调参数、响应参数说明，可参见[拉取链接预览数据](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure)。</md-td>
-<md-td>了解链接预览功能，以及如何配置链接预览，参见[链接预览开发指南](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/development-link-preview/link-preview-development-guide)。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>飞书卡片</md-td>
-<md-td>如果你构建的飞书卡片可通过交互组件完成业务处理，则需要订阅 **卡片回传交互** 回调，该回调对应的回调参数、响应参数说明，可参见[卡片回传交互](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)。</md-td>
-<md-td>
-- 了解飞书卡片功能，参见[飞书卡片概述](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/feishu-card-overview)。
-- 了解飞书卡片请求回调实现流程，参见[配置卡片交互](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)。</md-td>
-</md-tr>
+| 功能 | 回调结构 | 相关文档 |
+| --- | --- | --- |
+| 链接预览 | 实现链接预览功能必须订阅 **拉取链接预览数据** 回调，该回调对应的回调参数、响应参数说明，可参见[拉取链接预览数据](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure)。 | 了解链接预览功能，以及如何配置链接预览，参见[链接预览开发指南](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/development-link-preview/link-preview-development-guide)。 |
+| 飞书卡片 | 如果你构建的飞书卡片可通过交互组件完成业务处理，则需要订阅 **卡片回传交互** 回调，该回调对应的回调参数、响应参数说明，可参见[卡片回传交互](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)。 | - 了解飞书卡片功能，参见[飞书卡片概述](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/feishu-card-overview)。 - 了解飞书卡片请求回调实现流程，参见[配置卡片交互](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)。 |
 
-</md-tbody>
-</md-table>
-:::
 
 ## 通过开发者服务器接收回调
 
@@ -58,38 +36,12 @@ updateTime: "1749205906000"
 回调是同步操作，不提供补推机制。如果你的业务服务器超时未响应，则系统会判断回调失败，并在飞书客户端内展示报错信息。
 :::
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:18%">操作</md-th>
-<md-th style="width:15%">是否必须</md-th>
-<md-th style="width:67%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>[安全校验](#安全校验)</md-td>
-<md-td>否</md-td>
-<md-td>安全校验用于确认业务服务器接收到的请求来自飞书开放平台，而不是伪造的风险请求。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>[回调解密](#回调解密)</md-td>
-<md-td>否</md-td>
-<md-td>建议为应用配置 Encrypt Key，配置后推送的回调请求为加密数据，能够确保请求数据安全性。相应的，业务服务器收到请求后，需要进行解密，才可以获取到真实的回调数据。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>[响应回调请求](#响应回调请求)</md-td>
-<md-td>是</md-td>
-<md-td>业务服务器在收到回调请求后，必须返回响应结果，否则会被系统判断为回调失败。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
+| 操作 | 是否必须 | 描述 |
+| --- | --- | --- |
+| [安全校验](#安全校验) | 否 | 安全校验用于确认业务服务器接收到的请求来自飞书开放平台，而不是伪造的风险请求。 |
+| [回调解密](#回调解密) | 否 | 建议为应用配置 Encrypt Key，配置后推送的回调请求为加密数据，能够确保请求数据安全性。相应的，业务服务器收到请求后，需要进行解密，才可以获取到真实的回调数据。 |
+| [响应回调请求](#响应回调请求) | 是 | 业务服务器在收到回调请求后，必须返回响应结果，否则会被系统判断为回调失败。 |
 
 
 ### 安全校验
@@ -97,57 +49,15 @@ updateTime: "1749205906000"
 当你的业务服务器接收到来自飞书开放平台推送的回调时（不包括请求网址校验），如果需要确保这个请求的来源是飞书开放平台而非伪造，有两种方式进行安全校验：签名校验和 Verification Token 校验。
 
 :::warning
-本文提供的安全校验不适用于  **消息卡片回传交互（旧）**（card.action.trigger_v1）回调。如果你需要为 **消息卡片回传交互（旧）** 配置安全校验，则需要参考[配置回调请求地址](/ssl:ttdoc/ukTMukTMukTM/uYzMxEjL2MTMx4iNzETM)。
+本文提供的安全校验不适用于  **消息卡片回传交互（旧）**（card.action.trigger_v1）回调。如果你需要为 **消息卡片回传交互（旧）** 配置安全校验，则需要参考[配置回调请求地址](https://open.larkoffice.com/document/ukTMukTMukTM/uYzMxEjL2MTMx4iNzETM)。
 :::
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:25%">校验方式</md-th>
-<md-th style="width:75%">使用说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>**签名校验**</md-td>
-<md-td>
-如果你在飞书应用内配置了 Encrypt Key 加密策略，需使用签名校验，这种校验方式相对复杂，但是安全性高，且无需解密和解析回调即可完成安全校验。校验方式如下：
-  
-1. 获取 `encrypt_key`。
-    
-   在应用管理平台的 **事件与回调 > 加密策略** 页面，可以查看 `encrypt_key`。
-    
-   ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/c55d4e199d3ccb0a19ef6e808e66ffa4_G68AoPJBVI.png?height=650&lazyload=true&maxWidth=400&width=2152)
+| 校验方式 | 使用说明 |
+| --- | --- |
+| **签名校验** | 如果你在飞书应用内配置了 Encrypt Key 加密策略，需使用签名校验，这种校验方式相对复杂，但是安全性高，且无需解密和解析回调即可完成安全校验。校验方式如下：    1. 获取 `encrypt_key`。         在应用管理平台的 **事件与回调 > 加密策略** 页面，可以查看 `encrypt_key`。         ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/c55d4e199d3ccb0a19ef6e808e66ffa4_G68AoPJBVI.png?height=650&lazyload=true&maxWidth=400&width=2152) 2. 校验请求来源，示例代码可参考下文[签名校验示例代码](#签名校验示例代码)。         - 将请求头 `X-Lark-Request-Timestamp`、`X-Lark-Request-Nonce` 与 `encrypt_key` 拼接后，按照 `encode('utf-8')` 编码得到 `byte[] b1`，再拼接上请求的原始 body，得到一个 `byte[] b`。         - 将 `b` 用 sha256 算法得到字符串 `s`， 校验 `s` 是否和请求头 `X-Lark-Signature` 一致。      > **Info**: 该方式无需解密回调可完成安全校验，但获取回调内容仍需解密，回调解密操作参考下文[回调解密](#回调解密)。 |
+| **Verification Token 校验** | 飞书应用默认配置了 Verification Token，你可以在业务服务器内接收回调请求，并在请求体中获取 Verification Token 值，将该值与飞书应用内的 Verification Token 值进行比对，取值相同则说明该请求来自飞书开放平台的指定应用。    - 这种校验方式简单，但是安全性较低，在未配置 Encrypt Key 加密策略的前提下，会明文传输 Verification Token，存在数据泄露风险。 - Verification Token 可以在应用管理平台的 **事件与回调 > 加密策略** 页面获取，并与回调中解析出的 Verification Token 进行对比。          ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/2b1083f55a16409385da9470b386801a_p0YlKE017s.png?height=640&lazyload=true&maxWidth=400&width=2134)    > **Info**: 如果应用已配置了 Encrypt Key 加密策略，则推荐使用签名校验方式，如果仍需获取 Verification Token，则必须先解密回调才能获取。回调解密操作参考下文[回调解密](#回调解密)。 |
 
-2. 校验请求来源，示例代码可参考下文[签名校验示例代码](#签名校验示例代码)。
-    
-   - 将请求头 `X-Lark-Request-Timestamp`、`X-Lark-Request-Nonce` 与 `encrypt_key` 拼接后，按照 `encode('utf-8')` 编码得到 `byte[] b1`，再拼接上请求的原始 body，得到一个 `byte[] b`。
-    
-   - 将 `b` 用 sha256 算法得到字符串 `s`， 校验 `s` 是否和请求头 `X-Lark-Signature` 一致。  
-  
-<md-alert>该方式无需解密回调可完成安全校验，但获取回调内容仍需解密，回调解密操作参考下文[回调解密](#回调解密)。</md-alert>
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>**Verification Token 校验**</md-td>
-<md-td>
-飞书应用默认配置了 Verification Token，你可以在业务服务器内接收回调请求，并在请求体中获取 Verification Token 值，将该值与飞书应用内的 Verification Token 值进行比对，取值相同则说明该请求来自飞书开放平台的指定应用。
-  
-- 这种校验方式简单，但是安全性较低，在未配置 Encrypt Key 加密策略的前提下，会明文传输 Verification Token，存在数据泄露风险。
-- Verification Token 可以在应用管理平台的 **事件与回调 > 加密策略** 页面获取，并与回调中解析出的 Verification Token 进行对比。
-    
-    ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/2b1083f55a16409385da9470b386801a_p0YlKE017s.png?height=640&lazyload=true&maxWidth=400&width=2134)
-  
-<md-alert>如果应用已配置了 Encrypt Key 加密策略，则推荐使用签名校验方式，如果仍需获取 Verification Token，则必须先解密回调才能获取。回调解密操作参考下文[回调解密](#回调解密)。</md-alert>
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 #### 签名校验示例代码
 
@@ -256,7 +166,6 @@ $signature = hash("sha256", $timestamp . $nonce . $encrypt_key . $body);
 :::warning
 回调解密操作不适用于 **消息卡片回传交互（旧）**（card.action.trigger_v1）回调，因此使用 **消息卡片回传交互（旧）** 回调时可忽略本章节操作。
 :::
-
 
 
 #### 解密示例代码
@@ -487,31 +396,9 @@ print($decrypt);
 
 你的业务服务器接收回调请求后，需要在 3 秒内响应回调，以完成飞书客户端（前端）的交互行为。目前需要订阅回调的功能以及对应的回调结构、使用方式等说明参见下表。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">功能</md-th>
-<md-th style="width:40%">回调结构</md-th>
-<md-th style="width:40%">相关文档</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>链接预览</md-td>
-<md-td>实现链接预览功能必须订阅 **拉取链接预览数据** 回调，该回调对应的回调参数、响应参数说明，可参见[拉取链接预览数据](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure)。</md-td>
-<md-td>了解链接预览功能，以及如何配置链接预览，参见[链接预览开发指南](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/development-link-preview/link-preview-development-guide)。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>飞书卡片</md-td>
-<md-td>如果你构建的飞书卡片可通过交互组件完成业务处理，则需要订阅 **卡片回传交互** 回调，该回调对应的回调参数、响应参数说明，可参见[卡片回传交互](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)。</md-td>
-<md-td>
-- 了解飞书卡片功能，参见[飞书卡片概述](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/feishu-card-overview)。
-- 了解飞书卡片请求回调实现流程，参见[配置卡片交互](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)。</md-td>
-</md-tr>
+| 功能 | 回调结构 | 相关文档 |
+| --- | --- | --- |
+| 链接预览 | 实现链接预览功能必须订阅 **拉取链接预览数据** 回调，该回调对应的回调参数、响应参数说明，可参见[拉取链接预览数据](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure)。 | 了解链接预览功能，以及如何配置链接预览，参见[链接预览开发指南](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/development-link-preview/link-preview-development-guide)。 |
+| 飞书卡片 | 如果你构建的飞书卡片可通过交互组件完成业务处理，则需要订阅 **卡片回传交互** 回调，该回调对应的回调参数、响应参数说明，可参见[卡片回传交互](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)。 | - 了解飞书卡片功能，参见[飞书卡片概述](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/feishu-card-overview)。 - 了解飞书卡片请求回调实现流程，参见[配置卡片交互](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)。 |
 
-</md-tbody>
-</md-table>
-:::

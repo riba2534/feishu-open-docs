@@ -6,319 +6,65 @@ updateTime: "1709724839000"
 
 # 更新客服技能
 
-该接口用于更新客服技能。{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=helpdesk&version=v1&resource=agent_skill&method=patch)
+该接口用于更新客服技能。
 
-:::html
-<md-alert type="error">
 
-</md-alert>
-:::
+> **Tip**: 注意事项：
+> 	user_access_token 访问，需要操作者是当前服务台的管理员或所有者
 
-:::html
-<md-alert type="warn">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="tip">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="tip">
-	注意事项：
-	user_access_token 访问，需要操作者是当前服务台的管理员或所有者
-</md-alert>
-:::
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/helpdesk/v1/agent_skills/:agent_skill_id</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>PATCH</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[特殊频控](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="helpdesk:all" desc="更新服务台资源详情" support_app_types="custom" tags="">更新服务台资源详情</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/helpdesk/v1/agent_skills/:agent_skill_id |
+| HTTP Method | PATCH |
+| 接口频率限制 | [特殊频控](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | custom |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `helpdesk:all` 更新服务台资源详情 |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `user_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
 
-[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
+> **Tip**: 服务台请求Header中还需添加“服务台token”参数：
+>   
+>   Key: X-Lark-Helpdesk-Authorization
+>   
+>   Value: base64(helpdesk_id:helpdesk_token)，通过base64加密将helpdesk_id和helpdesk_token用':'连接而成的字符串。
+>   
+>   [了解更多：获取与使用服务台token](https://open.larkoffice.com/document/ukTMukTMukTM/ugDOyYjL4gjM24CO4IjN)
 
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
-
-:::html
-<md-alert type="tip">
-服务台请求Header中还需添加“服务台token”参数：
-  
-  Key: X-Lark-Helpdesk-Authorization
-  
-  Value: base64(helpdesk_id:helpdesk_token)，通过base64加密将helpdesk_id和helpdesk_token用':'连接而成的字符串。
-  
-  [了解更多：获取与使用服务台token](/ssl:ttdoc/ukTMukTMukTM/ugDOyYjL4gjM24CO4IjN)
-</md-alert>
-:::
 
 ### 路径参数
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >agent_skill_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	agent skill id
-
-**示例值**："test-skill-id"
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `agent_skill_id` | `string` | agent skill id<br>**示例值**："test-skill-id" |
 
 
 ### 请求体
 
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >agent_skill</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >agent_skill</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	更新技能
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	技能名
-
-**示例值**："skill-name"
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >rules</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >agent_skill_rule\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	技能rules
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	rule id, 参考[获取客服技能rules](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/helpdesk-v1/agent_skill_rule/list) 用于获取rules options
-
-**示例值**："test-skill-id"
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >selected_operator</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	运算符比较, 参考[客服技能运算符选项](/ssl:ttdoc/ukTMukTMukTM/ucDOyYjL3gjM24yN4IjN/operator-options)
-
-**示例值**：8
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >operator_options</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	rule操作数value，[客服技能及运算符](/ssl:ttdoc/ukTMukTMukTM/ucDOyYjL3gjM24yN4IjN/operator-options)
-
-**示例值**：[7,8]
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >operand</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	rule 操作数的值
-
-**示例值**："{\"selected_departments\":[{\"id\":\"部门ID\",\"name\":\"IT\"}]}"
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >agent_ids</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	具有此技能的客服ids
-
-**示例值**：["ou_ea21d7f018e1155d960e40d33191f966"]
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
-
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `agent_skill` | `agent_skill` | 否 | 更新技能 |
+| &nbsp;&nbsp;└ `name` | `string` | 否 | 技能名<br>**示例值**："skill-name" |
+| &nbsp;&nbsp;└ `rules` | `agent_skill_rule\[\]` | 否 | 技能rules |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 否 | rule id, 参考[获取客服技能rules](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/helpdesk-v1/agent_skill_rule/list) 用于获取rules options<br>**示例值**："test-skill-id" |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `selected_operator` | `int` | 否 | 运算符比较, 参考[客服技能运算符选项](https://open.larkoffice.com/document/ukTMukTMukTM/ucDOyYjL3gjM24yN4IjN/operator-options)<br>**示例值**：8 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `operator_options` | `int\[\]` | 否 | rule操作数value，[客服技能及运算符](https://open.larkoffice.com/document/ukTMukTMukTM/ucDOyYjL3gjM24yN4IjN/operator-options)<br>**示例值**：[7,8] |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `operand` | `string` | 否 | rule 操作数的值<br>**示例值**："{\"selected_departments\":[{\"id\":\"部门ID\",\"name\":\"IT\"}]}" |
+| &nbsp;&nbsp;└ `agent_ids` | `string\[\]` | 否 | 具有此技能的客服ids<br>**示例值**：["ou_ea21d7f018e1155d960e40d33191f966"] |
 
 
 ### 请求体示例
-:::html
-<md-code-json>
+
+```json
 {
     "agent_skill": {
         "name": "skill-name",
@@ -345,128 +91,38 @@ updateTime: "1709724839000"
         ]
     }
 }
-</md-code-json>
-:::
-
+```
 
 
 ## 响应
 
 
-
-
-
 ### 响应体
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误码，非 0 表示失败
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >data</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	\-
-	</md-dt-td>
-</md-dt-tr>
-
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `code` | `int` | 错误码，非 0 表示失败 |
+| `msg` | `string` | 错误描述 |
+| `data` | `\-` | \- |
 
 
 ### 响应体示例
-:::html
-<md-code-json>
+
+```json
 {
     "code": 0,
     "msg": "success",
     "data": {}
 }
-</md-code-json>
-:::
-
+```
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>154000</md-td>
-  <md-td>Bad request, please check your request body</md-td>
-  <md-td>请求不合法，请检查参数</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>154003</md-td>
-  <md-td>Please check you have the correct access</md-td>
-  <md-td>检查是否申请正确权限</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>155000</md-td>
-  <md-td>Internal error</md-td>
-  <md-td>内部错误，请联系我们</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
-
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 154000 | Bad request, please check your request body | 请求不合法，请检查参数 |
+| 403 | 154003 | Please check you have the correct access | 检查是否申请正确权限 |
+| 500 | 155000 | Internal error | 内部错误，请联系我们 |
 
 

@@ -12,62 +12,28 @@ updateTime: "1731048934000"
 
 ## 名词解释
 ### 设备管理
-应用管理员可以将人脸门禁考勤机绑定到本租户，智能门禁 API 提供[门禁设备](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/acs-v1/device/overview)接口用于获取绑定到租户的门禁设备列表。
+应用管理员可以将人脸门禁考勤机绑定到本租户，智能门禁 API 提供[门禁设备](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/acs-v1/device/overview)接口用于获取绑定到租户的门禁设备列表。
 
 ### 权限组管理
-应用管理员可以创建门禁权限组，给权限组添加成员，成员可以是租户全员、部门、个人。权限组绑定到设备后，权限组内的所有成员在绑定的设备上拥有开门/打卡权限。智能门禁 API 提供[用户接口](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/acs-v1/user/overview)，用于获取智能门禁用户列表，修改用户门禁卡号。
+应用管理员可以创建门禁权限组，给权限组添加成员，成员可以是租户全员、部门、个人。权限组绑定到设备后，权限组内的所有成员在绑定的设备上拥有开门/打卡权限。智能门禁 API 提供[用户接口](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/acs-v1/user/overview)，用于获取智能门禁用户列表，修改用户门禁卡号。
 
-权限组内的用户信息变更，会通过[智能门禁用户变更事件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/acs-v1/user/events/updated) 通知给订阅了该事件的企业应用。
-:::html
-<md-alert type="warn">
-只能获取已加入门禁权限组的用户
-</md-alert>
-:::
+权限组内的用户信息变更，会通过[智能门禁用户变更事件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/acs-v1/user/events/updated) 通知给订阅了该事件的企业应用。
+
+> **Warning**: 只能获取已加入门禁权限组的用户
+
 
 ### 人脸图片管理
-用户需要录入人脸图片才可以使用门禁考勤机。智能门禁 API 提供[人脸图片接口](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/acs-v1/user-face/overview)，用于上传和下载门禁用户的人脸图片。
+用户需要录入人脸图片才可以使用门禁考勤机。智能门禁 API 提供[人脸图片接口](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/acs-v1/user-face/overview)，用于上传和下载门禁用户的人脸图片。
 
 ### 开门记录管理
-用户在门禁考勤机上成功开门或打卡后，智能门禁应用都会生成一条门禁记录，通过[门禁访问记录事件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/acs-v1/access_record/events/created) 通知给订阅了该事件的企业应用。 
+用户在门禁考勤机上成功开门或打卡后，智能门禁应用都会生成一条门禁记录，通过[门禁访问记录事件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/acs-v1/access_record/events/created) 通知给订阅了该事件的企业应用。 
 
-智能门禁 API 提供[门禁记录接口](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/acs-v1/access_record/overview)用于获取指定时间和指定设备的门禁记录，提供[识别图片接口](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/acs-v1/access_record-access_photo/overview)用于下载对应门禁记录的抓拍图片。
+智能门禁 API 提供[门禁记录接口](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/acs-v1/access_record/overview)用于获取指定时间和指定设备的门禁记录，提供[识别图片接口](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/acs-v1/access_record-access_photo/overview)用于下载对应门禁记录的抓拍图片。
 
 ## 权限说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 30%;">权限</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td><md-perm href="/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">查看智能门禁设备列表</md-perm></md-td>
-      <md-td>
-查看租户内所有门禁设备列表
-      </md-td>
-</md-tr>
-    <md-tr>
-      <md-td><md-perm href="/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">查看、更新智能门禁用户</md-perm></md-td>
-      <md-td>
-查看、修改智能门禁用户信息
-      
-上传、下载智能门禁用户人脸图片
-        
-订阅智能门禁用户变更事件
-      </md-td>
-</md-tr>
-<md-tr>
-      <md-td><md-perm href="/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">查看智能门禁记录</md-perm></md-td>
-      <md-td>
-查看门禁记录列表      
 
-下载门禁记录抓拍图片   
-
-订阅门禁访问记录事件
-      </md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+| 权限 | 描述 |
+| --- | --- |
+| 查看智能门禁设备列表 | 查看租户内所有门禁设备列表 |
+| 查看、更新智能门禁用户 | 查看、修改智能门禁用户信息        上传、下载智能门禁用户人脸图片          订阅智能门禁用户变更事件 |
+| 查看智能门禁记录 | 查看门禁记录列表       下载门禁记录抓拍图片    订阅门禁访问记录事件 |

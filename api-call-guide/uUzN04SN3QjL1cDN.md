@@ -64,117 +64,106 @@ x-ogw-ratelimit-reset: 52 //恢复 limit 周期，单位：秒
 - 每一个频控策略等级的具体限制值是有可能发生变化的，我们将在发生变化时通过飞书开放平台的更新日志告诉你。
 :::
 
-:::html
-<table>
-  <thead>
-    <tr>
-      <th style="width:8%">等级</th>
-      <th style="width:32%">描述</th>
-      <th style="width:20%">基础版自建应用限制</th>
-      <th style="width:20%">商业版自建应用限制</th>
-      <th style="width:20%">商店应用限制</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>当前 API在每个应用、每个租户 10 次 / 分钟</td>
-      <td>10次/分</td>
-      <td>10次/分</td>
-      <td>10次/分</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>当前 API在每个应用、每个租户 20 次 / 分钟</td>
-      <td>20次/分</td>
-      <td>20次/分</td>
-      <td>20次/分</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>当前 API在每个应用、每个租户 100 次 / 分钟</td>
-      <td>100次/分</td>
-      <td>100次/分</td>
-      <td>100次/分</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>当前 API在每个应用、每个租户 1000 次/分钟、50 次/秒</td>
-      <td>1000次/分 & 50次/秒</td>
-      <td>1000次/分 & 50次/秒</td>
-      <td>1000次/分 & 50次/秒</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>当前 API在每个应用、每个租户 1 次 / 秒</td>
-      <td>1次/秒</td>
-      <td>1次/秒</td>
-      <td>1次/秒</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>当前 API在每个应用、每个租户 5 次 / 秒</td>
-      <td>5次/秒</td>
-      <td>5次/秒</td>
-      <td>5次/秒</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>当前 API在每个应用、每个租户 10 次 / 秒</td>
-      <td>10次/秒</td>
-      <td>10次/秒</td>
-      <td>10次/秒</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>当前 API在每个应用、每个租户 20 次 / 秒</td>
-      <td>20次/秒</td>
-      <td>20次/秒</td>
-      <td>20次/秒</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>当前 API在每个应用、每个租户 50 次 / 秒</td>
-      <td>50次/秒</td>
-      <td>50次/秒</td>
-      <td>50次/秒</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>当前 API在每个应用、每个租户 50 次 / 秒</td>
-      <td>50次/秒</td>
-      <td>100次/秒</td>
-      <td>50次/秒</td>
-    </tr>
-    <tr>
-      <td>11</td>
-      <td>当前 API在每个应用、每个租户 100 次 / 秒</td>
-      <td>100次/秒</td>
-      <td>100次/秒</td>
-      <td>100次/秒</td>
-    </tr>
-    <tr>
-      <td>21</td>
-      <td>当前 API在每个应用、每个租户 3 次 / 秒</td>
-      <td>3次/秒</td>
-      <td>3次/秒</td>
-      <td>3次/秒</td>
-    </tr>
-    <tr>
-      <td>特殊频控</td>
-      <td>非标准频控，请点击右下角“技术支持”了解具体配置</td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
-:::
+
+等级
+描述
+基础版自建应用限制
+商业版自建应用限制
+商店应用限制
+
+
+1
+当前 API在每个应用、每个租户 10 次 / 分钟
+10次/分
+10次/分
+10次/分
+
+
+2
+当前 API在每个应用、每个租户 20 次 / 分钟
+20次/分
+20次/分
+20次/分
+
+
+3
+当前 API在每个应用、每个租户 100 次 / 分钟
+100次/分
+100次/分
+100次/分
+
+
+4
+当前 API在每个应用、每个租户 1000 次/分钟、50 次/秒
+1000次/分 & 50次/秒
+1000次/分 & 50次/秒
+1000次/分 & 50次/秒
+
+
+5
+当前 API在每个应用、每个租户 1 次 / 秒
+1次/秒
+1次/秒
+1次/秒
+
+
+6
+当前 API在每个应用、每个租户 5 次 / 秒
+5次/秒
+5次/秒
+5次/秒
+
+
+7
+当前 API在每个应用、每个租户 10 次 / 秒
+10次/秒
+10次/秒
+10次/秒
+
+
+8
+当前 API在每个应用、每个租户 20 次 / 秒
+20次/秒
+20次/秒
+20次/秒
+
+
+9
+当前 API在每个应用、每个租户 50 次 / 秒
+50次/秒
+50次/秒
+50次/秒
+
+
+10
+当前 API在每个应用、每个租户 50 次 / 秒
+50次/秒
+100次/秒
+50次/秒
+
+
+11
+当前 API在每个应用、每个租户 100 次 / 秒
+100次/秒
+100次/秒
+100次/秒
+
+
+21
+当前 API在每个应用、每个租户 3 次 / 秒
+3次/秒
+3次/秒
+3次/秒
+
+
+特殊频控
+非标准频控，请点击右下角“技术支持”了解具体配置
+
 
 ## 如何针对应用、企业提升 API 接口频控
 
 飞书开放平台暂不支持自行调整 API 接口频控。如你有数据迁移、大型活动等场景需要短时间提升接口频控，可联系所在企业的 CSM（客户成功经理），提升接口频控。
 
 :::note
-[消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/introduction)、[群组](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/group/overview)、[多维表格](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/bitable-overview)暂时不支持提频。
+[消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/introduction)、[群组](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/group/overview)、[多维表格](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/bitable-overview)暂时不支持提频。
 :::

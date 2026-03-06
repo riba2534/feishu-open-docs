@@ -19,12 +19,12 @@ updateTime: "1731048851000"
 ## 任务接口v2能力
 任务v2 Openapi的能力包括：
 
-* **[任务API](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/overview)**：支持对任务的增删改查；添加/移除任务成员；将任务添加/移出清单；访问/添加任务的子任务等功能。
-* **[清单API](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist/overview)**：支持清单的增删改查；添加/移除清单协作成员等功能。
-* **[评论API](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/comment/overview)**：支持评论的增删改查功能。目前只有任务支持评论。
-* **[自定义分组API](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/section/section-feature-overview)**：支持自定义分组的创建，更新，查询自定义分组详情，查询分组中的任务等功能。
-* **[自定义字段API](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/custom-field-overview)**：支持自定义字段的创建，更新，查询等功能。
-* **[附件API](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/attachment/attachment-feature-overview)**：支持附件的上传，获取，删除等功能。
+* **[任务API](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/overview)**：支持对任务的增删改查；添加/移除任务成员；将任务添加/移出清单；访问/添加任务的子任务等功能。
+* **[清单API](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist/overview)**：支持清单的增删改查；添加/移除清单协作成员等功能。
+* **[评论API](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/comment/overview)**：支持评论的增删改查功能。目前只有任务支持评论。
+* **[自定义分组API](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/section/section-feature-overview)**：支持自定义分组的创建，更新，查询自定义分组详情，查询分组中的任务等功能。
+* **[自定义字段API](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/custom-field-overview)**：支持自定义字段的创建，更新，查询等功能。
+* **[附件API](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/attachment/attachment-feature-overview)**：支持附件的上传，获取，删除等功能。
 
 ## 如何使用任务API
 
@@ -36,17 +36,17 @@ API权限是指一个飞书开放应用是否可以调用某个具体的API。
 
 | API分类        | 权限           | 功能        | 
 | --------- | --------------- | -------   | 
-|任务API，子任务API | 查看任务信息<br>`task:task:read` | 授权后可调用任务只读API，如[获取任务详情](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/get) |
+|任务API，子任务API | 查看任务信息<br>`task:task:read` | 授权后可调用任务只读API，如[获取任务详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/get) |
 |任务API，子任务API | 查看、创建、编辑和删除任务<br>`task:task:write` | 授权后可调用任意任务API |
-|清单API | 查看任务清单<br>`task:tasklist:read` | 授权后可调用清单只读API，如[获取清单详情](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist/get) |
+|清单API | 查看任务清单<br>`task:tasklist:read` | 授权后可调用清单只读API，如[获取清单详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist/get) |
 |清单API | 查看、创建、编辑和删除任务清单<br>`task:tasklist:write` | 授权后可调用任意清单API |
-|评论API | 查看任务评论<br>`task:comment:read` | 授权后可调用评论只读API，如[获取评论详情](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/comment/get) |
+|评论API | 查看任务评论<br>`task:comment:read` | 授权后可调用评论只读API，如[获取评论详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/comment/get) |
 |评论API | 查看、创建、编辑和删除任务评论<br>`task:comment:write` | 授权后可调用任意评论API |
-|自定义分组API | 查看自定义分组<br>`task:section:read` | 授权后可以调用自定义分组API，如[获取自定义分组详情](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/section/get) |
+|自定义分组API | 查看自定义分组<br>`task:section:read` | 授权后可以调用自定义分组API，如[获取自定义分组详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/section/get) |
 |自定义分组API | 查看、创建、编辑和删除自定义分组<br>`task:section:write` | 授权后可以调用任意自定义分组API |
-|自定义字段API| 读取自定义字段<br>`task:custom_field:read` | 授权后可调用查询类自定义字段API，如[获取自定义字段](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/get) |
+|自定义字段API| 读取自定义字段<br>`task:custom_field:read` | 授权后可调用查询类自定义字段API，如[获取自定义字段](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field/get) |
 |自定义字段API| 创建，编辑，查看自定义字段<br>`task:custom_field:write` | 授权后可调用所有自定义字段/自定义字段选项API |
-|附件API| 读取附件<br>`task:attachment:read` | 授权后可调用查询类附件API，如[列取附件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/attachment/list) |
+|附件API| 读取附件<br>`task:attachment:read` | 授权后可调用查询类附件API，如[列取附件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/attachment/list) |
 |附件API| 创建，编辑，查看附件<br>`task:attachment:write` | 授权后可调用所有附件API |
 
 
@@ -57,7 +57,7 @@ API权限是指一个飞书开放应用是否可以调用某个具体的API。
 申请时，应前往应用的【权限管理】界面，查找对应的权限并申请。
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/e79f9c38778ad513d83e679057819236_hrOrBRKYSi.png?height=962&lazyload=true&width=1886)
 
-对于企业自建应用需要企业管理员在管理后台审核通过；应用商店应用需要经过平台管理员审核、企业管理员在应用市场安装或升级。更详细的步骤可以参考[申请服务端 API 权限](/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN)。
+对于企业自建应用需要企业管理员在管理后台审核通过；应用商店应用需要经过平台管理员审核、企业管理员在应用市场安装或升级。更详细的步骤可以参考[申请服务端 API 权限](https://open.larkoffice.com/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN)。
 
 申请权限并得到授权后，应用即可调用相应的接口了，但这并不意味着调用者可以访问任意任务数据。对数据的访问还需要接口的调用身份满足数据权限规则。
 
@@ -76,7 +76,7 @@ API权限是指一个飞书开放应用是否可以调用某个具体的API。
 
 > 不论`tenant_access_token`还是`user_access_token`都有过期时间。目前为约为2小时。正式的应用需要实现一个定时产生新token的功能组件保证应用始终可以使用有效的token。
 >
-> 更多信息可以参考 [获取访问凭证](/ssl:ttdoc/ukTMukTMukTM/uMTNz4yM1MjLzUzM)。
+> 更多信息可以参考 [获取访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)。
 
 
 ### 3. 调用接口
@@ -91,9 +91,9 @@ Authorization: Bearer <access_token>
 <req body>
 ```
 
-例如，以自己的身份申请`tenant_access_token`调用[创建任务](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/create)接口，创建一个任务。然后使用[添加任务成员](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_members)接口将自己的用户身份(表示用户的open id)添加为任务的负责人。该任务此时也应该同时出现在飞书客户端的任务中心的”我负责的”任务列表中。
+例如，以自己的身份申请`tenant_access_token`调用[创建任务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/create)接口，创建一个任务。然后使用[添加任务成员](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_members)接口将自己的用户身份(表示用户的open id)添加为任务的负责人。该任务此时也应该同时出现在飞书客户端的任务中心的”我负责的”任务列表中。
 
-之后可以改用自己授权的`user_access_token`调用[查看任务详情](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/get)接口查看该任务的详情。因为当前用户是该任务负责人，因此有权限查看。之后改用另外一个用户授权的`user_access_token`调用该接口查看同一个任务的详情，会得到1470403的错误码，因为另外的用户并非该任务的成员，无法访问该任务。
+之后可以改用自己授权的`user_access_token`调用[查看任务详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/get)接口查看该任务的详情。因为当前用户是该任务负责人，因此有权限查看。之后改用另外一个用户授权的`user_access_token`调用该接口查看同一个任务的详情，会得到1470403的错误码，因为另外的用户并非该任务的成员，无法访问该任务。
 
 ## 任务基本术语和概念
 
@@ -264,13 +264,11 @@ Authorization: Bearer t-g10275aDL3ZEMVDEUYXRBXXKZ5NSWWQNX3F5Y24N
 飞书开放平台支持设置不同的表示“用户”的ID的格式，即`user_id_type`。调用接口时可以通过设置query string参数`user_id_type`来选用不同的用户ID类型。每个请求的`user_id_type`设置会影响当**前请求和返回**中所有**表示用户**的成员的`id`字段的格式。
 
 `user_id_type`参数的值支持3种：
-:::html
-<md-enum>
-  <md-enum-item key="open_id" >标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。一个Open ID的样例是"ou_1400208f15333e20e11339d39067844b"。[了解更多：如何获取 Open ID](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)</md-enum-item>
-  <md-enum-item key="union_id" >标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。一个Union ID的样例为"on_e4d65380f2a0556cbc0ca6ea89b286boc"。[了解更多：如何获取 Union ID？](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id)</md-enum-item>
-  <md-enum-item key="user_id" >标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。此外，在飞书管理后台录入一个新的员工时，可以录入其User ID （不录入会自动生成一个），就可以实现飞书和企业内部的人员管理系统使用同一套员工ID。一个User ID样例为"f19d4656"。[了解更多：如何获取 User ID？](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)</md-enum-item>
-</md-enum>
-:::
+
+- `open_id`: 标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。一个Open ID的样例是"ou_1400208f15333e20e11339d39067844b"。[了解更多：如何获取 Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)
+- `union_id`: 标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。一个Union ID的样例为"on_e4d65380f2a0556cbc0ca6ea89b286boc"。[了解更多：如何获取 Union ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id)
+- `user_id`: 标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。此外，在飞书管理后台录入一个新的员工时，可以录入其User ID （不录入会自动生成一个），就可以实现飞书和企业内部的人员管理系统使用同一套员工ID。一个User ID样例为"f19d4656"。[了解更多：如何获取 User ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)
+
 
 不设置`user_id_type`参数时，默认为"open_id"。如无特殊需要，可以直接使用"open_id"。
 
@@ -350,7 +348,7 @@ console.log(m("2023-05-21T15:00:00+0800").valueOf());
 统一使用毫秒时间戳的字符串表达方式是为了保证后续接口不断改变和增强后，不会因为业务的精度的多样性和变化导致在接口层面使用多种不一样的时间格式带来的混乱。
 
 飞书任务系统内部不记录时区，而总是以时间戳的方式记录时间。开发者需要自行管理自己的应用使用什么时区来展示时间。比如飞书客户端支持每一个用户配置自己使用某个特定时区。对于拥有一个具体截止时刻的任务，如果有多个成员，每个成员各自的设备使用了不同的时区，则会得到**同一个时刻在不同时区下的不同展示**。
-> 但在全天任务场景下，上述规则会有不同，详见[如何使用任务的开始时间和截止时间？](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/overview)。
+> 但在全天任务场景下，上述规则会有不同，详见[如何使用任务的开始时间和截止时间？](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/overview)。
 
 ## 接口错误返回规范
 
@@ -371,13 +369,13 @@ console.log(m("2023-05-21T15:00:00+0800").valueOf());
 | 添加一个任务成员时，角色既不是"assignee"，也不是"follower"|Invalid Param 'members', role is invalid. Only 'assignee', 'follower' are supported.  |
 | 调用更新任务接口，设置任务的重复规则，但该任务没有截止时间。<br>只能给有截止时间的任务设置重复规则。|Invalid Param 'repeat_rule', cannot set repeat_rule without setting due.  |
 
-对一些特殊的接口的特殊的错误，会额外定义具体的错误码，便于开发者编写处理逻辑。比如目前每个任务只支持1个提醒。当使用[添加任务提醒](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_reminders)接口给一个任务添加多于1个提醒时，会得到错误码1470613。这样开发者就可以开发逻辑，遇到这个错误码就先要调用[移除任务提醒](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/remove_reminders)接口先把现有的提醒删除。
+对一些特殊的接口的特殊的错误，会额外定义具体的错误码，便于开发者编写处理逻辑。比如目前每个任务只支持1个提醒。当使用[添加任务提醒](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_reminders)接口给一个任务添加多于1个提醒时，会得到错误码1470613。这样开发者就可以开发逻辑，遇到这个错误码就先要调用[移除任务提醒](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/remove_reminders)接口先把现有的提醒删除。
 
 **我们非常欢迎开发者对错误的返回提出意见，提供更简洁清晰的错误信息，或者给特定场景添加必要的错误码**。
 
 ## 分页接口的调用约定
 
-部分接口（如[获取清单任务列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist/tasks)接口）支持分页功能。支持分页的接口有特殊的调用方式。
+部分接口（如[获取清单任务列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist/tasks)接口）支持分页功能。支持分页的接口有特殊的调用方式。
 
 分页接口的核心参数是`page_size`和`page_token`。`page_size`是每页的大小。如无特殊说明，`page_size`最小是1，最大是100，默认为50。将`page_size`设置为0，负数或者超过100的数字均会收到接口报错。
 
@@ -447,7 +445,7 @@ POST /task/v2/tasks
 
 > 如果再重试超过最大次数后依然报500的状态码，并且错误信息没有提供具体的原因，可以进行反馈，由飞书研发人员协助排查问题。
 
-目前支持幂等能力的接口包括：[创建任务](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/create)接口，[创建子任务](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task-subtask/create)接口，和[添加任务成员](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_members)接口。如需要其他接口进行支持，欢迎提供反馈意见。
+目前支持幂等能力的接口包括：[创建任务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/create)接口，[创建子任务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task-subtask/create)接口，和[添加任务成员](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_members)接口。如需要其他接口进行支持，欢迎提供反馈意见。
 
 使用幂等能力的注意事项：
 * `client_token`应尽量能保证全局唯一。建议使用关联业务数据的ID，或者使用UUID算法生成。在系统内部只会对`client_token`进行基本的字符串比较。比较行为是区分大小写的。
@@ -459,6 +457,5 @@ POST /task/v2/tasks
 * `client_token`有时效性。过期后用曾经用过的`client_token`调用接口，也无法得到当时的结果。而会被当作是全新的`client_token`。简单来说，不能将`client_token`当作资源ID使用。`client_token`的具体时限是：
   * 如果接口实际成功了，幂等行为会保持5分钟。过期后同一个`client_token`也会被视作是全新的token。这里的“实际成功“是指有可能内部接口调用成功，但调用者因为开放平台的网关设置已经超时。
   * 如果接口实际失败了，同一个`client_token`立刻会被视作全新的token。
-
 
 

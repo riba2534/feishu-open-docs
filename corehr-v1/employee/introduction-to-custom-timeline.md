@@ -12,7 +12,7 @@ updateTime: "1740040400000"
 
 ### 查询人员接口
 
-[批量查询员工信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/batch_get)
+[批量查询员工信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/batch_get)
 
 自定义时间轴分组查询方式与更新和普通自定义分组类似。
   

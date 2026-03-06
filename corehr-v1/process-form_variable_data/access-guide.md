@@ -17,239 +17,55 @@ updateTime: "1734434160000"
 -  流程操作
 
 代发起人进行流程相关操作
-:::html
-<md-table>
-  <md-thead>
-	<md-tr>
- 		<md-th style="width:49%">方法 (API)</md-th>
-		<md-th style="width:30%">权限要求</md-th>
-  		<md-th style="width:21%">访问凭证</md-th>
-	</md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-		<md-td>[撤回流程](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process_withdraw/update)<br>`PUT`/open-apis/corehr/v2/process_withdraw/:process_id</md-td>
-		<md-td><md-perm name="corehr:process.instance:write" desc="通过/拒绝审批任务" support_app_types="custom,isv"></md-perm></md-td>
-  		<md-td><md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag></md-td>
-	</md-tr>
-    <md-tr>
-		<md-td>[撤销流程](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process_revoke/update)<br>`PUT`/open-apis/corehr/v2/process_revoke/:process_id</md-td>
-		<md-td><md-perm name="corehr:process.instance:write" desc="通过/拒绝审批任务" support_app_types="custom,isv"></md-perm></md-td>
-  		<md-td><md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag></md-td>
-	</md-tr>
-  </md-tbody>
-</md-table>
-:::    
+
+| 方法 (API) | 权限要求 | 访问凭证 |
+| --- | --- | --- |
+| [撤回流程](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process_withdraw/update)`PUT`/open-apis/corehr/v2/process_withdraw/:process_id | `corehr:process.instance:write` | `tenant_access_token` |
+| [撤销流程](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process_revoke/update)`PUT`/open-apis/corehr/v2/process_revoke/:process_id | `corehr:process.instance:write` | `tenant_access_token` |
+    
 
 代审批人进行相关操作
-:::html
-<md-table>
-  <md-thead>
-	<md-tr>
- 		<md-th style="width:49%">方法 (API)</md-th>
-		<md-th style="width:30%">权限要求</md-th>
-  		<md-th style="width:21%">访问凭证</md-th>
-	</md-tr>
-  </md-thead>
-  <md-tbody>
-	<md-tr>
-		<md-td>[通过/拒绝审批任务](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-approver/update)<br>`PUT`/open-apis/corehr/v2/processes/:process_id/approvers/:approver_id </md-td>
-		<md-td><md-perm name="corehr:process.instance:write" desc="通过/拒绝审批任务" support_app_types="custom,isv"></md-perm></md-td>
-  		<md-td><md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag></md-td>
-	</md-tr>
-    <md-tr>
-		<md-td>[加签审批任务](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-extra/update)<br>`PUT`/open-apis/corehr/v2/processes/:process_id/extra </md-td>
-		<md-td><md-perm name="corehr:process.instance:write" desc="通过/拒绝审批任务" support_app_types="custom,isv"></md-perm></md-td>
-  		<md-td><md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag></md-td>
-	</md-tr>
-    <md-tr>
-		<md-td>[转交审批任务](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-transfer/update)<br>`PUT`/open-apis/corehr/v2/processes/:process_id/transfer </md-td>
-		<md-td><md-perm name="corehr:process.instance:write" desc="通过/拒绝审批任务" support_app_types="custom,isv"></md-perm></md-td>
-  		<md-td><md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag></md-td>
-	</md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 方法 (API) | 权限要求 | 访问凭证 |
+| --- | --- | --- |
+| [通过/拒绝审批任务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-approver/update)`PUT`/open-apis/corehr/v2/processes/:process_id/approvers/:approver_id | `corehr:process.instance:write` | `tenant_access_token` |
+| [加签审批任务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-extra/update)`PUT`/open-apis/corehr/v2/processes/:process_id/extra | `corehr:process.instance:write` | `tenant_access_token` |
+| [转交审批任务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-transfer/update)`PUT`/open-apis/corehr/v2/processes/:process_id/transfer | `corehr:process.instance:write` | `tenant_access_token` |
+
   
 -  流程信息查询
-:::html
-<md-table>
-  <md-thead>
-	<md-tr>
- 		<md-th style="width:49%">方法 (API)</md-th>
-		<md-th style="width:30%">权限要求</md-th>
-  		<md-th style="width:21%">访问凭证</md-th>
-	</md-tr>
-  </md-thead>
-  <md-tbody>
-	<md-tr>
-		<md-td>[查询流程实例列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process/list)<br>`GET`/open-apis/corehr/v2/processes</md-td>
-		<md-td><md-perm name="corehr:process:read" desc="获取流程数据" support_app_types="custom,isv"></md-perm></md-td>
-  		<md-td><md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag></md-td>
-	</md-tr>
-	<md-tr>
-		<md-td>[获取单个流程详情](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process/get)<br>`GET`/open-apis/corehr/v2/processes/:process_id</md-td>
-		<md-td>
-          <md-perm name="corehr:process:read" desc="获取流程数据" support_app_types="custom,isv">
-          </md-perm>
-      </md-td>
-  		<md-td><md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag></md-td>
-	</md-tr>
-    <md-tr>
-		<md-td>[获取流程表单数据](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-form_variable_data/get)<br>`GET`/open-apis/corehr/v2/processes/:process_id/form_variable_data</md-td>
-		<md-td>
-          <md-perm name="corehr:process:read" desc="获取流程数据" support_app_types="custom,isv">
-          </md-perm>
-      </md-td>
-  		<md-td><md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag></md-td>
-	</md-tr>
-        <md-tr>
-		<md-td>[获取指定人员审批任务列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/approver/list)<br>`GET`/open-apis/corehr/v2/approvers </md-td>
-		<md-td><md-perm name="corehr:process:read" desc="获取流程数据" support_app_types="custom,isv"></md-perm></md-td>
-  		<md-td><md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag></md-td>
-	</md-tr>
-  </md-tbody>
-</md-table>
-::: 
+
+| 方法 (API) | 权限要求 | 访问凭证 |
+| --- | --- | --- |
+| [查询流程实例列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process/list)`GET`/open-apis/corehr/v2/processes | `corehr:process:read` | `tenant_access_token` |
+| [获取单个流程详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process/get)`GET`/open-apis/corehr/v2/processes/:process_id | `corehr:process:read` | `tenant_access_token` |
+| [获取流程表单数据](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-form_variable_data/get)`GET`/open-apis/corehr/v2/processes/:process_id/form_variable_data | `corehr:process:read` | `tenant_access_token` |
+| [获取指定人员审批任务列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/approver/list)`GET`/open-apis/corehr/v2/approvers | `corehr:process:read` | `tenant_access_token` |
+ 
 
 -  流程动态监控
-:::html
-<md-table>
-  <md-thead>
-	<md-tr>
- 		<md-th style="width:30%">事件（event）</md-th>
-		<md-th style="width:30%">权限要求</md-th>
-  		<md-th style="width:40%">触发时机</md-th>
-	</md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-		<md-td>[流程实例状态变化](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-status/events/update) </md-td>
-		<md-td><md-perm name="corehr:process:read" desc="获取流程数据" support_app_types="custom,isv"></md-perm></md-td>
-  		<md-td>流程实例状态变化时会触发该事件</md-td>
-	</md-tr>
-	<md-tr>
-		<md-td>[流程实例信息变更](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process/events/updated)</md-td>
-		<md-td><md-perm name="corehr:process:read" desc="获取流程数据" support_app_types="custom,isv"></md-perm></md-td>
-  		<md-td>流程中有审批人操作、流程数据更新、流程状态变化时会触发该事件</md-td>
-	</md-tr>
-    <md-tr>
-		<md-td>[流程节点状态变更](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-node/events/updated)</md-td>
-		<md-td><md-perm name="corehr:process:read" desc="获取流程数据" support_app_types="custom,isv"></md-perm></md-td>
-  		<md-td>流程中节点状态变化时会触发该事件</md-td>
-	</md-tr>
-    <md-tr>
-		<md-td>[审批任务状态变更](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-approver/events/updated)</md-td>
-		<md-td><md-perm name="corehr:process:read" desc="获取流程数据" support_app_types="custom,isv"></md-perm></md-td>
-  		<md-td>单个审批任务状态变化时会触发该事件</md-td>
-	</md-tr>
-    <md-tr>
-		<md-td>[抄送单据状态变更](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-cc/events/updated)</md-td>
-		<md-td><md-perm name="corehr:process:read" desc="获取流程数据" support_app_types="custom,isv"></md-perm></md-td>
-  		<md-td>生成抄送单据后会触发该事件</md-td>
-	</md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 事件（event） | 权限要求 | 触发时机 |
+| --- | --- | --- |
+| [流程实例状态变化](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-status/events/update) | `corehr:process:read` | 流程实例状态变化时会触发该事件 |
+| [流程实例信息变更](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process/events/updated) | `corehr:process:read` | 流程中有审批人操作、流程数据更新、流程状态变化时会触发该事件 |
+| [流程节点状态变更](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-node/events/updated) | `corehr:process:read` | 流程中节点状态变化时会触发该事件 |
+| [审批任务状态变更](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-approver/events/updated) | `corehr:process:read` | 单个审批任务状态变化时会触发该事件 |
+| [抄送单据状态变更](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-cc/events/updated) | `corehr:process:read` | 生成抄送单据后会触发该事件 |
+
 
 ## 名词解释
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width:30%">名词</md-th>
-      <md-th style="width:70%">描述</md-th>
-	</md-tr>
-  </md-thead>
-  <md-tbody>
-	<md-tr>
-		<md-td>流程定义</md-td>
-		<md-td>指管理员在设置侧配置的流程，类似流程模板，flow_definition_id 是其唯一标识。用户发起的流程是按照对应的流程定义的配置生成</md-td>
-	</md-tr>
-    <md-tr>
-		<md-td>流程实例</md-td> 
-		<md-td>指用户在业务功能或者飞书人事的审批中心发起的具体流程，process_id 是其唯一标识</md-td>
-	</md-tr>
-    <md-tr>
-		<md-td>流程状态</md-td>
-		<md-td>流程状态是指整个流程实例的运行状态，随着审批人执行通过、拒绝等操作，流程状态会随之发生变化。流程状态包含以下几种状态：
-1. 进行中：表示当前流程实例还在流转中，没有最终结果
-1. 已完成：表示当前流程实例已经被通过
-1. 已拒绝：表示当前流程实例已经被拒绝
-1. 已撤回：表示当前还在“进行中”的流程实例已被发起人或审批单管理员撤回
-1. 已撤销：表示当前“已完成”的流程实例已被发起人或审批单管理员撤销</md-td>
-	</md-tr>
-    <md-tr>
-		<md-td>流程节点</md-td>
-		<md-td>每一个审批流程由一或多个流程节点构成，每一个节点表示审批流转过程中的一个步骤，在当前节点完成后进入下一个节点。每当流程实例创建时，会生成该实例对应的各个流程节点，并由流程节点构成审批流程</md-td>
-	</md-tr>
-    <md-tr>
-		<md-td>审批任务</md-td> 
-		<md-td>审批任务依赖于流程节点存在，每个流程节点可能包含有一或多个审批任务，每一个任务表明当前流程节点的审批人是谁</md-td>
-	</md-tr>
-    <md-tr>
-		<md-td>任务状态</md-td>
-		<md-td>任务状态是指审批任务的运行状态，随着审批人执行通过、拒绝等操作，任务状态会随之发生变化。任务状态包含以下几种状态：
-1. 跳过：在审批任务运行时，由于满足特定条件，某个或某些审批节点会被自动忽略，流程直接进入下一个节点
-1. 发起：表示当前审批任务已经被发起人发起
-1. 未开始：表示当前审批任务尚未发起
-1. 进行中：表示当前审批任务正在在进行中，没有最终结果
-1. 已拒绝：表示当前审批任务已经被拒绝
-1. 已通过：表示当前审批任务已经被通过，可流转到下一个审批任务
-1. 被撤回：表示当前还在“进行中”的审批任务已经被发起人或审批单管理员进行撤回
-1. 抄送：表示当前审批任务已经抄送给对应节点的抄送人
-1. 表单提交：表示表单节点的操作人已经完成了表单提交操作
-1. 失败：表示电子签节点签署失败
-1. 已回退：表示当前审批任务已经完成了回退操作
-1. 发起撤销：表示当前“已完成”的审批任务被发起人或审批单管理员撤销
-          
-      </md-td>
-	</md-tr>
-    <md-tr>
-		<md-td>业务类型</md-td>
-		<md-td>
-          飞书People 流程支持飞书 People 中多个业务的审批流程（例如信息变更申请、离职等），不同的业务对应不同的业务类型。在不同业务类型下创建的流程将仅在对应的业务可以使用，且如果审批通过，会触发对应业务关联的系统作业（例如“信息变更申请”审批通过后，会自动更新员工的相关信息）。
-| 业务类型  | 参数 | bizType  
-| --------- | --------------- | -------   | ----------- | --------- |
-|`离职补偿金申请` | `41` | resignation_compensation | 
-|`试用期转正` | `42` | corehr_probation_default_flow| 
-|`员工异动` | `43` | job_change| 
-|`离职申请` | `44` | offboarding_info| 
-|`合同续约` | `45` | renewal_record| 
-|`组织架构调整` | `46` | reorg_approval_group| 
-|`猎头服务费审批` | `48` | headhunting| 
-|`离职手续办理` | `50` | offboarding_transfer| 
-|`申请虚线团队权限` | `51` | additional_manage_relation_rule| 
-|`Offer 审批` | `52` | offer| 
-|`回流人员确认` | `53` | pre_hire_back| 
-|`申请信息变更` | `54` | person_info_change| 
-|`编制规划调整审批` | `55` | workforce_plan_adjustment| 
-|`休假申请` | `56` | leave_application| 
-|`Offer 薪酬审批` | `57` | offer_salary| 
-|`自助证明` | `58` | self_certificate| 
-|`自助服务` | `59` | self_service| 
-|`Offer 及薪酬合并审批` | `60` | offer_salary_merge| 
-|`Payroll 发薪活动审批` | `61` | payroll| 
-|`调薪` | `62` | cpst_adjust_salary_flow_info| 
-|`职位广告内容审批` | `63` | job_post_content_approval| 
-|`职位广告渠道审批` | `64` | job_post_channel_approval| 
-|`招聘需求审批` | `65` | recruitment_request_approval| 
-|`期权到期补齐审批` | `70` | rsu_refrsh_approval_new| 
-|`加班申请` | `68` | work_application| 
-|`出差申请` | `69` | travel_application| 
-|`外出申请` | `72` | outing_application| 
-|`补卡申请` | `71` | remedy_application|
-|`换班申请` | `76` | swap_shift_application| 
-|`值班补贴（新）` | `75` | onduty_bonus_apply| 
-|`批量调薪（新）` | `74` | batch_compensation_adjustment_new|
-|`数据填报审批` | `73` | payroll_data_report|
-        </md-td>
-	</md-tr>
-  </md-tbody>
-</md-table>
-:::
 
+| 名词 | 描述 |
+| --- | --- |
+| 流程定义 | 指管理员在设置侧配置的流程，类似流程模板，flow_definition_id 是其唯一标识。用户发起的流程是按照对应的流程定义的配置生成 |
+| 流程实例 | 指用户在业务功能或者飞书人事的审批中心发起的具体流程，process_id 是其唯一标识 |
+| 流程状态 | 流程状态是指整个流程实例的运行状态，随着审批人执行通过、拒绝等操作，流程状态会随之发生变化。流程状态包含以下几种状态： 1. 进行中：表示当前流程实例还在流转中，没有最终结果 1. 已完成：表示当前流程实例已经被通过 1. 已拒绝：表示当前流程实例已经被拒绝 1. 已撤回：表示当前还在“进行中”的流程实例已被发起人或审批单管理员撤回 1. 已撤销：表示当前“已完成”的流程实例已被发起人或审批单管理员撤销 |
+| 流程节点 | 每一个审批流程由一或多个流程节点构成，每一个节点表示审批流转过程中的一个步骤，在当前节点完成后进入下一个节点。每当流程实例创建时，会生成该实例对应的各个流程节点，并由流程节点构成审批流程 |
+| 审批任务 | 审批任务依赖于流程节点存在，每个流程节点可能包含有一或多个审批任务，每一个任务表明当前流程节点的审批人是谁 |
+| 任务状态 | 任务状态是指审批任务的运行状态，随着审批人执行通过、拒绝等操作，任务状态会随之发生变化。任务状态包含以下几种状态： 1. 跳过：在审批任务运行时，由于满足特定条件，某个或某些审批节点会被自动忽略，流程直接进入下一个节点 1. 发起：表示当前审批任务已经被发起人发起 1. 未开始：表示当前审批任务尚未发起 1. 进行中：表示当前审批任务正在在进行中，没有最终结果 1. 已拒绝：表示当前审批任务已经被拒绝 1. 已通过：表示当前审批任务已经被通过，可流转到下一个审批任务 1. 被撤回：表示当前还在“进行中”的审批任务已经被发起人或审批单管理员进行撤回 1. 抄送：表示当前审批任务已经抄送给对应节点的抄送人 1. 表单提交：表示表单节点的操作人已经完成了表单提交操作 1. 失败：表示电子签节点签署失败 1. 已回退：表示当前审批任务已经完成了回退操作 1. 发起撤销：表示当前“已完成”的审批任务被发起人或审批单管理员撤销 |
+| 业务类型 | 飞书People 流程支持飞书 People 中多个业务的审批流程（例如信息变更申请、离职等），不同的业务对应不同的业务类型。在不同业务类型下创建的流程将仅在对应的业务可以使用，且如果审批通过，会触发对应业务关联的系统作业（例如“信息变更申请”审批通过后，会自动更新员工的相关信息）。 | 业务类型  | 参数 | bizType   | --------- | --------------- | -------   | ----------- | --------- | |`离职补偿金申请` | `41` | resignation_compensation |  |`试用期转正` | `42` | corehr_probation_default_flow|  |`员工异动` | `43` | job_change|  |`离职申请` | `44` | offboarding_info|  |`合同续约` | `45` | renewal_record|  |`组织架构调整` | `46` | reorg_approval_group|  |`猎头服务费审批` | `48` | headhunting|  |`离职手续办理` | `50` | offboarding_transfer|  |`申请虚线团队权限` | `51` | additional_manage_relation_rule|  |`Offer 审批` | `52` | offer|  |`回流人员确认` | `53` | pre_hire_back|  |`申请信息变更` | `54` | person_info_change|  |`编制规划调整审批` | `55` | workforce_plan_adjustment|  |`休假申请` | `56` | leave_application|  |`Offer 薪酬审批` | `57` | offer_salary|  |`自助证明` | `58` | self_certificate|  |`自助服务` | `59` | self_service|  |`Offer 及薪酬合并审批` | `60` | offer_salary_merge|  |`Payroll 发薪活动审批` | `61` | payroll|  |`调薪` | `62` | cpst_adjust_salary_flow_info|  |`职位广告内容审批` | `63` | job_post_content_approval|  |`职位广告渠道审批` | `64` | job_post_channel_approval|  |`招聘需求审批` | `65` | recruitment_request_approval|  |`期权到期补齐审批` | `70` | rsu_refrsh_approval_new|  |`加班申请` | `68` | work_application|  |`出差申请` | `69` | travel_application|  |`外出申请` | `72` | outing_application|  |`补卡申请` | `71` | remedy_application| |`换班申请` | `76` | swap_shift_application|  |`值班补贴（新）` | `75` | onduty_bonus_apply|  |`批量调薪（新）` | `74` | batch_compensation_adjustment_new| |`数据填报审批` | `73` | payroll_data_report| |
 
 
 ## 接入流程
@@ -267,7 +83,6 @@ updateTime: "1734434160000"
 创建应用成功后，在开发配置 -> 权限管理页面申请所需要的权限
 
 
-
 ![20241202-165153.jpeg](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/02494398290a79a10f69983496c8f344_KudIOaTShI.jpeg?height=1344&lazyload=true&width=3434)
 
 3、发布应用版本
@@ -278,13 +93,13 @@ updateTime: "1734434160000"
 
 1. 获得开放平台应用的 App ID 和 App Secret
 
-在开放平台找到刚才发布通过了的应用，我们可以找到这个应用对应的 [App ID 和 App Secret](/ssl:ttdoc/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)
+在开放平台找到刚才发布通过了的应用，我们可以找到这个应用对应的 [App ID 和 App Secret](https://open.larkoffice.com/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)
 
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/b42378b0963e82e71ee860978bc6ad4a_4IbawiPvWD.png?height=1916&lazyload=true&width=3840)
 
 2. 使用服务端API
 
-以Go语言为例，通过[调用服务端API](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/server-side-sdk/golang-sdk-guide/calling-server-side-apis)文档，构建出 API Client。
+以Go语言为例，通过[调用服务端API](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/golang-sdk-guide/calling-server-side-apis)文档，构建出 API Client。
 
 这里我们采用最简单的方式快速构建出一个 API Client 供我们接下来使用。
 ```javascript
@@ -293,7 +108,7 @@ var client = lark.NewClient("YOUR_APP_ID", "YOUR_APP_SECRET") // 默认配置为
 
 3. 查询指定员工的审批任务
 
-通过下面的代码我们可以查询到指定员工的[审批任务](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/process-form_variable_data/approver-task/resource-introduce)，其中UserID等入参方式的获取方式可以参考[获取指定人员审批任务列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/approver/list)的接口文档。
+通过下面的代码我们可以查询到指定员工的[审批任务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/process-form_variable_data/approver-task/resource-introduce)，其中UserID等入参方式的获取方式可以参考[获取指定人员审批任务列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/approver/list)的接口文档。
 
 ```javascript
 func main() {
@@ -354,7 +169,7 @@ func main() {
 
 4. 通过/拒绝审批任务
 
-在获取到流程实例ID和审批任务ID后，通过[通过/拒绝审批任务](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-approver/update)接口实现对审批任务的处理。对于一个简单的审批任务，使用 Open API 通过审批的示例代码如下
+在获取到流程实例ID和审批任务ID后，通过[通过/拒绝审批任务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process-approver/update)接口实现对审批任务的处理。对于一个简单的审批任务，使用 Open API 通过审批的示例代码如下
 ```javascript
 func main() {
 	// 创建 Client
@@ -397,12 +212,11 @@ func main() {
 1、配置事件订阅方式
 
 
-事件订阅方式一共有两种，分别为“推送至开发者服务器”和“长连接”，详细区别可通过链接查看[配置事件订阅方式](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/request-url-configuration-case)，本示例使用的是长连接的方式来接收事件
+事件订阅方式一共有两种，分别为“推送至开发者服务器”和“长连接”，详细区别可通过链接查看[配置事件订阅方式](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/request-url-configuration-case)，本示例使用的是长连接的方式来接收事件
 
 ![20241203-194837.jpeg](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/6425c1e46bdb77997ee728ade44c389e_kbWnwmffgo.jpeg?height=1202&lazyload=true&width=2768)
 
 2、添加要订阅的事件
-
 
 
 ![20241203-195821.jpeg](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/037136485e34670b63f7ab1afcc1665d_qtwlXgHNug.jpeg?height=1564&lazyload=true&width=3454)
@@ -416,7 +230,7 @@ func main() {
 
 4、接收并处理事件
 
-以golang为例（其他示例代码可参考[事件订阅示例代码](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/request-url-configuration-case)），接收事件代码如下：
+以golang为例（其他示例代码可参考[事件订阅示例代码](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/request-url-configuration-case)），接收事件代码如下：
 
 ```javascript 
 func main() {

@@ -10,145 +10,42 @@ updateTime: "1722417363000"
 
 ## 请求
 
-:::html
-<md-table>
-  <md-thead>
-    <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-    </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/sheets/v2/spreadsheets/:spreadsheetToken/metainfo</md-td></md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>GET</md-td></md-tr>
-   <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[100 次/秒](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-   <md-tr>
-     
-     <md-th>支持的应用类型</md-th>
-      <md-td>
-	  <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-   </md-tr>
 
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/sheets/v2/spreadsheets/:spreadsheetToken/metainfo |
+| HTTP Method | GET |
+| 接口频率限制 | [100 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | custom,isv |
+| 权限要求  调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `drive:drive:readonly` 查看、评论和下载云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 `sheets:spreadsheet:readonly` 查看、评论和导出电子表格 |
 
-    <md-tr>
-      <md-th>
-权限要求
- <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-<div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-</md-th>
-      <md-td>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-<md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm>
-<md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-<md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm>
-</md-td>
-      
-
-    </md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 
 ### 请求头
 
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 18%;">名称</md-th>  
-      <md-th style="width: 15%;">类型</md-th>  
-       <md-th style="width: 15%;">必填</md-th>  
-      <md-th>描述</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>Authorization</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-      	<md-td>
-<md-tag mode="inline" type="token-user">user_access_token</md-tag> 或 <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag> 
 
-**值格式**："Bearer `access_token`"
-
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-          
- [了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-	</md-td>
-</md-tr>
-     <md-tr> 
-      <md-td>Content-Type</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-     <md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-
-  </md-tbody> 
-</md-table>
-:::
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `user_access_token` 或 `tenant_access_token`  **值格式**："Bearer `access_token`" **示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"             [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
 
 ### 路径参数
 
-:::html
-<md-table>
-  <md-thead>
-  <md-tr>
-      <md-th>参数</md-th>
-      <md-th>类型</md-th>
-      <md-th>描述</md-th>
-  </md-tr>
-      </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>spreadsheetToken</md-td>
-       <md-td>string</md-td>
-       <md-td>spreadsheet 的 token；获取方式见[在线表格开发指南](/ssl:ttdoc/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/overview)</md-td>
-      </md-tr>
-</md-tbody>
-</md-table>
-::: 
+
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| spreadsheetToken | string | spreadsheet 的 token；获取方式见[在线表格开发指南](https://open.larkoffice.com/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/overview) |
+ 
 
 
 ### 查询参数
-:::html
 
-:::
-:::html
-<md-table>
-  <md-thead>
-  <md-tr>
-      <md-th>参数</md-th>
-      <md-th>类型</md-th>
-      <md-th>必须</md-th>
-	  <md-th>说明</md-th>
-  </md-tr>
-      </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>extFields</md-td>
-       <md-td>string</md-td>
-       <md-td>否</md-td>
-      <md-td>额外返回的字段，extFields=protectedRange时返回保护行列信息</md-td>
-      </md-tr>
-    <md-tr>
-      <md-td>user_id_type</md-td>
-       <md-td>string</md-td>
-       <md-td>否</md-td>
-      <md-td>返回的用户id类型，可选open_id,union_id</md-td>
-      </md-tr>
-</md-tbody>
-</md-table>
-::: 
+
+| 参数 | 类型 | 必须 | 说明 |
+| --- | --- | --- | --- |
+| extFields | string | 否 | 额外返回的字段，extFields=protectedRange时返回保护行列信息 |
+| user_id_type | string | 否 | 返回的用户id类型，可选open_id,union_id |
+ 
 
 ### cURL 请求示例
 
@@ -160,9 +57,7 @@ curl --location --request GET 'https://open.feishu.cn/open-apis/sheets/v2/spread
 ## 响应
 
 ### 响应体
-:::html
 
-:::
 
 | 参数                              | 类型             | 说明                                                         |
 | --------------------------------- | ---------------- | ------------------------------------------------------------ |
@@ -264,4 +159,4 @@ curl --location --request GET 'https://open.feishu.cn/open-apis/sheets/v2/spread
 
 ### 错误码
 
-具体可参考：[服务端错误码说明](/ssl:ttdoc/ukTMukTMukTM/ugjM14COyUjL4ITN)
+具体可参考：[服务端错误码说明](https://open.larkoffice.com/document/ukTMukTMukTM/ugjM14COyUjL4ITN)

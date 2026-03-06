@@ -6,7 +6,7 @@ updateTime: "1752809918000"
 
 # 块的数据结构
 
-在一篇文档中，有多个不同类型的段落，这些段落被定义为块（Block）。块是文档中的最小构建单元，是内容的结构化组成元素，有着明确的含义。块有多种形态，可以是一段文字、一张电子表格、一张图片或一个多维表格等。每个块都有唯一的 `block_id` 作为标识。了解更多块的基本概念，参考[文档概述-基本概念](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-overview)。
+在一篇文档中，有多个不同类型的段落，这些段落被定义为块（Block）。块是文档中的最小构建单元，是内容的结构化组成元素，有着明确的含义。块有多种形态，可以是一段文字、一张电子表格、一张图片或一个多维表格等。每个块都有唯一的 `block_id` 作为标识。了解更多块的基本概念，参考[文档概述-基本概念](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-overview)。
 
 ## 块的类型
 
@@ -101,57 +101,13 @@ updateTime: "1752809918000"
     "record": string
 }
 ```
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 17%;">名称</md-th>  
-      <md-th style="width: 14%;">数据类型</md-th>  
-      <md-th style="width: 10%;">属性</md-th>  
-      <md-th style="width: 20%;">示例值</md-th>  
-      <md-th >描述</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>component_id</md-td>  
-      <md-td>string</md-td>  
-      <md-td>optional</md-td>  
-      <md-td>/</md-td> 
-      <md-td>AddOns 文档小组件 ID。该字段为空。</md-td> 
-    </md-tr>  
-    <md-tr> 
-      <md-td>component_type_id</md-td>  
-      <md-td>string</md-td>  
-      <md-td>optional</md-td>  
-      <md-td>blk_6358a421bca0001c1ceabcef</md-td> 
-      <md-td>文档小组件类型 ID，用于区分不同类型的小组件，比如问答互动类。</md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td>record</md-td>  
-      <md-td>string</md-td>  
-      <md-td>optional</md-td>  
-      <md-td>
-        {
-          "color": "#FF8800",
-          "duration": 86359.465,
-          "isNotify": true,
-          "settingData": {
-            "date": "2023-12-26",
-            "time": "20:07"
-          },
-          "startTime": 1703506061535,
-          "timingType": 1
-        }
-      </md-td> 
-      <md-td>
-        文档小组件内容数据，JSON 字符串。
-      </md-td> 
-    </md-tr> 
-  </md-tbody> 
-</md-table>
 
-:::
+| 名称 | 数据类型 | 属性 | 示例值 | 描述 |
+| --- | --- | --- | --- | --- |
+| component_id | string | optional | / | AddOns 文档小组件 ID。该字段为空。 |
+| component_type_id | string | optional | blk_6358a421bca0001c1ceabcef | 文档小组件类型 ID，用于区分不同类型的小组件，比如问答互动类。 |
+| record | string | optional | {           "color": "#FF8800",           "duration": 86359.465,           "isNotify": true,           "settingData": {             "date": "2023-12-26",             "time": "20:07"           },           "startTime": 1703506061535,           "timingType": 1         } | 文档小组件内容数据，JSON 字符串。 |
+
 
 ### Agenda
 议程块的内容实体，为空结构体。议程块的子块中包含多个议程项块。
@@ -223,47 +179,12 @@ AI 模板 Block, 该 Block 目前只读，不支持创建。
     "view_type": enum(BitableViewType)
 }
 ```
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 10%;">名称</md-th>  
-      <md-th style="width: 15%;">数据类型</md-th>  
-      <md-th style="width: 15%;">属性</md-th>  
-      <md-th style="width: 30%;">示例值</md-th>  
-      <md-th style="width: 30%;">描述</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>
-        token
-      </md-td>  
-      <md-td>string</md-td>  
-      <md-td>required</md-td>  
-      <md-td>
-        JMeVbqbrtaoJijsExcXcN9abcef_tblBRJhqKXUABCEF
-      </md-td> 
-      <md-td style="width: 30%;">
-        多维表格在文档中的 Token，只读属性。 格式为 BitableToken_TableID，其中，BitableToken 是一篇多维表格唯一标识，TableID 是一张数据表的唯一标识，使用时请注意拆分。
-      </md-td> 
-    </md-tr>  
-    <md-tr> 
-      <md-td>
-        view_type
-      </md-td>  
-      <md-td>enum(BitableViewType)</md-td>  
-      <md-td>required</md-td>  
-      <md-td>
-        1
-      </md-td> 
-      <md-td style="width: 30%;">
-        视图类型。详情参考 <a href="#4a02516f">BitableViewType 枚举</a>。
-      </md-td> 
-    </md-tr> 
-  </md-tbody> 
-</md-table>
-:::
+
+| 名称 | 数据类型 | 属性 | 示例值 | 描述 |
+| --- | --- | --- | --- | --- |
+| token | string | required | JMeVbqbrtaoJijsExcXcN9abcef_tblBRJhqKXUABCEF | 多维表格在文档中的 Token，只读属性。 格式为 BitableToken_TableID，其中，BitableToken 是一篇多维表格唯一标识，TableID 是一张数据表的唯一标识，使用时请注意拆分。 |
+| view_type | enum(BitableViewType) | required | 1 | 视图类型。详情参考 BitableViewType 枚举。 |
+
 
 ### Board
 
@@ -296,73 +217,13 @@ AI 模板 Block, 该 Block 目前只读，不支持创建。
 }
 ```
 
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 20%;">名称</md-th>  
-      <md-th style="width: 20%;">数据类型</md-th>  
-      <md-th style="width: 10%;">属性</md-th>  
-      <md-th style="width: 10%;">默认值</md-th>  
-      <md-th style="width: 40%;">描述</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>
-        background_color
-      </md-td>  
-      <md-td>enum(BackgroundColor)</md-td>  
-      <md-td>optional</md-td>  
-      <md-td>
-        /
-      </md-td> 
-      <md-td style="width: 30%;">
-        背景色。默认为透明色。详情参考<a href="#28d02e32">CalloutBackgroundColor 枚举</a>。
-      </md-td> 
-    </md-tr>  
-    <md-tr> 
-      <md-td>
-        border_color
-      </md-td>  
-      <md-td>enum(BorderColor)</md-td>  
-      <md-td>optional</md-td>  
-      <md-td>
-        /
-      </md-td> 
-      <md-td style="width: 30%;">
-        边框色。默认为透明色。详情参考<a href="#fb1f28b8">CalloutBorderColor 枚举</a>。
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td>
-        text_color
-      </md-td>  
-      <md-td>enum(FontColor)</md-td>  
-      <md-td>optional</md-td>  
-      <md-td>
-        /
-      </md-td> 
-      <md-td style="width: 30%;">
-        字体色。默认为黑色。详情参考<a href="#be1b12a7">FontColor 枚举</a>。
-      </md-td> 
-    </md-tr>
-    <md-tr> 
-      <md-td>
-        emoji_id
-      </md-td>  
-      <md-td>enum(string)</md-td>  
-      <md-td>optional</md-td>  
-      <md-td>
-        gift
-      </md-td> 
-      <md-td style="width: 30%;">
-        表情的唯一标识。详情参考 <a href="/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/emoji">Emoji 枚举</a>。
-      </md-td> 
-    </md-tr>
-  </md-tbody> 
-</md-table>
-:::
+
+| 名称 | 数据类型 | 属性 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| background_color | enum(BackgroundColor) | optional | / | 背景色。默认为透明色。详情参考CalloutBackgroundColor 枚举。 |
+| border_color | enum(BorderColor) | optional | / | 边框色。默认为透明色。详情参考CalloutBorderColor 枚举。 |
+| text_color | enum(FontColor) | optional | / | 字体色。默认为黑色。详情参考FontColor 枚举。 |
+| emoji_id | enum(string) | optional | gift | 表情的唯一标识。详情参考 Emoji 枚举。 |
 
 
 ### ChatCard
@@ -401,7 +262,7 @@ AI 模板 Block, 该 Block 目前只读，不支持创建。
 ### File
 
 文件块的内容实体。文件块不能独立存在，须与视图块一同出现。文件视图是通过视图块的 `view_type` 实现的，包括卡片视图和预览视图。在创建文件块时，系统会自动生成默认的视图块的内容实体。
-了解如何插入文件，参考[常见问题-如何插入文件](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/faq#891c2784)。
+了解如何插入文件，参考[常见问题-如何插入文件](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/faq#891c2784)。
 
 ```json
 {
@@ -459,7 +320,7 @@ AI 模板 Block, 该 Block 目前只读，不支持创建。
 
 ### Image
 
-图片块的内容实体。了解如何插入图片块，参考[常见问题-如何插入图片](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/faq#1908ddf0)。
+图片块的内容实体。了解如何插入图片块，参考[常见问题-如何插入图片](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/faq#1908ddf0)。
 ```json
 {
     "token": string,
@@ -478,7 +339,6 @@ AI 模板 Block, 该 Block 目前只读，不支持创建。
 | align  | int    | optional | 2   | 对齐方式。详情参考 [Align 枚举](#05e7d57e)。 |
 | caption  | object  | optional | -  | 图片描述 |
 | caption.content  | string  | optional | -  | 图片描述的纯文本内容 |
-
 
 
 ### ISV
@@ -529,16 +389,13 @@ Jira 问题块的内容实体。
 | url_type | enum(LinkPreviewURLType) | required | -   | 链接类型，详见：[LinkPreviewURLType 枚举](#224f293c)|
 
 
-
 ### Mindnote
 
 思维笔记块的内容实体。
 
-:::html
-<md-alert type="warn">
-目前只支持获取思维笔记块的占位信息，不支持创建及编辑。
-</md-alert>
-:::
+
+> **Warning**: 目前只支持获取思维笔记块的占位信息，不支持创建及编辑。
+
 
 ```json
 {
@@ -568,7 +425,7 @@ OKR 块的内容实体，仅可在使用 `user_access_token` 时创建。
 ```
 | 名称                      | 数据类型             | 属性       | 默认值 | 描述                                                                                                                       |
 | ----------------------- | ---------------- | -------- | --- | ------------------------------------------------------------------------------------------------------------------------ |
-| okr_id                  | string           | required | -   | OKR ID，获取 OKR ID，参考[获取用户的 OKR 列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/okr-v1/user-okr/list)。 |
+| okr_id                  | string           | required | -   | OKR ID，获取 OKR ID，参考[获取用户的 OKR 列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/okr-v1/user-okr/list)。 |
 | objectives              | array(Objective) | optional | -   | OKR Block 中的 Objective ID 和 Key Result ID。 此值为空时插入 OKR 下所有的目标和关键结果。                                                      |
 | objectives.objective_id | string           | required | -   | OKR 中目标的 ID。                                                                                                             |
 | objectives.kr_ids       | array(string)    | optional | -   | 关键结果的 ID 列表。 此值为空时插入当前目标下的所有关键结果。                                                                                        |
@@ -694,7 +551,7 @@ OKR 进展信息块的内容实体。
 ```
 
 ### ReferenceSynced
-引用同步块。通过复制粘贴得到的同步块称为引用同步块，该 Block 目前只读，不支持创建。获取引用同步块内容详见：[如何获取引用同步块的内容](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/faq#19b71234)
+引用同步块。通过复制粘贴得到的同步块称为引用同步块，该 Block 目前只读，不支持创建。获取引用同步块内容详见：[如何获取引用同步块的内容](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/faq#19b71234)
 
 ```json
 {
@@ -707,7 +564,6 @@ OKR 进展信息块的内容实体。
 | --------------- | --------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | source_block_id            | string   | optional |  源同步块的 Block ID |
 | source_document_id     | string | optional |    源文档的文档 ID        |
-
 
 
 ### Sheet
@@ -790,7 +646,7 @@ Wiki 新版子目录块的内容实体。
 
 ### TableCell
 
-单元格块的内容实体，为空结构体。了解如何在单元格块中填充内容，参考[文档常见问题-如何插入带内容的表格](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/faq#125f6a42)。
+单元格块的内容实体，为空结构体。了解如何在单元格块中填充内容，参考[文档常见问题-如何插入带内容的表格](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/faq#125f6a42)。
 ```
 {}
 ```
@@ -799,7 +655,7 @@ Wiki 新版子目录块的内容实体。
 
 任务块的内容实体。
 注意
-你只能获取任务块的任务 ID，无法创建或编辑任务块。如需获取任务详情，调用[获取任务详情](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/get)接口。
+你只能获取任务块的任务 ID，无法创建或编辑任务块。如需获取任务详情，调用[获取任务详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/get)接口。
 
 ```json
 {
@@ -908,7 +764,7 @@ Wiki 新版子目录块的内容实体。
 | background_color | enum(FontBackgroundColor) | optional | -     | 字体背景色。详情参考 [FontBackgroundColor 枚举](#45c9c07b)。                                                                                                                                                                                     |
 | link             | object(Link)              | optional | -     | 超链接                                                                                                                                                                                                                      |
 | link.url         | string                    | required | -     | 超链接指向的 URL（需要 url_encode）<br>**示例值**："https%3A%2F%2Fopen.feishu.cn%2F"                                                                                                                                                                                                                      |
-| comment_ids      | array(string)             | optional | -     | 评论 ID 列表。在创建块时，不支持传入评论 ID；在更新文本块的 Element 时，允许将对应版本已存在的评论 ID 移动到同一个块内的任意 Element 中，但不支持传入新的评论 ID。如需查询评论内容请参考[获取回复](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file-comment-reply/list)接口。 |
+| comment_ids      | array(string)             | optional | -     | 评论 ID 列表。在创建块时，不支持传入评论 ID；在更新文本块的 Element 时，允许将对应版本已存在的评论 ID 移动到同一个块内的任意 Element 中，但不支持传入新的评论 ID。如需查询评论内容请参考[获取回复](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file-comment-reply/list)接口。 |
 
 ### TextElementData
 
@@ -939,7 +795,7 @@ Wiki 新版子目录块的内容实体。
 ```
 | 名称                 | 数据类型                     | 属性       | 默认值 | 描述                                                                                                                     |
 | ------------------ | ------------------------ | -------- | --- | ---------------------------------------------------------------------------------------------------------------------- |
-| user_id            | string                   | required | -   | 用户 OpenID。参考[如何获取自己的 User ID](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)获取 user_id。 |
+| user_id            | string                   | required | -   | 用户 OpenID。参考[如何获取自己的 User ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)获取 user_id。 |
 | text_element_style | object(TextElementStyle) | optional | -   | 文本局部样式。详情参考 [TextElementStyle 数据结构](#669a5f7b)。                                                                                    |
 
 #### MentionDoc
@@ -1056,7 +912,7 @@ Wiki 子目录块的内容实体。
 ```
 | 名称         | 数据类型   | 属性       | 默认值 | 描述                                                                                                                                             |
 | ---------- | ------ | -------- | --- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| wiki_token | string | optional | -   | 知识库 token ，默认为当前文档所属知识库节点 token。了解如何获取知识库节点 token，参考[获取知识空间节点信息](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2/space/get_node)。 |
+| wiki_token | string | optional | -   | 知识库 token ，默认为当前文档所属知识库节点 token。了解如何获取知识库节点 token，参考[获取知识空间节点信息](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2/space/get_node)。 |
 
 
 ### Undefined
@@ -1264,7 +1120,7 @@ Bitable Block 的视图类型。
 
 ### Emoji
 
-高亮块（Callout）Block 支持的表情。详情参考[表情（Emoji）的枚举值](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/emoji)。
+高亮块（Callout）Block 支持的表情。详情参考[表情（Emoji）的枚举值](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/emoji)。
 
 ### FontBackgroundColor
 

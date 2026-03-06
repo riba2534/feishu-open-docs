@@ -9,83 +9,26 @@ updateTime: "1714445591000"
 调用该接口用于回复会议室日程实例，支持回复未签到释放、提前结束释放、被管理员置为接受、被管理员置为拒绝。
 
 :::note
-**说明**：你可以先调用[查询会议室忙闲](/ssl:ttdoc/ukTMukTMukTM/uIDOyUjLygjM14iM4ITN)接口，获取指定会议室的某一日程的 uid、original_time 信息，然后再调用本接口回复会议室日程。<BR>
+**说明**：你可以先调用[查询会议室忙闲](https://open.larkoffice.com/document/ukTMukTMukTM/uIDOyUjLygjM14iM4ITN)接口，获取指定会议室的某一日程的 uid、original_time 信息，然后再调用本接口回复会议室日程。<BR>
 **ID说明**：日程 ID（event_id）格式为 `<Uid>_<Original time>`，因此你可以通过 event_id 获取日程的 Uid 和 Original time。例如，日程 ID 为 `c32537e6-e0a8-4506-b42f-47440655cdb4_0` ，则 Uid 为 `c32537e6-e0a8-4506-b42f-47440655cdb4`、Original time 为 `0`。
 :::
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/meeting_room/instance/reply</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-       <md-tr>
-     <md-th>支持的应用类型</md-th>
-      <md-td>
-	  <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-   </md-tr>
-    
-    <md-tr>
-      <md-th>
- 权限要求
- <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-</md-th>
-      <md-td>
-<md-perm name="calendar:room:readonly" desc="获取会议室信息" support_app_types="custom,isv" tags="">获取会议室信息</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
-### 请求头
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 18%;">名称</md-th>  
-      <md-th style="width: 15%;">类型</md-th>  
-       <md-th style="width: 15%;">必填</md-th>  
-      <md-th>描述</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>Authorization</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
- 
-**值格式**："Bearer `access_token`"
 
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-          
- [了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-	</md-td>
-</md-tr>
-     <md-tr> 
-      <md-td>Content-Type</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-     <md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-   
-  </md-tbody> 
-</md-table>
-:::
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/meeting_room/instance/reply |
+| HTTP Method | POST |
+| 支持的应用类型 | custom,isv |
+| 权限要求  调用该 API 所需的权限。开启其中任意一项权限即可调用 | `calendar:room:readonly` 获取会议室信息 |
+
+### 请求头
+
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token`   **值格式**："Bearer `access_token`" **示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"             [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
+
 
 ### 请求体
 
@@ -126,6 +69,6 @@ updateTime: "1714445591000"
 
 ### 错误码
 
-可前往查阅[通用错误码](/ssl:ttdoc/ukTMukTMukTM/ugjM14COyUjL4ITN)。
+可前往查阅[通用错误码](https://open.larkoffice.com/document/ukTMukTMukTM/ugjM14COyUjL4ITN)。
 
 

@@ -12,43 +12,18 @@ updateTime: "1745920727000"
 
 ### 我应该如何使用 OpenAPI 提供的开放能力？
 
-飞书的 OpenAPI 开放能力基于 Restful 接口对外提供服务，使用指南参见[流程概述](/ssl:ttdoc/ukTMukTMukTM/uITNz4iM1MjLyUzM)。
+飞书的 OpenAPI 开放能力基于 Restful 接口对外提供服务，使用指南参见[流程概述](https://open.larkoffice.com/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)。
 
 ### 企业自建应用和商店应用 ISV 的区别是什么？
 
-区别概述如下表，如需了解详细说明，可参见[自建应用与商店应用](/ssl:ttdoc/home/app-types-introduction/self-built-apps-and-store-apps)。
+区别概述如下表，如需了解详细说明，可参见[自建应用与商店应用](https://open.larkoffice.com/document/home/app-types-introduction/self-built-apps-and-store-apps)。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">应用类型</md-th>
-<md-th style="width:40%">简介</md-th>
-<md-th style="width:40%">使用差异</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>企业自建应用</md-td>
-<md-td>企业自建应用是指在同一个租户内可以使用的应用，通常情况下推荐你使用企业自建应用来满足业务所需的功能。了解如何开发企业自建应用，参见[企业自建应用开发流程](/ssl:ttdoc/home/introduction-to-custom-app-development/self-built-application-development-process)。</md-td>
-<md-td>使用企业自建应用调用 API 时，需要调用[自建应用获取 tenant_access_token](/ssl:ttdoc/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token_internal)获取访问凭证来调用 API。</md-td>
-</md-tr>
+| 应用类型 | 简介 | 使用差异 |
+| --- | --- | --- |
+| 企业自建应用 | 企业自建应用是指在同一个租户内可以使用的应用，通常情况下推荐你使用企业自建应用来满足业务所需的功能。了解如何开发企业自建应用，参见[企业自建应用开发流程](https://open.larkoffice.com/document/home/introduction-to-custom-app-development/self-built-application-development-process)。 | 使用企业自建应用调用 API 时，需要调用[自建应用获取 tenant_access_token](https://open.larkoffice.com/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token_internal)获取访问凭证来调用 API。 |
+| 商店应用 | 商店应用是指注册在应用商店中的、多个租户都可以使用的应用。创建商店应用需要单独进行申请，流程说明参见[商店应用上架流程](https://open.larkoffice.com/document/uMzNwEjLzcDMx4yM3ATM/ugzNwEjL4cDMx4CO3ATM)。 | 使用商店应用调用 API 时，需要调用[商店应用获取 tenant_access_token](https://open.larkoffice.com/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token)接口获取访问凭证来调用 API。 > **Tip**: 获取商店应用的 tenant_access_token 时需要传入 tenant_key 参数（即飞书租户的唯一标识）。原因是商店应用在不同租户内 AppID 是相同的，如果你需要跨租户使用商店应用调用 API，则需要使用当前租户的 tenant_key 换取可用的 tenant_access_token。 |
 
-<md-tr>
-<md-td>商店应用</md-td>
-<md-td>商店应用是指注册在应用商店中的、多个租户都可以使用的应用。创建商店应用需要单独进行申请，流程说明参见[商店应用上架流程](/ssl:ttdoc/uMzNwEjLzcDMx4yM3ATM/ugzNwEjL4cDMx4CO3ATM)。</md-td>
-<md-td>使用商店应用调用 API 时，需要调用[商店应用获取 tenant_access_token](/ssl:ttdoc/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token)接口获取访问凭证来调用 API。
-
-<md-alert type="tip" icon="none">
-获取商店应用的 tenant_access_token 时需要传入 tenant_key 参数（即飞书租户的唯一标识）。原因是商店应用在不同租户内 AppID 是相同的，如果你需要跨租户使用商店应用调用 API，则需要使用当前租户的 tenant_key 换取可用的 tenant_access_token。
-</md-alert>
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ### 我应该如何调试 OpenAPI？
 
@@ -72,11 +47,11 @@ updateTime: "1745920727000"
 
 ### 机器人是否支持与用户单聊？
 
-- 应用机器人支持与[可用范围](/ssl:ttdoc/home/introduction-to-scope-and-authorization/availability)内的用户进行单聊。例如[发送消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)时，设置消息接收者为指定用户。
+- 应用机器人支持与[可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)内的用户进行单聊。例如[发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)时，设置消息接收者为指定用户。
 
 - 群自定义机器人仅能向所在群推送消息。
 
-不同类型的机器人介绍，参见[机器人概述](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/bot-v3/bot-overview)。
+不同类型的机器人介绍，参见[机器人概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/bot-v3/bot-overview)。
 
 ### 是否支持通过 OpenAPI 创建机器人？
 
@@ -110,7 +85,7 @@ updateTime: "1745920727000"
         ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/2d5235b1ec4e4a0c46e2c06c75d36ef4_AK4zmTael8.png?height=768&lazyload=true&maxWidth=600&width=2882)
     2. 在 **版本详情** 自定义配置应用版本信息后，点击 **保存**，并点击 **确认发布**。
 
-		**注意**：需要配置[应用可用范围](/ssl:ttdoc/home/introduction-to-scope-and-authorization/availability)，只有在可用范围内的用户可以使用该应用。
+		**注意**：需要配置[应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)，只有在可用范围内的用户可以使用该应用。
     3. 等待应用审核通过。
 
 		应用审核通过后即为发布上线状态，后续你可以在飞书中搜索并使用该应用机器人。
@@ -121,7 +96,7 @@ updateTime: "1745920727000"
 
 ### 提示机器人对某个用户不可见（the bot is invisible to the user），应该如何配置可见性？
 
-只有在应用机器人可用范围内的用户可以使用该机器人。配置步骤如下，详细介绍参见[配置应用可用范围](/ssl:ttdoc/home/introduction-to-scope-and-authorization/availability)。
+只有在应用机器人可用范围内的用户可以使用该机器人。配置步骤如下，详细介绍参见[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。
 
 1. 登录[开发者后台](https://open.feishu.cn/app)。
 2. 选择某一应用，进入应用详情页 
@@ -139,7 +114,7 @@ updateTime: "1745920727000"
 
 ### Webhook 自定义机器人是什么？我应该怎么通过 webhook 向机器人发消息？
 
-飞书群聊内的 **自定义机器人**，与你开发的 **应用机器人** 有所不同。说明如下，详细介绍参见[机器人类型](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/bot-v3/bot-overview#00fad9c5)。
+飞书群聊内的 **自定义机器人**，与你开发的 **应用机器人** 有所不同。说明如下，详细介绍参见[机器人类型](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/bot-v3/bot-overview#00fad9c5)。
 
 - 自定义机器人只能用于在群聊中自动发送通知，不能响应用户@机器人的消息，不能获得任何的用户、租户信息。发送通知时，需要基于机器人的 webhook 传输数据。
 
@@ -148,20 +123,20 @@ updateTime: "1745920727000"
 
 ### 机器人聊天窗口没有出现对话框 （输入框）
 
-应用机器人必须订阅[接收消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件，使机器人具备接收用户消息的能力后，才会在聊天窗口出现对话框 （输入框）。解决方案：
+应用机器人必须订阅[接收消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件，使机器人具备接收用户消息的能力后，才会在聊天窗口出现对话框 （输入框）。解决方案：
 
 1. 登录[飞书开发者后台](https://open.feishu.cn/app)。
 2. 进入应用机器人详情页。
 	
 3. 在 **权限管理** 功能页，确保已经以应用身份开通了 **读取用户发给机器人的单聊消息**（im:message.p2p_msg:readonly）权限。
 
-	了解 API 权限，参见[申请 API 权限](/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN)。
+	了解 API 权限，参见[申请 API 权限](https://open.larkoffice.com/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN)。
 
 	![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/1428d09110d60e1e084f5ad2d8f75d1c_RKjsKqlTil.png?height=448&lazyload=true&maxWidth=600&width=2942)
     
-4. 在 **事件与回调** > **事件配置** 功能页，确保已经以应用身份订阅[接收消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件。
+4. 在 **事件与回调** > **事件配置** 功能页，确保已经以应用身份订阅[接收消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件。
 
-	了解事件订阅，参见[事件概述](/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。
+	了解事件订阅，参见[事件概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。
 
 	![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/5592c656b270a67b5bda4e03f7d081a3_2BRTHHWiHo.png?height=1170&lazyload=true&maxWidth=600&width=2942)
 
@@ -175,153 +150,17 @@ updateTime: "1745920727000"
 
 不同类型的机器人实现 @ 的方式有所不同，说明参考下表。
 
-- @ 单个用户时需要使用不同类型的用户 ID，获取方式参见[如何获取不同的用户 ID](/ssl:ttdoc/home/user-identity-introduction/open-id)。
+- @ 单个用户时需要使用不同类型的用户 ID，获取方式参见[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。
 - @ 所有人时，固定取值 `all`，且需要注意在群聊中，如果群主开启了 `仅群主和群管理员可@所有人` 配置，且机器人不是群主或管理员，则机器人无法 @ 所有人。
 
 	![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/7679460f4e1b53b2eea22190e26f98f2_RVg0xRTvik.png?height=1029&lazyload=true&maxWidth=500&width=1640)
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:25%">机器人类型</md-th>
-<md-th style="width:75%">@ 方式介绍</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
+| 机器人类型 | @ 方式介绍 |
+| --- | --- |
+| 应用机器人 | 以下列举了应用机器人发送消息是如何实现 @ 功能。应用机器人支持发送的消息类型、使用详情，参见[发送消息内容结构](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/im-v1/message/create_json)。    **发送文本消息实现 @**    `at` 标签示意： ```json  // at 指定用户 Name //可以填入用户的 open_id，union_id 或 user_id 来 at 指定人 // at 所有人 所有人 ```  例如，在[发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)接口中，请求体中的 `content` 参数示例值： ```json  {     "content": " {\"text\":\"Tom text content\"}" } ```     **发送富文本消息实现 @**    `at`标签示意： ```json  // at 指定用户 {     "tag": "at",     "user_id": "ou_xxxxxxx", //可以填入用户的 open_id，union_id 或 user_id 来 at 指定人     "user_name": "tom" // 用户名称，选填 } // at 所有人 {     "tag": "at",     "user_id": "all", //取值使用 "all" 来 at 所有人     "user_name": "所有人" } ```  例如，在[发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)接口中，请求体中的 `content` 参数示例值： ```json  {   "zh_cn": {     "title": "我是一个标题",     "content": [       [         {           "tag": "text",           "text": "第一行 :"         },         {           "tag": "at",           "user_id": "ou_xxxxxx", //可以填入用户的 open_id，union_id 或 user_id 来 at 指定人           "user_name": "tom" // 用户名称，选填         }       ],       [         {           "tag": "text",           "text": "第二行:"         },         {           "tag": "at",           "user_id": "all",  //取值使用 "all" 来 at 所有人           "user_name": "所有人"         }       ]     ]   } } ```     **发送卡片消息实现 @**    在卡片的[普通文本](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/plain-text)组件或者[富文本（Markdown）](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/rich-text)组件内，支持 @ 指定人或者所有人。 ```json  // at 指定用户      //使用用户的 open_id 来 at 指定人      //使用用户的 user_id 来 at 指定人      //使用用户的邮箱地址来 at 指定人 // at 所有人      ```  例如，在[发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)接口中，请求体中的 `content` 参数示例值： ```json  {   "config": {     "wide_screen_mode": true   },   "header": {     "title": {       "tag": "plain_text",       "content": "这是卡片标题内容"     },     "template": "blue"   },   "elements": [     {       "tag": "div",       "text": {         "content": "at所有人 \n at指定人",         "tag": "lark_md"       }     }   ] } ``` |
+| 群自定义机器人 | 群自定义机器人的使用方式与应用机器人不完全相同，详细介绍及 @ 方式，参见[自定义机器人使用指南](https://open.larkoffice.com/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)。 |
 
-
-<md-tr>
-<md-td>应用机器人</md-td>
-<md-td>
-以下列举了应用机器人发送消息是如何实现 @ 功能。应用机器人支持发送的消息类型、使用详情，参见[发送消息内容结构](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/im-v1/message/create_json)。
-  
-**发送文本消息实现 @**
-  
-`at` 标签示意：
-
-```json 
-// at 指定用户
-<at user_id="ou_xxx">Name</at> //可以填入用户的 open_id，union_id 或 user_id 来 at 指定人
-// at 所有人
-<at user_id="all">所有人</at>
-``` 
-
-例如，在[发送消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)接口中，请求体中的 `content` 参数示例值：
-
-```json 
-{
-    "content": " {\"text\":\"<at user_id=\\\"ou_xxxxxxxx\\\">Tom</at> text content\"}"
-}
-``` 
-  
-**发送富文本消息实现 @**
-  
-`at`标签示意：
-
-```json 
-// at 指定用户
-{
-    "tag": "at",
-    "user_id": "ou_xxxxxxx", //可以填入用户的 open_id，union_id 或 user_id 来 at 指定人
-    "user_name": "tom" // 用户名称，选填
-}
-
-// at 所有人
-{
-    "tag": "at",
-    "user_id": "all", //取值使用 "all" 来 at 所有人
-    "user_name": "所有人"
-}
-``` 
-例如，在[发送消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)接口中，请求体中的 `content` 参数示例值：
-
-```json 
-{
-  "zh_cn": {
-    "title": "我是一个标题",
-    "content": [
-      [
-        {
-          "tag": "text",
-          "text": "第一行 :"
-        },
-        {
-          "tag": "at",
-          "user_id": "ou_xxxxxx", //可以填入用户的 open_id，union_id 或 user_id 来 at 指定人
-          "user_name": "tom" // 用户名称，选填
-        }
-      ],
-      [
-        {
-          "tag": "text",
-          "text": "第二行:"
-        },
-        {
-          "tag": "at",
-          "user_id": "all",  //取值使用 "all" 来 at 所有人
-          "user_name": "所有人"
-        }
-      ]
-    ]
-  }
-}
-``` 
-  
-**发送卡片消息实现 @**
-  
-在卡片的[普通文本](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/plain-text)组件或者[富文本（Markdown）](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/rich-text)组件内，支持 @ 指定人或者所有人。
-
-```json 
-// at 指定用户
-    <at id={{open_id}}></at> //使用用户的 open_id 来 at 指定人
-    <at id={{user_id}}></at> //使用用户的 user_id 来 at 指定人
-    <at email=test@email.com></at> //使用用户的邮箱地址来 at 指定人
-// at 所有人
-    <at id=all></at>
-``` 
-
-例如，在[发送消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)接口中，请求体中的 `content` 参数示例值：
-
-```json 
-{
-  "config": {
-    "wide_screen_mode": true
-  },
-  "header": {
-    "title": {
-      "tag": "plain_text",
-      "content": "这是卡片标题内容"
-    },
-    "template": "blue"
-  },
-  "elements": [
-    {
-      "tag": "div",
-      "text": {
-        "content": "at所有人<at id=all></at> \n at指定人<at id=ou_xxxxxx></at>",
-        "tag": "lark_md"
-      }
-    }
-  ]
-}
-``` 
-</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>群自定义机器人</md-td>
-<md-td>
-群自定义机器人的使用方式与应用机器人不完全相同，详细介绍及 @ 方式，参见[自定义机器人使用指南](/ssl:ttdoc/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)。
-  
-
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ### 自定义机器人的 Webhook 地址存在新旧版本，有何区别？
 
@@ -331,7 +170,7 @@ V1、V2 版本可通过 webhook 地址区分。例如：
 - `https://open.feishu.cn/open-apis/bot/hook/xxxx`，未包含版本信息，即 V1 版本。
 
 :::warning
-推荐你使用 V2 版本的 webhook。具体介绍参见[自定义机器人使用指南](/ssl:ttdoc/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)。
+推荐你使用 V2 版本的 webhook。具体介绍参见[自定义机器人使用指南](https://open.larkoffice.com/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)。
 :::
 
 如果你所调用的 webhook 地址格式为 `https://open.feishu.cn/open-apis/bot/hook/xxxx`，则表示你使用的是旧版本的 webhook，该类 webhook 仅支持发送纯文本消息，可以配置标题（title）和正文（text）。以任意方式向该 webhook 发起 HTTP POST 请求，即可实现向群组发送纯文本消息。
@@ -360,8 +199,8 @@ curl -X POST -H "Content-Type: application/json" -d '{"title": "Hello Feishu", "
 
 不同类型的机器人能力不同，说明如下：
 
-- [自定义机器人](/ssl:ttdoc/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)只能发送消息，不支持接收、响应用户发来的消息。
-- [应用机器人](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)可以发送消息，并且在为应用订阅[接收消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件后，可以根据应用实际开通的权限接收不同场景下的消息。
+- [自定义机器人](https://open.larkoffice.com/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)只能发送消息，不支持接收、响应用户发来的消息。
+- [应用机器人](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)可以发送消息，并且在为应用订阅[接收消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件后，可以根据应用实际开通的权限接收不同场景下的消息。
 
     - 当应用具备 **获取用户发给机器人的单聊消息（   
 im:message.p2p_msg）** 或者 **读取用户发给机器人的单聊消息（im:message.p2p_msg:readonly）** 权限时，可接收与机器人单聊会话中用户发送的所有消息。
@@ -371,17 +210,17 @@ im:message.p2p_msg）** 或者 **读取用户发给机器人的单聊消息（im
 
     - 当具备 **获取用户在群组中@机器人的消息（im:message.group_at_msg）** 或者 **接收群聊中@机器人消息事件（im:message.group_at_msg:readonly）** 权限时，可接收机器人所在群聊中用户 @ 机器人的消息。
 
-    当你为应用订阅事件，并在你本地服务端接收到用户发来的消息后，你需要在本地服务端内自行配置机器人的响应策略，并调用[发送消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)或者[回复消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/reply)接口响应用户。
+    当你为应用订阅事件，并在你本地服务端接收到用户发来的消息后，你需要在本地服务端内自行配置机器人的响应策略，并调用[发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)或者[回复消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/reply)接口响应用户。
     
 ### 机器人是否支持 /help 这类斜线命令（slash command）？
 
-机器人本身不支持。如果你使用的是应用机器人，可以为机器人订阅[接收消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件。当用户向机器人发送消息时，通过你本地服务器接收用户发送的消息内容，并在本地服务器内对消息进行处理，最后调用[回复消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/reply)等接口响应用户的消息。
+机器人本身不支持。如果你使用的是应用机器人，可以为机器人订阅[接收消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件。当用户向机器人发送消息时，通过你本地服务器接收用户发送的消息内容，并在本地服务器内对消息进行处理，最后调用[回复消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/reply)等接口响应用户的消息。
 
 ### 使用机器人发送的消息出现中文乱码是什么原因？
 
 该问题通常是因为字符编码不正确导致的。你可以：
 
-- 请求发送消息时，在请求头中声明 utf-8 字符集。例如，调用[发送消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)接口时，需要在请求头内设置 `Content-Type` 参数为 `application/json; charset=utf-8`。
+- 请求发送消息时，在请求头中声明 utf-8 字符集。例如，调用[发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)接口时，需要在请求头内设置 `Content-Type` 参数为 `application/json; charset=utf-8`。
 
 - 检查你本地设备的语言环境，需要为中文环境。
 
@@ -398,9 +237,9 @@ im:message.p2p_msg）** 或者 **读取用户发给机器人的单聊消息（im
 
 ### 已经推送出去的消息，能进行更改吗？
 
-- 卡片类型消息，支持通过[更新应用发送的消息卡片](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/patch)接口更新；支持通过[延时更新消息卡片](/ssl:ttdoc/ukTMukTMukTM/uMDO1YjLzgTN24yM4UjN)接口更新。卡片交互的完整链路可参考[配置卡片交互](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)。
+- 卡片类型消息，支持通过[更新应用发送的消息卡片](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/patch)接口更新；支持通过[延时更新消息卡片](https://open.larkoffice.com/document/ukTMukTMukTM/uMDO1YjLzgTN24yM4UjN)接口更新。卡片交互的完整链路可参考[配置卡片交互](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)。
 
-- 文本、富文本类型的消息，支持通过[编辑消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/update)接口，进行更新。
+- 文本、富文本类型的消息，支持通过[编辑消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/update)接口，进行更新。
 
 其他类型的消息暂不支持更改。
 
@@ -413,18 +252,18 @@ im:message.p2p_msg）** 或者 **读取用户发给机器人的单聊消息（im
     - GIF 图片分辨率不能超过 2000 x 2000，其他图片分辨率不能超过 12000 x 12000。
     - 用于设置头像的图片，分辨率不能超过 4096 x 4096。
 
-如需上传高分辨率图片，可使用[上传文件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/create)接口，将图片作为文件进行上传。
+如需上传高分辨率图片，可使用[上传文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/create)接口，将图片作为文件进行上传。
 
 ### 可以通过接口给外部联系人发送消息吗？
 
-支持，但需要为机器人开通对外共享能力，具体操作参见[机器人支持外部群和外部用户单聊](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/develop-robots/add-bot-to-external-group)。
+支持，但需要为机器人开通对外共享能力，具体操作参见[机器人支持外部群和外部用户单聊](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/develop-robots/add-bot-to-external-group)。
 
 ### 获取消息中的资源文件接口，可以获取别人发送的消息中的资源文件吗?
 
-可以。只要机器人与被查询的消息在同一会话内，便可让机器人先获取消息的 message_id（[获取会话历史消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/list)），然后使用 message_id 调用[获取消息中的资源文件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-resource/get)接口即可。
+可以。只要机器人与被查询的消息在同一会话内，便可让机器人先获取消息的 message_id（[获取会话历史消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/list)），然后使用 message_id 调用[获取消息中的资源文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-resource/get)接口即可。
 
 :::warning
-**注意**：暂不支持获取[合并转发消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/merge_forward)中的子消息的资源文件。
+**注意**：暂不支持获取[合并转发消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/merge_forward)中的子消息的资源文件。
 :::
 
 ### 如何设置消息中的链接打开方式（飞书导航打开、浏览器打开）？
@@ -435,23 +274,22 @@ im:message.p2p_msg）** 或者 **读取用户发给机器人的单聊消息（im
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/615d09f69e96daaca5d5c3d8ccfc7003_sVBAD42VwI.png?height=666&lazyload=true&maxWidth=600&width=1948)
 
 
-
 ## 消息卡片相关
 
 ### 消息卡片能批量发给多人吗？
 
-能。调用[批量发送消息](/ssl:ttdoc/ukTMukTMukTM/ucDO1EjL3gTNx4yN4UTM)接口，注意：
+能。调用[批量发送消息](https://open.larkoffice.com/document/ukTMukTMukTM/ucDO1EjL3gTNx4yN4UTM)接口，注意：
 
 - 请求参数中 `msg_type` 为 `interactive`，`content` 取值为 `card:{}` 结构体。
-- 批量发送的卡片消息不支持批量更新（[更新应用发送的消息卡片](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/patch)接口只能传入 `om_xxx` 格式的消息 ID，不支持传入批量发送消息接口的 `bm_xxx` 格式的 ID）。
+- 批量发送的卡片消息不支持批量更新（[更新应用发送的消息卡片](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/patch)接口只能传入 `om_xxx` 格式的消息 ID，不支持传入批量发送消息接口的 `bm_xxx` 格式的 ID）。
 
 ### 消息卡片内是否支持 @ 单个成员？
 
-支持。语法参见[卡片普通文本](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/plain-text)或[卡片富文本](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/rich-text)。
+支持。语法参见[卡片普通文本](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/plain-text)或[卡片富文本](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/rich-text)。
 
 ### 消息卡片回调超时时间是多少？
 
-卡片回调超时时间为 **3s**，不支持自定义。如果业务方在 3s 内无法返回可以先返回`{}`，然后使用在回调中的 token [异步更新卡片](/ssl:ttdoc/ukTMukTMukTM/uMDO1YjLzgTN24yM4UjN)。
+卡片回调超时时间为 **3s**，不支持自定义。如果业务方在 3s 内无法返回可以先返回`{}`，然后使用在回调中的 token [异步更新卡片](https://open.larkoffice.com/document/ukTMukTMukTM/uMDO1YjLzgTN24yM4UjN)。
 
 ## 事件相关
 
@@ -471,76 +309,40 @@ im:message.p2p_msg）** 或者 **读取用户发给机器人的单聊消息（im
 
 - 根据接口实际返回的报错信息确认错误原因。
 - 参考 API 对应的帮助中心文档，查看错误码的排查建议。
-- [通用错误码](/ssl:ttdoc/ukTMukTMukTM/ugjM14COyUjL4ITN)文档中记录了服务端常用的错误码，可在其中搜索错误码的排查建议。
+- [通用错误码](https://open.larkoffice.com/document/ukTMukTMukTM/ugjM14COyUjL4ITN)文档中记录了服务端常用的错误码，可在其中搜索错误码的排查建议。
 
 ### 为什么我为应用申请了 API 权限，但是还是提示没权限？
 
 - 申请权限之后，需要进行应用版本发布，发布成功后权限才可以生效。
-    - 企业自建应用开发流程参考[企业自建应用开发流程](/ssl:ttdoc/home/introduction-to-custom-app-development/self-built-application-development-process)。
-    - 商店应用开发流程参考[商店应用上架流程](/ssl:ttdoc/uMzNwEjLzcDMx4yM3ATM/ugzNwEjL4cDMx4CO3ATM)。
+    - 企业自建应用开发流程参考[企业自建应用开发流程](https://open.larkoffice.com/document/home/introduction-to-custom-app-development/self-built-application-development-process)。
+    - 商店应用开发流程参考[商店应用上架流程](https://open.larkoffice.com/document/uMzNwEjLzcDMx4yM3ATM/ugzNwEjL4cDMx4CO3ATM)。
 - 商店应用的权限，除了需要发布应用外，还需要在[管理后台](https://admin.feishu.cn/)进行授权，才可以生效。
 
 ### 我在调用某个接口的时候触发了频率控制策略，具体的频控策略是怎样的呢？
 
-频控策略是指为保障后台服务的稳定性，系统对接口增加一定的调用频率限制的策略。具体的频控策略可参见[频控策略](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)。
+频控策略是指为保障后台服务的稳定性，系统对接口增加一定的调用频率限制的策略。具体的频控策略可参见[频控策略](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)。
 
 ### 频控错误码对应的具体触发的频控策略是什么？
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">错误码</md-th>
-<md-th style="width:40%">频控策略</md-th>
-<md-th style="width:40%">建议</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>230020</md-td>
-<md-td>发送消息（V1）接口触发群维度的发消息限流</md-td>
-<md-td>单群发消息的 QPS 不超过 5 QPS，详情参考[频控策略](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-</md-tr>
+| 错误码 | 频控策略 | 建议 |
+| --- | --- | --- |
+| 230020 | 发送消息（V1）接口触发群维度的发消息限流 | 单群发消息的 QPS 不超过 5 QPS，详情参考[频控策略](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 11232 | 发消息接口（V4）触发消息系统内部的整体限流 | 请稍后重试。 |
+| 11233 | 发消息接口（V4）触发群维度的发消息限流 | 单群发消息的 QPS 不超过 5 QPS，详情参考[频控策略](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 11247 | 批量发送消息触发每日额度限制 | 单个应用每天通过该接口发送的总消息条数不超过50万，请合理分配批量发送的额度。 |
+| 99991400 | 触发接口频控 | 请求过于频繁，请降低请求频次，调用频率不高于[频控策略](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 
-<md-tr>
-<md-td>11232</md-td>
-<md-td>发消息接口（V4）触发消息系统内部的整体限流</md-td>
-<md-td>请稍后重试。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>11233</md-td>
-<md-td>发消息接口（V4）触发群维度的发消息限流</md-td>
-<md-td>单群发消息的 QPS 不超过 5 QPS，详情参考[频控策略](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>11247</md-td>
-<md-td>批量发送消息触发每日额度限制</md-td>
-<md-td>单个应用每天通过该接口发送的总消息条数不超过50万，请合理分配批量发送的额度。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>99991400</md-td>
-<md-td>触发接口频控</md-td>
-<md-td>请求过于频繁，请降低请求频次，调用频率不高于[频控策略](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-</md-tr>
-
-  
-</md-tbody>
-</md-table>
-:::
 
 ### 在调用发送消息接口时，提示请求中的消息内容有问题，我应该如何排查解决问题？
 
-不同消息类型的格式可参考[发送消息Content](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/im-v1/message/create_json)，其中，富文本消息的 JSON 转 String 的规则，总结如下：
+不同消息类型的格式可参考[发送消息Content](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/im-v1/message/create_json)，其中，富文本消息的 JSON 转 String 的规则，总结如下：
 
 - JSON 整体需使用 `" "` 符号括起来。
 - 使用 `\` 符进行转义。
 - 消息内容中如果需要换行，应在 `\n` 的基础上增加转义，如 `\\n`。
 - 在 String 中不能含有统一码（unicode）。
-- 如果想发送一些特殊字符，建议使用卡片 Markdown 的方式，使用方法参见[卡片富文本](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/rich-text)。
+- 如果想发送一些特殊字符，建议使用卡片 Markdown 的方式，使用方法参见[卡片富文本](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/rich-text)。
 
 发送消息的请求体示例：
 
@@ -556,4 +358,4 @@ im:message.p2p_msg）** 或者 **读取用户发给机器人的单聊消息（im
 
 ## 相关链接
 
-[服务端通用问题](/ssl:ttdoc/ugTN1YjL4UTN24CO1UjN/uEjN1YjLxYTN24SM2UjN)
+[服务端通用问题](https://open.larkoffice.com/document/ugTN1YjL4UTN24CO1UjN/uEjN1YjLxYTN24SM2UjN)

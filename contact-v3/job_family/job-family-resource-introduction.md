@@ -10,103 +10,21 @@ updateTime: "1720167723000"
 
 ## 字段说明
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">名称</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:50%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>name</md-td>
-<md-td>string</md-td>
-<md-td>序列名称，当前租户内唯一。取值支持中、英文以及符号。
-  
-**数据校验规则**：`1` 字符 ~ `100` 字符 
-</md-td>
-</md-tr>
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| name | string | 序列名称，当前租户内唯一。取值支持中、英文以及符号。    **数据校验规则**：`1` 字符 ~ `100` 字符 |
+| description | string | 序列描述。 |
+| parent_job_family_id | string | 上级序列 ID。序列支持设置多个层级，即一个序列下可以添加子序列。 |
+| status | boolean | 是否启用序列。只有已启用的序列可以设置为用户属性。 **可选值有**： - true：启用 - false：禁用 |
+| i18n_name | i18n_content[] | 多语言序列名称。 |
+| └ locale | string | 语言版本。可选值有： - zh_cn：中文 - en_us：英语 - ja_jp：日语 |
+| └ value | string | 语言版本对应的值。 |
+| i18n_description | i18n_content[] | 多语言序列描述。 |
+| └ locale | string | 语言版本。可选值有： - zh_cn：中文 - en_us：英语 - ja_jp：日语 |
+| └ value | string | 语言版本对应的值。 |
+| job_family_id | string | 序列 ID，即序列在当前租户内的唯一标识。 |
 
-<md-tr>
-<md-td>description</md-td>
-<md-td>string</md-td>
-<md-td>序列描述。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>parent_job_family_id</md-td>
-<md-td>string</md-td>
-<md-td>上级序列 ID。序列支持设置多个层级，即一个序列下可以添加子序列。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>status</md-td>
-<md-td>boolean</md-td>
-<md-td>是否启用序列。只有已启用的序列可以设置为用户属性。
-
-**可选值有**：
-- true：启用
-- false：禁用
-</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>i18n_name</md-td>
-<md-td>i18n_content[]</md-td>
-<md-td>多语言序列名称。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ locale</md-td>
-<md-td>string</md-td>
-<md-td>语言版本。可选值有：
-
-- zh_cn：中文
-- en_us：英语
-- ja_jp：日语</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>└ value</md-td>
-<md-td>string</md-td>
-<md-td>语言版本对应的值。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>i18n_description</md-td>
-<md-td>i18n_content[]</md-td>
-<md-td>多语言序列描述。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ locale</md-td>
-<md-td>string</md-td>
-<md-td>语言版本。可选值有：
-
-- zh_cn：中文
-- en_us：英语
-- ja_jp：日语</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>└ value</md-td>
-<md-td>string</md-td>
-<md-td>语言版本对应的值。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>job_family_id</md-td>
-<md-td>string</md-td>
-<md-td>序列 ID，即序列在当前租户内的唯一标识。</md-td>
-</md-tr>
-  
-
-</md-tbody>
-</md-table>
-:::
 
 ## 数据示例
 

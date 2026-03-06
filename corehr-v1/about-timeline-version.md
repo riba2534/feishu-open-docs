@@ -60,11 +60,11 @@ updateTime: "1741946433000"
 ## Q：我没有时间轴需求，只想知道当下对象是什么内容，并实时同步到系统，如何操作？
 大部分对象提供了「当前对象变更」的事件接口，可以通过订阅该接口事件+查询接口同步到系统中。
 
-例如：可以通过订阅[【事件】创建部门](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/department/events/created)[【事件】更新部门](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/department/events/updated)[【事件】删除部门](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/department/events/deleted) 接口，配合 [批量查询部门](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/department/batch_get)获取到所有当前部门最新变更内容。
+例如：可以通过订阅[【事件】创建部门](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/department/events/created)[【事件】更新部门](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/department/events/updated)[【事件】删除部门](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/department/events/deleted) 接口，配合 [批量查询部门](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/department/batch_get)获取到所有当前部门最新变更内容。
 
 另外,「根据时间窗口查询变更对象」的查询接口也在建设中，有消息会进一步通知。
 
 ## Q：什么时候会触发变更？
-- 当前版本特定的字段的修改会触发变更（详情请见文档 [时间轴对象触发变更字段](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/change-field-combing-caused-by-timeline-objects))
+- 当前版本特定的字段的修改会触发变更（详情请见文档 [时间轴对象触发变更字段](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/change-field-combing-caused-by-timeline-objects))
 - 未来生效的版本到生效时间才会触发变更
 - 历史版本的修改，只有在【当前使用版本生效时间，当前时间】这段时间之间插入一个历史版本，并且与当前使用版本字段信息不一致才会触发变更

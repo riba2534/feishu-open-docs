@@ -6,588 +6,75 @@ updateTime: "1654166354000"
 
 # 获取面试记录列表
 
-根据投递 ID 获取面试记录列表{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=hire&version=v1&resource=application.interview&method=list)
-
-:::html
-<md-alert type="error">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="warn">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="tip">
-
-</md-alert>
-:::
-
+根据投递 ID 获取面试记录列表
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/hire/v1/applications/:application_id/interviews</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>GET</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-权限要求
- <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-<div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-</md-th>
-      <md-td>
-            <md-perm href="/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">获取面试信息</md-perm>
-            <md-perm href="/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">更新面试信息</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-            <md-tooltip type="info">接口返回的部分字段受权限控制，开启字段权限才可获取对应字段数据；如无需获取这些字段，则无需开启。</md-tooltip>
-            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">根据要获取的字段开启相应权限</div>
-      </md-th>
-      <md-td>
-        <md-perm href="/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">获取用户 user ID</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/hire/v1/applications/:application_id/interviews |
+| HTTP Method | GET |
+| 权限要求  调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | 获取面试信息 更新面试信息 |
+| 字段权限要求             接口返回的部分字段受权限控制，开启字段权限才可获取对应字段数据；如无需获取这些字段，则无需开启。 根据要获取的字段开启相应权限 | 获取用户 user ID |
 
 
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 18%;">名称</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-       <md-th style="width: 15%;">必填</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
-
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-</md-td>
-</md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
 
 
 ### 路径参数
-:::html
-<md-table>
-  <md-thead>
-      <tr>
-      <md-th style="width: 30%;">名称</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-      <md-th >描述</md-th>
-      </tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >application_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	投递ID
-
-**示例值**："6949805467799537964"
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `application_id` | `string` | 投递ID **示例值**："6949805467799537964" |
 
 
 ### 查询参数
-:::html
-<md-table>
-  <md-thead>
-      <tr>
-      <md-th style="width: 30%;">名称</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-      <md-th style="width: 15%;">必填</md-th>
-      <md-th >描述</md-th>
-      </tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >page_size</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	是
-	</md-td>
-	<md-td>
-	分页大小，不能超过 50
-
-**示例值**：10
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >page_token</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	否
-	</md-td>
-	<md-td>
-	分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果
-
-**示例值**："xx"
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >user_id_type</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	否
-	</md-td>
-	<md-td>
-	
-用户 ID 类型
-
-**示例值**："open_id"
-
-**可选值有**：
-- `open_id`：用户的 open id
-- `union_id`：用户的 union id
-- `user_id`：用户的 user id
-
-**默认值**：`open_id`
-
-**当值为 `user_id`，字段权限要求**：
-<md-perm href="/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">获取用户 user ID</md-perm>
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
-
-
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `page_size` | `int` | 是 | 分页大小，不能超过 50 **示例值**：10 |
+| `page_token` | `string` | 否 | 分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果 **示例值**："xx" |
+| `user_id_type` | `string` | 否 | 用户 ID 类型 **示例值**："open_id" **可选值有**： - `open_id`：用户的 open id - `union_id`：用户的 union id - `user_id`：用户的 user id **默认值**：`open_id` **当值为 `user_id`，字段权限要求**： 获取用户 user ID |
 
 
 ## 响应
 
 
-
 ### 响应体
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 40%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 30%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >code</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	错误码，非 0 表示失败
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	错误描述
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >data</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-td>
-	<md-td>
-	\-
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >page_token</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	分页标志
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >has_more</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-td>
-	<md-td>
-	是否有更多
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >items</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >interview\[\]</md-text>
-	</md-td>
-	<md-td>
-	面试列表
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	面试id
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >begin_time</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	面试开始时间（ms）
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >end_time</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	面试结束时间（ms）
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >round</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	面试轮次（从0开始计数）
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >stage_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	面试关联的投递阶段
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >interview_record_list</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >interview_record\[\]</md-text>
-	</md-td>
-	<md-td>
-	面试官记录列表
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	面试记录 ID
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >user_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	面试官用户 ID
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >content</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	系统预设「记录」题目内容
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >min_job_level_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	建议定级下限的职级 ID
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >max_job_level_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	建议定级上限的职级 ID
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >commit_status</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	提交状态
-
-**可选值有**：
-- `1`：已提交
-- `2`：未提交
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >conclusion</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	面试结论
-
-**可选值有**：
-- `1`：通过
-- `2`：未通过
-- `3`：未开始
-- `4`：未提交
-- `5`：未到场
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >interview_score</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >interview_score</md-text>
-	</md-td>
-	<md-td>
-	面试评分
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	面试评分 ID
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >level</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	分数级别
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >zh_name</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	中文名称
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >zh_description</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	中文描述
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >en_name</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	英文名称
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >en_description</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	英文描述
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `code` | `int` | 错误码，非 0 表示失败 |
+| `msg` | `string` | 错误描述 |
+| `data` | `\-` | \- |
+| ∟ `page_token` | `string` | 分页标志 |
+| ∟ `has_more` | `boolean` | 是否有更多 |
+| ∟ `items` | `interview\[\]` | 面试列表 |
+| ∟ `id` | `string` | 面试id |
+| ∟ `begin_time` | `int` | 面试开始时间（ms） |
+| ∟ `end_time` | `int` | 面试结束时间（ms） |
+| ∟ `round` | `int` | 面试轮次（从0开始计数） |
+| ∟ `stage_id` | `string` | 面试关联的投递阶段 |
+| ∟ `interview_record_list` | `interview_record\[\]` | 面试官记录列表 |
+| ∟ `id` | `string` | 面试记录 ID |
+| ∟ `user_id` | `string` | 面试官用户 ID |
+| ∟ `content` | `string` | 系统预设「记录」题目内容 |
+| ∟ `min_job_level_id` | `string` | 建议定级下限的职级 ID |
+| ∟ `max_job_level_id` | `string` | 建议定级上限的职级 ID |
+| ∟ `commit_status` | `int` | 提交状态 **可选值有**： - `1`：已提交 - `2`：未提交 |
+| ∟ `conclusion` | `int` | 面试结论 **可选值有**： - `1`：通过 - `2`：未通过 - `3`：未开始 - `4`：未提交 - `5`：未到场 |
+| ∟ `interview_score` | `interview_score` | 面试评分 |
+| ∟ `id` | `string` | 面试评分 ID |
+| ∟ `level` | `int` | 分数级别 |
+| ∟ `zh_name` | `string` | 中文名称 |
+| ∟ `zh_description` | `string` | 中文描述 |
+| ∟ `en_name` | `string` | 英文名称 |
+| ∟ `en_description` | `string` | 英文描述 |
 
 
 ### 响应体示例
@@ -632,31 +119,10 @@ updateTime: "1654166354000"
 ```
 
 
-
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>180001</md-td>
-  <md-td>param is invalis</md-td>
-  <md-td>检查参数</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
-
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 180001 | param is invalis | 检查参数 |
 
 

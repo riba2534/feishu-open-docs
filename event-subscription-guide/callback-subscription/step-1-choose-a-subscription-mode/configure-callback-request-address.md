@@ -6,7 +6,7 @@ updateTime: "1744008263000"
 
 # 使用长连接接收回调
 
-长连接是[飞书 SDK](/ssl:ttdoc/ukTMukTMukTM/uETO1YjLxkTN24SM5UjN) 内提供的能力，你可以在本地服务器集成飞书 SDK， 与开放平台建立一条 WebSocket 全双工通道（你的服务器需要能够访问公网）。后续当应用订阅的回调发生时，开放平台会通过该通道向你的服务器发送回调消息。
+长连接是[飞书 SDK](https://open.larkoffice.com/document/ukTMukTMukTM/uETO1YjLxkTN24SM5UjN) 内提供的能力，你可以在本地服务器集成飞书 SDK， 与开放平台建立一条 WebSocket 全双工通道（你的服务器需要能够访问公网）。后续当应用订阅的回调发生时，开放平台会通过该通道向你的服务器发送回调消息。
 
 ## 功能优势
 
@@ -25,7 +25,7 @@ updateTime: "1744008263000"
 ## 使用限制
 
 - 长连接模式仅支持企业自建应用。
-- [消息卡片回传交互（旧）](/ssl:ttdoc/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/configuring-card-callbacks/card-callback-structure)回调不支持 **使用长连接接收回调** 订阅方式，只能选择 [将回调发送至开发者服务器](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/step-1-choose-a-subscription-mode/send-callbacks-to-developers-server) 订阅方式。
+- [消息卡片回传交互（旧）](https://open.larkoffice.com/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/configuring-card-callbacks/card-callback-structure)回调不支持 **使用长连接接收回调** 订阅方式，只能选择 [将回调发送至开发者服务器](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/step-1-choose-a-subscription-mode/send-callbacks-to-developers-server) 订阅方式。
 - 每个应用最多建立 50 个连接（在配置长连接时，每初始化一个 client 就是一个连接）。
 
 ## 注意事项
@@ -37,17 +37,17 @@ updateTime: "1744008263000"
 
 ## 上手体验
 
-开放平台提供了一键开发卡片交互机器人的场景体验教程，你可以前往体验基于[卡片回传交互](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)回调所搭建的机器人应用，详情参见：
+开放平台提供了一键开发卡片交互机器人的场景体验教程，你可以前往体验基于[卡片回传交互](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)回调所搭建的机器人应用，详情参见：
 
-- [三分钟快速开发卡片交互机器人](/ssl:ttdoc/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/develop-a-card-interactive-bot/introduction)
-- [卡片交互机器人示例代码解释](/ssl:ttdoc/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/develop-a-card-interactive-bot/explanation-of-example-code)
+- [三分钟快速开发卡片交互机器人](https://open.larkoffice.com/document/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/develop-a-card-interactive-bot/introduction)
+- [卡片交互机器人示例代码解释](https://open.larkoffice.com/document/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/develop-a-card-interactive-bot/explanation-of-example-code)
 
 
 
 
 ## 步骤一：集成 SDK
 
-以下示例代码中以 [卡片回传交互](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)、[拉取链接预览数据](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure) 回调为例。
+以下示例代码中以 [卡片回传交互](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)、[拉取链接预览数据](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure) 回调为例。
 
 ### Go SDK
 

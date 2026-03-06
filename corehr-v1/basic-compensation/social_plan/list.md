@@ -6,804 +6,89 @@ updateTime: "1755844178000"
 
 # 根据生效日期分页查询参保方案
 
-通过生效日期effective_date参数过滤并分页返回结果{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=compensation&version=v1&resource=social_plan&method=list)
-
-:::html
-<md-alert type="tip">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="warn">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="error">
-
-</md-alert>
-:::
-
+通过生效日期effective_date参数过滤并分页返回结果
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/compensation/v1/social_plans</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>GET</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[10 次/秒](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="corehr:compensation.social_plan:read" desc="查询参保方案信息" support_app_types="custom" tags="">查询参保方案信息</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/compensation/v1/social_plans |
+| HTTP Method | GET |
+| 接口频率限制 | [10 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | custom |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:compensation.social_plan:read` 查询参保方案信息 |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
-
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
 
 
 ### 查询参数
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;" >描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >effective_date</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	生效日期，查询在该日期生效的参保方案数据，格式为 YYYY-mm-dd，长度为 10 字符
-
-**示例值**：2024-01-01
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >page_size</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	分页大小，默认100，最大200
-
-**示例值**：10
-
-**默认值**：`100`
-
-**数据校验规则**：
-
-- 取值范围：`10` ～ `200`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >page_token</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果
-
-**示例值**：eVQrYzJBNDNONlk4VFZBZVlSdzlKdFJ4bVVHVExENDNKVHoxaVdiVnViQT0=
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >insurance_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	社保方案/公积金方案
-
-**示例值**：social_insurance
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="social_insurance" >社保</md-enum-item>
-<md-enum-item key="provident_fund" >公积金</md-enum-item>
-</md-enum>
-
-**数据校验规则**：
-
-- 长度范围：`8` ～ `64` 字符
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
-
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `effective_date` | `string` | 是 | 生效日期，查询在该日期生效的参保方案数据，格式为 YYYY-mm-dd，长度为 10 字符<br>**示例值**：2024-01-01 |
+| `page_size` | `int` | 是 | 分页大小，默认100，最大200<br>**示例值**：10<br>**默认值**：`100`<br>**数据校验规则**：<br>- 取值范围：`10` ～ `200` |
+| `page_token` | `string` | 否 | 分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果<br>**示例值**：eVQrYzJBNDNONlk4VFZBZVlSdzlKdFJ4bVVHVExENDNKVHoxaVdiVnViQT0= |
+| `insurance_type` | `string` | 否 | 社保方案/公积金方案<br>**示例值**：social_insurance<br>**可选值有**：<br>- `social_insurance`: 社保 - `provident_fund`: 公积金<br>**数据校验规则**：<br>- 长度范围：`8` ～ `64` 字符 |
 
 
 ## 响应
 
 
-
-
-
 ### 响应体
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误码，非 0 表示失败
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >data</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	\-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >plans</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >social_plan\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	方案列表
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >plan_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	参保方案ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >plan_tid</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	参保方案版本ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	参保方案名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >zh_cn</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	中文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >en_us</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	英文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >effective_date</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	生效时间，yyyy-MM-dd
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >active</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否启用
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >insurance_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	险种类型. social_insurance: 社保; provident_fund: 公积金
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="social_insurance" >社保</md-enum-item>
-<md-enum-item key="provident_fund" >公积金</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >scope</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >social_plan_scope</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	参保方案适用范围
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >is_all</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否适用于全部
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >rules</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >social_plan_condition\[\]\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	rules：配置的条件规则。返回两层结构：[条件组[条件]]。多个 [条件组] 之间是 或 的关系，一个条件组内的多个 [条件] 是 且 的关系。<br>
-比如：rules: [[1,2],[3,4]]，业务含义为：(1 and 2) or (3 and 4)<br>rules [][]social_plan_condition 适用范围<br>
-- left_type  int  可选值有：<br>``1``：参保城市<br>``2``：缴纳主体 <br>
-- operator  int  可选值有：<br>``1``：包含<br>
-- right_values  []string<br>
-	- 当left_type=1时，是参保城市ID
-	- 当left_type=2时，是缴纳主体ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >item_detail</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >social_plan_item_detail\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	参保信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >item_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	险种ID，可通过[获取险种配置列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/compensation-v1/social_insurance/list)接口查询
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >item_name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	险种名
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >zh_cn</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	中文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >en_us</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	英文名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >item_setting_of_person</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >social_plan_item_setting</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	个人缴纳配置
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >lower_limit</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	基数下限，浮点数，保留二位小数，单位：元
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >upper_limit</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	基数上限，浮点数，保留二位小数，单位：元
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >payment_ratio</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	缴纳比例，浮点数，默认填充到二位小数，支持输入到四位，单位为 %
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >payment_rounding_rule</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	缴纳金舍入规则。rounding: 四舍五入; round_up: 向上舍入; round_down: 向下舍入
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="rounding" >四舍五入</md-enum-item>
-<md-enum-item key="round_up" >向上舍入</md-enum-item>
-<md-enum-item key="round_down" >向下舍入</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >payment_decimals</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	缴纳金小数位数，0位小数-6位小数之间选择
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >fixed_payment</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	附加固定金额，浮点数，保留二位小数，单位：元
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >item_setting_of_company</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >social_plan_item_setting</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	企业缴纳配置
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >lower_limit</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	基数下限，浮点数，保留二位小数，单位：元
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >upper_limit</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	基数上限，浮点数，保留二位小数，单位：元
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >payment_ratio</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	缴纳比例，浮点数，默认填充到二位小数，支持输入到四位，单位为 %
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >payment_rounding_rule</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	缴纳金舍入规则。rounding: 四舍五入; round_up: 向上舍入; round_down: 向下舍入
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="rounding" >四舍五入</md-enum-item>
-<md-enum-item key="round_up" >向上舍入</md-enum-item>
-<md-enum-item key="round_down" >向下舍入</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >payment_decimals</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	缴纳金小数位数，0位小数-6之间选择
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >fixed_payment</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	附加固定金额，浮点数，保留二位小数，单位：元
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >payment_frequency</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	缴纳频率
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="annually" >每年</md-enum-item>
-<md-enum-item key="monthly" >每月</md-enum-item>
-<md-enum-item key="quarterly" >每季度</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >payment_months</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	缴纳月份，1月～12月
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >remark</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	备注
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >zh_cn</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	中文描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >en_us</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	英文备注
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >has_more</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否还有更多项
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >page_token</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	分页标记，当 has_more 为 true 时，会同时返回新的 page_token，否则不返回 page_token
-	</md-dt-td>
-</md-dt-tr>
-
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `code` | `int` | 错误码，非 0 表示失败 |
+| `msg` | `string` | 错误描述 |
+| `data` | `\-` | \- |
+| &nbsp;&nbsp;└ `plans` | `social_plan\[\]` | 方案列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `plan_id` | `string` | 参保方案ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `plan_tid` | `string` | 参保方案版本ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n` | 参保方案名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh_cn` | `string` | 中文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en_us` | `string` | 英文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `effective_date` | `string` | 生效时间，yyyy-MM-dd |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `active` | `boolean` | 是否启用 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `insurance_type` | `string` | 险种类型. social_insurance: 社保; provident_fund: 公积金<br>**可选值有**：<br>- `social_insurance`: 社保 - `provident_fund`: 公积金 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `scope` | `social_plan_scope` | 参保方案适用范围 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_all` | `boolean` | 是否适用于全部 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `rules` | `social_plan_condition\[\]\[\]` | rules：配置的条件规则。返回两层结构：[条件组[条件]]。多个 [条件组] 之间是 或 的关系，一个条件组内的多个 [条件] 是 且 的关系。 比如：rules: [[1,2],[3,4]]，业务含义为：(1 and 2) or (3 and 4)rules [][]social_plan_condition 适用范围 - left_type  int  可选值有：``1``：参保城市``2``：缴纳主体  - operator  int  可选值有：``1``：包含 - right_values  []string 	- 当left_type=1时，是参保城市ID 	- 当left_type=2时，是缴纳主体ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `item_detail` | `social_plan_item_detail\[\]` | 参保信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `item_id` | `string` | 险种ID，可通过[获取险种配置列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/compensation-v1/social_insurance/list)接口查询 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `item_name` | `i18n` | 险种名 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh_cn` | `string` | 中文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en_us` | `string` | 英文名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `item_setting_of_person` | `social_plan_item_setting` | 个人缴纳配置 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `lower_limit` | `string` | 基数下限，浮点数，保留二位小数，单位：元 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `upper_limit` | `string` | 基数上限，浮点数，保留二位小数，单位：元 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `payment_ratio` | `string` | 缴纳比例，浮点数，默认填充到二位小数，支持输入到四位，单位为 % |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `payment_rounding_rule` | `string` | 缴纳金舍入规则。rounding: 四舍五入; round_up: 向上舍入; round_down: 向下舍入<br>**可选值有**：<br>- `rounding`: 四舍五入 - `round_up`: 向上舍入 - `round_down`: 向下舍入 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `payment_decimals` | `int` | 缴纳金小数位数，0位小数-6位小数之间选择 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `fixed_payment` | `string` | 附加固定金额，浮点数，保留二位小数，单位：元 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `item_setting_of_company` | `social_plan_item_setting` | 企业缴纳配置 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `lower_limit` | `string` | 基数下限，浮点数，保留二位小数，单位：元 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `upper_limit` | `string` | 基数上限，浮点数，保留二位小数，单位：元 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `payment_ratio` | `string` | 缴纳比例，浮点数，默认填充到二位小数，支持输入到四位，单位为 % |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `payment_rounding_rule` | `string` | 缴纳金舍入规则。rounding: 四舍五入; round_up: 向上舍入; round_down: 向下舍入<br>**可选值有**：<br>- `rounding`: 四舍五入 - `round_up`: 向上舍入 - `round_down`: 向下舍入 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `payment_decimals` | `int` | 缴纳金小数位数，0位小数-6之间选择 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `fixed_payment` | `string` | 附加固定金额，浮点数，保留二位小数，单位：元 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `payment_frequency` | `string` | 缴纳频率<br>**可选值有**：<br>- `annually`: 每年 - `monthly`: 每月 - `quarterly`: 每季度 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `payment_months` | `int\[\]` | 缴纳月份，1月～12月 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `remark` | `i18n` | 备注 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh_cn` | `string` | 中文描述 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en_us` | `string` | 英文备注 |
+| &nbsp;&nbsp;└ `has_more` | `boolean` | 是否还有更多项 |
+| &nbsp;&nbsp;└ `page_token` | `string` | 分页标记，当 has_more 为 true 时，会同时返回新的 page_token，否则不返回 page_token |
 
 
 ### 响应体示例
-:::html
-<md-code-json>
+
+```json
 {
     "code": 0,
     "msg": "success",
@@ -872,44 +157,14 @@ updateTime: "1755844178000"
         "page_token": "eVQrYzJBNDNONlk4VFZBZVlSdzlKdFJ4bVVHVExENDNKVHoxaVdiVnViQT0="
     }
 }
-</md-code-json>
-:::
-
+```
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>2290001</md-td>
-  <md-td>server error</md-td>
-  <md-td>服务端异常，请稍后重试</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2290002</md-td>
-  <md-td>param is invalid</md-td>
-  <md-td>请检查请求参数的格式或值是否符合接口要求，参考文档中的参数说明</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
-
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 500 | 2290001 | server error | 服务端异常，请稍后重试 |
+| 400 | 2290002 | param is invalid | 请检查请求参数的格式或值是否符合接口要求，参考文档中的参数说明 |
 
 

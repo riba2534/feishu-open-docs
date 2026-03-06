@@ -16,7 +16,7 @@ updateTime: "1720167427000"
 
 角色 ID（role_id）是角色在当前租户下的唯一标识，在创建角色时自动生成。角色 ID 获取方式：
 
-- 方式一：调用[创建角色](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/functional_role/create) API 时，可从返回结果中获取角色 ID。
+- 方式一：调用[创建角色](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/functional_role/create) API 时，可从返回结果中获取角色 ID。
 - 方式二：企业管理员登录 [管理后台](https://feishu.cn/admin) > **组织架构** > **角色管理** 页面，在角色名称右侧获取角色 ID。
 
 	![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/b04fb6ff67d2a1f2acdc5421fa3a4a28_IDZpdx5t4Y.png?height=736&lazyload=true&maxWidth=600&width=2398)

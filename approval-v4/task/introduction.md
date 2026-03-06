@@ -12,7 +12,7 @@ updateTime: "1745206964000"
 
 ### 审批任务 ID
 
-每一个审批任务都有一个唯一标识，便于管理该任务。当你创建审批实例后，可以调用[获取单个审批实例详情](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/get)接口，从返回结果的 task_list 参数中获取任务唯一标识（id）及任务的其他信息。
+每一个审批任务都有一个唯一标识，便于管理该任务。当你创建审批实例后，可以调用[获取单个审批实例详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/get)接口，从返回结果的 task_list 参数中获取任务唯一标识（id）及任务的其他信息。
 
 ### 审批任务状态
 
@@ -36,119 +36,15 @@ updateTime: "1745206964000"
 
 ## 字段说明
 
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 25%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 37%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >approval_code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批定义 Code。获取方式：
-
-- 调用[创建审批定义](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/create)接口后，从响应参数 approval_code 获取。
-- 登录审批管理后台，在指定审批定义的 URL 中获取，具体操作参见[什么是 Approval Code](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/overview-of-approval-resources#8151e0ae)。
-
-**示例值**："7C468A54-8745-2245-9675-08B7C63E7A85"
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >instance_code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批实例 Code。获取方式：
-
-- 调用[创建审批实例](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/create)接口后，从响应参数 instance_code 获取。
-- 调用[批量获取审批实例 ID](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/list)接口，获取所需的审批实例 Code。
-- 调用[查询实例列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/query)，设置过滤条件查询指定的审批实例 Code。
-
-**示例值**："81D31358-93AF-92D6-7425-01A5D67C4E71"
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >user_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批人的用户 ID，ID 类型与查询参数 user_id_type 取值一致。
-
-**示例值**："f7cb567e"
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >comment</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批意见
-
-**示例值**："OK"
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >task_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	审批任务 ID，调用[获取单个审批实例详情](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/get)，从返回结果的 task_list 中获取所需的 id。
-
-**示例值**："12345"
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >form</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	如果审批定义的流程设计中添加了条件分支，则需要传入条件分支所需的控件数据（JSON 数组），否则会影响后续的分支条件流转。
-
-**说明**：传值时需要将 JSON 序列化为字符串。参数示例值未进行转义，正确的传值示例可参见下文 **数据示例**。
-
-
-**示例值**："[{\"id\":\"111\", \"type\": \"input\", \"value\":\"test\"}]"
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `approval_code` | `string` | 审批定义 Code。获取方式：<br>- 调用[创建审批定义](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/create)接口后，从响应参数 approval_code 获取。 - 登录审批管理后台，在指定审批定义的 URL 中获取，具体操作参见[什么是 Approval Code](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/overview-of-approval-resources#8151e0ae)。<br>**示例值**："7C468A54-8745-2245-9675-08B7C63E7A85" |
+| `instance_code` | `string` | 审批实例 Code。获取方式：<br>- 调用[创建审批实例](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/create)接口后，从响应参数 instance_code 获取。 - 调用[批量获取审批实例 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/list)接口，获取所需的审批实例 Code。 - 调用[查询实例列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/query)，设置过滤条件查询指定的审批实例 Code。<br>**示例值**："81D31358-93AF-92D6-7425-01A5D67C4E71" |
+| `user_id` | `string` | 审批人的用户 ID，ID 类型与查询参数 user_id_type 取值一致。<br>**示例值**："f7cb567e" |
+| `comment` | `string` | 审批意见<br>**示例值**："OK" |
+| `task_id` | `string` | 审批任务 ID，调用[获取单个审批实例详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/get)，从返回结果的 task_list 中获取所需的 id。<br>**示例值**："12345" |
+| `form` | `string` | 如果审批定义的流程设计中添加了条件分支，则需要传入条件分支所需的控件数据（JSON 数组），否则会影响后续的分支条件流转。<br>**说明**：传值时需要将 JSON 序列化为字符串。参数示例值未进行转义，正确的传值示例可参见下文 **数据示例**。<br>**示例值**："[{\"id\":\"111\", \"type\": \"input\", \"value\":\"test\"}]" |
 
 
 ## 数据示例

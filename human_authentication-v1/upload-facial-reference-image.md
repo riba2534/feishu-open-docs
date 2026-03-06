@@ -12,64 +12,18 @@ updateTime: "1730444402000"
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/face_verify/v1/upload_face_image</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    
-    
-  </md-tbody>
-</md-table>
-:::
-### 请求头
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 18%;">名称</md-th>  
-      <md-th style="width: 15%;">类型</md-th>  
-       <md-th style="width: 15%;">必填</md-th>  
-      <md-th>描述</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>Authorization</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
- 
-**值格式**："Bearer `access_token`"
 
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-          
- [了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-	</md-td>
-</md-tr>
-     <md-tr> 
-      <md-td>Content-Type</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-     <md-td>**固定值**："multipart/form-data"</md-td>
-</md-tr>
-   
-  </md-tbody> 
-</md-table>
-:::
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/face_verify/v1/upload_face_image |
+| HTTP Method | POST |
+
+### 请求头
+
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token`   **值格式**："Bearer `access_token`" **示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"             [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："multipart/form-data" |
 
 
 ### 查询参数  
@@ -79,7 +33,7 @@ updateTime: "1730444402000"
 |open_id|string|否|用户应用标识, 与employee_id二选其一 | URL 参数
 |employee_id|string|否|用户租户标识, 与open_id二选其一 | URL 参数
 ::: note
-`open_id`和`employee_id`（也称`user_id`）的获取方式可以参考文档：[如何获取不同的用户 ID](/ssl:ttdoc/home/user-identity-introduction/open-id)
+`open_id`和`employee_id`（也称`user_id`）的获取方式可以参考文档：[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)
 :::
 
 ### 请求体

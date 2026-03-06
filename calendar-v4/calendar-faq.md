@@ -12,11 +12,11 @@ updateTime: "1712717697000"
 
 ### Q：如何获取日历订阅列表？
 
-你可以调用[获取日历列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar/list)，该接口获取到的日历为用户当前已经订阅的日历。
+你可以调用[获取日历列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar/list)，该接口获取到的日历为用户当前已经订阅的日历。
 
 ### Q：飞书日历是否支持查询法定工作日、节假日安排？
 
-飞书日历不提供法定工作日、节假日的查询功能。如果已知有对应内容的日历，则可以调用[搜索日历](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar/search) 接口找到对应的日历，然后调用[获取日程列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event/list)接口获取日程数据，并根据日程数据判断当日的安排。
+飞书日历不提供法定工作日、节假日的查询功能。如果已知有对应内容的日历，则可以调用[搜索日历](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar/search) 接口找到对应的日历，然后调用[获取日程列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event/list)接口获取日程数据，并根据日程数据判断当日的安排。
 
 ### Q：飞书客户端上绑定了三方日历 (Google、Exchange)，是否支持通过 API 操作解绑？
 
@@ -26,7 +26,7 @@ updateTime: "1712717697000"
 
 ### Q：获取指定时间段内的所有日程时，单次调用未获取到完整数据，再次调用传入的 sync_token 不起作用是什么原因？
 
-在[获取日程列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event/list)接口中，开始/结束时间参数（start_time/end_time）和增量同步标记参数（sync_token）不能同时使用。这两类参数代表了两种不同的同步方式：
+在[获取日程列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event/list)接口中，开始/结束时间参数（start_time/end_time）和增量同步标记参数（sync_token）不能同时使用。这两类参数代表了两种不同的同步方式：
 
 - 开始/结束时间参数（start_time/end_time）
 
@@ -40,13 +40,13 @@ updateTime: "1712717697000"
 
 能否看到日程标题和以下权限参数相关。
 
--  [创建日程](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event/create)接口中的 `visibility` 参数，该参数用于指定日程的公开范围。取值范围：
+-  [创建日程](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event/create)接口中的 `visibility` 参数，该参数用于指定日程的公开范围。取值范围：
 
 	-   `public`：公开，默认显示日程详情。
 	-   `default`：默认权限，用户有 `reader` 权限可以查看详情。
 	-   `private`：私密，即便用户有 `reader` 权限也不能查看详情。
 
-- [创建访问控制](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-acl/create)中的 `role` 参数，该参数用于设置用户对日历的访问权限（可通过[查询日历信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar/get)中的 `role` 参数获取用户对日历的访问权限）。`role` 参数取值范围：
+- [创建访问控制](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-acl/create)中的 `role` 参数，该参数用于设置用户对日历的访问权限（可通过[查询日历信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar/get)中的 `role` 参数获取用户对日历的访问权限）。`role` 参数取值范围：
 
 	-   `unknown`：未知权限（即不考虑当前 `role`）。
 	-   `free_busy_reader`：游客，只能看到忙碌/空闲信息。
@@ -64,13 +64,13 @@ updateTime: "1712717697000"
 
 当用户为日程参与人时，可以在自己的主日历上获取到日程，但并不代表有日程的编辑权限。相关文档：
 
-- 在[更新日程](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event/patch)或[删除日程](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event/delete)接口文档内阅读注意事项，了解什么情况下可以更新或删除日程。
-- 如何判断当前用户对日历的权限，可调用[查询日历信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar/get)接口。
+- 在[更新日程](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event/patch)或[删除日程](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event/delete)接口文档内阅读注意事项，了解什么情况下可以更新或删除日程。
+- 如何判断当前用户对日历的权限，可调用[查询日历信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar/get)接口。
 - 如何判断当前用户是否为日程组织者，可参考本文的 **如何判断当前用户是否为日程组织者**。
 
 ### Q：如何判断当前用户是否为日程组织者？
 
-目前可通过[获取日程参与人列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event-attendee/list)接口，查看参与人是否为日程的组织者。
+目前可通过[获取日程参与人列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event-attendee/list)接口，查看参与人是否为日程的组织者。
 
 1. 路径参数中的 `calendar_id` 需传入当前用户的主日历 ID。
 2. 获取到参与人列表后，如果 `is_organizer: true` 的用户与当前用户身份匹配时，则表示当前用户为日程的组织者。
@@ -87,9 +87,9 @@ updateTime: "1712717697000"
 
 ### Q：如何通过开放平台 OpenAPI 预定会议室？
 
-你需要在创建日程后，调用[添加日程参与人](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event-attendee/create)接口预定会议室，而不是创建日程时传入 `location` 字段。
+你需要在创建日程后，调用[添加日程参与人](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event-attendee/create)接口预定会议室，而不是创建日程时传入 `location` 字段。
 
-调用[添加日程参与人](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event-attendee/create)接口预定会议室时，需要注意：
+调用[添加日程参与人](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event-attendee/create)接口预定会议室时，需要注意：
 
 - 如果调用接口时以应用身份进行预定，则需要上传 `operate_id` 字段，该字段用于指定会议室的联系人。
 - 最终是否预定成功，取决于管理员是否在管理后台配置了会议室预定限制（包括审批、时间限制和范围限制），以及是否有其他用户在同一时间抢占会议室。
@@ -116,11 +116,11 @@ updateTime: "1712717697000"
 
 ### Q：是否支持订阅参与人回复接受、拒绝等操作的日程变更事件？
 
-你可以订阅[日程变更事件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event/events/changed)，参与人点击接受、拒绝等操作带来的数据变更，包含在日程变更事件的范围内。
+你可以订阅[日程变更事件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event/events/changed)，参与人点击接受、拒绝等操作带来的数据变更，包含在日程变更事件的范围内。
 
 ## 错误码相关
 
 ### Q：如何使用调用接口后返回的错误码？
 
-你可以在 OpenAPI 对应的帮助文档内，或者参见[通用错误码](/ssl:ttdoc/ukTMukTMukTM/ugjM14COyUjL4ITN)，查找相匹配的错误码，然后根据错误码说明与排查建议修复问题。
+你可以在 OpenAPI 对应的帮助文档内，或者参见[通用错误码](https://open.larkoffice.com/document/ukTMukTMukTM/ugjM14COyUjL4ITN)，查找相匹配的错误码，然后根据错误码说明与排查建议修复问题。
 

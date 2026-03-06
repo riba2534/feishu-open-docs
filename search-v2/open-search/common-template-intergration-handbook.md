@@ -66,9 +66,9 @@ updateTime: "1753356689000"
 
 ### 2.2.1. 请求接口获取 tenant access token
 
-推荐使用 SDK ：[服务端 SDK](/ssl:ttdoc/ukTMukTMukTM/uETO1YjLxkTN24SM5UjN)
+推荐使用 SDK ：[服务端 SDK](https://open.larkoffice.com/document/ukTMukTMukTM/uETO1YjLxkTN24SM5UjN)
 
-参考链接：[获取应用身份访问凭证 - 服务端文档 - 开发文档 - 飞书开放平台](/ssl:ttdoc/ukTMukTMukTM/uMTNz4yM1MjLzUzM) 来请求接口
+参考链接：[获取应用身份访问凭证 - 服务端文档 - 开发文档 - 飞书开放平台](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM) 来请求接口
 
 或者用以下的 curl 请求
 
@@ -85,7 +85,7 @@ curl --location --request POST 'https://open.feishu.cn/open-apis/auth/v3/tenant_
 
 
 ### 2.2.2. 请求创建数据范式
-完整能力参考链接：[创建数据范式 - 服务端文档 - 开发文档 - 飞书开放平台](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/search-v2/schema/create)
+完整能力参考链接：[创建数据范式 - 服务端文档 - 开发文档 - 飞书开放平台](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/search-v2/schema/create)
 
 请求体可以参考以下 curl 请求
 ```bash
@@ -146,7 +146,7 @@ curl --location --request POST 'https://open.feishu.cn/open-apis/search/v2/schem
 ```
 说明： 
 
-1.  参数说明请参考接口文档[创建数据范式 - 服务端文档 - 开发文档 - 飞书开放平台](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/search-v2/schema/create)
+1.  参数说明请参考接口文档[创建数据范式 - 服务端文档 - 开发文档 - 飞书开放平台](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/search-v2/schema/create)
 
 2.  `card_key` 指定数据范式对应的模版，目前支持``search_common_card``；模版信息如下：
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/8dd9a52f171a771104311afb11986dc4_M3Z6ypj4UU.png?height=180&lazyload=true&width=1892)
@@ -225,7 +225,7 @@ curl --location --request POST 'https://open.feishu.cn/open-apis/search/v2/schem
 
 ### 2.2.3. 请求创建数据源
 
-参考链接：[创建数据源 - 服务端文档 - 开发文档 - 飞书开放平台](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/search-v2/data_source/create)
+参考链接：[创建数据源 - 服务端文档 - 开发文档 - 飞书开放平台](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/search-v2/data_source/create)
 
 或者使用以下 curl 请求
 
@@ -270,7 +270,7 @@ curl --location --request POST --max-time 10 'https://open.feishu.cn/open-apis/s
 
 ### 2.2.4. 请求创建数据项
 
-参考链接：[索引数据项 - 服务端文档 - 开发文档 - 飞书开放平台](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/search-v2/data_source-item/create)
+参考链接：[索引数据项 - 服务端文档 - 开发文档 - 飞书开放平台](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/search-v2/data_source-item/create)
 
 1.  限频次数：1000次/秒；
 2.  可以参考使用以下 curl 请求；

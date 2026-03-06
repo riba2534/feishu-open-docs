@@ -7,8 +7,6 @@ updateTime: "1770087350000"
 # 智能助手：从自然语言到可执行代码
 
 
-
-
 [飞书开放平台智能助手](https://open.feishu.cn/app/ai/playground) 为开发者提供安全隔离的多语言代码运行环境，告别繁琐的本地环境搭建，让原型验证和代码调试变得高效便捷。你只需用自然语言描述具体需求，即可生成高质量代码，并一键在沙箱中运行与调试。
 
 ## 核心能力
@@ -23,158 +21,29 @@ updateTime: "1770087350000"
 为确保环境的一致性与安全，沙箱提供了各语言的特定版本和预装库。
 仅能使用预装的依赖，不支持安装其他库。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">语言</md-th>
-<md-th style="width:20%">版本</md-th>
-<md-th style="width:60%">预装库</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>Node.js</md-td>
-<md-td>22.14.0</md-td>
-<md-td>
-```json 
- {
-  "@larksuiteoapi/node-sdk": "^1.43.0",
-  "axios": "^1.8.1",
-  "lodash": "^4.17.21",
-  "node-fetch": "^3.3.2",
-  "axios-retry": "^4.5.0"
-}
-``` 
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>Python</md-td>
-<md-td>3.11.2</md-td>
-<md-td>
-```json 
-lark-api>=1.4.8
-requests==2.31.0 
-``` 
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>Go</md-td>
-<md-td>1.23.3</md-td>
-<md-td>
-```json 
-github.com/larksuite/oapi-sdk-go/v3@v3.4.10  // 飞书开放平台SDK
-github.com/gorilla/websocket@v1.5.0        // WebSocket支持
-github.com/gogo/protobuf@v1.3.2           // Protocol Buffers 
-``` 
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>Java</md-td>
-<md-td>JDK 21</md-td>
-<md-td>
-```json 
-<dependency>
-    <groupId>com.larksuite.oapi</groupId>
-    <artifactId>oapi-sdk</artifactId>
-    <version>2.4.20</version>
-</dependency>
-<dependency>
-    <groupId>com.google.code.gson</groupId>
-    <artifactId>gson</artifactId>
-    <version>2.13.1</version>
-</dependency>
-<dependency>
-    <groupId>ch.qos.logback</groupId>
-    <artifactId>logback-classic</artifactId>
-    <version>1.2.3</version>
-</dependency>
-``` 
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::                             
+| 语言 | 版本 | 预装库 |
+| --- | --- | --- |
+| Node.js | 22.14.0 | ```json   {   "@larksuiteoapi/node-sdk": "^1.43.0",   "axios": "^1.8.1",   "lodash": "^4.17.21",   "node-fetch": "^3.3.2",   "axios-retry": "^4.5.0" } ``` |
+| Python | 3.11.2 | ```json  lark-api>=1.4.8 requests==2.31.0  ``` |
+| Go | 1.23.3 | ```json  github.com/larksuite/oapi-sdk-go/v3@v3.4.10  // 飞书开放平台SDK github.com/gorilla/websocket@v1.5.0        // WebSocket支持 github.com/gogo/protobuf@v1.3.2           // Protocol Buffers  ``` |
+| Java | JDK 21 | ```json  com.larksuite.oapi oapi-sdk 2.4.20 com.google.code.gson gson 2.13.1 ch.qos.logback logback-classic 1.2.3 ``` |
+                             
 
 ## 环境与资源限制
 
 为了保证环境的安全、稳定和公平使用，代码沙箱在以下方面进行了限制：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">类别</md-th>
-<md-th style="width:60%">限制</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>业务范围</md-td>
-<md-td colspan="2">
-- 仅支持 [服务端 API 及事件](/ssl:ttdoc/ukTMukTMukTM/ukDNz4SO0MjL5QzM/AI-assistant-code-generation-guide )，不支持客户端（如：小程序、网页应用、小组件等）代码生成与调试。<br>
-- 不支持历史文档相关代码生成及知识问答。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>网络访问</md-td>
-<md-td colspan="2">
-仅允许访问飞书开放平台相关域名，即 `open.feishu.cn`、`msg-frontier.feishu.cn`。<br>
-- 无法访问任何其他外部网络或服务。<br>
-- 环境无入站连接。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>文件系统</md-td>
-<md-td colspan="2">
-仅支持临时、只读的工作目录：<br>
-- 不支持上传、创建或删除文件。<br>
-- 无法访问宿主机文件系统。<br>
-- 无持久化存储：每次执行结束后，环境和所有临时文件将被自动清理和重置。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>计算资源</md-td>
-<md-td colspan="2">
-- CPU：0.5 核<br>
-- 内存：1 GB，超出内存限制的进程将被强制终止。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>执行时长</md-td>
-<md-td colspan="2">
-代码运行时间最长 5 分钟，执行超过 5 分钟的任务将被超时中断。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>代码部署</md-td>
-<md-td colspan="2">
-不支持托管代码，需自行部署代码到对应环境。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>系统权限</md-td>
-<md-td colspan="2">
-受限的系统调用：无法执行需要高权限的系统级操作，以确保环境安全。
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
-
+| 类别 | 限制 |
+| --- | --- |
+| 业务范围 | - 仅支持 [服务端 API 及事件](https://open.larkoffice.com/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/AI-assistant-code-generation-guide )，不支持客户端（如：小程序、网页应用、小组件等）代码生成与调试。 - 不支持历史文档相关代码生成及知识问答。 |
+| 网络访问 | 仅允许访问飞书开放平台相关域名，即 `open.feishu.cn`、`msg-frontier.feishu.cn`。 - 无法访问任何其他外部网络或服务。 - 环境无入站连接。 |
+| 文件系统 | 仅支持临时、只读的工作目录： - 不支持上传、创建或删除文件。 - 无法访问宿主机文件系统。 - 无持久化存储：每次执行结束后，环境和所有临时文件将被自动清理和重置。 |
+| 计算资源 | - CPU：0.5 核 - 内存：1 GB，超出内存限制的进程将被强制终止。 |
+| 执行时长 | 代码运行时间最长 5 分钟，执行超过 5 分钟的任务将被超时中断。 |
+| 代码部署 | 不支持托管代码，需自行部署代码到对应环境。 |
+| 系统权限 | 受限的系统调用：无法执行需要高权限的系统级操作，以确保环境安全。 |
 
 
 ## 如何使用
@@ -187,16 +56,11 @@ github.com/gogo/protobuf@v1.3.2           // Protocol Buffers
     
 1. **生成与配置**：选择要生成的代码语言，然后点击 **继续下一步**，智能助手将立即生成代码。代码生成后，还需要完成应用运行前的配置和发布。
 
-  :::html
-  <md-table style="width: 1000px;">
-    <md-tbody>
-       <md-tr>
-        <md-td> ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/54871b4e7443a9375a107253eafc29e0_n5DpkW3FLI.png?height=1958&lazyload=true&maxWidth=350&width=1936) </md-td>
-        <md-td>![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/ae85f4e4d8905f4946756a3f77cea368_YVn1q4dlLE.png?height=1978&lazyload=true&maxWidth=550&width=3880)</md-td>
-      </md-tr>
-    </md-tbody>
-  </md-table>
-  :::
+  
+| 列1 | 列2 |
+| --- | --- |
+| ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/54871b4e7443a9375a107253eafc29e0_n5DpkW3FLI.png?height=1958&lazyload=true&maxWidth=350&width=1936) | ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/ae85f4e4d8905f4946756a3f77cea368_YVn1q4dlLE.png?height=1978&lazyload=true&maxWidth=550&width=3880) |
+
 
 3. **运行与验证**：点击 **立即运行** 按钮，在底部的**控制台**中实时查看执行结果，验证是否符合预期。
 

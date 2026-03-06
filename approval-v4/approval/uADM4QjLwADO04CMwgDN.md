@@ -96,92 +96,16 @@ updateTime: "1745207159000"
 
 各参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:25%">参数</md-th>
-<md-th style="width:15%">类型</md-th>
-<md-th style="width:15%">是否必须</md-th>
-<md-th style="width:45%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>user_id</md-td>
-<md-td>String</md-td>
-<md-td>否</md-td>
-<md-td>
-该参数对应的是内部 ID，因此推荐使用 employee_id 参数传入用户 ID。
-  
-**注意**：如果不传 user_id 和 employee_id，表示期望返回所有的数据。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>employee_id</md-td>
-<md-td>String</md-td>
-<md-td>否</md-td>
-<md-td>employee_id 对应的是用户的 user_id，获取方式参考[如何获取用户的 User ID](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)。
-  
-  
-- 发起审批时，传入发起人的 employee_id，可以根据此 id 决定返回的数据范围。
-- 如果不传 user_id 和 employee_id，表示期望返回所有的数据。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>token</md-td>
-<md-td>String</md-td>
-<md-td>是</md-td>
-<md-td>自定义取值，用于校验请求是否为合法来源。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>linkage_params</md-td>
-<md-td>Map</md-td>
-<md-td>否</md-td>
-<md-td>联动选项参数（不带 linkage_params 时，请返回所有的 options）。设置了联动选项，选择选项时，会将联动参数放入 map 中发出请求，你需要根据该字段的内容决定所需返回的数据。
-
-![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/a478589176568635e7fdf2be0190b023_gPdZQuIrAM.png?height=1536&lazyload=true&width=2018)</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>page_token</md-td>
-<md-td>String</md-td>
-<md-td>否</md-td>
-<md-td>分页标记，第一次请求不填，表示从头开始遍历。
-  
-- 分页查询结果还有更多项时，接口会返回新的 page_token，下次遍历可采用该 page_token 获取查询结果。
-- 每次请求返回的数据量（page size）不小于 10。
-- 只对设置了**支持模糊、分页搜索**的数据源有效。
-
-  ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/447a429c0b60cc25549174408ffd4db4_156pVSVzkS.png?height=1536&lazyload=true&width=2042)
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>query</md-td>
-<md-td>String</md-td>
-<md-td>否</md-td>
-<md-td>搜索关键词，只对设置了**支持模糊、分页搜索**的数据源有效。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>locale</md-td>
-<md-td>String</md-td>
-<md-td>否</md-td>
-<md-td>语言环境，只对设置了**支持模糊、分页搜索**的数据源有效。取值：
-  
-- zh_cn：中文
-- en_us：英文
-- ja_jp：日文</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
+| 参数 | 类型 | 是否必须 | 描述 |
+| --- | --- | --- | --- |
+| user_id | String | 否 | 该参数对应的是内部 ID，因此推荐使用 employee_id 参数传入用户 ID。    **注意**：如果不传 user_id 和 employee_id，表示期望返回所有的数据。 |
+| employee_id | String | 否 | employee_id 对应的是用户的 user_id，获取方式参考[如何获取用户的 User ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)。       - 发起审批时，传入发起人的 employee_id，可以根据此 id 决定返回的数据范围。 - 如果不传 user_id 和 employee_id，表示期望返回所有的数据。 |
+| token | String | 是 | 自定义取值，用于校验请求是否为合法来源。 |
+| linkage_params | Map | 否 | 联动选项参数（不带 linkage_params 时，请返回所有的 options）。设置了联动选项，选择选项时，会将联动参数放入 map 中发出请求，你需要根据该字段的内容决定所需返回的数据。 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/a478589176568635e7fdf2be0190b023_gPdZQuIrAM.png?height=1536&lazyload=true&width=2018) |
+| page_token | String | 否 | 分页标记，第一次请求不填，表示从头开始遍历。    - 分页查询结果还有更多项时，接口会返回新的 page_token，下次遍历可采用该 page_token 获取查询结果。 - 每次请求返回的数据量（page size）不小于 10。 - 只对设置了**支持模糊、分页搜索**的数据源有效。   ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/447a429c0b60cc25549174408ffd4db4_156pVSVzkS.png?height=1536&lazyload=true&width=2042) |
+| query | String | 否 | 搜索关键词，只对设置了**支持模糊、分页搜索**的数据源有效。 |
+| locale | String | 否 | 语言环境，只对设置了**支持模糊、分页搜索**的数据源有效。取值：    - zh_cn：中文 - en_us：英文 - ja_jp：日文 |
 
 
 ### 返回参数

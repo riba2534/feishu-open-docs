@@ -72,11 +72,11 @@ updateTime: "1740128140000"
 
 #### 接入方式
 
-[审批官方连接器](/ssl:ttdoc/ukTMukTMukTM/ukjNyYjL5YjM24SO2IjN/official-approval-connector)目前仅支持部分高频使用的三方 OA 系统，且部分接入方式付费，你可以[点击此处联系飞书审批团队获取集成支持](https://wenjuan.feishu.cn/m?t=syKbxL1vcOsi-1x4e) 。
+[审批官方连接器](https://open.larkoffice.com/document/ukTMukTMukTM/ukjNyYjL5YjM24SO2IjN/official-approval-connector)目前仅支持部分高频使用的三方 OA 系统，且部分接入方式付费，你可以[点击此处联系飞书审批团队获取集成支持](https://wenjuan.feishu.cn/m?t=syKbxL1vcOsi-1x4e) 。
 
 ### 方式二：通过审批的开放能力自助集成
 
-由你或合作伙伴使用飞书审批提供的开放能力（[OpenAPI 与事件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval-overview#6a043c9e)），完成三方审批系统与飞书审批中心的数据对接，实现在飞书内使用审批功能。
+由你或合作伙伴使用飞书审批提供的开放能力（[OpenAPI 与事件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval-overview#6a043c9e)），完成三方审批系统与飞书审批中心的数据对接，实现在飞书内使用审批功能。
 
 #### 客户成本
 
@@ -90,21 +90,21 @@ updateTime: "1740128140000"
 
 #### 流程概述
 
-1. 企业管理员或开发者需要先调用[创建三方审批定义](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_approval/create)接口，将三方审批系统和飞书审批中心关联起来，其中包括：审批流程在飞书内的唯一标识、分组、名称与描述；在飞书提交审批时需要访问的三方审批链接；三方审批系统的回调 URL（用于接收审批任务在飞书内发生的变化）等信息。
+1. 企业管理员或开发者需要先调用[创建三方审批定义](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_approval/create)接口，将三方审批系统和飞书审批中心关联起来，其中包括：审批流程在飞书内的唯一标识、分组、名称与描述；在飞书提交审批时需要访问的三方审批链接；三方审批系统的回调 URL（用于接收审批任务在飞书内发生的变化）等信息。
 
 2. 审批提交人在飞书客户端内发起一次审批。
     
-    该过程中，开发者需要调用[同步三方审批实例](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/create)接口，同步三方审批系统内的审批实例、任务、抄送等数据。
+    该过程中，开发者需要调用[同步三方审批实例](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/create)接口，同步三方审批系统内的审批实例、任务、抄送等数据。
 
 3. 待审批流转到指定节点时，由审批人处理对应的审批任务。
     
-    该过程中，开发者需要调用[发送审批 Bot 消息](/ssl:ttdoc/ukTMukTMukTM/ugDNyYjL4QjM24CO0IjN)接口，在飞书客户端向各个审批人推送审批消息通知，审批人可以在消息通知的卡片内一键完成审批。
+    该过程中，开发者需要调用[发送审批 Bot 消息](https://open.larkoffice.com/document/ukTMukTMukTM/ugDNyYjL4QjM24CO0IjN)接口，在飞书客户端向各个审批人推送审批消息通知，审批人可以在消息通知的卡片内一键完成审批。
 
-4. 开发者继续调用[同步三方审批实例](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/create)接口，更新审批实例与任务的状态，最后再调用[校验三方审批实例](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/check)接口，确保已经将审批的最新状态同步到飞书审批中心。
+4. 开发者继续调用[同步三方审批实例](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/create)接口，更新审批实例与任务的状态，最后再调用[校验三方审批实例](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/check)接口，确保已经将审批的最新状态同步到飞书审批中心。
 
 #### 上手体验
 
-飞书开放平台提供了基于开放能力接入三方审批的场景教程，你可参考[快速开发三方审批](/ssl:ttdoc/home/quickly-develop-three-party-approvals/introduction)体验接入流程。
+飞书开放平台提供了基于开放能力接入三方审批的场景教程，你可参考[快速开发三方审批](https://open.larkoffice.com/document/home/quickly-develop-three-party-approvals/introduction)体验接入流程。
 
 ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/111e1e1a9549c1e3b024a56c3a9e0ebf_gSL5ZEenVA.png?height=600&lazyload=true&maxWidth=350&width=1128)
 

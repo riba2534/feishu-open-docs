@@ -6,13 +6,11 @@ updateTime: "1715083065000"
 
 # 记录筛选的开发指南
 
-:::html
-<md-alert type="tip">
-该文档为历史版本。要查看对应最新版本文档，参考[记录过滤参数填写指南](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/record-filter-guide)。
-</md-alert>
-:::
 
-在[列出记录](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/list)中可以通过查询参数 filter 去筛选出你需要的 records。
+> **Tip**: 该文档为历史版本。要查看对应最新版本文档，参考[记录过滤参数填写指南](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/record-filter-guide)。
+
+
+在[列出记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/list)中可以通过查询参数 filter 去筛选出你需要的 records。
 
 ## 注意事项
 
@@ -90,9 +88,5 @@ filter 后的表达式支持[公式语法](https://www.feishu.cn/hc/zh-CN/articl
 |修改人 | `CurrentValue.[修改人]="小飞书"` |
 |最后更新时间 | `CurrentValue.[字段名1]>TODAY()` |
 |自动编号 | `CurrentValue.[自动编号]="001no20220624"` |
-
-
-
-
 
 

@@ -5,7 +5,7 @@ updateTime: "1731061245000"
 ---
 
 # 表情（Emoji）的枚举值
-以下为高亮块（Callout）Block 支持的表情及其对应 ID。要了解高亮块 Block，参考[块的数据结构-Callout](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/data-structure/block)。
+以下为高亮块（Callout）Block 支持的表情及其对应 ID。要了解高亮块 Block，参考[块的数据结构-Callout](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/data-structure/block)。
 
 ## 表情符号与人物
 

@@ -6,31 +6,14 @@ updateTime: "1743151786000"
 
 # 处理回调
 
-通过回调订阅功能，应用可以及时接收并处理飞书中特定的交互行为（例如，飞书卡片交互、链接预览等），并根据交互结果做对应的业务处理，详情参见[回调概述](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/callback-overview)。在应用内订阅回调时，还需要在本地服务端建立与应用的连接，以便接收回调数据。服务端 SDK 封装了长连接方式，可以快速建立数据通道处理回调；你也可以选择自建 HTTP 服务器处理回调。两种方式介绍如下：
+通过回调订阅功能，应用可以及时接收并处理飞书中特定的交互行为（例如，飞书卡片交互、链接预览等），并根据交互结果做对应的业务处理，详情参见[回调概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/callback-overview)。在应用内订阅回调时，还需要在本地服务端建立与应用的连接，以便接收回调数据。服务端 SDK 封装了长连接方式，可以快速建立数据通道处理回调；你也可以选择自建 HTTP 服务器处理回调。两种方式介绍如下：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">订阅方式</md-th>
-<md-th style="width:70%">介绍</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-  
-<md-tr>
-<md-td>使用长连接接收回调</md-td>
-<md-td>该方式是飞书 SDK 内提供的能力，你可以通过集成飞书 SDK 与开放平台建立一条 WebSocket 全双工通道（你的服务器需要能够访问公网）。后续当应用订阅的回调发生时，开放平台会通过该通道向你的服务器发送消息。相较于传统的 Webhook 模式，长连接模式大大降低了接入成本，将原先 1 周左右的开发周期降低到 5 分钟。具体优势如下：测试阶段无需使用内网穿透工具，通过长连接模式在本地开发环境中即可接收回调。SDK 内封装了鉴权逻辑，只在建连时进行鉴权，后续回调推送均为明文数据，无需再处理解密和验签逻辑。只需保证运行环境具备访问公网能力即可，无需提供公网 IP 或域名。无需部署防火墙和配置白名单。</md-td>
-</md-tr>
 
-<md-tr>
-<md-td>将回调发送至开发者服务器</md-td>
-<md-td>传统的 Webhook 模式，该方式需要你提供用于接收回调消息的服务器公网地址。后续当应用订阅的回调发生时，开放平台会向服务器的公网地址发送 HTTP POST 请求，请求内包含回调数据。</md-td>
-</md-tr>
+| 订阅方式 | 介绍 |
+| --- | --- |
+| 使用长连接接收回调 | 该方式是飞书 SDK 内提供的能力，你可以通过集成飞书 SDK 与开放平台建立一条 WebSocket 全双工通道（你的服务器需要能够访问公网）。后续当应用订阅的回调发生时，开放平台会通过该通道向你的服务器发送消息。相较于传统的 Webhook 模式，长连接模式大大降低了接入成本，将原先 1 周左右的开发周期降低到 5 分钟。具体优势如下：测试阶段无需使用内网穿透工具，通过长连接模式在本地开发环境中即可接收回调。SDK 内封装了鉴权逻辑，只在建连时进行鉴权，后续回调推送均为明文数据，无需再处理解密和验签逻辑。只需保证运行环境具备访问公网能力即可，无需提供公网 IP 或域名。无需部署防火墙和配置白名单。 |
+| 将回调发送至开发者服务器 | 传统的 Webhook 模式，该方式需要你提供用于接收回调消息的服务器公网地址。后续当应用订阅的回调发生时，开放平台会向服务器的公网地址发送 HTTP POST 请求，请求内包含回调数据。 |
 
-</md-tbody>
-</md-table>
-:::
 
 ## 注意事项
 
@@ -54,12 +37,12 @@ updateTime: "1743151786000"
 
 ## （推荐）方式一：使用长连接接收回调
 
-如果回调订阅方式需要选择 **使用长连接接收回调**，则需要先使用 SDK 建立与应用的连接。本章节提供建立长连接的示例代码与代码解析，通过 SDK 建立长连接之后，你才能在应用的回调订阅方式中保存 **使用长连接接收回调** 方式。关于应用内配置回调订阅方式的介绍，参考[配置回调订阅方式](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/configure-callback-request-address)。
+如果回调订阅方式需要选择 **使用长连接接收回调**，则需要先使用 SDK 建立与应用的连接。本章节提供建立长连接的示例代码与代码解析，通过 SDK 建立长连接之后，你才能在应用的回调订阅方式中保存 **使用长连接接收回调** 方式。关于应用内配置回调订阅方式的介绍，参考[配置回调订阅方式](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/configure-callback-request-address)。
 
 ### 使用限制
 
 - 长连接模式仅支持企业自建应用。
-- [消息卡片回传交互（旧）](/ssl:ttdoc/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/configuring-card-callbacks/card-callback-structure)回调不支持 **使用长连接接收回调** 订阅方式，只能选择 **将回调发送至开发者服务器** 订阅方式。
+- [消息卡片回传交互（旧）](https://open.larkoffice.com/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/configuring-card-callbacks/card-callback-structure)回调不支持 **使用长连接接收回调** 订阅方式，只能选择 **将回调发送至开发者服务器** 订阅方式。
 - 每个应用最多建立 50 个连接（在配置长连接时，每初始化一个 client 就是一个连接）。
 
 ### 注意事项
@@ -69,7 +52,7 @@ updateTime: "1743151786000"
 
 ### 长连接代码
 
-包含[卡片回传交互](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)、[拉取链接预览数据](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure) 回调。
+包含[卡片回传交互](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)、[拉取链接预览数据](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure) 回调。
 
 ```python
 import lark_oapi as lark
@@ -112,7 +95,7 @@ if __name__ == "__main__":
 
 1. 通过 lark.EventDispatcherHandler.builder() 初始化事件处理器（event_handler），该方法的两个参数必须填空字符串。
 
-2. 通过 event_handler 的 register_xxxx() 方法监听不同的事件类型，上述示例中监听了[卡片回传交互 card.action.trigger](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication) 和[拉取链接预览数据 url.preview.get](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure) 两个回调。
+2. 通过 event_handler 的 register_xxxx() 方法监听不同的事件类型，上述示例中监听了[卡片回传交互 card.action.trigger](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication) 和[拉取链接预览数据 url.preview.get](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure) 两个回调。
 
 3. 通过 register_p2_card_action_trigger 注册卡片回调的处理函数。
 
@@ -133,7 +116,7 @@ if __name__ == "__main__":
 如果回调订阅方式选择 **将回调发送至开发者服务器**，则需要设置回调请求网址，并订阅回调。例如，你配置了可交互的飞书卡片（原消息卡片），当用户在卡片内进行交互后，飞书服务器会向请求网址回调包含 JSON 数据的 HTTP POST 请求。因此，你需要在项目中启动一个 HTTP 服务，然后把 HTTP 服务的 URL 绑定到应用的回调请求网址中，以接收回调数据。本章节提供了使用 flask 启动 httpServer 的示例代码，如果你使用的是其他 HTTP 框架，只需处理 HTTP 出入参转换即可。
 
 
-处理回调的示例代码如下，包含[卡片回传交互](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)、[拉取链接预览数据](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure)回调。
+处理回调的示例代码如下，包含[卡片回传交互](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)、[拉取链接预览数据](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure)回调。
 
 ```python
 from flask import Flask
@@ -189,7 +172,7 @@ if __name__ == "__main__":
     app.run(port=7777)
 ```
 
-处理[消息卡片回传交互（旧）](/ssl:ttdoc/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/configuring-card-callbacks/card-callback-structure)回调的写法如下所示，示例中使用 flask 启动 httpServer，如使用其他 web 框架，只需处理 http 出入参转换即可。
+处理[消息卡片回传交互（旧）](https://open.larkoffice.com/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/configuring-card-callbacks/card-callback-structure)回调的写法如下所示，示例中使用 flask 启动 httpServer，如使用其他 web 框架，只需处理 http 出入参转换即可。
 
 ```python
 from typing import Any

@@ -21,95 +21,11 @@ updateTime: "1723618722000"
 
 ## 方法列表
 
-以下为下拉列表的方法列表。其中，“商店”代表应用商店应用；“自建”代表企业自建应用，了解更多应用相关信息，参考[应用类型简介](/ssl:ttdoc/home/app-types-introduction/overview)。了解调用服务端 API 的流程，参考[流程概述](/ssl:ttdoc/uMzNwEjLzcDMx4yM3ATM/ugzNwEjL4cDMx4CO3ATM)。
-:::html
-<md-table>
-    <md-thead>
-<tr>
-    <md-th style="width: 35%;"><b>方法 (API)</md-th>
-    <md-th style="width: 30%;"><b>权限要求（满足任一）</md-th>
-    <md-th style="width: 20%;"><b>访问凭证</md-th>
-    <md-th style="width: 10%;"><b>商店</md-th>
-    <md-th style="width: 10%;"><b>自建</md-th>
-</tr>
-    </md-thead>
-    <md-tbody>
-<md-tr>
-    <md-td>
-<md-text type="field-name">`POST` [设置下拉列表](/ssl:ttdoc/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/datavalidation/set-dropdown) /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dataValidation</md-text>
-    </md-td>
-    <md-td>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-<md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
+以下为下拉列表的方法列表。其中，“商店”代表应用商店应用；“自建”代表企业自建应用，了解更多应用相关信息，参考[应用类型简介](https://open.larkoffice.com/document/home/app-types-introduction/overview)。了解调用服务端 API 的流程，参考[流程概述](https://open.larkoffice.com/document/uMzNwEjLzcDMx4yM3ATM/ugzNwEjL4cDMx4CO3ATM)。
 
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user">user_access_token</md-tag>
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-<md-tr>
-    <md-td>
-<md-text type="field-name">`PUT` [更新下拉列表设置](/ssl:ttdoc/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/datavalidation/update-datavalidation) /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dataValidation/:sheetId/:dataValidationId</md-text>
-    </md-td>
-    <md-td>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件
-" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
- <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user">user_access_token</md-tag>
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-
-
-
-<md-tr>
-    <md-td>
-<md-text type="field-name">`GET` [查询下拉列表设置](/ssl:ttdoc/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/datavalidation/query-datavalidation) /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dataValidation</md-text>
-    </md-td>
-    <md-td>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件
-" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
- <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-      
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user">user_access_token</md-tag>
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-
-
-
-<md-tr>
-    <md-td>
-<md-text type="field-name">`DELETE` [删除下拉列表设置](/ssl:ttdoc/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/datavalidation/delete-datavalidation) /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dataValidation</md-text>
-    </md-td>
-    <md-td>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件
-" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
- <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user">user_access_token</md-tag>
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-
-
-
-
-    </md-tbody>
-</md-table>
-
-:::
+| 方法 (API) | 权限要求（满足任一） | 访问凭证 | 商店 | 自建 |
+| --- | --- | --- | --- | --- |
+| ``POST` [设置下拉列表](https://open.larkoffice.com/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/datavalidation/set-dropdown) /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dataValidation` | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| ``PUT` [更新下拉列表设置](https://open.larkoffice.com/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/datavalidation/update-datavalidation) /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dataValidation/:sheetId/:dataValidationId` | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| ``GET` [查询下拉列表设置](https://open.larkoffice.com/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/datavalidation/query-datavalidation) /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dataValidation` | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| ``DELETE` [删除下拉列表设置](https://open.larkoffice.com/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/datavalidation/delete-datavalidation) /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dataValidation` | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 | `tenant_access_token` `user_access_token` | **✓** | **✓** |

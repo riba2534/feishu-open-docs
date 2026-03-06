@@ -28,11 +28,11 @@ updateTime: "1751869640000"
 
 ### **调用方式**
 
-**Step 1 ：** 调用「[获取飞书人事对象列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/list_object_api_name)」，查询自定义字段所属对象的 object_api_name
+**Step 1 ：** 调用「[获取飞书人事对象列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/list_object_api_name)」，查询自定义字段所属对象的 object_api_name
 > 说明：该接口中会返回预置对象和自定义对象
 
 
-**Step 2 ：** 根据对象的 object_api_name 调用「[获取自定义字段列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/list_object_api_name)」，获取字段的 custom_api_name
+**Step 2 ：** 根据对象的 object_api_name 调用「[获取自定义字段列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/list_object_api_name)」，获取字段的 custom_api_name
 
 常见系统对象:
 
@@ -55,14 +55,14 @@ updateTime: "1751869640000"
 | 试用期信息  | probation_management |
 | 部门     | department
 
-**Step 3 ：** 根据 object_api_name , custom_api_name 调用「[获取字段详情](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)」，获得字段详情
+**Step 3 ：** 根据 object_api_name , custom_api_name 调用「[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)」，获得字段详情
 
 ### **示例**
 
 场景：「个人信息」对象下创建了一个自定义分组「个人证书」，需要查询「个人证书」下「职业证书等级」字段的枚举值有哪些。
 
 ## 自定义字段如何传值
-飞书人事提供的很多 OpenAPI 都支持写入自定义字段的数据，例如入职、异动、员工信息、组织信息等，以「[员工信息-信息创建个人信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/person/create)」为例：
+飞书人事提供的很多 OpenAPI 都支持写入自定义字段的数据，例如入职、异动、员工信息、组织信息等，以「[员工信息-信息创建个人信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/person/create)」为例：
 - 设置了请求体 **「custom_fields」**，以field_name、value 的结构写入具体数据
 
 ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/fe107bf84a430ca5e17deef80099ebb3_Jep9LXRvYw.png?height=1334&lazyload=true&maxWidth=852&width=2852)
@@ -165,7 +165,7 @@ updateTime: "1751869640000"
 
 
 ## 自定义分组数据如何传值
-目前飞书人事仅支持在「人员档案配置」-「个人信息」功能下创建自定义分组，因此仅「个人信息」相关的 OpenAPI 支持更新自定义分组的数据（即：「创建个人信息」、「更新个人信息」）。以[「更新个人信息」](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/person/patch)为例：
+目前飞书人事仅支持在「人员档案配置」-「个人信息」功能下创建自定义分组，因此仅「个人信息」相关的 OpenAPI 支持更新自定义分组的数据（即：「创建个人信息」、「更新个人信息」）。以[「更新个人信息」](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/person/patch)为例：
 
 - 注意事项：
 	> - 自定义分组的数据是**覆盖式更新**

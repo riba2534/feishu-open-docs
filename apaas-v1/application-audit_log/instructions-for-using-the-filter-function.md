@@ -5,7 +5,7 @@ updateTime: "1752136653000"
 ---
 
 #  飞书 aPaaS平台-审计日志查询筛选功能说明
-开发者可以通过[查询审计日志列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/apaas-v1/application-audit_log/audit_log_list)API 中的查询参数 filter，指定筛选条件进行日志列表检索。格式为：左值（支持筛选的字段），操作符，右值。
+开发者可以通过[查询审计日志列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/apaas-v1/application-audit_log/audit_log_list)API 中的查询参数 filter，指定筛选条件进行日志列表检索。格式为：左值（支持筛选的字段），操作符，右值。
 
 ```javascript 
 [{"left":"eventName","operator":"=","right":[19001]}] 

@@ -6,17 +6,17 @@ updateTime: "1741946433000"
 
 #  变更字段
 ::: html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 30%;">时间轴对象</md-th>
-      <md-th style="width: 30">会引起变更的字段</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td><strong>部门</strong></md-td>
-      <md-td>
+
+  
+    
+      时间轴对象
+      会引起变更的字段
+    
+  
+  
+    
+      <strong>部门</strong>
+      
 - 组织名称```organization.name```<br>
 - 组织编码```organization.code```<br>
 - 上级组织```organization.description```<br>
@@ -28,33 +28,33 @@ updateTime: "1741946433000"
 - 部门群```lark_chat_id```<br>
 - 是否是根部门```is_root```<br>
 - 岗职模式```staffing_model```
-      </md-td>
-    </md-tr>
+      
     
-    <md-tr>
-      <md-td><strong>岗位</strong></md-td>
-      <md-td>
+    
+    
+      <strong>岗位</strong>
+      
 - 编码```code```<br>
 - 是否启用```active```<br>
 - 描述```description```<br>
 - 工时制度```working_hours_type```<br>
 - 生效时间```effecitive_time```
-  </md-td>
-    </md-tr>
+  
+    
 
-    <md-tr>
-      <md-td><strong>序列</strong></md-td>
-      <md-td>
+    
+      <strong>序列</strong>
+      
 - 是否启用```active```<br>
 - 生效时间```effective```<br>
 - 名称```name```<br>
 - 编码```code```
-      </md-td>
-    </md-tr>
+      
+    
 
-    <md-tr>
-      <md-td><strong>地点</strong></md-td>
-      <md-td>
+    
+      <strong>地点</strong>
+      
 - 组织名称```organization.name```<br>
 - 组织编码```organization.code```<br>
 - 上级组织```organization.description```<br>
@@ -76,12 +76,12 @@ updateTime: "1741946433000"
 - 地点生效时间```effective_time```<br>
 - 地点用途```location_usage```<br>
 - 区域```locale```
-      </md-td>
-    </md-tr>
+      
+    
 
-    <md-tr>
-      <md-td><strong>公司</strong></md-td>
-      <md-td>
+    
+      <strong>公司</strong>
+      
 - 组织名称```organization.name```<br>
 - 组织编码```organization.code```<br>
 - 上级组织```organization.description```<br>
@@ -121,12 +121,12 @@ updateTime: "1741946433000"
 - 公司性质```type```<br>
 - 是否是分公司```branch_company```<br>
 - 纳税人识别号```taxpayer_id```
-      </md-td>
-    </md-tr>
+      
+    
 
-    <md-tr>
-      <md-td><strong>成本中心</strong></md-td>
-      <md-td>
+    
+      <strong>成本中心</strong>
+      
 - 组织名称```organization.name```<br>
 - 组织编码```organization.code```<br>
 - 上级组织```organization.description```<br>
@@ -134,12 +134,12 @@ updateTime: "1741946433000"
 - 组织是否启用```organization.active```<br>
 - 是否自动生成```is_autogenerate```<br>
 - 生效时间```effective_time```
-      </md-td>
-    </md-tr>
+      
+    
 
-    <md-tr>
-      <md-td><strong>自定义组织</strong></md-td>
-      <md-td>
+    
+      <strong>自定义组织</strong>
+      
 - 全路径```full_path```<br>
 - 编码```code```<br>
 - 描述```description```<br>
@@ -148,8 +148,8 @@ updateTime: "1741946433000"
 - 组织类型```org_type```<br>
 - 顺序```organization_order```<br>
 - 是否启用```active```
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
+      
+    
+  
+
 :::

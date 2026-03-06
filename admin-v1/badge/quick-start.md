@@ -13,40 +13,15 @@ updateTime: "1736855116000"
 
 ## 权限范围
 ### 可申请的应用
-:::html
-<md-app-support types="custom,isv"></md-app-support>
-:::
+
 ### 依赖的权限
-:::html
-<md-table>
-  <md-tbody>
-    <md-tr>
-      <md-th>
-            勋章资源的接口权限
-      </md-th>
-      <md-td>
-            <md-perm name="admin:badge" desc="查看、创建、编辑勋章信息和上传勋章图片" support_app_types="custom,isv" tags="">查看、创建、编辑勋章信息和上传勋章图片</md-perm>
-      </md-td>
-    </md-tr>
-        <md-tr>
-      <md-th>
-            授予名单资源的接口权限
-      </md-th>
-      <md-td>
-            <md-perm name="admin:badge.grant" desc="查看、创建、编辑、删除勋章授予名单" support_app_types="custom,isv" tags="">查看、创建、编辑、删除勋章授予名单</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-        授予名单接口使用通讯录实体的依赖权限
-      </md-th>
-      <md-td>
-      <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-      </md-td>
-	</md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 列1 | 列2 |
+| --- | --- |
+| 勋章资源的接口权限 | `admin:badge` 查看、创建、编辑勋章信息和上传勋章图片 |
+| 授予名单资源的接口权限 | `admin:badge.grant` 查看、创建、编辑、删除勋章授予名单 |
+| 授予名单接口使用通讯录实体的依赖权限 | `contact:user.employee_id:readonly` 获取用户 user ID |
+
 ## 开发教程
 **教程步骤拆解**                                                                                                                                                             |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

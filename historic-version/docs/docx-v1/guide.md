@@ -48,7 +48,7 @@ updateTime: "1704711627000"
 |jira_issue|Jira 问题 Block|
 |wiki_catalog|Wiki 子目录 Block|
 |undefined|未支持 Block|
-> Block 类型枚举值定义：[点击查看 BlockType](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/data-structure/block#e8ce4e8e)。
+> Block 类型枚举值定义：[点击查看 BlockType](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/data-structure/block#e8ce4e8e)。
 ## 限制
 
 ### QPS 限制
@@ -92,7 +92,7 @@ updateTime: "1704711627000"
 > 1. ==-== 表示不在支持范围内，比如：
 >    - 不支持直接创建 `TableCell`，因为在对 `Table` 添加行或列时，会自动创建 `TableCell`；
 >    - 不支持直接读取 `Bitable`，可根据返回的 `Bitable` ==Token== 调用对应的 `Bitable` 开放接口。
-> 2. Block 类型枚举值定义：[点击查看 BlockType](/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/data-structure/block#e8ce4e8e)。
+> 2. Block 类型枚举值定义：[点击查看 BlockType](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/data-structure/block#e8ce4e8e)。
 ## 查询文档基本信息
 
 查询文档的**最新版本号**、**标题**，该接口只返回文档的基本信息，并不返回文档内容。

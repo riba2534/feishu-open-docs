@@ -22,78 +22,27 @@ updateTime: "1727245979000"
 
 不同的 API 加急方式实现效果不同，具体说明如下：
 
-- [发送应用内加急](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/urgent_app)
+- [发送应用内加急](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/urgent_app)
 
 
 	![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/f7887dbb28aa8801ee77573f60868cdf_hI9rCxz2qN.png?height=1284&lazyload=true&maxWidth=600&width=2146)
 
-- [发送短信加急](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/urgent_sms)
+- [发送短信加急](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/urgent_sms)
 
 	短信加急在推送应用内加急的基础上，还会推送短信消息。
 
 	![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/ac3f79730b42dbde8dfdb9ecdbc79a82_kDfxjbPV5t.png?height=1238&lazyload=true&maxWidth=300&width=598)
     
-- [发送电话加急](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/urgent_phone)
+- [发送电话加急](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/urgent_phone)
 
 	电话加急在推送应用内加急的基础上，还会进行电话通知。电话内容为 `[成员名] 给你发了一条加急消息，请打开飞书查看详情`。
     
     
 ## 字段说明
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">名称</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:50%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>message_id</md-td>
-<md-td>string</md-td>
-<md-td>待加急的消息 ID。ID 获取方式：
-  
-- 调用[发送消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)接口后，从响应结果的 `message_id` 参数获取。
-- 监听[接收消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件，当触发该事件后可以从事件体内获取消息的 `message_id`。
-- 调用[获取会话历史消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/list)接口，从响应结果的 `message_id` 参数获取。
-
-**注意**：不支持加急[批量发送的消息](/ssl:ttdoc/ukTMukTMukTM/ucDO1EjL3gTNx4yN4UTM)（对应的消息 ID 格式为 `bm_xxx`）。
-
-**示例值**："om_dc13264520392913993dd051dba21dcf"
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>user_id_type</md-td>
-<md-td>string</md-td>
-<md-td>用户 ID 类型
-
-**可选值有**：
-
-- open_id：标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[如何获取自己的 Open ID](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)
-- union_id：标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[如何获取自己的 Union ID](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id)
-- user_id：标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[如何获取自己的 User ID？](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)
- 
-**示例值**：open_id
-</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>user_id_list</md-td>
-<md-td>string[]</md-td>
-<md-td>加急的目标用户 ID 列表。ID 类型与查询参数 user_id_type 取值一致，推荐使用 open_id。
-
-**注意**：需要确保目标用户在加急消息所属的会话内。如果 ID 列表中有用户不在消息所属的会话内，则接口会将这些无效的 ID 返回（响应参数 invalid_user_id_list），只加急有效的用户 ID。如果 ID 列表内的所有 ID 均无效，则会返回 `230001` 错误码。 
-
-**数据校验规则**：列表长度不能大于 200。
-
-**示例值**：["ou_6yf8af6bgb9100449565764t3382b168"]
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| message_id | string | 待加急的消息 ID。ID 获取方式：    - 调用[发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)接口后，从响应结果的 `message_id` 参数获取。 - 监听[接收消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)事件，当触发该事件后可以从事件体内获取消息的 `message_id`。 - 调用[获取会话历史消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/list)接口，从响应结果的 `message_id` 参数获取。 **注意**：不支持加急[批量发送的消息](https://open.larkoffice.com/document/ukTMukTMukTM/ucDO1EjL3gTNx4yN4UTM)（对应的消息 ID 格式为 `bm_xxx`）。 **示例值**："om_dc13264520392913993dd051dba21dcf" |
+| user_id_type | string | 用户 ID 类型 **可选值有**： - open_id：标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[如何获取自己的 Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid) - union_id：标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[如何获取自己的 Union ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id) - user_id：标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[如何获取自己的 User ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)   **示例值**：open_id |
+| user_id_list | string[] | 加急的目标用户 ID 列表。ID 类型与查询参数 user_id_type 取值一致，推荐使用 open_id。 **注意**：需要确保目标用户在加急消息所属的会话内。如果 ID 列表中有用户不在消息所属的会话内，则接口会将这些无效的 ID 返回（响应参数 invalid_user_id_list），只加急有效的用户 ID。如果 ID 列表内的所有 ID 均无效，则会返回 `230001` 错误码。  **数据校验规则**：列表长度不能大于 200。 **示例值**：["ou_6yf8af6bgb9100449565764t3382b168"] |

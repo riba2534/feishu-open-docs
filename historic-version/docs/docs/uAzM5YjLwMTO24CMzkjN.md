@@ -78,4 +78,4 @@ Paragraph 是文档正文的段落，由 ParagraphElement（段落元素）、Lo
 
 ![图片名称](https://sf3-cn.feishucdn.com/obj/website-img/fcb89904e385c8f945f20afb54138aa6_jqjI7UiNbR.png?lazyload=true&width=773&height=233)
 
-本文大致介绍了文档的数据结构，接下来，你可以阅读[文档数据结构参考](/ssl:ttdoc/ukTMukTMukTM/ukDM2YjL5AjN24SOwYjN)来了解更多。
+本文大致介绍了文档的数据结构，接下来，你可以阅读[文档数据结构参考](https://open.larkoffice.com/document/ukTMukTMukTM/ukDM2YjL5AjN24SOwYjN)来了解更多。

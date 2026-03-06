@@ -5,90 +5,27 @@ updateTime: "1657280057000"
 ---
 
 # 实例列表查询
-:::html
-<md-alert type="error">
-为了更好地提升接口文档的的易理解性，我们对文档进行了升级，请尽快迁移至[新版本>>](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/query)
-</md-alert>
-:::
+
+> **Error**: 为了更好地提升接口文档的的易理解性，我们对文档进行了升级，请尽快迁移至[新版本>>](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/query)
+
 该接口通过不同条件查询审批系统中符合条件的审批实例列表。
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://www.feishu.cn/approval/openapi/v2/instance/search</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
 
-   <md-tr>
-     <md-th>支持的应用类型</md-th>
-      <md-td>
-	  <md-app-support types="custom"></md-app-support>
-      </md-td>
-   </md-tr>
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://www.feishu.cn/approval/openapi/v2/instance/search |
+| HTTP Method | POST |
+| 支持的应用类型 | custom |
+| 权限要求  调用该 API 所需的权限。开启其中任意一项权限即可调用 | `approval:approval.list:readonly` 查询审批列表 |
 
-
-    
-    
-    <md-tr>
-      <md-th>
- 权限要求
- <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-</md-th>
-      <md-td>
-<md-perm name="approval:approval.list:readonly" desc="查询审批列表" support_app_types="custom" tags="">查询审批列表</md-perm>
-</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
 ### 请求头
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 18%;">名称</md-th>  
-      <md-th style="width: 15%;">类型</md-th>  
-       <md-th style="width: 15%;">必填</md-th>  
-      <md-th>描述</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>Authorization</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
- 
-**值格式**："Bearer `access_token`"
 
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-          
- [了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-	</md-td>
-</md-tr>
-     <md-tr> 
-      <md-td>Content-Type</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-     <md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-   
-  </md-tbody> 
-</md-table>
-:::
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token`   **值格式**："Bearer `access_token`" **示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"             [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
+
 
 ### 请求体
 
@@ -107,13 +44,12 @@ updateTime: "1657280057000"
 |offset|int|否|查询偏移量 <br>注：不得超过10000
 |limit|int|否|查询限制量 <br>注：不得超过200<br>不设置默认查询10条数据
 
-:::html 
-<md-alert type="tip"> 注：
-1. user_id、approval_code、instance_code、instance_external_id、group_external_id 不得均为空<br>
-2. approval_code 和 group_external_id 查询结果取并集，instance_code 和 instance_external_id 查询结果取并集，其他查询条件都对应取交集<br>
-3. 查询时间跨度不得大于30天，开始和结束时间必须都设置，或者都不设置
-</md-alert> 
-:::
+
+> **Tip**: 注：
+> 1. user_id、approval_code、instance_code、instance_external_id、group_external_id 不得均为空
+> 2. approval_code 和 group_external_id 查询结果取并集，instance_code 和 instance_external_id 查询结果取并集，其他查询条件都对应取交集
+> 3. 查询时间跨度不得大于30天，开始和结束时间必须都设置，或者都不设置
+
 
 ### 请求体示例
 

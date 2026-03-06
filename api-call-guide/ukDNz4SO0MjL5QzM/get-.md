@@ -6,11 +6,11 @@ updateTime: "1735873392000"
 
 # 调用 API
 
-为了让开发者可以便捷地调用 API，飞书开放平台提供了 Java SDK、Go SDK、Python SDK 和 Node SDK。有关 SDK 的详细介绍，可以参考[服务端 SDK](/ssl:ttdoc/ukTMukTMukTM/uETO1YjLxkTN24SM5UjN)。本文介绍基本的 API 调用方法。
+为了让开发者可以便捷地调用 API，飞书开放平台提供了 Java SDK、Go SDK、Python SDK 和 Node SDK。有关 SDK 的详细介绍，可以参考[服务端 SDK](https://open.larkoffice.com/document/ukTMukTMukTM/uETO1YjLxkTN24SM5UjN)。本文介绍基本的 API 调用方法。
 
 ## 前提条件
 
-- 完成创建应用、[申请权限](/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN)、[获取访问凭证](/ssl:ttdoc/ukTMukTMukTM/uMTNz4yM1MjLzUzM)、[设置 IP 白名单](/ssl:ttdoc/ukTMukTMukTM/ucTMxYjL3ETM24yNxEjN)之后，才能调用服务端 API。
+- 完成创建应用、[申请权限](https://open.larkoffice.com/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN)、[获取访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)、[设置 IP 白名单](https://open.larkoffice.com/document/ukTMukTMukTM/ucTMxYjL3ETM24yNxEjN)之后，才能调用服务端 API。
 - 调用 API 时，需要将访问凭证放入请求 Header 中（`Authorization:Bearer <access token>`）。
 - 调用服务端 API 时，需要使用 HTTPS 协议、UTF-8 编码。
 
@@ -18,9 +18,9 @@ updateTime: "1735873392000"
 
 ### 向企业内员工发消息
 
-你可以调用[发送消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)接口完成向企业内员工发消息的操作，从接口文档中可以确定，调用该接口前，需要获取 `tenant_access_token`。
+你可以调用[发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)接口完成向企业内员工发消息的操作，从接口文档中可以确定，调用该接口前，需要获取 `tenant_access_token`。
 
-1.  参考 [获取访问凭证](/ssl:ttdoc/ukTMukTMukTM/uMTNz4yM1MjLzUzM) 获取 `tenant_access_token`。
+1.  参考 [获取访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM) 获取 `tenant_access_token`。
     
     获取凭证的请求示例如下，你需要将 *app_id* 和 *app_secret* 替换为实际值。
 
@@ -33,7 +33,7 @@ updateTime: "1735873392000"
 	}'
     ```
     
-2. 根据文档内的请求参数描述，调用[发送消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)接口。
+2. 根据文档内的请求参数描述，调用[发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)接口。
 
 	- 方式一：在调试台发起 API 调用
 	
@@ -66,11 +66,11 @@ updateTime: "1735873392000"
 
 ### 查询用户信息
 
-你可以调用[获取单个用户信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/get)接口查询用户信息。从接口文档中可以确定，调用该接口前，需要获取 `tenant_access_token` 或 `user_access_token`，请根据需要获取的用户信息范围，选择合适的访问凭证。
+你可以调用[获取单个用户信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/get)接口查询用户信息。从接口文档中可以确定，调用该接口前，需要获取 `tenant_access_token` 或 `user_access_token`，请根据需要获取的用户信息范围，选择合适的访问凭证。
 
-1. 参考 [获取访问凭证](/ssl:ttdoc/ukTMukTMukTM/uMTNz4yM1MjLzUzM) 获取 `tenant_access_token` 或 `user_access_token`。
+1. 参考 [获取访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM) 获取 `tenant_access_token` 或 `user_access_token`。
 
-2. 根据文档内的请求参数描述，调用[获取单个用户信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/get)接口。
+2. 根据文档内的请求参数描述，调用[获取单个用户信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/get)接口。
 
 	- 方式一：在调试台发起 API 调用
     
@@ -94,7 +94,7 @@ updateTime: "1735873392000"
 - `data`：API 的调用结果。`data` 在一些操作类 API 的返回中可能不存在。
 :::note
 - 请不要依据 `msg` 来判定一个请求是否失败。
-- 接收到失败响应后，你可以先查看 [通用错误码](/ssl:ttdoc/ukTMukTMukTM/ugjM14COyUjL4ITN)说明，排查问题。如果依然不能解决问题，可以向飞书开放平台反馈响应头中的 `x-tt-logid` 值，以便我们协助定位问题。
+- 接收到失败响应后，你可以先查看 [通用错误码](https://open.larkoffice.com/document/ukTMukTMukTM/ugjM14COyUjL4ITN)说明，排查问题。如果依然不能解决问题，可以向飞书开放平台反馈响应头中的 `x-tt-logid` 值，以便我们协助定位问题。
 :::
 
 成功响应示例：
@@ -159,61 +159,35 @@ HTTP / 1.1 400 Bad Request // HTTP 状态码
 }
 ``` 
         
-:::html
-<md-dt-table>
-<md-dt-thead>
-<md-dt-tr>
-<md-dt-th style="width: 30%;">错误信息模块</md-dt-th>
-<md-dt-th >描述</md-dt-th>
-</md-dt-tr>
-</md-dt-thead>
-<md-dt-tbody>
-<md-dt-tr level="0">
-<md-dt-td>HTTP 状态码</md-dt-td>
-<md-dt-td>用于进行错误分类，如客户端错误（4XX）、服务端错误（5XX）。</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="0">
-<md-dt-td>业务状态码 (code)</md-dt-td>
-<md-dt-td>代表具体的错误场景，如参数错误、鉴权错误。业务失败情况下，返回非 0 业务状态码，且 HTTP 状态码为 400 或 500 系列。</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="0">
-<md-dt-td>错误信息 (msg)</md-dt-td>
-<md-dt-td>错误码 code 关联的具体错误描述。**msg** 可能会优化和调整，因此不要依赖 **msg** 进行代码判断，建议依赖 **code** 进行请求失败的代码判断。</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="0">
-<md-dt-td>错误排查信息 (error)</md-dt-td>
-<md-dt-td>说明具体是哪个部分出现了问题，帮助开发者定位错误的原因，并提供建议的解决方案。</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="1">
-<md-dt-td>message</md-dt-td>
-<md-dt-td>提供当前错误场景的更多帮助信息，如错误参数内容。</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="1">
-<md-dt-td>troubleshooter</md-dt-td>
-<md-dt-td>该字段的值是一个链接，可以直接复制后用浏览器打开，页面中会给出错误原因分析和对应的解决方案。
 
-        
- 
-:::note
+| 错误信息模块 | 描述 |
+| --- | --- |
+| HTTP 状态码 | 用于进行错误分类，如客户端错误（4XX）、服务端错误（5XX）。 |
+| 业务状态码 (code) | 代表具体的错误场景，如参数错误、鉴权错误。业务失败情况下，返回非 0 业务状态码，且 HTTP 状态码为 400 或 500 系列。 |
+| 错误信息 (msg) | 错误码 code 关联的具体错误描述。**msg** 可能会优化和调整，因此不要依赖 **msg** 进行代码判断，建议依赖 **code** 进行请求失败的代码判断。 |
+| 错误排查信息 (error) | 说明具体是哪个部分出现了问题，帮助开发者定位错误的原因，并提供建议的解决方案。 |
+| &nbsp;&nbsp;└ message | 提供当前错误场景的更多帮助信息，如错误参数内容。 |
+| &nbsp;&nbsp;└ troubleshooter | 该字段的值是一个链接，可以直接复制后用浏览器打开，页面中会给出错误原因分析和对应的解决方案。 |
+note
   如果你是在独立的 API 调试台或 API 文档内嵌的调试台中进行调试调用，可以直接在下方获取智能助手的详细排查建议。
 
   
   
-  </md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="1">
-<md-dt-td>logid</md-dt-td>
-<md-dt-td>API 调用日志 ID，可以通过在开放平台官网上搜索 logid 字段，获取详细的错误原因和排查建议。
+  
+
+
+logid
+API 调用日志 ID，可以通过在开放平台官网上搜索 logid 字段，获取详细的错误原因和排查建议。
   
         
     
 你也可以登录[开发者后台](https://open.feishu.cn/app)并进入调用 API 的应用的详情页，在 **日志检索** > **服务端日志检索** 功能页过滤出对应的 API 调用日志数据。
     
-    </md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="1">
-<md-dt-td>field_violations</md-dt-td>
-<md-dt-td>代表参数错误，当请求不满足参数数据校验规则时，返回的错误信息会包含该参数。例如，某 int 类型请求参数要求传值在 1~10 之间，实际请求时传入了 11 则会报错并返回 field_violations。你的服务可依赖该参数进行代码处理。field_violation 为数组，数组内结构为 Object。结构示例如下：
+    
+
+
+field_violations
+代表参数错误，当请求不满足参数数据校验规则时，返回的错误信息会包含该参数。例如，某 int 类型请求参数要求传值在 1~10 之间，实际请求时传入了 11 则会报错并返回 field_violations。你的服务可依赖该参数进行代码处理。field_violation 为数组，数组内结构为 Object。结构示例如下：
 ```json
 {
     "field_violations": [
@@ -225,23 +199,23 @@ HTTP / 1.1 400 Bad Request // HTTP 状态码
     ]
 }
 ```
-  </md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="2">
-<md-dt-td>field</md-dt-td>
-<md-dt-td>具体的错误参数</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="2">
-<md-dt-td>value</md-dt-td>
-<md-dt-td>错误参数的取值</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="2">
-<md-dt-td>description</md-dt-td>
-<md-dt-td>字段错误的描述</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="1">
-<md-dt-td>permission_violations</md-dt-td>
-<md-dt-td>代表权限错误，请求时如果应用开通的权限不满足 API 需要会报错并返回该参数。你的服务可依赖该参数进行代码处理。permission_violation 为数组，数组内结构为 Object。结构示例如下：
+  
+
+
+field
+具体的错误参数
+
+
+value
+错误参数的取值
+
+
+description
+字段错误的描述
+
+
+permission_violations
+代表权限错误，请求时如果应用开通的权限不满足 API 需要会报错并返回该参数。你的服务可依赖该参数进行代码处理。permission_violation 为数组，数组内结构为 Object。结构示例如下：
   
 ```json
 {
@@ -256,19 +230,19 @@ HTTP / 1.1 400 Bad Request // HTTP 状态码
   
   
   
-  </md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="2">
-<md-dt-td>scope</md-dt-td>
-<md-dt-td>需要开通的权限。</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="2">
-<md-dt-td>url</md-dt-td>
-<md-dt-td>对应的添加权限的地址。可以点击后直接前往开发者后台权限页面进行申请开通。</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="1">
-<md-dt-td>helps</md-dt-td>
-<md-dt-td>权限不足时返回该参数，你可以访问 URL 快速跳转到缺失权限的应用 API 权限页面开通权限。结构示例如下：
+  
+
+
+scope
+需要开通的权限。
+
+
+url
+对应的添加权限的地址。可以点击后直接前往开发者后台权限页面进行申请开通。
+
+
+helps
+权限不足时返回该参数，你可以访问 URL 快速跳转到缺失权限的应用 API 权限页面开通权限。结构示例如下：
 ```json  
 {
     "helps": [
@@ -280,23 +254,22 @@ HTTP / 1.1 400 Bad Request // HTTP 状态码
 }
 ```
   
-  </md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="2">
-<md-dt-td>url</md-dt-td>
-<md-dt-td>对应的添加权限的地址。可以点击后直接前往开发者后台权限页面进行申请开通。</md-dt-td>
-</md-dt-tr>
-<md-dt-tr level="2">
-<md-dt-td>description</md-dt-td>
-<md-dt-td>提供缺失的权限信息。</md-dt-td>
-</md-dt-tr>
-</md-dt-tbody>
-</md-dt-table>
+  
+
+
+url
+对应的添加权限的地址。可以点击后直接前往开发者后台权限页面进行申请开通。
+
+
+description
+提供缺失的权限信息。
+
+
 :::
         
 ## 相关教程
 
 你也可参考以下教程快速体验如何调用服务端 API：
 - [快速调用一个服务端 API（以发送
-消息接口为例）](/ssl:ttdoc/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/how-to-call-a-server-side-api/introduction)
-- [快速调用一个服务端 API（以创建多维表格为例）](/ssl:ttdoc/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/call-a-server-api-base-example/introduction)
+消息接口为例）](https://open.larkoffice.com/document/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/how-to-call-a-server-side-api/introduction)
+- [快速调用一个服务端 API（以创建多维表格为例）](https://open.larkoffice.com/document/uAjLw4CM/uMzNwEjLzcDMx4yM3ATM/call-a-server-api-base-example/introduction)

@@ -9,85 +9,26 @@ updateTime: "1626181326000"
 该接口用于向通讯录中批量新增多个用户。<br>
 
 
-:::html
-<md-alert type="warn">
-调用该接口需要具有待添加用户所在部门的通讯录授权范围。<br>
-应用商店应用无权限调用此接口。<br>
-调用该接口需要申请 `更新通讯录` 以及 `以应用身份访问通讯录` 权限。
-</md-alert>
-:::
+> **Warning**: 调用该接口需要具有待添加用户所在部门的通讯录授权范围。
+> 应用商店应用无权限调用此接口。
+> 调用该接口需要申请 `更新通讯录` 以及 `以应用身份访问通讯录` 权限。
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/contact/v2/user/batch_add</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    
-    
-    <md-tr>
-      <md-th>
-权限要求
- <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-<div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-</md-th>
-      <md-td>
-        <md-perm href="/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN"> 更新通讯录 </md-perm>
-         <md-perm href="/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">以应用身份访问通讯录（历史版本）</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
-### 请求头
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 18%;">名称</md-th>  
-      <md-th style="width: 15%;">类型</md-th>  
-       <md-th style="width: 15%;">必填</md-th>  
-      <md-th>描述</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>Authorization</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
- 
-**值格式**："Bearer `access_token`"
 
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-          
- [了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-	</md-td>
-</md-tr>
-     <md-tr> 
-      <md-td>Content-Type</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-     <md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-   
-  </md-tbody> 
-</md-table>
-:::
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/contact/v2/user/batch_add |
+| HTTP Method | POST |
+| 权限要求  调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | 更新通讯录 以应用身份访问通讯录（历史版本） |
+
+### 请求头
+
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token`   **值格式**："Bearer `access_token`" **示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"             [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
+
 ### 请求体
 参数 | 类型 | 必填 / 选填 | 说明
 -- | -- | -- | --
@@ -166,7 +107,7 @@ need_send_notification | bool | 选填 | 是否对本次新增的所有用户发
 code | 返回码，非 0 表示失败。
 msg | 对返回码的文本描述。
 data | -
-&emsp;∟task_id | 生成的异步任务 ID，参见 [查询批量任务执行状态](/ssl:ttdoc/ukTMukTMukTM/uUDOwUjL1gDM14SN4ATN) 接口。
+&emsp;∟task_id | 生成的异步任务 ID，参见 [查询批量任务执行状态](https://open.larkoffice.com/document/ukTMukTMukTM/uUDOwUjL1gDM14SN4ATN) 接口。
 ### 响应体示例
 ```json
 {
@@ -179,4 +120,4 @@ data | -
 ```
 ### 错误码
 
-具体可参考：[服务端错误码说明](/ssl:ttdoc/ukTMukTMukTM/ugjM14COyUjL4ITN)
+具体可参考：[服务端错误码说明](https://open.larkoffice.com/document/ukTMukTMukTM/ugjM14COyUjL4ITN)

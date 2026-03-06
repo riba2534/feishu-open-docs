@@ -8,7 +8,7 @@ updateTime: "1698376549000"
 
 ## 功能简介
 
-为了提高应用访问的安全性，开发者可以通过 IP 白名单功能设置能够合法访问飞书服务端 API 的 IP 列表，不在白名单列表中的 IP 地址的请求会被拒绝，并返回错误提示信息。错误码为 99991401，有关该错误码的详细介绍，参考[通用错误码](/ssl:ttdoc/ukTMukTMukTM/ugjM14COyUjL4ITN)。
+为了提高应用访问的安全性，开发者可以通过 IP 白名单功能设置能够合法访问飞书服务端 API 的 IP 列表，不在白名单列表中的 IP 地址的请求会被拒绝，并返回错误提示信息。错误码为 99991401，有关该错误码的详细介绍，参考[通用错误码](https://open.larkoffice.com/document/ukTMukTMukTM/ugjM14COyUjL4ITN)。
 
 :::note
 - IP 白名单对 API 访问凭证（access_token）相关接口不生效。
@@ -21,7 +21,7 @@ updateTime: "1698376549000"
 
 - IP 地址只能为 IPv4 地址，不支持 IPv6 地址，且必须是公网 IP 地址。
 
-  要了解如何获取公网 IP 地址，参考[通用错误码](/ssl:ttdoc/ukTMukTMukTM/ugjM14COyUjL4ITN)介绍中对错误码 99991401 给出的排查建议。
+  要了解如何获取公网 IP 地址，参考[通用错误码](https://open.larkoffice.com/document/ukTMukTMukTM/ugjM14COyUjL4ITN)介绍中对错误码 99991401 给出的排查建议。
 - 仅支持配置单个 IP 地址，不支持配置一个 IP 网段。例如不能配置为 172.170.0.0，表示将 172.170.x.x 网段设置为 IP 白名单。
 
 

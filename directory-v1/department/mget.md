@@ -6,285 +6,56 @@ updateTime: "1752138965000"
 
 # 批量获取部门信息
 
-该接口支持传入多个部门ID，返回每个部门的详细信息（如名称、负责人、子部门等）。{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=directory&version=v1&resource=department&method=mget)
+该接口支持传入多个部门ID，返回每个部门的详细信息（如名称、负责人、子部门等）。
 
-:::html
-<md-alert type="tip">
-**注意**：
-- 本接口支持tenant_access_token和user_access_token。
-  - 使用tenant_access_token时，数据权限遵循应用的通讯录权限范围，返回的字段数据为应用有权限的字段。可通过[获取应用通讯录权限范围配置](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/application-v6/application/contacts_range_configuration)确定应用的通讯录权限范围。
-  - 使用user_access_token时，默认为管理员用户，将校验管理员管理范围。当用户有多个管理员身份均可查看部门信息时，管理员管理范围取最大集。管理员权限可查看帮助中心文档： [管理员创建管理员角色及分配权限](https://www.feishu.cn/hc/zh-CN/articles/360043495213-%E7%AE%A1%E7%90%86%E5%91%98%E5%88%9B%E5%BB%BA%E7%AE%A1%E7%90%86%E5%91%98%E8%A7%92%E8%89%B2%E5%8F%8A%E5%88%86%E9%85%8D%E6%9D%83%E9%99%90#tabs0|lineguid-dU31C)
-- 为增强飞书组织架构 OpenAPI 的灵活性，于 **2024 年 10 月 21 日**对该 API 接口做出了更新升级，升级内容包括：优化查询已删除部门信息的返回数据结构。
-  - 升级前，查询已删除部门的信息时，不会返回部门负责人信息；升级后，查询已删除部门的信息时，返回数据中将包括部门负责人信息。
-</md-alert>
-:::
 
-:::html
-<md-alert type="warn">
-
-</md-alert>
-:::
-
-:::html
-<md-alert type="error">
-
-</md-alert>
-:::
-
+> **Tip**: **注意**：
+> - 本接口支持tenant_access_token和user_access_token。
+>   - 使用tenant_access_token时，数据权限遵循应用的通讯录权限范围，返回的字段数据为应用有权限的字段。可通过[获取应用通讯录权限范围配置](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/application-v6/application/contacts_range_configuration)确定应用的通讯录权限范围。
+>   - 使用user_access_token时，默认为管理员用户，将校验管理员管理范围。当用户有多个管理员身份均可查看部门信息时，管理员管理范围取最大集。管理员权限可查看帮助中心文档： [管理员创建管理员角色及分配权限](https://www.feishu.cn/hc/zh-CN/articles/360043495213-%E7%AE%A1%E7%90%86%E5%91%98%E5%88%9B%E5%BB%BA%E7%AE%A1%E7%90%86%E5%91%98%E8%A7%92%E8%89%B2%E5%8F%8A%E5%88%86%E9%85%8D%E6%9D%83%E9%99%90#tabs0|lineguid-dU31C)
+> - 为增强飞书组织架构 OpenAPI 的灵活性，于 **2024 年 10 月 21 日**对该 API 接口做出了更新升级，升级内容包括：优化查询已删除部门信息的返回数据结构。
+>   - 升级前，查询已删除部门的信息时，不会返回部门负责人信息；升级后，查询已删除部门的信息时，返回数据中将包括部门负责人信息。
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.feishu.cn/open-apis/directory/v1/departments/mget</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[1000 次/分钟、50 次/秒](/ssl:ttdoc/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="directory:department:read" desc="调用 API 获取部门信息" support_app_types="custom,isv" tags="">调用 API 获取部门信息</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="directory:department.base:read" desc="查看部门基础信息" support_app_types="custom,isv" tags="">查看部门基础信息</md-perm>
-        <md-perm name="directory:department.count:read" desc="查看部门成员与子部门计数" support_app_types="custom,isv" tags="">查看部门成员与子部门计数</md-perm>
-        <md-perm name="directory:department.custom_field:read" desc="查看部门自定义字段信息" support_app_types="custom,isv" tags="">查看部门自定义字段信息</md-perm>
-        <md-perm name="directory:department.data_source:read" desc="查看部门数据来源" support_app_types="custom,isv" tags="">查看部门数据来源</md-perm>
-        <md-perm name="directory:department.department_path:read" desc="查看部门路径信息" support_app_types="custom,isv" tags="">查看部门路径信息</md-perm>
-        <md-perm name="directory:department.external_id:read" desc="查看部门自定义 ID" support_app_types="custom,isv" tags="">查看部门自定义 ID</md-perm>
-        <md-perm name="directory:department.has_child:read" desc="查看部门是否有子部门" support_app_types="custom,isv" tags="">查看部门是否有子部门</md-perm>
-        <md-perm name="directory:department.leader:read" desc="查看部门负责人信息" support_app_types="custom,isv" tags="">查看部门负责人信息</md-perm>
-        <md-perm name="directory:department.name:read" desc="查看部门的名称" support_app_types="custom,isv" tags="">查看部门的名称</md-perm>
-        <md-perm name="directory:department.order_weight:read" desc="查看部门排序权重" support_app_types="custom,isv" tags="">查看部门排序权重</md-perm>
-        <md-perm name="directory:department.organization:read" desc="查看部门组织架构信息" support_app_types="custom,isv" tags="">查看部门组织架构信息</md-perm>
-        <md-perm name="directory:department.parent_id:read" desc="查看部门的父部门 ID" support_app_types="custom,isv" tags="">查看部门的父部门 ID</md-perm>
-        <md-perm name="directory:department.status:read" desc="查看部门的停启用状态" support_app_types="custom,isv" tags="">查看部门的停启用状态</md-perm>
-        <md-perm name="directory:employee.base.external_id:read" desc="查看员工自定义 ID" support_app_types="custom,isv" tags="">查看员工自定义 ID</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 项目 | 值 |
+| --- | --- |
+| HTTP URL | https://open.feishu.cn/open-apis/directory/v1/departments/mget |
+| HTTP Method | POST |
+| 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | custom,isv |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `directory:department:read` 调用 API 获取部门信息 |
+| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `directory:department.base:read` 查看部门基础信息 `directory:department.count:read` 查看部门成员与子部门计数 `directory:department.custom_field:read` 查看部门自定义字段信息 `directory:department.data_source:read` 查看部门数据来源 `directory:department.department_path:read` 查看部门路径信息 `directory:department.external_id:read` 查看部门自定义 ID `directory:department.has_child:read` 查看部门是否有子部门 `directory:department.leader:read` 查看部门负责人信息 `directory:department.name:read` 查看部门的名称 `directory:department.order_weight:read` 查看部门排序权重 `directory:department.organization:read` 查看部门组织架构信息 `directory:department.parent_id:read` 查看部门的父部门 ID `directory:department.status:read` 查看部门的停启用状态 `directory:employee.base.external_id:read` 查看员工自定义 ID |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
-或
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
-
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | `tenant_access_token` 或 `user_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
 
 ### 查询参数
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;" >描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >employee_id_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	用户 ID 类型
-
-**示例值**：user_id
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="open_id" >标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)</md-enum-item>
-<md-enum-item key="union_id" >标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id)</md-enum-item>
-<md-enum-item key="employee_id" >企业内在职员工的唯一标识。支持自定义，未自定义时系统自动生成。ID支持修改。
-获取employee_id的方式：
-  - 企业管理员在 管理后台 > 组织架构 > 成员与部门 页面，点击 成员详情，查询员工ID
-  - 通过 [批量获取员工列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/directory-v1/employee/filter) 的接口，通过手机号或邮箱查询员工ID。</md-enum-item>
-</md-enum>
-
-**默认值**：`open_id`
-
-**当值为 `employee_id`，字段权限要求**：
-<md-perm name="directory:employee.base.external_id:read" desc="查看员工自定义 ID" support_app_types="custom,isv" tags="">查看员工自定义 ID</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >department_id_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	否
-	</md-dt-td>
-	<md-dt-td>
-	此次调用中使用的部门ID的类型
-
-**示例值**：department_id
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="department_id" >用来标识租户内一个唯一的部门</md-enum-item>
-<md-enum-item key="open_department_id" >用来在具体某个应用中标识一个部门，同一个部门 在不同应用中的 open_department_id 相同。</md-enum-item>
-</md-enum>
-
-**默认值**：`open_department_id`
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `employee_id_type` | `string` | 否 | 用户 ID 类型<br>**示例值**：user_id<br>**可选值有**：<br>- `open_id`: 标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid) - `union_id`: 标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id) - `employee_id`: 企业内在职员工的唯一标识。支持自定义，未自定义时系统自动生成。ID支持修改。 获取employee_id的方式：   - 企业管理员在 管理后台 > 组织架构 > 成员与部门 页面，点击 成员详情，查询员工ID   - 通过 [批量获取员工列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/directory-v1/employee/filter) 的接口，通过手机号或邮箱查询员工ID。<br>**默认值**：`open_id`<br>**当值为 `employee_id`，字段权限要求**： `directory:employee.base.external_id:read` 查看员工自定义 ID |
+| `department_id_type` | `string` | 否 | 此次调用中使用的部门ID的类型<br>**示例值**：department_id<br>**可选值有**：<br>- `department_id`: 用来标识租户内一个唯一的部门 - `open_department_id`: 用来在具体某个应用中标识一个部门，同一个部门 在不同应用中的 open_department_id 相同。<br>**默认值**：`open_department_id` |
 
 
 ### 请求体
 
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
-      <md-dt-th style="width: 37%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >department_ids</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	部门ID，与department_id_type类型保持一致。id获取方式：可通过管理后台查询。
-
-**示例值**：["adqwea"]
-
-**数据校验规则**：
-
-- 长度范围：`1` ～ `100`
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >required_fields</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	需要查询的字段列表。将按照传递的字段列表返回有权限的行、列数据。不传则不会返回任何字段[了解更多：字段枚举说明](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/directory-v1/field-enumeration)
-
-**示例值**：["name"]
-
-**数据校验规则**：
-
-- 长度范围：`0` ～ `100`
-	</md-dt-td>
-</md-dt-tr>
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
-
-
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `department_ids` | `string\[\]` | 是 | 部门ID，与department_id_type类型保持一致。id获取方式：可通过管理后台查询。<br>**示例值**：["adqwea"]<br>**数据校验规则**：<br>- 长度范围：`1` ～ `100` |
+| `required_fields` | `string\[\]` | 是 | 需要查询的字段列表。将按照传递的字段列表返回有权限的行、列数据。不传则不会返回任何字段[了解更多：字段枚举说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/directory-v1/field-enumeration)<br>**示例值**：["name"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
 
 
 ### 请求体示例
-:::html
-<md-code-json>
+
+```json
 {
     "department_ids": [
         "adqwea"
@@ -293,793 +64,72 @@ updateTime: "1752138965000"
         "name"
     ]
 }
-</md-code-json>
-:::
-
+```
 
 
 ## 响应
 
 
-
-
-
 ### 响应体
-:::html
-<md-dt-table>
-  <md-dt-thead>
-      <md-dt-tr>
-      <md-dt-th style="width: 35%;">名称</md-dt-th>
-      <md-dt-th style="width: 13%;">类型</md-dt-th>
-      <md-dt-th style="width: 52%;">描述</md-dt-th>
-      </md-dt-tr>
-  </md-dt-thead>
-  <md-dt-tbody>
 
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >code</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误码，非 0 表示失败
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	错误描述
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >data</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	\-
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >departments</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >department\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	部门信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >department_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	部门ID，与department_id_type类型保持一致
-
-**字段权限要求（满足任一）**：
-<md-perm name="directory:department.base:read" desc="查看部门基础信息" support_app_types="custom,isv" tags="">查看部门基础信息</md-perm>
-<md-perm name="directory:department.external_id:read" desc="查看部门自定义 ID" support_app_types="custom,isv" tags="">查看部门自定义 ID</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >department_count</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >department_count</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	部门成员计数与子部门计数。计算结果可能会有延迟
-
-**字段权限要求（满足任一）**：
-<md-perm name="directory:department.count:read" desc="查看部门成员与子部门计数" support_app_types="custom,isv" tags="">查看部门成员与子部门计数</md-perm>
-<md-perm name="directory:department.organization:read" desc="查看部门组织架构信息" support_app_types="custom,isv" tags="">查看部门组织架构信息</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >recursive_members_count</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	递归成员数量
-
-单位：个
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >direct_members_count</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	直属成员数量
-
-单位：个
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >recursive_members_count_exclude_leaders</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	递归成员数量(不含leader)
-
-单位：个
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >recursive_departments_count</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	递归子部门数量
-
-单位：个
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >direct_departments_count</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	直属子部门数量
-
-单位：个
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >has_child</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否有子部门
-
-**字段权限要求（满足任一）**：
-<md-perm name="directory:department.has_child:read" desc="查看部门是否有子部门" support_app_types="custom,isv" tags="">查看部门是否有子部门</md-perm>
-<md-perm name="directory:department.organization:read" desc="查看部门组织架构信息" support_app_types="custom,isv" tags="">查看部门组织架构信息</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >leaders</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >department_leader\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	部门负责人
-
-**字段权限要求**：
-<md-perm name="directory:department.leader:read" desc="查看部门负责人信息" support_app_types="custom,isv" tags="">查看部门负责人信息</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >leader_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	部门负责人类型
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >主</md-enum-item>
-<md-enum-item key="2" >副</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >leader_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	部门负责人ID，与employee_id_type类型保持一致
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >parent_department_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	父部门ID，与department_id_type类型保持一致
-
-**字段权限要求（满足任一）**：
-<md-perm name="directory:department.organization:read" desc="查看部门组织架构信息" support_app_types="custom,isv" tags="">查看部门组织架构信息</md-perm>
-<md-perm name="directory:department.parent_id:read" desc="查看部门的父部门 ID" support_app_types="custom,isv" tags="">查看部门的父部门 ID</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n_text</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	部门名称
-
-**字段权限要求（满足任一）**：
-<md-perm name="directory:department.base:read" desc="查看部门基础信息" support_app_types="custom,isv" tags="">查看部门基础信息</md-perm>
-<md-perm name="directory:department.name:read" desc="查看部门的名称" support_app_types="custom,isv" tags="">查看部门的名称</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >default_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	默认值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >i18n_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >map&lt;string, string&gt;</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	国际化值，key为zh_cn, ja_jp, en_us, value为对应的值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >enabled_status</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是否启用
-
-**字段权限要求**：
-<md-perm name="directory:department.status:read" desc="查看部门的停启用状态" support_app_types="custom,isv" tags="">查看部门的停启用状态</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >order_weight</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	部门排序权重
-
-**字段权限要求（满足任一）**：
-<md-perm name="directory:department.order_weight:read" desc="查看部门排序权重" support_app_types="custom,isv" tags="">查看部门排序权重</md-perm>
-<md-perm name="directory:department.organization:read" desc="查看部门组织架构信息" support_app_types="custom,isv" tags="">查看部门组织架构信息</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >custom_field_values</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >custom_field_value\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	部门自定义字段值
-
-**字段权限要求**：
-<md-perm name="directory:department.custom_field:read" desc="查看部门自定义字段信息" support_app_types="custom,isv" tags="">查看部门自定义字段信息</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >field_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	自定义字段类型
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >多行文本</md-enum-item>
-<md-enum-item key="2" >网页链接</md-enum-item>
-<md-enum-item key="3" >枚举选项</md-enum-item>
-<md-enum-item key="4" >人员</md-enum-item>
-<md-enum-item key="9" >电话</md-enum-item>
-<md-enum-item key="10" >多选枚举类型(目前仅支持文本类型)</md-enum-item>
-<md-enum-item key="11" >人员列表</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >text_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n_text</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	文本字段值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >default_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	默认值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >i18n_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >map&lt;string, string&gt;</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	国际化值，key为zh_cn, ja_jp, en_us, value为对应的值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >url_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >url_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	网页链接字段值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >link_text</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n_text</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	网页标题
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >default_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	默认值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="5">
-	<md-dt-td>
-	<md-text type="field-name" >i18n_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >map&lt;string, string&gt;</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	国际化值，key为zh_cn, ja_jp, en_us, value为对应的值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >url</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	移动端网页链接
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >pcurl</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	桌面端网页链接
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >enum_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >enum_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	枚举字段值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >enum_ids</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	选项结果ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >enum_type</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	选项类型
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >文本</md-enum-item>
-<md-enum-item key="2" >图片</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >user_values</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >user_value\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	人员字段值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >ids</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	人员ID，与employee_id_type类型保持一致
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >phone_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >phone_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	电话字段值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >phone_number</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	电话号
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >extension_number</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	分机号
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >field_key</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	自定义字段key
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >department_path_infos</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >department_base_info\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	部门路径信息。排列顺序为根级到末级，不包含根部门
-
-**字段权限要求**：
-<md-perm name="directory:department.department_path:read" desc="查看部门路径信息" support_app_types="custom,isv" tags="">查看部门路径信息</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >department_id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	部门ID，与department_id_type类型保持一致
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="3">
-	<md-dt-td>
-	<md-text type="field-name" >department_name</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >i18n_text</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	部门名称
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >default_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	默认值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="4">
-	<md-dt-td>
-	<md-text type="field-name" >i18n_value</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >map&lt;string, string&gt;</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	国际化值，key为zh_cn, ja_jp, en_us, value为对应的值
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >data_source</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	数据来源
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="1" >管理后台</md-enum-item>
-<md-enum-item key="2" >人事企业版</md-enum-item>
-<md-enum-item key="3" >SCIM</md-enum-item>
-</md-enum>
-
-**字段权限要求（满足任一）**：
-<md-perm name="directory:department.base:read" desc="查看部门基础信息" support_app_types="custom,isv" tags="">查看部门基础信息</md-perm>
-<md-perm name="directory:department.data_source:read" desc="查看部门数据来源" support_app_types="custom,isv" tags="">查看部门数据来源</md-perm>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="1">
-	<md-dt-td>
-	<md-text type="field-name" >abnormals</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >abnormal_record\[\]</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	字段异常信息
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >id</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >string</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	异常ID
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >row_error</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	行级异常
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="0" >成功</md-enum-item>
-<md-enum-item key="1000" >没权限</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="2">
-	<md-dt-td>
-	<md-text type="field-name" >field_errors</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >map&lt;string, int&gt;</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	列级异常，key为字段名,value为下列枚举<br><br>
-**可选值有**：
-<md-enum>
-<md-enum-item key="1000" >无权限</md-enum-item>
-<md-enum-item key="2000" >服务异常</md-enum-item>
-<md-enum-item key="2003" >字段不存在</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-  </md-dt-tbody>
-</md-dt-table>
-:::
-
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `code` | `int` | 错误码，非 0 表示失败 |
+| `msg` | `string` | 错误描述 |
+| `data` | `\-` | \- |
+| &nbsp;&nbsp;└ `departments` | `department\[\]` | 部门信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `department_id` | `string` | 部门ID，与department_id_type类型保持一致<br>**字段权限要求（满足任一）**： `directory:department.base:read` 查看部门基础信息 `directory:department.external_id:read` 查看部门自定义 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `department_count` | `department_count` | 部门成员计数与子部门计数。计算结果可能会有延迟<br>**字段权限要求（满足任一）**： `directory:department.count:read` 查看部门成员与子部门计数 `directory:department.organization:read` 查看部门组织架构信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `recursive_members_count` | `string` | 递归成员数量<br>单位：个 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `direct_members_count` | `string` | 直属成员数量<br>单位：个 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `recursive_members_count_exclude_leaders` | `string` | 递归成员数量(不含leader)<br>单位：个 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `recursive_departments_count` | `string` | 递归子部门数量<br>单位：个 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `direct_departments_count` | `string` | 直属子部门数量<br>单位：个 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `has_child` | `boolean` | 是否有子部门<br>**字段权限要求（满足任一）**： `directory:department.has_child:read` 查看部门是否有子部门 `directory:department.organization:read` 查看部门组织架构信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `leaders` | `department_leader\[\]` | 部门负责人<br>**字段权限要求**： `directory:department.leader:read` 查看部门负责人信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `leader_type` | `int` | 部门负责人类型<br>**可选值有**：<br>- `1`: 主 - `2`: 副 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `leader_id` | `string` | 部门负责人ID，与employee_id_type类型保持一致 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `parent_department_id` | `string` | 父部门ID，与department_id_type类型保持一致<br>**字段权限要求（满足任一）**： `directory:department.organization:read` 查看部门组织架构信息 `directory:department.parent_id:read` 查看部门的父部门 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n_text` | 部门名称<br>**字段权限要求（满足任一）**： `directory:department.base:read` 查看部门基础信息 `directory:department.name:read` 查看部门的名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `default_value` | `string` | 默认值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `i18n_value` | `map<string, string>` | 国际化值，key为zh_cn, ja_jp, en_us, value为对应的值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `enabled_status` | `boolean` | 是否启用<br>**字段权限要求**： `directory:department.status:read` 查看部门的停启用状态 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `order_weight` | `string` | 部门排序权重<br>**字段权限要求（满足任一）**： `directory:department.order_weight:read` 查看部门排序权重 `directory:department.organization:read` 查看部门组织架构信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `custom_field_values` | `custom_field_value\[\]` | 部门自定义字段值<br>**字段权限要求**： `directory:department.custom_field:read` 查看部门自定义字段信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `field_type` | `string` | 自定义字段类型<br>**可选值有**：<br>- `1`: 多行文本 - `2`: 网页链接 - `3`: 枚举选项 - `4`: 人员 - `9`: 电话 - `10`: 多选枚举类型(目前仅支持文本类型) - `11`: 人员列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `text_value` | `i18n_text` | 文本字段值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `default_value` | `string` | 默认值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `i18n_value` | `map<string, string>` | 国际化值，key为zh_cn, ja_jp, en_us, value为对应的值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `url_value` | `url_value` | 网页链接字段值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `link_text` | `i18n_text` | 网页标题 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `default_value` | `string` | 默认值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `i18n_value` | `map<string, string>` | 国际化值，key为zh_cn, ja_jp, en_us, value为对应的值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `url` | `string` | 移动端网页链接 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `pcurl` | `string` | 桌面端网页链接 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `enum_value` | `enum_value` | 枚举字段值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `enum_ids` | `string\[\]` | 选项结果ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `enum_type` | `string` | 选项类型<br>**可选值有**：<br>- `1`: 文本 - `2`: 图片 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_values` | `user_value\[\]` | 人员字段值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `ids` | `string\[\]` | 人员ID，与employee_id_type类型保持一致 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `phone_value` | `phone_value` | 电话字段值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `phone_number` | `string` | 电话号 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `extension_number` | `string` | 分机号 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `field_key` | `string` | 自定义字段key |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `department_path_infos` | `department_base_info\[\]` | 部门路径信息。排列顺序为根级到末级，不包含根部门<br>**字段权限要求**： `directory:department.department_path:read` 查看部门路径信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `department_id` | `string` | 部门ID，与department_id_type类型保持一致 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `department_name` | `i18n_text` | 部门名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `default_value` | `string` | 默认值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `i18n_value` | `map<string, string>` | 国际化值，key为zh_cn, ja_jp, en_us, value为对应的值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `data_source` | `int` | 数据来源<br>**可选值有**：<br>- `1`: 管理后台 - `2`: 人事企业版 - `3`: SCIM<br>**字段权限要求（满足任一）**： `directory:department.base:read` 查看部门基础信息 `directory:department.data_source:read` 查看部门数据来源 |
+| &nbsp;&nbsp;└ `abnormals` | `abnormal_record\[\]` | 字段异常信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 异常ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `row_error` | `int` | 行级异常<br>**可选值有**：<br>- `0`: 成功 - `1000`: 没权限 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `field_errors` | `map<string, int>` | 列级异常，key为字段名,value为下列枚举 **可选值有**：<br>- `1000`: 无权限 - `2000`: 服务异常 - `2003`: 字段不存在 |
 
 
 ### 响应体示例
-:::html
-<md-code-json>
+
+```json
 {
     "code": 0,
     "msg": "success",
@@ -1182,36 +232,13 @@ updateTime: "1752138965000"
         ]
     }
 }
-</md-code-json>
-:::
-
+```
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2220001</md-td>
-  <md-td>param is invalid</md-td>
-  <md-td>无效的请求参数，请检查请求参数是否符合文档要求，或参考参数说明文档确认参数格式。</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
-
-
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 2220001 | param is invalid | 无效的请求参数，请检查请求参数是否符合文档要求，或参考参数说明文档确认参数格式。 |
 
 

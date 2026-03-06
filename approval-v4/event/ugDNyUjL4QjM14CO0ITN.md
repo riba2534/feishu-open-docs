@@ -10,24 +10,24 @@ updateTime: "1742781431000"
 
 ## 功能简介
 
-审批事件是飞书开放平台众多事件中的一项，了解飞书开放平台事件订阅功能可参考[事件概述](/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。通过事件订阅，开发者可以实时、自动接收到审批资源的状态变化，而无需轮训审批查询接口获取审批资源的最新状态。降低了开发复杂度，节省了接口查询消耗。
+审批事件是飞书开放平台众多事件中的一项，了解飞书开放平台事件订阅功能可参考[事件概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。通过事件订阅，开发者可以实时、自动接收到审批资源的状态变化，而无需轮训审批查询接口获取审批资源的最新状态。降低了开发复杂度，节省了接口查询消耗。
 
 审批事件包括：
 
-- 公用事件：[审批实例状态变更](/ssl:ttdoc/ukTMukTMukTM/uIDO24iM4YjLygjN/event/common-event/approval-instance-event)、[审批任务状态变更](/ssl:ttdoc/ukTMukTMukTM/uIDO24iM4YjLygjN/event/common-event/approval-task-event)、[审批抄送状态变更](/ssl:ttdoc/ukTMukTMukTM/uIDO24iM4YjLygjN/event/common-event/approval-cc-event)、[审批定义更新](/ssl:ttdoc/ukTMukTMukTM/uIDO24iM4YjLygjN/event/custom-approval-event)。
-- 特殊事件：[外出审批](/ssl:ttdoc/ukTMukTMukTM/uIDO24iM4YjLygjN/event/out-of-office)、[出差审批](/ssl:ttdoc/ukTMukTMukTM/uIDO24iM4YjLygjN/event/business-trip)、[补卡审批](/ssl:ttdoc/ukTMukTMukTM/uIDO24iM4YjLygjN/event/attendance-record-correction)、[换班审批](/ssl:ttdoc/ukTMukTMukTM/uIDO24iM4YjLygjN/event/shift-change)、[加班审批](/ssl:ttdoc/ukTMukTMukTM/uIDO24iM4YjLygjN/event/overtime)、[请假审批](/ssl:ttdoc/ukTMukTMukTM/uIDO24iM4YjLygjN/event/leave)。
+- 公用事件：[审批实例状态变更](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/common-event/approval-instance-event)、[审批任务状态变更](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/common-event/approval-task-event)、[审批抄送状态变更](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/common-event/approval-cc-event)、[审批定义更新](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/custom-approval-event)。
+- 特殊事件：[外出审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/out-of-office)、[出差审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/business-trip)、[补卡审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/attendance-record-correction)、[换班审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/shift-change)、[加班审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/overtime)、[请假审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/leave)。
 
 ## 订阅流程
 
 订阅流程如下图所示。流程解析：
 
-1. 首先需要登录飞书开发者后台，在应用内配置加密策略（Encrypt Key、Verification Token）、配置事件订阅方式、添加事件并为事件申请所需的权限。这些操作是订阅事件所必须的通用操作，详细介绍可参见[事件订阅流程](/ssl:ttdoc/ukTMukTMukTM/uUTNz4SN1MjL1UzM#69f86198)。
+1. 首先需要登录飞书开发者后台，在应用内配置加密策略（Encrypt Key、Verification Token）、配置事件订阅方式、添加事件并为事件申请所需的权限。这些操作是订阅事件所必须的通用操作，详细介绍可参见[事件订阅流程](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM#69f86198)。
 
-2. 在飞书开发者后台完成应用事件订阅后，还不能直接接收并处理事件。必须先调用审批业务域的[订阅审批事件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/subscribe)接口，订阅指定的审批定义 Code，订阅后应用才可以接收到该审批定义相关的事件数据。
+2. 在飞书开发者后台完成应用事件订阅后，还不能直接接收并处理事件。必须先调用审批业务域的[订阅审批事件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/subscribe)接口，订阅指定的审批定义 Code，订阅后应用才可以接收到该审批定义相关的事件数据。
 
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/7537b1095e5af69c28944809b4125049_Xkla0OMqHn.png?height=488&lazyload=true&maxWidth=700&width=2634)
 
-例如，当你为应用订阅[审批实例状态变更](/ssl:ttdoc/ukTMukTMukTM/uIDO24iM4YjLygjN/event/common-event/approval-instance-event)事件后，需要先调用[订阅审批事件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/subscribe)接口，订阅指定审批实例对应的审批定义 Code。后续当该审批定义下创建的审批实例发生状态变更时（例如审批实例由`PENDING`状态变更为`APPROVED`状态），开放平台会按照你在应用设置的事件订阅请求方式，向服务端推送事件消息。
+例如，当你为应用订阅[审批实例状态变更](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/common-event/approval-instance-event)事件后，需要先调用[订阅审批事件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/subscribe)接口，订阅指定审批实例对应的审批定义 Code。后续当该审批定义下创建的审批实例发生状态变更时（例如审批实例由`PENDING`状态变更为`APPROVED`状态），开放平台会按照你在应用设置的事件订阅请求方式，向服务端推送事件消息。
 
 :::warning
 - 用于接收事件消息的服务端，在收到事件消息请求时，需要在 3 秒内响应该请求，否则会触发超时重推机制。因此，建议在服务端先存储事件消息，再进行业务处理，避免响应超时。
@@ -36,7 +36,7 @@ updateTime: "1742781431000"
 
 ## 事件推送周期和频次
 
-订阅的事件发生时，飞书将会通过 HTTP POST 请求发送 JSON 格式的事件数据到预先配置的[订阅方式](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/request-url-configuration-case)。
+订阅的事件发生时，飞书将会通过 HTTP POST 请求发送 JSON 格式的事件数据到预先配置的[订阅方式](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/request-url-configuration-case)。
 
 应用接收到包含事件数据的请求（向开发者服务器发送的 HTTP POST 请求，或是通过服务端 SDK 长连接接收到请求）时，需要在 3 秒内以 HTTP 200 状态码响应该请求。否则飞书开放平台认为本次推送失败，并以 15秒、5分钟、1小时、6小时 的间隔重新推送事件，最多重试 4 次。
 

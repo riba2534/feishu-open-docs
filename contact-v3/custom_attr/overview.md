@@ -12,46 +12,15 @@ updateTime: "1720168771000"
 
 自定义用户字段分为多种类型，各类型说明如下表所示。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:25%">类型</md-th>
-<md-th style="width:75%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>文本类型</md-td>
-<md-td>纯文本的用户属性。</md-td>
-</md-tr>
+| 类型 | 描述 |
+| --- | --- |
+| 文本类型 | 纯文本的用户属性。 |
+| 网页类型 | 包含文本和跳转链接的用户属性，设置该类型的用户属性时，需要设置网页标题（文本）和网页地址（URL），其中支持为桌面端设置独立的网页地址。 |
+| 枚举类型 | 包含一个或多个选项的用户属性，例如 **员工类型** 字段，可以设置正式、外包、顾问等企业成员类型枚举值。当为用户设置属性时，可以在这些枚举值中选择。 |
+| 图片类型 | 该类型与枚举类型相似，不同的是对应的选项数据必须是图片数据，用于在成员名片页展示其对应的图片。例如展示用户获取的勋章图标等。 > **Tip**: **说明**：图片类型内测中，如需了解可咨询开放平台技术支持。 |
+| 用户类型 | 该类型主要用于在成员名片页展示对企业其他人员的引用信息，从而实现成员名片页之间的跳转。例如将 **张三** 的 HRBP 字段展示为 **李四**，并支持点击跳转至李四的名片页。 |
 
-<md-tr>
-<md-td>网页类型</md-td>
-<md-td>包含文本和跳转链接的用户属性，设置该类型的用户属性时，需要设置网页标题（文本）和网页地址（URL），其中支持为桌面端设置独立的网页地址。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>枚举类型</md-td>
-<md-td>包含一个或多个选项的用户属性，例如 **员工类型** 字段，可以设置正式、外包、顾问等企业成员类型枚举值。当为用户设置属性时，可以在这些枚举值中选择。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>图片类型</md-td>
-<md-td>该类型与枚举类型相似，不同的是对应的选项数据必须是图片数据，用于在成员名片页展示其对应的图片。例如展示用户获取的勋章图标等。
-<md-alert type="tip" icon="none">**说明**：图片类型内测中，如需了解可咨询开放平台技术支持。</md-alert>
-</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>用户类型</md-td>
-<md-td>该类型主要用于在成员名片页展示对企业其他人员的引用信息，从而实现成员名片页之间的跳转。例如将 **张三** 的 HRBP 字段展示为 **李四**，并支持点击跳转至李四的名片页。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ## 使用说明
 
@@ -65,201 +34,23 @@ updateTime: "1720168771000"
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/b0f2cc6e7bafff8fa7a6f4253fb1c6b5_GOcpzfLLw7.png?height=948&lazyload=true&maxWidth=600&width=2404)
 
 ##  字段说明
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 25%;">类型</md-th>
-      <md-th style="width: 50%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >items</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >custom_attr\[\]</md-text>
-	</md-td>
-	<md-td>
-	自定义字段信息。
-	</md-td>
-</md-tr>
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| `items` | `custom_attr\[\]` | 自定义字段信息。 |
+| ∟ `id` | `string` | 自定义字段 ID。 |
+| ∟ `type` | `string` | 自定义字段类型。可选值有: - `TEXT`：文本类型 - `HREF`：网页类型 - `ENUMERATION`：枚举类型 - `GENERIC_USER`：用户类型 - `PICTURE_ENUM`：图片类型 |
+| ∟ `options` | `custom_attr_options` | 选项定义，当 type 取值为 `ENUMERATION` 或者 `PICTURE_ENUM` 时此项有值，用于列举所有可选项。 |
+| ∟ `default_option_id` | `string` | 默认选项 ID。 |
+| ∟ `option_type` | `string` | 选项类型。可选值有： - `TEXT`：文本选项 - `PICTURE`：图片选项 |
+| ∟ `options` | `custom_attr_option\[\]` | 选项列表 |
+| ∟ `id` | `string` | 枚举类型选项 ID。 |
+| ∟ `value` | `string` | 选项值。        - 当 option_type 为 `TEXT` 时，取值为文本值。 - 当 option_type 为 `PICTURE` 时，取值为图片链接。 |
+| ∟ `name` | `string` | 图片名称，仅 option_type 为 `PICTURE`时有值。 |
+| ∟ `i18n_name` | `i18n_content\[\]` | 自定义字段的字段名称。 |
+| ∟ `locale` | `string` | 语言版本。 |
+| ∟ `value` | `string` | 字段名。 |
 
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	自定义字段 ID。
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >type</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	自定义字段类型。可选值有:
-- `TEXT`：文本类型
-- `HREF`：网页类型
-- `ENUMERATION`：枚举类型
-- `GENERIC_USER`：用户类型
-- `PICTURE_ENUM`：图片类型
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >options</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >custom_attr_options</md-text>
-	</md-td>
-	<md-td>
-	选项定义，当 type 取值为 `ENUMERATION` 或者 `PICTURE_ENUM` 时此项有值，用于列举所有可选项。
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >default_option_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	默认选项 ID。
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >option_type</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	选项类型。可选值有：
-- `TEXT`：文本选项
-- `PICTURE`：图片选项
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >options</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >custom_attr_option\[\]</md-text>
-	</md-td>
-	<md-td>
-	选项列表
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	枚举类型选项 ID。 
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >value</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	选项值。
-      
-- 当 option_type 为 `TEXT` 时，取值为文本值。
-- 当 option_type 为 `PICTURE` 时，取值为图片链接。
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >name</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	图片名称，仅 option_type 为 `PICTURE`时有值。
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >i18n_name</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >i18n_content\[\]</md-text>
-	</md-td>
-	<md-td>
-	自定义字段的字段名称。
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >locale</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	语言版本。
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >value</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	字段名。
-	</md-td>
-</md-tr>
-
-
-
-
-  </md-tbody>
-</md-table>
-:::
 
 ##  数据示例
 ```json
