@@ -1,0 +1,402 @@
+---
+title: "上传人脸图片"
+fullPath: "/uAjLw4CM/ukTMukTMukTM/acs-v1/user-face/update"
+updateTime: "1671441936000"
+---
+
+# 上传人脸图片
+
+用户需要录入人脸图片才可以使用门禁考勤机。使用该 API 上传门禁用户的人脸图片。{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=acs&version=v1&resource=user.face&method=update)
+
+:::html
+<md-alert type="error">
+
+</md-alert>
+:::
+
+:::html
+<md-alert type="warn">
+
+</md-alert>
+:::
+
+:::html
+<md-alert type="tip">
+
+</md-alert>
+:::
+
+
+
+## 请求
+:::html
+<md-table>
+  <md-thead>
+  <tr>
+      <md-th>基本</md-th>
+      <md-th></md-th>
+  </tr>
+  </md-thead>
+  <md-tbody>
+    <md-tr>
+      <md-th>HTTP URL</md-th>
+      <md-td>https://open.feishu.cn/open-apis/acs/v1/users/:user_id/face</md-td>
+    </md-tr>
+    <md-tr>
+      <md-th>HTTP Method</md-th>
+      <md-td>PUT</md-td>
+    </md-tr>
+    <md-tr>
+      <md-th>支持的应用类型</md-th>
+      <md-td>
+      <md-app-support types="custom"></md-app-support>
+      </md-td>
+    </md-tr>
+    <md-tr>
+      <md-th>
+            权限要求
+            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
+            
+      </md-th>
+      <md-td>
+            <md-perm name="acs:users" desc="查看、更新智能门禁用户" support_app_types="custom" tags="">查看、更新智能门禁用户</md-perm>
+      </md-td>
+    </md-tr>
+    <md-tr>
+      <md-th>
+            字段权限要求
+      </md-th>
+      <md-td>
+        <md-alert type="tip" icon="none">
+        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
+        </md-alert>
+        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
+      </md-td>
+    </md-tr>
+  </md-tbody>
+</md-table>
+:::
+### 请求头
+:::html
+<md-table>
+  <md-thead>
+    <md-tr>
+      <md-th style="width: 35%;">名称</md-th>
+      <md-th style="width: 13%;">类型</md-th>
+       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
+      <md-th  style="width: 37%;">描述</md-th>
+    </md-tr>
+  </md-thead>
+  <md-tbody>
+    <md-tr>
+      <md-td>Authorization</md-td>
+      <md-td>string</md-td>
+      <md-td>是</md-td>
+      	<md-td>
+<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
+
+**值格式**："Bearer `access_token`"
+
+**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
+
+[了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
+
+</md-td>
+</md-tr>
+<md-tr>
+<md-td>Content-Type</md-td>
+<md-td>string</md-td>
+<md-td>是</md-td>
+<md-td>**示例值**："multipart/form-data; boundary=---7MA4YWxkTrZu0gW"</md-td>
+</md-tr>
+</md-tbody>
+</md-table>
+:::
+
+
+
+### 路径参数
+:::html
+<md-dt-table>
+  <md-dt-thead>
+      <md-dt-tr>
+      <md-dt-th style="width: 35%;">名称</md-dt-th>
+      <md-dt-th style="width: 13%;">类型</md-dt-th>
+      <md-dt-th style="width: 52%;">描述</md-dt-th>
+      </md-dt-tr>
+  </md-dt-thead>
+  <md-dt-tbody>
+
+<md-dt-tr level="0">
+	<md-dt-td>
+	<md-text type="field-name" >user_id</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >string</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	用户 ID
+
+**示例值**："ou_7dab8a3d3cdcc9da365777c7ad535d62"
+	</md-dt-td>
+</md-dt-tr>
+
+  </md-dt-tbody>
+</md-dt-table>
+:::
+
+
+
+### 查询参数
+:::html
+<md-dt-table>
+  <md-dt-thead>
+      <md-dt-tr>
+      <md-dt-th style="width: 35%;">名称</md-dt-th>
+      <md-dt-th style="width: 13%;">类型</md-dt-th>
+      <md-dt-th style="width: 15%;" filters="是,否" >必填</md-dt-th>
+      <md-dt-th style="width: 37%;" >描述</md-dt-th>
+      </md-dt-tr>
+  </md-dt-thead>
+  <md-dt-tbody>
+
+<md-dt-tr level="0">
+	<md-dt-td>
+	<md-text type="field-name" >user_id_type</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >string</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	否
+	</md-dt-td>
+	<md-dt-td>
+	用户 ID 类型
+
+**示例值**："open_id"
+
+**可选值有**：
+<md-enum>
+<md-enum-item key="open_id" >标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)</md-enum-item>
+<md-enum-item key="union_id" >标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id)</md-enum-item>
+<md-enum-item key="user_id" >标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[了解更多：如何获取 User ID？](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)</md-enum-item>
+</md-enum>
+
+**默认值**：`open_id`
+
+**当值为 `user_id`，字段权限要求**：
+<md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
+	</md-dt-td>
+</md-dt-tr>
+
+  </md-dt-tbody>
+</md-dt-table>
+:::
+
+
+
+### 请求体
+
+:::html
+<md-dt-table>
+  <md-dt-thead>
+      <md-dt-tr>
+      <md-dt-th style="width: 40%;">名称</md-dt-th>
+      <md-dt-th style="width: 20%;">类型</md-dt-th>
+      <md-dt-th style="width: 10%;" filters="是,否" >必填</md-dt-th>
+      <md-dt-th style="width: 30%;">描述</md-dt-th>
+      </md-dt-tr>
+  </md-dt-thead>
+  <md-dt-tbody>
+
+<md-dt-tr level="0">
+	<md-dt-td>
+	<md-text type="field-name" >files</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >file</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	是
+	</md-dt-td>
+	<md-dt-td>
+	人脸图片内容
+
+**示例值**：jpg图片
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="0">
+	<md-dt-td>
+	<md-text type="field-name" >file_type</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >string</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	是
+	</md-dt-td>
+	<md-dt-td>
+	文件类型,可选的类型有jpg,png
+
+**示例值**："jpg"
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="0">
+	<md-dt-td>
+	<md-text type="field-name" >file_name</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >string</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	是
+	</md-dt-td>
+	<md-dt-td>
+	带后缀的文件名
+
+**示例值**："efeqz12f.jpg"
+	</md-dt-td>
+</md-dt-tr>
+
+  </md-dt-tbody>
+</md-dt-table>
+:::
+
+
+
+### 请求体示例
+
+```HTTP
+---7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="files";
+Content-Type: application/octet-stream
+
+binary
+---7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file_type";
+
+jpg
+---7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file_name";
+
+efeqz12f.jpg
+---7MA4YWxkTrZu0gW
+```
+
+
+
+## 响应
+
+
+
+### 响应体
+:::html
+<md-dt-table>
+  <md-dt-thead>
+      <md-dt-tr>
+      <md-dt-th style="width: 40%;">名称</md-dt-th>
+      <md-dt-th style="width: 20%;">类型</md-dt-th>
+      <md-dt-th style="width: 30%;">描述</md-dt-th>
+      </md-dt-tr>
+  </md-dt-thead>
+  <md-dt-tbody>
+
+<md-dt-tr level="0">
+	<md-dt-td>
+	<md-text type="field-name" >code</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >int</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	错误码，非 0 表示失败
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="0">
+	<md-dt-td>
+	<md-text type="field-name" >msg</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >string</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	错误描述
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="0">
+	<md-dt-td>
+	<md-text type="field-name" >data</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >\-</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	\-
+	</md-dt-td>
+</md-dt-tr>
+
+
+  </md-dt-tbody>
+</md-dt-table>
+:::
+
+
+
+### 响应体示例
+:::html
+<md-code-json>
+{
+    "code": 0,
+    "msg": "success",
+    "data": {
+
+    }
+}
+</md-code-json>
+:::
+
+
+
+### 错误码
+:::html
+<md-table>
+    <md-thead>
+        <md-tr>
+            <md-th style="width: 15%;">HTTP状态码</md-th>
+            <md-th style="width: 15%;">错误码</md-th>
+            <md-th style="width: 30%;">描述</md-th>
+            <md-th style="width: 30%;">排查建议</md-th>
+        </md-tr>
+    </md-thead>
+  <md-tbody>
+
+<md-tr>
+  <md-td>400</md-td>
+  <md-td>1490101</md-td>
+  <md-td>user not found</md-td>
+  <md-td>检查用户是否加入权限组</md-td>
+</md-tr>
+
+
+<md-tr>
+  <md-td>400</md-td>
+  <md-td>1490108</md-td>
+  <md-td>user face crop fail</md-td>
+  <md-td>检查图片是否符合规范</md-td>
+</md-tr>
+
+  </md-tbody>
+</md-table>
+:::
+
+
+
+

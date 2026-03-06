@@ -1,0 +1,210 @@
+---
+title: "获取会议室个性化配置"
+fullPath: "/ukTMukTMukTM/uIjM5UjLyITO14iMykTN/query-meeting-room-customization-setting"
+updateTime: "1646892709000"
+---
+
+# 获取会议室个性化配置
+
+该接口用于获取会议室个性化配置。
+
+## 请求
+:::html
+<md-table>
+  <md-thead>
+  <tr>
+      <md-th>基本</md-th>
+      <md-th></md-th>
+  </tr>
+  </md-thead>
+  <md-tbody>
+    <md-tr>
+      <md-th>HTTP URL</md-th>
+      <md-td>https://open.feishu.cn/open-apis/meeting_room/room/customization</md-td>
+    </md-tr>
+    <md-tr>
+      <md-th>HTTP Method</md-th>
+      <md-td>POST</md-td>
+    </md-tr>
+
+   <md-tr>
+     <md-th>支持的应用类型</md-th>
+      <md-td>
+	  <md-app-support types="custom"></md-app-support>
+      </md-td>
+   </md-tr>
+
+
+    
+    
+    <md-tr>
+      <md-th>
+ 权限要求
+ <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
+</md-th>
+      <md-td>
+<md-perm name="calendar:room" desc="管理会议室信息" support_app_types="custom" tags="">管理会议室信息</md-perm>
+</md-td>
+    </md-tr>
+  </md-tbody>
+</md-table>
+:::
+### 请求头
+:::html
+<md-table> 
+  <md-thead> 
+    <md-tr> 
+      <md-th style="width: 18%;">名称</md-th>  
+      <md-th style="width: 15%;">类型</md-th>  
+       <md-th style="width: 15%;">必填</md-th>  
+      <md-th>描述</md-th> 
+    </md-tr> 
+  </md-thead>  
+  <md-tbody> 
+    <md-tr> 
+      <md-td>Authorization</md-td>  
+      <md-td>string</md-td>  
+      <md-td> 是 </md-td> 
+      	<md-td>
+<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
+ 
+**值格式**："Bearer `access_token`"
+
+**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
+          
+ [了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
+	</md-td>
+</md-tr>
+     <md-tr> 
+      <md-td>Content-Type</md-td>  
+      <md-td>string</md-td>  
+      <md-td> 是 </md-td> 
+     <md-td>**固定值**："application/json; charset=utf-8"</md-td>
+</md-tr>
+   
+  </md-tbody> 
+</md-table>
+:::
+
+### 请求体
+
+| 参数       | 参数类型 | 必须 | 说明                                                         |
+| ---------- | -------- | ---- | ------------------------------------------------------------ |
+| room_ids  | array<string>      | 是   | 要获取的会议室ID列表 |
+
+### 请求体示例
+
+```json
+{
+	"room_ids": [
+  		"omm_2f3060afa404d3db7bb473xxxxxxxxxx"
+  	]
+}
+```
+
+## 	响应
+### 响应体
+
+| 参数         | 参数类型 | 说明                                                 |
+| ------------ |----| ---------------------------------------------------- |
+| error_room_ids         |-| 返回错误的入参                                |
+| &nbsp;&nbsp;&nbsp;∟building_id	      |string| 建筑id |
+| &nbsp;&nbsp;&nbsp;∟room_id	      |string| 会议室id |
+| &nbsp;&nbsp;&nbsp;∟error_msg	      |string| 错误信息 |
+| room_id_to_customization      |-| 会议室ID-个性化配置的映射 |
+| ∟room_id	      |string| 会议室ID |
+| &nbsp;&nbsp;&nbsp;∟contact_ids	      |array<int64>| 准备会议室个性化的相关配置的人员ID列表 |
+| &nbsp;&nbsp;&nbsp;∟customization_data	      |-| 个性化配置数据 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟conditions	      |-| 问卷的显示条件，当条件满足时，该问卷才会出现让用户进行选择 |
+  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟custom_key	      |string| 该custom_key对应的index_key选中后，问卷才会显示 |
+  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟option_keys	      |array<string>| 所有的option都被选中后，问卷才会显示 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟customization_type	      |int| 问卷的类型，1表示单选，2表示多选，3表示填空 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟index_key	      |string| 每个问卷的独立id |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟input_content	      |string| 当type类型为填空时，该参数需要填入 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟is_required	      |bool| 当type类型为填空时，该参数需要填入 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟label	      |string| 每个问卷的问题 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟options	      |-| 每个问卷的选项 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟is_others	      |bool| 是否是其他选项 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟is_selected	      |bool| 该选项是否勾选 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟option_image_url	      |string| 选项的图片 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟option_key	      |string| 每个选项的唯一id |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟option_label	      |string| 每个问卷的选项 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟others_content	      |string| 其他选项的输入内容 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟place_holder	      |string| 填空题在未填写时的填充文案 |
+| &nbsp;&nbsp;&nbsp;∟preparation_time	      |int| 准备时间 |
+
+### 响应体示例
+
+```json
+{
+    "error_room_ids": [
+        {
+            "building_id": "",
+            "error_msg": "",
+            "room_id": ""
+        },
+        {
+            "building_id": "",
+            "error_msg": "",
+            "room_id": ""
+        }
+    ],
+    "room_id_to_customization": {
+        "room_id": {
+            "contact_ids": [
+                "",
+                ""
+            ],
+            "customization_data": [
+                {
+                    "conditions": [
+                        {
+                            "custom_key": "",
+                            "option_keys": [
+                                "",
+                                ""
+                            ]
+                        },
+                        {
+                            "custom_key": "",
+                            "option_keys": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ],
+                    "customization_type": 0,
+                    "index_key": "",
+                    "input_content": "",
+                    "is_required": true,
+                    "label": "",
+                    "options": [
+                        {
+                            "is_others": true,
+                            "is_selected": true,
+                            "option_image_url": "",
+                            "option_key": "",
+                            "option_label": "",
+                            "others_content": ""
+                        },
+                        {
+                            "is_others": true,
+                            "is_selected": true,
+                            "option_image_url": "",
+                            "option_key": "",
+                            "option_label": "",
+                            "others_content": ""
+                        }
+                    ],
+                    "place_holder": ""
+                }
+            ],
+            "preparation_time": 0
+        }
+    }
+}
+```
+
+### 错误码
+
+具体可参考：[服务端错误码说明](/ssl:ttdoc/ukTMukTMukTM/ugjM14COyUjL4ITN)

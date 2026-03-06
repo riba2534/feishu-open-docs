@@ -1,0 +1,57 @@
+---
+title: "国家/地区资源定义"
+fullPath: "/uAjLw4CM/ukTMukTMukTM/mdm-v3/country_region/resource-definition"
+updateTime: "1747972337000"
+---
+
+#  国家/地区资源定义
+国家/地区提供飞书内通用地理位置国家/地区层级数据，支持多语言并定期更新，主要包括行政编码、名称。例如：中国大陆、中国台湾、美国等。
+## 字段说明
+| 字段编码       | 字段名称          | 模块分组        | 字段描述       | 
+| --------- | --------------- | -------   | ----------- | --------- |
+|mdm_code|	主数据编码	|基础信息|国家/地区数据的系统唯一标识，格式为“MDCT+8位数字”|
+|name	|名称|	基础信息	|国家/地区名称|
+|alpha_3_code	|	三位字母代码|	基础信息	|	三位字母代码|
+|alpha_2_code	|两位字母代码|	基础信息	|两位字母代码|
+|numeric_code	|数字代码|	基础信息	|数字代码|
+|full_name	|国家/地区全称|	基础信息	|国家/地区全称|
+|global_code	|国际电话区号|	基础信息	|国际电话区号|
+|continents|	所属大洲|基础信息|所属大洲，1-亚洲,2-欧洲,3-非洲,4-北美洲,5-南美洲,6-大洋洲,7-南极洲|
+|status	|状态|	基础信息	|状态，枚举值：1_生效，0_失效|
+
+
+
+
+### 数据示例
+
+```json
+{
+  "alpha_3_code": "AND",
+  "alpha_2_code": "AD",
+  "numeric_code": "20",
+  "name": {
+    "value": "安道尔",
+    "multilingual_value": {
+      "zh-CN": "安道尔"
+    },
+    "return_language": "zh-CN"
+  },
+  "mdm_code": "MDCT00000001",
+  "full_name": {
+    "value": "安道尔公国",
+    "multilingual_value": {
+      "zh-CN": "安道尔公国"
+    },
+    "return_language": "zh-CN"
+  },
+  "global_code": "+376",
+  "status": "1",
+  "continents": {
+    "value": "2",
+    "multilingual_name": {
+      "zh-CN": "欧洲"
+    }
+  }
+}
+```
+

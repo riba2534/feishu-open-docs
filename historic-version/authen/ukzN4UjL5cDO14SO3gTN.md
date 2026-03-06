@@ -1,0 +1,97 @@
+---
+title: "获取登录预授权码"
+fullPath: "/ukTMukTMukTM/ukzN4UjL5cDO14SO3gTN"
+updateTime: "1750920600000"
+---
+
+# 获取登录预授权码
+
+:::html
+<md-alert type="error">
+本接口已成为历史版本，不推荐使用。请使用最新版本：[获取授权码](/ssl:ttdoc/common-capabilities/sso/api/obtain-oauth-code)
+</md-alert>。
+:::
+
+调用本接口获取用户的登录预授权码 code。登录预授权码的有效期是 5 分钟，且只能被使用一次。
+:::note
+**说明**：本接口适用于用户登录网页应用场景。当业务请求下方授权登录链接后，会加载授权登录页面，用户需要点击授权，此时地址栏会自动302至重定向 URL，并携带飞书开放平台返回的登录预授权码 code。有关重定向 URL 的详细介绍，请参考[获取 user_access_token](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/authen-v1/access_token/create)。
+
+:::
+
+:::note
+**更新**：[新版授权流程](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/authen-v1/login-overview)支持开发者在获取登录预授权码时通过传入 scope 参数来实现增量授权的能力。user_access_token 所需要的权限点位需要用户在授权页同意授权后方可获得，建议接入更加规范和合规的新版流程
+:::
+
+## 请求
+:::html
+<md-table>
+  <md-thead>
+  <tr>
+      <md-th>基本</md-th>
+      <md-th></md-th>
+  </tr>
+  </md-thead>
+  <md-tbody>
+    <md-tr>
+      <md-th>HTTP URL</md-th>
+      <md-td>https://open.feishu.cn/open-apis/authen/v1/index?redirect_uri={REDIRECT_URI}&app_id={APPID}&state={STATE}</md-td>
+    </md-tr>
+    <md-tr>
+      <md-th>HTTP Method</md-th>
+      <md-td>GET</md-td>
+    </md-tr>
+    
+    <md-tr>
+      <md-th>接口频率限制	</md-th>
+      <md-td>1000 次/分钟、50 次/秒</md-td>
+    </md-tr>
+
+    <md-tr>
+      <md-th>支持的应用类型</md-th>
+      <md-td>
+      <md-app-support types="custom,isv"></md-app-support>
+      </md-td>
+    </md-tr>
+    <md-tr>
+      <md-th>
+            权限要求
+            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
+            
+      </md-th>
+      <md-td>
+            无
+      </md-td>
+    </md-tr>
+  </md-tbody>
+</md-table>
+:::
+### 查询参数
+
+**名称**       | **类型** | **必填** | **描述**                                                                                                                                                                               |
+| ------------ | ------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| redirect_uri | string | 是      | 重定向 URL，需要经过 Encode 处理<br>1. 重定向 URL 使用于网页应用。可以在开发者后台，**应用功能 > 网页** 页面启用网页功能，并配置桌面端主页和移动端主页<br>2. 调用本接口前，需要在开发者后台的 **安全设置** 页面，配置重定向 URL，支持配置多个。只有在重定向 URL 列表中的 URL 才会通过开放平台的安全校验 |
+| app_id       | string | 是      | 应用 ID，可以在开发者后台的 **凭证与基础信息** 页面查看 `app_id`。有关 `app_id` 的详细介绍，请参考[通用参数](/ssl:ttdoc/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)         |
+| state        | string | 否      | 用来维护请求和回调状态的附加字符串， 在授权完成回调时会附加此参数，应用可以根据此字符串来判断上下文关系
+
+ 
+### 请求示例
+
+```shell 
+GET https://open.feishu.cn/open-apis/authen/v1/index?app_id=cli_9dff7f6ae02ad104&redirect_uri=https%3a%2f%2fopen.feishu.cn%2fdocument%2fuQjL04CN%2fucDOz4yN4MjL3gzM&state=RANDOMSTATE
+``` 
+
+
+### 响应示例
+
+```shell 
+https://open.feishu.cn/document/uQjL04CN%2fucDOz4yN4MjL3gzM?code={AuthorizationCode}&state=RANDOMSTATE 
+``` 
+
+|**名称**|  **描述**|
+| ---	|  --- 	|
+| code | 登录预授权码code，用于换user_access_token |
+| state | 请求参数的state原值 |
+
+
+
+

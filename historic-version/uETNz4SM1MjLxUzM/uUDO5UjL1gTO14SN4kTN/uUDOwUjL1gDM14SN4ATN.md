@@ -1,0 +1,208 @@
+---
+title: "查询批量任务执行状态"
+fullPath: "/ukTMukTMukTM/uUDOwUjL1gDM14SN4ATN"
+updateTime: "1626181332000"
+---
+
+# 查询批量任务执行状态
+
+该接口用于查询通讯录异步任务当前的执行状态以及执行结果。<br>
+
+:::html
+<md-alert type="warn">
+应用商店应用无权限调用此接口。<br>
+调用该接口需要申请 `更新通讯录` 以及 `以应用身份读取通讯录` 权限。
+</md-alert>
+:::
+
+
+## 请求
+:::html
+<md-table>
+  <md-thead>
+  <tr>
+      <md-th>基本</md-th>
+      <md-th></md-th>
+  </tr>
+  </md-thead>
+  <md-tbody>
+    <md-tr>
+      <md-th>HTTP URL</md-th>
+      <md-td>https://open.feishu.cn/open-apis/contact/v2/task/get?task_id=0123456789abcdef0123456789abcdef</md-td>
+    </md-tr>
+    <md-tr>
+      <md-th>HTTP Method</md-th>
+      <md-td>GET</md-td>
+    </md-tr>
+    
+    
+    <md-tr>
+      <md-th>
+权限要求
+ <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
+<div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
+</md-th>
+      <md-td>
+        <md-perm href="/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN"> 更新通讯录 </md-perm>
+          <md-perm href="/ssl:ttdoc/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">以应用身份访问通讯录（历史版本）</md-perm>
+      </md-td>
+    </md-tr>
+  </md-tbody>
+</md-table>
+:::
+### 请求头
+:::html
+<md-table> 
+  <md-thead> 
+    <md-tr> 
+      <md-th style="width: 18%;">名称</md-th>  
+      <md-th style="width: 15%;">类型</md-th>  
+       <md-th style="width: 15%;">必填</md-th>  
+      <md-th>描述</md-th> 
+    </md-tr> 
+  </md-thead>  
+  <md-tbody> 
+    <md-tr> 
+      <md-td>Authorization</md-td>  
+      <md-td>string</md-td>  
+      <md-td> 是 </md-td> 
+      	<md-td>
+<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
+ 
+**值格式**："Bearer `access_token`"
+
+**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
+          
+ [了解更多：如何选择与获取 access token](/ssl:ttdoc/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
+	</md-td>
+</md-tr>
+     <md-tr> 
+      <md-td>Content-Type</md-td>  
+      <md-td>string</md-td>  
+      <md-td> 是 </md-td> 
+     <md-td>**固定值**："application/json; charset=utf-8"</md-td>
+</md-tr>
+   
+  </md-tbody> 
+</md-table>
+:::
+
+### 请求参数  
+参数 | 类型 | 必填 / 选填 | 示例 | 说明
+-- | -- | -- | -- | --
+task_id | string | 必填 | 0123456789abcdef0123456789abcdef | 批量任务接口返回的异步任务 ID。
+## 响应
+### 响应体
+参数 | 说明
+-- | --
+code | 返回码，非 0 表示失败。
+msg | 对返回码的文本描述。
+data | -
+&emsp;∟task_id | 异步任务 ID。
+&emsp;∟type | 任务类型，目前有两种，添加用户时为 add_user，添加部门时为 add_department。
+&emsp;∟status | 任务当前执行状态，小于 9：正在执行过程中，9：执行完成，10：执行失败。
+&emsp;∟progress | 任务执行进度百分比。
+&emsp;∟total_num | 任务总条数。
+&emsp;∟success_num | 任务当前执行成功的条数。
+&emsp;∟fail_num | 任务当前执行失败的条数。
+&emsp;∟create_time | 任务创建时间，以秒为单位的 Unix 时间戳。
+&emsp;∟finish_time | 任务完成时间，以秒为单位的 Unix 时间戳，当任务未完成时不返回此字段。
+&emsp;∟task_info | 任务执行结果列表，当任务非正常执行完成时不返回此字段。<br>列表中的执行结果顺序和创建任务时请求体中的子任务顺序一致。
+&emsp;&emsp;∟code | 子任务返回码，非 0 表示失败。
+&emsp;&emsp;∟msg | 对子任务返回码的文本描述。
+&emsp;&emsp;∟action | 子任务进行的操作，1：添加，2：更新。子任务执行失败时不返回此字段。
+&emsp;&emsp;∟name | 子任务请求名称，用户操作时为用户名，部门操作时为部门名。
+================ | **以下字段适用于在用户操作时：**
+&emsp;&emsp;∟email | 请求时的用户邮箱。
+&emsp;&emsp;∟mobile | 请求时的用户手机号。
+&emsp;&emsp;∟user_id | 请求时的用户企业内唯一标识。<br>当请求时没有填写 user_id 字段并且子任务执行成功时，字段值为系统生成的唯一标识。
+&emsp;&emsp;∟departments | 请求时的用户所属部门。
+&emsp;&emsp;∟open_id | 生成的用户 open_id，子任务执行失败时不返回此字段。
+================ | **以下字段适用于在部门操作时：**
+&emsp;&emsp;∟department_id | 请求时的自定义部门 ID。<br>当请求时没有填写自定义 ID 字段并且子任务执行成功时，字段值为系统生成的部门 ID。
+&emsp;&emsp;∟parent_id | 请求时的父部门 ID。
+&emsp;&emsp;∟chat_id | 部门群 ID，部门群不存在时不返回此字段。
+### 响应体示例
+当异步任务为用户操作时：
+```json
+{
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "task_id": "123456784b68a7c89abcdef092dc09ea",
+        "type": "add_user",
+        "status": 8,
+        "progress": 100,
+        "total_num": 2,
+        "success_num": 1,
+        "fail_num": 1,
+        "create_time": 1565878519,
+        "finish_time": 1565878523,
+        "task_info": [
+            {
+                "code": 0,
+                "msg": "success",
+                "action": 1,
+                "departments": [
+                    "custom_1"
+                ],
+                "email": "custom_1@feishu.cn",
+                "mobile": "13000000001",
+                "name": "custom_1",
+                "open_id": "ou_123456784b68a7c89abcdef092dc09ea",
+                "user_id": "custom_1"
+            },
+            {
+                "code": 10013,
+                "msg": "invalid user_id",
+                "departments": [
+                    "custom_2"
+                ],
+                "mobile": "13000000002",
+                "name": "custom_2",
+                "user_id": "_custom_2"
+            }
+        ]
+    }
+}
+```
+当异步任务为部门操作时：
+```json
+{
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "task_id": "123456784b68a7c89abcdef092dc09ea",
+        "type": "add_department",
+        "status": 8,
+        "progress": 100,
+        "total_num": 2,
+        "success_num": 2,
+        "fail_num": 0,
+        "create_time": 1565878519,
+        "finish_time": 1565878523,
+        "task_info": [
+            {
+                "code": 0,
+                "msg": "success",
+                "action": 1,
+                "chat_id": "oc_123456784b68a7c89abcdef092dc09ea",
+                "department_id": "custom_1",
+                "name": "custom_1",
+                "parent_id": "0"
+            },
+            {
+                "code": 0,
+                "msg": "success",
+                "action": 1,
+                "department_id": "custom_2",
+                "name": "custom_2",
+                "parent_id": "custom_1"
+            }
+        ]
+    }
+}
+```
+### 错误码
+
+具体可参考：[服务端错误码说明](/ssl:ttdoc/ukTMukTMukTM/ugjM14COyUjL4ITN)
