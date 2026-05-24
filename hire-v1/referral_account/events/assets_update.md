@@ -6,7 +6,7 @@ updateTime: "1727331877000"
 
 # 内推账户余额变更事件
 
-当内推账户余额发生变更（增加或者减少）时，触发该事件。该事件将推送变更后的账户余额信息。收到事件后，如需将余额提现到三方平台发放给用户，请使用接口 [全额提取内推账户余额](https://open.larkoffice.com/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/referral_account/withdraw)。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=hire&version=v1&resource=referral_account&event=assets_update)
+当内推账户余额发生变更（增加或者减少）时，触发该事件。该事件将推送变更后的账户余额信息。收到事件后，如需将余额提现到三方平台发放给用户，请使用接口 [全额提取内推账户余额](https://open.larkoffice.com/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/referral_account/withdraw)。
 
 
 > **Tip**: 了解事件订阅的使用场景和配置流程，请点击查看 [事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。

@@ -6,7 +6,7 @@ updateTime: "1777344441000"
 
 # 入职流程状态变更
 
-待入职员工的入职流程流转时，例如调用[流转入职任务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/pre_hire/transit_task)接口会触发本事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=pre_hire&event=onboarding_task_changed)
+待入职员工的入职流程流转时，例如调用[流转入职任务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/pre_hire/transit_task)接口会触发本事件。
 
 
 > **Tip**: 你需要在应用中配置事件订阅，这样才可以在事件触发时接收到事件数据。了解事件订阅可参见[事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。

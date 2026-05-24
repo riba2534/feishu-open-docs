@@ -46,7 +46,7 @@ updateTime: "1764323979000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `states` | `string\[\]` | 否 | 电子签文件状态状态列表，多个状态之间为「或」的关系；枚举值可通过文档[【飞书人事枚举常量】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/feishu-people-enum-constant)电子签文件状态（signature_file_state）枚举定义部分获得<br>**示例值**：["sign_finished","pending_seal"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
-| `template_ids` | `string\[\]` | 否 | 电子签模板ID列表，返回的电子签文件使用的模板在该数组中； 可以通过[【获取电子签模板内容】](ssl:/uAjLw4CM/ukTMukTMukTM/corehr-v2/signature_template/search)接口获取模板ID<br>注意：多个模板ID之间是或的关系<br>**示例值**：["7282756156156560940","7282756156156560945"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
+| `template_ids` | `string\[\]` | 否 | 电子签模板ID列表，返回的电子签文件使用的模板在该数组中； 可以通过[【获取电子签模板内容】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/signature_template/search)接口获取模板ID<br>注意：多个模板ID之间是或的关系<br>**示例值**：["7282756156156560940","7282756156156560945"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
 
 
 ### 请求体示例

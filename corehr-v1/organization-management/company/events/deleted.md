@@ -7,7 +7,6 @@ updateTime: "1728545285000"
 # 【事件】删除公司
 
 飞书人事中「公司被删除」时将触发此事件。
-{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=company&event=deleted)
 
 
 > **Warning**: 收到删除事件后，相关查询接口无法查询到被删除对象的数据。

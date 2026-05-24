@@ -6,7 +6,7 @@ updateTime: "1764324042000"
 
 # 电子签文件状态变更事件
 
-当电子签文件状态发生变更的时候，会推送变更事件，包含文件变更前后的状态等信息{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=signature_file&event=status_updated)
+当电子签文件状态发生变更的时候，会推送变更事件，包含文件变更前后的状态等信息
 
 
 ## 事件

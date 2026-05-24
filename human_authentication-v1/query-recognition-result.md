@@ -7,10 +7,8 @@ updateTime: "1730444445000"
 # 查询人脸认证结果
 人脸比对流程，开发者后台调用此接口请求飞书后台，对本次活体比对结果做校验，支持查询有源认证与无源认证结果。
 
-::: note
+> **Note**
 人脸比对接入需申请白名单，接入前请联系飞书开放平台工作人员，邮箱：open-platform@bytedance.com。
-:::
-
 
 ## 请求
 
@@ -34,9 +32,8 @@ updateTime: "1730444445000"
 |open_id|string|否|用户应用标识, 与employee_id二选其一|URL参数|
 |employee_id|string|否|用户租户标识, 与open_id二选其一|URL参数|
 |ticket_type|string|否|认证方式标识，可取值'verify'或空; verify表示查询有源认证结果,缺省表示查询无源认证结果|URL参数|
-::: note
+> **Note**
 `open_id`和`employee_id`（也称`user_id`）的获取方式可以参考文档：[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)
-:::
 
 ## 响应
 ### 响应体

@@ -6,9 +6,8 @@ updateTime: "1702889152000"
 
 # 获取旧版文档中的电子表格元数据
 
-:::warning 
+> **Warning**
 此接口只支持获取旧版文档数据。要获取新版文档（`docx` 类型）中的元数据，使用[获取文档元数据](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/meta/batch_query)接口。
-:::
 
 该接口用于根据 docToken 获取文档中的电子表格的元数据。 
 

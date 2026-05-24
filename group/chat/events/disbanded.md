@@ -6,7 +6,7 @@ updateTime: "1730257052000"
 
 # 群解散
 
-群组被解散后触发此事件，在该群组内的、已订阅当前事件的应用机器人将会收到事件通知。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=im&version=v1&resource=chat&event=disbanded)
+群组被解散后触发此事件，在该群组内的、已订阅当前事件的应用机器人将会收到事件通知。
 
 
 ## 前提条件

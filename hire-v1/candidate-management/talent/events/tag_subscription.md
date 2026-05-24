@@ -6,7 +6,7 @@ updateTime: "1729222863000"
 
 # 人才进展变更事件
 
-支持单独订阅有指定标签的人才进展，人才进展包括阶段变更、锁定、解锁，需要提前在「飞书招聘」-「设置」- 「候选人标签管理」里对指定标签勾选支持事件订阅{使用示例}(url=/api/tools/api_explore/api_explore_config?project=hire&version=v1&resource=talent&event=tag_subscription)
+支持单独订阅有指定标签的人才进展，人才进展包括阶段变更、锁定、解锁，需要提前在「飞书招聘」-「设置」- 「候选人标签管理」里对指定标签勾选支持事件订阅
 
 
 ## 事件

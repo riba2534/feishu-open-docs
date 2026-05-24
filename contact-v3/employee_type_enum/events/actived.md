@@ -6,7 +6,7 @@ updateTime: "1720166960000"
 
 # 启用人员类型
 
-当应用订阅该事件后，如果将未激活的人员类型更新为激活状态，则会触发该事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=contact&version=v3&resource=employee_type_enum&event=actived)
+当应用订阅该事件后，如果将未激活的人员类型更新为激活状态，则会触发该事件。
 
 
 ## 前提条件

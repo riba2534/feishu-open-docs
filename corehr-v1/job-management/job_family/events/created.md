@@ -7,7 +7,7 @@ updateTime: "1728463409000"
 # 【事件】创建序列
 
 
-飞书人事中「序列被创建」时将触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=job_family&event=created)
+飞书人事中「序列被创建」时将触发此事件。
 
 
 > **Warning**: [【查询租户的序列信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/job_family/list)、[【获取单个序列信息

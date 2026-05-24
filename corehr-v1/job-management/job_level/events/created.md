@@ -7,7 +7,7 @@ updateTime: "1728463410000"
 # 【事件】创建职级
 
 
-飞书人事中「职级被创建」时将触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=job_level&event=created)
+飞书人事中「职级被创建」时将触发此事件。
 
 
 > **Warning**: [【查询租户的职级信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/job_level/list)、[【获取单个职级信息

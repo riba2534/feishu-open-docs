@@ -78,9 +78,8 @@ updateTime: "1712717685000"
 
 以下提供了日历业务域内所有资源的 API 和事件列表。
 
-:::note
+> **Note**
 文中表格涉及的 **商店** 是指商店应用，**自建** 是指企业自建应用。应用类型说明参见[应用类型简介](https://open.larkoffice.com/document/home/app-types-introduction/overview)。
-:::
 
 ### 日历
 

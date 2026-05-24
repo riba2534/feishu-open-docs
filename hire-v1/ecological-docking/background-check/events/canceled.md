@@ -6,7 +6,7 @@ updateTime: "1724839012000"
 
 # 终止背调
 
-飞书招聘客户在招聘系统内终止背调后，系统会推送「终止背调」事件给对应的背调服务商，服务商可根据此事件获取背调 ID，完成服务商内部的订单取消等后续操作。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=hire&version=v1&resource=eco_background_check&event=canceled)
+飞书招聘客户在招聘系统内终止背调后，系统会推送「终止背调」事件给对应的背调服务商，服务商可根据此事件获取背调 ID，完成服务商内部的订单取消等后续操作。
 
 
 ## 事件

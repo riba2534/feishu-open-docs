@@ -6,7 +6,7 @@ updateTime: "1744103528000"
 
 # 文件夹下文件创建
 
-当用户订阅的文件夹下有新建文件时将触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=drive&version=v1&resource=file&event=created_in_folder)
+当用户订阅的文件夹下有新建文件时将触发此事件。
 
 
 > **Tip**: 了解事件订阅的使用场景和配置流程，参考[事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。

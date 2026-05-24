@@ -6,7 +6,7 @@ updateTime: "1728463384000"
 
 # 【事件】创建地点
 
-飞书人事中「地点被创建」时将触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=location&event=created)
+飞书人事中「地点被创建」时将触发此事件。
 
 
 > **Warning**: [【批量分页查询地点信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/location/list)、[【查询单个地点】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/location/get)、[【通过地点 ID 批量获取地点信息

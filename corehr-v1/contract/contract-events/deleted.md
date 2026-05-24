@@ -6,7 +6,7 @@ updateTime: "1724639907000"
 
 # 合同删除
 
-通过开放平台删除合同时，会触发该事件。注意：删除后，无法通过搜索接口查询到合同信息。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=contract&event=deleted)
+通过开放平台删除合同时，会触发该事件。注意：删除后，无法通过搜索接口查询到合同信息。
 
 
 ## 事件

@@ -36,9 +36,8 @@ updateTime: "1735881801000"
 | Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
 
-::: note
+> **Note**
 更多云文档接口权限问题，参考[常见问题](https://open.larkoffice.com/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN)。
-:::
 
 ### 请求体
 

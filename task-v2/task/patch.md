@@ -18,7 +18,7 @@ updateTime: "1751425610000"
 * 如要修改任务成员，需要使用[添加任务成员](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_members)
 和[移除任务成员](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/remove_members)接口。
 * 如要修改任务提醒，需要使用[添加任务提醒](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_reminders)和[移除任务提醒](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/remove_reminders)接口。
-* 如要变更任务所在的清单，需要使用[任务加入清单](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_tasklist)和[任务移出清单]( /ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/remove_tasklist)接口。
+* 如要变更任务所在的清单，需要使用[任务加入清单](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_tasklist)和[任务移出清单](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/remove_tasklist)接口。
 
 
 > **Tip**: 修改时需要调用身份对任务有编辑权限。详情见[任务功能概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/overview)中的“任务是如何鉴权的？”章节。

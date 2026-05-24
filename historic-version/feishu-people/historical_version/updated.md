@@ -6,7 +6,7 @@ updateTime: "1760170388000"
 
 # 离职申请状态变更
 
-在发起离职审批、产生审批结果、离职生效、离职状态回退等离职申请状态变更时触发该事件推送对应消息。审批结果产生的场景包括撤销、通过、拒绝审批。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=offboarding&event=updated)
+在发起离职审批、产生审批结果、离职生效、离职状态回退等离职申请状态变更时触发该事件推送对应消息。审批结果产生的场景包括撤销、通过、拒绝审批。
 
 
 > **Warning**: 注意：该事件缺少数据范围控制和直接离职消息，不推荐使用该事件。优先使用[离职申请状态变更（新）](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/offboarding/events/status_updated)

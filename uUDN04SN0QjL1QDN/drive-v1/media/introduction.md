@@ -34,10 +34,8 @@ updateTime: "1749436509000"
 
 要将指定素材上传到指定云文档中，你需先确定上传点的类型（`parent_type`）和上传点的 token（`parent_node`），再调用上传接口。下表列出不同上传场景对应的上传点类型和上传点 token 说明。
 
-:::note
+> **Note**
 要在知识库文档中上传图片或文件，你需先调用[获取知识空间节点信息](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2/space/get_node)获取当前知识库文档的实际 token，再根据下列上传场景，确定上传点 token 的值。
-:::
-
 
 | 上传场景 | 上传点类型（parent_type） | 上传点 token （parent_node） | token 示例值 |
 | --- | --- | --- | --- |

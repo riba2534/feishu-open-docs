@@ -6,7 +6,7 @@ updateTime: "1720166960000"
 
 # 新建人员类型
 
-当应用订阅该事件后，如果新增了人员类型中的选项，则会触发该事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=contact&version=v3&resource=employee_type_enum&event=created)
+当应用订阅该事件后，如果新增了人员类型中的选项，则会触发该事件。
 
 
 ## 前提条件

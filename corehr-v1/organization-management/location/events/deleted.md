@@ -6,7 +6,7 @@ updateTime: "1728463383000"
 
 # 【事件】删除地点
 
-飞书人事中「地点被删除」时将触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=location&event=deleted)
+飞书人事中「地点被删除」时将触发此事件。
 
 
 > **Warning**: 收到删除事件后，相关查询接口无法查询到被删除对象的数据。

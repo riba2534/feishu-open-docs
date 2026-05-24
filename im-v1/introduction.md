@@ -26,13 +26,12 @@ updateTime: "1741352974000"
 
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/7e2c712313cbc2da9b298804cbcf94e2_yZOtP0cS3V.png?height=214&lazyload=true&maxWidth=700&width=2276)
 
-:::note
+> **Note**
 **说明**：
 
 - 你的应用必须[启用机器人能力](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)才可以调用消息 API。如需了解应用机器人，可参见[应用机器人概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/bot-v3/bot-overview#75133a93#75133a93)。
 - 如果你希望使用 Webhook 方式发送消息，则需要使用群自定义机器人，该类型机器人只能在群组内添加，且只能向该群组发送不可交互的消息。详细说明参见[自定义机器人使用指南](https://open.larkoffice.com/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)。
 - 应用机器人支持添加到外部群或与外部用户单聊，具体配置操作参考[机器人支持外部群和外部用户单聊](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/develop-robots/add-bot-to-external-group)。
-:::
 
 ## 开发教程
 
@@ -62,9 +61,8 @@ updateTime: "1741352974000"
 
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/db852635560fd52883977d5fdba7c435_gHArxBWd7T.png?height=1338&lazyload=true&maxWidth=600&width=1490)
 
-:::note
+> **Note**
 上图中，用户相关 API 参考[通讯录概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/resources)。群组相关 API 参考[群组概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/group/overview)。
-:::
 
 消息相关资源或操作介绍如下表：
 
@@ -85,9 +83,8 @@ updateTime: "1741352974000"
 
 以下提供消息业务域所包含的所有 API 与事件列表
 
-:::note
+> **Note**
 文中表格涉及的 **商店** 是指商店应用，**自建** 是指企业自建应用。应用类型说明参见[应用类型简介](https://open.larkoffice.com/document/home/app-types-introduction/overview)。
-:::
 
 ### 消息管理
 

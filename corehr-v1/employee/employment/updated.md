@@ -9,7 +9,7 @@ updateTime: "1725365583000"
 员工雇佣信息变更时发送该事件，场景举例：
 - 调用[【更新雇佣信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/employment/patch)接口
 - 人事系统【编辑工作信息】、【导入编辑人员】功能
-- 计算字段变更{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=employment&event=updated)
+- 计算字段变更
 
 
 > **Tip**: - 目前事件不保证有序

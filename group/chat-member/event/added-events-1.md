@@ -6,7 +6,7 @@ updateTime: "1742782143000"
 
 # 机器人进群
 
-机器人被用户添加至群聊时触发此事件，在群组内的、已订阅该事件的机器人会收到事件消息。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=im&version=v1&resource=chat.member.bot&event=added)
+机器人被用户添加至群聊时触发此事件，在群组内的、已订阅该事件的机器人会收到事件消息。
 
 
 ## 前提条件

@@ -6,7 +6,7 @@ updateTime: "1732773398000"
 
 # 离职信息变更
 
-当员工的离职信息变更会发送消息。例如在 [离职管理](https://people.feishu.cn/people/members/dimission/management) > 离职详情页 > 编辑 中修改了离职信息，该事件会推送对应变更的消息。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=offboarding&event=updated)
+当员工的离职信息变更会发送消息。例如在 [离职管理](https://people.feishu.cn/people/members/dimission/management) > 离职详情页 > 编辑 中修改了离职信息，该事件会推送对应变更的消息。
 
 
 > **Tip**: 注意：

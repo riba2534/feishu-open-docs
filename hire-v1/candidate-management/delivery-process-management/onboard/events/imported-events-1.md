@@ -6,7 +6,7 @@ updateTime: "1724827681000"
 
 # 导入 e-HR（实习 Offer）
 
-飞书招聘系统内用户选择实习 Offer 导入 e-HR 系统之后，将通过该事件推送候选人信息。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=hire&version=v1&resource=ehr_import_task_for_internship_offer&event=imported)
+飞书招聘系统内用户选择实习 Offer 导入 e-HR 系统之后，将通过该事件推送候选人信息。
 
 
 > **Tip**: - 需通过 [更新 e-HR 导入任务结果](https://open.larkoffice.com/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/ehr_import_task/patch) 更新本次导入e-HR任务的结果

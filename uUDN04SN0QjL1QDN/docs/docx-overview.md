@@ -8,9 +8,8 @@ updateTime: "1752809900000"
 
 本文档介绍飞书开放平台云文档中的文档能力相关的基本概念、使用限制、接入流程、方法列表等。
 
-:::note
+> **Note**
 本文档是针对新版文档能力的说明。要了解新旧版本文档能力的区别，参考[新旧版本说明](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/docs/upgraded-docs-access-guide/upgraded-docs-openapi-access-guide)。
-:::
 
 ## 基础概念
 

@@ -30,9 +30,8 @@ updateTime: "1750843216000"
 -  电子表格的 URL：https://sample.feishu.cn/sheets/==Iow7sNNEphp3WbtnbCscPqabcef==
 - 通过调用[获取文件夹中的文件清单](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/list) 获取。当响应体中的 type 为 sheet 时，对应的 token 即为电子表格的 spreadsheetToken
 
-:::warning
+> **Warning**
 对于知识库中的电子表格，你需调用[获取知识空间节点信息](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2/space/get_node)接口来获取电子表格的 `obj_token`。此时，该 `obj_token` 也是该表格的 `spreadsheetToken`。
-:::
 
 ### 工作表
 

@@ -6,7 +6,7 @@ updateTime: "1732773399000"
 
 # 离职流转状态变更
 
-离职流转流程的状态变更消息，当离职流转流程发起和产生审批结果时，会触发该事件。离职流转流程是在离职申请审批通过之后发起的流程，一般用于审批核实离职员工的交接事宜。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=offboarding&event=checklist_updated)
+离职流转流程的状态变更消息，当离职流转流程发起和产生审批结果时，会触发该事件。离职流转流程是在离职申请审批通过之后发起的流程，一般用于审批核实离职员工的交接事宜。
 
 
 > **Tip**: 注意：

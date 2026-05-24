@@ -6,7 +6,7 @@ updateTime: "1747710019000"
 
 # 【事件】删除自定义组织
 
-飞书人事中「自定义组织被删除」时将触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=custom_org&event=deleted)
+飞书人事中「自定义组织被删除」时将触发此事件。
 
 
 > **Warning**: 收到删除事件后，相关查询接口无法查询到被删除对象的数据。

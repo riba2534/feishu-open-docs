@@ -6,7 +6,7 @@ updateTime: "1720766024000"
 
 # 入职二维码失效
 
-使用扫码入职功能前，在入职管理后端配置二维码信息，当二维码失效时，会触发此事件{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=onboarding_qr_code&event=inactive)
+使用扫码入职功能前，在入职管理后端配置二维码信息，当二维码失效时，会触发此事件
 
 
 ## 事件

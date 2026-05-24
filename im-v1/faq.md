@@ -29,9 +29,8 @@ updateTime: "1745920727000"
 
 飞书的 OpenAPI 开放能力基于 Restful 接口对外提供服务，为了方便开发者快速体验和测试各类接口，开放平台提供了 [API 调试台](https://open.feishu.cn/api-explorer)。你可以在调试台内测试指定接口的能力，若接口调试成功，则说明测试配置无误。
 
-:::note
+> **Note**
 受接口使用限制，非所有 OpenAPI 都可以在 API 调试台进行调试。如果你在使用 API 调试台时无法调用某一接口，可以使用其他调试工具（如 Postman）对接口进行调试。
-:::
 
 ## ID 相关
 
@@ -90,9 +89,8 @@ updateTime: "1745920727000"
 
 		应用审核通过后即为发布上线状态，后续你可以在飞书中搜索并使用该应用机器人。
 
-:::note
+> **Note**
 **说明**：使用时需要注意登录的租户、环境信息。例如，应用为测试版本，则需要登录测试企业账号才可以使用应用。
-:::
 
 ### 提示机器人对某个用户不可见（the bot is invisible to the user），应该如何配置可见性？
 
@@ -169,9 +167,8 @@ V1、V2 版本可通过 webhook 地址区分。例如：
 - `https://open.feishu.cn/open-apis/bot/v2/hook/xxxx`，其中的 `v2` 即 V2 版本。
 - `https://open.feishu.cn/open-apis/bot/hook/xxxx`，未包含版本信息，即 V1 版本。
 
-:::warning
+> **Warning**
 推荐你使用 V2 版本的 webhook。具体介绍参见[自定义机器人使用指南](https://open.larkoffice.com/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)。
-:::
 
 如果你所调用的 webhook 地址格式为 `https://open.feishu.cn/open-apis/bot/hook/xxxx`，则表示你使用的是旧版本的 webhook，该类 webhook 仅支持发送纯文本消息，可以配置标题（title）和正文（text）。以任意方式向该 webhook 发起 HTTP POST 请求，即可实现向群组发送纯文本消息。
 
@@ -262,9 +259,8 @@ im:message.p2p_msg）** 或者 **读取用户发给机器人的单聊消息（im
 
 可以。只要机器人与被查询的消息在同一会话内，便可让机器人先获取消息的 message_id（[获取会话历史消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/list)），然后使用 message_id 调用[获取消息中的资源文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-resource/get)接口即可。
 
-:::warning
+> **Warning**
 **注意**：暂不支持获取[合并转发消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/merge_forward)中的子消息的资源文件。
-:::
 
 ### 如何设置消息中的链接打开方式（飞书导航打开、浏览器打开）？
 

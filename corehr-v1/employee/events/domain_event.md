@@ -6,7 +6,7 @@ updateTime: "1752649030000"
 
 # 人员信息变更
 
-人员领域事件变更，通过业务界面、开放平台接口对个人信息、工作信息（雇佣信息）、任职信息、兼职信息等进行操作时会触发相应事件{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=employee&event=domain_event)
+人员领域事件变更，通过业务界面、开放平台接口对个人信息、工作信息（雇佣信息）、任职信息、兼职信息等进行操作时会触发相应事件
 
 
 > **Warning**: - [【批量查询员工信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/batch_get)、[【搜索员工信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/search) 等数据查询存在一定延迟，不建议收到事件后立即查询以上接口。请在收到事件后，延迟 5~10 秒后查询。

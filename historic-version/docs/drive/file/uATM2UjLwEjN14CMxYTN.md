@@ -16,9 +16,8 @@ updateTime: "1651916140000"
 
 > **Warning**: 文档只能被文档所有者删除，文档被删除后将会放到回收站里
 
-:::note
+> **Note**
 该接口不支持并发调用，且调用频率上限为5QPS
-:::
 
 ## 请求
 
@@ -36,11 +35,11 @@ updateTime: "1651916140000"
 | Authorization | string | 是 | `tenant_access_token` 或 `user_access_token`            **值格式**："Bearer `access_token`" **示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"             [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
 
 
-::: note
-::: html
+> **Note**
+> **Html**
 使用 `tenant_access_token` 前，请确保该应用是文档的所有者，否则会报无权限错误。
 
-:::
+
 <br>
 
 ### 路径参数

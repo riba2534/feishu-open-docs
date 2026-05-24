@@ -6,7 +6,7 @@ updateTime: "1774528232000"
 
 # 开始屏幕共享
 
-发生在屏幕共享开始时【仅通过Open API预约的会议会产生此类事件】{使用示例}(url=/api/tools/api_explore/api_explore_config?project=vc&version=v1&resource=meeting&event=share_started)
+发生在屏幕共享开始时【仅通过Open API预约的会议会产生此类事件】
 
 
 ## 事件

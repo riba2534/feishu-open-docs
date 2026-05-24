@@ -6,7 +6,7 @@ updateTime: "1767774032000"
 
 # 数据记录变更
 
-当数据表记录发生变更时将触发此事件{使用示例}(url=/api/tools/api_explore/api_explore_config?project=apaas&version=v1&resource=workspace&event=record_change)
+当数据表记录发生变更时将触发此事件
 
 
 ## 事件

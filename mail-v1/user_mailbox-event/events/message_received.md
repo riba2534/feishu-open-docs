@@ -7,7 +7,7 @@ updateTime: "1745841603000"
 # 收信通知
 
 ## 前提条件
-你需要在应用中配置事件订阅，这样才可以在事件触发时接收到事件数据。了解事件订阅可参见 [事件概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=mail&version=v1&resource=user_mailbox.event&event=message_received)
+你需要在应用中配置事件订阅，这样才可以在事件触发时接收到事件数据。了解事件订阅可参见 [事件概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。
 
 
 ## 事件

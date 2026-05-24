@@ -6,7 +6,7 @@ updateTime: "1730257118000"
 
 # 用户进入与机器人的会话
 
-用户进入与机器人的会话时触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=im&version=v1&resource=chat.access_event&event=bot_p2p_chat_entered)
+用户进入与机器人的会话时触发此事件。
 
 
 ## 前提条件

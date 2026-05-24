@@ -10,7 +10,7 @@ updateTime: "1752809918000"
 
 
 > **Tip**: - **应用频率限制**：单个应用调用频率上限为每秒 3 次，超过该频率限制，接口将返回 HTTP 状态码 400 及错误码 99991400。当请求被限频，应用需要处理限频状态码，并使用指数退避算法或其它一些频控策略降低对 API 的调用速率。
-> - 该接口仅支持指定文档标题，不支持带内容创建文档。要基于模板创建文档，可先获取模板文档的 [document_id](s/ssl:ttdoc/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-overview) 作为文件 token，再调用[复制文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/copy)接口创建文档。
+> - 该接口仅支持指定文档标题，不支持带内容创建文档。要基于模板创建文档，可先获取模板文档的 [document_id](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-overview) 作为文件 token，再调用[复制文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/copy)接口创建文档。
 
 
 ## 请求

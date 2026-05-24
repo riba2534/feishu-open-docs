@@ -43,9 +43,8 @@ updateTime: "1745207207000"
 
 ## 回调示例
 
-:::warning
+> **Warning**
 示例命令中的 `https://www.feishu.cn/approval/openapi/v2/external/instanceOperate` URL 请求地址仅为示例，实际发送回调时，需要替换为真实的三方审批系统回调 URL。
-:::
 
 - 未加密和加密的示例命令：
 

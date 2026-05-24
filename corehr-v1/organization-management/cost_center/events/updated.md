@@ -6,7 +6,7 @@ updateTime: "1732790459000"
 
 # 【事件】更新成本中心
 
-飞书人事中「成本中心信息被更新」时将触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=cost_center&event=updated)
+飞书人事中「成本中心信息被更新」时将触发此事件。
 
 
 > **Warning**: [【搜索成本中心信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/cost_center/search)接口数据查询存在一定延迟(2s内)，不建议收到事件后立即查询以上接口。

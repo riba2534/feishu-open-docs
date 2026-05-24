@@ -8,7 +8,7 @@ updateTime: "1725006770000"
 
 员工雇佣信息被创建时发送该事件，场景举例：
 - 调用[【创建雇佣信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/employment/create)、[【添加人员】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/create)接口
-- 人事系统【添加人员】、【导入人员】功能{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=employment&event=created)
+- 人事系统【添加人员】、【导入人员】功能
 
 
 > **Tip**: - 目前事件不保证有序

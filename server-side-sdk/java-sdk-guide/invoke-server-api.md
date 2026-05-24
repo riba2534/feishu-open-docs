@@ -65,11 +65,9 @@ Client client=Client.newBuilder("appId","appSecret") // 默认配置为自建应
 
 如下代码示例，你可通过 client 调用文档资源的 create 方法，创建一个文档。
 
-:::note
-
-
+> **Note**
 该示例需要你在开发者后台为应用开通[创建及编辑新版文档]或[创建新版文档]权限，否则接口将报 99991672 错误码。
-:::
+
 ```java
 import com.lark.oapi.Client;
 import com.lark.oapi.core.utils.Jsons;

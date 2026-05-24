@@ -127,9 +127,8 @@ updateTime: "1778317167000"
 你的业务服务器接收到回调请求后，需要在 3 秒内响应回调请求，声明通过弹出 Toast 提示、更新卡片、保持原内容不变等方式响应用户交互。以下为使用卡片 JSON 代码和卡片模板响应的字段说明。要了解响应方式，参考[处理卡片回调](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/handle-card-callbacks)。
 
 
-:::warning
+> **Warning**
 业务服务端不可使用重定向状态码（`HTTP 3xx`）来响应卡片的回调请求，否则用户端将会出现交互请求错误。
-:::
 
 ### 使用卡片 JSON 代码响应
 
@@ -258,9 +257,8 @@ updateTime: "1778317167000"
 在飞书客户端进行卡片交互时，若交互出错，将返回如下图对应的错误码。错误码说明及解决方案如下表所示。
 
 ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/29558d328f22a099dc8ce5c66bf4e5ba_DD7lIR8Lxk.png?height=64&lazyload=true&width=285)
-:::note
+> **Note**
 错误码仅支持飞书客户端 7.28 及以上版本。若未返回错误码，请升级飞书客户端后重试。
-:::
 
 | 错误码 | 描述 | 解决方案 |
 | --- | --- | --- |

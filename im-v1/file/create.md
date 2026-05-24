@@ -69,9 +69,8 @@ Content-Type: application/octet-stream
 ---7MA4YWxkTrZu0gW
 ```
 
-:::note
+> **Note**
 以下示例代码中需要自行替换文件路径和鉴权Token
-:::
 
 **cURL示例**
 ```

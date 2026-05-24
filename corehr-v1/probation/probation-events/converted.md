@@ -6,7 +6,7 @@ updateTime: "1721042511000"
 
 # 员工完成转正
 
-当员工转正生效时触发该事件{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=employment&event=converted)
+当员工转正生效时触发该事件
 
 
 ## 事件

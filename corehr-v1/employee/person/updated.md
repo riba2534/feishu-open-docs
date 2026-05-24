@@ -11,7 +11,7 @@ updateTime: "1725365583000"
 - 人事系统【编辑个人信息】、【导入编辑人员】功能
 - 计算字段变更
 
-注：籍贯、政治面貌、户口类型、户口所在地变化不会触发该事件{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=person&event=updated)
+注：籍贯、政治面貌、户口类型、户口所在地变化不会触发该事件
 
 
 > **Tip**: - 目前事件不保证有序

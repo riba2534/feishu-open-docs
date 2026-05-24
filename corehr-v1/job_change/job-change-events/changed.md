@@ -6,7 +6,7 @@ updateTime: "1760100670000"
 
 # 员工完成异动
 
-员工在飞书人事异动生效后（到达异动生效时间）将触发该事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=job_data&event=changed)
+员工在飞书人事异动生效后（到达异动生效时间）将触发该事件。
 
 
 > **Tip**: 异动在生效日期0点生效，由于每日员工字段变更计算量较大，到达异动生效时间时，不会立刻发出此事件，最晚6个小时后发出此事件。

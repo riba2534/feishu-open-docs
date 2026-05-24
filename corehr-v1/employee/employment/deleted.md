@@ -6,7 +6,7 @@ updateTime: "1707186057000"
 
 # 【事件】删除雇佣信息
 
-员工在飞书人事的「雇佣信息被删除」时将触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=employment&event=deleted)
+员工在飞书人事的「雇佣信息被删除」时将触发此事件。
 
 
 ## 事件

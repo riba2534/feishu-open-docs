@@ -8,8 +8,8 @@ updateTime: "1725268181000"
 
 可监听工单状态和阶段变更事件。需使用订阅接口订阅：[事件订阅](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/helpdesk-v1/event/subscribe)。
 
-:::note
-如果你需要监听工单的阶段变更，可以使用该事件。例如，使用该事件监听工单阶段由机器人变更为人工。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=helpdesk&version=v1&resource=ticket&event=updated)
+> **Note**
+如果你需要监听工单的阶段变更，可以使用该事件。例如，使用该事件监听工单阶段由机器人变更为人工。
 
 
 ## 事件

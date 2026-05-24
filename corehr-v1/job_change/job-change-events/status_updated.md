@@ -7,7 +7,6 @@ updateTime: "1744077111000"
 # 异动状态变更
 
 在异动审批状态变更、异动生效时都会触发该事件，审批结果产生的场景包括撤销、审批通过、审批拒绝
-{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=job_change&event=status_updated)
 
 
 > **Warning**: 为了保证系统稳定可靠，事件消费需要做好错误处理&幂等消费，建议参考文档 [事件概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM#521f7631)

@@ -13,11 +13,8 @@ updateTime: "1750843236000"
 | 每个表格都有一个 `spreadsheetToken` 作为唯一标识。你可通过以下任一方式获取表格的 `spreadsheetToken`： -  电子表格的 URL：https://sample.feishu.cn/sheets/==Iow7sNNEphp3WbtnbCscPqabcef== - 通过调用[获取文件夹中的文件清单](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/list) 获取 |
 warning
 对于知识库中的电子表格，你需调用[获取知识空间节点信息](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2/space/get_node)接口来获取电子表格的 `obj_token`。此时，该 `obj_token` 也是该表格的 `spreadsheetToken`。
-:::
-  
 
 
-:::
 ## 2. 电子表格的相关限制有哪些？
 
 | 列1 |

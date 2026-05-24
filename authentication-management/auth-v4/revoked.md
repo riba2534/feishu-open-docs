@@ -6,7 +6,7 @@ updateTime: "1770624579000"
 
 # 撤销用户授权事件
 
-当用户 user_access_token 或 refresh_token 被撤销后，会触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=auth&version=v4&resource=user_access_token&event=revoked)
+当用户 user_access_token 或 refresh_token 被撤销后，会触发此事件。
 
 
 ## 前提条件

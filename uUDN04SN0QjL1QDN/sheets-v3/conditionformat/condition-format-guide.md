@@ -65,7 +65,7 @@ updateTime: "1723185998000"
 
 当 `rule_type` 为 `cellIs` 时，表示基于对值范围的限定规则，创建条件格式。此时，`attrs` 参数为数组，需传入一组 `operator` 和 `formula` 参数。其中，`formula` 的值为用户自定义，`operator` 的可选值和对应的规则含义如下所示：
 
-:::note
+> **Note**
 formula 为 string 数组类型。填写的值若是数字类型，需填写为如 `"1"` 的格式；若是文本类型，需填写为 `"\"aaaaa\""` 格式。即文本需要用 "" 包裹并转义。
 
 | operator 取值 | formula 取值 | 规则描述 | attrs 参数示例 |

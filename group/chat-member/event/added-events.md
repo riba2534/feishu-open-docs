@@ -6,7 +6,7 @@ updateTime: "1730257097000"
 
 # 用户进群
 
-新用户进群（包含话题群）时触发此事件，在群组内的、已订阅该事件的机器人会收到事件数据。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=im&version=v1&resource=chat.member.user&event=added)
+新用户进群（包含话题群）时触发此事件，在群组内的、已订阅该事件的机器人会收到事件数据。
 
 
 ## 前提条件

@@ -6,7 +6,7 @@ updateTime: "1724222391000"
 
 # 删除消息表情回复
 
-应用订阅该事件后，消息被删除表情回复时会触发此事件。事件体包含被删除表情回复的消息 message_id、删除表情回复的操作人 ID、表情类型、添加时间等信息。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=im&version=v1&resource=message.reaction&event=deleted)
+应用订阅该事件后，消息被删除表情回复时会触发此事件。事件体包含被删除表情回复的消息 message_id、删除表情回复的操作人 ID、表情类型、添加时间等信息。
 
 
 ## 前提条件

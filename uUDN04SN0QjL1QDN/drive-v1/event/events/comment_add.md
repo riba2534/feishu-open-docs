@@ -6,7 +6,7 @@ updateTime: "1775123703000"
 
 # 添加评论、回复通知事件
 
-当用户有新文档评论或回复通知会触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=drive&version=v1&resource=notice&event=comment_add)
+当用户有新文档评论或回复通知会触发此事件。
 
 
 > **Tip**: 了解事件订阅的使用场景和配置流程，参考[事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。

@@ -7,7 +7,7 @@ updateTime: "1725365583000"
 # 任职信息更新
 
 目前以下场景会触发该事件：
-- 人事系统【编辑任职】【编辑兼职】【导入编辑任职】【发起异动】功能{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=job_data&event=updated)
+- 人事系统【编辑任职】【编辑兼职】【导入编辑任职】【发起异动】功能
 
 
 > **Tip**: - 目前事件不保证有序

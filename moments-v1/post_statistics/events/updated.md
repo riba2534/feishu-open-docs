@@ -6,7 +6,7 @@ updateTime: "1725018427000"
 
 # 帖子统计数据变更
 
-公司圈帖子统计数据变更时触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=moments&version=v1&resource=post_statistics&event=updated)
+公司圈帖子统计数据变更时触发此事件。
 
 
 ## 事件

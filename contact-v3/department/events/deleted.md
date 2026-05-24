@@ -6,7 +6,7 @@ updateTime: "1775548407000"
 
 # 部门被删除
 
-应用订阅该事件后，如果通讯录内有部门被删除，则会触发该事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=contact&version=v3&resource=department&event=deleted)
+应用订阅该事件后，如果通讯录内有部门被删除，则会触发该事件。
 
 
 ## 前提条件

@@ -6,7 +6,7 @@ updateTime: "1726661618000"
 
 # 应用创建
 
-当企业内有新的自建应用被创建时推送此事件（创建就会产生此事件，不需要发版）{使用示例}(url=/api/tools/api_explore/api_explore_config?project=application&version=v6&resource=application&event=created)
+当企业内有新的自建应用被创建时推送此事件（创建就会产生此事件，不需要发版）
 
 
 ## 前提条件

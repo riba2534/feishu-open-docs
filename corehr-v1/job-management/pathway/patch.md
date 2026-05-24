@@ -34,7 +34,7 @@ updateTime: "1765434865000"
 
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
-| `pathway_id` | `string` | 通道ID。ID获取方式 - 调用[创建通道接口](/document-mod/index?fullPath=%2FuAjLw4CM%2FukTMukTMukTM%2Fcorehr-v2%2Fpathway%2Fcreate)后，从响应结果的`pathway_id`获取。 - 监听[通道创建事件](/document-mod/index?fullPath=/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/events/created)，当触发该事件后可从事件体内获取`pathway_id` - 监听[通道更新事件](/document-mod/index?fullPath=/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/events/updated)，当触发该事件后可从事件体内获取`pathway_id` - 监听[通道删除事件](/document-mod/index?fullPath=%2FuAjLw4CM%2FukTMukTMukTM%2Fcorehr-v2%2Fpathway%2Fevents%2Fdeleted)，当触发该事件后可从事件体内获取`pathway_id`<br>**示例值**："6862995757234914824" |
+| `pathway_id` | `string` | 通道ID。ID获取方式 - 调用[创建通道接口](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/create)后，从响应结果的`pathway_id`获取。 - 监听[通道创建事件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/events/created)，当触发该事件后可从事件体内获取`pathway_id` - 监听[通道更新事件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/events/updated)，当触发该事件后可从事件体内获取`pathway_id` - 监听[通道删除事件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/events/deleted)，当触发该事件后可从事件体内获取`pathway_id`<br>**示例值**："6862995757234914824" |
 
 
 ### 查询参数
@@ -109,6 +109,6 @@ updateTime: "1765434865000"
 | 429 | 1161604 | QPS over limit | 请先参考全量错误码详细描述进行错误排查，如问题始终无法解决请联系[技术支持](https://applink.feishu.cn/TLJpeNdW) |
 
 
-其他错误码参考: [全量错误码详细描述](/document-mod/index?fullPath=%2FuAjLw4CM%2FukTMukTMukTM%2Fcorehr-v2%2Fpathway%2Fpathway-errorcodes)
+其他错误码参考: [全量错误码详细描述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/pathway-errorcodes)
 
 

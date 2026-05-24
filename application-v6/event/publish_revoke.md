@@ -6,7 +6,7 @@ updateTime: "1665390952000"
 
 # 撤回应用发布申请
 
-通过订阅该事件，可接收应用撤回发布申请事件{使用示例}(url=/api/tools/api_explore/api_explore_config?project=application&version=v6&resource=application.app_version&event=publish_revoke)
+通过订阅该事件，可接收应用撤回发布申请事件
 
 
 ## 事件

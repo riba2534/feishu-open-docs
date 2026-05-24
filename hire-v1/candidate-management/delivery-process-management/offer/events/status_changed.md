@@ -6,7 +6,7 @@ updateTime: "1764644289000"
 
 # Offer 状态变更
 
-当 Offer 状态发生变更时发送该事件。除 Offer 创建时不会发送以外，其它 Offer 状态变更均会发送事件，Offer 状态变更场景可参考「Offer 状态流转图」。注意：仅推送正式 Offer 的状态变更信息，实习 Offer 相关状态不推送。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=hire&version=v1&resource=offer&event=status_changed)
+当 Offer 状态发生变更时发送该事件。除 Offer 创建时不会发送以外，其它 Offer 状态变更均会发送事件，Offer 状态变更场景可参考「Offer 状态流转图」。注意：仅推送正式 Offer 的状态变更信息，实习 Offer 相关状态不推送。
 
 
 ### Offer 状态流转图

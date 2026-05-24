@@ -837,7 +837,7 @@ curl --location --request POST '{url}' \
 
 ## 14. 获取文档所有块接口是按什么顺序返回 Block 的？
 
-[获取文档所有块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)接口返回的 items 是一个 [1,N] (N>=1) 的 Block 数组。数组中元素的次序按文档内容先序遍历结果进行排列，其中索引为 0 的元素是文档根节点。
+[获取文档所有块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)接口返回的 items 是一个 [1,N](N>=1) 的 Block 数组。数组中元素的次序按文档内容先序遍历结果进行排列，其中索引为 0 的元素是文档根节点。
 
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/f2781a250e0532e5d09fed46574eecd0_bnsLLioGHI.png?height=436&lazyload=true&width=1123)
 

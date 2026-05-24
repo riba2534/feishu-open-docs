@@ -6,7 +6,7 @@ updateTime: "1743649992000"
 
 # 发薪活动变更事件
 
-当发薪活动发生变更后，订阅这个事件的应用会收到事件。当前仅审批通过、审批撤销、跳过审批、封存、取消封存，会发送该事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=payroll&version=v1&resource=payment_activity&event=status_changed)
+当发薪活动发生变更后，订阅这个事件的应用会收到事件。当前仅审批通过、审批撤销、跳过审批、封存、取消封存，会发送该事件。
 
 
 ## 事件

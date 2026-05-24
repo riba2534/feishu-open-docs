@@ -6,7 +6,7 @@ updateTime: "1762309047000"
 
 # 流程实例状态变化
 
-流程实例是指用户发起的具体流程(process_id是其唯一标识)，流程实例状态变化时会触发该事件（此功能不受数据权限范围控制）。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=process.status&event=update)
+流程实例是指用户发起的具体流程(process_id是其唯一标识)，流程实例状态变化时会触发该事件（此功能不受数据权限范围控制）。
 
 
 > **Tip**: 休假类型流程的“撤销”的实例状态，以及是否属于“更正流程”需要去休假的[批量查询员工请假记录](https://open.larkoffice.com/document/server-docs/corehr-v1/leave/leave_request_history?appId=cli_a7b01a4272581013) 接口查询

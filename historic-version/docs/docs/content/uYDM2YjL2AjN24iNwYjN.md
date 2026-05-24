@@ -6,13 +6,13 @@ updateTime: "1702889189000"
 
 # 编辑旧版文档内容
 
-:::warning 
+> **Warning**
 此接口只支持编辑旧版文档内容。要编辑新版文档（文档类型：`docx`）的内容，调用以下接口：
 - [创建块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create)
 - [更新块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/patch)
 - [批量更新块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/batch_update)
 - [删除块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/batch_delete)
-:::
+
 该接口用于批量编辑更新文档内容，包括更新标题、范围删除、插入内容。
 
 ## 前提条件
@@ -37,9 +37,9 @@ updateTime: "1702889189000"
 | Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
 
-::: note
+> **Note**
 关于云文档接口的 AccessToken 调用说明详见 [云文档接口快速入门](https://open.larkoffice.com/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN)
-:::
+
 <br>
 ### 请求体    
 | 参数| 类型| 必须 | 说明| 
@@ -232,7 +232,7 @@ updateTime: "1702889189000"
   
  **请求示例**
 
-:::note
+> **Note**
 本示例将会在一段文本中插入一段行内代码 `Docs API Sample Content`
   :::
   ```

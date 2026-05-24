@@ -5,9 +5,9 @@ updateTime: "1724998612000"
 ---
 
 # 获取旧版文档元信息
-:::warning 
+> **Warning**
 此接口只支持查询旧版文档元信息。要查询新版文档（`docx` 类型）元信息，使用[获取文档元数据](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/meta/batch_query)接口。
-:::
+
 该接口用于根据 docToken 获取元数据。
 
 ## 请求
@@ -26,9 +26,9 @@ updateTime: "1724998612000"
 | Authorization | string | 是 | `user_access_token` 或 `tenant_access_token`   **值格式**："Bearer `access_token`" **示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"             [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
 | Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-::: note
+> **Note**
 关于云文档接口的 AccessToken 调用说明详见 [云文档接口快速入门](https://open.larkoffice.com/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN)。
-:::
+
 <br>
 ### 路径参数
 |参数|类型|必须|说明|

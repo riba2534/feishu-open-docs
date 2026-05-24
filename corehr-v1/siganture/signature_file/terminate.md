@@ -71,9 +71,9 @@ updateTime: "1764323939000"
 | &nbsp;&nbsp;└ `total_count` | `int` | 欲终止的文件总数量 |
 | &nbsp;&nbsp;└ `success_count` | `int` | 成功总数量 |
 | &nbsp;&nbsp;└ `fail_count` | `int` | 失败总数量 |
-| &nbsp;&nbsp;└ `success_file_id_list` | `string\[\]` | 终止成功的文件id列表，可以通过[【获取电子签文件列表】](ssl:/uAjLw4CM/ukTMukTMukTM/corehr-v2/signature_file/list)接口获取文件详情信息 |
+| &nbsp;&nbsp;└ `success_file_id_list` | `string\[\]` | 终止成功的文件id列表，可以通过[【获取电子签文件列表】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/signature_file/list)接口获取文件详情信息 |
 | &nbsp;&nbsp;└ `fail_file_id_and_reasons` | `terminate_signature_fail_id_and_reason\[\]` | 终止失败的文件id和对应的原因列表 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `signature_file_id` | `string` | 终止操作失败的文件ID，可以通过[【获取电子签文件列表】](ssl:/uAjLw4CM/ukTMukTMukTM/corehr-v2/signature_file/list)接口获取文件详情信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `signature_file_id` | `string` | 终止操作失败的文件ID，可以通过[【获取电子签文件列表】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/signature_file/list)接口获取文件详情信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `fail_reason` | `string` | 终止失败的原因 |
 
 

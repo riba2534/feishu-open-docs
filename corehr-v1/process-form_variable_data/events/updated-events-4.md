@@ -6,7 +6,7 @@ updateTime: "1762309048000"
 
 # 流程评论事件
 
-流程新增评论时会触发该事件，该事件包含评论所在的流程ID（process_id是其唯一标识）和评论唯一ID（comment_id）,此功能不受数据权限范围控制{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=process_comment_info&event=updated)
+流程新增评论时会触发该事件，该事件包含评论所在的流程ID（process_id是其唯一标识）和评论唯一ID（comment_id）,此功能不受数据权限范围控制
 
 
 > **Tip**: 你需要在应用内配置事件订阅，并订阅该事件，这样才可以在事件触发时接收到事件数据。了解事件订阅可参见[事件概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。

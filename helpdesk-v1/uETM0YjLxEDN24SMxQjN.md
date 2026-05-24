@@ -16,7 +16,7 @@ updateTime: "1732695601000"
 服务台 id是每个服务台的唯一标识
 
 ### 服务台 token
-请求中加入服务台token，表示拥有和服务台负责人相同的权限（查看修改服务台实体）。详见：[服务台token](/ssl:ttdoc/ukTMukTMukTM/ugDOyYjL4gjM24CO4IjN)
+请求中加入服务台token，表示拥有和服务台负责人相同的权限（查看修改服务台实体）。详见：[服务台token](https://open.larkoffice.com/document/ukTMukTMukTM/ugDOyYjL4gjM24CO4IjN)
 
 ### 知识库
 在服务台知识库中，管理员可以添加问题分类及问题内容。当问题数量较多时，管理员可以通过批量上传添加问题。此外，管理员还可修改问题内容，修改及删除问题分类。被删除的问题会进入回收站，如有需要，可在 30 天内恢复删除的问题。

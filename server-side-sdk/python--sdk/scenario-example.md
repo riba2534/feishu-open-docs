@@ -10,7 +10,7 @@ updateTime: "1746676956000"
 
 ## 开发教程
 
-飞书开放平台提供了机器人自动拉群报警的场景化教程，使用教程你可以体验 Python SDK 在实际场景中运用方式，详情参见[机器人自动拉群报警](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-development-tutorial/introduction)。
+飞书开放平台提供了机器人自动拉群报警的场景化教程，使用教程你可以体验 Python SDK 在实际场景中运用方式，详情参见[机器人自动拉群报警](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-development-tutorial/introduction)。
 
 ## 示例代码
 
@@ -22,8 +22,8 @@ updateTime: "1746676956000"
 示例代码如下，源文件地址：[send_file.py](https://github.com/larksuite/oapi-sdk-python-demo/blob/main/composite_api/im/send_file.py)
 
 发送文件消息，使用到两个 OpenAPI：
-- [上传文件](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/create)
-- [发送消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)
+- [上传文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/create)
+- [发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)
 
 ```python
 
@@ -110,8 +110,8 @@ def send_file(client: lark.Client, request: SendFileRequest) -> BaseResponse:
 
 发送图片消息，使用到两个 OpenAPI：
 
-- [上传图片](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)
-- [发送消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)
+- [上传图片](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)
+- [发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)
 
 ```python
 import lark_oapi as lark
@@ -191,8 +191,8 @@ def send_image(client: lark.Client, request: SendImageRequest) -> BaseResponse:
 示例代码如下，源文件地址：[list_user_by_department.py](https://github.com/larksuite/oapi-sdk-python-demo/blob/main/composite_api/contact/list_user_by_department.py)
 
 获取部门下所有用户列表，使用到两个 OpenAPI：
-- [获取子部门列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/children)
-- [获取部门直属用户列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/find_by_department)
+- [获取子部门列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/children)
+- [获取部门直属用户列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/find_by_department)
 
 ```python
 import lark_oapi as lark
@@ -270,8 +270,8 @@ def list_user_by_department(client: lark.Client, request: ListUserByDepartmentRe
 
 创建多维表格同时添加数据表，使用到两个 OpenAPI：
 
-- [创建多维表格](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app/create)
-- [新增一个数据表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table/create)
+- [创建多维表格](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app/create)
+- [新增一个数据表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table/create)
 
 ```python
 import lark_oapi as lark
@@ -351,8 +351,8 @@ def create_app_and_tables(client: lark.Client, request: CreateAppAndTablesReques
 示例代码如下，源文件地址：[copy_and_paste_by_range.py](https://github.com/larksuite/oapi-sdk-python-demo/blob/main/composite_api/sheets/copy_and_paste_by_range.py)
 
 复制粘贴某个范围的单元格数据，使用到两个 OpenAPI：
-- [读取单个范围](/ssl:ttdoc/ukTMukTMukTM/ugTMzUjL4EzM14COxMTN)
-- [向单个范围写入数据](/ssl:ttdoc/ukTMukTMukTM/uAjMzUjLwIzM14CMyMTN)
+- [读取单个范围](https://open.larkoffice.com/document/ukTMukTMukTM/ugTMzUjL4EzM14COxMTN)
+- [向单个范围写入数据](https://open.larkoffice.com/document/ukTMukTMukTM/uAjMzUjLwIzM14CMyMTN)
 
 ```python
 import json
@@ -435,8 +435,8 @@ def copy_and_paste_range(client: lark.Client, request: CopyAndPasteByRangeReques
 示例代码如下，源文件地址：[download_media_by_range.py](https://github.com/larksuite/oapi-sdk-python-demo/blob/main/composite_api/sheets/download_media_by_range.py)
 
 下载指定范围单元格的所有素材列表，使用到两个 OpenAPI：
-- [读取单个范围](/ssl:ttdoc/ukTMukTMukTM/ugTMzUjL4EzM14COxMTN)
-- [下载素材](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/download)
+- [读取单个范围](https://open.larkoffice.com/document/ukTMukTMukTM/ugTMzUjL4EzM14COxMTN)
+- [下载素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/download)
 
 ```python
 import json

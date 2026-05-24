@@ -6,7 +6,7 @@ updateTime: "1731048975000"
 
 # 概述
 
-==**为了更好地提升接口文档的的易理解性，我们对文档进行了升级，请尽快迁移至[新版本>>](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/lingo-v1/overview)**==
+==**为了更好地提升接口文档的的易理解性，我们对文档进行了升级，请尽快迁移至[新版本>>](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/lingo-v1/overview)**==
 
 ## 1. 什么是飞书词典？
 **飞书词典是一部高效汇聚企业内各类信息，并可由企业成员参与编辑的在线词典**

@@ -23,8 +23,8 @@ public class Im {
 
     /**
      * 发送文件消息，使用到两个OpenAPI：
-     * 1. [上传文件](<a href="/ssl:ttdoc/server-docs/im-v1/file/create">...</a>)
-     * 2. [发送消息](<a href="/ssl:ttdoc/server-docs/im-v1/message/create">...</a>)
+     * 1. [上传文件](<a href="https://open.larkoffice.com/document/server-docs/im-v1/file/create">...</a>)
+     * 2. [发送消息](<a href="https://open.larkoffice.com/document/server-docs/im-v1/message/create">...</a>)
      */
     public static BaseResponse<?> sendFile(Client client, SendFileRequest request) throws Exception {
         // 上传文件
@@ -74,8 +74,8 @@ public class Im {
 
     /**
      * 发送图片消息，使用到两个OpenAPI：
-     * 1. [上传图片](<a href="/ssl:ttdoc/server-docs/im-v1/image/create">...</a>)
-     * 2. [发送消息](<a href="/ssl:ttdoc/server-docs/im-v1/message/create">...</a>)
+     * 1. [上传图片](<a href="https://open.larkoffice.com/document/server-docs/im-v1/image/create">...</a>)
+     * 2. [发送消息](<a href="https://open.larkoffice.com/document/server-docs/im-v1/message/create">...</a>)
      */
     public static BaseResponse<?> sendImage(Client client, SendImageRequest request) throws Exception {
         // 上传图片
@@ -138,8 +138,8 @@ public class Im {
 
     /**
      * 发送文件消息，使用到两个OpenAPI：
-     * 1. [上传文件](<a href="/ssl:ttdoc/server-docs/im-v1/file/create">...</a>)
-     * 2. [发送消息](<a href="/ssl:ttdoc/server-docs/im-v1/message/create">...</a>)
+     * 1. [上传文件](<a href="https://open.larkoffice.com/document/server-docs/im-v1/file/create">...</a>)
+     * 2. [发送消息](<a href="https://open.larkoffice.com/document/server-docs/im-v1/message/create">...</a>)
      */
     public static BaseResponse<?> sendFile(Client client, SendFileRequest request) throws Exception {
         // 上传文件
@@ -189,8 +189,8 @@ public class Im {
 
     /**
      * 发送图片消息，使用到两个OpenAPI：
-     * 1. [上传图片](<a href="/ssl:ttdoc/server-docs/im-v1/image/create">...</a>)
-     * 2. [发送消息](<a href="/ssl:ttdoc/server-docs/im-v1/message/create">...</a>)
+     * 1. [上传图片](<a href="https://open.larkoffice.com/document/server-docs/im-v1/image/create">...</a>)
+     * 2. [发送消息](<a href="https://open.larkoffice.com/document/server-docs/im-v1/message/create">...</a>)
      */
     public static BaseResponse<?> sendImage(Client client, SendImageRequest request) throws Exception {
         // 上传图片
@@ -256,8 +256,8 @@ public class Contact {
 
     /**
      * 获取部门下所有用户列表，使用到两个OpenAPI：
-     * 1. [获取子部门列表](<a href="/ssl:ttdoc/server-docs/contact-v3/department/children">...</a>)
-     * 2. [获取部门直属用户列表](<a href="/ssl:ttdoc/server-docs/contact-v3/user/find_by_department">...</a>)
+     * 1. [获取子部门列表](<a href="https://open.larkoffice.com/document/server-docs/contact-v3/department/children">...</a>)
+     * 2. [获取部门直属用户列表](<a href="https://open.larkoffice.com/document/server-docs/contact-v3/user/find_by_department">...</a>)
      */
     public static BaseResponse<?> ListUserByDepartment(Client client, ListUserByDepartmentRequest request) throws Exception {
         // 获取子部门列表
@@ -327,8 +327,8 @@ public class Base {
 
     /**
      * 创建多维表格同时添加数据表，使用到两个OpenAPI：
-     * 1. [创建多维表格](<a href="/ssl:ttdoc/server-docs/docs/bitable-v1/app/create">...</a>)
-     * 2. [新增一个数据表](<a href="/ssl:ttdoc/server-docs/docs/bitable-v1/app-table/create">...</a>)
+     * 1. [创建多维表格](<a href="https://open.larkoffice.com/document/server-docs/docs/bitable-v1/app/create">...</a>)
+     * 2. [新增一个数据表](<a href="https://open.larkoffice.com/document/server-docs/docs/bitable-v1/app-table/create">...</a>)
      */
     public static BaseResponse<?> CreateAppAndTables(Client client, CreateAppAndTablesRequest request) throws Exception {
         // 创建多维表格

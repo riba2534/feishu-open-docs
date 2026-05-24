@@ -5,7 +5,7 @@ updateTime: "1752136653000"
 ---
 
 #  飞书 aPaaS平台-审计日志查询筛选功能说明
-开发者可以通过[查询审计日志列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/apaas-v1/application-audit_log/audit_log_list)API 中的查询参数 filter，指定筛选条件进行日志列表检索。格式为：左值（支持筛选的字段），操作符，右值。
+开发者可以通过[查询审计日志列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/apaas-v1/application-audit_log/audit_log_list)API 中的查询参数 filter，指定筛选条件进行日志列表检索。格式为：左值（支持筛选的字段），操作符，右值。
 
 ```javascript 
 [{"left":"eventName","operator":"=","right":[19001]}] 
@@ -100,10 +100,5 @@ updateTime: "1752136653000"
 |`terminalType` | `enum` | 端类型（13001：未知；13002：PC；13003：Web；13004：Android；13005：iOS；13006：MiniProgram） |[{left: "terminalType", operator: "=", right: [13002]}]|
 |`osType` | `enum` | 操作系统类型（14001：未知；14002：Windows；14003：Linux；14004:Mac；14005：Android；14006：iOS） |[{left: "osType", operator: "=", right: [14006]}]|
 |`osVersion` | `string` | 操作系统版本 |[{left: "osType", operator: "=", right: [14006]}]|
-
-
-
-
-
 
 

@@ -6,7 +6,7 @@ updateTime: "1761026686000"
 
 # 设备申报事件
 
-订阅此事件后，成员提交设备自主申报后会收到通知，通知包含申报设备的参数以及申报人等信息{使用示例}(url=/api/tools/api_explore/api_explore_config?project=security_and_compliance&version=v2&resource=device_apply_record&event=device_apply_event)
+订阅此事件后，成员提交设备自主申报后会收到通知，通知包含申报设备的参数以及申报人等信息
 
 
 ## 事件

@@ -8,8 +8,7 @@ updateTime: "1687769386000"
 
 通过 [login](https://open.larkoffice.com/document/uYjL24iN/uYzMuYzMuYzM)接口获取到登录凭证`code`后，开发者可以通过服务器发送请求的方式获取 session_key 和 用户凭证信息。
 
-:::note
-
+> **Note**
 本接口适用于 [小程序登录](https://open.larkoffice.com/document/uYjL24iN/uETO5QjLxkTO04SM5kDN) 及[小组件登录](https://open.larkoffice.com/document/uAjLw4CM/uYjL24iN/block/guide/open-ability/block-login)。
 
 ## 请求

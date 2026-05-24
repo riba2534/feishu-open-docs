@@ -36,8 +36,7 @@ updateTime: "1758177321000"
 | GET**获取所有节点**[/open-apis/board/v1/whiteboards/:whiteboard_id/nodes](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/board-v1/whiteboard-node/list) |  |  |  |  |
 html
   `board:whiteboard:node:read` 画板节点读权限
-:::  
-                  
+
                 `tenant_access_token`
                 `user_access_token`
             
@@ -72,4 +71,3 @@ html
      
    
 
-:::

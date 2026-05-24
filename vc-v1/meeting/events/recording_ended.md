@@ -6,7 +6,7 @@ updateTime: "1774528231000"
 
 # 停止录制
 
-发生在录制结束时【仅通过Open API预约的会议会产生此类事件】{使用示例}(url=/api/tools/api_explore/api_explore_config?project=vc&version=v1&resource=meeting&event=recording_ended)
+发生在录制结束时【仅通过Open API预约的会议会产生此类事件】
 
 
 ## 事件

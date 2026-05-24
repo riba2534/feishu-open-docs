@@ -6,7 +6,7 @@ updateTime: "1646892797000"
 
 # 会议室创建
 
-会议室被创建将触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=meeting_room&version=v1&resource=meeting_room&event=created)
+会议室被创建将触发此事件。
 
 
 > **Tip**: 了解事件订阅的使用场景和配置流程，请点击查看 [事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)

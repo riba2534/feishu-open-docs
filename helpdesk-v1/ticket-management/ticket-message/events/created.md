@@ -6,7 +6,7 @@ updateTime: "1673240284000"
 
 # 工单消息事件
 
-该消息事件属于工单消息事件。需使用订阅接口订阅：[事件订阅](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/helpdesk-v1/event/subscribe)。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=helpdesk&version=v1&resource=ticket_message&event=created)
+该消息事件属于工单消息事件。需使用订阅接口订阅：[事件订阅](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/helpdesk-v1/event/subscribe)。
 
 
 ## 事件

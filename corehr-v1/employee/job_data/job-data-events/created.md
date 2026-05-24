@@ -8,7 +8,7 @@ updateTime: "1725006771000"
 
 目前以下场景会触发该事件：
 - 调用[【创建任职信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/job_data/create)、[【更新任职信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/job_data/patch)、[【添加人员】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/create)接口
-- 人事系统【添加人员】、【发起异动】、【导入任职】、【创建兼职】功能{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=job_data&event=created)
+- 人事系统【添加人员】、【发起异动】、【导入任职】、【创建兼职】功能
 
 
 > **Tip**: - 目前事件不保证有序

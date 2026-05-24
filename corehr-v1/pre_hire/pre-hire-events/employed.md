@@ -10,7 +10,7 @@ updateTime: "1744602728000"
 - 开放平台[操作员工完成入职](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/pre_hire/complete)接口
 - 开放平台[添加人员](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/create)接口
 - 「飞书人事-人员管理-入职」将待入职员工操作“完成入职”
-- 「飞书人事-人员管理-花名册」操作”添加人员”或”导入人员”{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=job_data&event=employed)
+- 「飞书人事-人员管理-花名册」操作”添加人员”或”导入人员”
 
 
 ## 事件

@@ -23,7 +23,7 @@ updateTime: "1776345901000"
     
         ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/bfda5db437f4520e4a2954c261620bb8_fiGCrUCR3Z.png?height=1398&lazyload=true&width=2904)
         ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/864544709141e174486722babd688f3f_dTHXNUTmUU.png?height=1402&lazyload=true&width=2912)
-3. 配置机器人发送消息的权限：配置机器人发送消息的 API 权限，机器人才能拥有发送消息的能力，发送消息的API为[发送消息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)
+3. 配置机器人发送消息的权限：配置机器人发送消息的 API 权限，机器人才能拥有发送消息的能力，发送消息的API为[发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)
 
 ### 在使用长连接时，如果部署了多个实例，会如何选择实例呢？
 

@@ -6,7 +6,7 @@ updateTime: "1774528230000"
 
 # 企业会议结束
 
-发生在会议结束时，包含企业内所有会议结束事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=vc&version=v1&resource=meeting&event=all_meeting_ended)
+发生在会议结束时，包含企业内所有会议结束事件。
 
 
 ## 事件

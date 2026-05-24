@@ -8,9 +8,8 @@ updateTime: "1725003620000"
 
 在飞书聊天中，消息可以以话题形式进行展示。本文将介绍什么是话题，以及话题相关的 OpenAPI 能力有哪些。
 
-:::note
+> **Note**
 更多关于话题的信息，参见[如何使用话题回复](https://www.feishu.cn/hc/zh-CN/articles/423295624296-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E8%AF%9D%E9%A2%98%E5%9B%9E%E5%A4%8D)。
-:::
 
 ## 什么是话题
 
@@ -90,7 +89,6 @@ updateTime: "1725003620000"
 
 前者创建后仅支持发送话题，而后者支持在“对话消息”和“话题消息”两种形式间切换。
 
-::: note
+> **Note**
 - 推荐使用话题形式群。
 - [创建群](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat/create)接口仅支持创建普通对话群，在设置时可指定群消息形式。
-:::

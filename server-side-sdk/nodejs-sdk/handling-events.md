@@ -354,9 +354,8 @@ router.post(
 
 当你配置了加密推送事件后，开放平台推送的事件数据会被加密，此时你需要对接收到的事件数据进行解密，调用 `AESCipher` 方法可以便捷解密。
 
-:::note
+> **Note**
 一般情况下使用 SDK 中的内置解密逻辑即可，无需手动处理。
-:::
 
 ```javascript
 import * as lark from '@larksuiteoapi/node-sdk';

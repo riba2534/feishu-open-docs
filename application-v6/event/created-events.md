@@ -6,7 +6,7 @@ updateTime: "1657698191000"
 
 # 新增应用反馈
 
-当应用收到新反馈时，触发该事件{使用示例}(url=/api/tools/api_explore/api_explore_config?project=application&version=v6&resource=application.feedback&event=created)
+当应用收到新反馈时，触发该事件
 
 
 ## 事件

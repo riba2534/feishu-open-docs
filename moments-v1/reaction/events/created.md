@@ -6,7 +6,7 @@ updateTime: "1728531078000"
 
 # 表情互动
 
-公司圈用户表情互动时触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=moments&version=v1&resource=reaction&event=created)
+公司圈用户表情互动时触发此事件。
 
 
 ## 事件

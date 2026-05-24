@@ -6,7 +6,7 @@ updateTime: "1774528230000"
 
 # 会议开始
 
-发生在会议开始时【仅通过Open API预约的会议会产生此类事件】{使用示例}(url=/api/tools/api_explore/api_explore_config?project=vc&version=v1&resource=meeting&event=meeting_started)
+发生在会议开始时【仅通过Open API预约的会议会产生此类事件】
 
 
 ## 事件

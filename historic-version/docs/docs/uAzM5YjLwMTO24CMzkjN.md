@@ -11,7 +11,6 @@ updateTime: "1693538545000"
 ![图片名称](https://sf3-cn.feishucdn.com/obj/website-img/31cb2a09f83bbc0443fcc35fe2af4b17_vNR8tAmRjB.png?lazyload=true&width=633&height=313)
 
 
-
 # Document
 
 文档的一级结构由以下几部分组成：
@@ -29,7 +28,6 @@ Body 描述了所有的正文内容，文档的 body 由各种 Block 组成。
 
 # Block
 每个 Block 都是一组结构化元素。从用户的视角来看，每个 Block 即是单独的一行内容。例如文档中的一段文字、一张图片，都分别是一个 Block。
-
 
 
 ```js 
@@ -64,7 +62,6 @@ Paragraph 是文档正文的段落，由 ParagraphElement（段落元素）、Lo
 ```
 
 
-
 > 这是一段示例文本，用来描述一段加粗的文本，这是一种常见的组合样式。
 >
 > - 这是一组无序列表
@@ -78,4 +75,4 @@ Paragraph 是文档正文的段落，由 ParagraphElement（段落元素）、Lo
 
 ![图片名称](https://sf3-cn.feishucdn.com/obj/website-img/fcb89904e385c8f945f20afb54138aa6_jqjI7UiNbR.png?lazyload=true&width=773&height=233)
 
-本文大致介绍了文档的数据结构，接下来，你可以阅读[文档数据结构参考](/ssl:ttdoc/ukTMukTMukTM/ukDM2YjL5AjN24SOwYjN)来了解更多。
+本文大致介绍了文档的数据结构，接下来，你可以阅读[文档数据结构参考](https://open.larkoffice.com/document/ukTMukTMukTM/ukDM2YjL5AjN24SOwYjN)来了解更多。

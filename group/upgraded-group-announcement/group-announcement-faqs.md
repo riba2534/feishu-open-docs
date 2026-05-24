@@ -746,7 +746,7 @@ curl --location --request POST '{url}' \
 
 ## 获取群公告所有块接口是按什么顺序返回 Block 的？
 
-[获取群公告所有块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block/list)接口返回的 items 是一个 [1,N] (N>=1) 的 Block 数组。数组中元素的次序按公告文档内容先序遍历结果进行排列，其中索引为 0 的元素是群公告根节点。
+[获取群公告所有块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block/list)接口返回的 items 是一个 [1,N](N>=1) 的 Block 数组。数组中元素的次序按公告文档内容先序遍历结果进行排列，其中索引为 0 的元素是群公告根节点。
 
 
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/1751e4f87b25d5704b0e6b05cec9ea00_e8fQNTK7nR.png?height=436&lazyload=true&width=1123)

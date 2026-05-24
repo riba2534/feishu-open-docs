@@ -116,14 +116,13 @@ const res = await client.im.message.create({
 
 如果使用商店应用调用 API，在 client 中必须声明 `appType: lark.AppType.ISV`，SDK 会根据该声明执行不同的逻辑分支。商店应用的逻辑分支不同于企业自建应用，商店应用必须在代码内传入租户 Key（tenant_key）以及 app_ticket。
 
-:::note  
+> **Note**
 商店应用调用 API 为什么需要租户 Key（tenant_key）以及 app_ticket：
 
 - [tenant_key](https://open.larkoffice.com/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology#495685b5)：一个商店应用会被安装到多个租户中，tenant_key 是租户的唯一标识，用来区分不同的租户。
 
 - [app_ticket](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/application-v6/event/app_ticket-events)：为了提高数据访问的安全性，飞书对商店应用应用增加了`app_ticket`作为安全凭证，用于获取商店应用的 app_access_token。每隔 1 小时向商店应用配置的事件订阅请求地址自动推送一次 `app_ticket`。
-:::
-  
+
 获取企业的授权访问凭证 `tenant_access_token` 时，需要用到这两个值，但这两个值通过 SDK 无法主动获取到，必须由外部传递进来。因此对于商店应用，SDK 提供了一种方式来传递这两个值。
 
 1. 在应用内订阅 app_ticket 事件。
@@ -330,9 +329,8 @@ const writableStream = fs.createWriteStream('file url');
 readableStream.pipe(writableStream);
 ```
 
-:::note
+> **Note**
 **注意**：流只能被消费一次，即如果使用了 writeFile 消费了流，则 getReadableStream 获取流会报错或者获取到的流为空。如需消费多次流，可以使用 getReadableStream 获取流，然后读取流中的数据做缓存，将缓存的数据给消费方使用。
-:::
 
 ### 飞书卡片
 

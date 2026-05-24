@@ -6,7 +6,7 @@ updateTime: "1698301211000"
 
 # 机器人自定义菜单事件
 
-当用户点击类型为事件的机器人菜单时触发{使用示例}(url=/api/tools/api_explore/api_explore_config?project=application&version=v6&resource=bot&event=menu)
+当用户点击类型为事件的机器人菜单时触发
 
 
 ## 事件

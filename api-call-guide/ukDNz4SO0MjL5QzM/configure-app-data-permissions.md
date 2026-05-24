@@ -30,9 +30,8 @@ updateTime: "1749454097000"
 | [Payroll](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/payment_activity_detail/list) | 以应用身份调用 Payroll API 时，应用可获取 Payroll 相关资源的数据范围。例如，以应用身份调用 Payroll API 查询发薪明细时，需要应用具备对应薪资组的数据权限。 默认情况下，Payroll 数据权限范围未配置。添加相应 API 权限后需要手动配置数据权限范围。 | 由应用所有者、管理员或者开发角色在[开发者后台](https://open.feishu.cn/app)的应用内配置 Payroll 数据权限范围。 |
 
 
-:::note
+> **Note**
 应用一旦被授予相应的数据权限，即可增删改查这些数据，所以当应用开发者配置数据权限后，需要发布应用并等待应用审核人员通过审核，方可生效数据权限。
-:::
 
 ### 商店应用的数据权限
 
@@ -48,9 +47,8 @@ updateTime: "1749454097000"
 
 为企业自建应用申请通讯录、组织架构或飞书人事（企业版）等 API 权限时，涉及配置应用数据权限范围，不同业务下配置数据权限的方式也不同，具体步骤如下所述。
 
-:::note
+> **Note**
 如果你使用应用的[测试企业与人员](https://open.larkoffice.com/document/home/introduction-to-custom-app-development/testing-enterprise-and-personnel-functions)能力，将应用切换为测试版本进行开发联调，则应用默认具有全员范围的通讯录权限，飞书人事（企业版）的权限范围在配置后直接生效，便于测试阶段的调试工作。
-:::
 
 1. 在为企业自建应用[开通 API 权限](https://open.larkoffice.com/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN)时，如需配置应用身份权限可访问的数据范围，会自动进行跳转，如下图所示。
 
@@ -93,8 +91,7 @@ updateTime: "1749454097000"
 
 商店应用仅支持企业管理员在[管理后台](https://feishu.cn/admin)的工作台中找到指定应用，修改应用的通讯录权限范围。
 
-:::note
+> **Note**
 应用开发者可以调用[获取通讯录授权范围](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/scope/list)查看应用的数据权限。
-:::
 
 ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/093d937d12197ace5d05c9d65de881f6_Ft065pZ5SZ.png?height=738&lazyload=true&maxWidth=600&width=1968)

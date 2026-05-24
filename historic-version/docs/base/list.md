@@ -9,9 +9,8 @@ updateTime: "1726655467000"
 该接口用于列出数据表中的现有记录，单次最多列出 500 行记录，支持分页获取。
 
 
-::: note
+> **Note**
 该接口为历史接口，已不推荐使用。你可使用[查询记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)替代。
-:::
 
 ## 请求
 

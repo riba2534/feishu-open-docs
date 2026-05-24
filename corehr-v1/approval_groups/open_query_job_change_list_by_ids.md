@@ -46,7 +46,7 @@ updateTime: "1763528835000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `job_change_ids` | `string\[\]` | 否 | 人员异动记录 ID List,  在组织架构调整发起后，会为调整涉及的员工生成一个 员工异动记录， 对应的记录 ID 即为 job_change_id。  调整记录可通过[【根据流程 ID 查询组织架构调整记录】](ssl://ttdocs/uAjLw4CM/ukTMukTMukTM/corehr-v2/approval_groups/get) 获取。  - 必须是查询参数process_id对应的流程下的人员调整记录ID。 - 未设置时查询到的人员调整记录为空。<br>**示例值**：["6991776076699549697"]<br>**数据校验规则**：<br>- 长度范围：`1` ～ `100` |
+| `job_change_ids` | `string\[\]` | 否 | 人员异动记录 ID List,  在组织架构调整发起后，会为调整涉及的员工生成一个 员工异动记录， 对应的记录 ID 即为 job_change_id。  调整记录可通过[【根据流程 ID 查询组织架构调整记录】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/approval_groups/get) 获取。  - 必须是查询参数process_id对应的流程下的人员调整记录ID。 - 未设置时查询到的人员调整记录为空。<br>**示例值**：["6991776076699549697"]<br>**数据校验规则**：<br>- 长度范围：`1` ～ `100` |
 | `need_department_path` | `boolean` | 否 | 是否返回部门全路径<br>**示例值**：false<br>**默认值**：`false` |
 
 

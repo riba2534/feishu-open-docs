@@ -28,10 +28,8 @@ updateTime: "1749711792000"
 }
 ```
 
-:::note
+> **Note**
 **注意**：`content` 字段为 string 类型，JSON 结构需要先进行转义再传值。在调用接口时，你可以先构造一个结构体，然后使用 JSON 序列化转换为 string 类型，或者通过第三方的 JSON 转换工具进行转义。
-:::
-
 
 ## 各类型的消息内容 JSON 结构
 
@@ -114,12 +112,11 @@ updateTime: "1749711792000"
 - _下划线_：`<u>文本示例</u>`
 - ~~删除线~~：`<s>文本示例</s>`
 
-:::warning
+> **Warning**
 **注意**：
 - 请保证首尾标签对应、嵌套正确，如有首尾标签缺失、嵌套层级错误等情况，会以原始内容发送消息。
 - 标签信息会大幅增加消息体的大小，请酌情使用。
 - 该能力暂不支持[自定义机器人](https://open.larkoffice.com/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)和[批量发送消息](https://open.larkoffice.com/document/ukTMukTMukTM/ucDO1EjL3gTNx4yN4UTM)接口。
-:::
 
 样式标签使用示例：
 ```json 
@@ -139,12 +136,11 @@ updateTime: "1749711792000"
 
 超链接的使用格式为 `[文本](链接)`， 如 `[Feishu Open Platform](https://open.feishu.cn)` 。
 
-:::warning
+> **Warning**
 **注意**：
 - `[文本]` 中不支持 `[]` 多层嵌套使用，此外，若文本中含有其他 `[` 或 `]` 字符，请确保前后符号匹配，否则可能导致超链接识别异常。
 - 请确保链接是合法的，否则会以原始内容发送消息。
 - 该能力暂不支持[自定义机器人](https://open.larkoffice.com/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)和[批量发送消息](https://open.larkoffice.com/document/ukTMukTMukTM/ucDO1EjL3gTNx4yN4UTM)接口。
-:::
 
 超链接使用示例：
 ```json 
@@ -326,12 +322,11 @@ updateTime: "1749711792000"
 
 - **md：Markdown 标签**
 
-:::warning
+> **Warning**
 **注意**：
 - `md` 标签会独占一个或多个段落，不能与其他标签在同一行。
 - `md` 标签仅支持发送，[获取消息内容](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/get)时将不再包含此标签，会根据 `md` 中的内容转换为其他相匹配的标签。
 - 引用、有序、无序列表在获取消息内容时，会简化为文本标签（text）进行输出。
-:::
 
 `md` 标签内通过 `text` 参数设置 Markdown 内容。
 
@@ -412,10 +407,8 @@ updateTime: "1749711792000"
 
 飞书卡片是一种可以灵活构建图文内容的消息类型，你可以通过[可视化搭建工具](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/feishu-card-cardkit/feishu-cardkit-overview)或者 [卡片 JSON](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-v2-structure)定义样式精美、可交互的卡片内容。
 
-:::note
-
+> **Note**
 如果你使用的是历史版本的 ==发送消息卡片==(`/open-apis/message/v4/send/`) 接口，请求体中的 `content` 参数需要换成 `card`。如果使用[发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)接口，消息请求体的内容参数已统一为 `content`。
-:::
 
 **[发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)请求体示例**
 
@@ -520,9 +513,8 @@ updateTime: "1749711792000"
 	"msg_type": "share_chat"
 }
 ``` 
-:::note
+> **Note**
 机器人必须在群名片所在的群内，才可以成功发送群名片。
-:::
 
 消息发送后的效果如下图：
 
@@ -539,10 +531,9 @@ updateTime: "1749711792000"
 } 
 ``` 
 
-:::note
+> **Note**
 - `user_id` 只支持设置用户的 open_id，且该用户需要在机器人的可用范围内，详情参见[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。
 - 暂不支持分享机器人的名片。
-:::
 
 **参数说明** 
 
@@ -700,11 +691,10 @@ updateTime: "1749711792000"
 
 ### 系统消息 system
 
-:::warning
+> **Warning**
 **注意：**
 - 仅支持使用 `tenant_access_token` 调用[发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)接口，发送特定模板的系统消息，除接口必须权限外，还需要拥有 ==发送特定模板系统消息 (im:message:send_sys_msg)== 权限。
 - 飞书客户端版本需要在 V7.20 及以上，才能正常显示分割线系统消息，低于此版本将仅展示文本内容。
-:::
 
 **内容示例**
 

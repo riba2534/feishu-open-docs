@@ -52,7 +52,7 @@ updateTime: "1749710136000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `member_type` | `string` | 是 | “openchat” - 群id <br>“userid” - 用户id<br>“email” - 邮箱<br>“opendepartmentid” - 部门id<br>“openid” - 应用openid<br>“unionid” - [unionid](/:ssltoken/home/user-identity-introduction/union-id )<br>**示例值**："userid" |
+| `member_type` | `string` | 是 | “openchat” - 群id <br>“userid” - 用户id<br>“email” - 邮箱<br>“opendepartmentid” - 部门id<br>“openid” - 应用openid<br>“unionid” - [unionid](https://open.larkoffice.com/document/home/user-identity-introduction/union-id)<br>**示例值**："userid" |
 | `member_role` | `string` | 是 | 角色:<br>“admin” - 管理员<br>“member” - 成员<br>**示例值**："admin" |
 | `type` | `string` | 否 | 知识库协作者类型（暂不支持）<br>**示例值**："user"<br>**可选值有**：<br>- `user`: 用户 - `chat`: 群组 - `department`: 组织架构 |
 
@@ -79,7 +79,7 @@ updateTime: "1749710136000"
 | `msg` | `string` | 错误描述 |
 | `data` | `\-` | \- |
 | &nbsp;&nbsp;└ `member` | `member` | 成员信息 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `member_type` | `string` | “openchat” - 群id <br>“userid” - 用户id<br>“email” - 邮箱<br>“opendepartmentid” - 部门id<br>“openid” - 应用openid<br>“unionid” - [unionid](/:ssltoken/home/user-identity-introduction/union-id ) |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `member_type` | `string` | “openchat” - 群id <br>“userid” - 用户id<br>“email” - 邮箱<br>“opendepartmentid” - 部门id<br>“openid” - 应用openid<br>“unionid” - [unionid](https://open.larkoffice.com/document/home/user-identity-introduction/union-id) |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `member_id` | `string` | 用户id，值的类型由上面的 member_type 参数决定 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `member_role` | `string` | 角色:<br>“admin” - 管理员<br>“member” - 成员 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 知识库协作者类型（暂不支持）<br>**可选值有**：<br>- `user`: 用户 - `chat`: 群组 - `department`: 组织架构 |

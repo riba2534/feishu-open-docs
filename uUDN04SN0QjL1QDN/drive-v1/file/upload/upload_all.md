@@ -32,9 +32,8 @@ updateTime: "1729668982000"
 | Content-Type | string | 是 | **示例值**："multipart/form-data; boundary=---7MA4YWxkTrZu0gW" |
 
 
-::: note
+> **Note**
 更多云文档接口权限问题，参考[常见问题](https://open.larkoffice.com/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN)。
-:::
 
 ### 请求体
 

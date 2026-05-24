@@ -6,7 +6,7 @@ updateTime: "1675171182000"
 
 # 更新会议室层级
 
-当更新会议室层级时，会触发该事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=vc&version=v1&resource=room_level&event=updated)
+当更新会议室层级时，会触发该事件。
 
 
 ## 事件

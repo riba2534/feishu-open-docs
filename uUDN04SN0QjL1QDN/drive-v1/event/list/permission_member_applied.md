@@ -6,7 +6,7 @@ updateTime: "1748229108000"
 
 # 文件协作者权限申请
 
-当用户发起申请文件协作者权限时将触发此事件，协作者权限包括阅读、编辑和管理权限。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=drive&version=v1&resource=file&event=permission_member_applied)
+当用户发起申请文件协作者权限时将触发此事件，协作者权限包括阅读、编辑和管理权限。
 
 
 > **Tip**: 了解事件订阅的使用场景和配置流程，请点击查看 [事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。

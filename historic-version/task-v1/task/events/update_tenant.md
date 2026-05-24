@@ -6,7 +6,7 @@ updateTime: "1671785840000"
 
 # 任务信息变更
 
-APP 订阅此事件后可接收到该 APP 所在租户的所有来源接口创建的任务的变更事件。事件体为发生变更任务的相关用户的 open_id，可用此 open_id ，通过 获取任务列表接口获取与该用户相关的所有任务。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=task&version=v1&resource=task&event=update_tenant)
+APP 订阅此事件后可接收到该 APP 所在租户的所有来源接口创建的任务的变更事件。事件体为发生变更任务的相关用户的 open_id，可用此 open_id ，通过 获取任务列表接口获取与该用户相关的所有任务。
 
 
 ## 事件

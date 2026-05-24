@@ -8,9 +8,8 @@ updateTime: "1730688419000"
 
 当添加了第三方会议室的日程发生变动时（创建/更新/删除）触发此事件，其中更新日程时，仅当更新日程时间后触发此事件。
 
-:::note
+> **Note**
 了解事件订阅的使用场景和配置流程，可参见[事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。
-:::
 
 ## 事件
 

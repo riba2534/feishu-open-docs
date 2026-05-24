@@ -6,7 +6,7 @@ updateTime: "1671441948000"
 
 # 新增门禁访问记录
 
-门禁设备识别用户成功后发送该事件给订阅应用。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=acs&version=v1&resource=access_record&event=created)
+门禁设备识别用户成功后发送该事件给订阅应用。
 
 
 ## 事件

@@ -6,10 +6,10 @@ updateTime: "1753857315000"
 
 # 通道删除事件
 
-通道删除后会发送该事件{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=pathway&event=deleted)
+通道删除后会发送该事件
 
 
-> **Tip**: 收到删除事件后，[获取通道信息](/document-mod/index?fullPath=%2FuAjLw4CM%2FukTMukTMukTM%2Fcorehr-v2%2Fpathway%2Fbatch_get)接口将查询不到该通道
+> **Tip**: 收到删除事件后，[获取通道信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/batch_get)接口将查询不到该通道
 
 
 ## 事件

@@ -10,7 +10,7 @@ updateTime: "1775548407000"
 
 - 企业管理员在管理后台修改部门信息。
 - 企业开发者调用
-[修改部门部分信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/patch)、[更新部门所有信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/update)、[更新部门ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/update_department_id) API 修改部门信息。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=contact&version=v3&resource=department&event=updated)
+[修改部门部分信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/patch)、[更新部门所有信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/update)、[更新部门ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/update_department_id) API 修改部门信息。
 
 
 ## 前提条件

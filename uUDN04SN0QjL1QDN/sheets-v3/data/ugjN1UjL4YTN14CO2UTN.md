@@ -8,7 +8,7 @@ updateTime: "1744616843000"
 本文档介绍 V2 版本接口支持写入的数据类型。
 
 ## 版本说明
-v2 版本的接口是指在接口的 HTTP URL 含有 `v2` 标识的接口。如[增加行列](/ssl:ttdoc/ukTMukTMukTM/uUjMzUjL1IzM14SNyMTN)的 URL `/sheets/v2/spreadsheets/:spreadsheet_token/dimension_range` 中含有 `v2`，标识该接口为 v2 版本接口。
+v2 版本的接口是指在接口的 HTTP URL 含有 `v2` 标识的接口。如[增加行列](https://open.larkoffice.com/document/ukTMukTMukTM/uUjMzUjL1IzM14SNyMTN)的 URL `/sheets/v2/spreadsheets/:spreadsheet_token/dimension_range` 中含有 `v2`，标识该接口为 v2 版本接口。
 
 ## 字符串
 
@@ -25,7 +25,7 @@ v2 版本的接口是指在接口的 HTTP URL 含有 `v2` 标识的接口。如[
 
 
  
-1. 调用[设置单元格样式 ](/ssl:ttdoc/ukTMukTMukTM/ukjMzUjL5IzM14SOyMTN)接口，将单元格设置为日期格式，请求体示例如下所示：
+1. 调用[设置单元格样式 ](https://open.larkoffice.com/document/ukTMukTMukTM/ukjMzUjL5IzM14SOyMTN)接口，将单元格设置为日期格式，请求体示例如下所示：
 
 ```json
 {
@@ -38,7 +38,7 @@ v2 版本的接口是指在接口的 HTTP URL 含有 `v2` 标识的接口。如[
 }
 ```
 
-2. 调用[向单个范围写入数据](/ssl:ttdoc/ukTMukTMukTM/uAjMzUjLwIzM14CMyMTN)，写入浮点类型的数据，请求体示例如下所示：
+2. 调用[向单个范围写入数据](https://open.larkoffice.com/document/ukTMukTMukTM/uAjMzUjLwIzM14CMyMTN)，写入浮点类型的数据，请求体示例如下所示：
   
 ```json
 {
@@ -95,10 +95,8 @@ v2 版本的接口是指在接口的 HTTP URL 含有 `v2` 标识的接口。如[
 ```
 
 ## @人
-:::note
+> **Note**
 当写入 @人 类型时，其处理将以异步方式进行。
-:::
-
 
 - @ 人仅支持 @ 同一租户的用户。
 - 使用该类型，单次请求最多支持同时 @ 50人。
@@ -151,7 +149,7 @@ objType:文档类型，可选sheet,doc,slide,bitable,mindnote
 
 ## 下拉列表
 
-values为数组，可填bool,string,number类型。string类型数据不能包含","。使用前需要先使用[设置下拉列表](/ssl:ttdoc/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/datavalidation/set-dropdown)接口设置下拉列表。
+values为数组，可填bool,string,number类型。string类型数据不能包含","。使用前需要先使用[设置下拉列表](https://open.larkoffice.com/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/datavalidation/set-dropdown)接口设置下拉列表。
 
 ```json
 {
@@ -285,13 +283,10 @@ fontSize：字体大小，最小字号9，最大字号36
 ```
 
 
-
 #### @人
 
-:::note
+> **Note**
 当写入 @人 类型时，其处理将以异步方式进行。
-:::
-
 
 - @ 人仅支持 @ 同一租户的用户。
 - 使用该类型，单次请求最多支持同时 @ 50人。
@@ -303,8 +298,6 @@ fontSize：字体大小，最小字号9，最大字号36
 | textType           | 指定 `text` 字段传入的内容，可选 `email`，`openId`，`unionId`                                |
 | text               | 需要 @ 的人的信息，由 `textType` 指定                                                         |
 | segmentStyle               | 仅支持对整体设置局部样式；foreColor字段不生效，固定为蓝色                                                         |
-
-
 
 
 ```json

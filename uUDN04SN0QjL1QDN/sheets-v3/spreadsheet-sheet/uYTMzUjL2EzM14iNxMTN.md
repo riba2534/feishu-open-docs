@@ -8,9 +8,8 @@ updateTime: "1732796955000"
 
 
 根据电子表格的 token 对工作表进行操作，包括增加工作表、复制工作表、删除工作表。
-::: note
+> **Note**
 该接口和 [更新工作表属性](https://open.larkoffice.com/document/ukTMukTMukTM/ugjMzUjL4IzM14COyMTN) 的请求地址相同，但参数不同，调用前请仔细阅读文档。
-:::
 
 ## 请求
 

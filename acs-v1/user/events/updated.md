@@ -6,7 +6,7 @@ updateTime: "1671441937000"
 
 # 用户信息变更
 
-智能门禁用户特征值变化时，发送此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=acs&version=v1&resource=user&event=updated)
+智能门禁用户特征值变化时，发送此事件。
 
 
 ## 事件

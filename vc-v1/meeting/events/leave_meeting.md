@@ -6,7 +6,7 @@ updateTime: "1774528231000"
 
 # 离开会议
 
-发生在有人离开会议时【仅通过Open API预约的会议会产生此类事件】{使用示例}(url=/api/tools/api_explore/api_explore_config?project=vc&version=v1&resource=meeting&event=leave_meeting)
+发生在有人离开会议时【仅通过Open API预约的会议会产生此类事件】
 
 
 ## 事件

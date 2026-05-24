@@ -6,7 +6,7 @@ updateTime: "1722592482000"
 
 # 绩效详情变更
 
-当员工的绩效详情发生变更时，订阅这个事件的应用会收到该事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=performance&version=v2&resource=review_data&event=changed)
+当员工的绩效详情发生变更时，订阅这个事件的应用会收到该事件。
 
 
 ## 前提条件

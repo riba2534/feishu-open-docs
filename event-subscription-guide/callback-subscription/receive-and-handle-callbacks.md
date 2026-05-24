@@ -32,10 +32,8 @@ updateTime: "1749205906000"
 
 当飞书服务器推送回调至请求地址后，对应的业务服务器需要接收回调请求，并在 3 秒内完成业务处理、返回响应结果。在该过程中，你需要根据实际配置情况，完成以下操作。
 
-:::note
+> **Note**
 回调是同步操作，不提供补推机制。如果你的业务服务器超时未响应，则系统会判断回调失败，并在飞书客户端内展示报错信息。
-:::
-
 
 | 操作 | 是否必须 | 描述 |
 | --- | --- | --- |
@@ -48,10 +46,8 @@ updateTime: "1749205906000"
 
 当你的业务服务器接收到来自飞书开放平台推送的回调时（不包括请求网址校验），如果需要确保这个请求的来源是飞书开放平台而非伪造，有两种方式进行安全校验：签名校验和 Verification Token 校验。
 
-:::warning
+> **Warning**
 本文提供的安全校验不适用于  **消息卡片回传交互（旧）**（card.action.trigger_v1）回调。如果你需要为 **消息卡片回传交互（旧）** 配置安全校验，则需要参考[配置回调请求地址](https://open.larkoffice.com/document/ukTMukTMukTM/uYzMxEjL2MTMx4iNzETM)。
-:::
-
 
 | 校验方式 | 使用说明 |
 | --- | --- |
@@ -163,10 +159,8 @@ $signature = hash("sha256", $timestamp . $nonce . $encrypt_key . $body);
 
 如果你在飞书应用内配置了 Encrypt Key 加密策略，则业务服务器接收到回调请求后，需要进行回调解密。
 
-:::warning
+> **Warning**
 回调解密操作不适用于 **消息卡片回传交互（旧）**（card.action.trigger_v1）回调，因此使用 **消息卡片回传交互（旧）** 回调时可忽略本章节操作。
-:::
-
 
 #### 解密示例代码
 
@@ -174,9 +168,8 @@ $signature = hash("sha256", $timestamp . $nonce . $encrypt_key . $body);
 
 - **Python 3**
 
-:::note
+> **Note**
 请先执行 `pip install pycryptodome` 以支持引入 AES 方法。
-:::
 
 ```python
 import hashlib

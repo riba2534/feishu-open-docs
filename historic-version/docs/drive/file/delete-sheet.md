@@ -17,9 +17,8 @@ updateTime: "1658126137000"
 > **Warning**: 文档只能被文档所有者删除，文档被删除后将会放到回收站里
 
 
-:::note
+> **Note**
 该接口不支持并发调用，且调用频率上限为5QPS
-:::
 
 ## 请求
 
@@ -38,11 +37,11 @@ updateTime: "1658126137000"
 | Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
 
-::: note
-::: html
+> **Note**
+> **Html**
 使用 `tenant_access_token` 前，请确保该应用是文档的所有者，否则会报无权限错误。
 
-:::
+
 <br>
 
 ### 路径参数

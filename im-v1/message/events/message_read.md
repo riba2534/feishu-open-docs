@@ -6,7 +6,7 @@ updateTime: "1723193944000"
 
 # 消息已读
 
-用户阅读机器人发送的单聊消息后触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=im&version=v1&resource=message&event=message_read)
+用户阅读机器人发送的单聊消息后触发此事件。
 
 
 ## 前提条件

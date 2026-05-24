@@ -6,7 +6,7 @@ updateTime: "1738929292000"
 
 # 【事件】创建部门
 
-飞书人事中「部门被创建」时将触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=department&event=created)
+飞书人事中「部门被创建」时将触发此事件。
 
 
 > **Error**: - **v2版本事件支持上级部门的创建事件先于下级部门创建事件推送**，但由于事件不稳定的特性，无法保证100%的事件有序，请确保集成时做好兼容处理（有序事件相较于无序事件时效性有所下降，若不依赖事件有序且对事件时效有强诉求，可使用v1版本事件[【事件】创建部门](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/department/events/created))

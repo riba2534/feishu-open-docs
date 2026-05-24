@@ -6,7 +6,7 @@ updateTime: "1757469687000"
 
 # 薪资档案变更
 
-当应用订阅该事件后，如果员工薪资档案发生变更（例如，通过管理后台对员工定薪、调薪、更正或删除），则会触发该事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=compensation&version=v1&resource=archive&event=changed)
+当应用订阅该事件后，如果员工薪资档案发生变更（例如，通过管理后台对员工定薪、调薪、更正或删除），则会触发该事件。
 
 
 你需要在应用中配置事件订阅，这样才可以在事件触发时接收到事件数据。了解事件订阅可参见[事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。

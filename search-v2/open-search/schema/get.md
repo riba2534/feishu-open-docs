@@ -64,7 +64,7 @@ updateTime: "1680147723000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `enable_number_suffix_match` | `boolean` | 是否支持数据后缀匹配。默认不支持（推荐使用在短文本、有数字后缀查找的场景。后缀长度为3-12） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `enable_camel_match` | `boolean` | 是否支持驼峰英文匹配。默认不支持（推荐使用在短文本，且包含驼峰形式英文的查找场景） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `display` | `schema_display` | 数据展示相关配置 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `card_key` | `string` | 搜索数据的展示卡片<br>卡片详细信息请参考 [通用模块接入指南](/document/uAjLw4CM/ukTMukTMukTM/search-v2/common-template-intergration-handbook)  "请求创建数据范式"部分<br>**可选值有**：<br>- `search_common_card`: 普通 common 卡片 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `card_key` | `string` | 搜索数据的展示卡片<br>卡片详细信息请参考 [通用模块接入指南](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/search-v2/common-template-intergration-handbook)  "请求创建数据范式"部分<br>**可选值有**：<br>- `search_common_card`: 普通 common 卡片 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `fields_mapping` | `schema_display_field_mapping\[\]` | 数据字段名称和展示字段名称的映射关系。如果没有设置，则只会展示 与展示字段名称同名的 数据字段 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `display_field` | `string` | 展示字段名称，与 card_key 有关，每个模版能展示的字段不同。该字段不能重复 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `data_field` | `string` | 数据字段的名称。需要确保该字段对应在 schema 属性定义中的 is_returnable 为 true，否则无法展示。需要使用 ${xxx} 的规则来描述 |

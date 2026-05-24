@@ -6,7 +6,7 @@ updateTime: "1720168771000"
 
 # 成员字段变更
 
-当成员字段发生变更时（变更动作包括「打开/关闭」开关、「增加/删除」成员字段），会触发该事件。事件体的 old_object 展示字段的原始值，object 展示字段的更新值。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=contact&version=v3&resource=custom_attr_event&event=updated)
+当成员字段发生变更时（变更动作包括「打开/关闭」开关、「增加/删除」成员字段），会触发该事件。事件体的 old_object 展示字段的原始值，object 展示字段的更新值。
 
 
 ## 前提条件

@@ -12,7 +12,7 @@ updateTime: "1765424180000"
 
 SDK 提供的主要能力包括：
 
-- SDK 支持 **基于长连接的事件回调**，详情见[配置事件订阅方式](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/request-url-configuration-case#d286cc88)、[配置回调订阅方式](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/configure-callback-request-address)。
+- SDK 支持 **基于长连接的事件回调**，详情见[配置事件订阅方式](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-subscription-configure-/request-url-configuration-case#d286cc88)、[配置回调订阅方式](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/configure-callback-request-address)。
 
 - SDK 提供了 **结构化的 API 请求入参**。比如发消息 API，SDK 对各种类型的消息都提供了结构化封装。
 
@@ -22,7 +22,7 @@ SDK 提供的主要能力包括：
 - SDK 提供了 **完整的应用访问凭证（tenant_access_token）生命周期管理能力**，无需开发者自己获取并刷新应用身份的访问凭证。
 
 	:::note
-    SDK 仅支持托管应用身份的访问凭证（tenant_access_token），不支持托管用户身份的访问凭证（user_access_token），开发者需自行实现相关逻辑，参考 [获取 user_access_token](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/get-user-access-token) 、[刷新 user_access_token](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/refresh-user-access-token) 。
+    SDK 仅支持托管应用身份的访问凭证（tenant_access_token），不支持托管用户身份的访问凭证（user_access_token），开发者需自行实现相关逻辑，参考 [获取 user_access_token](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/get-user-access-token) 、[刷新 user_access_token](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/refresh-user-access-token) 。
 	:::
     
 - SDK 内 API 和事件上都添加了文字注释，以及跳转到使用 Demo 和官方文档的链接。
@@ -30,11 +30,11 @@ SDK 提供的主要能力包括：
   ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/df059a6dd0162bba2f73191c209de3a3_dYUXHerJIy.png?height=714&lazyload=true&maxWidth=700&width=2118)
   
 - SDK 提供了简洁易懂的帮助文档。参考 SDK 文档可帮助你了解如何安装 SDK、如何通过 SDK 调用服务端 API、处理订阅的事件及回调。
-    - [ Java 开发指南](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/server-side-sdk/java-sdk-guide/preparations)
-    - [Python 开发指南](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/server-side-sdk/python--sdk/preparations-before-development)
-    - [Go 开发指南](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/server-side-sdk/golang-sdk-guide/preparations)
-    - [NodeJS 开发指南](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/server-side-sdk/nodejs-sdk/preparation-before-development)
-    - [SDK 常见问题](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/server-side-sdk/faq)
+    - [ Java 开发指南](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/java-sdk-guide/preparations)
+    - [Python 开发指南](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/python--sdk/preparations-before-development)
+    - [Go 开发指南](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/golang-sdk-guide/preparations)
+    - [NodeJS 开发指南](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/nodejs-sdk/preparation-before-development)
+    - [SDK 常见问题](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/faq)
     
     
 ## 源码地址
@@ -62,5 +62,5 @@ NodeJS SDK 问题可直接提交[Issues](https://github.com/larksuite/node-sdk/i
 
 ## 相关文档
 
-- [服务端 API 列表](/ssl:ttdoc/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/server-api-list)
-- [事件列表](/ssl:ttdoc/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-list)
+- [服务端 API 列表](https://open.larkoffice.com/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/server-api-list)
+- [事件列表](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-list)

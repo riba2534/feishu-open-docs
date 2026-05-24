@@ -6,7 +6,7 @@ updateTime: "1707187060000"
 
 # 【事件】个人信息删除
 
-个人信息删除{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=person&event=deleted)
+个人信息删除
 
 
 ## 事件

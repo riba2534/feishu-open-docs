@@ -6,7 +6,7 @@ updateTime: "1747797131000"
 
 # 课程学习进度删除事件
 
-课程学习进度删除时触发{使用示例}(url=/api/tools/api_explore/api_explore_config?project=elearning&version=v2&resource=course_registration&event=deleted)
+课程学习进度删除时触发
 
 
 ## 事件

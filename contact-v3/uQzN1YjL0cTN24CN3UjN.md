@@ -153,9 +153,8 @@ updateTime: "1775548335000"
 `user_id` 可能会被新增的员工占用。
 
 系统默认生成的 `user_id` 在企业内是有效用户（无效表示已离职用户）的唯一 ID。当开发者或管理员对用户进行删除，再添加新用户时，可能会存在新添加的用户的 `user_id` 和历史上已经删除的用户 `user_id` 一致的情况。因此建议你在新增用户时，使用具有唯一性标识的 ID 作为 `user_id`，避免造成相关困扰。
-:::note
+> **Note**
 **说明：** 部门的自定义 ID 设置逻辑与 user_id 一致。
-:::
 
 ### 如何查询离职员工的信息？
 
@@ -167,11 +166,11 @@ updateTime: "1775548335000"
 ### 如何理解用户属性中的自定义字段？
 
 在 [创建用户](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/create) 和 [获取单个用户信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/get) 接口中，包含了用户自定义字段（custom_attrs），该字段是对用户属性的扩展，用于为企业提供根据自身需求灵活扩展用户描述的能力。自定义字段根据取值语法的不同，主要分为：文本类型、网页类型、枚举类型、图片类型、用户类型。
-:::note
+> **Note**
 如需调用 API 时使用该自定义字段，则需要确保：
 1. 企业管理员在[管理后台](http://www.feishu.cn/admin/contacts/employee-field-new/custom) > **组织架构** > **字段管理** > **字段设置** 页面，点击 **API 调用设置** 并开启 **允许开放平台通讯录 API 调用** 的开关。
 2. 企业管理员在[管理后台](http://www.feishu.cn/admin/contacts/employee-field-new/custom) > **组织架构** > **字段管理** > **字段设置** > **自定义字段** 页面，已新增自定义字段。
-:::
+
 各类型自定义字段详细介绍如下表所示。
 
 

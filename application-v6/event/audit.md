@@ -6,7 +6,7 @@ updateTime: "1740053884000"
 
 # 应用审核
 
-通过订阅该事件，可接收应用审核（通过 / 拒绝）事件{使用示例}(url=/api/tools/api_explore/api_explore_config?project=application&version=v6&resource=application.app_version&event=audit)
+通过订阅该事件，可接收应用审核（通过 / 拒绝）事件
 
 
 ## 事件

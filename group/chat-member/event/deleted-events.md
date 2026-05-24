@@ -6,7 +6,7 @@ updateTime: "1730257097000"
 
 # 用户出群
 
-用户主动退出群聊或被移出群聊时推触发此事件，在群组内的、已订阅该事件的机器人会收到事件数据。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=im&version=v1&resource=chat.member.user&event=deleted)
+用户主动退出群聊或被移出群聊时推触发此事件，在群组内的、已订阅该事件的机器人会收到事件数据。
 
 
 ## 前提条件

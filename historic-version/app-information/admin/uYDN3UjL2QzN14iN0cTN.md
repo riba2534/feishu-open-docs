@@ -7,9 +7,9 @@ updateTime: "1731902072000"
 # 获取企业安装的应用
 
 该接口用于查询企业安装的应用列表，只能被企业自建应用调用。
-:::note
+> **Note**
 该接口为旧版获取企业安装应用接口。推荐使用新版接口[获取企业安装的应用](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/application-v6/application/list)。
-:::
+
 ## 请求
 
 | 项目 | 值 |

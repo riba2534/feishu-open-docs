@@ -6,7 +6,7 @@ updateTime: "1732790459000"
 
 # 【事件】更新序列
 
-飞书人事中「序列信息被更新」时将触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=job_family&event=updated)
+飞书人事中「序列信息被更新」时将触发此事件。
 
 
 > **Warning**: - [【查询租户序列信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/job_family/list)、[【查询单个序列】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/job_family/get)、[【通过序列 ID 批量查询序列信息

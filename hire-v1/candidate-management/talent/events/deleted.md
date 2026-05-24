@@ -6,7 +6,7 @@ updateTime: "1724642318000"
 
 # 删除人才
 
-当人才被删除时，触发该事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=hire&version=v1&resource=talent&event=deleted)
+当人才被删除时，触发该事件。
 
 
 > **Tip**: - 需要在应用中配置事件订阅，才可以在事件触发时接收到事件数据。了解事件订阅可参见[事件概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。

@@ -36,12 +36,10 @@ updateTime: "1724834814000"
 | `tripartite_agreement_id` | `string` | 否 | 三方协议 ID，由[创建三方协议](https://open.larkoffice.com/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/tripartite_agreement/create)接口返回<br>**示例值**：6930815272790114325 |
 
 
-:::warning
+> **Warning**
 **注意**
 - 该接口目前只会返回一条数据，分页参数 `page_size`、`page_token`  无效。
 - 参数 `application_id` 和 `tripartite_agreement_id` 至少填一个，若不填则返回空数据；若都填写，接口将返回`tripartite_agreement_id` 参数指定的数据。
-:::
-
 
 ## 响应
 

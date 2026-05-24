@@ -10,7 +10,7 @@ updateTime: "1730257053000"
 
 - 转移群主
 - 修改群基本信息，包括：群头像、群名称、群描述、群国际化名称
-- 修改群权限，包括：加人入群权限、群编辑权限、at 所有人权限、群分享权限等{使用示例}(url=/api/tools/api_explore/api_explore_config?project=im&version=v1&resource=chat&event=updated)
+- 修改群权限，包括：加人入群权限、群编辑权限、at 所有人权限、群分享权限等
 
 
 ## 前提条件

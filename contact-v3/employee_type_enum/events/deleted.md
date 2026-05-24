@@ -6,7 +6,7 @@ updateTime: "1720166961000"
 
 # 删除人员类型
 
-当应用订阅该事件后，如果删除某一人员类型，则会触发该事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=contact&version=v3&resource=employee_type_enum&event=deleted)
+当应用订阅该事件后，如果删除某一人员类型，则会触发该事件。
 
 
 ## 前提条件

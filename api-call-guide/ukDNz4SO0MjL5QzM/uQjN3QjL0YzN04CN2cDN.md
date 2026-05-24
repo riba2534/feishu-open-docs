@@ -12,9 +12,8 @@ updateTime: "1747723848000"
 
 在开发应用过程中，你可能需要调用[服务端 API](https://open.larkoffice.com/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/server-api-list)或监听已订阅的[事件](https://open.larkoffice.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-list)，该类操作可能涉及访问企业、用户的隐私信息，也可能需要操作企业、用户的应用数据。出于安全考虑，你需要为应用申请相应的权限，并且由企业管理员审核通过后，应用才可以进行后续的 API 调用或事件监听。简单来说，应用的 API 权限（Scope）决定了应用能使用哪些飞书服务端的开放能力。
 
-:::note
+> **Note**
 **API 权限是以应用为维度授予的**，每个应用的 API 权限都是独立存在的，若多个应用需要调用同一个 API ，那么每个应用都要添加对应的 API 权限。
-:::
 
 开放平台支持的所有权限，可参考[API 权限列表](https://open.larkoffice.com/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/scope-list)。
 
@@ -139,9 +138,8 @@ updateTime: "1747723848000"
 
 此时，你可以为应用配置测试企业和人员，并切换为测试版本（具体操作参见[测试企业与人员](https://open.larkoffice.com/document/home/introduction-to-custom-app-development/testing-enterprise-and-personnel-functions)）。切换后，前往 **开发配置** > **权限管理** 页面，在 **API 权限** 页签申请指定权限，申请的权限均为 **免审权限**，点击 **确认** 后立即生效。
 
-:::note
+> **Note**
 如果你申请了 **通讯录** 或者 **飞书人事（企业版）** API 权限，且需要通过应用身份（tenant_access_token）调用相关 API，则需要为应用配置相应的数据权限。详情参见[配置应用数据权限](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/configure-app-data-permissions)。
-:::
 
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/3c5d744adabdebe6ff843098cca3848b_Hx6u7N6C5u.png?height=630&lazyload=true&maxWidth=600&width=1782)
 
@@ -152,10 +150,9 @@ updateTime: "1747723848000"
 
 1. 在 **应用发布** > **版本管理与发布** 页面，点击 **创建版本**。
     
-:::note
+> **Note**
 使用测试企业调试 API 的场景中，开通的权限不会生效于应用的正式版本。因此在完成测试联调后，需要切换至正式版本的应用，为正式版应用再次开通相同的 API 权限。你可以使用**批量导入导出**功能，进行应用间的权限数据迁移。
-:::
-    
+
 2. 在 **版本详情** 页面，配置以下字段，并点击 **保存**。
     
     ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/8a5ebea29e28f422bf6b55817818c5d8_K2PcyliptA.png?height=1428&lazyload=true&maxWidth=600&width=2330)
@@ -201,10 +198,9 @@ updateTime: "1747723848000"
 
 1. 在左侧导航栏，选择 **开发配置** > **测试企业和人员**，然后创建一个测试企业。
     
-:::note
+> **Note**
 关于测试商店应用的详细配置，参见[六、测试商店应用](https://open.larkoffice.com/document/uMzNwEjLzcDMx4yM3ATM/uUjMyUjL1IjM14SNyITN)。
-:::
-    
+
 ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/015de7c6fa84c0cd94f696828c9b193e_3ilff2hvzh.png?height=802&lazyload=true&maxWidth=600&width=2882)
 
 2. 在左侧导航栏，选择 **应用发布** > **版本管理与发布**，然后点击 **创建版本**。
@@ -233,9 +229,8 @@ updateTime: "1747723848000"
 
 为了便于开发者进行跨应用的权限数据迁移，开放平台提供了批量导入导出 API 权限的能力。你可以在[开发者后台](https://open.feishu.cn/app)的 **权限管理** 页面进行权限的批量导入、导出。
 
-:::note
+> **Note**
 批量导入导出权限支持企业自建应用和商店应用。
-:::
 
 ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/27abd7201893bcba470a52b6af1f1fe4_0mR5buGag1.png?height=842&lazyload=true&maxWidth=600&width=2088)
 
@@ -244,18 +239,16 @@ updateTime: "1747723848000"
 导入的权限将 **作为此次新增申请的权限，不会影响已申请或开通的权限**。
 你可以按照以下示例格式录入所需权限，也可以一键恢复默认值或对输入内容进行格式化 JSON。
 
-:::note
+> **Note**
 录入权限时，系统会实时校验该权限是否存在，如果不存在或该应用不在该权限的可用范围内，则会收到错误提示：该权限不存在或该应用无权申请该权限，请重新录入。
-:::
 
 ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/a82210ab38d543fcd0c109dce3cdd5dc_pryVYedkX2.png?height=1016&lazyload=true&maxWidth=600&width=1592)
 
 确认导入权限清单无误后，点击**申请开通**。
 
-:::note
+> **Note**
 - 请注意检查不同身份类型页下的权限点。系统会根据应用身份权限、用户身份权限两种类型分别展示导入的权限清单，若此次导入权限不涉及某个身份类型，则不会展示该类型页签。
 - 系统会自动过滤已申请权限，避免重复申请。
-:::
 
 ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/8c23c93531c6e2f579936afb9ad13203_MJjWu0dx6g.png?height=814&lazyload=true&maxWidth=600&width=1582)
 

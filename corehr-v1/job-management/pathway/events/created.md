@@ -6,10 +6,10 @@ updateTime: "1753857314000"
 
 # 通道创建事件
 
-通道创建后会发送该事件{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=pathway&event=created)
+通道创建后会发送该事件
 
 
-> **Tip**: - 收到推送后，可通过[获取通道信息](/document-mod/index?fullPath=%2FuAjLw4CM%2FukTMukTMukTM%2Fcorehr-v2%2Fpathway%2Fbatch_get)接口查询变更详情
+> **Tip**: - 收到推送后，可通过[获取通道信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/batch_get)接口查询变更详情
 > - 接口数据查询存在2s左右延迟，不建议收到事件后立即查询以上接口。
 
 

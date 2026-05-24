@@ -6,7 +6,7 @@ updateTime: "1734665016000"
 
 # 【事件】更新公司
 
-飞书人事中「公司被更新」时将触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=company&event=updated)
+飞书人事中「公司被更新」时将触发此事件。
 
 
 > **Warning**: - [【批量查询公司】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/company/list)、[【查询单个公司】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/company/get)、[【通过 ID 批量查询公司信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/company/batch_get)数据查询存在一定延迟(2s以内)，不建议收到事件后立即查询以上接口。

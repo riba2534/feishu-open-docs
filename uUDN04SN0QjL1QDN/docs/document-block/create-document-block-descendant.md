@@ -1822,7 +1822,7 @@ updateTime: "1752809928000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `border_color` | `int` | 否 | 边框色<br>**示例值**：1<br>**可选值有**：<br>- `1`: 红色 - `2`: 橙色 - `3`: 黄色 - `4`: 绿色 - `5`: 蓝色 - `6`: 紫色 - `7`: 灰色 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `text_color` | `int` | 否 | 文字颜色<br>**示例值**：1<br>**可选值有**：<br>- `1`: 红色 - `2`: 橙色 - `3`: 黄色 - `4`: 绿色 - `5`: 蓝色 - `6`: 紫色 - `7`: 灰色 |
 | &nbsp;&nbsp;└ `chat_card` | `chat_card` | 否 | 群聊卡片 Block |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `chat_id` | `string` | 是 | 群聊天会话 ID。获取方式参考[群 ID 说明](ssl:ttdoc//uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-id-description)<br>**示例值**："7052227140476993555" |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `chat_id` | `string` | 是 | 群聊天会话 ID。获取方式参考[群 ID 说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-id-description)<br>**示例值**："7052227140476993555" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `align` | `int` | 否 | 对齐方式<br>**示例值**：1<br>**可选值有**：<br>- `1`: 居左排版 - `2`: 居中排版 - `3`: 居右排版<br>**默认值**：`1` |
 | &nbsp;&nbsp;└ `divider` | `divider` | 否 | 分割线 Block。为空结构体，需传入 `{}` 创建分割线 Block。 |
 | &nbsp;&nbsp;└ `file` | `file` | 否 | 文件 Block。了解如何在文档中插入文件，参考[文档常见问题-如何插入文件/附件](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/faq)。 |
@@ -4056,7 +4056,7 @@ curl --location --request POST 'https://open.feishu.cn/open-apis/docx/v1/documen
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `text_color` | `int` | 文字颜色<br>**可选值有**：<br>- `1`: 红色 - `2`: 橙色 - `3`: 黄色 - `4`: 绿色 - `5`: 蓝色 - `6`: 紫色 - `7`: 灰色 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `emoji_id` | `string` | 高亮块图标 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `chat_card` | `chat_card` | 群聊卡片 Block |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `chat_id` | `string` | 群聊天会话 ID。获取方式参考[群 ID 说明](ssl:ttdoc//uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-id-description) |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `chat_id` | `string` | 群聊天会话 ID。获取方式参考[群 ID 说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-id-description) |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `align` | `int` | 对齐方式<br>**可选值有**：<br>- `1`: 居左排版 - `2`: 居中排版 - `3`: 居右排版 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `diagram` | `diagram` | 流程图/UML Block |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `diagram_type` | `int` | 绘图类型<br>**可选值有**：<br>- `1`: 流程图 - `2`: UML 图 |

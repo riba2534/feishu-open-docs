@@ -7,7 +7,7 @@ updateTime: "1758627855000"
 # 画板主题与颜色系统
 
 画板提供了一套强大的主题系统，旨在帮助您轻松创建美观、风格统一的图形。主题是作用于整个画板的全局配置，切换主题会改变所有元素的配色，但不能为单个元素设置独立主题。
-[主题演示](//sf3-cn.feishucdn.com/obj/open-platform-opendoc/b7f1021e6c9e85e0459eaea1d06ab556_nV6dkSBR0C.gif)
+[主题演示](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/b7f1021e6c9e85e0459eaea1d06ab556_nV6dkSBR0C.gif)
 
 ## 基于 Code 的颜色映射
 为了实现主题切换，画板的颜色系统不直接存储具体的颜色值（如 `#ffffff`），而是使用一个抽象的 **`颜色 Code`**（一个整数）来指定颜色。在不同主题下，为颜色 code 值配置了不同的颜色。

@@ -12,14 +12,12 @@ updateTime: "1750920600000"
 。
 
 调用本接口获取用户的登录预授权码 code。登录预授权码的有效期是 5 分钟，且只能被使用一次。
-:::note
+> **Note**
 **说明**：本接口适用于用户登录网页应用场景。当业务请求下方授权登录链接后，会加载授权登录页面，用户需要点击授权，此时地址栏会自动302至重定向 URL，并携带飞书开放平台返回的登录预授权码 code。有关重定向 URL 的详细介绍，请参考[获取 user_access_token](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/authen-v1/access_token/create)。
 
-:::
 
-:::note
+> **Note**
 **更新**：[新版授权流程](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/authen-v1/login-overview)支持开发者在获取登录预授权码时通过传入 scope 参数来实现增量授权的能力。user_access_token 所需要的权限点位需要用户在授权页同意授权后方可获得，建议接入更加规范和合规的新版流程
-:::
 
 ## 请求
 

@@ -6,7 +6,7 @@ updateTime: "1721111237000"
 
 # 日程变更
 
-当用户订阅日程变更事件后，被订阅的日历下有日程发生变更时，将会触发该事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=calendar&version=v4&resource=calendar.event&event=changed)
+当用户订阅日程变更事件后，被订阅的日历下有日程发生变更时，将会触发该事件。
 
 
 ## 注意事项

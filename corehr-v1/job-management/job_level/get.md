@@ -12,8 +12,8 @@ updateTime: "1775126177000"
 > **Warning**: 注意事项：数据库主从延迟 2s 以内，直接创建职级后2s内调用此接口可能查询不到数据。
 
 
-> **Tip**: 使用建议：该接口只支持查询单个职级，如果你需要批量查询多个职级信息，建议通过[【通过职级 ID 批量获取职级信息】](/uAjLw4CM/ukTMukTMukTM/corehr-v2/job_level/batch_get
-> )获取职级信息。
+> **Tip**: 使用建议：该接口只支持查询单个职级，如果你需要批量查询多个职级信息，建议通过[【通过职级 ID 批量获取职级信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/job_level/batch_get
+>)获取职级信息。
 
 
 ## 请求

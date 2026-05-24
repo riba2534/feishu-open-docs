@@ -9,13 +9,11 @@ updateTime: "1719396900000"
 自建应用通过此接口获取`app_access_token`。
 
 
-:::note
+> **Note**
 **说明：** `app_access_token` 的最大有效期是 2 小时。
 
 - 如果在有效期小于 30 分钟的情况下，调用本接口，会返回一个新的 `app_access_token`，这会同时存在两个有效的 `app_access_token`。
 - 如果在有效期大于等于 30 分钟的情况下，调用本接口，会返回原有的 `app_access_token`。
-:::
-
 
 ## 请求
 

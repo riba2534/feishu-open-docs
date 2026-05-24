@@ -6,7 +6,7 @@ updateTime: "1747710019000"
 
 # 【事件】创建自定义组织
 
-飞书人事中「自定义组织被创建」时将触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=custom_org&event=created)
+飞书人事中「自定义组织被创建」时将触发此事件。
 
 
 > **Warning**: [【批量查询当前版本的自定义组织信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/custom_org/query)数据查询存在一定延迟(2s以内)，不建议收到事件后立即查询以上接口。

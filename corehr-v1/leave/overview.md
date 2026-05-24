@@ -65,5 +65,5 @@ updateTime: "1731048913000"
 | [获取假期类型列表](https://open.larkoffice.com/document/server-docs/corehr-v1/leave/leave_types)   |当企业有查询假期类型列表的诉求时，可调用该接口查询假期类型列表。例如：企业使用第三方审批系统，员工在发起休假申请时需调用接口查询该员工所适配的所有假期类型|
 | [批量查询员工假期余额](https://open.larkoffice.com/document/server-docs/corehr-v1/leave/leave_balances) |当飞书人事休假系统的余额相关功能无法满足企业诉求时，可调用该接口完成假期额度的查询。例如：企业使用第三方报表系统，可通过调用该接口获取报表数据|
 | [批量查询员工请假记录](https://open.larkoffice.com/document/server-docs/corehr-v1/leave/leave_request_history) | 企业可通过该接口批量查询员工的请假记录。例如：调用该接口获取请假记录，用于企业内部分析展示使用|
-| [通过过期时间获取发放记录](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/leave_employ_expire_record/get) | 企业可通过该接口批量查询员工对应时间段内过期的发放记录。例如：用于企业内部分析展示使用|
-| [修改发放记录](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/leave_accrual_record/patch) | 企业可通过该接口更新发放记录的发放数量和失效日期。注意：由系统生成的发放记录不可被更新|
+| [通过过期时间获取发放记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/leave_employ_expire_record/get) | 企业可通过该接口批量查询员工对应时间段内过期的发放记录。例如：用于企业内部分析展示使用|
+| [修改发放记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/leave_accrual_record/patch) | 企业可通过该接口更新发放记录的发放数量和失效日期。注意：由系统生成的发放记录不可被更新|

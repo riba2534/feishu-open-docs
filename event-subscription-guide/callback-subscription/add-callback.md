@@ -22,7 +22,7 @@ updateTime: "1744008284000"
 
 5. 选择所需回调，并点击 **确认添加**。
     
-    目前支持选择 [拉取链接预览数据](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure)、[卡片回传交互](/ssl:ttdoc/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)、[消息卡片回传交互（旧）](/ssl:ttdoc/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/configuring-card-callbacks/card-callback-structure)回调。
+    目前支持选择 [拉取链接预览数据](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure)、[卡片回传交互](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)、[消息卡片回传交互（旧）](https://open.larkoffice.com/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/configuring-card-callbacks/card-callback-structure)回调。
     
     ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/570531525bd97b8487c45d63b3cbc8f7_uRWBK68mnG.png?height=1174&lazyload=true&maxWidth=600&width=1636)
 

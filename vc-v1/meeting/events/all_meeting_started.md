@@ -6,7 +6,7 @@ updateTime: "1774528229000"
 
 # 企业会议开始
 
-发生在会议开始时，包含企业内所有会议开始事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=vc&version=v1&resource=meeting&event=all_meeting_started)
+发生在会议开始时，包含企业内所有会议开始事件。
 
 
 ## 事件

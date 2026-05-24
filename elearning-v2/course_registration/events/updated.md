@@ -6,7 +6,7 @@ updateTime: "1747797131000"
 
 # 课程学习进度更新事件
 
-课程学习进度更新时触发{使用示例}(url=/api/tools/api_explore/api_explore_config?project=elearning&version=v2&resource=course_registration&event=updated)
+课程学习进度更新时触发
 
 
 ## 事件

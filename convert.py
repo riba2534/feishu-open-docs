@@ -6,6 +6,7 @@
 
 import re
 import sys
+import urllib.parse
 from pathlib import Path
 from bs4 import BeautifulSoup, NavigableString, Tag
 
@@ -334,11 +335,93 @@ def process_html_block(html_content: str) -> str:
 # 8. Process a full markdown file
 # ---------------------------------------------------------------------------
 
+# Match many broken/relative URL forms emitted by upstream:
+#   /ssl:ttdoc/...                (canonical internal ref)
+#   /ssl:ttdoc%2F...              (URL-encoded variant)
+#   /ssl:/ttdoc/...               (extra slash typo)
+#   /ssl：ttdoc/...               (Chinese full-width colon typo)
+#   /ssl:ttdc/...                 (typo: ttdoc → ttdc)
+#   /ssl:ttdocopen-apis/...       (typo: missing slash)
+#   /:ssltoken/...                (alternate marker)
+#   /document-mod/index?fullPath=... (portal redirect)
+#   /uAjLw4CM/...                 (bare doc-tree path)
+#   //sf3-cn.feishucdn.com/...    (protocol-relative CDN)
+SSL_PREFIX_RE = re.compile(
+    r'^[a-z]?/?ssl[:：]/{0,2}'           # ssl: with 0-2 leading slashes
+    r'(?:ttdo?cs?[:：]?)?'                # optional ttdoc/ttdc/ttdocs marker
+    r'(?:%2F|%2f|/|(?=open|uAjLw|ukTM|home|server-docs|reference))'
+)
+DOC_MOD_RE    = re.compile(r'^/document-mod/index\?fullPath=(.*)$')
+SSLTOKEN_RE   = re.compile(r'^/:ssltoken/(.*)$')
+BARE_DOC_RE   = re.compile(r'^/(uAjLw4CM|ukTMukTMukTM)/')
+DOCUMENT_RE   = re.compile(r'^/document/')
+
+LARK_DOC_BASE = 'https://open.larkoffice.com/document/'
+
+
+def normalize_link_url(url: str) -> str:
+    """Convert non-standard internal/relative URLs to canonical https URLs."""
+    raw = url
+    url = url.strip()
+    # Protocol-relative (//host/path) → https://host/path
+    if url.startswith('//'):
+        return 'https:' + url
+    # /document-mod/index?fullPath=XXX → decoded path under /document/
+    m = DOC_MOD_RE.match(url)
+    if m:
+        path = urllib.parse.unquote(m.group(1)).lstrip('/')
+        return LARK_DOC_BASE + path
+    # /:ssltoken/home/... → /document/home/...
+    m = SSLTOKEN_RE.match(url)
+    if m:
+        return LARK_DOC_BASE + m.group(1).strip()
+    # /ssl:ttdoc/... and all its typo variants
+    m = SSL_PREFIX_RE.match(url)
+    if m:
+        path = url[m.end():]
+        path = urllib.parse.unquote(path.replace('%2F', '/').replace('%2f', '/')).lstrip('/')
+        return LARK_DOC_BASE + path
+    # Bare /uAjLw4CM/... → /document/uAjLw4CM/...
+    if BARE_DOC_RE.match(url):
+        return LARK_DOC_BASE.rstrip('/') + url
+    # Already a document path but missing host: /document/... → https://open.larkoffice.com/document/...
+    if DOCUMENT_RE.match(url):
+        return 'https://open.larkoffice.com' + url
+    # No known pattern matched — return stripped form (drops stray surrounding spaces)
+    return url
+
+
+# Markdown link/image: capture optional `!`, [text], (url possibly with surrounding spaces).
+# Permits whitespace between `]` and `(` (some upstream payloads emit `[t] (url)`).
+LINK_RE = re.compile(r'(!?)\[([^\]]*)\]\s*\(\s*([^)\s][^)]*?)\s*\)')
+
+
+def normalize_links(content: str) -> str:
+    """Rewrite all markdown link/image URLs through normalize_link_url."""
+    def repl(m):
+        bang, text, url = m.group(1), m.group(2), m.group(3)
+        new_url = normalize_link_url(url)
+        return f"{bang}[{text}]({new_url})"
+    content = LINK_RE.sub(repl, content)
+
+    # Also fix raw HTML href="/internal/path" inside SDK code comments etc.
+    # Only rewrites URLs that match a known Feishu internal pattern — leaves
+    # other site-relative anchors (e.g. <a href="/login">) untouched.
+    def fix_href(m):
+        quote, url = m.group(1), m.group(2)
+        new_url = normalize_link_url(url)
+        if new_url == url:
+            return m.group(0)
+        return f'href={quote}{new_url}{quote}'
+    content = re.sub(r'href=(["\'])([^"\']+)\1', fix_href, content)
+    return content
+
+
 def process_file(content: str) -> str:
     """Process a full markdown file, converting all custom components."""
 
-    # 1. Remove {尝试一下}(url=...)
-    content = re.sub(r'\{尝试一下\}\(url=[^)]*\)', '', content)
+    # 1. Remove Feishu doc-portal action buttons: {尝试一下}(url=...), {使用示例}(url=...), etc.
+    content = re.sub(r'\{[^}\n]+\}\(url=[^)]*\)', '', content)
 
     # 2. Process :::html ... ::: blocks
     def replace_html_block(match):
@@ -351,6 +434,19 @@ def process_file(content: str) -> str:
     # (some upstream payloads omit the closing :::, leaving the opener orphaned)
     content = re.sub(r'^:::html\s*$', '', content, flags=re.MULTILINE)
     content = re.sub(r'^:::\s*$', '', content, flags=re.MULTILINE)
+
+    # 2c. Convert orphan callout openers (:::note / :::warning / :::tip / :::error)
+    # to a one-line blockquote label. Upstream omits the closing :::, so we cannot
+    # wrap the whole block — but the label keeps the semantic hint.
+    callout_labels = {'note': 'Note', 'tip': 'Tip', 'warning': 'Warning',
+                      'warn': 'Warning', 'error': 'Error', 'info': 'Info',
+                      'caution': 'Caution', 'danger': 'Danger'}
+    def replace_callout_opener(m):
+        kind = m.group(1).lower()
+        label = callout_labels.get(kind, kind.capitalize())
+        return f'> **{label}**'
+    content = re.sub(r'^:::\s*([a-zA-Z]+)\s*$', replace_callout_opener,
+                     content, flags=re.MULTILINE)
 
     # 3. Handle any remaining inline <md-*> tags outside :::html blocks
     # <md-tag>
@@ -393,12 +489,8 @@ def process_file(content: str) -> str:
     content = re.sub(r'<md-[a-z_-]+[^>]*/>', '', content)
     content = re.sub(r'</?md-[a-z_-]+[^>]*>', '', content)
 
-    # 4. Fix /ssl:ttdoc/ links → https://open.larkoffice.com links
-    content = re.sub(
-        r'\[([^\]]*)\]\(/ssl:ttdoc/([^)]+)\)',
-        r'[\1](https://open.larkoffice.com/document/\2)',
-        content
-    )
+    # 4. Fix non-standard / broken links → https://open.larkoffice.com/...
+    content = normalize_links(content)
 
     # 5. Clean up excessive blank lines
     content = re.sub(r'\n{4,}', '\n\n\n', content)
@@ -423,13 +515,9 @@ def main():
     for i, fpath in enumerate(md_files):
         try:
             content = fpath.read_text(encoding="utf-8")
-            # Skip files that don't have custom tags
-            if "<md-" not in content and ":::html" not in content and "{尝试一下}" not in content:
-                processed += 1
-                continue
-
             new_content = process_file(content)
-            fpath.write_text(new_content, encoding="utf-8")
+            if new_content != content:
+                fpath.write_text(new_content, encoding="utf-8")
             processed += 1
 
         except Exception as e:

@@ -41,7 +41,7 @@ updateTime: "1724222424000"
 
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
-| `file_key` | `string` | 文件的 Key，通过[上传文件](	/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/create)接口上传文件后，从返回结果中获取。<br>**示例值**："file_456a92d6-c6ea-4de4-ac3f-7afcf44ac78g" |
+| `file_key` | `string` | 文件的 Key，通过[上传文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/create)接口上传文件后，从返回结果中获取。<br>**示例值**："file_456a92d6-c6ea-4de4-ac3f-7afcf44ac78g" |
 
 
 ## 响应

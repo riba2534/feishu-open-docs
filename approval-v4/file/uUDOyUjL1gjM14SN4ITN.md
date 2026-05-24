@@ -93,9 +93,9 @@ public void uploadApprovalFile() {
 |&emsp;∟code|string| 文件标识码。用于[创建审批实例](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/create)时，传入图片控件或附件控件的 value 参数。|
 |&emsp;∟url|string| 文件 url|
 
-::: note
+> **Note**
 **注意**：返回的 url 有效期为 12 小时。发起审批后，每次获取审批详情都会获得新的 url。如果 url 打不开，请检查 url 的参数中是否包含`\\u0026`，因`&`被转义成了`\\u0026`，只需要将`\\u0026`替换成`&`符号即可打开。
-:::
+
 ### 响应体示例
 
 ```json

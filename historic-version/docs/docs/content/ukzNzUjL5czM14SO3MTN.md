@@ -5,9 +5,9 @@ updateTime: "1753863891000"
 ---
 
 # 获取旧版文档纯文本内容
-:::warning 
+> **Warning**
 此接口只支持查询旧版文档纯文本内容。要查询新版文档（文档类型：`docx`）的纯文本内容，使用[获取文档纯文本内容](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document/raw_content)接口。
-:::
+
 该接口用于获取文档的纯文本内容，不包含富文本格式信息。
 
 ## 请求
@@ -27,9 +27,9 @@ updateTime: "1753863891000"
 | Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
 
-::: note
+> **Note**
 关于云文档接口的 AccessToken 调用说明详见 [云文档接口快速入门](https://open.larkoffice.com/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN)
-:::
+
 <br>
 
 ### 路径参数

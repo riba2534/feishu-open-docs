@@ -1968,7 +1968,7 @@ curl --location --request GET 'https://open.feishu.cn/open-apis/docx/v1/document
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `text_color` | `int` | 文字颜色<br>**可选值有**：<br>- `1`: 红色 - `2`: 橙色 - `3`: 黄色 - `4`: 绿色 - `5`: 蓝色 - `6`: 紫色 - `7`: 灰色 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `emoji_id` | `string` | 高亮块图标 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `chat_card` | `chat_card` | 群聊卡片 Block |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `chat_id` | `string` | 群聊天会话 ID。获取方式参考[群 ID 说明](ssl:ttdoc//uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-id-description) |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `chat_id` | `string` | 群聊天会话 ID。获取方式参考[群 ID 说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-id-description) |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `align` | `int` | 对齐方式<br>**可选值有**：<br>- `1`: 居左排版 - `2`: 居中排版 - `3`: 居右排版 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `diagram` | `diagram` | 流程图/UML Block |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `diagram_type` | `int` | 绘图类型<br>**可选值有**：<br>- `1`: 流程图 - `2`: UML 图 |

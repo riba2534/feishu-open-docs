@@ -6,7 +6,7 @@ updateTime: "1730257097000"
 
 # 机器人被移出群
 
-机器人被移出群聊后触发此事件，仅被移除群组且订阅该事件的机器人会收到事件数据。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=im&version=v1&resource=chat.member.bot&event=deleted)
+机器人被移出群聊后触发此事件，仅被移除群组且订阅该事件的机器人会收到事件数据。
 
 
 ## 前提条件

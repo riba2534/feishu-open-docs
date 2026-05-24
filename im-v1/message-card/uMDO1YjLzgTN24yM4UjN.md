@@ -24,9 +24,9 @@ updateTime: "1757496852000"
 3. 你的服务器需要在接收回调的 3 秒内先以 HTTP 200 状态码响应该回调，在响应时设置 HTTP Body 为 `"{}"` 或者返回自定义 Toast 结构体
 5. 在[卡片回传交互](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)回调请求中获取 token 参数，调用本接口，在 30 分钟内更新卡片。
 
-:::warning
+> **Warning**
 **延时更新卡片必须在响应回调之后进行，并行执行或提前执行会出现更新失败或更新后立即复原的情况。**
-:::
+
 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/39672c58aadbb0ea3e97d8b01401bcb1_8IVLvqd5H3.png?height=500&lazyload=true&maxWidth=600&width=1846)
 
 

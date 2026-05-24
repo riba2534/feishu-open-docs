@@ -6,7 +6,7 @@ updateTime: "1734665016000"
 
 # 【事件】更新地点
 
-飞书人事中「地点被更新」时将触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=location&event=updated)
+飞书人事中「地点被更新」时将触发此事件。
 
 
 > **Warning**: - [【批量分页查询地点信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/location/list)、[【查询单个地点】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/location/get)、[【通过地点 ID 批量获取地点信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/location/batch_get)数据查询存在一定延迟(2s以内)，不建议收到事件后立即查询以上接口。

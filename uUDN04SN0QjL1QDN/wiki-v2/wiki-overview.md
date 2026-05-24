@@ -16,15 +16,13 @@ updateTime: "1755587520000"
 
 
 你可以通过知识库 API，来自动化管理你的知识库。
-:::note
+> **Note**
 在调用知识库 API 之前，请确保你的应用已经按需申请了以下权限并发布：
 - `wiki:wiki`: 可以对知识库进行增删改查
 - `wiki:wiki.readonly`: 可以读取知识库内容，无法编辑或修改知识库
 
 
 相关说明详见：[应用权限](https://open.larkoffice.com/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN)
-:::
-
 
 ## 资源：知识空间 Workspace
 知识空间是知识库的基本组成单位，是企业根据需要搭建的不同类别的知识体系，由多个具有层级和所属关系的文档页面构成。每个知识空间，都有唯一的一个 space_id 作为标识。

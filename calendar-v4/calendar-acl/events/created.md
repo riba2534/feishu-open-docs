@@ -6,7 +6,7 @@ updateTime: "1721110938000"
 
 # 创建 ACL
 
-当订阅的日历上有访问控制被创建时，将会触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=calendar&version=v4&resource=calendar.acl&event=created)
+当订阅的日历上有访问控制被创建时，将会触发此事件。
 
 
 > **Warning**: 你需要先为用户[订阅日历访问控制变更事件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-acl/subscription)，并且需要在应用中配置事件订阅，这样才可以在事件触发时接收到事件数据。了解事件订阅参见[事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。

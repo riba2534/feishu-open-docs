@@ -19,9 +19,8 @@ updateTime: "1745207033000"
 
 开放平台提供了开发教程，帮助你了解如何将三方审批接入飞书审批中心并流转起来，详情参见[快速开发三方审批](https://open.larkoffice.com/document/home/quickly-develop-three-party-approvals/introduction)。
 
-:::note
+> **Note**
 如需使用审批小程序实现客户端内网页免登，只能使用[客户端内网页免登（旧）](https://open.larkoffice.com/document/uYjL24iN/ukTO4UjL5kDO14SO5gTN#782a5834) 的方式。
-:::
 
 ## 字段说明
 

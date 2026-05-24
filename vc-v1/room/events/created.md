@@ -6,7 +6,7 @@ updateTime: "1675171202000"
 
 # 创建会议室
 
-当创建会议室时，会触发该事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=vc&version=v1&resource=room&event=created)
+当创建会议室时，会触发该事件。
 
 
 ## 事件

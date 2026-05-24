@@ -10,7 +10,7 @@ updateTime: "1723533643000"
 
 **特别注意**: 订阅该事件只能接收到该 APP 创建的任务发生的评论信息变更，如果订阅后未收到事件，可以检查是否是下面几种不会推送的情况:
 - 任务是user_access_token方式创建或者其他应用创建的。
-- 任务是通过客户端或者文档创建的。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=task&version=v1&resource=task.comment&event=updated)
+- 任务是通过客户端或者文档创建的。
 
 
 ## 事件

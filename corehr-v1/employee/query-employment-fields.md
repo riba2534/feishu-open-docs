@@ -6,7 +6,7 @@ updateTime: "1748591931000"
 
 # 查询员工信息的字段格式参考
 
-本文中列举出 [【搜索员工信息】](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/search)和[【批量查询员工信息】](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/batch_get)中 fields 参数支持的字段。
+本文中列举出 [【搜索员工信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/search)和[【批量查询员工信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/batch_get)中 fields 参数支持的字段。
 
 大多数响应体字段路径就是 fields 中需要传递的值。
 - 个别字段有多个对应的查询方式。

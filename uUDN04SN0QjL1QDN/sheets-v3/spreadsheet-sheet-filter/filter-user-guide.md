@@ -8,9 +8,9 @@ updateTime: "1719483700000"
 筛选指在电子表格工作表指定范围中，为指定列（col）设置筛选条件。本文档介绍飞书开放平台电子表格中筛选能力相关的参数和方法列表。
 
 
-:::note
+> **Note**
 本文档介绍电子表格直接在工作表中创建、获取筛选等能力。要查看在筛选视图中的筛选条件说明，参考[筛选视图的筛选条件指南](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/filter-view-condition-user-guide)。
-:::
+
 ## 注意事项
 
 - 筛选范围内的第一行不参与筛选。

@@ -30,9 +30,8 @@ updateTime: "1655362529000"
 | Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
 
-::: note
+> **Note**
 关于云文档接口的 AccessToken 调用说明详见 [云文档接口快速入门](https://open.larkoffice.com/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN)
-:::
 
 ### 路径参数
 |参数|类型|必须|说明|

@@ -6,7 +6,7 @@ updateTime: "1722592435000"
 
 # 绩效结果开通
 
-当员工的绩效结果开通时，订阅这个事件的应用会收到该事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=performance&version=v2&resource=stage_task&event=open_result)
+当员工的绩效结果开通时，订阅这个事件的应用会收到该事件。
 
 
 ## 前提条件

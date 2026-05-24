@@ -6,7 +6,7 @@ updateTime: "1728531078000"
 
 # 发布评论
 
-公司圈用户发布评论时触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=moments&version=v1&resource=comment&event=created)
+公司圈用户发布评论时触发此事件。
 
 
 ## 事件

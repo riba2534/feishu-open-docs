@@ -6,7 +6,7 @@ updateTime: "1723193944000"
 
 # 撤回消息
 
-机器人所在会话内的消息被撤回时触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=im&version=v1&resource=message&event=recalled)
+机器人所在会话内的消息被撤回时触发此事件。
 
 
 ## 前提条件

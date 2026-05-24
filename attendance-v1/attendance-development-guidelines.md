@@ -33,9 +33,6 @@ updateTime: "1721719975000"
 - 5.3 若企业设置了发布审核，需待**企业管理员**审核通过，该应用的开发者账号才可生效
 
 
-
-
-
 ## 事件订阅开发流程
 **1. 进入[飞书开放平台-开发者后台](https://open.feishu.cn/app/)**
 
@@ -62,7 +59,7 @@ updateTime: "1721719975000"
 ## 名词解释
 **employee_id**
 
-雇员 ID，含义同 user_id，详细解释请参见[名词解释](/ssl:ttdoc/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)。
+雇员 ID，含义同 user_id，详细解释请参见[名词解释](https://open.larkoffice.com/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)。
 
 ## 错误信息
 响应体msg                                                                   | msg解释             | 处理方案                    |

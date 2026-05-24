@@ -6,7 +6,7 @@ updateTime: "1775548336000"
 
 # 通讯录权限范围变更
 
-当应用订阅该事件后，如果应用的通讯录权限范围发生变更，则会触发该事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=contact&version=v3&resource=scope&event=updated)
+当应用订阅该事件后，如果应用的通讯录权限范围发生变更，则会触发该事件。
 
 
 ## 前提条件

@@ -6,7 +6,7 @@ updateTime: "1724639907000"
 
 # 合同更新
 
-通过开放平台更新合同或者在飞书人事系统进行变更和续约等业务操作时，会触发本事件{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=contract&event=updated)
+通过开放平台更新合同或者在飞书人事系统进行变更和续约等业务操作时，会触发本事件
 
 
 ## 事件

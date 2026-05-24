@@ -63,7 +63,7 @@ updateTime: "1764324021000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 文本内容 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `contract_code` | `string` | 供应商侧的合同编号，作为幂等key |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `effective_date` | `string` | 电子签文件生效日期 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `template_id` | `string` | 电子签模板ID，可以通过[【根据ID获取电子签模板】](/ssl:ttdc/uAjLw4CM/ukTMukTMukTM/corehr-v2/signature_template/search)获取电子签模板详情信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `template_id` | `string` | 电子签模板ID，可以通过[【根据ID获取电子签模板】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/signature_template/search)获取电子签模板详情信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `sign_url` | `string` | 签署链接 |
 | &nbsp;&nbsp;└ `batch_sign_url` | `string` | 批量签署链接 |
 

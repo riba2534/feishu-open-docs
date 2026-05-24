@@ -6,12 +6,12 @@ updateTime: "1753863911000"
 
 # 获取旧版文档富文本内容
 
-:::warning 
+> **Warning**
 此接口只支持获取旧版文档富文本内容。要获取新版文档（文档类型：`docx`）的富文本内容，调用以下接口：
 - [获取文档所有块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)
 - [获取指定块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/get)
 - [获取指定块下所有子块](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/get)
-:::
+
 该接口用于获取结构化的文档内容。
 
 ## 前提条件
@@ -37,9 +37,9 @@ updateTime: "1753863911000"
 | Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
 
-::: note
+> **Note**
 关于云文档接口的 AccessToken 调用说明详见 [云文档接口快速入门](https://open.larkoffice.com/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN)
-:::
+
 <br>
 ### 路径参数
 

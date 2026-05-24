@@ -6,7 +6,7 @@ updateTime: "1760409256000"
 
 # 删除岗位事件
 
-飞书人事中「岗位被删除」时将触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=position&event=deleted)
+飞书人事中「岗位被删除」时将触发此事件。
 
 
 > **Warning**: 岗位删除后，无法通过查询接口查询信息

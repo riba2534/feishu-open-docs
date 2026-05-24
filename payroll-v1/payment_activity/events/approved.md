@@ -10,7 +10,6 @@ updateTime: "1743649993000"
 
 
 一个发薪活动封存后，可能会向事件监听方发送多条 `activity_id` 相同的事件通知，事件监听方需要针对  `activity_id` 做好幂等处理。
-{使用示例}(url=/api/tools/api_explore/api_explore_config?project=payroll&version=v1&resource=payment_activity&event=approved)
 
 
 ## 前提条件

@@ -45,7 +45,6 @@ updateTime: "1744011041000"
 - 数据消费，提供个人信息、雇佣信息、部门列表、异动记录等组织/员工数据的查询API 以及数据变更事件。
 
 
-
 ![3.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/6c7b110560527e7d20ed1d10646c5e1b_Rf8ZnKSbH1.png?height=2860&lazyload=true&width=4128)
 
 ## 数据模型
@@ -79,6 +78,6 @@ updateTime: "1744011041000"
 | 问题         | 解决方案          |
 | --------- | --------------- |
 |接口报错："TenantID xxx not found. Please cheeck if the tenant has activated this app" | 未开通飞书人事企业版 |
-| 人员、入职都有自定义字段，如何传参？      | 参考 [自定义字段使用说明](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom-fields-guide)|
+| 人员、入职都有自定义字段，如何传参？      | 参考 [自定义字段使用说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom-fields-guide)|
 | 不同国家的姓名规则如何填写 | 参考 [飞书人事姓名填写规则](https://bytedance.larkoffice.com/wiki/Am1Zwgjj0imm8OkfICucBqRDnbh) |
 | 不同国家的地址规则如何填写 | 参考[飞书人事地址填写规则](https://bytedance.larkoffice.com/wiki/GoL4wAKAXis3OWku72YcEjTxnKe?sheet=0sMjoP) |

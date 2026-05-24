@@ -6,7 +6,7 @@ updateTime: "1648634987000"
 
 # 反馈更新
 
-当反馈的处理状态被更新时，触发该事件{使用示例}(url=/api/tools/api_explore/api_explore_config?project=application&version=v6&resource=application.feedback&event=updated)
+当反馈的处理状态被更新时，触发该事件
 
 
 ## 事件

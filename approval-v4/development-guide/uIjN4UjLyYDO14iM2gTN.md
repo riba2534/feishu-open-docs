@@ -38,12 +38,11 @@ updateTime: "1740128129000"
 
 本章节以企业自建应用为例进行介绍。
 
-:::note
+> **Note**
 企业自建应用与商店应用的介绍参见[应用类型](https://open.larkoffice.com/document/home/app-types-introduction/overview#c3c7ad51)。各应用的开发指南参考：
 
 - [企业自建应用开发流程](https://open.larkoffice.com/document/home/introduction-to-custom-app-development/self-built-application-development-process)
 - [商店应用开发流程](https://open.larkoffice.com/document/uMzNwEjLzcDMx4yM3ATM/ugzNwEjL4cDMx4CO3ATM)
-:::
 
 1. 登录[开发者后台](https://open.feishu.cn/app)。
 2. 自定义设置应用名称、描述、图标，创建一个企业自建应用。

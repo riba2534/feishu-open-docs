@@ -6,7 +6,7 @@ updateTime: "1673520299000"
 
 # 删除会议室
 
-当删除会议室时，会触发该事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=vc&version=v1&resource=room&event=deleted)
+当删除会议室时，会触发该事件。
 
 
 ## 事件

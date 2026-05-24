@@ -6,7 +6,7 @@ updateTime: "1754299493000"
 
 # 用户ID映射变更
 
-用户ID映射变更事件{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=common_data.id&event=user_mapping_changed)
+用户ID映射变更事件
 
 
 > **Tip**: 你需要在应用中配置事件订阅，这样才可以在事件触发时接收到事件数据。了解事件订阅可参见[事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。

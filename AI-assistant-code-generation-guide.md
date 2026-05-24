@@ -37,7 +37,7 @@ updateTime: "1770087350000"
 
 | 类别 | 限制 |
 | --- | --- |
-| 业务范围 | - 仅支持 [服务端 API 及事件](https://open.larkoffice.com/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/AI-assistant-code-generation-guide )，不支持客户端（如：小程序、网页应用、小组件等）代码生成与调试。 - 不支持历史文档相关代码生成及知识问答。 |
+| 业务范围 | - 仅支持 [服务端 API 及事件](https://open.larkoffice.com/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/AI-assistant-code-generation-guide)，不支持客户端（如：小程序、网页应用、小组件等）代码生成与调试。 - 不支持历史文档相关代码生成及知识问答。 |
 | 网络访问 | 仅允许访问飞书开放平台相关域名，即 `open.feishu.cn`、`msg-frontier.feishu.cn`。 - 无法访问任何其他外部网络或服务。 - 环境无入站连接。 |
 | 文件系统 | 仅支持临时、只读的工作目录： - 不支持上传、创建或删除文件。 - 无法访问宿主机文件系统。 - 无持久化存储：每次执行结束后，环境和所有临时文件将被自动清理和重置。 |
 | 计算资源 | - CPU：0.5 核 - 内存：1 GB，超出内存限制的进程将被强制终止。 |

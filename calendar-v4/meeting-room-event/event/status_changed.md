@@ -6,7 +6,7 @@ updateTime: "1732255274000"
 
 # 会议室状态信息变更
 
-会议室被创建、更新、删除或者被预定时，将会触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=meeting_room&version=v1&resource=meeting_room&event=status_changed)
+会议室被创建、更新、删除或者被预定时，将会触发此事件。
 
 
 > **Tip**: - 了解事件订阅的使用场景和配置流程，可参见 [事件订阅概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。

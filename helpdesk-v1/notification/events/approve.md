@@ -6,7 +6,7 @@ updateTime: "1672022719000"
 
 # 推送审核通知
 
-推送审核状态通知事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=helpdesk&version=v1&resource=notification&event=approve)
+推送审核状态通知事件。
 
 
 ## 事件

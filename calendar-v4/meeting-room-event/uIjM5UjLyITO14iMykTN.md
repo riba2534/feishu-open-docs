@@ -8,9 +8,8 @@ updateTime: "1712716406000"
 
 调用该接口使用日程的 Uid 和 Original time 查询会议室日程主题与详情。 
 
-:::note
+> **Note**
 日程 ID（event_id）格式为 `<Uid>_<Original time>`，因此你可以通过 event_id 获取日程的 Uid 和 Original time。例如，日程 ID 为 `c32537e6-e0a8-4506-b42f-47440655cdb4_0` ，则 Uid 为 `c32537e6-e0a8-4506-b42f-47440655cdb4`、Original time 为 `0`。
-:::
 
 ## 请求
 

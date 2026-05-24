@@ -6,7 +6,7 @@ updateTime: "1724639906000"
 
 # 合同创建
 
-通过开放平台创建合同或飞书人事系统中员工新签一份合同时，会触发合同创建事件{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=contract&event=created)
+通过开放平台创建合同或飞书人事系统中员工新签一份合同时，会触发合同创建事件
 
 
 ## 事件

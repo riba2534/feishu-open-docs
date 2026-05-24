@@ -7,10 +7,8 @@ updateTime: "1746601157000"
 # 更新工作表属性
 
 更新电子表格中的工作表。支持更新工作表的标题、位置，和隐藏、冻结、保护等属性。
-::: note
+> **Note**
 该接口和 [操作工作表](https://open.larkoffice.com/document/ukTMukTMukTM/uYTMzUjL2EzM14iNxMTN) 的请求地址相同，但参数不同，调用前请仔细阅读文档。
-:::
-
 
 ## 请求
 

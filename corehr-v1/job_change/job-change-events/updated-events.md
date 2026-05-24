@@ -6,7 +6,7 @@ updateTime: "1724931289000"
 
 # 异动信息变更
 
-员工发起异动后，异动信息变更会触发该事件{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=job_change&event=updated)
+员工发起异动后，异动信息变更会触发该事件
 
 
 ## 事件

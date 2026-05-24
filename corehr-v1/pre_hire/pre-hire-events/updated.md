@@ -10,7 +10,7 @@ updateTime: "1777344441000"
 - 通过开放平台接口创建待入职、更新待入职
 - 在飞书人事-入职系统，HR 补充任职信息
 
-如果有创建待入职后，更新数据的场景，请收到创建事件后延迟10s时间再执行更新操作{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=pre_hire&event=updated)
+如果有创建待入职后，更新数据的场景，请收到创建事件后延迟10s时间再执行更新操作
 
 
 > **Warning**: - 通过开放平台删除待入职接口不会触发事件。

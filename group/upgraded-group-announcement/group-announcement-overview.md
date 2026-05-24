@@ -149,7 +149,7 @@ updateTime: "1743663908000"
 | 方法 (API) | 权限要求（满足任一） | 访问凭证 | 商店 | 自建 |
 | --- | --- | --- | --- | --- |
 | ``GET` 获取群公告基本信息 [/open-apis/docx/v1/chats/:chat_id/announcement](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement/get)` | `im:chat.announcement:read` 查看群公告信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| ``GET` 获取群公告所有块 [/open-apis/docx/v1/chats/:chat_id/announcement/blocks](/ssl:ttdocopen-apis/docx/v1/chats/:chat_id/announcement/blocks)` | `im:chat.announcement:read` 查看群公告信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| ``GET` 获取群公告所有块 [/open-apis/docx/v1/chats/:chat_id/announcement/blocks](https://open.larkoffice.com/document/open-apis/docx/v1/chats/:chat_id/announcement/blocks)` | `im:chat.announcement:read` 查看群公告信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
 
 
 ### 块

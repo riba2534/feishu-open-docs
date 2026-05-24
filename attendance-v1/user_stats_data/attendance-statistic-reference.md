@@ -10,7 +10,7 @@ updateTime: "1691744470000"
 
 **接口调用流程如下：**
 
-1. 调用“[查询统计表头](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_stats_field/query)”接口，查询目前考勤统计所支持查询的所有统计表头字段。开发者可以在这些字段中选出自己关注的字段。
-2. 调用“[查询统计设置](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_stats_view/query)”接口，查询当前开发者账号已保存的统计表头字段。当开发者在调用“[查询统计数据](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_stats_data/query)”接口时，所返回的统计数据就是这些表头字段的数据。
-3. 调用“[更新统计设置](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_stats_view/update)”接口，将需要查询的统计表头字段进行保存或更新。如果开发者有新的统计字段需要关注，或者希望剔除不感兴趣的统计字段，可以使用该接口更新表头字段。更新后，再次调用“[查询统计数据](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_stats_data/query)”接口，就会返回包含了新字段或者剔除了不感兴趣字段的统计数据。
-4. 调用“[查询统计数据](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_stats_data/query)”接口，进行统计数据的查询。
+1. 调用“[查询统计表头](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_stats_field/query)”接口，查询目前考勤统计所支持查询的所有统计表头字段。开发者可以在这些字段中选出自己关注的字段。
+2. 调用“[查询统计设置](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_stats_view/query)”接口，查询当前开发者账号已保存的统计表头字段。当开发者在调用“[查询统计数据](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_stats_data/query)”接口时，所返回的统计数据就是这些表头字段的数据。
+3. 调用“[更新统计设置](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_stats_view/update)”接口，将需要查询的统计表头字段进行保存或更新。如果开发者有新的统计字段需要关注，或者希望剔除不感兴趣的统计字段，可以使用该接口更新表头字段。更新后，再次调用“[查询统计数据](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_stats_data/query)”接口，就会返回包含了新字段或者剔除了不感兴趣字段的统计数据。
+4. 调用“[查询统计数据](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_stats_data/query)”接口，进行统计数据的查询。

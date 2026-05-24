@@ -79,9 +79,9 @@ updateTime: "1735280066000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 名称信息的内容 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `probation_expected_end_date` | `string` | 预计试用期结束日期 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `weekly_working_hours` | `int` | 周工作时长 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `direct_manager_id` | `string` | 实线主管的任职记录ID，可通过[【批量查询员工任职信息】](/ssl:ttdoc%2FuAjLw4CM%2FukTMukTMukTM%2Fcorehr-v2%2Femployees-job_data%2Fbatch_get)获取 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `dotted_line_manager_id_list` | `string\[\]` | 虚线主管的任职记录ID，可通过[【批量查询员工任职信息】](/ssl:ttdoc%2FuAjLw4CM%2FukTMukTMukTM%2Fcorehr-v2%2Femployees-job_data%2Fbatch_get)获取 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `second_direct_manager_id` | `string` | 第二实线主管的任职记录ID，可通过[【批量查询员工任职信息】](/ssl:ttdoc%2FuAjLw4CM%2FukTMukTMukTM%2Fcorehr-v2%2Femployees-job_data%2Fbatch_get)获取 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `direct_manager_id` | `string` | 实线主管的任职记录ID，可通过[【批量查询员工任职信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employees-job_data/batch_get)获取 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `dotted_line_manager_id_list` | `string\[\]` | 虚线主管的任职记录ID，可通过[【批量查询员工任职信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employees-job_data/batch_get)获取 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `second_direct_manager_id` | `string` | 第二实线主管的任职记录ID，可通过[【批量查询员工任职信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employees-job_data/batch_get)获取 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `cost_center_rate` | `support_cost_center_item\[\]` | 成本中心分摊信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `cost_center_id` | `string` | 支持的成本中心 ID，详细信息可通过[【搜索成本中心信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/cost_center/search)接口查询获得 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `rate` | `int` | 分摊比例 |

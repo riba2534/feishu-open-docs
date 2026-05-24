@@ -6,7 +6,7 @@ updateTime: "1762309048000"
 
 # 抄送单据状态变更
 
-流程中生成抄送单据后会触发该事件。抄送节点会生成抄送单据任务。如果一个节点有多个人抄送人，则会生成多个抄送单据（此功能不受数据权限范围控制）。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=process.cc&event=updated)
+流程中生成抄送单据后会触发该事件。抄送节点会生成抄送单据任务。如果一个节点有多个人抄送人，则会生成多个抄送单据（此功能不受数据权限范围控制）。
 
 
 > **Tip**: 你需要在应用内配置事件订阅，并订阅该事件，这样才可以在事件触发时接收到事件数据。了解事件订阅可参见[事件概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。

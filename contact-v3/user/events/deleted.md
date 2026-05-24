@@ -6,7 +6,7 @@ updateTime: "1775548359000"
 
 # 员工离职
 
-当应用订阅该事件后，如果有员工离职（例如，通过管理后台离职成员、调用删除用户 API），则会触发该事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=contact&version=v3&resource=user&event=deleted)
+当应用订阅该事件后，如果有员工离职（例如，通过管理后台离职成员、调用删除用户 API），则会触发该事件。
 
 
 ## 前提条件

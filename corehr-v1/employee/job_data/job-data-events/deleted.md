@@ -8,7 +8,7 @@ updateTime: "1725006771000"
 
 目前以下场景会触发事件：
 - 调用[【删除任职信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/job_data/delete)接口
-- 人事系统【删除任职】【删除兼职】功能{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=job_data&event=deleted)
+- 人事系统【删除任职】【删除兼职】功能
 
 
 ## 事件

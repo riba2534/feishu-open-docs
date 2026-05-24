@@ -6,7 +6,7 @@ updateTime: "1721042512000"
 
 # 试用期状态变更
 
-当试用期记录状态发生变更时，触发该事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v2&resource=probation&event=updated)
+当试用期记录状态发生变更时，触发该事件。
 
 
 ## 事件

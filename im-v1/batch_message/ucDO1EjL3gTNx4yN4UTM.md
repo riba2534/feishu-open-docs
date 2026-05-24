@@ -57,9 +57,8 @@ updateTime: "1772537016000"
 
 ### 请求体示例
 
-:::note
+> **Note**
 批量发送消息的内容为 JSON 结构，不需要转义。
-:::
 
 #### 文本消息
 ```json
@@ -174,9 +173,8 @@ updateTime: "1772537016000"
 
 #### 卡片消息
 
-:::note
+> **Note**
 卡片消息的请求体需使用 `card` 参数，不使用 `content` 字段。
-:::
 
 - 使用[卡片 JSON](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-structure) 发送
 
@@ -411,8 +409,6 @@ ErrPath 示例说明: ROOT -> elements -> [2](tag: chart)
    
 
   
-
-:::
 
 
 更多错误码信息，参见[通用错误码](https://open.larkoffice.com/document/ukTMukTMukTM/ugjM14COyUjL4ITN)。

@@ -6,7 +6,7 @@ updateTime: "1728531078000"
 
 # 删除帖子
 
-公司圈用户删除帖子时触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=moments&version=v1&resource=post&event=deleted)
+公司圈用户删除帖子时触发此事件。
 
 
 ## 事件

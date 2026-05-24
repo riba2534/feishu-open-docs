@@ -117,9 +117,8 @@ updateTime: "1712716165000"
 - `COUNT`：日程重复的次数。
 - `UNTIL`：日程重复的最后时间。
 - `BYDAY`：日程重复的特定日期，例如 `FREQ=WEEKLY;BYDAY=MO` 表示每周一重复。
-:::note
+> **Note**
 `COUNT` 和 `UNTIL` 不能同时出现在 `RRULE` 中。
-:::
 
 ### 例外日程
 

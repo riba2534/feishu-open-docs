@@ -54,9 +54,8 @@ updateTime: "1748920697000"
 
 ## 响应
 
-:::note
+> **Note**
 文件类型可通过响应头（Response Header）中的 `Content-Type` 字段获取。
-:::
 
 HTTP状态码为 200 时，表示成功
 

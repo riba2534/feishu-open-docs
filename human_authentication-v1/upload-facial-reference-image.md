@@ -6,10 +6,8 @@ updateTime: "1730444402000"
 
 # 上传人脸基准图片
 无源人脸比对流程，开发者后台通过调用此接口将基准图片上传到飞书后台，做检测时的对比使用。
-::: note
+> **Note**
 无源人脸比对接入需申请白名单，接入前请联系飞书开放平台工作人员，邮箱：open-platform@bytedance.com。
-:::
-
 
 ## 请求
 
@@ -32,9 +30,8 @@ updateTime: "1730444402000"
 |--|-----|--|----|--|
 |open_id|string|否|用户应用标识, 与employee_id二选其一 | URL 参数
 |employee_id|string|否|用户租户标识, 与open_id二选其一 | URL 参数
-::: note
+> **Note**
 `open_id`和`employee_id`（也称`user_id`）的获取方式可以参考文档：[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)
-:::
 
 ### 请求体
 |参数|格式|必须|说明|类型

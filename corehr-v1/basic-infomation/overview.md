@@ -17,7 +17,7 @@ updateTime: "1736253798000"
 
 ### 元数据相关接口
 
-元数据相关接口为获取飞书人事对象列表以及具体字段（如下图）的方式，通过元数据相关接口可以实现字段的查询，修改枚举等工作。详细方式参见[如何通过 OpenAPI 维护自定义字段](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/how-to)。同时飞书人事大部分的对象都是基于元数据搭建的，因此该接口会返回所有租户内部对象的信息，不仅仅是人员档案配置的信息。
+元数据相关接口为获取飞书人事对象列表以及具体字段（如下图）的方式，通过元数据相关接口可以实现字段的查询，修改枚举等工作。详细方式参见[如何通过 OpenAPI 维护自定义字段](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/how-to)。同时飞书人事大部分的对象都是基于元数据搭建的，因此该接口会返回所有租户内部对象的信息，不仅仅是人员档案配置的信息。
 ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/750dad59883c6e2c1ebcde9c4871d3c4_HnLUPEbdS0.png?height=2486&lazyload=true&width=3762)
 ### 其他基础数据相关接口
 

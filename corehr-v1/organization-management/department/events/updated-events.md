@@ -6,7 +6,7 @@ updateTime: "1738929292000"
 
 # 【事件】更新部门
 
-飞书人事中「部门信息被更新」时将触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=department&event=updated)
+飞书人事中「部门信息被更新」时将触发此事件。
 
 
 > **Warning**: - **使用场景**：此事件为无序事件（创建有上下级关系的部门创建之后，上下级部门事件可能乱序），若对事件顺序无依赖则可以使用V1版本事件，否则请使用[【更新部门事件V2】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/department/events/updated)

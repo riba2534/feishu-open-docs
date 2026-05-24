@@ -6,7 +6,7 @@ updateTime: "1729741499000"
 
 # 创建工单
 
-可监听服务台的工单创建事件。需使用订阅接口订阅：[事件订阅](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/helpdesk-v1/event/subscribe){使用示例}(url=/api/tools/api_explore/api_explore_config?project=helpdesk&version=v1&resource=ticket&event=created)
+可监听服务台的工单创建事件。需使用订阅接口订阅：[事件订阅](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/helpdesk-v1/event/subscribe)
 
 
 > **Tip**: 服务台同一个工单存在机器人阶段和人工阶段，从机器人阶段转人工后，不会生成新的工单，而是变更原工单的stage。如果监听工单变更，可以订阅[工单变更事件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/helpdesk-v1/ticket/events/updated)

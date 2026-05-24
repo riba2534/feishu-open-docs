@@ -140,9 +140,8 @@ $signature = hash("sha256", $timestamp . $nonce . $encrypt_key . $body);
 
 **Python 3**
 
-:::note
+> **Note**
 请先执行 `pip install pycryptodome` 以支持引入 AES 方法。
-:::
 
 ```python
 import hashlib

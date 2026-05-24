@@ -6,7 +6,7 @@ updateTime: "1762917891000"
 
 # 设备信息变更事件
 
-使用该接口，可以订阅接收设备管理变更记录通知，包含设备新增、设备删除、设备归属变更、可信状态变更、设备特征如生产序列号、硬盘序列号等相关信息发生变化时事件通知{使用示例}(url=/api/tools/api_explore/api_explore_config?project=security_and_compliance&version=v2&resource=device_record&event=device_change_event)
+使用该接口，可以订阅接收设备管理变更记录通知，包含设备新增、设备删除、设备归属变更、可信状态变更、设备特征如生产序列号、硬盘序列号等相关信息发生变化时事件通知
 
 
 ## 事件

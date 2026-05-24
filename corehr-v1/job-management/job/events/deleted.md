@@ -6,7 +6,7 @@ updateTime: "1757498753000"
 
 # 【事件】删除职务
 
-飞书人事中「职务被删除」时将触发此事件。{使用示例}(url=/api/tools/api_explore/api_explore_config?project=corehr&version=v1&resource=job&event=deleted)
+飞书人事中「职务被删除」时将触发此事件。
 
 
 > **Warning**: 职务删除后，无法通过查询接口查询信息

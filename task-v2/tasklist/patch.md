@@ -18,8 +18,8 @@ updateTime: "1699520840000"
 更新清单所有者（owner）时，如果该成员已经是清单的“可编辑”或者“可阅读”角色，则该成员将直接升级为所有者角色，自动从清单的成员列表中消失。这是因为同一个用户在同一个清单中只能有一个角色。同时，支持使用`origin_owner_to_role`字段将原有所有者变为可编辑/可阅读角色或者直接退出清单。
 
 该接口不能用于更新清单的成员和增删清单中的任务。
-* 如要增删清单中的成员，可以使用[添加清单成员](/ssl:ttdoc:/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist/add_members)和[移除清单成员](/ssl:ttdoc:/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist/remove_members)接口。
-* 如要增删清单中的任务，可以使用[任务加入清单](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_tasklist)和[任务移出清单]( /ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/remove_tasklist)接口。
+* 如要增删清单中的成员，可以使用[添加清单成员](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist/add_members)和[移除清单成员](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist/remove_members)接口。
+* 如要增删清单中的任务，可以使用[任务加入清单](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_tasklist)和[任务移出清单](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/remove_tasklist)接口。
 
 
 > **Tip**: 更新清单名字需要清单的编辑权限。

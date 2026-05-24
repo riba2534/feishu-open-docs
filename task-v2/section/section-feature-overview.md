@@ -23,14 +23,14 @@ updateTime: "1691405466000"
 
 ## 常规使用
 
-* 使用[创建自定义分组](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/section/create)创建自定义分组。
-* 使用[获取自定义分组详情](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/section/get)可以查看某个自定义分组的GUID，名称，所属资源，创建人等信息。
-* 使用[更新自定义分组](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/section/patch)可以更新自定义分组的名称和在当前资源下的位置。
-* 使用[删除自定义分组](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/section/delete)可以将该自定义分组删除。如该自定义分组下包含多个任务，则这些任务会被挪到当前的资源的默认分组下。默认分组不可以被删除。
-* 使用[获取自定义分组任务列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/section/tasks)获取某个资源下的所有自定义分组。
-* 使用[获取自定义分组任务列表](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/section/tasks)获取某个资源下的某个特定分组内部的任务列表。该接口支持简单的过滤。
+* 使用[创建自定义分组](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/section/create)创建自定义分组。
+* 使用[获取自定义分组详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/section/get)可以查看某个自定义分组的GUID，名称，所属资源，创建人等信息。
+* 使用[更新自定义分组](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/section/patch)可以更新自定义分组的名称和在当前资源下的位置。
+* 使用[删除自定义分组](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/section/delete)可以将该自定义分组删除。如该自定义分组下包含多个任务，则这些任务会被挪到当前的资源的默认分组下。默认分组不可以被删除。
+* 使用[获取自定义分组任务列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/section/tasks)获取某个资源下的所有自定义分组。
+* 使用[获取自定义分组任务列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/section/tasks)获取某个资源下的某个特定分组内部的任务列表。该接口支持简单的过滤。
 
-如要将任务添加到某个清单的某个自定义分组里，可以使用[任务加入清单](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_tasklist)接口。如果想将清单中的任务挪动到某个自定义分组，可以在调用该接口时保持`tasklist_guid`不变，只改变`section_guid`即可实现。“将任务移出自定义分组“实际上等价于将该任务添加到同一个资源下的其他自定义分组中。因为同一个资源下，一个任务必须属于某个自定义分组。如不希望一个任务进入任何一个用户创建的自定义分组，则可以将其添加到默认的自定义分组中。
+如要将任务添加到某个清单的某个自定义分组里，可以使用[任务加入清单](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_tasklist)接口。如果想将清单中的任务挪动到某个自定义分组，可以在调用该接口时保持`tasklist_guid`不变，只改变`section_guid`即可实现。“将任务移出自定义分组“实际上等价于将该任务添加到同一个资源下的其他自定义分组中。因为同一个资源下，一个任务必须属于某个自定义分组。如不希望一个任务进入任何一个用户创建的自定义分组，则可以将其添加到默认的自定义分组中。
 
 ## 自定义分组和分组的关系是什么？
 “分组”（Group）是指按照任务的某个属性对任务进行聚合。而自定义分组（Section）是指用户自己手工维护的任务归类。简单来说，自定义分组是多种分组形式中的一种。用户可以选择使用“自定义分组”对任务进行分组展示。

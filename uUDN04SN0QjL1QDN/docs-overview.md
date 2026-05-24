@@ -24,11 +24,11 @@ updateTime: "1758183950000"
 
 ![Frame 12.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/4abef565f7dad55059945afb2a895f23_LwEvLXgSp2.png?height=757&lazyload=true&width=1640)
 
-:::warning
+> **Warning**
 - 根据使用[访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)的不同 **云空间** 分为 **应用云空间**（tenant_access_token）和 **个人云空间**（user_access_token），**应用云空间** 无法通过UI界面管理，只能通过[文件管理](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/files/guide/introduction)API管理，参考下一节接入流程「**访问应用自有资源**」。
 - 应用拥有独立的**应用云空间**，包含**文件夹**、**文件**、**文档**、**电子表格**和**多维表格**等资源。
 
-:::
+
 资源的定义如下：
 
 | 资源 | 标识 | 资源定义 |

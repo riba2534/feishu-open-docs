@@ -153,7 +153,7 @@ updateTime: "1699520884000"
 | 400 | 1470400 | 请求参数错误，如提供的清单GUID不合法。 | 错误原因见返回的msg提示的信息。 |
 | 404 | 1470404 | 清单不存在或者已删除。 | 确认要添加成员的清单是否存在或已删除。 |
 | 500 | 1470500 | 服务器错误。 | 尝试重试调用。如持续失败，请联系支持人员进行反馈。 |
-| 400 | 1470612 | 清单成员数量超限。 | 调用[获取清单详情](/ssl:ttdoc:/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist/get)接口确认清单成员数量。 |
+| 400 | 1470612 | 清单成员数量超限。 | 调用[获取清单详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist/get)接口确认清单成员数量。 |
 | 403 | 1470403 | 缺少清单的编辑权限。 | 检查调用身份是否有清单的编辑权限。详情见[清单功能概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist/overview)中的“清单是如何鉴权的？“章节。 |
 
 

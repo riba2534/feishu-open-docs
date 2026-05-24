@@ -15,9 +15,8 @@ updateTime: "1698916488000"
 >   [新版本>>](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/copy)
 
 
-:::note
+> **Note**
 该接口不支持并发创建，且调用频率上限为 5QPS 且 10000次/天
-:::
 
 ## 请求
 
@@ -36,9 +35,9 @@ updateTime: "1698916488000"
 | Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
 
-::: note
+> **Note**
 关于云文档接口的 AccessToken 调用说明详见 [云文档接口快速入门](https://open.larkoffice.com/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN)
-:::
+
 <br>
 
 ### 路径参数
