@@ -61,7 +61,7 @@ export default defineConfig({
   cleanUrls: true,
   ignoreDeadLinks: true,
   lastUpdated: true,
-  srcExclude: ['README.md', 'CLAUDE.md'],
+  srcExclude: ['README.md', 'CLAUDE.md', 'INDEX.md'],
 
   head: [
     ['meta', { name: 'theme-color', content: '#2c84e8' }],

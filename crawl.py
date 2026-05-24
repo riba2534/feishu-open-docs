@@ -255,7 +255,8 @@ async def download_all_docs():
 
 
 def generate_index(server_api_node: dict):
-    """Phase 5: Generate README.md index file."""
+    """Phase 5: Generate INDEX.md (full document tree). README.md is reserved
+    for the project's hand-written description."""
     lines = [
         "# 飞书开放平台 Server API 文档",
         "",
@@ -297,7 +298,7 @@ def generate_index(server_api_node: dict):
         for doc in failed_docs:
             lines.append(f"- `{doc['fullPath']}` — {doc.get('error', 'unknown')}")
 
-    readme_path = OUTPUT_DIR / "README.md"
+    readme_path = OUTPUT_DIR / "INDEX.md"
     readme_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"Generated {readme_path}")
 
@@ -305,8 +306,8 @@ def generate_index(server_api_node: dict):
 def verify():
     """Phase 6: Verify results."""
     md_files = list(OUTPUT_DIR.rglob("*.md"))
-    # Exclude README.md from count
-    doc_files = [f for f in md_files if f.name != "README.md"]
+    # Exclude project files from count
+    doc_files = [f for f in md_files if f.name not in ("README.md", "INDEX.md", "CLAUDE.md", "index.md")]
     empty_files = [f for f in doc_files if f.stat().st_size < 50]
 
     print(f"\n=== Verification ===")

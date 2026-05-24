@@ -10,7 +10,7 @@ const EXCLUDED_DIRS = new Set([
   '.git',
   'node_modules',
 ])
-const EXCLUDED_FILES = new Set(['README.md', 'CLAUDE.md', 'index.md'])
+const EXCLUDED_FILES = new Set(['README.md', 'CLAUDE.md', 'INDEX.md', 'index.md'])
 
 // 48 个一级目录的中文名
 export const TOP_DIR_LABELS: Record<string, string> = {
