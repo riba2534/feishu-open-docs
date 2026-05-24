@@ -29,7 +29,7 @@ updateTime: "1734503081000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `im:chat` 获取与更新群组信息 `im:chat:moderation:write_only` 操作群发言权限 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -114,7 +114,7 @@ updateTime: "1734503081000"
 | 400 | 232015 | Your request specifies a member_id_type which is NOT supported. | 无效的 user_id_type（或 member_id_type），请检查参数取值是否正确。参数详细说明可参考具体 API 文档内提供的参数描述。 |
 | 400 | 232017 | No Permission: If the operator is NOT owner or creator with the scope, the operator can NOT complete the request. | 调用接口的操作者在群组中不具备群主、群创建者等管理身份，无法操作。 - 如果以用户身份（user_access_token）调用本接口，则该用户必须是群组的群主，才可以更新群发言权限。 - 如果以应用身份（tenant_access_token）调用本接口，则该应用机器人需要符合以下任一情况才可以更新群发言权限。     - 机器人是群组的群主。     - 机器人是群组的创建者、具备 **更新应用所创建群的群信息**（im:chat:operate_as_owner） 权限，且仍在群组内。 |
 | 400 | 232019 | The request has been rate limited. | 触发群限流，请控制请求的速度，详情参见[频控策略](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)。 |
-| 400 | 232025 | Bot ability is not activated. | 应用未启用机器人能力。你需要登录[开发者后台](https://open.feishu.cn/app)，在应用详情页的 **应用能力** > **添加应用能力** 页面内，添加 **机器人** 能力，并发布应用使配置生效。具体操作参见[机器人能力](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
+| 400 | 232025 | Bot ability is not activated. | 应用未启用机器人能力。你需要登录[开发者后台](https://open.feishu.cn/app)，在应用详情页的 **应用能力** &gt; **添加应用能力** 页面内，添加 **机器人** 能力，并发布应用使配置生效。具体操作参见[机器人能力](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
 | 400 | 232033 | The operator or invited bots does NOT have the authority to manage external chats without the scope. | 当前被操作的群为外部群，暂不支持操作外部群。只有开启对外共享能力的机器人支持外部群，详情参见[机器人支持外部群和外部用户单聊](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/develop-robots/add-bot-to-external-group)。 |
 | 400 | 232034 | The app is unavailable or inactivated by the tenant. | 应用在本租户下未安装或未启用。需要先安装应用，再使用应用调用接口。 |
 | 400 | 232060 | This chat is banned. | 群聊被禁言，如有疑问请咨询[技术支持](https://applink.feishu.cn/TLJsX982)。 |

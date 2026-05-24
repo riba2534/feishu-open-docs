@@ -18,7 +18,7 @@ updateTime: "1689924100000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `application:application:self_manage` 管理应用自身资源 `admin:app.info:readonly` 获取应用信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -32,7 +32,7 @@ updateTime: "1689924100000"
 
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
-| `app_id` | `string` | 应用的 AppID，可以在[开发者后台](https://open.feishu.cn/app) > **凭证与基础信息**页查看。 * 仅查询本应用信息时，可填应用自身AppID。<br>* 当值为其他应用的App ID时，必须申请以下权限：`admin:app.info:readonly` 获取应用信息<br>**示例值**："cli_a3axxx01b" |
+| `app_id` | `string` | 应用的 AppID，可以在[开发者后台](https://open.feishu.cn/app) &gt; **凭证与基础信息**页查看。 * 仅查询本应用信息时，可填应用自身AppID。<br>* 当值为其他应用的App ID时，必须申请以下权限：`admin:app.info:readonly` 获取应用信息<br>**示例值**："cli_a3axxx01b" |
 
 
 ### 查询参数

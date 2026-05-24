@@ -37,7 +37,7 @@ updateTime: "1778137701000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `employee_type` | `string` | 是 | 响应体中 user_id 的员工 ID 类型。如果没有后台管理权限，可使用[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)<br>可选值有： 1. employee_id：员工 employee ID，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的用户 ID 2. employee_no：员工工号，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的工号<br>**示例值**：employee_id |
+| `employee_type` | `string` | 是 | 响应体中 user_id 的员工 ID 类型。如果没有后台管理权限，可使用[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)<br>可选值有： 1. employee_id：员工 employee ID，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) &gt; 组织架构 &gt; 成员与部门 &gt; 成员详情中的用户 ID 2. employee_no：员工工号，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) &gt; 组织架构 &gt; 成员与部门 &gt; 成员详情中的工号<br>**示例值**：employee_id |
 | `dept_type` | `string` | 是 | 响应体中 department_ids 的部门 ID 的类型<br>可选值有： 1. open_id：暂时只支持部门的 openid。具体概念请参考[部门资源介绍](https://open.larkoffice.com/document/server-docs/contact-v3/department/field-overview)中的open_department_id<br>**示例值**：open_id |
 | `page_size` | `int` | 否 | 分页大小<br>**示例值**：10<br>**默认值**：`10`<br>**数据校验规则**：<br>- 取值范围：`1` ～ `50` |
 | `page_token` | `string` | 否 | 分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果<br>**示例值**：92xKiuWrBCSweSZJBSTpag%3D%3D |

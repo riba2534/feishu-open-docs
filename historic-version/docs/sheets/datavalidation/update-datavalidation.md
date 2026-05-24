@@ -44,11 +44,11 @@ updateTime: "1755251560000"
 | --- | --- | --- | --- |
 | dataValidationType | string | 是 | 数据验证的类型。支持下拉列表，请填写 "list"。 |
 | dataValidation | / | 是 | 下拉列表规则属性 |
-| &nbsp;&nbsp;└ conditionValues | array<string> | 是 | 下拉列表选项的值            **数据校验规则**： - 单个值需为字符串类型且不能包含 "," - 单个值的长度不可超过 100 字节 - 选项值的个数不可超过 500 个        **示例值**：["2", "89", "3","2"] |
+| &nbsp;&nbsp;└ conditionValues | `array<string>` | 是 | 下拉列表选项的值            **数据校验规则**： - 单个值需为字符串类型且不能包含 "," - 单个值的长度不可超过 100 字节 - 选项值的个数不可超过 500 个        **示例值**：["2", "89", "3","2"] |
 | &nbsp;&nbsp;└ options | / | 否 | 下拉选项其它配置，包括是否支持多选、是否设置下拉选项样式等。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ multipleValues | bool | 否 | 是否支持多选选项。可选值：            - false：不支持多选 - true：支持多选            **默认值**：false，即不支持多选选项 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ highlightValidData | bool | 否 | 是否为下拉选项设置颜色。可选值：            - false：不设置颜色 - true：为下拉选项设置颜色。需进一步配置 colors 参数            **默认值**：false，即不设置颜色 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ colors | array<string> | 否 | 指定下拉选项的颜色。格式为 RGB 十六进制，如 "#fffd00"。当 `highlightValidData` 为 true 时，该参数必填。颜色将与 conditionValues 中的值按顺序一一对应。<br>**示例值**：["#1FB6C1", "#F006C2", "#FB16C3","#FFB6C1"] |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ colors | `array<string>` | 否 | 指定下拉选项的颜色。格式为 RGB 十六进制，如 "#fffd00"。当 `highlightValidData` 为 true 时，该参数必填。颜色将与 conditionValues 中的值按顺序一一对应。<br>**示例值**：["#1FB6C1", "#F006C2", "#FB16C3","#FFB6C1"] |
 
 ### 请求体示例
 
@@ -97,11 +97,11 @@ updateTime: "1755251560000"
 | &nbsp;&nbsp;└ dataValidation | / | 下拉列表规则的属性 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ dataValidationId | int | 下拉列表的 ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ dataValidationType | string | 数据验证的类型。下拉列表为 "list"。 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ conditionValues | array<string> | 下拉列表选项的值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ conditionValues | `array<string>` | 下拉列表选项的值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ options | / | 下拉选项其它配置，包括是否支持多选、是否设置下拉选项样式等。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ multipleValues | bool | 是否支持多选选项。可选值： - false：不支持多选 - true：支持多选 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ highlightValidData | bool | 是否为下拉选项设置颜色。可选值： - false：不设置颜色 - true：为下拉选项设置颜色 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ colorValueMap | map<string,string> | 指定的下拉选项的颜色。格式为 RGB 十六进制，如 "#fffd00"。颜色将与 conditionValues 中的值按顺序一一对应。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ colorValueMap | `map<string,string>` | 指定的下拉选项的颜色。格式为 RGB 十六进制，如 "#fffd00"。颜色将与 conditionValues 中的值按顺序一一对应。 |
 
 
   

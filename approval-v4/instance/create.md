@@ -36,7 +36,7 @@ updateTime: "1747194126000"
 | `user_id` | `string` | 否 | 审批发起人的 user_id，与 open_id 必须传入其中一个。如果传入了 user_id 则优先使用 user_id。获取方式参考[如何获取用户的 User ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)。<br>**示例值**："f7cb567e" |
 | `open_id` | `string` | 否 | 审批发起人的 open_id，与 user_id 必须传入其中一个。如果传入了 user_id 则优先使用 user_id。获取方式参考[如何获取用户的 Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)<br>**示例值**："ou_3cda9c969f737aaa05e6915dce306cb9" |
 | `department_id` | `string` | 否 | 审批发起人所属部门 ID。如果用户只属于一个部门，可以不填。如果用户属于多个部门，不填值则默认选择部门列表第一个部门。获取方式参见[部门 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/field-overview#9c02ed7a)。<br>**说明**：<br>- 不支持填写根部门。 - 需填写 department_id 类型的部门 ID。<br>**示例值**："9293493ccacbdb9a" |
-| `form` | `string` | 是 | 填写的审批表单控件值，JSON 数组，传值时需要压缩转义为字符串。各控件值的参数说明参考[审批实例表单控件参数](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/approval-instance-form-control-parameters)。<br>**示例值**："[{\"id\":\"111\", \"type\": \"input\", \"value\":\"test\"}]" |
+| `form` | `string` | 是 | 填写的审批表单控件值，JSON 数组，传值时需要压缩转义为字符串。各控件值的参数说明参考[审批实例表单控件参数](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/approval-instance-form-control-parameters)。<br>**示例值**："[`{\"id\":\"111\", \"type\": \"input\", \"value\":\"test\"}`]" |
 | `node_approver_user_id_list` | `node_approver\[\]` | 否 | 如果审批定义的流程中，有节点需要发起人自选审批人，则需要通过本参数填写对应节点的审批人（通过用户 user_id 指定审批人）。<br>**说明**：如果同时传入了 node_approver_user_id_list、node_approver_open_id_list，则取两个参数的并集生效审批人。 |
 | &nbsp;&nbsp;└ `key` | `string` | 否 | 节点的 node_id 或 custom_node_id，可调用 [查看指定审批定义](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/get) 接口，从接口返回的 node_list 参数中获取。<br>**示例值**："46e6d96cfa756980907209209ec03b64" |
 | &nbsp;&nbsp;└ `value` | `string\[\]` | 否 | 审批人列表，需传入用户 user_id。获取方式参考[如何获取用户的 User ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)。<br>**示例值**：["f7cb567e"] |
@@ -56,7 +56,7 @@ updateTime: "1747194126000"
 | `forbid_revoke` | `boolean` | 否 | 是否禁止撤销审批实例<br>**示例值**：false<br>**默认值**：`false` |
 | `i18n_resources` | `i18n_resource\[\]` | 否 | 国际化文案。目前只支持为表单的单行、多行文本控件赋值。 |
 | &nbsp;&nbsp;└ `locale` | `string` | 是 | 语言<br>**示例值**："zh-CN"<br>**可选值有**：<br>- `zh-CN`: 中文 - `en-US`: 英文 - `ja-JP`: 日文 |
-| &nbsp;&nbsp;└ `texts` | `i18n_resource_text\[\]` | 是 | 文案的 Key:Value。Key 需要以 @i18n@ 开头，并按照各个参数的要求传入 Value。<br>**说明**：该字段主要用于适配国际化，允许同时设置多个语言的文案，审批中心会根据实际用户当前的语音环境使用匹配的文案。如果没有设置用户当前的语音环境文案，则会使用默认的语言文案。<br>**示例值**：{ "@i18n@1": "权限申请", "@i18n@2": "OA审批", "@i18n@3": "Permission" } |
+| &nbsp;&nbsp;└ `texts` | `i18n_resource_text\[\]` | 是 | 文案的 Key:Value。Key 需要以 @i18n@ 开头，并按照各个参数的要求传入 Value。<br>**说明**：该字段主要用于适配国际化，允许同时设置多个语言的文案，审批中心会根据实际用户当前的语音环境使用匹配的文案。如果没有设置用户当前的语音环境文案，则会使用默认的语言文案。<br>**示例值**：`{ "@i18n@1": "权限申请", "@i18n@2": "OA审批", "@i18n@3": "Permission" }` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `key` | `string` | 是 | 文案 Key，需要和各个参数 Key 相匹配。<br>**示例值**："@i18n@1" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 文案 Value，即文案 Key 对应的参数值。<br>**示例值**："people" |
 | &nbsp;&nbsp;└ `is_default` | `boolean` | 是 | 是否为默认语言。默认语言需要包含所有所需的文案 Key，非默认语言如果 Key 不存在，则会使用默认语言代替。<br>**示例值**：true |

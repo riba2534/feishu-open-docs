@@ -21,7 +21,7 @@ updateTime: "1764644288000"
 | 接口频率限制 | [10 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `hire:application` 更新投递信息 `hire:application:readonly` 获取投递信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `hire:agency:readonly` 获取招聘猎头信息 `hire:agency_salary:readonly` 获取猎头填写的薪资 `hire:employee` 更新招聘员工信息 `hire:employee:readonly` 获取招聘员工信息 `hire:evaluation:readonly` 获取简历评估信息 `hire:interview:readonly` 获取面试信息 `hire:job:readonly` 获取职位信息 `hire:offer:readonly` 获取 offer 信息 `hire:offer_salary:readonly` 获取 Offer 薪酬 `hire:referral:readonly` 获取内推信息 `hire:site:readonly` 获取官网信息 `hire:talent:readonly` 获取人才信息 `hire:interview` 更新面试信息 `hire:agency` 更新招聘猎头信息 `hire:referral` 更新内推信息 `hire:job` 更新职位信息 `hire:site` 更新官网信息 `contact:user.employee_id:readonly` 获取用户 user ID `hire:talent` 更新人才信息 `hire:offer` 更新 offer 信息 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `hire:agency:readonly` 获取招聘猎头信息 `hire:agency_salary:readonly` 获取猎头填写的薪资 `hire:employee` 更新招聘员工信息 `hire:employee:readonly` 获取招聘员工信息 `hire:evaluation:readonly` 获取简历评估信息 `hire:interview:readonly` 获取面试信息 `hire:job:readonly` 获取职位信息 `hire:offer:readonly` 获取 offer 信息 `hire:offer_salary:readonly` 获取 Offer 薪酬 `hire:referral:readonly` 获取内推信息 `hire:site:readonly` 获取官网信息 `hire:talent:readonly` 获取人才信息 `hire:interview` 更新面试信息 `hire:agency` 更新招聘猎头信息 `hire:referral` 更新内推信息 `hire:job` 更新职位信息 `hire:site` 更新官网信息 `contact:user.employee_id:readonly` 获取用户 user ID `hire:talent` 更新人才信息 `hire:offer` 更新 offer 信息 |
 
 ### 请求头
 

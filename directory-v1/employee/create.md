@@ -12,7 +12,7 @@ updateTime: "1772099246000"
 
 > **Tip**: 注意：
 > - 只能在当前应用的通讯录授权范围内的部门下创建员工，如果要在根部门下创建员工，必须拥有全员权限。可以在开发者后台-应用详情-权限管理中查看通讯录授权范围。
-> - 本接口中支持的user_access_token 默认为管理员用户，将校验管理员管理范围。当用户有多个管理员身份均可创建员工时，管理员管理范围取最大集。管理员权限可查看帮助中心文档：[管理员创建管理员角色及分配权限](https://www.feishu.cn/hc/zh-CN/articles/360043495213-%E7%AE%A1%E7%90%86%E5%91%98%E5%88%9B%E5%BB%BA%E7%AE%A1%E7%90%86%E5%91%98%E8%A7%92%E8%89%B2%E5%8F%8A%E5%88%86%E9%85%8D%E6%9D%83%E9%99%90#tabs0|lineguid-dU31C)
+&gt; - 本接口中支持的user_access_token 默认为管理员用户，将校验管理员管理范围。当用户有多个管理员身份均可创建员工时，管理员管理范围取最大集。管理员权限可查看帮助中心文档：[管理员创建管理员角色及分配权限](https://www.feishu.cn/hc/zh-CN/articles/360043495213-%E7%AE%A1%E7%90%86%E5%91%98%E5%88%9B%E5%BB%BA%E7%AE%A1%E7%90%86%E5%91%98%E8%A7%92%E8%89%B2%E5%8F%8A%E5%88%86%E9%85%8D%E6%9D%83%E9%99%90#tabs0|lineguid-dU31C)
 > - 拥有本接口权限后，即可写入员工信息。但创建员工后仅返回应用有权限的字段数据，如果需要指定字段请按照文档中的描述申请对应权限。
 > - 本接口仅对自建应用开放。
 > - 创建出来的是在职状态的员工。
@@ -28,7 +28,7 @@ updateTime: "1772099246000"
 | 接口频率限制 | [5 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `directory:employee.create:write` 创建员工 `directory:employee:write` 创建、更新、离职、恢复员工 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `directory:employee.base.external_id:read` 查看员工自定义 ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `directory:employee.base.external_id:read` 查看员工自定义 ID |
 
 ### 请求头
 
@@ -42,7 +42,7 @@ updateTime: "1772099246000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `employee_id_type` | `string` | 否 | 用户 ID 类型<br>**示例值**：open_id<br>**可选值有**：<br>- `open_id`: 标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid) - `union_id`: 标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id) - `employee_id`: 企业内在职员工的唯一标识。支持自定义，未自定义时系统自动生成。ID支持修改。 获取employee_id的方式：   - 企业管理员在 管理后台 > 组织架构 > 成员与部门 页面，点击 成员详情，查询员工ID   - 通过 [批量获取员工列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/directory-v1/employee/filter) 的接口，通过手机号或邮箱查询员工ID。<br>**默认值**：`open_id`<br>**当值为 `employee_id`，字段权限要求**： `directory:employee.base.external_id:read` 查看员工自定义 ID |
+| `employee_id_type` | `string` | 否 | 用户 ID 类型<br>**示例值**：open_id<br>**可选值有**：<br>- `open_id`: 标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid) - `union_id`: 标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id) - `employee_id`: 企业内在职员工的唯一标识。支持自定义，未自定义时系统自动生成。ID支持修改。 获取employee_id的方式：   - 企业管理员在 管理后台 &gt; 组织架构 &gt; 成员与部门 页面，点击 成员详情，查询员工ID   - 通过 [批量获取员工列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/directory-v1/employee/filter) 的接口，通过手机号或邮箱查询员工ID。<br>**默认值**：`open_id`<br>**当值为 `employee_id`，字段权限要求**： `directory:employee.base.external_id:read` 查看员工自定义 ID |
 | `department_id_type` | `string` | 否 | 此次调用中使用的部门ID的类型<br>**示例值**：open_department_id<br>**可选值有**：<br>- `department_id`: 用来标识租户内一个唯一的部门 - `open_department_id`: 用来在具体某个应用中标识一个部门，同一个部门 在不同应用中的 open_department_id 相同。<br>**默认值**：`open_department_id` |
 
 
@@ -55,7 +55,7 @@ updateTime: "1772099246000"
 | &nbsp;&nbsp;└ `name` | `upsert_name` | 否 | 姓名 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n_text` | 是 | 员工的姓名，最多可输入 64 字 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `default_value` | `string` | 是 | 默认值 最小长度：1字符<br>**示例值**："张三" |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `i18n_value` | `map<string, string>` | 否 | 国际化值，key为zh_cn, ja_jp, en_us, value为对应的值。<br>**示例值**：{"zh_cn":"张三"} |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `i18n_value` | `map<string, string>` | 否 | 国际化值，key为zh_cn, ja_jp, en_us, value为对应的值。<br>**示例值**：`{"zh_cn":"张三"}` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `another_name` | `string` | 否 | 别名，最多可输入 64 字<br>**示例值**："jack" |
 | &nbsp;&nbsp;└ `mobile` | `string` | 否 | 员工的手机号，最多可输入 255 字。注意： 1. 在企业内的在职员工中不可重复。 2. 未认证企业仅支持添加中国大陆手机号，通过飞书认证的企业允许添加海外手机号。 3. 国际电话区号前缀中必须包含加号 +。<br>**示例值**："13011111111" 或 "+8613011111111" |
 | &nbsp;&nbsp;└ `custom_employee_id` | `string` | 否 | 企业内在职员工的唯一标识。支持自定义，未自定义时系统自动生成。ID支持修改。注意： 1. 在职员工的ID不可重复 2. ID不能包含空格<br>**示例值**："u273y71<br>**数据校验规则**：<br>长度范围：1-64字符" |
@@ -74,7 +74,7 @@ updateTime: "1772099246000"
 | &nbsp;&nbsp;└ `work_place_id` | `string` | 否 | 工作地点ID<br>**示例值**："eqwedas" |
 | &nbsp;&nbsp;└ `work_station` | `i18n_text` | 否 | 工位 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `default_value` | `string` | 是 | 默认值<br>**示例值**："张三" |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `i18n_value` | `map<string, string>` | 否 | 国际化值，key为zh_cn, ja_jp, en_us, value为对应的值<br>**示例值**：{"zh_cn":"张三"} |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `i18n_value` | `map<string, string>` | 否 | 国际化值，key为zh_cn, ja_jp, en_us, value为对应的值<br>**示例值**：`{"zh_cn":"张三"}` |
 | &nbsp;&nbsp;└ `job_number` | `string` | 否 | 工号。企业内在职员工的工号不可重复。<br>**示例值**："2845435<br>**数据校验规则：**<br>长度范围：0-255字符" |
 | &nbsp;&nbsp;└ `extension_number` | `string` | 否 | 分机号，最多可输入 99 字。企业内所有员工的分机号不可重复。<br>**示例值**："2845435" |
 | &nbsp;&nbsp;└ `join_date` | `string` | 否 | 入职日期<br>**示例值**："2022-10-10<br>**数据校验规则：**<br>长度范围：固定长度：10 个字符，固定格式：“yyyy-mm-dd”" |
@@ -84,11 +84,11 @@ updateTime: "1772099246000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `field_type` | `string` | 否 | 自定义字段类型<br>**示例值**："1"<br>**可选值有**：<br>- `1`: 多行文本 - `2`: 网页链接 - `3`: 枚举选项 - `4`: 人员 - `9`: 电话 - `10`: 多选枚举类型 - `11`: 人员列表 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `text_value` | `i18n_text` | 否 | 文本字段值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `default_value` | `string` | 是 | 默认值<br>最小长度：1字符<br>**示例值**："张三" |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `i18n_value` | `map<string, string>` | 否 | 国际化值，key为zh_cn, ja_jp, en_us, value为对应的值<br>**示例值**：{"zh_cn":"张三"} |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `i18n_value` | `map<string, string>` | 否 | 国际化值，key为zh_cn, ja_jp, en_us, value为对应的值<br>**示例值**：`{"zh_cn":"张三"}` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `url_value` | `url_value` | 否 | 网页链接字段值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `link_text` | `i18n_text` | 是 | 网页标题 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `default_value` | `string` | 是 | 默认值<br>长度范围：1-40字符<br>**示例值**："张三" |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `i18n_value` | `map<string, string>` | 否 | 国际化值，key为zh_cn, ja_jp, en_us, value为对应的值<br>**示例值**：{"zh_cn":"张三"} |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `i18n_value` | `map<string, string>` | 否 | 国际化值，key为zh_cn, ja_jp, en_us, value为对应的值<br>**示例值**：`{"zh_cn":"张三"}` |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `url` | `string` | 是 | 移动端网页链接<br>**示例值**："https://m.bytedance.com/afnasjfna" |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `pcurl` | `string` | 是 | 桌面端网页链接<br>**示例值**："http://www.fs.cn" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `enum_value` | `enum_value` | 否 | 枚举字段值 |

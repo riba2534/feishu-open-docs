@@ -29,7 +29,7 @@ updateTime: "1646892709000"
 
 | 参数       | 参数类型 | 必须 | 说明                                                         |
 | ---------- | -------- | ---- | ------------------------------------------------------------ |
-| room_ids  | array<string>      | 是   | 要获取的会议室ID列表 |
+| room_ids  | `array<string>`      | 是   | 要获取的会议室ID列表 |
 
 ### 请求体示例
 
@@ -52,11 +52,11 @@ updateTime: "1646892709000"
 | &nbsp;&nbsp;&nbsp;∟error_msg	      |string| 错误信息 |
 | room_id_to_customization      |-| 会议室ID-个性化配置的映射 |
 | ∟room_id	      |string| 会议室ID |
-| &nbsp;&nbsp;&nbsp;∟contact_ids	      |array<int64>| 准备会议室个性化的相关配置的人员ID列表 |
+| &nbsp;&nbsp;&nbsp;∟contact_ids	      |`array<int64>`| 准备会议室个性化的相关配置的人员ID列表 |
 | &nbsp;&nbsp;&nbsp;∟customization_data	      |-| 个性化配置数据 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟conditions	      |-| 问卷的显示条件，当条件满足时，该问卷才会出现让用户进行选择 |
   | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟custom_key	      |string| 该custom_key对应的index_key选中后，问卷才会显示 |
-  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟option_keys	      |array<string>| 所有的option都被选中后，问卷才会显示 |
+  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟option_keys	      |`array<string>`| 所有的option都被选中后，问卷才会显示 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟customization_type	      |int| 问卷的类型，1表示单选，2表示多选，3表示填空 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟index_key	      |string| 每个问卷的独立id |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∟input_content	      |string| 当type类型为填空时，该参数需要填入 |

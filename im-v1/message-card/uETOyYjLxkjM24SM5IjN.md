@@ -61,9 +61,9 @@ updateTime: "1754399895000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | chat_id | string | 是 | 目标群 ID。仅支持群模式为对话的普通群，不支持话题群。群 ID 获取方式参见[群 ID 说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-id-description)。    示例值：oc_5ad573a6411d72b8305fda3a9c1abcef |
-| open_id | string | 否 | 可见卡片的用户 open_id。ID 获取方式参考[如何获取 Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)。 **注意**：你仅需填写 `open_id`、`email`、或 `user_id` 其中之一，且三个字段不可同时为空。若填写多个，字段生效的顺序为 `open_id` > `user_id` > `email`。 推荐使用 `open_id` 字段。    示例值：ou_449b53ad6aee526f7ed311b216aabcef |
-| user_id | string | 否 | 可见卡片的用户 user_id。ID 获取方式参考[如何获取 User ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)。 **注意**：你仅需填写 `open_id`、`email`、或 `user_id` 其中之一，且三个字段不可同时为空。若填写多个，字段生效的顺序为 `open_id` > `user_id` > `email`。 推荐使用 `open_id` 字段。    **示例值**：gg895344 |
-| email | string | 否 | 可见卡片的用户邮箱地址。 **注意**：你仅需填写 `open_id`、`email`、或 `user_id` 其中之一，且三个字段不可同时为空。若填写多个，字段生效的顺序为 `open_id` > `user_id` > `email`。 推荐使用 `open_id` 字段。    **示例值**：zhangmin@feishu.com |
+| open_id | string | 否 | 可见卡片的用户 open_id。ID 获取方式参考[如何获取 Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)。 **注意**：你仅需填写 `open_id`、`email`、或 `user_id` 其中之一，且三个字段不可同时为空。若填写多个，字段生效的顺序为 `open_id` &gt; `user_id` &gt; `email`。 推荐使用 `open_id` 字段。    示例值：ou_449b53ad6aee526f7ed311b216aabcef |
+| user_id | string | 否 | 可见卡片的用户 user_id。ID 获取方式参考[如何获取 User ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)。 **注意**：你仅需填写 `open_id`、`email`、或 `user_id` 其中之一，且三个字段不可同时为空。若填写多个，字段生效的顺序为 `open_id` &gt; `user_id` &gt; `email`。 推荐使用 `open_id` 字段。    **示例值**：gg895344 |
+| email | string | 否 | 可见卡片的用户邮箱地址。 **注意**：你仅需填写 `open_id`、`email`、或 `user_id` 其中之一，且三个字段不可同时为空。若填写多个，字段生效的顺序为 `open_id` &gt; `user_id` &gt; `email`。 推荐使用 `open_id` 字段。    **示例值**：zhangmin@feishu.com |
 | msg_type | string | 是 | 消息的类型，固定取值 `interactive`。    **示例值**：interactive |
 | card | object | 是 | 消息卡片的内容。支持[卡片 JSON](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-v2-structure) 或[搭建工具](https://open.feishu.cn/cardkit?from=open_docs)构建的卡片模板。   - 要使用卡片 JSON，参考[卡片 JSON 结构](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-v2-structure)。示例值可参考下文的请求体示例。   - 要使用[搭建工具](https://open.feishu.cn/cardkit?from=open_docs)构建的卡片模板，你需传入 `type` 和 `data` 参数。详情参考下文示例。 |
 

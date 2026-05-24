@@ -109,7 +109,7 @@ updateTime: "1750920552000"
 | 200 | 20024 | App id in user_access_token or refresh_token diff with app id in app_access_token or tenant_access_token. Please keep the app id consistent | 请检查生成两个token的app是否为同一个 |
 | 200 | 20025 | Lack of app_id or app_secret in request | 缺失app_id或app_secret，请检查参数 |
 | 200 | 20028 | Invalid app id | 无效app_id，请检查参数 |
-| 200 | 20029 | Invalid redirect uri | redirect_uri 无效。排查方案： 1. 确保 Authorization 取值正确。 2. 确保[获取登录授权码 code](https://open.larkoffice.com/document/common-capabilities/sso/api/obtain-oauth-code) 时，设置的回调地址 redirect_uri 参数，已配置到开发者后台 > 应用详情页 > 安全设置 > 重定向 URL。 关于该报错的详细解决方案，参见[如何解决授权免登页面 20029 错误](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-resolve-the-authorization-page-20029-error)。 |
+| 200 | 20029 | Invalid redirect uri | redirect_uri 无效。排查方案： 1. 确保 Authorization 取值正确。 2. 确保[获取登录授权码 code](https://open.larkoffice.com/document/common-capabilities/sso/api/obtain-oauth-code) 时，设置的回调地址 redirect_uri 参数，已配置到开发者后台 &gt; 应用详情页 &gt; 安全设置 &gt; 重定向 URL。 关于该报错的详细解决方案，参见[如何解决授权免登页面 20029 错误](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-resolve-the-authorization-page-20029-error)。 |
 | 200 | 20035 | The app_id or app_secret passed is incorrect. Please check the value | 无效app_id 或 app_secret，请检查参数 |
 | 200 | 20036 | The grant_type passed is not supported | 无效grant_type，请与接口要求保持一致 |
 | 200 | 20039 | The user access token is not found. Please check the value | 查询不到user_access_token，请传有效参数 |

@@ -46,10 +46,10 @@ updateTime: "1767871208000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `index` | `string` | 否 | 序号<br>**示例值**："1" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `left` | `condition_value` | 否 | 左值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 否 | 左值类型，只支持 "metadataVariable"，表示字段<br>**示例值**："metadataVariable" |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `settings` | `string` | 否 | 字段具体值，以 JSONString 表示，格式：{"fieldPath":[{"fieldApiName": "字段名","objectApiName": "对象名"}]}<br>**示例值**："{\"fieldPath\":[{\"fieldApiName\": \"_id\",\"objectApiName\": \"_user\"}]}" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `settings` | `string` | 否 | 字段具体值，以 JSONString 表示，格式：`{"fieldPath":[{"fieldApiName": "字段名","objectApiName": "对象名"}`]}<br>**示例值**："`{\"fieldPath\":[{\"fieldApiName\": \"_id\",\"objectApiName\": \"_user\"}`]}" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `right` | `condition_value` | 否 | 右值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 否 | 右值类型，只支持 "constant"，表示常量<br>**示例值**："constant" |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `settings` | `string` | 否 | 常量具体值，以 JSONString 表示，格式：{"data":"常量具体值"}<br>**示例值**："{\"data\":\"123456\"}" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `settings` | `string` | 否 | 常量具体值，以 JSONString 表示，格式：`{"data":"常量具体值"}`<br>**示例值**："`{\"data\":\"123456\"}`" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `operator` | `string` | 否 | 操作符<br>**示例值**："equals" |
 | &nbsp;&nbsp;└ `logic_expression` | `string` | 否 | 逻辑关系<br>**示例值**："1 and 2" |
 | `order_by` | `sort\[\]` | 否 | 排序参数，通过 JSON 格式指定条件。其中， field 为参与排序字段，direction 为排序方向，多个条件按其在数组中的顺序生效。<br>**数据校验规则**：<br>- 长度范围：`0` ～ `256` |

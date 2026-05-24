@@ -49,7 +49,7 @@ updateTime: "1709724838000"
 | `rules` | `agent_skill_rule\[\]` | 否 | 技能rules |
 | &nbsp;&nbsp;└ `id` | `string` | 否 | rule id, 参考[获取客服技能rules](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/helpdesk-v1/agent_skill_rule/list) 用于获取rules options<br>**示例值**："test-skill-id" |
 | &nbsp;&nbsp;└ `selected_operator` | `int` | 否 | 运算符比较, 参考[客服技能运算符选项](https://open.larkoffice.com/document/ukTMukTMukTM/ucDOyYjL3gjM24yN4IjN/operator-options)<br>**示例值**：8 |
-| &nbsp;&nbsp;└ `operand` | `string` | 否 | rule 操作数的值<br>**示例值**："{\"selected_departments\":[{\"id\":\"部门ID\",\"name\":\"IT\"}]}" |
+| &nbsp;&nbsp;└ `operand` | `string` | 否 | rule 操作数的值<br>**示例值**："`{\"selected_departments\":[{\"id\":\"部门ID\",\"name\":\"IT\"}`]}" |
 | &nbsp;&nbsp;└ `category` | `int` | 否 | rule 类型，1-知识库，2-工单信息，3-用户飞书信息<br>**示例值**：3 |
 | `agent_ids` | `string\[\]` | 否 | 客服 ids<br>**示例值**：["ou_ea21d7f018e1155d960e40d33191f966"] |
 

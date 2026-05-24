@@ -22,7 +22,7 @@ updateTime: "1760409278000"
 | 接口频率限制 | [5 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:approval_groups.orgdraft_position_change:read` 获取组织架构调整中的岗位调整内容 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:position.direct_leader:read` 获取岗位的直线上级字段信息 `corehr:position.employee_type:read` 获取岗位的人员类型字段信息 `corehr:position.job:read` 获取岗位的职务字段信息 `corehr:position.job_family:read` 获取岗位的序列字段信息 `corehr:position.job_grade:read` 获取岗位的职等字段信息 `corehr:position.job_level:read` 获取岗位的职级字段信息 `corehr:position.working_hours_type:read` 获取岗位的工时制度字段信息 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:position.direct_leader:read` 获取岗位的直线上级字段信息 `corehr:position.employee_type:read` 获取岗位的人员类型字段信息 `corehr:position.job:read` 获取岗位的职务字段信息 `corehr:position.job_family:read` 获取岗位的序列字段信息 `corehr:position.job_grade:read` 获取岗位的职等字段信息 `corehr:position.job_level:read` 获取岗位的职级字段信息 `corehr:position.working_hours_type:read` 获取岗位的工时制度字段信息 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 

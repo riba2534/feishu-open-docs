@@ -24,7 +24,7 @@ updateTime: "1775548359000"
 | 事件类型 | contact.user.created_v3 |
 | 支持的应用类型 | custom,isv |
 | 权限要求             订阅该事件所需的权限，开启其中任意一项权限即可订阅 开启任一权限即可 | `contact:contact.base:readonly` 获取通讯录基本信息 `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:contact:access_as_app` 以应用身份访问通讯录 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:user.base:readonly` 获取用户基本信息 `contact:user.department:readonly` 获取用户组织架构信息 `contact:user.dotted_line_leader_info.read` 查看成员的虚线上级 ID `contact:user.employee:readonly` 获取用户受雇信息 `contact:user.employee_number:read` 查看成员工号 `contact:user.gender:readonly` 获取用户性别 `contact:user.job_level:readonly` 查询用户职级 `contact:user.employee_id:readonly` 获取用户 user ID `contact:user.phone:readonly` 获取用户手机号 `contact:user.email:readonly` 获取用户邮箱信息 `contact:user.job_family:readonly` 查询用户所属的工作序列 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:user.base:readonly` 获取用户基本信息 `contact:user.department:readonly` 获取用户组织架构信息 `contact:user.dotted_line_leader_info.read` 查看成员的虚线上级 ID `contact:user.employee:readonly` 获取用户受雇信息 `contact:user.employee_number:read` 查看成员工号 `contact:user.gender:readonly` 获取用户性别 `contact:user.job_level:readonly` 查询用户职级 `contact:user.employee_id:readonly` 获取用户 user ID `contact:user.phone:readonly` 获取用户手机号 `contact:user.email:readonly` 获取用户邮箱信息 `contact:user.job_family:readonly` 查询用户所属的工作序列 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 |
 | 推送方式 | `Webhook` |
 
 

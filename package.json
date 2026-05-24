@@ -1,0 +1,14 @@
+{
+  "name": "feishu-open-docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "飞书开放平台 Server API 中文文档镜像（VitePress 站点）",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "NODE_OPTIONS='--max-old-space-size=8192' vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.5.0"
+  }
+}

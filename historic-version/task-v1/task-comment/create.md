@@ -18,7 +18,7 @@ updateTime: "1689215606000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `task:comment` 查看、创建、修改、删除任务评论（历史版本） |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -47,7 +47,7 @@ updateTime: "1689215606000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `content` | `string` | 否 | 评论内容。<br>> **Info**: 评论内容和富文本评论内容同时存在时只使用富文本评论内容。<br>**示例值**："举杯邀明月，对影成三人"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `65536` 字符 |
+| `content` | `string` | 否 | 评论内容。<br>&gt; **Info**: 评论内容和富文本评论内容同时存在时只使用富文本评论内容。<br>**示例值**："举杯邀明月，对影成三人"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `65536` 字符 |
 | `parent_id` | `string` | 否 | 评论的父ID，创建评论时若不为空则为某条评论的回复，若为空则不是回复<br>**示例值**："6937231762296684564" |
 | `create_milli_time` | `string` | 否 | 评论创建的时间戳，单位为毫秒，用于展示，创建时不用填写<br>**示例值**："1657075055135" |
 | `rich_content` | `string` | 否 | 富文本评论内容。语法格式参见[Markdown模块](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/task-v1/markdown-module)<br>**示例值**："举杯邀明月，对影成三人"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `65536` 字符 |
@@ -75,7 +75,7 @@ updateTime: "1689215606000"
 | `msg` | `string` | 错误描述 |
 | `data` | `\-` | \- |
 | &nbsp;&nbsp;└ `comment` | `comment` | 返回创建好的任务评论 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `content` | `string` | 评论内容。<br>> **Info**: 评论内容和富文本评论内容同时存在时只使用富文本评论内容。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `content` | `string` | 评论内容。<br>&gt; **Info**: 评论内容和富文本评论内容同时存在时只使用富文本评论内容。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `parent_id` | `string` | 评论的父ID，创建评论时若不为空则为某条评论的回复，若为空则不是回复 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 评论ID，由飞书服务器发号 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `create_milli_time` | `string` | 评论创建的时间戳，单位为毫秒，用于展示，创建时不用填写 |

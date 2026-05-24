@@ -22,7 +22,7 @@ updateTime: "1753961050000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `approval:approval` 查看、创建、更新、删除审批应用相关信息 `approval:external_approval` 查看、创建、更新、删除三方审批定义相关信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -66,12 +66,12 @@ updateTime: "1753961050000"
 | &nbsp;&nbsp;└ `allow_batch_operate` | `boolean` | 否 | 是否支持批量审批。取值为 true 时，审批人在处理该定义下的审批任务时可以批量处理多个任务， 默认为false。<br>**示例值**：true |
 | &nbsp;&nbsp;└ `exclude_efficiency_statistics` | `boolean` | 否 | 审批流程数据是否不纳入效率统计，默认为false<br>**示例值**：true |
 | `viewers` | `approval_create_viewers\[\]` | 否 | 审批可见人列表，列表长度上限 200，只有在审批可见人列表内的用户，才可以在审批发起页看到该审批。若该参数不传值，则表示任何人不可见。 |
-| &nbsp;&nbsp;└ `viewer_type` | `string` | 否 | 可见人类型，生效优先级NONE>TENANT>指定范围<br>**示例值**："USER"<br>**可选值有**：<br>- `TENANT`: 租户内可见 - `DEPARTMENT`: 指定部门 - `USER`: 指定用户 - `NONE`: 任何人都不可见 |
+| &nbsp;&nbsp;└ `viewer_type` | `string` | 否 | 可见人类型，生效优先级NONE&gt;TENANT&gt;指定范围<br>**示例值**："USER"<br>**可选值有**：<br>- `TENANT`: 租户内可见 - `DEPARTMENT`: 指定部门 - `USER`: 指定用户 - `NONE`: 任何人都不可见 |
 | &nbsp;&nbsp;└ `viewer_user_id` | `string` | 否 | 当 viewer_type 取值为 USER 时，需指定用户 ID。ID 类型与查询参数 user_id_type 取值保持一致。<br>**示例值**："19a294c2" |
 | &nbsp;&nbsp;└ `viewer_department_id` | `string` | 否 | 当 viewer_type 取值为 DEPARTMENT 时，需指定部门 ID。ID 类型与查询参数 department_id_type 取值保持一致。<br>**示例值**："od-ac9d697abfa990b715dcc33d58a62a9d" |
 | `i18n_resources` | `i18n_resource\[\]` | 否 | 国际化文案 |
 | &nbsp;&nbsp;└ `locale` | `string` | 是 | 语言。<br>**示例值**："zh-CN"<br>**可选值有**：<br>- `zh-CN`: 中文 - `en-US`: 英文 - `ja-JP`: 日文 - `zh-HK`: 繁体中文（中国香港） - `zh-TW`: 繁体中文（中国台湾） - `de-DE`: 德语 - `es-ES`: 西班牙语 - `fr-FR`: 法语 - `id-ID`: 印度尼西亚语 - `it-IT`: 意大利语 - `ko-KR`: 韩语 - `pt-BR`: 葡萄牙语 - `th-TH`: 泰语 - `vi-VN`: 越南语 - `ms-MY`: 马来语 - `ru-RU`: 俄语 |
-| &nbsp;&nbsp;└ `texts` | `i18n_resource_text\[\]` | 是 | 文案的 Key:Value。Key 需要以 @i18n@ 开头，并按照各个参数的要求传入 Value。 	 **说明**：该字段主要用于适配国际化，允许同时设置多个语言的文案，审批中心会根据实际用户当前的语音环境使用匹配的文案。如果没有设置用户当前的语音环境文案，则会使用默认的语言文案。<br>**示例值**：{ "@i18n@1": "权限申请", "@i18n@2": "OA审批", "@i18n@3": "Permission" } |
+| &nbsp;&nbsp;└ `texts` | `i18n_resource_text\[\]` | 是 | 文案的 Key:Value。Key 需要以 @i18n@ 开头，并按照各个参数的要求传入 Value。 	 **说明**：该字段主要用于适配国际化，允许同时设置多个语言的文案，审批中心会根据实际用户当前的语音环境使用匹配的文案。如果没有设置用户当前的语音环境文案，则会使用默认的语言文案。<br>**示例值**：`{ "@i18n@1": "权限申请", "@i18n@2": "OA审批", "@i18n@3": "Permission" }` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `key` | `string` | 是 | 文案 Key，需要和各个参数 Key 相匹配。<br>**示例值**："@i18n@2" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 文案 Value，即文案 Key 对应的参数值。<br>**示例值**："people" |
 | &nbsp;&nbsp;└ `is_default` | `boolean` | 是 | 是否为默认语言。默认语言需要包含所有所需的文案 Key，非默认语言如果 Key 不存在，则会使用默认语言代替。<br>**示例值**：true |

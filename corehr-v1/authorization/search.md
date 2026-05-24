@@ -18,7 +18,7 @@ updateTime: "1734434037000"
 | 接口频率限制 | [10 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `corehr:authorization:read` 获取用户授权数据 `corehr:corehr:readonly` 获取核心人事信息 `corehr:corehr` 更新核心人事信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -78,7 +78,7 @@ updateTime: "1734434037000"
 | `msg` | `string` | 错误描述 |
 | `data` | `\-` | \- |
 | &nbsp;&nbsp;└ `items` | `role_authorization\[\]` | 用户授权信息 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `employment_id` | `string` | 员工 ID   >  如想获取员工详细信息，可通过[搜索员工信息](https://open.larkoffice.com/document/server-docs/corehr-v1/employee/search)接口获取。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `employment_id` | `string` | 员工 ID   &gt;  如想获取员工详细信息，可通过[搜索员工信息](https://open.larkoffice.com/document/server-docs/corehr-v1/employee/search)接口获取。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `management_scope_list` | `management_scope\[\]` | 实际授权管理范围 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `management_dimension` | `string` | 管理维度<br>可选值有：<br>- department：部门 - work_location：工作地点 - company：公司 - social_security_location：社保城市 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `obj_id` | `string` | 被授权部门/工作地点/公司/社保城市 ID |

@@ -35,7 +35,7 @@ updateTime: "1748347901000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `corehr:corehr` 更新核心人事信息 `corehr:job_data:write` 读写任职信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:employment.pathway:read` 获取员工通道信息 `corehr:employment.pathway:write` 读写员工通道 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:job_data.compensation_type:read` 获取薪资类型 `corehr:job_data.service_company:read` 获取任职公司 `corehr:job_data.work_shift:read` 获取排班信息 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:employment.pathway:read` 获取员工通道信息 `corehr:employment.pathway:write` 读写员工通道 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:job_data.compensation_type:read` 获取薪资类型 `corehr:job_data.service_company:read` 获取任职公司 `corehr:job_data.work_shift:read` 获取排班信息 |
 
 ### 请求头
 

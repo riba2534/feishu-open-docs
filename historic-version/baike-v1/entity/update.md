@@ -22,7 +22,7 @@ updateTime: "1697163789000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `baike:entity:exempt_review` 创建、更新飞书词典免审词条 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -86,7 +86,7 @@ updateTime: "1697163789000"
 | `outer_info` | `outer_info` | 否 | 外部系统关联数据 |
 | &nbsp;&nbsp;└ `provider` | `string` | 是 | 外部系统（不能包含中横线 "-"）<br>**示例值**："星云"<br>**数据校验规则**：<br>- 长度范围：`2` ～ `32` 字符 |
 | &nbsp;&nbsp;└ `outer_id` | `string` | 是 | 词条在外部系统中对应的唯一 ID（不能包含中横线 "-"）<br>**示例值**："client_653267498d"<br>**数据校验规则**：<br>- 长度范围：`1` ～ `64` 字符 |
-| `rich_text` | `string` | 否 | 富文本格式（当填写富文本内容时，description字段将会失效可不填写），支持的格式参考[飞书词典指南](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/overview)中的释义部分<br>**示例值**："<b>加粗</b><i>斜体</i><p><a href=\"https://feishu.cn\">链接</a></p><p><span>词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通</span></p>"<br>**数据校验规则**：<br>- 最大长度：`5000` 字符 |
+| `rich_text` | `string` | 否 | 富文本格式（当填写富文本内容时，description字段将会失效可不填写），支持的格式参考[飞书词典指南](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/overview)中的释义部分<br>**示例值**："<b>加粗</b><i>斜体</i>&lt;p&gt;<a href=\"https://feishu.cn\">链接</a>&lt;/p&gt;&lt;p&gt;<span>词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通</span>&lt;/p&gt;"<br>**数据校验规则**：<br>- 最大长度：`5000` 字符 |
 
 
 ### 请求体示例

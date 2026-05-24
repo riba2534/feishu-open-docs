@@ -106,7 +106,7 @@ updateTime: "1752809918000"
 | --- | --- | --- | --- | --- |
 | component_id | string | optional | / | AddOns 文档小组件 ID。该字段为空。 |
 | component_type_id | string | optional | blk_6358a421bca0001c1ceabcef | 文档小组件类型 ID，用于区分不同类型的小组件，比如问答互动类。 |
-| record | string | optional | {           "color": "#FF8800",           "duration": 86359.465,           "isNotify": true,           "settingData": {             "date": "2023-12-26",             "time": "20:07"           },           "startTime": 1703506061535,           "timingType": 1         } | 文档小组件内容数据，JSON 字符串。 |
+| record | string | optional | `{           "color": "#FF8800",           "duration": 86359.465,           "isNotify": true,           "settingData": {             "date": "2023-12-26",             "time": "20:07"           }`,           "startTime": 1703506061535,           "timingType": 1         } | 文档小组件内容数据，JSON 字符串。 |
 
 
 ### Agenda

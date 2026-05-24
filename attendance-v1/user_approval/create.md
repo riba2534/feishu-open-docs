@@ -36,7 +36,7 @@ updateTime: "1778137703000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `employee_type` | `string` | 是 | 请求体和响应体中的 user_id 的员工ID类型。如果没有后台管理权限，可使用[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)<br>**示例值**：employee_id<br>**可选值有**：<br>- `employee_id`: 员工 employee ID，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的用户 ID - `employee_no`: 员工工号，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的工号 - `open_id`: 用户在某个应用中的身份，可以参考[如何获取不同的用户 ID ](https://open.larkoffice.com/document/home/user-identity-introduction/open-id) |
+| `employee_type` | `string` | 是 | 请求体和响应体中的 user_id 的员工ID类型。如果没有后台管理权限，可使用[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)<br>**示例值**：employee_id<br>**可选值有**：<br>- `employee_id`: 员工 employee ID，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) &gt; 组织架构 &gt; 成员与部门 &gt; 成员详情中的用户 ID - `employee_no`: 员工工号，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) &gt; 组织架构 &gt; 成员与部门 &gt; 成员详情中的工号 - `open_id`: 用户在某个应用中的身份，可以参考[如何获取不同的用户 ID ](https://open.larkoffice.com/document/home/user-identity-introduction/open-id) |
 
 
 ### 请求体
@@ -76,9 +76,9 @@ updateTime: "1778137703000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `default_locale` | `string` | 是 | 默认语言类型，由于飞书客户端支持中、英、日三种语言，当用户切换语言时，如果假期名称没有所对应的语言，会使用默认语言的名称<br>**示例值**："ch"<br>**可选值有**：<br>- `ch`: 中文 - `en`: 英文 - `ja`: 日文 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `reason` | `string` | 是 | 请假理由，必选字段<br>**示例值**："家里有事" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `idempotent_id` | `string` | 否 | 请假记录的唯一幂等键，用于避免请假记录重复创建，可以填入三方的请假记录id<br>**示例值**："1233432312" |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `leave_detail_range_objs` | `time_range_list\[\]` | 否 | 根据班次计算出来的请假具体时间，格式为list<br>**数据校验规则**：<br>- 长度范围：`0` ～ `30` |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `leave_detail_range_objs` | `time_range_list\[\]` | 否 | 根据班次计算出来的请假具体时间，格式为`list<br>`**数据校验规则**：<br>- 长度范围：`0` ～ `30` |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `day` | `int` | 否 | 日期day<br>**示例值**：20220501<br>**数据校验规则**：<br>- 取值范围：`17000101` ～ `20990101` |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `time_ranges` | `time_range\[\]` | 否 | 时间范围，是一个list<br>**数据校验规则**：<br>- 长度范围：`0` ～ `20` |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `time_ranges` | `time_range\[\]` | 否 | 时间范围，是一个`list<br>`**数据校验规则**：<br>- 长度范围：`0` ～ `20` |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `start_time_stamp` | `int` | 否 | 开始时间<br>**示例值**：1751385600<br>**数据校验规则**：<br>- 取值范围：`0` ～ `9223372036` |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `end_time_stamp` | `int` | 否 | 结束时间<br>**示例值**：1751385600<br>**数据校验规则**：<br>- 取值范围：`0` ～ `9223372036` |
 | &nbsp;&nbsp;└ `overtime_works` | `user_overtime_work\[\]` | 否 | 加班信息 |
@@ -469,7 +469,7 @@ updateTime: "1778137703000"
 | 400 | 1220004 | param is invalid | 请参考实际返回的错误信息排查问题。例如“user_id is not exist or does not have permission”代表入参传入的用户id不存在或者没有权限。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1220005 | permission denied | 请前往[考勤管理后台](https://oa.feishu.cn/attendance/manage/member/list)检查数据权限范围 |
 | 500 | 1225000 | param is invalid | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 400 | 1225001 | param is invalid | 请参考实际返回的错误信息排查问题。返回错误格式为导入的审批数据，格式为：{"TripErrorRecords":"","OvertimeWorkErrorRecords":"","LeaveErrorRecords":"","OutErrorRecords":""}。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1225001 | param is invalid | 请参考实际返回的错误信息排查问题。返回错误格式为导入的审批数据，格式为：`{"TripErrorRecords":"","OvertimeWorkErrorRecords":"","LeaveErrorRecords":"","OutErrorRecords":""}`。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1220600 | general error information | 通用错误信息包含多条，详细的错误信息以及处理建议可参见[错误信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines)。 |
 
 

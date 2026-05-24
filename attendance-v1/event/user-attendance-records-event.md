@@ -29,8 +29,8 @@ updateTime: "1725246795000"
 |&emsp;∟app_id|string|应用 ID|
 |&emsp;∟tenant_key|string|租户 Key|
 |event|-|事件体|
-|&emsp;∟employee_id|string|[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的用户 ID|
-|&emsp;∟employee_no|string|[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的工号|
+|&emsp;∟employee_id|string|[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) &gt; 组织架构 &gt; 成员与部门 &gt; 成员详情中的用户 ID|
+|&emsp;∟employee_no|string|[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) &gt; 组织架构 &gt; 成员与部门 &gt; 成员详情中的工号|
 |&emsp;∟location_name|string|打卡位置名称信息|
 |&emsp;∟check_time|string|打卡时间，精确到秒的时间戳|
 |&emsp;∟comment|string|打卡备注|

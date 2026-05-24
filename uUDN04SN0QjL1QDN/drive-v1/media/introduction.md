@@ -86,12 +86,12 @@ updateTime: "1749436509000"
 
 | 上传场景 | extra 参数值示例（未转义） | 云文档 token 获取方式 |
 | --- | --- | --- |
-| 在文档中上传图片 | {"drive_route_token":"doxcnXgNGAtaAraIRVeCfmabcef"} | 参考[文档概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-overview)获取 token，即文档的 `document_id`。 |
-| 在文档中上传文件 | {"drive_route_token":"doxcnXgNGAtaAraIRVeCfmabcef"} | 参考[文档概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-overview)获取 token，即文档的 `document_id`。 |
-| 在电子表格中上传图片 | {"drive_route_token":"MRLOWBf6J47ZUjmwYRsN8uabcef"} | 参考[电子表格概述](https://open.larkoffice.com/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/overview)获取 token，即电子表格的 `spreadsheetToken`。 |
-| 在电子表格中上传文件 | {"drive_route_token":"MRLOWBf6J47ZUjmwYRsN8uabcef"} | 参考[电子表格概述](https://open.larkoffice.com/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/overview)获取 token，即电子表格的 `spreadsheetToken`。 |
-| 在多维表格中上传图片 | {"drive_route_token":"Pc9OpwAV4nLdU7lTy71t6Kabcef"} | 参考[多维表格概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/bitable-overview)获取多维表格的 token。 |
-| 在多维表格中上传文件 | {"drive_route_token":"Pc9OpwAV4nLdU7lTy71t6Kabcef"} | 参考[多维表格概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/bitable-overview)获取多维表格的 token。 |
+| 在文档中上传图片 | `{"drive_route_token":"doxcnXgNGAtaAraIRVeCfmabcef"}` | 参考[文档概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-overview)获取 token，即文档的 `document_id`。 |
+| 在文档中上传文件 | `{"drive_route_token":"doxcnXgNGAtaAraIRVeCfmabcef"}` | 参考[文档概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-overview)获取 token，即文档的 `document_id`。 |
+| 在电子表格中上传图片 | `{"drive_route_token":"MRLOWBf6J47ZUjmwYRsN8uabcef"}` | 参考[电子表格概述](https://open.larkoffice.com/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/overview)获取 token，即电子表格的 `spreadsheetToken`。 |
+| 在电子表格中上传文件 | `{"drive_route_token":"MRLOWBf6J47ZUjmwYRsN8uabcef"}` | 参考[电子表格概述](https://open.larkoffice.com/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/overview)获取 token，即电子表格的 `spreadsheetToken`。 |
+| 在多维表格中上传图片 | `{"drive_route_token":"Pc9OpwAV4nLdU7lTy71t6Kabcef"}` | 参考[多维表格概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/bitable-overview)获取多维表格的 token。 |
+| 在多维表格中上传文件 | `{"drive_route_token":"Pc9OpwAV4nLdU7lTy71t6Kabcef"}` | 参考[多维表格概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/bitable-overview)获取多维表格的 token。 |
 
 
 ### 上传素材至云空间

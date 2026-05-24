@@ -24,7 +24,7 @@ updateTime: "1770087350000"
 
 | 语言 | 版本 | 预装库 |
 | --- | --- | --- |
-| Node.js | 22.14.0 | ```json   {   "@larksuiteoapi/node-sdk": "^1.43.0",   "axios": "^1.8.1",   "lodash": "^4.17.21",   "node-fetch": "^3.3.2",   "axios-retry": "^4.5.0" } ``` |
+| Node.js | 22.14.0 | ```json   `{   "@larksuiteoapi/node-sdk": "^1.43.0",   "axios": "^1.8.1",   "lodash": "^4.17.21",   "node-fetch": "^3.3.2",   "axios-retry": "^4.5.0" }` ``` |
 | Python | 3.11.2 | ```json  lark-api>=1.4.8 requests==2.31.0  ``` |
 | Go | 1.23.3 | ```json  github.com/larksuite/oapi-sdk-go/v3@v3.4.10  // 飞书开放平台SDK github.com/gorilla/websocket@v1.5.0        // WebSocket支持 github.com/gogo/protobuf@v1.3.2           // Protocol Buffers  ``` |
 | Java | JDK 21 | ```json  com.larksuite.oapi oapi-sdk 2.4.20 com.google.code.gson gson 2.13.1 ch.qos.logback logback-classic 1.2.3 ``` |

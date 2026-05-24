@@ -23,7 +23,7 @@ updateTime: "1745207076000"
 | --- | --- | --- |
 | `approval_code` | `string` | 审批定义 Code。[创建三方审批定义](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_approval/create)的返回值，用来指定当前实例属于的审批定义。        **说明**：如果在当前接口设置了 title 参数，则审批实例名称按照 title 展示。如果未设置 title，审批实例的标题取自对应审批定义（approval_code）的 name 参数。<br>**示例值**："81D31358-93AF-92D6-7425-01A5D67C4E71" |
 | `status` | `string` | 审批实例状态<br>**示例值**："PENDING"<br>**可选值有**：<br>- `PENDING`: 审批中 - `APPROVED`: 审批流程结束，结果为同意 - `REJECTED`: 审批流程结束，结果为拒绝 - `CANCELED`: 审批发起人撤回 - `DELETED`: 审批被删除 - `HIDDEN`: 状态隐藏（不显示状态） - `TERMINATED`: 审批终止 |
-| `extra` | `string` | 审批实例扩展参数，JSON 格式，传值时需要压缩转义为字符串。<br>**示例值**："{\"xxx\":\"xxx\"}" |
+| `extra` | `string` | 审批实例扩展参数，JSON 格式，传值时需要压缩转义为字符串。<br>**示例值**："`{\"xxx\":\"xxx\"}`" |
 | `instance_id` | `string` | 审批实例唯一标识，自定义设置。需确保证在当前企业和应用内唯一。<br>**示例值**："24492654" |
 | `links` | `external_instance_link` | 审批实例链接信息。设置的链接用于在审批中心 **已发起** 列表内点击跳转，跳回三方审批系统查看审批详情。 |
 | &nbsp;&nbsp;└ `pc_link` | `string` | PC 端的三方审批实例跳转链接。        **说明**：      <br>- 当用户使用飞书 PC 端查看实例详情时，通过该链接进行跳转。 - pc_link 和 mobile_link 至少填一个。<br>**示例值**："https://applink.feishu.cn/client/mini_program/open?mode=appCenter&appId=cli_9c90fc38e07a9101&path=pc/pages/detail?id=1234" |
@@ -51,7 +51,7 @@ updateTime: "1745207076000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `pc_link` | `string` | PC 端的跳转链接。               **说明**：        - 当用户使用飞书 PC 端查看任务详情时，通过该链接进行跳转。 - pc_link 和 mobile_link 至少填一个。<br>**示例值**："https://applink.feishu.cn/client/mini_program/open?mode=appCenter&appId=cli_9c90fc38e07a9101&path=pc/pages/detail?id=1234" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `mobile_link` | `string` | 移动端的跳转链接。               **说明**：        - 当用户使用飞书移动端查看任务详情时，通过该链接进行跳转。 - pc_link 和 mobile_link 至少填一个。<br>**示例值**："https://applink.feishu.cn/client/mini_program/open?appId=cli_9c90fc38e07a9101&path=pages/detail?id=1234" |
 | &nbsp;&nbsp;└ `status` | `string` | 任务状态。<br>**示例值**："PENDING"<br>**可选值有**：<br>- `PENDING`: 待审批 - `APPROVED`: 任务同意 - `REJECTED`: 任务拒绝 - `TRANSFERRED`: 任务转交 - `DONE`: 任务通过但审批人未操作。审批人看不到该任务时，如需查看可抄送至该审批人。 |
-| &nbsp;&nbsp;└ `extra` | `string` | 扩展字段。JSON 格式，传值时需要压缩转义为字符串。<br>**示例值**："{\"xxx\":\"xxx\"}" |
+| &nbsp;&nbsp;└ `extra` | `string` | 扩展字段。JSON 格式，传值时需要压缩转义为字符串。<br>**示例值**："`{\"xxx\":\"xxx\"}`" |
 | &nbsp;&nbsp;└ `create_time` | `string` | 任务创建时间，Unix 毫秒时间戳。<br>**示例值**："1556468012678" |
 | &nbsp;&nbsp;└ `end_time` | `string` | 任务完成时间。未结束的审批为 0，Unix 毫秒时间戳。<br>**示例值**："1556468012678" |
 | &nbsp;&nbsp;└ `update_time` | `string` | 任务最近更新时间，用于推送数据版本控制。如果 update_mode 值为 UPDATE，则仅当传过来的 update_time 有变化时（变大），才会更新审批中心中的审批任务信息。<br>**示例值**："1556468012678" |
@@ -71,7 +71,7 @@ updateTime: "1745207076000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `pc_link` | `string` | PC 端的三方审批实例跳转链接。        **说明**：      <br>- 当用户使用飞书 PC 端查看审批抄送时，通过该字段进行跳转。 - pc_link 和 mobile_link 至少填一个。<br>**示例值**："https://applink.feishu.cn/client/mini_program/open?mode=appCenter&appId=cli_9c90fc38e07a9101&path=pc/pages/detail?id=1234" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `mobile_link` | `string` | 移动端的三方审批实例跳转链接。        **说明**：      <br>- 当用户使用飞书移动端查看审批抄送时，通过该字段进行跳转。 - pc_link 和 mobile_link 至少填一个。<br>**示例值**："https://applink.feishu.cn/client/mini_program/open?appId=cli_9c90fc38e07a9101&path=pages/detail?id=1234" |
 | &nbsp;&nbsp;└ `read_status` | `string` | 抄送人的阅读状态，空值表示不支持已读未读。<br>**示例值**："READ"<br>**可选值有**：<br>- `READ`: 已读 - `UNREAD`: 未读 |
-| &nbsp;&nbsp;└ `extra` | `string` | 扩展字段。JSON 格式，传值时需要压缩转义为字符串。<br>**示例值**："{\"xxx\":\"xxx\"}" |
+| &nbsp;&nbsp;└ `extra` | `string` | 扩展字段。JSON 格式，传值时需要压缩转义为字符串。<br>**示例值**："`{\"xxx\":\"xxx\"}`" |
 | &nbsp;&nbsp;└ `title` | `string` | 抄送任务名称。<br>**示例值**："title" |
 | &nbsp;&nbsp;└ `create_time` | `string` | 抄送发起时间，Unix 毫秒时间戳。<br>**示例值**："1556468012678" |
 | &nbsp;&nbsp;└ `update_time` | `string` | 抄送最近更新时间，用于推送数据版本。如果 update_mode 值为 UPDATE，则仅当传过来的 update_time 有变化时（变大），才会更新审批中心中的审批实例信息。<br>**示例值**："instance 的update_time" |

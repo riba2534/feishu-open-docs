@@ -23,7 +23,7 @@ updateTime: "1746759359000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `helpdesk:all` 更新服务台资源详情 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -55,7 +55,7 @@ updateTime: "1746759359000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `msg_type` | `string` | 是 | 消息类型<br>**示例值**："post"<br>**可选值有**：<br>- `text`: 普通文本 - `post`: 富文本 - `image`: 图片 - `interactive`: 卡片消息 |
-| `content` | `string` | 是 | 消息内容，json格式结构序列化成string。格式说明参考: [发送消息content说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/im-v1/message/create_json)<br>**示例值**："{\"post\":{\"zh_cn\":{\"title\":\"some title\",\"content\":[[{\"tag\":\"text\",\"text\":\"some content\"}]]}}}" |
+| `content` | `string` | 是 | 消息内容，json格式结构序列化成string。格式说明参考: [发送消息content说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/im-v1/message/create_json)<br>**示例值**："{\"post\":{\"zh_cn\":`{\"title\":\"some title\",\"content\":[[{\"tag\":\"text\",\"text\":\"some content\"}`]]}}}" |
 | `receiver_id` | `string` | 是 | 接收消息用户id<br>**示例值**："ou_7346484524" |
 | `receive_type` | `string` | 否 | 接收消息方式，chat(服务台专属服务群)或user(服务台机器人私聊)。若选择专属服务群，用户有正在处理的工单将会发送失败。默认以chat方式发送。<br>**示例值**："chat"<br>**可选值有**：<br>- `chat`: 通过服务台专属群发送 - `user`: 通过服务台机器人私聊发送 |
 

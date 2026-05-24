@@ -30,7 +30,7 @@ updateTime: "1775548384000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `contact:contact` 更新通讯录 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:department.organize:readonly` 获取通讯录部门组织架构信息 `contact:department.base:readonly` 获取部门基础信息 `contact:user.employee_id:readonly` 获取用户 user ID `contact:department.hrbp:readonly` 查询部门 HRBP 信息 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 `contact:contact:readonly_as_app` 以应用身份读取通讯录 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:department.organize:readonly` 获取通讯录部门组织架构信息 `contact:department.base:readonly` 获取部门基础信息 `contact:user.employee_id:readonly` 获取用户 user ID `contact:department.hrbp:readonly` 查询部门 HRBP 信息 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 `contact:contact:readonly_as_app` 以应用身份读取通讯录 |
 
 ### 请求头
 
@@ -244,7 +244,7 @@ public class Main {
 | 400 | 43008 | custom dept id invalid error | 自定义的部门 ID 不合法。你需要检查传入的 department_id 参数值，该值不能以 `od-` 开头、不能取值为 `0`、长度不能超过 64 字符。 |
 | 400 | 43013 | dept too many children error | 子部门数量过多。 |
 | 400 | 40003 | internal error | 内部错误，请获取请求的 X-Request-Id，并联系[技术支持](https://applink.feishu.cn/TLJpeNdW)进行反馈。 |
-| 403 | 40004 | no dept authority error | 应用没有部门权限，检查该部门是否在应用的通讯录权限范围内。你可以登录[开发者后台](https://open.feishu.cn/app) ，在应用详情页的 **开发配置 > 权限管理 > 数据权限** 功能页查看 **通讯录权限范围** 内是否有相应部门，如果没有则需要在 **通讯录权限范围** 内添加上部门，并发布应用使配置生效。具体操作参考[配置应用数据权限](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/configure-app-data-permissions)。 **注意**：如果通讯录权限范围设置的是 **与应用的可用范围一致**，则你需要在应用发布阶段（点击 **应用发布 > 版本管理与发布 > 创建版本** 后的 **版本详情** 页面内）配置应用的可用范围，并发布应用使配置生效。具体操作参考[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。 |
+| 403 | 40004 | no dept authority error | 应用没有部门权限，检查该部门是否在应用的通讯录权限范围内。你可以登录[开发者后台](https://open.feishu.cn/app) ，在应用详情页的 **开发配置 &gt; 权限管理 &gt; 数据权限** 功能页查看 **通讯录权限范围** 内是否有相应部门，如果没有则需要在 **通讯录权限范围** 内添加上部门，并发布应用使配置生效。具体操作参考[配置应用数据权限](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/configure-app-data-permissions)。 **注意**：如果通讯录权限范围设置的是 **与应用的可用范围一致**，则你需要在应用发布阶段（点击 **应用发布 &gt; 版本管理与发布 &gt; 创建版本** 后的 **版本详情** 页面内）配置应用的可用范围，并发布应用使配置生效。具体操作参考[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。 |
 | 400 | 40008 | dept Info is null error | 部门信息不能为空。请求时需要确保传入了完整的请求参数（必填参数不能为空）。 |
 | 400 | 40010 | chat id is invalid error | 部门群 ID 格式错误。 |
 | 403 | 40014 | no parent dept authority error | 没有父部门权限。传入的父部门需要在应用的通讯录权限范围内。如何设置通讯录权限范围，参见[权限范围资源介绍](https://open.larkoffice.com/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。 |

@@ -39,7 +39,7 @@ updateTime: "1647311871000"
 |task_id|string|是|当前审批任务ID，从实例详情中获取task_list中获取，必须是PENDING的任务id|
 |user_id|string|是|当前审批任务审批人open_id，从实例详情中获取task_list中获取，必须是PENDING的任务的审批人open_id|
 |reason|string|是|退回原因|
-|task_def_key_list|list<string>|是|指定退回的任务node_key，从实例详情中获取timeline中获取，必须是PASS的任务node_key|
+|task_def_key_list|`list<string>`|是|指定退回的任务node_key，从实例详情中获取timeline中获取，必须是PASS的任务node_key|
 
 #### 说明:
 

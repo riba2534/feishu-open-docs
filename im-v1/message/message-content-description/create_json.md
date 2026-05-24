@@ -247,7 +247,7 @@ updateTime: "1749711792000"
 | --- | --- | --- | --- |
 | zh_cn, en_us | object | 是 | 多语言配置字段。如果不需要配置多语言，则仅配置一种语言即可。    - `zh_cn` 为富文本的中文内容 - `en_us` 为富文本的英文内容   **注意**：该字段无默认值，至少要设置一种语言。    **示例值**：zh_cn |
 | ∟ title | string | 否 | 富文本消息的标题。    **默认值**：空    **示例值**：title |
-| ∟ content | string | 是 | 富文本消息内容。由多个段落组成（段落由`[]`分隔），每个段落为一个 node 列表，所支持的 node 标签类型以及对应的参数说明，参见下文的 **富文本支持的标签和参数说明** 章节。    **注意**：如 **示例值** 所示，各类型通过 tag 参数设置。例如文本（text）设置为 `"tag": "text"`。    **示例值**：[[{"tag": "text","text": "text content"}]] |
+| ∟ content | string | 是 | 富文本消息内容。由多个段落组成（段落由`[]`分隔），每个段落为一个 node 列表，所支持的 node 标签类型以及对应的参数说明，参见下文的 **富文本支持的标签和参数说明** 章节。    **注意**：如 **示例值** 所示，各类型通过 tag 参数设置。例如文本（text）设置为 `"tag": "text"`。    **示例值**：[[`{"tag": "text","text": "text content"}`]] |
 
 
 #### **富文本支持的标签和参数说明**
@@ -457,7 +457,7 @@ updateTime: "1749711792000"
 | data | object | 否 | 卡片模板的数据，要发送由搭建工具搭建的卡片，此处需传入卡片模板 ID、卡片版本号等。 |
 | └ template_id | string | 是 | 搭建工具中创建的卡片（也称卡片模板）的 ID，如 `AAqigYkzabcef`。可在搭建工具中通过复制卡片模板 ID 获取。    ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/8bf97ff2bceed633b28f5ce2d2ec0270_A9kv4I1t3s.png?height=329&lazyload=true&maxWidth=500&width=1574) |
 | └ template_version_name | string | 否 | 搭建平台中创建的卡片的版本号，如 `1.0.0`。卡片发布后，将生成版本号。可在搭建工具 **版本管理** 处获取。   ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/b3e96c8ca7c5c029bdbce6c0ca1ba413_IR0ZCAj7uz.png?height=384&lazyload=true&maxWidth=500&width=1459)             **注意**：               若不填此字段，将默认使用该卡片的最新版本。 |
-| └ template_variable | object | 否 | 若卡片绑定了变量，你需在该字段中传入实际变量数据的值。                     **示例**：如果变量名称在搭建工具中被定义为 `open_id`，此处需要对 `open_id` 变量传入值：   ```json   {       "open_id": "ou_d506829e8b6a17607e56bcd6b1aabcef"   }   ``` |
+| └ template_variable | object | 否 | 若卡片绑定了变量，你需在该字段中传入实际变量数据的值。                     **示例**：如果变量名称在搭建工具中被定义为 `open_id`，此处需要对 `open_id` 变量传入值：   ```json   `{       "open_id": "ou_d506829e8b6a17607e56bcd6b1aabcef"   }`   ``` |
 
 
 <br>
@@ -724,10 +724,10 @@ updateTime: "1749711792000"
 | --- | --- | --- | --- |
 | type | string | 是 | 系统消息类型。仅支持取值 `divider`，表示分割线。**目前该类型仅支持在机器人与用户的单聊（p2p）中生效。**    **示例值**：divider |
 | params | object | 是 | 系统消息参数。 |
-| ∟ divider_text | object | 否 | 分割线系统消息的内容。当 `type` 为 `divider` 时该参数必填。    **示例值**："divider_text": { "text": "新话题", "i18n_text": { "zh_CN": "新会话", "en_US": "New Session" } } |
+| ∟ divider_text | object | 否 | 分割线系统消息的内容。当 `type` 为 `divider` 时该参数必填。    **示例值**："divider_text": `{ "text": "新话题", "i18n_text": { "zh_CN": "新会话", "en_US": "New Session" }` } |
 | ∟∟ text | string | 是 | 默认文本。    **注意**：    - 该参数为必填参数，不能传空值。 - 文本长度不能超过 20 个字符或 10 个汉字。    **示例值**：新会话 |
-| ∟∟ i18n_text | map | 否 | 国际化文本，多语言环境下，优先使用该值。格式为 `{key:value}` 形式。支持的语种字段有：    - en_US（英文） - zh_CN（简体中文） - zh_HK（繁体中文-香港） - zh_TW（繁体中文-台湾） - ja_JP（日语） - id_ID（印尼语） - vi_VN（越南语） - th_TH（泰语） - pt_BR（葡萄牙语） - es_ES（西班牙语） - ko_KR（韩语） - de_DE（德语） - fr_FR（法语） - it_IT（意大利语） - ru_RU（俄语） - ms_MY（马来语）    **注意**： - 语言类型大小写敏感，传值时请保持与上述枚举值完全一致。 - 每种语言下（若有）文本则不能为空。 - 文本长度不能超过 20 个字符或 10 个汉字。    **示例值**：{ "zh_CN": "新会话", "en_US": "New Session" } |
-| options | map | 否 | 可选配置项，格式为 `{key:value}` 形式，`key` 为枚举值，`value` 为枚举值的取值。支持的枚举值有：    - need_rollup：是否需要滚动清屏，boolean 类型参数，默认取值 false，表示不需要。    **示例值**：{ "need_rollup": true } |
+| ∟∟ i18n_text | map | 否 | 国际化文本，多语言环境下，优先使用该值。格式为 `{key:value}` 形式。支持的语种字段有：    - en_US（英文） - zh_CN（简体中文） - zh_HK（繁体中文-香港） - zh_TW（繁体中文-台湾） - ja_JP（日语） - id_ID（印尼语） - vi_VN（越南语） - th_TH（泰语） - pt_BR（葡萄牙语） - es_ES（西班牙语） - ko_KR（韩语） - de_DE（德语） - fr_FR（法语） - it_IT（意大利语） - ru_RU（俄语） - ms_MY（马来语）    **注意**： - 语言类型大小写敏感，传值时请保持与上述枚举值完全一致。 - 每种语言下（若有）文本则不能为空。 - 文本长度不能超过 20 个字符或 10 个汉字。    **示例值**：`{ "zh_CN": "新会话", "en_US": "New Session" }` |
+| options | map | 否 | 可选配置项，格式为 `{key:value}` 形式，`key` 为枚举值，`value` 为枚举值的取值。支持的枚举值有：    - need_rollup：是否需要滚动清屏，boolean 类型参数，默认取值 false，表示不需要。    **示例值**：`{ "need_rollup": true }` |
 
 
 **[发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)请求体示例**

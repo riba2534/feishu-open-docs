@@ -30,7 +30,7 @@ updateTime: "1745995153000"
 | 接口频率限制 | [10 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `contact:contact` 更新通讯录 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -126,7 +126,7 @@ updateTime: "1745995153000"
 | 400 | 44046 | user license subscription id must not empty in multi-license tenant | 多 License 的租户内，席位 ID 不可为空。你需要在请求时设置 subscription_ids 参数。你可以调用[获取企业席位信息接口](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/tenant-v2/tenant-product_assign_info/query)接口，获取正确可用的席位 ID。 |
 | 400 | 44047 | license subscription id exceed limit | 该席位 ID 已超过使用上限。请修改为可用的席位 ID。你可以调用[获取企业席位信息接口](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/tenant-v2/tenant-product_assign_info/query)接口，获取正确可用的席位 ID。 |
 | 400 | 44048 | user license subscription id invalid | 席位 ID 无效。你可以调用[获取企业席位信息接口](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/tenant-v2/tenant-product_assign_info/query)接口，获取正确可用的席位 ID。 |
-| 403 | 44050 | not set subscription ids auth | 席位 ID 未开通权限。你需要在 [开发者后台](https://open.feishu.cn/app) > 应用详情页 > 权限管理 > API 权限中，开通 **分配用户席位** 权限。 |
+| 403 | 44050 | not set subscription ids auth | 席位 ID 未开通权限。你需要在 [开发者后台](https://open.feishu.cn/app) &gt; 应用详情页 &gt; 权限管理 &gt; API 权限中，开通 **分配用户席位** 权限。 |
 
 
 更多错误码信息，参见[通用错误码](https://open.larkoffice.com/document/ukTMukTMukTM/ugjM14COyUjL4ITN)。

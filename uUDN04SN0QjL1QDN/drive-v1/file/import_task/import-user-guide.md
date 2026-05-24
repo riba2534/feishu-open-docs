@@ -83,7 +83,7 @@ xls
 | --- | --- |
 | parent_type | 需传入固定值`ccm_import_open`。 |
 | parent_node | 无需填写。 |
-| extra | 需定义导入的在线文档类型和导入的文件的扩展名称，并将 JSON 序列化为字符串。如： - `"{ "obj_type": "docx", "file_extension": "txt"}"`：将本地文件扩展名为 txt 的文件导入为新版文档 - `"{ "obj_type": "docx", "file_extension": "docx"}"`：将本地文件扩展名为 docx 的文件导入为新版文档 - `"{ "obj_type": "sheet", "file_extension": "xlsx"}"`：将本地文件扩展名为 xlsx 的文件导入为电子表格 - `"{ "obj_type": "docx", "file_extension": "md"}"`：将本地文件扩展名为 md 的文件导入为新版文档             **注意**：定义的导入文件扩展名称需与实际文件的后缀名保持严格一致。请注意区分后缀为 “markdown”、“md”、“mark” 的 Markdown 文件，并在填写相关参数时保持后缀名一致。否则将返回 1069910 错误码。 |
+| extra | 需定义导入的在线文档类型和导入的文件的扩展名称，并将 JSON 序列化为字符串。如： - `"`{ "obj_type": "docx", "file_extension": "txt"}`"`：将本地文件扩展名为 txt 的文件导入为新版文档 - `"`{ "obj_type": "docx", "file_extension": "docx"}`"`：将本地文件扩展名为 docx 的文件导入为新版文档 - `"`{ "obj_type": "sheet", "file_extension": "xlsx"}`"`：将本地文件扩展名为 xlsx 的文件导入为电子表格 - `"`{ "obj_type": "docx", "file_extension": "md"}`"`：将本地文件扩展名为 md 的文件导入为新版文档             **注意**：定义的导入文件扩展名称需与实际文件的后缀名保持严格一致。请注意区分后缀为 “markdown”、“md”、“mark” 的 Markdown 文件，并在填写相关参数时保持后缀名一致。否则将返回 1069910 错误码。 |
 
 以将名为 "demo.md" 的本地文件导入为新版文档为例：
 ```JavaScript

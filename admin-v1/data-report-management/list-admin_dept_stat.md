@@ -173,6 +173,6 @@ updateTime: "1756779600000"
 | --- | --- | --- | --- |
 | 500 | 1051001 | request contain invalid param | 请检查请求参数是否符合接口要求 |
 | 400 | 1051002 | application has no access to the resource | 请检查应用是否具备访问该资源的权限 |
-| 400 | 1051003 | There is no query permission for this department's data,please apply for permission for the application first | 应用数据权限范围不包含当前数据，需要在开放平台应用后台的「权限管理」->「开通权限」模块申请所需数据权限 |
+| 400 | 1051003 | There is no query permission for this department's data,please apply for permission for the application first | 应用数据权限范围不包含当前数据，需要在开放平台应用后台的「权限管理」-&gt;「开通权限」模块申请所需数据权限 |
 
 

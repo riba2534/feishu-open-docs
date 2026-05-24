@@ -31,8 +31,8 @@ updateTime: "1732872409000"
 
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
-| `namespace` | `string` | 应用命名空间(低代码平台->我的应用->应用管理->可查看到)<br>**示例值**："package_7344545d87__c" |
-| `flow_id` | `string` | 流程API名称（低代码平台->我的应用->开发->流程->展开为表格->可查看到）<br>**示例值**："deleteObject_99c656599f" |
+| `namespace` | `string` | 应用命名空间(低代码平台-&gt;我的应用-&gt;应用管理-&gt;可查看到)<br>**示例值**："package_7344545d87__c" |
+| `flow_id` | `string` | 流程API名称（低代码平台-&gt;我的应用-&gt;开发-&gt;流程-&gt;展开为表格-&gt;可查看到）<br>**示例值**："deleteObject_99c656599f" |
 
 
 ### 请求体
@@ -43,7 +43,7 @@ updateTime: "1732872409000"
 | `is_async` | `boolean` | 否 | 是否异步执行(不传默认false)<br>**示例值**：true |
 | `idempotent_key` | `string` | 否 | 幂等键（建议本地生成uuid传入，重复的话请求会报错）<br>**示例值**："iuhg23897489797" |
 | `loop_masks` | `string\[\]` | 否 | 循环标志信息(当前版本可不传)<br>**示例值**：["\"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `20` |
-| `params` | `string` | 否 | 流程入参（json 字符串，无入参不传）<br>**示例值**："`{\"variable_rgrtgqworiginal\": {\"_id\": 5454545}}`" |
+| `params` | `string` | 否 | 流程入参（json 字符串，无入参不传）<br>**示例值**："`{\"variable_rgrtgqworiginal\": `{\"_id\": 5454545}`}`" |
 | `operator` | `string` | 是 | 操作人（_id和email至少填一个，低代码平台用户的 id和email，需要从低代码平台获取，json字符串）<br>**示例值**："`{\"_id\": 1111, \"email\": \"apaas@bytedance.com\"}`" |
 
 

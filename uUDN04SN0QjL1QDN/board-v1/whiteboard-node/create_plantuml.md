@@ -39,7 +39,7 @@ updateTime: "1762224223000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `plant_uml_code` | `string` | 是 | plant uml 代码<br>**示例值**："@startuml\nAlice -> Bob: Authentication Request\nBob --> Alice: Authentication Response\n@enduml"<br>**数据校验规则**：<br>- 长度范围：`1` ～ `1000000` 字符 |
+| `plant_uml_code` | `string` | 是 | plant uml 代码<br>**示例值**："@startuml\nAlice -&gt; Bob: Authentication Request\nBob --&gt; Alice: Authentication Response\n@enduml"<br>**数据校验规则**：<br>- 长度范围：`1` ～ `1000000` 字符 |
 | `style_type` | `int` | 否 | 画板样式（默认为2 经典样式）<br>**示例值**：1<br>**可选值有**：<br>- `1`: 画板样式（解析之后为多个画板节点，粘贴到画板中，不可对语法进行二次编辑） - `2`: 经典样式（解析之后为一张图片，粘贴到画板中，可对语法进行二次编辑）（只有PlantUml语法支持经典样式） |
 | `syntax_type` | `int` | 否 | 语法类型（必传）<br>**示例值**：1<br>**可选值有**：<br>- `0`: 未知 - `1`: Plantuml解析 - `2`: Mermaid解析 |
 | `diagram_type` | `int` | 否 | PlantUml语法类型（传0会自动识别语法类型，plantUML语法补充超集GML不可自动识别） 当syntax_type为2（Mermaid解析）时，diagram_type传 0， 默认为 0<br>**示例值**：0<br>**可选值有**：<br>- `0`: 未知 - `1`: 思维导图 - `2`: 时序图 - `3`: 活动图 - `4`: 类图 - `5`: ER - `6`: 流程图 - `7`: 用例图 - `8`: 组件图 - `101`: ai流式生成流程图 - `102`: ai流式生成时序图 - `201`: plantUML语法补充超集GML |

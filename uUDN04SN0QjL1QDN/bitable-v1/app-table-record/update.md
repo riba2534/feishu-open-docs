@@ -35,7 +35,7 @@ updateTime: "1753076718000"
 | 接口频率限制 | [50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `base:record:update` 更新记录 `bitable:app` 查看、评论、编辑和管理多维表格 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.base:readonly` 获取用户基本信息 `contact:user.employee_id:readonly` 获取用户 user ID `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 `contact:contact:readonly_as_app` 以应用身份读取通讯录 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.base:readonly` 获取用户基本信息 `contact:user.employee_id:readonly` 获取用户 user ID `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 `contact:contact:readonly_as_app` 以应用身份读取通讯录 |
 
 ### 请求头
 
@@ -67,7 +67,7 @@ updateTime: "1753076718000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `fields` | `map<string, union>` | 是 | 要更新的记录的数据。你需先指定数据表中的字段（即指定列），再传入正确格式的数据作为一条记录。<br>**注意**：<br>该接口支持的字段类型及其描述如下所示： - 文本：原值展示，不支持 markdown 语法 - 数字：填写数字格式的值 - 单选：填写选项值，对于新的选项值，将会创建一个新的选项 - 多选：填写多个选项值，对于新的选项值，将会创建一个新的选项。如果填写多个相同的新选项值，将会创建多个相同的选项 - 日期：填写毫秒级时间戳 - 复选框：填写 true 或 false - 条码 - 人员：填写用户的 open_id、union_id 或 user_id，类型需要与 user_id_type 指定的类型一致 - 电话号码：填写文本内容 - 超链接：参考以下示例，text 为文本值，link 为 URL 链接 - 附件：填写附件 token，需要先调用[上传素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)或[分片上传素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_prepare)接口将附件上传至该多维表格中 - 单向关联：填写被关联表的记录 ID - 双向关联：填写被关联表的记录 ID - 地理位置：填写经纬度坐标<br>不同类型字段的数据结构请参考[数据结构概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/bitable/development-guide/bitable-structure)。<br>**示例值**：{"文本":"HelloWorld"} |
+| `fields` | `map<string, union>` | 是 | 要更新的记录的数据。你需先指定数据表中的字段（即指定列），再传入正确格式的数据作为一条记录。<br>**注意**：<br>该接口支持的字段类型及其描述如下所示： - 文本：原值展示，不支持 markdown 语法 - 数字：填写数字格式的值 - 单选：填写选项值，对于新的选项值，将会创建一个新的选项 - 多选：填写多个选项值，对于新的选项值，将会创建一个新的选项。如果填写多个相同的新选项值，将会创建多个相同的选项 - 日期：填写毫秒级时间戳 - 复选框：填写 true 或 false - 条码 - 人员：填写用户的 open_id、union_id 或 user_id，类型需要与 user_id_type 指定的类型一致 - 电话号码：填写文本内容 - 超链接：参考以下示例，text 为文本值，link 为 URL 链接 - 附件：填写附件 token，需要先调用[上传素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)或[分片上传素材](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_prepare)接口将附件上传至该多维表格中 - 单向关联：填写被关联表的记录 ID - 双向关联：填写被关联表的记录 ID - 地理位置：填写经纬度坐标<br>不同类型字段的数据结构请参考[数据结构概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/bitable/development-guide/bitable-structure)。<br>**示例值**：`{"文本":"HelloWorld"}` |
 
 
 ### 请求体示例
@@ -278,7 +278,7 @@ updateTime: "1753076718000"
 | 200 | 1255005 | ConvError | 内部错误，请联系[技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 504 | 1255040 | Request timed out, please try again later. | 请求超时，请进行重试 |
 | 400 | 1254607 | Data not ready, please try again later | 该报错一般是由于前置操作未执行完成，或本次操作数据太大，服务器计算超时导致。遇到该错误码时，建议等待一段时间后重试。通常有以下几种原因： - **编辑操作频繁**：开发者对多维表格的编辑操作非常频繁。可能会导致由于等待前置操作处理完成耗时过长而超时的情况。多维表格底层对数据表的处理基于版本维度的串行方式，不支持并发。因此，并发请求时容易出现此类错误，不建议开发者对单个数据表进行并发请求。 - **批量操作负载重**：开发者在多维表格中进行批量新增、删除等操作时，如果数据表的数据量非常大，可能会导致单次请求耗时过长，最终导致请求超时。建议开发者适当降低批量请求的 page_size 以减少请求耗时。 - **资源分配与计算开销**：资源分配是基于单文档维度的，如果读接口涉及公式计算、排序等计算逻辑，会占用较多资源。例如，并发读取一个文档下的多个数据表也可能导致该文档阻塞。 |
-| 403 | 1254302 | Permission denied. | 无访问权限，常由表格开启了高级权限造成。请确保当前调用身份具有高级权限或多维表格的管理权限： - 对于应用身份，你需要通过云文档网页页面右上方 「**...**」->「**...更多**」-> 「**添加文档应用**」入口添加并授予应用可管理权限，或在高级权限设置中添加一个包含应用的群组，给予这个群读写权限 - 对于用户身份，你需要通过云文档网页的「**分享**」入口授予用户管理权限 了解更多，参考[如何为应用或用户开通云文档权限](https://open.larkoffice.com/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#16c6475a)。 |
+| 403 | 1254302 | Permission denied. | 无访问权限，常由表格开启了高级权限造成。请确保当前调用身份具有高级权限或多维表格的管理权限： - 对于应用身份，你需要通过云文档网页页面右上方 「**...**」-&gt;「**...更多**」-&gt; 「**添加文档应用**」入口添加并授予应用可管理权限，或在高级权限设置中添加一个包含应用的群组，给予这个群读写权限 - 对于用户身份，你需要通过云文档网页的「**分享**」入口授予用户管理权限 了解更多，参考[如何为应用或用户开通云文档权限](https://open.larkoffice.com/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#16c6475a)。 |
 | 403 | 1254304 | Permission denied. | 权限不足。请检查多维表格是否开启了高级权限，如果开启高级权限，调用身份需要有多维表格的可管理权限。详情参考[如何为应用或用户开通文档权限](https://open.larkoffice.com/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#16c6475a) |
 | 403 | 1254608 | ReqRecommited | 请求重复，请检查本次请求的请求参数和上一次是否完全相同 |
 

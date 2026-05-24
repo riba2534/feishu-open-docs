@@ -21,7 +21,7 @@ updateTime: "1753149455000"
 | 接口频率限制 | [特殊频控](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | 无 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee:readonly` 获取用户受雇信息 `contact:user.employee_id:readonly` 获取用户 user ID `contact:user.phone:readonly` 获取用户手机号 `contact:user.email:readonly` 获取用户邮箱信息 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 `contact:contact:readonly_as_app` 以应用身份读取通讯录 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee:readonly` 获取用户受雇信息 `contact:user.employee_id:readonly` 获取用户 user ID `contact:user.phone:readonly` 获取用户手机号 `contact:user.email:readonly` 获取用户邮箱信息 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 `contact:contact:readonly_as_app` 以应用身份读取通讯录 |
 
 ### 请求头
 

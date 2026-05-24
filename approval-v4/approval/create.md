@@ -22,7 +22,7 @@ updateTime: "1747721442000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `approval:approval` 查看、创建、更新、删除审批应用相关信息 `approval:definition` 查看、创建、更新、删除原生审批定义相关信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -53,7 +53,7 @@ updateTime: "1747721442000"
 | &nbsp;&nbsp;└ `viewer_user_id` | `string` | 否 | 当 viewer_type 是 USER 时，需要通过该参数传入用户 ID，ID 类型与查询参数 user_id_type 取值一致。<br>**示例值**："19a294c2" |
 | &nbsp;&nbsp;└ `viewer_department_id` | `string` | 否 | 当 viewer_type 为DEPARTMENT，需要通过该参数传入部门 ID，ID 类型与查询参数 department_id_type 取值一致。<br>**示例值**："od-ac9d697abfa990b715dcc33d58a62a9d" |
 | `form` | `approval_form` | 是 | 审批定义表单 |
-| &nbsp;&nbsp;└ `form_content` | `string` | 是 | 审批定义表单。表单格式为 JSON 数组，实际传值时需要将 JSON 压缩转义为 String 类型。表单内各个控件的 JSON 字段说明参见[审批定义表单控件参数](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/approval-definition-form-control-parameters)。<br>**注意**：以下示例值未转义，你可以参考下文**请求示例**章节的示例代码。<br>**示例值**："[{\"id\":\"user_name\", \"type\": \"input\", \"required\":true, \"name\":\"@i18n@widget1\"}]" |
+| &nbsp;&nbsp;└ `form_content` | `string` | 是 | 审批定义表单。表单格式为 JSON 数组，实际传值时需要将 JSON 压缩转义为 String 类型。表单内各个控件的 JSON 字段说明参见[审批定义表单控件参数](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/approval-definition-form-control-parameters)。<br>**注意**：以下示例值未转义，你可以参考下文**请求示例**章节的示例代码。<br>**示例值**："[`{\"id\":\"user_name\", \"type\": \"input\", \"required\":true, \"name\":\"@i18n@widget1\"}`]" |
 | `node_list` | `approval_node\[\]` | 是 | 审批定义节点列表，用于设置审批流程所需要的各个节点，审批流程的始末固定为开始节点和结束节点，因此传值时需要将开始节点作为 list 第一个元素，结束节点作为 list 最后一个元素。<br>**说明**：API 方式不支持设置条件分支，如需设置条件分支请前往[飞书审批后台](https://www.feishu.cn/approval/admin/approvalList?devMode=on)创建审批定义。 |
 | &nbsp;&nbsp;└ `id` | `string` | 是 | 节点 ID。<br>- 开始节点的 ID 为 START - 结束节点的 ID 为 END<br>开始和结束节点不需要指定 name、node_type 以及 approver。<br>**示例值**："START" |
 | &nbsp;&nbsp;└ `name` | `string` | 否 | 节点名称的国际化文案 Key，以 `@i18n@` 开头，长度不得少于 9 个字符。<br>**示例值**："@i18n@node_name" |
@@ -88,7 +88,7 @@ updateTime: "1747721442000"
 | `icon` | `int` | 否 | 审批图标枚举，默认为 0。下图从左至右，从上到下依次为 0~24 号图标。          ![icon.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/2c60da4397e18c0ae1fdf6bf50b36ad4_tQc0Lfgx4D.png?height=1080&lazyload=true&width=1066)<br>**示例值**：0<br>**默认值**：`0` |
 | `i18n_resources` | `i18n_resource\[\]` | 是 | 国际化文案 |
 | &nbsp;&nbsp;└ `locale` | `string` | 是 | 语言。<br>**示例值**："zh-CN"<br>**可选值有**：<br>- `zh-CN`: 中文 - `en-US`: 英文 - `ja-JP`: 日文 |
-| &nbsp;&nbsp;└ `texts` | `i18n_resource_text\[\]` | 是 | 文案的 key、value。<br>**示例值**：{ "@i18n@1": "权限申请", "@i18n@2": "OA审批", "@i18n@3": "Permission" } |
+| &nbsp;&nbsp;└ `texts` | `i18n_resource_text\[\]` | 是 | 文案的 key、value。<br>**示例值**：`{ "@i18n@1": "权限申请", "@i18n@2": "OA审批", "@i18n@3": "Permission" }` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `key` | `string` | 是 | 文案 key。key 以 `@i18n@` 开头，该字段主要用于做国际化，允许用户同时传多个语言的文案，审批中心会根据用户当前的语音环境使用对应的文案，如果没有传用户当前的语音环境文案，则会使用默认的语言文案。<br>**示例值**："@i18n@1" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 文案内容<br>**示例值**："people" |
 | &nbsp;&nbsp;└ `is_default` | `boolean` | 是 | 是否为默认语言。默认语言需要包含所有 key，非默认语言如果 key 不存在会使用默认语言代替。<br>**示例值**：true |

@@ -17,7 +17,7 @@ updateTime: "1779350983000"
 | 类型 | 说明 | 接入指南 |
 | --- | --- | --- |
 | 原生审批 | 飞书原生审批是指在飞书的审批中心构建企业所需的全部审批流程。管理员定义审批流、员工发起审批、审批流转以及管理员处理审批等操作均在飞书内完成，为企业提供高效便捷的审批体验。 | [原生审批接入指南](https://open.larkoffice.com/document/ukTMukTMukTM/uIjN4UjLyYDO14iM2gTN) |
-| 三方审批 | 飞书审批提供了三方审批系统的数据接入能力，如果企业正在使用一个或多个飞书外的三方审批系统，可以将三方审批系统的数据同步到飞书审批内，通过飞书审批查阅审批数据、处理审批任务，并将数据同步回三方审批系统进行流转。 > **Info**: 三方审批接入飞书审批本质上是数据同步，而不是将系统集成在飞书审批内，即：通过审批 API 将三方审批系统的审批数据同步到飞书审批，在飞书内进行数据流转后，再将审批结果同步回三方审批系统。 | [三方审批接入指南](https://open.larkoffice.com/document/ukTMukTMukTM/uAzNyYjLwcjM24CM3IjN) |
+| 三方审批 | 飞书审批提供了三方审批系统的数据接入能力，如果企业正在使用一个或多个飞书外的三方审批系统，可以将三方审批系统的数据同步到飞书审批内，通过飞书审批查阅审批数据、处理审批任务，并将数据同步回三方审批系统进行流转。 &gt; **Info**: 三方审批接入飞书审批本质上是数据同步，而不是将系统集成在飞书审批内，即：通过审批 API 将三方审批系统的审批数据同步到飞书审批，在飞书内进行数据流转后，再将审批结果同步回三方审批系统。 | [三方审批接入指南](https://open.larkoffice.com/document/ukTMukTMukTM/uAzNyYjLwcjM24CM3IjN) |
 
 
 在调用审批 API 之前，建议你先了解飞书审批的相关操作，详情参见[快速上手飞书审批](https://www.feishu.cn/hc/zh-CN/articles/570749215104)。
@@ -303,13 +303,13 @@ updateTime: "1779350983000"
 
 | **[事件（Event）](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)** | 权限要求 | 触发时机 |
 | --- | --- | --- |
-| `[审批定义更新](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/custom-approval-event)` > 当审批定义发生变化时触发该事件。 | `approval:approval:readonly` 访问审批应用 `approval:approval` 查看、创建、更新、删除审批应用相关信息 | `approval.approval.updated_v4` |
-| `[审批实例状态变更](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/common-event/approval-instance-event)` > 当审批实例状态发生变化时触发该事件。 | `approval:approval:readonly` 访问审批应用 `approval:approval` 查看、创建、更新、删除审批应用相关信息 | `approval_instance` |
-| `[审批任务状态变更](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/common-event/approval-task-event)` > 当审批任务状态发生变化时触发该事件。 | `approval:approval:readonly` 访问审批应用 `approval:approval` 查看、创建、更新、删除审批应用相关信息 | `approval_task` |
-| `[审批抄送状态变更](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/common-event/approval-cc-event)` > 当审批抄送状态发生变化时触发该事件。 | `approval:approval:readonly` 访问审批应用 `approval:approval` 查看、创建、更新、删除审批应用相关信息 | `approval_task` |
-| `[请假审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/leave)` > 「审批」应用的表单里如果包含请假控件组，则在此表单审批通过后触发此事件。 | `approval:approval:readonly` 访问审批应用 | `leave_approvalV2` |
-| `[加班审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/overtime)` > 「审批」应用的表单里如果包含加班控件组，则在此表单审批通过后触发此事件。 | `approval:approval:readonly` 访问审批应用 | `work_approval` |
-| `[换班审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/shift-change)` > 「审批」应用的表单包含换班控件组的，换班申请审批通过后触发此事件。 | `approval:approval:readonly` 访问审批应用 | `shift_approval` |
-| `[补卡审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/attendance-record-correction)` > 补卡申请审批通过后触发此事件。你可以在「打卡」应用里提交补卡申请。 | `approval:approval:readonly` 访问审批应用 | `remedy_approval_v2` |
-| `[出差审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/business-trip)` > 「审批」应用的表单里如果包含出差控件组，则在此表单审批通过后触发此事件。 | `approval:approval:readonly` 访问审批应用 | `approval.instance.trip_group_update_v4` |
-| `[外出审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/out-of-office)` > 「审批」应用的表单里如果包含外出控件组，则在此表单审批通过后触发此事件。 | `approval:approval:readonly` 访问审批应用 | `out_approval` |
+| `[审批定义更新](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/custom-approval-event)` &gt; 当审批定义发生变化时触发该事件。 | `approval:approval:readonly` 访问审批应用 `approval:approval` 查看、创建、更新、删除审批应用相关信息 | `approval.approval.updated_v4` |
+| `[审批实例状态变更](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/common-event/approval-instance-event)` &gt; 当审批实例状态发生变化时触发该事件。 | `approval:approval:readonly` 访问审批应用 `approval:approval` 查看、创建、更新、删除审批应用相关信息 | `approval_instance` |
+| `[审批任务状态变更](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/common-event/approval-task-event)` &gt; 当审批任务状态发生变化时触发该事件。 | `approval:approval:readonly` 访问审批应用 `approval:approval` 查看、创建、更新、删除审批应用相关信息 | `approval_task` |
+| `[审批抄送状态变更](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/common-event/approval-cc-event)` &gt; 当审批抄送状态发生变化时触发该事件。 | `approval:approval:readonly` 访问审批应用 `approval:approval` 查看、创建、更新、删除审批应用相关信息 | `approval_task` |
+| `[请假审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/leave)` &gt; 「审批」应用的表单里如果包含请假控件组，则在此表单审批通过后触发此事件。 | `approval:approval:readonly` 访问审批应用 | `leave_approvalV2` |
+| `[加班审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/overtime)` &gt; 「审批」应用的表单里如果包含加班控件组，则在此表单审批通过后触发此事件。 | `approval:approval:readonly` 访问审批应用 | `work_approval` |
+| `[换班审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/shift-change)` &gt; 「审批」应用的表单包含换班控件组的，换班申请审批通过后触发此事件。 | `approval:approval:readonly` 访问审批应用 | `shift_approval` |
+| `[补卡审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/attendance-record-correction)` &gt; 补卡申请审批通过后触发此事件。你可以在「打卡」应用里提交补卡申请。 | `approval:approval:readonly` 访问审批应用 | `remedy_approval_v2` |
+| `[出差审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/business-trip)` &gt; 「审批」应用的表单里如果包含出差控件组，则在此表单审批通过后触发此事件。 | `approval:approval:readonly` 访问审批应用 | `approval.instance.trip_group_update_v4` |
+| `[外出审批](https://open.larkoffice.com/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/out-of-office)` &gt; 「审批」应用的表单里如果包含外出控件组，则在此表单审批通过后触发此事件。 | `approval:approval:readonly` 访问审批应用 | `out_approval` |

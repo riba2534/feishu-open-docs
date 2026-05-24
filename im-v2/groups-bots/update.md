@@ -18,7 +18,7 @@ updateTime: "1724931991000"
 | 接口频率限制 | [10 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `im:app_feed_card:write` 创建、更新、删除应用消息流卡片 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -53,7 +53,7 @@ updateTime: "1724931991000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `text` | `open_app_feed_card_text` | 是 | 文字 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `text` | `string` | 是 | 文本<br>**示例值**："文本"<br>**数据校验规则**：<br>- 长度范围：`1` ～ `30` 字符 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `button_type` | `string` | 否 | 按钮类型<br>**示例值**："default"<br>**可选值有**：<br>- `default`: 默认 - `primary`: 主要 - `success`: 成功<br>**默认值**：`default` |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `action_map` | `map<string, string>` | 否 | action 字典<br>**示例值**：{"foo": "bar"} |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `action_map` | `map<string, string>` | 否 | action 字典<br>**示例值**：`{"foo": "bar"}` |
 
 
 ### 请求体示例

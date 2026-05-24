@@ -18,7 +18,7 @@ updateTime: "1724835667000"
 | 接口频率限制 | [10 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `performance:performance` 管理绩效数据 `performance:performance:readonly` 查看绩效数据 `performance:semester_activity:read` 获取周期与项目配置信息 `performance:semester_activity:write` 管理周期与项目配置信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -43,9 +43,9 @@ updateTime: "1724835667000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `semester_id` | `string` | 是 | 评估周期 ID，可通过[获取周期列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v1/semester/list)接口获取<br>**注意**：若请求参数 `item_ids`、`external_ids`、`reviewee_user_ids` 均为空，返回 `semester_id` 参数指定周期的所有补充信息<br>**示例值**："7348736302176534547"<br>**数据校验规则**：<br>- 长度范围：`1` ～ `100` 字符 |
-| `item_ids` | `string\[\]` | 否 | 补充信息 ID 列表，可通过[批量导入补充信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v2/additional_information/import)接口获取<br>**说明**：若提供多个筛选参数，按照 `item_ids` > `external_ids` > `reviewee_user_ids` 的优先级顺序，以第一个有值的筛选参数进行筛选<br>**示例值**：["7350195758357807123"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `50` |
-| `external_ids` | `string\[\]` | 否 | 外部系统补充信息 ID 列表，该 ID 在通过[批量导入补充信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v2/additional_information/import)接口导入时写入<br>**说明**：若提供多个筛选参数，按照 `item_ids` > `external_ids` > `reviewee_user_ids` 的优先级顺序，以第一个有值的筛选参数进行筛选<br>**示例值**：["6789523104723558912"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `50` |
-| `reviewee_user_ids` | `string\[\]` | 否 | 被评估人 ID 列表，与入参 `user_id_type` 类型一致，可通过[获取被评估人信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v2/reviewee/query)接口获取<br>**说明**：若提供多个筛选参数，按照 `item_ids` > `external_ids` > `reviewee_user_ids` 的优先级顺序，以第一个有值的筛选参数进行筛选<br>**示例值**：["ou_3245842393d09e9428ad4655da6e30b3"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `50` |
+| `item_ids` | `string\[\]` | 否 | 补充信息 ID 列表，可通过[批量导入补充信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v2/additional_information/import)接口获取<br>**说明**：若提供多个筛选参数，按照 `item_ids` &gt; `external_ids` &gt; `reviewee_user_ids` 的优先级顺序，以第一个有值的筛选参数进行筛选<br>**示例值**：["7350195758357807123"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `50` |
+| `external_ids` | `string\[\]` | 否 | 外部系统补充信息 ID 列表，该 ID 在通过[批量导入补充信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v2/additional_information/import)接口导入时写入<br>**说明**：若提供多个筛选参数，按照 `item_ids` &gt; `external_ids` &gt; `reviewee_user_ids` 的优先级顺序，以第一个有值的筛选参数进行筛选<br>**示例值**：["6789523104723558912"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `50` |
+| `reviewee_user_ids` | `string\[\]` | 否 | 被评估人 ID 列表，与入参 `user_id_type` 类型一致，可通过[获取被评估人信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/performance-v2/reviewee/query)接口获取<br>**说明**：若提供多个筛选参数，按照 `item_ids` &gt; `external_ids` &gt; `reviewee_user_ids` 的优先级顺序，以第一个有值的筛选参数进行筛选<br>**示例值**：["ou_3245842393d09e9428ad4655da6e30b3"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `50` |
 
 
 ### 请求体示例

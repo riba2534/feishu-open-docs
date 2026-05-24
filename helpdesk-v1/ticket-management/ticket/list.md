@@ -52,8 +52,8 @@ updateTime: "1692084861000"
 | `tags` | `string\[\]` | 否 | 搜索条件: 用户标签列表<br>**示例值**：备注 |
 | `page` | `int` | 否 | 页数, 从1开始, 默认为1<br>**示例值**：1 |
 | `page_size` | `int` | 否 | 当前页大小，最大为200， 默认为20。分页查询最多累计返回一万条数据，超过一万条请更改查询条件，推荐通过时间查询。<br>**示例值**：20 |
-| `create_time_start` | `int` | 否 | 搜索条件: 工单创建起始时间 ms (也需要填上create_time_end)，相当于>=create_time_start<br>**示例值**：1616920429000 |
-| `create_time_end` | `int` | 否 | 搜索条件: 工单创建结束时间 ms (也需要填上create_time_start)，相当于<=create_time_end<br>**示例值**：1616920429000 |
+| `create_time_start` | `int` | 否 | 搜索条件: 工单创建起始时间 ms (也需要填上create_time_end)，相当于&gt;=create_time_start<br>**示例值**：1616920429000 |
+| `create_time_end` | `int` | 否 | 搜索条件: 工单创建结束时间 ms (也需要填上create_time_start)，相当于&lt;=create_time_end<br>**示例值**：1616920429000 |
 | `update_time_start` | `int` | 否 | 搜索条件: 工单修改起始时间 ms (也需要填上update_time_end)<br>**示例值**：1616920429000 |
 | `update_time_end` | `int` | 否 | 搜索条件: 工单修改结束时间 ms(也需要填上update_time_start)<br>**示例值**：1616920429000 |
 

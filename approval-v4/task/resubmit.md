@@ -18,7 +18,7 @@ updateTime: "1745206965000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `approval:approval` 查看、创建、更新、删除审批应用相关信息 `approval:approval:readonly` 访问审批应用 `approval:task` 同意、拒绝、退回、加签等原生审批任务操作 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -43,9 +43,9 @@ updateTime: "1745206965000"
 | `approval_code` | `string` | 是 | 审批定义 Code。获取方式：<br>- 调用[创建审批定义](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/create)接口后，从响应参数 approval_code 获取。 - 登录审批管理后台，在指定审批定义的 URL 中获取，具体操作参见[什么是 Approval Code](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/overview-of-approval-resources#8151e0ae)。<br>**示例值**："7C468A54-8745-2245-9675-08B7C63E7A85" |
 | `instance_code` | `string` | 是 | 审批实例 Code。获取方式：<br>- 调用[创建审批实例](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/create)接口后，从响应参数 instance_code 获取。 - 调用[批量获取审批实例 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/list)接口，获取所需的审批实例 Code。 - 调用[查询实例列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/query)，设置过滤条件查询指定的审批实例 Code。<br>**示例值**："81D31358-93AF-92D6-7425-01A5D67C4E71" |
 | `user_id` | `string` | 是 | 操作人 ID，ID 类型与查询参数 user_id_type 取值一致。<br>**示例值**："f7cb567e" |
-| `comment` | `string` | 否 | 意见。JSON 格式，传入时需要压缩转义为字符串。以下示例值未转义，你可参考请求体示例中的示例 comment 进行编辑。<br>**JSON 内参数说明**：<br>- text：string 类型，评论文本内容。 - files：Attachment[] 类型，附件信息。     - url：string 类型，附件链接。     - thumbnailURL：string 类型，缩略图链接。     - fileSize：int64 类型，文件大小。     - title：string 类型，标题。     - type：string 类型，附件类型，取值 image 表示图片类型。<br>**注意**：对于附件，在 PC 端使用 HTTP 资源链接传图片资源可能会导致缩略图异常，建议使用 HTTPS 传资源附件。<br>**示例值**："{\"text\":\"评论\"]}" |
+| `comment` | `string` | 否 | 意见。JSON 格式，传入时需要压缩转义为字符串。以下示例值未转义，你可参考请求体示例中的示例 comment 进行编辑。<br>**JSON 内参数说明**：<br>- text：string 类型，评论文本内容。 - files：Attachment[] 类型，附件信息。     - url：string 类型，附件链接。     - thumbnailURL：string 类型，缩略图链接。     - fileSize：int64 类型，文件大小。     - title：string 类型，标题。     - type：string 类型，附件类型，取值 image 表示图片类型。<br>**注意**：对于附件，在 PC 端使用 HTTP 资源链接传图片资源可能会导致缩略图异常，建议使用 HTTPS 传资源附件。<br>**示例值**："`{\"text\":\"评论\"]}`" |
 | `task_id` | `string` | 是 | 任务 ID。你可调用[获取单个审批实例详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/get)，从返回结果的 task_list 中获取所需的 id。<br>**示例值**："12345" |
-| `form` | `string` | 是 | 审批表单控件值，JSON 数组，传值时需要压缩转义为字符串。该参数与[创建审批实例](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/create)中的 form 参数用法一致。<br>**示例值**："[{\"id\":\"user_name\", \"type\": \"input\", \"value\":\"test\"}]" |
+| `form` | `string` | 是 | 审批表单控件值，JSON 数组，传值时需要压缩转义为字符串。该参数与[创建审批实例](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/create)中的 form 参数用法一致。<br>**示例值**："[`{\"id\":\"user_name\", \"type\": \"input\", \"value\":\"test\"}`]" |
 
 
 ### 请求体示例

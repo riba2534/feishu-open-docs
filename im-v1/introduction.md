@@ -95,21 +95,21 @@ updateTime: "1741352974000"
 | **[方法 (API)](https://open.larkoffice.com/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
 | --- | --- | --- | --- | --- |
 | `[发送消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)    `POST` /open-apis/im/v1/messages       > 给指定用户或者会话发送消息，支持发送文本、富文本、卡片、群名片、个人名片、图片、视频、音频、文件、表情包。   ` | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 | `tenant_access_token` | **✓** | **✓** |
-| `[批量发送消息](https://open.larkoffice.com/document/ukTMukTMukTM/ucDO1EjL3gTNx4yN4UTM)`    `POST` /open-apis/message/v4/batch_send/      > 给多个用户或者多个部门发送消息，支持发送文本、富文本、卡片、群名片、个人名片、图片、视频、音频、文件、表情包。 | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 `im:message:send_multi_users` 给多个用户批量发消息 `im:message:send_multi_depts` 给一个或多个部门的成员批量发消息 | `tenant_access_token` | **✓** | **✓** |
-| `[回复消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/reply)`    `POST` /open-apis/im/v1/messages/:message_id/reply     > 回复指定消息，支持文本、富文本、卡片、群名片、个人名片、图片、视频、文件等多种消息类型。 | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 | `tenant_access_token` | **✓** | **✓** |
-| `[编辑消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/update)`    `PUT` /open-apis/im/v1/messages/:message_id     > 编辑已发送的消息内容，当前支持编辑文本、富文本消息。 | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 `im:message:update` 更新消息 | `tenant_access_token` | **✓** | **✓** |
-| `[撤回消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/delete)`    `DELETE` /open-apis/im/v1/messages/:message_id >将某一条消息撤回。例如，机器人撤回机器人自己发送的消息、群主撤回群内消息。 | `im:message` 获取与发送单聊、群组消息 `im:message:recall` 撤回消息 `im:message:send_as_bot` 以应用的身份发消息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[批量撤回消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/batch_message/delete)`    `DELETE` /open-apis/im/v1/batch_messages/:batch_message_id >批量撤回通过[批量发送消息](https://open.larkoffice.com/document/ukTMukTMukTM/ucDO1EjL3gTNx4yN4UTM)接口发送的消息。 | `im:message:send_multi_depts` 给一个或多个部门的成员批量发消息 `im:message:send_multi_users` 给多个用户批量发消息 | `tenant_access_token` | **✓** | **✓** |
-| `[转发消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/forward)`    `POST` /open-apis/im/v1/messages/:message_id/forward >向用户、群聊或话题转发一条指定的消息。 | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 | `tenant_access_token` | **✓** | **✓** |
-| `[合并转发消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/merge_forward)`    `POST` /open-apis/im/v1/messages/merge_forward >将来自同一个群聊中的多条消息合并，并转发给指定的用户、群聊或话题。 | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 | `tenant_access_token` | **✓** | **✓** |
-| `[转发话题](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/thread/forward)`    `POST` /open-apis/im/v1/threads/:thread_id/forward >向用户、群组或话题转发一个话题。 | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 | `tenant_access_token` | **✓** | **✓** |
-| `[查询消息已读信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/read_users)`    `GET` /open-apis/im/v1/messages/:message_id/read_users >消息发送后，可以通过该接口查询消息接收者是否已读消息。 | `im:message` 获取与发送单聊、群组消息 `im:message:readonly` 获取单聊、群组消息 | `tenant_access_token` | **✓** | **✓** |
-| `[获取会话历史消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/list)`    `GET` /open-apis/im/v1/messages >获取会话（包括单聊、群组）的历史消息。 | `im:message` 获取与发送单聊、群组消息 `im:message:readonly` 获取单聊、群组消息 | `tenant_access_token` | **✓** | **✓** |
-| `[获取消息中的资源文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-resource/get)`    `GET` /open-apis/im/v1/messages/:message_id/resources/:file_key >获取消息中的资源文件，包括音频，视频，图片和文件。暂不支持表情包资源下载。当前仅支持 100M 以内的资源文件的下载。 | `im:message` 获取与发送单聊、群组消息 `im:message:readonly` 获取单聊、群组消息 | `tenant_access_token` | **✓** | **✓** |
-| `[获取指定消息的内容](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/get)`    `GET` /open-apis/im/v1/messages/:message_id >通过消息 ID（message_id）查询消息内容。 | `im:message` 获取与发送单聊、群组消息 `im:message:readonly` 获取单聊、群组消息 | `tenant_access_token` | **✓** | **✓** |
-| `[查询批量消息推送和阅读人数](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/batch_message/read_user)`    `GET` /open-apis/im/v1/batch_messages/:batch_message_id/read_user >调用[批量发送消息](https://open.larkoffice.com/document/ukTMukTMukTM/ucDO1EjL3gTNx4yN4UTM)接口后，可以通过该接口查询批量消息推送的总人数和阅读消息的人数。 | `im:message:send_multi_depts` 给一个或多个部门的成员批量发消息 `im:message:send_multi_users` 给多个用户批量发消息 | `tenant_access_token` | **✓** | **✓** |
-| `[查询批量消息整体进度](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/batch_message/get_progress)`    `GET` /open-apis/im/v1/batch_messages/:batch_message_id/get_progress >调用[批量发送消息](https://open.larkoffice.com/document/ukTMukTMukTM/ucDO1EjL3gTNx4yN4UTM)接口后，可通过该接口获取批量消息发送的进度、撤回进度。 | `im:message:send_multi_depts` 给一个或多个部门的成员批量发消息 `im:message:send_multi_users` 给多个用户批量发消息 | `tenant_access_token` | **✓** | **✓** |
-| `[添加跟随气泡](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/push_follow_up)`    `POST` /open-apis/im/v1/messages/:message_id/push_follow_up >展示在机器人消息下方的气泡，用户点击气泡或者新消息到达后，气泡消失。 | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 | `tenant_access_token` | **✓** | **✓** |
+| `[批量发送消息](https://open.larkoffice.com/document/ukTMukTMukTM/ucDO1EjL3gTNx4yN4UTM)`    `POST` /open-apis/message/v4/batch_send/      &gt; 给多个用户或者多个部门发送消息，支持发送文本、富文本、卡片、群名片、个人名片、图片、视频、音频、文件、表情包。 | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 `im:message:send_multi_users` 给多个用户批量发消息 `im:message:send_multi_depts` 给一个或多个部门的成员批量发消息 | `tenant_access_token` | **✓** | **✓** |
+| `[回复消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/reply)`    `POST` /open-apis/im/v1/messages/:message_id/reply     &gt; 回复指定消息，支持文本、富文本、卡片、群名片、个人名片、图片、视频、文件等多种消息类型。 | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 | `tenant_access_token` | **✓** | **✓** |
+| `[编辑消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/update)`    `PUT` /open-apis/im/v1/messages/:message_id     &gt; 编辑已发送的消息内容，当前支持编辑文本、富文本消息。 | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 `im:message:update` 更新消息 | `tenant_access_token` | **✓** | **✓** |
+| `[撤回消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/delete)`    `DELETE` /open-apis/im/v1/messages/:message_id &gt;将某一条消息撤回。例如，机器人撤回机器人自己发送的消息、群主撤回群内消息。 | `im:message` 获取与发送单聊、群组消息 `im:message:recall` 撤回消息 `im:message:send_as_bot` 以应用的身份发消息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[批量撤回消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/batch_message/delete)`    `DELETE` /open-apis/im/v1/batch_messages/:batch_message_id &gt;批量撤回通过[批量发送消息](https://open.larkoffice.com/document/ukTMukTMukTM/ucDO1EjL3gTNx4yN4UTM)接口发送的消息。 | `im:message:send_multi_depts` 给一个或多个部门的成员批量发消息 `im:message:send_multi_users` 给多个用户批量发消息 | `tenant_access_token` | **✓** | **✓** |
+| `[转发消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/forward)`    `POST` /open-apis/im/v1/messages/:message_id/forward &gt;向用户、群聊或话题转发一条指定的消息。 | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 | `tenant_access_token` | **✓** | **✓** |
+| `[合并转发消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/merge_forward)`    `POST` /open-apis/im/v1/messages/merge_forward &gt;将来自同一个群聊中的多条消息合并，并转发给指定的用户、群聊或话题。 | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 | `tenant_access_token` | **✓** | **✓** |
+| `[转发话题](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/thread/forward)`    `POST` /open-apis/im/v1/threads/:thread_id/forward &gt;向用户、群组或话题转发一个话题。 | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 | `tenant_access_token` | **✓** | **✓** |
+| `[查询消息已读信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/read_users)`    `GET` /open-apis/im/v1/messages/:message_id/read_users &gt;消息发送后，可以通过该接口查询消息接收者是否已读消息。 | `im:message` 获取与发送单聊、群组消息 `im:message:readonly` 获取单聊、群组消息 | `tenant_access_token` | **✓** | **✓** |
+| `[获取会话历史消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/list)`    `GET` /open-apis/im/v1/messages &gt;获取会话（包括单聊、群组）的历史消息。 | `im:message` 获取与发送单聊、群组消息 `im:message:readonly` 获取单聊、群组消息 | `tenant_access_token` | **✓** | **✓** |
+| `[获取消息中的资源文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-resource/get)`    `GET` /open-apis/im/v1/messages/:message_id/resources/:file_key &gt;获取消息中的资源文件，包括音频，视频，图片和文件。暂不支持表情包资源下载。当前仅支持 100M 以内的资源文件的下载。 | `im:message` 获取与发送单聊、群组消息 `im:message:readonly` 获取单聊、群组消息 | `tenant_access_token` | **✓** | **✓** |
+| `[获取指定消息的内容](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/get)`    `GET` /open-apis/im/v1/messages/:message_id &gt;通过消息 ID（message_id）查询消息内容。 | `im:message` 获取与发送单聊、群组消息 `im:message:readonly` 获取单聊、群组消息 | `tenant_access_token` | **✓** | **✓** |
+| `[查询批量消息推送和阅读人数](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/batch_message/read_user)`    `GET` /open-apis/im/v1/batch_messages/:batch_message_id/read_user &gt;调用[批量发送消息](https://open.larkoffice.com/document/ukTMukTMukTM/ucDO1EjL3gTNx4yN4UTM)接口后，可以通过该接口查询批量消息推送的总人数和阅读消息的人数。 | `im:message:send_multi_depts` 给一个或多个部门的成员批量发消息 `im:message:send_multi_users` 给多个用户批量发消息 | `tenant_access_token` | **✓** | **✓** |
+| `[查询批量消息整体进度](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/batch_message/get_progress)`    `GET` /open-apis/im/v1/batch_messages/:batch_message_id/get_progress &gt;调用[批量发送消息](https://open.larkoffice.com/document/ukTMukTMukTM/ucDO1EjL3gTNx4yN4UTM)接口后，可通过该接口获取批量消息发送的进度、撤回进度。 | `im:message:send_multi_depts` 给一个或多个部门的成员批量发消息 `im:message:send_multi_users` 给多个用户批量发消息 | `tenant_access_token` | **✓** | **✓** |
+| `[添加跟随气泡](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/push_follow_up)`    `POST` /open-apis/im/v1/messages/:message_id/push_follow_up &gt;展示在机器人消息下方的气泡，用户点击气泡或者新消息到达后，气泡消失。 | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 | `tenant_access_token` | **✓** | **✓** |
 
 
 #### 事件列表
@@ -117,9 +117,9 @@ updateTime: "1741352974000"
 
 | **[事件 (Event)](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)** | 权限要求（满足任一） | 事件类型 | 商店 | 自建 |
 | --- | --- | --- | --- | --- |
-| `[接收消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)` > 机器人接收到用户发送的消息后触发此事件。 | `im:message.group_at_msg` 获取用户在群组中@机器人的消息 `im:message.group_at_msg:readonly` 接收群聊中@机器人消息事件 `im:message.group_msg` 获取群组中所有消息（敏感权限） `im:message.p2p_msg:readonly` 读取用户发给机器人的单聊消息 `im:message.p2p_msg` 获取用户发给机器人的单聊消息 | im.message.receive_v1 | **✓** | **✓** |
-| `[消息已读](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/message_read)` > 用户阅读机器人发送的单聊消息后触发此事件。 | `im:message` 获取与发送单聊、群组消息 `im:message:readonly` 获取单聊、群组消息 | im.message.message_read_v1 | **✓** | **✓** |
-| `[撤回消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/recalled)` > 消息被撤回后出发此事件。 | `im:message` 获取与发送单聊、群组消息 `im:message:readonly` 获取单聊、群组消息 | im.message.recalled_v1 | **✓** | **✓** |
+| `[接收消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive)` &gt; 机器人接收到用户发送的消息后触发此事件。 | `im:message.group_at_msg` 获取用户在群组中@机器人的消息 `im:message.group_at_msg:readonly` 接收群聊中@机器人消息事件 `im:message.group_msg` 获取群组中所有消息（敏感权限） `im:message.p2p_msg:readonly` 读取用户发给机器人的单聊消息 `im:message.p2p_msg` 获取用户发给机器人的单聊消息 | im.message.receive_v1 | **✓** | **✓** |
+| `[消息已读](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/message_read)` &gt; 用户阅读机器人发送的单聊消息后触发此事件。 | `im:message` 获取与发送单聊、群组消息 `im:message:readonly` 获取单聊、群组消息 | im.message.message_read_v1 | **✓** | **✓** |
+| `[撤回消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/recalled)` &gt; 消息被撤回后出发此事件。 | `im:message` 获取与发送单聊、群组消息 `im:message:readonly` 获取单聊、群组消息 | im.message.recalled_v1 | **✓** | **✓** |
 
 ### 图片信息
   
@@ -128,7 +128,7 @@ updateTime: "1741352974000"
 | **[方法 (API)](https://open.larkoffice.com/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
 | --- | --- | --- | --- | --- |
 | `[上传图片](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)    `POST` /open-apis/im/v1/images       > 上传图片接口，支持上传 JPEG、PNG、WEBP、GIF、TIFF、BMP、ICO 格式图片。   ` | `im:resource` 获取与上传图片或文件资源 | `tenant_access_token` | **✓** | **✓** |
-| `[下载图片](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/get)`    `GET` /open-apis/im/v1/images/:image_key      > 下载图片资源，只能下载当前应用所上传的图片，且图片类型需要为 message（即用于发送消息的图片）。 | 无 | `tenant_access_token` | **✓** | **✓** |
+| `[下载图片](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/get)`    `GET` /open-apis/im/v1/images/:image_key      &gt; 下载图片资源，只能下载当前应用所上传的图片，且图片类型需要为 message（即用于发送消息的图片）。 | 无 | `tenant_access_token` | **✓** | **✓** |
 
 
 ### 文件信息
@@ -138,7 +138,7 @@ updateTime: "1741352974000"
 | **[方法 (API)](https://open.larkoffice.com/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
 | --- | --- | --- | --- | --- |
 | `[上传文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/create)    `POST` /open-apis/im/v1/files       > 上传文件，可以上传视频，音频和 doc、xls、ppt 等常见文件类型。   ` | `im:resource` 获取与上传图片或文件资源 | `tenant_access_token` | **✓** | **✓** |
-| `[下载文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/get)`    `GET` /open-apis/im/v1/files/:file_key      > 下载文件接口，只能下载应用自己上传的文件。 | 无 | `tenant_access_token` | **✓** | **✓** |
+| `[下载文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file/get)`    `GET` /open-apis/im/v1/files/:file_key      &gt; 下载文件接口，只能下载应用自己上传的文件。 | 无 | `tenant_access_token` | **✓** | **✓** |
 
 
 ### 消息卡片
@@ -149,9 +149,9 @@ updateTime: "1741352974000"
 | **[方法 (API)](https://open.larkoffice.com/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
 | --- | --- | --- | --- | --- |
 | `[更新应用发送的消息卡片](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/patch)    `PATCH` /open-apis/im/v1/messages/:message_id       > 由当前应用发送过的卡片，可以调用该接口更新卡片的内容。   ` | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 `im:message:update` 更新消息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[延迟更新消息卡片](https://open.larkoffice.com/document/ukTMukTMukTM/uMDO1YjLzgTN24yM4UjN)`    `POST` /open-apis/interactive/v1/card/update      > 用户与卡片交互完成后，可选择使用该接口延后更新卡片内容。 | 无 | `tenant_access_token` | **✓** | **✓** |
-| `[发送仅特定人可见的消息卡片](https://open.larkoffice.com/document/ukTMukTMukTM/uETOyYjLxkjM24SM5IjN)`    `POST` /open-apis/ephemeral/v1/send      > 用于机器人在群会话中发送指定用户可见的消息卡片，指定用户查看到的卡片上方会展示“仅对你可见”。 | 无 | `tenant_access_token` | **✓** | **✓** |
-| `[删除仅特定人可见的消息卡片](https://open.larkoffice.com/document/ukTMukTMukTM/uITOyYjLykjM24iM5IjN)`    `POST` /open-apis/ephemeral/v1/delete      > 在群会话中删除特定人可见的卡片。通过该接口删除卡片后，不会留下该卡片消息的任何痕迹。 | 无 | `tenant_access_token` | **✓** | **✓** |
+| `[延迟更新消息卡片](https://open.larkoffice.com/document/ukTMukTMukTM/uMDO1YjLzgTN24yM4UjN)`    `POST` /open-apis/interactive/v1/card/update      &gt; 用户与卡片交互完成后，可选择使用该接口延后更新卡片内容。 | 无 | `tenant_access_token` | **✓** | **✓** |
+| `[发送仅特定人可见的消息卡片](https://open.larkoffice.com/document/ukTMukTMukTM/uETOyYjLxkjM24SM5IjN)`    `POST` /open-apis/ephemeral/v1/send      &gt; 用于机器人在群会话中发送指定用户可见的消息卡片，指定用户查看到的卡片上方会展示“仅对你可见”。 | 无 | `tenant_access_token` | **✓** | **✓** |
+| `[删除仅特定人可见的消息卡片](https://open.larkoffice.com/document/ukTMukTMukTM/uITOyYjLykjM24iM5IjN)`    `POST` /open-apis/ephemeral/v1/delete      &gt; 在群会话中删除特定人可见的卡片。通过该接口删除卡片后，不会留下该卡片消息的任何痕迹。 | 无 | `tenant_access_token` | **✓** | **✓** |
 
   
 ### 表情回复
@@ -162,8 +162,8 @@ updateTime: "1741352974000"
 | **[方法 (API)](https://open.larkoffice.com/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
 | --- | --- | --- | --- | --- |
 | `[添加消息表情回复](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-reaction/create)    `POST` /open-apis/im/v1/messages/:message_id/reactions       > 给指定消息添加指定类型的表情回复。   ` | `im:message` 获取与发送单聊、群组消息 `im:message.reactions:write_only` 发送、删除消息表情回复 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[获取消息表情回复](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-reaction/list)`    `GET` /open-apis/im/v1/messages/:message_id/reactions      > 获取指定消息的特定类型表情回复列表。 | `im:message.reactions:read` 查看消息表情回复 `im:message:readonly` 获取单聊、群组消息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[删除消息表情回复](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-reaction/delete)`    `DELETE` /open-apis/im/v1/messages/:message_id/reactions/:reaction_id      > 删除指定消息的表情回复。 | `im:message` 获取与发送单聊、群组消息 `im:message.reactions:write_only` 发送、删除消息表情回复 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[获取消息表情回复](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-reaction/list)`    `GET` /open-apis/im/v1/messages/:message_id/reactions      &gt; 获取指定消息的特定类型表情回复列表。 | `im:message.reactions:read` 查看消息表情回复 `im:message:readonly` 获取单聊、群组消息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[删除消息表情回复](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-reaction/delete)`    `DELETE` /open-apis/im/v1/messages/:message_id/reactions/:reaction_id      &gt; 删除指定消息的表情回复。 | `im:message` 获取与发送单聊、群组消息 `im:message.reactions:write_only` 发送、删除消息表情回复 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
 
   
 
@@ -171,8 +171,8 @@ updateTime: "1741352974000"
 
 | **[事件 (Event)](https://open.larkoffice.com/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)** | 权限要求（满足任一） | 事件类型 | 商店 | 自建 |
 | --- | --- | --- | --- | --- |
-| `[新增消息表情回复](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-reaction/events/created)` > 消息被添加某一个表情回复后触发此事件。 | `im:message.reactions:read` 查看消息表情回复 `im:message:readonly` 获取单聊、群组消息 | im.message.reaction.created_v1 | **✓** | **✓** |
-| `[删除消息表情回复](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-reaction/events/deleted)` > 消息被删除某一个表情回复后触发此事件。 | `im:message.reactions:read` 查看消息表情回复 `im:message:readonly` 获取单聊、群组消息 | im.message.reaction.deleted_v1 | **✓** | **✓** |
+| `[新增消息表情回复](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-reaction/events/created)` &gt; 消息被添加某一个表情回复后触发此事件。 | `im:message.reactions:read` 查看消息表情回复 `im:message:readonly` 获取单聊、群组消息 | im.message.reaction.created_v1 | **✓** | **✓** |
+| `[删除消息表情回复](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-reaction/events/deleted)` &gt; 消息被删除某一个表情回复后触发此事件。 | `im:message.reactions:read` 查看消息表情回复 `im:message:readonly` 获取单聊、群组消息 | im.message.reaction.deleted_v1 | **✓** | **✓** |
 
   
 
@@ -183,8 +183,8 @@ updateTime: "1741352974000"
 | **[方法 (API)](https://open.larkoffice.com/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
 | --- | --- | --- | --- | --- |
 | `[发送应用内加急](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/urgent_app)    `PATCH` /open-apis/im/v1/messages/:message_id/urgent_app       > 机器人发送消息后，可以调用该接口向目标用户发送应用内加急。   ` | `im:message.urgent` 发送应用内加急消息 | `tenant_access_token` | **✓** | **✓** |
-| `[发送短信加急](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/urgent_sms)`    `PATCH` /open-apis/im/v1/messages/:message_id/urgent_sms      > 机器人发送消息后，可以调用该接口向目标用户发送应用内加急和短信加急。 | `im:message.urgent:sms` 发送短信加急消息 | `tenant_access_token` | **✓** | **✓** |
-| `[发送电话加急](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/urgent_phone)`    `PATCH` /open-apis/im/v1/messages/:message_id/urgent_phone      > 机器人发送消息后，可以调用该接口向目标用户发送应用内加急和电话加急。 | `im:message.urgent:phone` 发送电话加急消息 | `tenant_access_token` | **✓** | **✓** |
+| `[发送短信加急](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/urgent_sms)`    `PATCH` /open-apis/im/v1/messages/:message_id/urgent_sms      &gt; 机器人发送消息后，可以调用该接口向目标用户发送应用内加急和短信加急。 | `im:message.urgent:sms` 发送短信加急消息 | `tenant_access_token` | **✓** | **✓** |
+| `[发送电话加急](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/urgent_phone)`    `PATCH` /open-apis/im/v1/messages/:message_id/urgent_phone      &gt; 机器人发送消息后，可以调用该接口向目标用户发送应用内加急和电话加急。 | `im:message.urgent:phone` 发送电话加急消息 | `tenant_access_token` | **✓** | **✓** |
 
 
 ### Pin
@@ -194,8 +194,8 @@ updateTime: "1741352974000"
 | **[方法 (API)](https://open.larkoffice.com/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
 | --- | --- | --- | --- | --- |
 | `[Pin 消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/pin/create)    `POST` /open-apis/im/v1/pins       > Pin 一条指定的消息，被 Pin 的消息在当前会话中对所有成员可见，方便成员随时查看。   ` | `im:message` 获取与发送单聊、群组消息 `im:message.pins:write_only` 添加、 取消 Pin 消息 `im:message:send_as_bot` 以应用的身份发消息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[移除 Pin 消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/pin/delete)`    `DELETE` /open-apis/im/v1/pins/:message_id      > 移除被 Pin 的消息。 | `im:message` 获取与发送单聊、群组消息 `im:message.pins:write_only` 添加、 取消 Pin 消息 `im:message:send_as_bot` 以应用的身份发消息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[获取群内 Pin 消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/pin/list)`    `GET` /open-apis/im/v1/pins      > 在指定群内，获取指定时间范围内的所有 Pin 消息。 | `im:message` 获取与发送单聊、群组消息 `im:message.pins:read` 查看 Pin 消息 `im:message:readonly` 获取单聊、群组消息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[移除 Pin 消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/pin/delete)`    `DELETE` /open-apis/im/v1/pins/:message_id      &gt; 移除被 Pin 的消息。 | `im:message` 获取与发送单聊、群组消息 `im:message.pins:write_only` 添加、 取消 Pin 消息 `im:message:send_as_bot` 以应用的身份发消息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[获取群内 Pin 消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/pin/list)`    `GET` /open-apis/im/v1/pins      &gt; 在指定群内，获取指定时间范围内的所有 Pin 消息。 | `im:message` 获取与发送单聊、群组消息 `im:message.pins:read` 查看 Pin 消息 `im:message:readonly` 获取单聊、群组消息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
 
 
 ### URL 预览

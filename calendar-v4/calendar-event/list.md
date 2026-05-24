@@ -24,7 +24,7 @@ updateTime: "1745206891000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `calendar:calendar` 更新日历及日程信息 `calendar:calendar.event:read` 读取日程信息 `calendar:calendar:readonly` 获取日历、日程及忙闲信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -45,7 +45,7 @@ updateTime: "1745206891000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `page_size` | `int` | 否 | 一次请求要求返回的最大日程数量。实际返回的日程数量可能小于该值，也可能为空，可以根据响应体里的has_more字段来判断是否还有更多日程。<br>**示例值**：50<br>**默认值**：`500`<br>**数据校验规则**：<br>- 取值范围：`50` ～ `1000` |
-| `anchor_time` | `string` | 否 | 时间锚点，Unix 时间戳（秒）。anchor_time 用于设置一个时间点，以便直接拉取该时间点之后的日程数据，从而避免拉取全量日程数据。可使用 page_token 或 sync_token 进行分页或增量拉取 anchor_time 之后的所有日程数据。<br>**使用说明**：<br>- 对于单次日程，会获取到 **日程结束时间 >= anchor_time** 的日程信息。 - 对于重复性日程，目前设置 anchor_time 后均会获取到，包括在 anchor_time 之前的已结束的历史重复性日程。 - 对于例外日程，会获取到 **original_time >= anchor_time** 以及 **日程结束时间 >= anchor_time** 的日程信息，其中 original_time 从例外日程 ID 中获取，ID 结构为 `{uid}_{original_time}`。<br>**注意**：该参数不可与 start_time 和 end_time 一起使用。<br>**默认值**：空<br>**示例值**：1609430400 |
+| `anchor_time` | `string` | 否 | 时间锚点，Unix 时间戳（秒）。anchor_time 用于设置一个时间点，以便直接拉取该时间点之后的日程数据，从而避免拉取全量日程数据。可使用 page_token 或 sync_token 进行分页或增量拉取 anchor_time 之后的所有日程数据。<br>**使用说明**：<br>- 对于单次日程，会获取到 **日程结束时间 &gt;= anchor_time** 的日程信息。 - 对于重复性日程，目前设置 anchor_time 后均会获取到，包括在 anchor_time 之前的已结束的历史重复性日程。 - 对于例外日程，会获取到 **original_time &gt;= anchor_time** 以及 **日程结束时间 &gt;= anchor_time** 的日程信息，其中 original_time 从例外日程 ID 中获取，ID 结构为 `{uid}_{original_time}`。<br>**注意**：该参数不可与 start_time 和 end_time 一起使用。<br>**默认值**：空<br>**示例值**：1609430400 |
 | `page_token` | `string` | 否 | 分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果<br>**示例值**：ListCalendarsPageToken_1632452910_1632539310 |
 | `sync_token` | `string` | 否 | 增量同步标记，第一次请求不填。当分页查询结束（page_token 返回值为空）时，接口会返回 sync_token 字段，下次调用可使用该 sync_token 增量获取日历变更数据。<br>**默认值**：空<br>**示例值**：ListCalendarsSyncToken_1632452910 |
 | `start_time` | `string` | 否 | 时间区间的开始时间， Unix 时间戳（秒），与end_time搭配使用，用于拉取指定时间区间内的日程数据.<br>**注意**：<br>- 该方式只能一次性返回数据，无法进行分页。一次性返回的数据大小受page_size限制，超过限制的数据将被截断。 - 在使用start_time和end_time时，不能与page_token或sync_token一起使用。 - 在使用start_time和end_time时，不能与anchor_time一起使用。<br>**默认值**：空<br>**示例值**：1631777271 |

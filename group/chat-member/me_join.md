@@ -81,7 +81,7 @@ updateTime: "1737081995000"
 | 400 | 232010 | Operator and chat can NOT be in different tenants. | 调用接口的操作者和被操作的群组不在同一租户下，无法操作。需确保当前的操作者和被操作的群组在同一租户下。 |
 | 400 | 232013 | You have reached the limit of maximum number of members a chat can have. | 加入群组时，群成员数量已达到上限。对于已认证企业的飞书的群人数默认上限：普通群 5000 人，会议群 3000 人，话题群 5000 人。 |
 | 400 | 232019 | The request has been rate limited. | 触发群限流，请控制请求的速度，详情参见[频控策略](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)。 |
-| 400 | 232025 | Bot ability is not activated. | 应用未启用机器人能力。你需要登录[开发者后台](https://open.feishu.cn/app)，在应用详情页的 **应用能力** > **添加应用能力** 页面内，添加 **机器人** 能力，并发布应用使配置生效。具体操作参见[机器人能力](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
+| 400 | 232025 | Bot ability is not activated. | 应用未启用机器人能力。你需要登录[开发者后台](https://open.feishu.cn/app)，在应用详情页的 **应用能力** &gt; **添加应用能力** 页面内，添加 **机器人** 能力，并发布应用使配置生效。具体操作参见[机器人能力](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
 | 400 | 232027 | There are no valid members in the ID list specified in your request. | 成员 ID 列表为空或不存在有效的成员。 |
 | 400 | 232034 | The app is unavailable or inactivated by the tenant. | 应用在本租户下未安装或未启用。需要先安装应用，再使用应用调用接口。 |
 | 400 | 232075 | The public group needs to apply to join, and users or bots are not allowed to actively join the group. | 公开群已开启进群验证，不能通过 API 入群。 |

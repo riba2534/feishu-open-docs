@@ -1,3 +1,8 @@
 __pycache__/
 *.pyc
 failed_docs.json
+
+# VitePress site
+node_modules/
+.vitepress/cache/
+.vitepress/dist/

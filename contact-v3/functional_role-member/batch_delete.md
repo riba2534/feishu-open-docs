@@ -22,7 +22,7 @@ updateTime: "1775548410000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `contact:functional_role` 查看、创建、修改、删除角色及角色成员 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -36,7 +36,7 @@ updateTime: "1775548410000"
 
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
-| `role_id` | `string` | 角色 ID。获取方式：<br>- 在[创建角色](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/functional_role/create)时，可从返回结果中获取。 - 企业管理员可以在 [管理后台](https://feishu.cn/admin) > **组织架构** > **角色管理** 页面，在角色名称右侧获取角色 ID。<br>**示例值**："7vrj3vk70xk7v5r" |
+| `role_id` | `string` | 角色 ID。获取方式：<br>- 在[创建角色](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/functional_role/create)时，可从返回结果中获取。 - 企业管理员可以在 [管理后台](https://feishu.cn/admin) &gt; **组织架构** &gt; **角色管理** 页面，在角色名称右侧获取角色 ID。<br>**示例值**："7vrj3vk70xk7v5r" |
 
 
 ### 查询参数

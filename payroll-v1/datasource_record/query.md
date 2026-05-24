@@ -18,7 +18,7 @@ updateTime: "1747821608000"
 | HTTP Method | POST |
 | 接口频率限制 | [10 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
-| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `payroll:external_datasource_record:read` Payroll外部数据记录查询权限 > **Tip**: 本接口支持行数据鉴权，请确保应用拥有写入员工所在薪资组的数据授权。（如果是用户身份访问，请在飞书人事后台-角色配置中赋予「外部数据源 - 数据明细」的权限） |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `payroll:external_datasource_record:read` Payroll外部数据记录查询权限 &gt; **Tip**: 本接口支持行数据鉴权，请确保应用拥有写入员工所在薪资组的数据授权。（如果是用户身份访问，请在飞书人事后台-角色配置中赋予「外部数据源 - 数据明细」的权限） |
 
 ### 请求头
 

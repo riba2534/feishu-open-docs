@@ -27,13 +27,13 @@ Client client=Client.newBuilder("appId","appSecret") // 默认配置为自建应
 
 | 配置选项 | 配置方式 | 是否必填 | 描述 |
 | --- | --- | --- | --- |
-| app_id 和 app_secret | Client.newBuilder("appId","appSecret") | 是 | 应用凭证 App ID 和 App Secret。可在[开发者后台](https://open.feishu.cn/app) > 应用详情页 > **凭证与基础信息** > **应用凭证** 区域获取。![图片名称](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/f7f89950be7e57c2760a8b5b1f5e17c9_YeHS0mGtI7.png?height=524&lazyload=true&width=3594) |
+| app_id 和 app_secret | Client.newBuilder("appId","appSecret") | 是 | 应用凭证 App ID 和 App Secret。可在[开发者后台](https://open.feishu.cn/app) &gt; 应用详情页 &gt; **凭证与基础信息** &gt; **应用凭证** 区域获取。![图片名称](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/f7f89950be7e57c2760a8b5b1f5e17c9_YeHS0mGtI7.png?height=524&lazyload=true&width=3594) |
 | appType | client.marketplaceApp() | 否 | 设置 App 类型为商店应用。如果你是 ISV 开发者，则必须设置该选项。关于商店应用的开发指南，可参见 [ISV（商店应用）开发指南-oapi-sdk-java](https://bytedance.feishu.cn/docx/G4lndQqsgoenFhxcPlIc0Klinte)。 |
 | logReqAtDebug | client.logReqAtDebug(boolean logReqAtDebug) | 否 | 设置是否开启 HTTP 请求参数和响应参数的日志打印开关。开启后，在 debug 模式下会打印 HTTP 请求和响应的 headers、body 等信息。在排查问题时开启该选项，有利于问题的排查。 |
-| BaseUrl | client.openBaseUrl(BaseUrlEnum baseUrl) | 否 | 设置飞书域名，默认为 FeishuBaseUrl。可用域名如下： ```java public enum BaseUrlEnum {   FeiShu("https://open.feishu.cn"),   LarkSuite("https://open.larksuite.com"),   ; } ``` |
+| BaseUrl | client.openBaseUrl(BaseUrlEnum baseUrl) | 否 | 设置飞书域名，默认为 FeishuBaseUrl。可用域名如下： ```java public enum BaseUrlEnum `{   FeiShu("https://open.feishu.cn"),   LarkSuite("https://open.larksuite.com"),   ; }` ``` |
 | tokenCache | client.tokenCache(ICache cache) | 否 | 设置 Token 缓存器，用于缓存 Token 和 appTIcket，默认实现为内存。 ```java public interface ICache {   // 获取缓存值   String get(String key);   // 设置缓存值   void set(String key, String value, int expire, TimeUnit timeUnit); } ```  对于商店应用的开发者而言，如果需要 SDK 来缓存 appTicket，则需要实现该接口，以提供分布式缓存。 |
 | disableTokenCache | client.disableTokenCache() | 否 | 设置是否开启 TenantAccessToken （[应用访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)）的自动获取与缓存。 若配置该选项，表示关闭自动获取与缓存 TenantAccessToken；若不配置则为开启。 |
-| helpDeskId、helpDeskToken | client.helpDeskCredential(String helpDeskId, String helpDeskToken) | 否 | 服务台的 ID 和 token。仅在调用服务台业务的 API 时需要配置。可在[服务台管理后台](https://feishu.cn/helpdesk/admin)**设置中心** > **API 凭证** 处获取，详情参见 [服务台接入指南](https://open.larkoffice.com/document/ukTMukTMukTM/ugDOyYjL4gjM24CO4IjN)。          **注意**：服务台的 ID、Token 只有服务台创建者可以查看到。![图片名称](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/dcc3b0ac14729354c2bc4b44af26c4f9_mXmcHyDfTy.png?height=693&lazyload=true&width=1916) |
+| helpDeskId、helpDeskToken | client.helpDeskCredential(String helpDeskId, String helpDeskToken) | 否 | 服务台的 ID 和 token。仅在调用服务台业务的 API 时需要配置。可在[服务台管理后台](https://feishu.cn/helpdesk/admin)**设置中心** &gt; **API 凭证** 处获取，详情参见 [服务台接入指南](https://open.larkoffice.com/document/ukTMukTMukTM/ugDOyYjL4gjM24CO4IjN)。          **注意**：服务台的 ID、Token 只有服务台创建者可以查看到。![图片名称](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/dcc3b0ac14729354c2bc4b44af26c4f9_mXmcHyDfTy.png?height=693&lazyload=true&width=1916) |
 | requestTimeout | client.requestTimeout(long timeout, TimeUnit timeUnit) | 否 | 设置 SDK 内置的 Http Client 的请求超时时间。默认为 0 表示永不超时。 |
 | httpTransport | client.httpTransport(IHttpTransport httpTransport) | 否 | 设置传输层实现，用于替换 SDK 提供的默认实现。你可通过实现下面的 IHttpTransport 接口来设置自定义的传输实现： ```java public interface IHttpTransport {   RawResponse execute(RawRequest request) throws Exception; } ``` 目前提供了以下两种实现： - 基于 [OKhttp](https://github.com/larksuite/oapi-sdk-java/blob/v2_main/larksuite-oapi/src/main/java/com/lark/oapi/core/httpclient/OkHttpTransport.java) 的实现，使用方式参见[示例代码](https://github.com/larksuite/oapi-sdk-java/blob/v2_main/sample/src/main/java/com/lark/oapi/sample/api/ClientSample.java)。 - 基于 [Apache HttpClient](https://github.com/larksuite/oapi-sdk-java/blob/v2_main/larksuite-oapi/src/main/java/com/lark/oapi/core/httpclient/ApacheHttpClientTransport.java) 的实现，使用方式参见[示例代码](https://github.com/larksuite/oapi-sdk-java/blob/v2_main/sample/src/main/java/com/lark/oapi/sample/api/ClientSample.java)。 |
 
@@ -107,7 +107,7 @@ public class DocxSample {
 
 | 配置选项 | 配置方式 | 描述 |
 | --- | --- | --- |
-| headers | requestOptions.headers(Map<String, List<String>> headers) | 设置自定义请求头。在发起请求时，这些请求头会被透传到飞书开放平台服务端。 |
+| headers | requestOptions.headers(Map&lt;String, List&lt;String&gt;&gt; headers) | 设置自定义请求头。在发起请求时，这些请求头会被透传到飞书开放平台服务端。 |
 | userAccessToken | requestOptions.userAccessToken(String userAccessToken) | 设置用户 token，当你需要以用户身份发起 API 调用时，需要设置该选项的值。 |
 | tenantAccessToken | requestOptions.tenantAccessToken(String tenantAccessToken) | 设置企业或组织 token，当你自己维护企业或组织 token 时（即创建 client 时 EnableTokenCache 设置为 false），需通过该选项传递企业或组织 token。 |
 | tenantKey | requestOptions.tenantKey(tenantKey string) | 设置企业或组织 key, 当你开发商店应用时，必须设置该选项。 |

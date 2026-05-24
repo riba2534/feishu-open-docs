@@ -24,7 +24,7 @@ OpenAPI 支持将以下飞书云文档导出为以下文件类型。
 
 | 飞书云文档 | 支持导出的文件类型 |
 | --- | --- |
-| -   [新版在线文档](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-overview)（docx） - [旧版在线文档](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/docs/upgraded-docs-access-guide/upgraded-docs-openapi-access-guide)（doc）（历史版本，已不推荐使用） | - 扩展名为 docx 的 Microsoft Word 文档 > **Tip**: 导出为 Microsoft Word 文档时，文档内资源大小总计不可超过 1 GB，否则将导出失败。          - 扩展名为 pdf 的文件 > **Tip**: 导出为 PDF 文件时，文档内资源大小总计不可超过 128 MB，否则将导出失败。 |
+| -   [新版在线文档](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-overview)（docx） - [旧版在线文档](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/docs/upgraded-docs-access-guide/upgraded-docs-openapi-access-guide)（doc）（历史版本，已不推荐使用） | - 扩展名为 docx 的 Microsoft Word 文档 &gt; **Tip**: 导出为 Microsoft Word 文档时，文档内资源大小总计不可超过 1 GB，否则将导出失败。          - 扩展名为 pdf 的文件 &gt; **Tip**: 导出为 PDF 文件时，文档内资源大小总计不可超过 128 MB，否则将导出失败。 |
 | - [多维表格](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/bitable-overview) - [电子表格](https://open.larkoffice.com/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/overview) | - 扩展名为 xlsx 的 Microsoft Excel 表格 - 扩展名为 csv 的文件 |
 
 

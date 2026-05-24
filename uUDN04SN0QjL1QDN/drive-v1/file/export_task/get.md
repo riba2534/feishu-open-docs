@@ -97,7 +97,7 @@ curl --location --request GET 'https://open.feishu.cn/open-apis/drive/v1/export_
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
 | 500 | 1069901 | internal error | 服务内部错误，请联系[技术支持](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/docs-overview#51f94b41) |
-| 403 | 1069902 | no permission | 当前访问身份没有文档阅读或编辑权限。请参考以下方式解决： - 如果你使用的是 `tenant_access_token`，意味着当前应用没有文档阅读或编辑权限。你需通过云文档网页页面右上方 **「...」** -> **「...更多」** ->**「添加文档应用」** 入口为应用添加文档权限。 - 如果你使用的是 `user_access_token`，意味着当前用户没有文档阅读或编辑权限。你需通过云文档网页页面右上方 **分享** 入口为当前用户添加文档权限。 了解具体操作步骤或其它添加权限方式，参考[云文档常见问题 3](https://open.larkoffice.com/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#16c6475a)。 |
+| 403 | 1069902 | no permission | 当前访问身份没有文档阅读或编辑权限。请参考以下方式解决： - 如果你使用的是 `tenant_access_token`，意味着当前应用没有文档阅读或编辑权限。你需通过云文档网页页面右上方 **「...」** -&gt; **「...更多」** -&gt;**「添加文档应用」** 入口为应用添加文档权限。 - 如果你使用的是 `user_access_token`，意味着当前用户没有文档阅读或编辑权限。你需通过云文档网页页面右上方 **分享** 入口为当前用户添加文档权限。 了解具体操作步骤或其它添加权限方式，参考[云文档常见问题 3](https://open.larkoffice.com/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#16c6475a)。 |
 | 400 | 1069904 | invalid param | 无效参数，导出 csv 是否传入 sub_id |
 | 410 | 1069906 | docs deleted | 文档已被删除 |
 

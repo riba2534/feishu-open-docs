@@ -19,7 +19,7 @@ updateTime: "1754299493000"
 | 事件类型 | corehr.common_data.id.user_mapping_changed_v1 |
 | 支持的应用类型 | custom |
 | 权限要求             订阅该事件所需的权限，开启其中任意一项权限即可订阅 | `corehr:common_data.id.convert:read` 获取 ID 转换信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 | 推送方式 | `Webhook` |
 
 
@@ -37,7 +37,7 @@ updateTime: "1754299493000"
 | &nbsp;&nbsp;└ `tenant_key` | `string` | 租户 Key |
 | `event` | `\-` | \- |
 | &nbsp;&nbsp;└ `change_type` | `string` | 变更类型。insert：创建用户ID映射，delete：删除用户ID映射。 |
-| &nbsp;&nbsp;└ `id_transform_type` | `int` | ID转换类型。1:飞书人事<->飞书，2:飞书人事<->PeopleAdmin，3:PeopleAdmin<->飞书。<br>**数据校验规则**：<br>- 取值范围：`1` ～ `3` |
+| &nbsp;&nbsp;└ `id_transform_type` | `int` | ID转换类型。1:飞书人事&lt;-&gt;飞书，2:飞书人事&lt;-&gt;PeopleAdmin，3:PeopleAdmin&lt;-&gt;飞书。<br>**数据校验规则**：<br>- 取值范围：`1` ～ `3` |
 | &nbsp;&nbsp;└ `corehr_id` | `string` | 飞书人事ID，仅id_transform_type等于1、2时有值。 |
 | &nbsp;&nbsp;└ `people_admin_id` | `string` | PeopleAdmin ID，仅id_transform_type等于2、3时有值。 |
 | &nbsp;&nbsp;└ `feishu_id` | `user_id` | 飞书用户ID，仅id_transform_type等于1、3时有值。 |

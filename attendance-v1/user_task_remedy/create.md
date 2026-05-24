@@ -31,7 +31,7 @@ updateTime: "1778137703000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `employee_type` | `string` | 是 | 响应体中的 user_id 的员工ID类型。如果没有后台管理权限，可使用[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)<br>**示例值**：employee_id<br>**可选值有**：<br>- `employee_id`: 员工 employee ID，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的用户 ID - `employee_no`: 员工工号，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的工号 |
+| `employee_type` | `string` | 是 | 响应体中的 user_id 的员工ID类型。如果没有后台管理权限，可使用[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)<br>**示例值**：employee_id<br>**可选值有**：<br>- `employee_id`: 员工 employee ID，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) &gt; 组织架构 &gt; 成员与部门 &gt; 成员详情中的用户 ID - `employee_no`: 员工工号，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) &gt; 组织架构 &gt; 成员与部门 &gt; 成员详情中的工号 |
 
 
 ### 请求体
@@ -124,7 +124,7 @@ updateTime: "1778137703000"
 | 400 | 1220005 | 没有权限 | 请前往[考勤管理后台](https://oa.feishu.cn/attendance/manage/member/list)检查数据权限范围 |
 | 400 | 1220600 | 通用错误信息 | 通用错误信息包含多条，详细的错误信息以及处理建议可参见[错误信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines)。 |
 | 500 | 1225000 | param is invalid | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 500 | 1225001 | param is invalid | 请参考实际返回的错误信息排查问题。返回错误格式为导入的审批数据，格式为：{"TripErrorRecords":"","OvertimeWorkErrorRecords":"","LeaveErrorRecords":"","OutErrorRecords":""}。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 500 | 1225001 | param is invalid | 请参考实际返回的错误信息排查问题。返回错误格式为导入的审批数据，格式为：`{"TripErrorRecords":"","OvertimeWorkErrorRecords":"","LeaveErrorRecords":"","OutErrorRecords":""}`。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1226501 | no need remedy | 当天没有异常考勤，无需补卡 |
 | 400 | 1226502 | not allowed remedy | 考勤组设置不允许补卡 |
 | 400 | 1226503 | approval time beyond the time range | 考勤组设置只允许补过去多少天的卡，超出可补卡日期 |

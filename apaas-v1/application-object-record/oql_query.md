@@ -41,7 +41,7 @@ updateTime: "1727087294000"
 | --- | --- | --- | --- |
 | `query` | `string` | 是 | 待执行的 OQL 语句<br>**示例值**："SELECT _id, _name FROM _user WHERE _type = $1 AND _accountStatus = $user_status LIMIT 10" |
 | `args` | `string` | 否 | 用于指定 OQL 语句中匿名参数的具体值<br>**示例值**："[\"_employee\"]" |
-| `named_args` | `string` | 否 | 用于指定 OQL 语句中具名参数的具体值<br>**示例值**："{\"user_status\" : \"_used\"}" |
+| `named_args` | `string` | 否 | 用于指定 OQL 语句中具名参数的具体值<br>**示例值**："`{\"user_status\" : \"_used\"}`" |
 
 
 ### 请求体示例

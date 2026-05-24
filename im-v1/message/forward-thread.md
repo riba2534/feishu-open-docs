@@ -30,7 +30,7 @@ updateTime: "1727235601000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -146,7 +146,7 @@ updateTime: "1727235601000"
 | 400 | 230001 | Your request contains an invalid request parameter. | 参数错误，可根据接口实际返回的错误信息，并参考接口文档内容，检查输入参数是否填写错误。 |
 | 400 | 230002 | The bot can not be outside the group. | 机器人不在对应群组中。你需要将应用机器人添加到消息相应的群组中。如何添加机器人参考[机器人使用指南](https://open.larkoffice.com/document/ukTMukTMukTM/uATM04CMxQjLwEDN)。 |
 | 400 | 230006 | Bot ability is not activated. | 应用未启用机器人能力。启用方式参见[如何启用机器人能力](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
-| 400 | 230013 | Bot has NO availability to this user. | 目标用户（以用户的 user_id/open_id/union_id/email 指定的消息接收者）或单聊用户（以群聊的 chat_id 指定的消息接收者，但 chat_id 对应的群聊类型为单聊 `p2p`）不在应用机器人的可用范围内，或者是在应用的禁用范围内。 **注意**：如果目标用户已离职，也会报错 230013。 解决方案： 1. 登录[开发者后台](https://open.feishu.cn/app)，找到并进入指定应用详情页。 2. 在左侧导航栏进入 **应用发布** >  **版本管理与发布** 页面，点击 **创建版本**。 3. 在 **版本详情** 页面，找到 **可用范围** 区域，点击 **编辑**。 4. 在弹出的对话框内，配置应用的可用范围，将用户添加至可用范围内。 5. 在页面底部点击 **保存**，并发布应用使配置生效。 6. （可选）如果以上配置完成后仍报错，则需要联系企业管理员登录[管理后台](https://feishu.cn/admin)，在 **工作台** > **应用管理** 中进入指定应用详情页，在 **应用可用范围** 内查看该用户是否被设置为了 **禁用成员**。 具体操作参见[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。 |
+| 400 | 230013 | Bot has NO availability to this user. | 目标用户（以用户的 user_id/open_id/union_id/email 指定的消息接收者）或单聊用户（以群聊的 chat_id 指定的消息接收者，但 chat_id 对应的群聊类型为单聊 `p2p`）不在应用机器人的可用范围内，或者是在应用的禁用范围内。 **注意**：如果目标用户已离职，也会报错 230013。 解决方案： 1. 登录[开发者后台](https://open.feishu.cn/app)，找到并进入指定应用详情页。 2. 在左侧导航栏进入 **应用发布** &gt;  **版本管理与发布** 页面，点击 **创建版本**。 3. 在 **版本详情** 页面，找到 **可用范围** 区域，点击 **编辑**。 4. 在弹出的对话框内，配置应用的可用范围，将用户添加至可用范围内。 5. 在页面底部点击 **保存**，并发布应用使配置生效。 6. （可选）如果以上配置完成后仍报错，则需要联系企业管理员登录[管理后台](https://feishu.cn/admin)，在 **工作台** &gt; **应用管理** 中进入指定应用详情页，在 **应用可用范围** 内查看该用户是否被设置为了 **禁用成员**。 具体操作参见[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。 |
 | 400 | 230019 | The thread does NOT exist. | 要转发到的话题不存在，请检查 thread_id 是否正确。 |
 | 400 | 230020 | This operation triggers the frequency limit. | 当前操作触发频率限制，请降低请求频率后重试。 |
 | 400 | 230027 | Lack of necessary permissions. | 无权进行本次操作。可能的原因有： 1. 缺少相应权限，可根据实际的错误信息进行排查。 2. 未检查到用户授权信息。 3. 暂不支持在外部群中进行本操作。 |

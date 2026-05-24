@@ -41,8 +41,8 @@ updateTime: "1734434037000"
 | --- | --- | --- | --- |
 | `item_list` | `bp_role_organization\[\]` | 是 | 角色列表，一次最多支持查询 50 个 |
 | &nbsp;&nbsp;└ `role_key` | `string` | 是 | 角色类型的唯一标识 - HRBP：与部门有关，role_key 固定为 「hrbp」 - 属地 BP：与部门、工作地点有关，role_key 固定为 「location_bp」<br>**示例值**："location_bp" |
-| &nbsp;&nbsp;└ `department_id` | `string` | 是 | 部门 ID，查询 HRBP 需输入部门 ID，ID类型与department_id_type的取值意义一致。   >  可以使用 [ID转换服务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/common_data-id/convert)换取 ==department_id==   >  部门id也可通过[搜索部门信息](https://open.larkoffice.com/document/server-docs/corehr-v1/organization-management/department/search)接口获取。<br>**示例值**："7063072995761456670" |
-| &nbsp;&nbsp;└ `work_location_id` | `string` | 否 | 工作地点 ID，查询属地 BP 需要输入部门 ID 与 工作地点 ID > 可从[批量查询地点](https://open.larkoffice.com/document/server-docs/corehr-v1/organization-management/location/list)接口获取，或者在「[飞书人事](https://people.feishu.cn/people/)-组织管理-地点」中查看。<br>**示例值**："6892687221355185677" |
+| &nbsp;&nbsp;└ `department_id` | `string` | 是 | 部门 ID，查询 HRBP 需输入部门 ID，ID类型与department_id_type的取值意义一致。   &gt;  可以使用 [ID转换服务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/common_data-id/convert)换取 ==department_id==   &gt;  部门id也可通过[搜索部门信息](https://open.larkoffice.com/document/server-docs/corehr-v1/organization-management/department/search)接口获取。<br>**示例值**："7063072995761456670" |
+| &nbsp;&nbsp;└ `work_location_id` | `string` | 否 | 工作地点 ID，查询属地 BP 需要输入部门 ID 与 工作地点 ID &gt; 可从[批量查询地点](https://open.larkoffice.com/document/server-docs/corehr-v1/organization-management/location/list)接口获取，或者在「[飞书人事](https://people.feishu.cn/people/)-组织管理-地点」中查看。<br>**示例值**："6892687221355185677" |
 | `updated_at_gte` | `string` | 否 | 授权时间大于<br>**示例值**："1729773628" |
 | `updated_at_lte` | `string` | 否 | 授权时间小于<br>**示例值**："1729773628" |
 
@@ -75,8 +75,8 @@ updateTime: "1734434037000"
 | `msg` | `string` | 错误描述 |
 | `data` | `\-` | \- |
 | &nbsp;&nbsp;└ `hrbp_list` | `hrbp\[\]` | HRBP/属地 BP 信息 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `employment_id_list` | `string\[\]` | HRBP/属地 BP 的雇员ID ：<br>对于 HRBP 而言，若入参的部门没有找到对应的 HRBP，将向上找寻，即向其上级部门取对应的 HRBP，且同一部门可能有多个 HRBP；<br>对于 属地 BP 而言，若入参的部门和地点没有找到对应的属地 BP，将优先拿地点向上找寻，即向其上级地点取对应的属地 BP   >  如想获取BP的详细信息，可通过[搜索员工信息](https://open.larkoffice.com/document/server-docs/corehr-v1/employee/search)接口获取。 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `department_id` | `string` | 部门 ID   >  如想获取部门详细信息，可通过[搜索部门信息](https://open.larkoffice.com/document/server-docs/corehr-v1/organization-management/department/search)接口获取。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `employment_id_list` | `string\[\]` | HRBP/属地 BP 的雇员ID ：<br>对于 HRBP 而言，若入参的部门没有找到对应的 HRBP，将向上找寻，即向其上级部门取对应的 HRBP，且同一部门可能有多个 HRBP；<br>对于 属地 BP 而言，若入参的部门和地点没有找到对应的属地 BP，将优先拿地点向上找寻，即向其上级地点取对应的属地 BP   &gt;  如想获取BP的详细信息，可通过[搜索员工信息](https://open.larkoffice.com/document/server-docs/corehr-v1/employee/search)接口获取。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `department_id` | `string` | 部门 ID   &gt;  如想获取部门详细信息，可通过[搜索部门信息](https://open.larkoffice.com/document/server-docs/corehr-v1/organization-management/department/search)接口获取。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `work_location_id` | `string` | 工作地点 ID |
 
 

@@ -432,13 +432,13 @@ value中包含的子控件值说明:
 
 | id | 类型 | JSON示例 | 描述 |
 | --- | --- | --- | --- |
-| widgetLeaveGroupType | radioV2 | ``` {   "id": "widgetLeaveGroupType",   "type": "radioV2",   "value": "7488925543484620819" } ``` | 假期类型，具体格式可参考单选控件，选项由假勤接口获取，提单时必须包含该控件 |
-| widgetLeaveGroupStartTime | date | ``` {   "id": "widgetLeaveGroupStartTime",   "type": "date",   "value": "2019-10-01T08:12:01+08:00", // 需满足 RFC3339 格式的 string 类型 }     ``` | 请假开始时间，具体格式可参考日期控件，会根据假期类型自动取整,其中半天假小于12点则认为是上午，小时假则以半小时为粒度向前取整, 提单时必须包含该控件 |
-| widgetLeaveGroupEndTime | date | ``` {   "id": "widgetLeaveGroupEndTime",   "type": "date",   "value": "2019-10-01T08:12:01+08:00", // 需满足 RFC3339 格式的 string 类型 } ``` | 请假结束时间，具体格式可参考日期控件，会根据假期类型自动取整，其中半天假小于12点则认为是上午，小时假则以半小时为粒度向后取整 |
-| widgetLeaveGroupReason | textarea | ``` {   "id": "widgetLeaveGroupReason",   "type": "textarea",   "value": "123123" } ``` | 请假事由，具体格式可参考多行文本控件，哺乳假无需填写，其他情况则根据控件组配置中该控件是否可见以及必填判断 |
-| widgetLeaveCertification | image | ``` {   "id":"widgetLeaveCertification",   "type":"image",   "value": ["D93653C3-2609-4EE0-8041-61DC1D84F0B5"] } ``` | 请假证明，具体格式可参考图片控件，如果所选假期类型在假勤管理后台配置需要补充证明则必须传递该值，缺失会报错 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/8ab97ae490ac7c3f2008a3b554478c45_3qS7W30Qxv.png?height=546&lazyload=true&width=1654) |
-| widgetLeaveGroupFeedingArrivingLate | radioV2 | ``` {                                        "id": "widgetLeaveGroupFeedingArrivingLate",   "type": "radioV2",   "value": "30" } ``` | 上班晚到的分钟数，具体格式可参考单选控件，仅哺乳假需要填写，取值范围是0-120分钟，粒度是15分钟，选项从审批定义中该控件的option中获取 |
-| widgetLeaveGroupFeedingOffLeaveEarly | radioV2 | ``` {                                        "id": "widgetLeaveGroupFeedingOffLeaveEarly",   "type": "radioV2",   "value": "30" }    ``` | 下班早走的分钟数，具体格式可参考单选控件，仅哺乳假需要填写，取值范围是0-120分钟，粒度是15分钟，选项即是分钟对应的字符串 |
+| widgetLeaveGroupType | radioV2 | ``` `{   "id": "widgetLeaveGroupType",   "type": "radioV2",   "value": "7488925543484620819" }` ``` | 假期类型，具体格式可参考单选控件，选项由假勤接口获取，提单时必须包含该控件 |
+| widgetLeaveGroupStartTime | date | ``` `{   "id": "widgetLeaveGroupStartTime",   "type": "date",   "value": "2019-10-01T08:12:01+08:00", // 需满足 RFC3339 格式的 string 类型 }`     ``` | 请假开始时间，具体格式可参考日期控件，会根据假期类型自动取整,其中半天假小于12点则认为是上午，小时假则以半小时为粒度向前取整, 提单时必须包含该控件 |
+| widgetLeaveGroupEndTime | date | ``` `{   "id": "widgetLeaveGroupEndTime",   "type": "date",   "value": "2019-10-01T08:12:01+08:00", // 需满足 RFC3339 格式的 string 类型 }` ``` | 请假结束时间，具体格式可参考日期控件，会根据假期类型自动取整，其中半天假小于12点则认为是上午，小时假则以半小时为粒度向后取整 |
+| widgetLeaveGroupReason | textarea | ``` `{   "id": "widgetLeaveGroupReason",   "type": "textarea",   "value": "123123" }` ``` | 请假事由，具体格式可参考多行文本控件，哺乳假无需填写，其他情况则根据控件组配置中该控件是否可见以及必填判断 |
+| widgetLeaveCertification | image | ``` `{   "id":"widgetLeaveCertification",   "type":"image",   "value": ["D93653C3-2609-4EE0-8041-61DC1D84F0B5"] }` ``` | 请假证明，具体格式可参考图片控件，如果所选假期类型在假勤管理后台配置需要补充证明则必须传递该值，缺失会报错 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/8ab97ae490ac7c3f2008a3b554478c45_3qS7W30Qxv.png?height=546&lazyload=true&width=1654) |
+| widgetLeaveGroupFeedingArrivingLate | radioV2 | ``` `{                                        "id": "widgetLeaveGroupFeedingArrivingLate",   "type": "radioV2",   "value": "30" }` ``` | 上班晚到的分钟数，具体格式可参考单选控件，仅哺乳假需要填写，取值范围是0-120分钟，粒度是15分钟，选项从审批定义中该控件的option中获取 |
+| widgetLeaveGroupFeedingOffLeaveEarly | radioV2 | ``` `{                                        "id": "widgetLeaveGroupFeedingOffLeaveEarly",   "type": "radioV2",   "value": "30" }`    ``` | 下班早走的分钟数，具体格式可参考单选控件，仅哺乳假需要填写，取值范围是0-120分钟，粒度是15分钟，选项即是分钟对应的字符串 |
 
 
 **特殊的参数校验报错信息**
@@ -523,10 +523,10 @@ value中包含的子控件值说明:
 
 | id | 类型 | JSON示例 | 描述 |
 | --- | --- | --- | --- |
-| widgetWorkGroupOvertimeWorkers | contact | ``` {   "id":"widgetWorkGroupOvertimeWorkers",   "type":"contact",   "value": ["f8ca557e"],    "open_ids": ["ou_12345"] } ``` | 加班人员列表，具体格式可参考联系人控件，如果定义中配置「允许代多人提交」则该字段必填，如果是提交人给自己提交需填写提交人的ID |
-| widgetWorkGroupType | radioV2 | ``` {   "id": "widgetWorkGroupType",   "type": "radioV2",   "value": "7259635026038505475" // 对应的类型选项ID } ``` | 加班类型，具体格式可参考单选控件，如果定义中关闭「关联加班规则」则需要填写该字段 |
-| widgetWorkGroupTimeRangeFieldList | fieldList | ``` {   "id":"widgetWorkGroupTimeRangeFieldList",   "type":"fieldList",   "value":[     [       {         "id":"widgetWorkGroupStartTime",         "type":"date",         "value":"2019-10-01T08:12:01+08:00"       },       {         "id":"widgetWorkGroupEndTime",         "type":"date",         "value":"2019-10-01T08:12:01+08:00"       }     ]   ] } ``` | 加班时段，具体格式可参考明细控件，如果定义中打开「允许提交多个加班时段」则可以传多个，最多支持30个，否则只会取第一个，单次加班时长不可超过两天 |
-| widgetWorkGroupReason | textarea | ``` {   "id": "widgetWorkGroupReason",   "type": "textarea",   "value": "111" } ``` | 加班事由，如果定义中配置了「加班事由」必填，则必须填写该字段 |
+| widgetWorkGroupOvertimeWorkers | contact | ``` `{   "id":"widgetWorkGroupOvertimeWorkers",   "type":"contact",   "value": ["f8ca557e"],    "open_ids": ["ou_12345"] }` ``` | 加班人员列表，具体格式可参考联系人控件，如果定义中配置「允许代多人提交」则该字段必填，如果是提交人给自己提交需填写提交人的ID |
+| widgetWorkGroupType | radioV2 | ``` `{   "id": "widgetWorkGroupType",   "type": "radioV2",   "value": "7259635026038505475" // 对应的类型选项ID }` ``` | 加班类型，具体格式可参考单选控件，如果定义中关闭「关联加班规则」则需要填写该字段 |
+| widgetWorkGroupTimeRangeFieldList | fieldList | ``` `{   "id":"widgetWorkGroupTimeRangeFieldList",   "type":"fieldList",   "value":[     [       {         "id":"widgetWorkGroupStartTime",         "type":"date",         "value":"2019-10-01T08:12:01+08:00"       }`,       `{         "id":"widgetWorkGroupEndTime",         "type":"date",         "value":"2019-10-01T08:12:01+08:00"       }`     ]   ] } ``` | 加班时段，具体格式可参考明细控件，如果定义中打开「允许提交多个加班时段」则可以传多个，最多支持30个，否则只会取第一个，单次加班时长不可超过两天 |
+| widgetWorkGroupReason | textarea | ``` `{   "id": "widgetWorkGroupReason",   "type": "textarea",   "value": "111" }` ``` | 加班事由，如果定义中配置了「加班事由」必填，则必须填写该字段 |
 
 
 **特殊的参数校验报错信息**
@@ -603,11 +603,11 @@ value中包含的子控件值说明:
 
 | id | 类型 | JSON示例 | 描述 |
 | --- | --- | --- | --- |
-| widgetOutGroupType | radioV2 | ``` {   "id": "widgetOutGroupType",   "type": "radioV2",   "value":  "me15yqrf-gmjgbml2vhp-0"       } ``` | 外出类型，具体格式可参考单选控件，如果配置了「外出类型」则必填，外出时长单位会选取所选外出类型关联的单位，如果没有配置「外出类型」，则该字段无需填写，计算外出时长时会选取「外出时长」配置的单位 |
-| widgetOutGroupStartTime | date | ``` {   "id": "widgetOutGroupStartTime",   "type": "date",   "value":"2019-10-01T08:12:01+08:00" } ``` | 外出开始时间，具体格式可参考日期控件，如果外出时长单位是半天假，则小于12点则认为是上午，否则认为是下午；如果单位是小时，则会按半小时的粒度向前取整 |
-| widgetOutGroupEndTime | date | ``` {   "id": "widgetOutGroupEndTime",   "type": "date",   "value":"2019-10-01T08:12:01+08:00" } ``` | 外出结束时间，具体格式可参考日期控件，如果外出时长单位是半天假，则小于12点则认为是上午，否则认为是下午；如果单位是小时，则会按半小时的粒度向后取整 |
-| widgetOutGroupReason | textarea | ``` {   "id": "widgetOutGroupReason",   "type": "textarea",   "value":"123213" } ``` | 外出事由，具体格式可参考多行文本控件，如果定义中「外出事由」必填，则必须填写该控件，如果定义配置无需填写，则无需填写该控件 |
-| widgetOutGroupImage | image | ``` {   "id":"widgetOutGroupImage",   "type":"image",   "value": ["D93653C3-2609-4EE0-8041-61DC1D84F0B5"] }    ``` | 外出证明，具体格式可参考图片控件，如果定义中「外出拍照」必填，则必须填写该控件，如果定义配置无需填写，则无需填写该控件 |
+| widgetOutGroupType | radioV2 | ``` `{   "id": "widgetOutGroupType",   "type": "radioV2",   "value":  "me15yqrf-gmjgbml2vhp-0"       }` ``` | 外出类型，具体格式可参考单选控件，如果配置了「外出类型」则必填，外出时长单位会选取所选外出类型关联的单位，如果没有配置「外出类型」，则该字段无需填写，计算外出时长时会选取「外出时长」配置的单位 |
+| widgetOutGroupStartTime | date | ``` `{   "id": "widgetOutGroupStartTime",   "type": "date",   "value":"2019-10-01T08:12:01+08:00" }` ``` | 外出开始时间，具体格式可参考日期控件，如果外出时长单位是半天假，则小于12点则认为是上午，否则认为是下午；如果单位是小时，则会按半小时的粒度向前取整 |
+| widgetOutGroupEndTime | date | ``` `{   "id": "widgetOutGroupEndTime",   "type": "date",   "value":"2019-10-01T08:12:01+08:00" }` ``` | 外出结束时间，具体格式可参考日期控件，如果外出时长单位是半天假，则小于12点则认为是上午，否则认为是下午；如果单位是小时，则会按半小时的粒度向后取整 |
+| widgetOutGroupReason | textarea | ``` `{   "id": "widgetOutGroupReason",   "type": "textarea",   "value":"123213" }` ``` | 外出事由，具体格式可参考多行文本控件，如果定义中「外出事由」必填，则必须填写该控件，如果定义配置无需填写，则无需填写该控件 |
+| widgetOutGroupImage | image | ``` `{   "id":"widgetOutGroupImage",   "type":"image",   "value": ["D93653C3-2609-4EE0-8041-61DC1D84F0B5"] }`    ``` | 外出证明，具体格式可参考图片控件，如果定义中「外出拍照」必填，则必须填写该控件，如果定义配置无需填写，则无需填写该控件 |
 
 
 **特殊的参数校验报错信息**

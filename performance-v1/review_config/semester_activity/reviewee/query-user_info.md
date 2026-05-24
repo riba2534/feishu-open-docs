@@ -18,7 +18,7 @@ updateTime: "1768271834000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `performance:performance` 管理绩效数据 `performance:performance:readonly` 查看绩效数据 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID `performance:user_snapshot.department:read` 查看员工在绩效周期的部门信息 `performance:user_snapshot.direct_leader:read` 查看员工在绩效周期的直属上级 `performance:user_snapshot.job_family:read` 查看员工在绩效周期的序列信息 `performance:user_snapshot.job_level:read` 查看员工在绩效周期的职级信息 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID `performance:user_snapshot.department:read` 查看员工在绩效周期的部门信息 `performance:user_snapshot.direct_leader:read` 查看员工在绩效周期的直属上级 `performance:user_snapshot.job_family:read` 查看员工在绩效周期的序列信息 `performance:user_snapshot.job_level:read` 查看员工在绩效周期的职级信息 |
 
 ### 请求头
 

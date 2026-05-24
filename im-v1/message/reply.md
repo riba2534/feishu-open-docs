@@ -25,7 +25,7 @@ updateTime: "1775801452000"
 | HTTP Method | POST |
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
-| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 `im:message:send` 发送消息V2 > **Tip**: 1. **应用身份**发消息 >      * 需申请下面三个权限之一： **获取与发送单聊、群组消息**（im:message）**以应用的身份发消息**（im:message:send_as_bot）**发送消息V2【历史版本】**（im:message:send） > 2. **用户身份**发消息 >     * 需同时申请以下两个权限：  **获取与发送单聊、群组消息**（im:message）、 **以用户身份发送消息**（im:message.send_as_user） |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `im:message` 获取与发送单聊、群组消息 `im:message:send_as_bot` 以应用的身份发消息 `im:message:send` 发送消息V2 &gt; **Tip**: 1. **应用身份**发消息 &gt;      * 需申请下面三个权限之一： **获取与发送单聊、群组消息**（im:message）**以应用的身份发消息**（im:message:send_as_bot）**发送消息V2【历史版本】**（im:message:send） &gt; 2. **用户身份**发消息 &gt;     * 需同时申请以下两个权限：  **获取与发送单聊、群组消息**（im:message）、 **以用户身份发送消息**（im:message.send_as_user） |
 
 ### 请求头
 
@@ -163,7 +163,7 @@ curl --location --request POST 'https://open.feishu.cn/open-apis/im/v1/messages/
 | 400 | 230002 | The bot can not be outside the group. | 机器人不在对应群组中。你需要将应用机器人添加到接收消息的群组中。如何添加机器人参考[机器人使用指南](https://open.larkoffice.com/document/ukTMukTMukTM/uATM04CMxQjLwEDN)。 |
 | 400 | 230006 | Bot ability is not activated. | 应用未启用机器人能力。启用方式参见[如何启用机器人能力](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
 | 400 | 230011 | The message is recalled. | 消息已被撤回，不支持该操作。 |
-| 400 | 230013 | Bot has NO availability to this user. | 目标用户（以用户的 user_id/open_id/union_id/email 指定的消息接收者）或单聊用户（以群聊的 chat_id 指定的消息接收者，但 chat_id 对应的群聊类型为单聊 `p2p`）不在应用机器人的可用范围内，或者是在应用的禁用范围内。 **注意**：如果目标用户已离职，也会报错 230013。 解决方案： 1. 登录[开发者后台](https://open.feishu.cn/app)，找到并进入指定应用详情页。 2. 在左侧导航栏进入 **应用发布** >  **版本管理与发布** 页面，点击 **创建版本**。 3. 在 **版本详情** 页面，找到 **可用范围** 区域，点击 **编辑**。 4. 在弹出的对话框内，配置应用的可用范围，将用户添加至可用范围内。 5. 在页面底部点击 **保存**，并发布应用使配置生效。 6. （可选）如果以上配置完成后仍报错，则需要联系企业管理员登录[管理后台](https://feishu.cn/admin)，在 **工作台** > **应用管理** 中进入指定应用详情页，在 **应用可用范围** 内查看该用户是否被设置为了 **禁用成员**。 具体操作参见[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。 |
+| 400 | 230013 | Bot has NO availability to this user. | 目标用户（以用户的 user_id/open_id/union_id/email 指定的消息接收者）或单聊用户（以群聊的 chat_id 指定的消息接收者，但 chat_id 对应的群聊类型为单聊 `p2p`）不在应用机器人的可用范围内，或者是在应用的禁用范围内。 **注意**：如果目标用户已离职，也会报错 230013。 解决方案： 1. 登录[开发者后台](https://open.feishu.cn/app)，找到并进入指定应用详情页。 2. 在左侧导航栏进入 **应用发布** &gt;  **版本管理与发布** 页面，点击 **创建版本**。 3. 在 **版本详情** 页面，找到 **可用范围** 区域，点击 **编辑**。 4. 在弹出的对话框内，配置应用的可用范围，将用户添加至可用范围内。 5. 在页面底部点击 **保存**，并发布应用使配置生效。 6. （可选）如果以上配置完成后仍报错，则需要联系企业管理员登录[管理后台](https://feishu.cn/admin)，在 **工作台** &gt; **应用管理** 中进入指定应用详情页，在 **应用可用范围** 内查看该用户是否被设置为了 **禁用成员**。 具体操作参见[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。 |
 | 400 | 230015 | P2P chat can NOT be shared. | 私聊会话不允许被分享。 |
 | 400 | 230017 | Bot is NOT the owner of the resource. | 机器人不是资源的拥有者。 |
 | 400 | 230018 | These operations are NOT allowed at current group settings. | 当前操作被群设置禁止，例如群聊设置了仅指定成员可以在此群发言。请检查群设置或联系群管理员修改群设置。 |

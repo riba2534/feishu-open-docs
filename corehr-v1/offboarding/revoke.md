@@ -21,7 +21,7 @@ updateTime: "1767755115000"
 | 接口频率限制 | [20 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:offboarding.revoke:write` 撤销离职申请 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -43,7 +43,7 @@ updateTime: "1767755115000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `offboarding_id` | `string` | 是 | 离职记录ID，不允许为空。可以通过[搜索离职信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/offboarding/search)获取，取值于接口返回的data > items > offboarding_id<br>**示例值**："7095671727698478604" |
+| `offboarding_id` | `string` | 是 | 离职记录ID，不允许为空。可以通过[搜索离职信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/offboarding/search)获取，取值于接口返回的data &gt; items &gt; offboarding_id<br>**示例值**："7095671727698478604" |
 | `operator_id` | `string` | 否 | 操作人雇佣 ID（employment_id），ID类型与查询参数 user_id_type取值一致：<br>1、当user_id_type取值为open_id时，ID获取方式参考[如何获取自己的Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)。<br>2、当user_id_type取值为user_id时，ID获取方式参考[如何获取自己的 User ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)。<br>3、当user_id_type取值为union_id时，ID获取方式参考[如何获取自己的 Union ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id)。<br>4、当user_id_type取值为people_corehr_id时，先参考[如何获取自己的 User ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)获取User ID。然后通过[ID 转换](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/common_data-id/convert)获取雇佣ID。<br>注意：为空时，默认系统操作人<br>**示例值**："6982509313466189341" |
 
 

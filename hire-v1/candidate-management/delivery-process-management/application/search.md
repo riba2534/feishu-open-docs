@@ -68,7 +68,7 @@ updateTime: "1725872263000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `create_time` | `string` | 创建时间毫秒时间戳 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `update_time` | `string` | 更新时间毫秒时间戳 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `di_data` | `di_data\[\]` | 附加信息 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 字段值<br>**不同类型数据格式如下**： - 单选："1"  - 多选："["1", "2"]"  - 月份选择："{"date":"2022-01"}"  - 年份选择："{"date":"2022"}"  - 数字："123"  - 单行文本："今天天气不错"  - 多行文本："该候选人优势如下： 思维敏捷，逻辑清晰，对业务有自己见解"  - 日期范围："[1688140800000,1688140800000]" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 字段值<br>**不同类型数据格式如下**： - 单选："1"  - 多选："["1", "2"]"  - 月份选择："`{"date":"2022-01"}`"  - 年份选择："`{"date":"2022"}`"  - 数字："123"  - 单行文本："今天天气不错"  - 多行文本："该候选人优势如下： 思维敏捷，逻辑清晰，对业务有自己见解"  - 日期范围："[1688140800000,1688140800000]" |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `object_attribute` | `object_attribute` | 字段属性 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `title` | `i18n` | 字段名称 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh_cn` | `string` | 中文 |

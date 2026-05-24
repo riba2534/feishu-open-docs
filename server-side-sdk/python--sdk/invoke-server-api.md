@@ -32,7 +32,7 @@ client = lark.Client.builder() \
 
 | 配置选项 | 配置方式 | 是否必填 | 描述 |
 | --- | --- | --- | --- |
-| app_id | client.app_id("APP_ID") | 是 | 用于设置应用的 App ID。app_id、app_secret 需要传入真实的应用凭证 App ID 和 App Secret，需登录开发者后台，在应用详情页的 **凭证与基础信息** > **应用凭证** 区域获取。 |
+| app_id | client.app_id("APP_ID") | 是 | 用于设置应用的 App ID。app_id、app_secret 需要传入真实的应用凭证 App ID 和 App Secret，需登录开发者后台，在应用详情页的 **凭证与基础信息** &gt; **应用凭证** 区域获取。 |
 | app_secret | client.app_secret("APP_SECRET") | 是 | 用于设置应用的 App Secret。 |
 | domain | client.domain(lark.FEISHU_DOMAIN) | 否 | 用于设置飞书域名。 - 飞书（默认值）： `https://open.feishu.cn` - Lark：`https://open.larksuite.com` |
 | timeout | client.timeout(3) | 否 | 用于设置客户端超时时间，单位：秒。不传值默认为永不超时。 |
@@ -288,7 +288,7 @@ lark.logger.info(str(response.raw.content, lark.UTF_8))
 | lark.BaseRequest.uri("/open-apis/contact/v3/users/batch_get_id") | 设置 HTTP URL，仅取值域名后的 Path。例如 `https://open.feishu.cn/open-apis/contact/v3/users/batch_get_id` 实际取值为 `/open-apis/contact/v3/users/batch_get_id`。 如果接口有路径参数（Path），则需要拼接在 HTTP URL 内。 |
 | lark.BaseRequest.token_types({lark.AccessTokenType.TENANT} | 设置所用的身份 token。枚举值： - lark.AccessTokenType.TENANT：使用 tenant_access_token - lark.AccessTokenType.USER：使用 user_access_token - lark.AccessTokenType.APP：使用 app_access_token |
 | lark.BaseRequest.queries([("user_id_type", "open_id")]) | 如果接口有查询参数（Query），则需要通过该配置项传入。 |
-| lark.BaseRequest.body({"emails": ["xxxx@example.com"], "mobiles": ["1500000xxxx"]}) | 接口请求体（Body）通过该配置项传入。 |
+| lark.BaseRequest.body(`{"emails": ["xxxx@example.com"], "mobiles": ["1500000xxxx"]}`) | 接口请求体（Body）通过该配置项传入。 |
 
 
 其他调用示例参见[原生调用](https://github.com/larksuite/oapi-sdk-python/blob/v2_main/samples/api/raw.py)。

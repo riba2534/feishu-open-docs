@@ -33,7 +33,7 @@ updateTime: "1748414883000"
 ### 查询参数
 | **参数** | **参数类型** | **必须** | **说明**                                                     |
 | -------- | ------------ | -------- | ------------------------------------------------------------ |
-| room_ids | array<string>       | 是       | 会议室 ID。你可以通过[查询会议室列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room/list)或[搜索会议室](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room/search)接口获取指定会议室 ID。<br>1. room_ids个数不要超过20。 <br>2. GET 请求中传入多个会议室 ID 的格式示例为 `room_ids=omm_83d09ad4f6896e02029a6a075f71xxxx&room_ids=omm_eada1d61a550955240c28757e7dexxxx`。 |
+| room_ids | `array<string>`       | 是       | 会议室 ID。你可以通过[查询会议室列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room/list)或[搜索会议室](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room/search)接口获取指定会议室 ID。<br>1. room_ids个数不要超过20。 <br>2. GET 请求中传入多个会议室 ID 的格式示例为 `room_ids=omm_83d09ad4f6896e02029a6a075f71xxxx&room_ids=omm_eada1d61a550955240c28757e7dexxxx`。 |
 | time_min | string       | 是       | 查询的起始时间，需要遵循 [RFC3339](https://tools.ietf.org/html/rfc3339) 格式，示例：2019-09-04T08:45:00+08:00。<br>**注意**：传入该参数时需要进行 URL 编码。 |
 | time_max | string       | 是       | 查询的结束时间，需要遵循 [RFC3339](https://tools.ietf.org/html/rfc3339) 格式，示例：2019-09-04T09:45:00+08:00。<br>**注意**：传入该参数时需要进行 URL 编码。 |
 

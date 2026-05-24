@@ -18,7 +18,7 @@ updateTime: "1740729735000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:probation:write` 读写试用期信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:probation.assessment:read` 获取试用期考核信息 `corehr:probation.assessment:write` 读写试用期考核信息 `corehr:probation.custom_field:read` 获取试用期自定义字段信息 `corehr:probation.custom_field:write` 读写试用期自定义字段信息 `corehr:probation.notes:read` 读取试用期备注信息 `corehr:probation.notes:write` 读写试用期备注信息 `corehr:probation.self_review:read` 读取员工自评信息 `corehr:probation.self_review:write` 读写员工自评信息 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:probation.assessment:read` 获取试用期考核信息 `corehr:probation.assessment:write` 读写试用期考核信息 `corehr:probation.custom_field:read` 获取试用期自定义字段信息 `corehr:probation.custom_field:write` 读写试用期自定义字段信息 `corehr:probation.notes:read` 读取试用期备注信息 `corehr:probation.notes:write` 读写试用期备注信息 `corehr:probation.self_review:read` 读取员工自评信息 `corehr:probation.self_review:write` 读写员工自评信息 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -43,7 +43,7 @@ updateTime: "1740729735000"
 | --- | --- | --- | --- |
 | `employment_id` | `string` | 是 | 试用期人员的雇佣 ID，可通过[【搜索员工信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/search)接口获取<br>**示例值**："7140964208476371111" |
 | `conversion_mode` | `int` | 是 | 转正方式<br>**示例值**：1<br>**可选值有**：<br>- `1`: 直接转正 - `2`: 发起转正 |
-| `actual_probation_end_date` | `string` | 否 | 实际结束日期，如果为空则默认填入试用期预计结束日期，填入日期需满足：试用期开始时间 <= 实际结束日期 <= 试用期预计结束日期，格式："YYYY-MM-DD"<br>**示例值**："2022-05-20" |
+| `actual_probation_end_date` | `string` | 否 | 实际结束日期，如果为空则默认填入试用期预计结束日期，填入日期需满足：试用期开始时间 &lt;= 实际结束日期 &lt;= 试用期预计结束日期，格式："YYYY-MM-DD"<br>**示例值**："2022-05-20" |
 | `submission_type` | `string` | 是 | 发起方<br>**示例值**："system"<br>**可选值有**：<br>- `self_submission`: 员工 - `system`: 系统 - `hr_submission`: HR |
 | `initiator_id` | `string` | 否 | 发起人 ID，当发起方为 HR 时填写，为其他发起方时该字段会自动计算，可通过[【搜索员工信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/search)接口获取<br>**示例值**："7140964208476371111" |
 | `notes` | `string` | 否 | 备注，当为直接转正时必填<br>**示例值**："符合预期" |

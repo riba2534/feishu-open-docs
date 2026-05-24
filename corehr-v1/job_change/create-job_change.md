@@ -24,7 +24,7 @@ updateTime: "1757378612000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:job_change:create` 写员工异动信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:contract.company:read` 获取合同主体信息 `corehr:contract.period:read` 获取合同期限信息 `corehr:employment.job:read` 获取员工的职务信息 `corehr:employment.job_level:read` 获取职务级别信息 `corehr:job_change.custom_field:read` 获取员工异动自定义字段信息 `corehr:job_change.employment_custom_field:read` 获取异动工作信息自定义字段 `corehr:job_change.pathway:read` 读取异动信息中的通道字段信息 `corehr:job_change.pathway:write` 读写异动信息中的通道字段信息 `corehr:job_change.remark:read` 获取异动流程备注信息 `corehr:employment.job_level:write` 读写员工的职务级别信息 `corehr:contract.period:write` 读写合同期限信息 `corehr:contract.company:write` 读写合同主体信息 `corehr:job_change.is_adjust_salary:read` 获取异动单据是否调薪字段 `corehr:employment.job_grade:read` 获取职等信息 `corehr:employment.job_grade:write` 读写职等信息 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:job_change.social_security_city:read` 获取异动单据社保字段 `corehr:job_data.compensation_type:read` 获取薪资类型 `corehr:job_data.service_company:read` 获取任职公司 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:contract.company:read` 获取合同主体信息 `corehr:contract.period:read` 获取合同期限信息 `corehr:employment.job:read` 获取员工的职务信息 `corehr:employment.job_level:read` 获取职务级别信息 `corehr:job_change.custom_field:read` 获取员工异动自定义字段信息 `corehr:job_change.employment_custom_field:read` 获取异动工作信息自定义字段 `corehr:job_change.pathway:read` 读取异动信息中的通道字段信息 `corehr:job_change.pathway:write` 读写异动信息中的通道字段信息 `corehr:job_change.remark:read` 获取异动流程备注信息 `corehr:employment.job_level:write` 读写员工的职务级别信息 `corehr:contract.period:write` 读写合同期限信息 `corehr:contract.company:write` 读写合同主体信息 `corehr:job_change.is_adjust_salary:read` 获取异动单据是否调薪字段 `corehr:employment.job_grade:read` 获取职等信息 `corehr:employment.job_grade:write` 读写职等信息 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:job_change.social_security_city:read` 获取异动单据社保字段 `corehr:job_data.compensation_type:read` 获取薪资类型 `corehr:job_data.service_company:read` 获取任职公司 |
 
 ### 请求头
 
@@ -54,7 +54,7 @@ updateTime: "1757378612000"
 | `effective_date` | `string` | 是 | 生效日期，格式："YYYY-MM-DD"<br>**示例值**："2022-03-01" |
 | `transfer_info` | `create_transfer_info` | 是 | 异动详细信息，以下参数如不传，无默认值，代表对应数据无异动 |
 | &nbsp;&nbsp;└ `remark` | `string` | 否 | 备注<br>**示例值**："异动详情" |
-| &nbsp;&nbsp;└ `offer_info` | `string` | 否 | offer信息。<br>格式为 json 转义：{\"resume_id\": \"xx\",    \"resume_detail\": \"yy\"}。<br>resume_id 为投递ID<br>**示例值**："{\"resume_id\": \"xx\",    \"resume_detail\": \"yy\"}" |
+| &nbsp;&nbsp;└ `offer_info` | `string` | 否 | offer信息。<br>格式为 json 转义：`{\"resume_id\": \"xx\",    \"resume_detail\": \"yy\"}`。<br>resume_id 为投递ID<br>**示例值**："`{\"resume_id\": \"xx\",    \"resume_detail\": \"yy\"}`" |
 | &nbsp;&nbsp;└ `target_dotted_manager_clean` | `boolean` | 否 | 是否撤销虚线上级，当值为true时，target_dotted_manager值为空。<br>**示例值**：false |
 | &nbsp;&nbsp;└ `probation_exist` | `boolean` | 否 | 是否有试用期，当值为true时，target_probation_end_date值不应为空。<br>**示例值**：true |
 | &nbsp;&nbsp;└ `target_department` | `string` | 否 | 新部门ID，可通过[【批量查询部门】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/department/batch_get)接口获取<br>**示例值**："6966236933198579208" |
@@ -87,7 +87,7 @@ updateTime: "1757378612000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `employee_number` | `string` | 否 | 员工编号，可通过[【搜索员工信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/search)接口获取<br>**示例值**："1111111" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `custom_fields` | `custom_field_data\[\]` | 否 | 自定义字段 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `custom_api_name` | `string` | 是 | 自定义字段 apiname，即自定义字段的唯一标识。可以通过[获取自定义字段列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/query)获取<br>**示例值**："name" |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 字段值，是 json 转义后的字符串，根据元数据定义不同，字段格式不同（如 123, 123.23, "true", ["id1","id2"], "2006-01-02 15:04:05"）<br>注意：<br>1.枚举字段值可通过[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)获取，参考接口返回的 字段详情 > 字段类型配置信息 > 选项配置信息 > 选项信息 > 枚举常量集 API name<br>**示例值**："\"231\"" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 字段值，是 json 转义后的字符串，根据元数据定义不同，字段格式不同（如 123, 123.23, "true", ["id1","id2"], "2006-01-02 15:04:05"）<br>注意：<br>1.枚举字段值可通过[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)获取，参考接口返回的 字段详情 &gt; 字段类型配置信息 &gt; 选项配置信息 &gt; 选项信息 &gt; 枚举常量集 API name<br>**示例值**："\"231\"" |
 | &nbsp;&nbsp;└ `target_job_grade` | `string` | 否 | 新职等，可通过[【查询职等】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/job_grade/query)接口获取<br>**示例值**："7289005963599693366" |
 | &nbsp;&nbsp;└ `target_compensation_type` | `string` | 否 | 新薪资类型<br>**示例值**："salary" |
 | &nbsp;&nbsp;└ `target_service_company` | `string` | 否 | 新任职公司，详细信息可通过[【批量查询公司】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/company/list)接口查询获得<br>**示例值**："7289005963599693368" |

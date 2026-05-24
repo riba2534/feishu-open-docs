@@ -50,16 +50,16 @@ updateTime: "1752203065000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `app_id` | `string` | 是 | 为 Aily 应用 ID（`spring_xxx__c`），可以在 Aily 应用开发页面的浏览器地址里获取<br>**示例值**："spring_449d72db2f__c"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `64` 字符 |
-| `skill_id` | `string` | 否 | 指定技能 ID（`skill_xxx`），可以在 Aily 技能配置页面的浏览器地址里获取<br>> 指定技能后、能够节省意图匹配的耗时<br>**示例值**："skill_6cc6166178ca"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `32` 字符 |
-| `skill_input` | `string` | 否 | 指定技能 ID 时可以同时指定技能输入<br>> 备注：常用于工作流技能内指定自定义参数，`skill_input` 需要配合 `skill_id` 同时传递才能生效<br>**示例值**："{\"key\": \"value\"}"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
-| `metadata` | `string` | 否 | 其他扩展的参数（JSON String）<br>> 备注：`metadata` 传递的参数，可以在后续 `GetRun` 调用中原样读取获得<br>**示例值**："{}"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| `skill_id` | `string` | 否 | 指定技能 ID（`skill_xxx`），可以在 Aily 技能配置页面的浏览器地址里获取<br>&gt; 指定技能后、能够节省意图匹配的耗时<br>**示例值**："skill_6cc6166178ca"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `32` 字符 |
+| `skill_input` | `string` | 否 | 指定技能 ID 时可以同时指定技能输入<br>&gt; 备注：常用于工作流技能内指定自定义参数，`skill_input` 需要配合 `skill_id` 同时传递才能生效<br>**示例值**："`{\"key\": \"value\"}`"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| `metadata` | `string` | 否 | 其他扩展的参数（JSON String）<br>&gt; 备注：`metadata` 传递的参数，可以在后续 `GetRun` 调用中原样读取获得<br>**示例值**："{}"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
 
 
 **备注：**
 
 > 同一个会话（`session_id`）只能创建一个活跃的 `Run`
 >
-> 活跃状态即 ：`status` 为 `QUEUED` | `IN_PROGRESS` | `REQUIRES_MESSAGE`
+&gt; 活跃状态即 ：`status` 为 `QUEUED` | `IN_PROGRESS` | `REQUIRES_MESSAGE`
 
 
 ### 请求体示例

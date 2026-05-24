@@ -41,7 +41,7 @@ updateTime: "1655362529000"
 ### 查询参数
 |参数|类型|必须|说明|
 |--|-----|--|----|
-|types|array<string>|否|需要查询的文件类型，默认返回所有 children；types 可多选，可选类型有 doc、sheet、file、bitable、docx、folder、mindnote 。如 url?types=folder&types=sheet|
+|types|`array<string>`|否|需要查询的文件类型，默认返回所有 children；types 可多选，可选类型有 doc、sheet、file、bitable、docx、folder、mindnote 。如 url?types=folder&types=sheet|
 
 ### 响应体
 |参数|说明|

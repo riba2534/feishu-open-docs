@@ -23,7 +23,7 @@ updateTime: "1732773398000"
 | 事件类型 | corehr.offboarding.updated_v2 |
 | 支持的应用类型 | custom,isv |
 | 权限要求             订阅该事件所需的权限，开启其中任意一项权限即可订阅 开启任一权限即可 | `corehr:offboarding.submit:write` 读写员工离职信息 `corehr:offboarding.update_field_message:read` 订阅离职字段变更事件 `corehr:offboarding:read` 获取员工离职信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 | 推送方式 | `Webhook` |
 
 

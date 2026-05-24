@@ -28,7 +28,7 @@ updateTime: "1729672438000"
 
 | 列1 |
 | --- |
-| 你需要通过添加用户或应用为文档协作者，来为其开通文档权限。添加用户和应用为文档协作者的具体步骤如下所示。要查看如何为应用开通文件夹或知识库的权限，参考[如何为应用开通云文档相关资源的权限](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-add-permissions-to-app)。 - 要添加**用户**、**群组**或**部门**为文档协作者，需要文档所有者、知识库管理员或其他协作者通过云文档网页的「**分享**」入口添加       ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/3e052d3bac56f9441296ae22e2969d63_a2DEYrJup8.png?height=278&lazyload=true&maxWidth=583&width=1383)        - 要添加**应用**为文档协作者，主要有以下两种方式： 	- 方式一：直接添加应用为云文档的协作者            		该方式要求操作者为云文档所有者、拥有文档**管理**权限的协作者或知识库管理员。操作者可通过云文档网页页面右上方「**...**」->「**...更多**」-> 「**添加文档应用**」入口添加。 |
+| 你需要通过添加用户或应用为文档协作者，来为其开通文档权限。添加用户和应用为文档协作者的具体步骤如下所示。要查看如何为应用开通文件夹或知识库的权限，参考[如何为应用开通云文档相关资源的权限](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-add-permissions-to-app)。 - 要添加**用户**、**群组**或**部门**为文档协作者，需要文档所有者、知识库管理员或其他协作者通过云文档网页的「**分享**」入口添加       ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/3e052d3bac56f9441296ae22e2969d63_a2DEYrJup8.png?height=278&lazyload=true&maxWidth=583&width=1383)        - 要添加**应用**为文档协作者，主要有以下两种方式： 	- 方式一：直接添加应用为云文档的协作者            		该方式要求操作者为云文档所有者、拥有文档**管理**权限的协作者或知识库管理员。操作者可通过云文档网页页面右上方「**...**」-&gt;「**...更多**」-&gt; 「**添加文档应用**」入口添加。 |
 warning
       -  如果多维表格开启了高级权限，你需为应用添加多维表格的 **可管理** 权限，否则仍无法操作多维表格。
       -  在 **添加文档应用** 前，你需确保发布版本的[可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)包含节点云文档的所有者。否则你将无法在文档应用窗口搜索到目标应用。

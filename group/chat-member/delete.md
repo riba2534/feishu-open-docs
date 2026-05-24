@@ -30,7 +30,7 @@ updateTime: "1741868619000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `im:chat` 获取与更新群组信息 `im:chat.members:write_only` 添加、移除群成员 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -114,7 +114,7 @@ updateTime: "1741868619000"
 | 400 | 232011 | Operator can NOT be out of the chat. | 操作者不在该群中，无法操作。 |
 | 400 | 232014 | The token used in the request does NOT have the permissions necessary to complete the request. | 操作者没有权限进行该操作，请检查是否已开通调用接口所需要的权限。 |
 | 400 | 232019 | The request has been rate limited. | 触发群限流，请控制请求的速度，详情参见[频控策略](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)。 **说明**：调用[将用户或机器人拉入群聊](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-members/create)和[将用户或机器人移出群聊](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-members/delete)接口操作同一个群组时，如果同时多次调用接口，可能会出现当前报错，建议你串行调用，即等待当前调用完成后再进行下一次调用。 |
-| 400 | 232025 | Bot ability is not activated. | 应用未启用机器人能力。你需要登录[开发者后台](https://open.feishu.cn/app)，在应用详情页的 **应用能力** > **添加应用能力** 页面内，添加 **机器人** 能力，并发布应用使配置生效。具体操作参见[机器人能力](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
+| 400 | 232025 | Bot ability is not activated. | 应用未启用机器人能力。你需要登录[开发者后台](https://open.feishu.cn/app)，在应用详情页的 **应用能力** &gt; **添加应用能力** 页面内，添加 **机器人** 能力，并发布应用使配置生效。具体操作参见[机器人能力](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
 | 400 | 232027 | There are no valid members in the ID list specified in your request. | 成员 ID 列表为空或不存在有效的成员。 |
 | 400 | 232029 | There are no available candidates for chat owner. | 没有可用的候选群主。 |
 | 400 | 232033 | The operator or invited bots does NOT have the authority to manage external chats without the scope. | 没有权限操作外部群。 |

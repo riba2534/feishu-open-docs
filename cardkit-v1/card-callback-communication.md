@@ -25,7 +25,7 @@ updateTime: "1778317167000"
 | 回调类型 | card.action.trigger |
 | 支持的应用类型 | custom,isv |
 | 权限要求             订阅该事件所需的权限，开启其中任意一项权限即可订阅 开启任一权限即可 | 暂无 |
-| 字段权限要求 | > **Tip**: 事件结构体中存在 `user_id` 敏感字段，仅当应用开启“获取用户 user ID”权限后才会返回。 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 事件结构体中存在 `user_id` 敏感字段，仅当应用开启“获取用户 user ID”权限后才会返回。 `contact:user.employee_id:readonly` 获取用户 user ID |
 | 推送方式 | `Webhook` |
 
 
@@ -54,7 +54,7 @@ updateTime: "1778317167000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ tag | string | 交互组件的标签。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ timezone | string | 用户当前所在地区的时区。当用户操作日期选择器、时间选择器、或日期时间选择器时返回。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ name | string | 组件的自定义唯一标识，用于识别内嵌在表单容器中的某个组件。 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ form_value | object | 表单容器内用户提交的数据。示例值： ```JSON {   "field name 1": [ // 表单容器内某多选组件的 name 和 value     "selectDemo1",     "selectDemo2"   ],    "field name 2": "value 2", // 表单容器内某交互组件的 name 和 value   "field name 3": "value 3", // 表单容器内某交互组件的 name 和 value } ``` |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ form_value | object | 表单容器内用户提交的数据。示例值： ```JSON `{   "field name 1": [ // 表单容器内某多选组件的 name 和 value     "selectDemo1",     "selectDemo2"   ],    "field name 2": "value 2", // 表单容器内某交互组件的 name 和 value   "field name 3": "value 3", // 表单容器内某交互组件的 name 和 value }` ``` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ input_value | string | 当输入框组件未内嵌在表单容器中时，用户在输入框中提交的数据。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ option | string | 当折叠按钮组、下拉选择-单选、人员选择-单选、日期选择器、时间选择器、日期时间选择器组件未内嵌在表单容器中时，用户选择该类组件某个选项时，组件返回的选项回调值。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ options | string[] | 当下拉选择-多选组件和人员选择-多选组件未内嵌在表单容器中时，用户选择该类组件某个选项时，组件返回的选项回调值。 |
@@ -137,7 +137,7 @@ updateTime: "1778317167000"
 | toast | object | 否 | 客户端的 Toast 弹窗提示。 |
 | &nbsp;&nbsp;└ type | string | 否 | 弹窗提示的类型。可选值有：info、success、error、和 warning。<br>  不同的值的展示效果如下图所示： ![img_v3_02ao_9fdce3f7-5ba1-4f86-941f-2e5e7f6fd4eg.jpg](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/e62145dca9a372b1b51f0ea2e2629160_y1gPzFePcx.jpg?height=844&lazyload=true&width=1280) |
 | &nbsp;&nbsp;└ content | string | 否 | 单语言提示文案。要配置多语言提示文案，请使用 `i18n` 字段。 |
-| &nbsp;&nbsp;└ i18n | Map | 否 | 多语言提示文案。示例配置： ```json {   "i18n": {     "zh_cn": "更新成功！",     "en_us": "Successful update"   } } ``` |
+| &nbsp;&nbsp;└ i18n | Map | 否 | 多语言提示文案。示例配置： ```json `{   "i18n": {     "zh_cn": "更新成功！",     "en_us": "Successful update"   }` } ``` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ key | string | 否 | 语言。可选值： - `zh_cn`: 简体中文 - `en_us`: 英文 - `zh_hk`: 繁体中文（香港） - `zh_tw`: 繁体中文（台湾） - `ja_jp`: 日语 - `id_id`: 印尼语 - `vi_vn`: 越南语 - `th_th`: 泰语 - `pt_br`: 葡萄牙语 - `es_es`: 西班牙语 - `ko_kr`: 韩语 - `de_de`: 德语 - `fr_fr`: 法语 - `it_it`: 意大利语 - `ru_ru`: 俄语 - `ms_my`: 马来语 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ value | string | 否 | 语言对应的文案。 |
 | card | object | 否 | 卡片数据。 |
@@ -217,14 +217,14 @@ updateTime: "1778317167000"
 | toast | object | 否 | 客户端的 Toast 弹窗提示。 |
 | &nbsp;&nbsp;└ type | string | 否 | 弹窗提示的类型。可选值有：info、success、error、和 warning。<br>  不同的值的展示效果如下图所示： ![img_v3_02ao_9fdce3f7-5ba1-4f86-941f-2e5e7f6fd4eg.jpg](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/e62145dca9a372b1b51f0ea2e2629160_y1gPzFePcx.jpg?height=844&lazyload=true&width=1280) |
 | &nbsp;&nbsp;└ content | string | 否 | 单语言提示文案。要配置多语言提示文案，请使用 `i18n` 字段。 |
-| &nbsp;&nbsp;└ i18n | Map | 否 | 多语言提示文案。示例配置： ```json {   "i18n": {     "zh_cn": "更新成功！",     "en_us": "Successful update"   } } ``` |
+| &nbsp;&nbsp;└ i18n | Map | 否 | 多语言提示文案。示例配置： ```json `{   "i18n": {     "zh_cn": "更新成功！",     "en_us": "Successful update"   }` } ``` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ key | string | 否 | 语言。可选值： - `zh_cn`: 简体中文 - `en_us`: 英文 - `zh_hk`: 繁体中文（香港） - `zh_tw`: 繁体中文（台湾） - `ja_jp`: 日语 - `id_id`: 印尼语 - `vi_vn`: 越南语 - `th_th`: 泰语 - `pt_br`: 葡萄牙语 - `es_es`: 西班牙语 - `ko_kr`: 韩语 - `de_de`: 德语 - `fr_fr`: 法语 - `it_it`: 意大利语 - `ru_ru`: 俄语 - `ms_my`: 马来语 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ value | string | 否 | 语言对应的文案。 |
 | card | object | 否 | 卡片数据。 |
 | &nbsp;&nbsp;└ type | string | 是 | 卡片类型。可选值： - `template`：搭建工具构建的卡片，可视为一个卡片模板 - `raw`：由 JSON 构建的卡片    要使用卡片模板响应，请选择 `template`。 |
 | &nbsp;&nbsp;└ data | object | 是 | 卡片模板的数据。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ template_id | string | 是 | 搭建工具中创建的卡片（也称卡片模板）的 ID，如 AAqigYkzabcef。可在搭建工具中通过复制卡片模板 ID 获取。<br>![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/8bf97ff2bceed633b28f5ce2d2ec0270_zPTWqjljT8.png?height=329&lazyload=true&maxWidth=500&width=1574) |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ template_variable | object | 否 | 若卡片绑定了变量，你需在该字段中传入实际变量数据的值。示例：如果变量名称在搭建工具中被定义为 open_id，则此处需要对 open_id 变量传入值。以“ou_d506829e8b6a17607e56bcd6b1aabcef”为示例：<br>```json {     "open_id": "ou_d506829e8b6a17607e56bcd6b1aabcef" } ``` |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ template_variable | object | 否 | 若卡片绑定了变量，你需在该字段中传入实际变量数据的值。示例：如果变量名称在搭建工具中被定义为 open_id，则此处需要对 open_id 变量传入值。以“ou_d506829e8b6a17607e56bcd6b1aabcef”为示例：<br>```json `{     "open_id": "ou_d506829e8b6a17607e56bcd6b1aabcef" }` ``` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ template_version_name | string | 否 | 搭建工具中创建的卡片的版本号，如 1.0.0。卡片发布后，将生成版本号。可在搭建工具 **版本管理** 处获取。<br>![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/b3e96c8ca7c5c029bdbce6c0ca1ba413_aoV0ao7VUo.png?height=384&lazyload=true&maxWidth=500&width=1459) |
 
 
@@ -262,7 +262,7 @@ updateTime: "1778317167000"
 
 | 错误码 | 描述 | 解决方案 |
 | --- | --- | --- |
-| 200340 | 应用未配置飞书卡片回调地址或配置的请求地址无效。 若应用已配置，请确保你已创建并发布了最新的应用版本使修改生效。 | 1. 前往[开发者后台](https://open.feishu.cn/app)，点击目标应用，选择 开发配置 > 事件与回调。  2. 在 事件与回调 页面 回调配置 页签下，填写正确有效的请求地址并保存。          	 3. 在 **已订阅的回调** 项中，确保已添加卡片回传交互回调。                        **提示**：你也可以选择使用长连接接收回调。了解更多，参考[配置回调订阅方式](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/configure-callback-request-address)。 |
+| 200340 | 应用未配置飞书卡片回调地址或配置的请求地址无效。 若应用已配置，请确保你已创建并发布了最新的应用版本使修改生效。 | 1. 前往[开发者后台](https://open.feishu.cn/app)，点击目标应用，选择 开发配置 &gt; 事件与回调。  2. 在 事件与回调 页面 回调配置 页签下，填写正确有效的请求地址并保存。          	 3. 在 **已订阅的回调** 项中，确保已添加卡片回传交互回调。                        **提示**：你也可以选择使用长连接接收回调。了解更多，参考[配置回调订阅方式](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/configure-callback-request-address)。 |
 | 200341 | 所请求的卡片回调服务未在规定时间内响应飞书卡片服务端。 | 请确保配置的回调地址能够在 3 秒内响应卡片回调请求。 |
 | 200342 | 飞书卡片服务端无法与该卡片回调地址建立 TCP 连接。 | 请检查并确保配置的回调地址可以正常访问。 |
 | 200343 | 飞书卡片服务端解析该卡片回调地址的 DNS 失败。 | 请检查并确保配置的回调地址的域名正确。 |

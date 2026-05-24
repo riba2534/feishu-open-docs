@@ -36,11 +36,11 @@ updateTime: "1684228043000"
 | `explanation` | `string` | 否 | 勋章的描述文案，最多100个字符。<br>**示例值**："这枚勋章为了激励员工颁发。" |
 | `detail_image` | `string` | 是 | 企业勋章的详情图Key。1.权限校验：非本租户上传的图片key，不能直接使用；2.时效校验：创建勋章，或者修改勋章图片key时，需使用1h内上传的图片key。<br>**示例值**："75a1949f-d9df-4b46-bc88-dacc51e88f3j"<br>**数据校验规则**：<br>- 最小长度：`1` 字符 |
 | `show_image` | `string` | 是 | 企业勋章的头像挂饰图Key。1.权限校验：非本租户上传的图片key，不能直接使用；2.时效校验：创建勋章，或者修改勋章图片key时，需使用1h内上传的图片key。<br>**示例值**："03daa74a-159f-49e9-963e-b6c4d76103fj"<br>**数据校验规则**：<br>- 最小长度：`1` 字符 |
-| `i18n_name` | `i18n` | 否 | 勋章的多语言名称，同name字段限制，最多30个字符。<br>**示例值**：{         "zh_cn": "激励勋章",         "en_us": "Incentive Medal",         "ja_jp": "奨励メダル"     } |
+| `i18n_name` | `i18n` | 否 | 勋章的多语言名称，同name字段限制，最多30个字符。<br>**示例值**：`{         "zh_cn": "激励勋章",         "en_us": "Incentive Medal",         "ja_jp": "奨励メダル"     }` |
 | &nbsp;&nbsp;└ `zh_cn` | `string` | 否 | 中文文案<br>**示例值**："激励勋章"<br>**数据校验规则**：<br>- 最小长度：`1` 字符 |
 | &nbsp;&nbsp;└ `en_us` | `string` | 否 | 英文文案<br>**示例值**："Incentive Medal"<br>**数据校验规则**：<br>- 最小长度：`1` 字符 |
 | &nbsp;&nbsp;└ `ja_jp` | `string` | 否 | 日文文案<br>**示例值**："奨励メダル"<br>**数据校验规则**：<br>- 最小长度：`1` 字符 |
-| `i18n_explanation` | `i18n` | 否 | 勋章的多语言描述文案，同explanation字段限制，最多100个字符。<br>**示例值**：{         "zh_cn": "这枚勋章为了激励员工颁发。",         "en_us": "This medal is awarded to motivate employees.",         "ja_jp": "このメダルは、従業員のモチベーションを高めるために授与されます。"     } |
+| `i18n_explanation` | `i18n` | 否 | 勋章的多语言描述文案，同explanation字段限制，最多100个字符。<br>**示例值**：`{         "zh_cn": "这枚勋章为了激励员工颁发。",         "en_us": "This medal is awarded to motivate employees.",         "ja_jp": "このメダルは、従業員のモチベーションを高めるために授与されます。"     }` |
 | &nbsp;&nbsp;└ `zh_cn` | `string` | 否 | 中文文案<br>**示例值**："激励勋章"<br>**数据校验规则**：<br>- 最小长度：`1` 字符 |
 | &nbsp;&nbsp;└ `en_us` | `string` | 否 | 英文文案<br>**示例值**："Incentive Medal"<br>**数据校验规则**：<br>- 最小长度：`1` 字符 |
 | &nbsp;&nbsp;└ `ja_jp` | `string` | 否 | 日文文案<br>**示例值**："奨励メダル"<br>**数据校验规则**：<br>- 最小长度：`1` 字符 |

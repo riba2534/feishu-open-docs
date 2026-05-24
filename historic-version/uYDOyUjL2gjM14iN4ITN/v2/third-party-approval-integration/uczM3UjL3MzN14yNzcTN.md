@@ -50,12 +50,12 @@ updateTime: "1663656142000"
 | `approval_code` `必选` | `string` | 审批定义 code， 创建审批定义返回的值，表示该实例属于哪个流程；该字段会影响到列表中该实例的标题，标题取自对应定义的 name 字段 | 81D31358-93AF-92D6-7425-01A5D67C4E71 |
 | `instance_id` `必选` | `string` | 审批实例唯一标识，用户自定义，需确保证租户、应用下唯一 | 24492654 |
 | `status` `必选` | `string` | 审批实例状态   **可选值：**   - `PENDING`: 审批中 - `APPROVED`: 审批流程结束，结果为同意 - `REJECTED`: 审批流程结束，结果为拒绝 - `CANCELED`: 审批发起人撤回 - `DELETED`: 审批被删除  - `HIDDEN`: 状态隐藏(不显示状态) | PENDING |
-| `extra` | `string` | 审批实例扩展 JSON | {"xxx":"xxx"} |
+| `extra` | `string` | 审批实例扩展 JSON | `{"xxx":"xxx"}` |
 | `links` `必选` | `map` | 审批实例链接集合 ，用于【已发起】列表的跳转，跳转回三方系统； pc_link 和 mobile_link 必须填一个，填写的是哪一端的链接，即会跳转到该链接，不受平台影响 |  |
 | ∟ `pc_link       ``必选` | `string` | pc 端的跳转链接，当用户使用飞书 pc 端时，使用该字段进行跳转 | https://applink.feishu.cn/client/mini_program/open?mode=appCenter&appId=cli_9c9c9c38e07a9101&path=pc/pages/detail?id=1234 |
 | ∟ `mobile_link``必选` | `string` | 移动端 跳转链接，当用户使用飞书 移动端时，使用该字段进行跳转 | https://applink.feishu.cn/client/mini_program/open?appId=cli_9c9cfc38e07a9101&path=pages/detail?id=1234 |
 | `title` | `string` | 审批展示名称，如果填写了该字段，则审批列表中的审批名称使用该字段，如果不填该字段，则审批名称使用审批定义的名称 | @i18n@1 |
-| `form` | `list` | 用户提交审批时填写的表单数据，用于所有审批列表中展示。可传多个值，但审批中心pc展示前2个,移动端展示前3个,长度不超过2048字符 | [     {       "name": "@i18n@2",       "value": "@i18n@3"     } ] |
+| `form` | `list` | 用户提交审批时填写的表单数据，用于所有审批列表中展示。可传多个值，但审批中心pc展示前2个,移动端展示前3个,长度不超过2048字符 | [     `{       "name": "@i18n@2",       "value": "@i18n@3"     }` ] |
 | ∟ `name` | `string` | 表单字段名称 | @i18n@2 |
 | ∟ `value` | `string` | 表单值 | @i18n@3 |
 | `user_id``` | `string` | 审批发起人 user_id，发起人可在【已发起】列表中看到所有已发起的审批;在【待审批】，【已审批】【抄送我】列表中，该字段展示审批是谁发起的。审批发起人 open id，和 user id 二选一。 | a987sf9s |
@@ -77,7 +77,7 @@ updateTime: "1663656142000"
 | ∟ `pc_link``必选` | `string` | pc 端的跳转链接，当用户使用飞书 pc 端时，使用该字段进行跳转 | https://applink.feishu.cn/client/mini_program/open?mode=appCenter&appId=cli_9c9cfc38e07a9101&path=pc/pages/detail?id=1234 |
 | ∟ `mobile_link``必选` | `string` | 移动端 跳转链接，当用户使用飞书 移动端时，使用该字段进行跳转 | https://applink.feishu.cn/client/mini_program/open?appId=cli_9c9cfc38e07a9101&path=pages/detail?id=1234 |
 | ∟ `status` `必选` | `string` | 任务状态   **可选值：** - `PENDING`: 待审批 - `APPROVED`: 任务同意 - `REJECTED`: 任务拒绝 - `TRANSFERRED`: 任务转交 - `DONE`: 任务通过但审批人未操作；审批人看不到这个任务, 若想要看到, 可以通过抄送该人. |  |
-| ∟ `extra` | `string` | 扩展 json，任务结束原因需传complete_reason字段。枚举值与对应说明： - approved：同意 - rejected：拒绝 - node_auto_reject：（因逻辑判断产生的）自动拒绝 - specific_rollback：退回（包括退回到发起人、退回到中间任一审批人） - add：并加签（添加新审批人，和我一起审批） - add_pre：前加签（添加新审批人，在我之前审批） - add_post：后加签（添加新审批人，在我之后审批） - delete_assignee：减签 - forward_resign：转交（转给其他人审批） - recall：撤销（撤回单据，单据失效） - delete ：删除审批单 - admin_forward：管理员在后台操作转交 - system_forward：系统自动转交 - auto_skip：自动通过 - manual_skip：手动跳过 - submit_again：重新提交任务 - restart：重新启动流程 - others：其他（作为兜底） | {\"xxx\":\"xxx\",\"complete_reason\":\"approved\"} |
+| ∟ `extra` | `string` | 扩展 json，任务结束原因需传complete_reason字段。枚举值与对应说明： - approved：同意 - rejected：拒绝 - node_auto_reject：（因逻辑判断产生的）自动拒绝 - specific_rollback：退回（包括退回到发起人、退回到中间任一审批人） - add：并加签（添加新审批人，和我一起审批） - add_pre：前加签（添加新审批人，在我之前审批） - add_post：后加签（添加新审批人，在我之后审批） - delete_assignee：减签 - forward_resign：转交（转给其他人审批） - recall：撤销（撤回单据，单据失效） - delete ：删除审批单 - admin_forward：管理员在后台操作转交 - system_forward：系统自动转交 - auto_skip：自动通过 - manual_skip：手动跳过 - submit_again：重新提交任务 - restart：重新启动流程 - others：其他（作为兜底） | `{\"xxx\":\"xxx\",\"complete_reason\":\"approved\"}` |
 | ∟ `create_time` `必选` | `long` | 任务创建时间，Unix 毫秒时间戳 | 1556468012678 |
 | ∟ `end_time` `必选` | `long` | 任务完成时间：未结束的审批为 0，Unix 毫秒时间戳 | 1556468012678 |
 | ∟ `update_time` `必选` | `long` | task最近更新时间，用于推送数据版本控制； 更新策略同 instance 中的 update_time | 1556468012678 |
@@ -100,7 +100,7 @@ updateTime: "1663656142000"
 | ∟  `pc_link` | `string` | pc 端的跳转链接，当用户使用飞书 pc 端时，使用该字段进行跳转 | https://applink.feishu.cn/client/mini_program/open?mode=appCenter&appId=cli_9c9cfc38e07a9101&path=pc/pages/detail?id=1234 |
 | ∟  `mobile_link` | `string` | 移动端 跳转链接，当用户使用飞书 移动端时，使用该字段进行跳转 | https://applink.feishu.cn/client/mini_program/open?appId=cli_9c9cfc38e07a9101&path=pages/detail?id=1234 |
 | ∟ `read_status` `必选` | `string` | 阅读状态，空值表示不支持已读未读：         **可选值：** - `READ`:  已读 - `UNREAD`: 未读 | READ |
-| ∟ `extra` | `string` | 扩展 json | {"xxx":"xxx"} |
+| ∟ `extra` | `string` | 扩展 json | `{"xxx":"xxx"}` |
 | ∟ `title` | `string` | 抄送任务名称 | xxx |
 | ∟ `create_time``必选` | `long` | 抄送发起时间，Unix 毫秒时间戳 | 1556468012678 |
 | ∟ `update_time``必选` | `long` | 抄送最近更新时间，用于推送数据版本控制 更新策略同 instance 的update_time | 1556468012678 |
@@ -108,7 +108,7 @@ updateTime: "1663656142000"
 | `i18n_resources``必选` | `list` | 国际化文案 |  |
 | ∟ `locale``必选` | `string` | 语言 - `zh-CN`: 中文 - `en-US`: 英文 - `ja-JP`: 日文 | zh-CN |
 | ∟ `is_default``必选` | `bool` | 是否默认语言 | true |
-| ∟ `texts``必选` | `map` | 文案 key, value,  i18n key 以  @i18n@ 开头； 该字段主要用于做国际化，语序用户同时传多个语言的文案，审批中心会根据用户当前的语音环境使用对应的文案，如果没有传用户当前的语音环境文案，则会使用默认的语言文案。 | {    "@i18n@1": "权限申请",      "@i18n@2": "OA审批",    "@i18n@3": "Permission" } |
+| ∟ `texts``必选` | `map` | 文案 key, value,  i18n key 以  @i18n@ 开头； 该字段主要用于做国际化，语序用户同时传多个语言的文案，审批中心会根据用户当前的语音环境使用对应的文案，如果没有传用户当前的语音环境文案，则会使用默认的语言文案。 | `{    "@i18n@1": "权限申请",      "@i18n@2": "OA审批",    "@i18n@3": "Permission" }` |
 
 
 注意事项：

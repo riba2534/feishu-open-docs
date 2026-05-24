@@ -74,7 +74,7 @@ updateTime: "1735820031000"
 | 400 | 232004 | Such an app does NOT exist. | 作为操作者的 app_id 不存在，请联系[技术支持](https://applink.feishu.cn/TLJsX982)。 |
 | 400 | 232006 | Your request specifies a chat_id which is invalid. | 无效的 chat_id，请检查 chat_id 是否正确。获取方式： - [创建群](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat/create)，从返回结果中获取该群的 chat_id。 - 调用[获取用户或机器人所在的群列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat/list)接口，可以查询用户或机器人所在群的 chat_id。 - 调用[搜索对用户或机器人可见的群列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat/search)，可搜索用户或机器人所在的群、对用户或机器人公开的群的 chat_id。 |
 | 400 | 232010 | Operator and chat can NOT be in different tenants. | 调用接口的操作者和被操作的群组不在同一租户下，无法操作。需确保当前的操作者和被操作的群组在同一租户下。 |
-| 400 | 232025 | Bot ability is not activated. | 应用未启用机器人能力。你需要登录[开发者后台](https://open.feishu.cn/app)，在应用详情页的 **应用能力** > **添加应用能力** 页面内，添加 **机器人** 能力，并发布应用使配置生效。具体操作参见[机器人能力](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
+| 400 | 232025 | Bot ability is not activated. | 应用未启用机器人能力。你需要登录[开发者后台](https://open.feishu.cn/app)，在应用详情页的 **应用能力** &gt; **添加应用能力** 页面内，添加 **机器人** 能力，并发布应用使配置生效。具体操作参见[机器人能力](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
 | 400 | 232033 | The operator or invited bots does NOT have the authority to manage external chats without the scope. | 没有权限操作外部群。 |
 | 400 | 232034 | The app is unavailable or inactivated by the tenant. | 应用在本租户下未安装或未启用。需要先安装应用，再使用应用调用接口。 |
 

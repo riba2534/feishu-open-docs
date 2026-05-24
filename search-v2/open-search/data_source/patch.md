@@ -42,11 +42,11 @@ updateTime: "1680147707000"
 | `state` | `int` | 否 | 数据源状态，0-已上线，1-未上线<br>**示例值**：0<br>**可选值有**：<br>- `0`: 已上线 - `1`: 未上线 |
 | `description` | `string` | 否 | 对于数据源的描述<br>**示例值**："搜索客服工单" |
 | `icon_url` | `string` | 否 | 数据源在 search tab 上的展示图标路径<br>**示例值**："https://www.xxx.com/open.jpg" |
-| `i18n_name` | `i18n_meta` | 否 | 数据源名称多语言配置，json格式，key为语言locale，value为对应文案，例如{"zh_cn":"测试数据源", "en_us":"Test DataSource"} |
+| `i18n_name` | `i18n_meta` | 否 | 数据源名称多语言配置，json格式，key为语言locale，value为对应文案，例如`{"zh_cn":"测试数据源", "en_us":"Test DataSource"}` |
 | &nbsp;&nbsp;└ `zh_cn` | `string` | 否 | 国际化字段：中文<br>**示例值**："任务" |
 | &nbsp;&nbsp;└ `en_us` | `string` | 否 | 国际化字段：英文<br>**示例值**："TODO" |
 | &nbsp;&nbsp;└ `ja_jp` | `string` | 否 | 国际化字段：日文<br>**示例值**："タスク" |
-| `i18n_description` | `i18n_meta` | 否 | 数据源描述多语言配置，json格式，key为语言locale，value为对应文案，例如{"zh_cn":"搜索测试数据源相关数据", "en_us":"Search data from Test DataSource"} |
+| `i18n_description` | `i18n_meta` | 否 | 数据源描述多语言配置，json格式，key为语言locale，value为对应文案，例如`{"zh_cn":"搜索测试数据源相关数据", "en_us":"Search data from Test DataSource"}` |
 | &nbsp;&nbsp;└ `zh_cn` | `string` | 否 | 国际化字段：中文<br>**示例值**："任务" |
 | &nbsp;&nbsp;└ `en_us` | `string` | 否 | 国际化字段：英文<br>**示例值**："TODO" |
 | &nbsp;&nbsp;└ `ja_jp` | `string` | 否 | 国际化字段：日文<br>**示例值**："タスク" |

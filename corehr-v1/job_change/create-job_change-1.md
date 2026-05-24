@@ -21,7 +21,7 @@ updateTime: "1734431976000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `corehr:corehr` 更新核心人事信息 `corehr:job_change:write` 读写员工异动信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:job_change.employment_custom_field:read` 获取异动工作信息自定义字段 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:job_data.compensation_type:read` 获取薪资类型 `corehr:job_data.service_company:read` 获取任职公司 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:job_change.employment_custom_field:read` 获取异动工作信息自定义字段 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:job_data.compensation_type:read` 获取薪资类型 `corehr:job_data.service_company:read` 获取任职公司 |
 
 ### 请求头
 
@@ -108,14 +108,14 @@ updateTime: "1734431976000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `employee_number` | `string` | 否 | 员工编号，可通过[【搜索员工信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/search)接口获取<br>**示例值**："1111111" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `custom_fields` | `custom_field_data\[\]` | 否 | 自定义字段 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `custom_api_name` | `string` | 是 | 自定义字段 apiname，即自定义字段的唯一标识。可以通过[获取自定义字段列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/query)获取<br>**示例值**："name" |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 字段值，是 json 转义后的字符串，根据元数据定义不同，字段格式不同（如 123, 123.23, "true", ["id1","id2"], "2006-01-02 15:04:05"）<br>注意：<br>1.枚举字段值可通过[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)获取，参考接口返回的 字段详情 > 字段类型配置信息 > 选项配置信息 > 选项信息 > 枚举常量集 API name<br>**示例值**："231" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 字段值，是 json 转义后的字符串，根据元数据定义不同，字段格式不同（如 123, 123.23, "true", ["id1","id2"], "2006-01-02 15:04:05"）<br>注意：<br>1.枚举字段值可通过[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)获取，参考接口返回的 字段详情 &gt; 字段类型配置信息 &gt; 选项配置信息 &gt; 选项信息 &gt; 枚举常量集 API name<br>**示例值**："231" |
 | &nbsp;&nbsp;└ `target_employment_change` | `tranfer_employment_info` | 否 | 新工作信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `regular_employee_start_date` | `string` | 否 | 转正式员工日期，格式："YYYY-MM-DD"<br>**示例值**："2023-01-01" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `seniority_date` | `string` | 否 | 司龄起算日期，格式："YYYY-MM-DD"<br>**示例值**："2023-01-01" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `employee_number` | `string` | 否 | 员工编号，可通过[【搜索员工信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/search)接口获取<br>**示例值**："1111111" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `custom_fields` | `custom_field_data\[\]` | 否 | 自定义字段 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `custom_api_name` | `string` | 是 | 自定义字段 apiname，即自定义字段的唯一标识。可以通过[获取自定义字段列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/query)获取<br>**示例值**："name" |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 字段值，是 json 转义后的字符串，根据元数据定义不同，字段格式不同（如 123, 123.23, "true", ["id1","id2"], "2006-01-02 15:04:05"）<br>注意：<br>1.枚举字段值可通过[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)获取，参考接口返回的 字段详情 > 字段类型配置信息 > 选项配置信息 > 选项信息 > 枚举常量集 API name<br>**示例值**："231" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 字段值，是 json 转义后的字符串，根据元数据定义不同，字段格式不同（如 123, 123.23, "true", ["id1","id2"], "2006-01-02 15:04:05"）<br>注意：<br>1.枚举字段值可通过[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)获取，参考接口返回的 字段详情 &gt; 字段类型配置信息 &gt; 选项配置信息 &gt; 选项信息 &gt; 枚举常量集 API name<br>**示例值**："231" |
 | &nbsp;&nbsp;└ `original_job_grade` | `string` | 否 | 原职等，可通过[【查询职等】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/job_grade/query)接口获取<br>**示例值**："7289005963599693366" |
 | &nbsp;&nbsp;└ `target_job_grade` | `string` | 否 | 新职等，可通过[【查询职等】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/job_grade/query)接口获取<br>**示例值**："7289005963599693366" |
 | &nbsp;&nbsp;└ `original_compensation_type` | `string` | 否 | 原薪资类型<br>**示例值**："hourly" |

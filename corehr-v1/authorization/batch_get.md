@@ -21,7 +21,7 @@ updateTime: "1734434058000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:employee.bp:read` 查看员工的部分 BP 信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:employee.all_bp:read` 查看员工的全部 BP 信息 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:employee.all_bp:read` 查看员工的全部 BP 信息 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -43,7 +43,7 @@ updateTime: "1734434058000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `employment_ids` | `string\[\]` | 是 | 员工ID，ID类型与user_id_type的取值意义一致。   >  如果你需要不同类型的ID进行转换，可以使用 [ID转换服务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/common_data-id/convert) 换取 ==employment_id==<br>**示例值**：["7140964208476371111"]<br>**数据校验规则**：<br>- 长度范围：`1` ～ `100` |
+| `employment_ids` | `string\[\]` | 是 | 员工ID，ID类型与user_id_type的取值意义一致。   &gt;  如果你需要不同类型的ID进行转换，可以使用 [ID转换服务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/common_data-id/convert) 换取 ==employment_id==<br>**示例值**：["7140964208476371111"]<br>**数据校验规则**：<br>- 长度范围：`1` ～ `100` |
 | `get_all` | `boolean` | 否 | 是否获取全部 BP，true 为获取员工所在部门及来自上级部门的全部 HRBP 和属地 BP，false 为仅获取员工的直属 HRBP 和属地 BP（当员工所在部门、属地无 BP 时，会上钻找到最近的 BP），默认为 false<br>**示例值**：true<br>**默认值**：`false` |
 
 
@@ -70,7 +70,7 @@ updateTime: "1734434058000"
 | `msg` | `string` | 错误描述 |
 | `data` | `\-` | \- |
 | &nbsp;&nbsp;└ `employment_direct_bps` | `employment_bp\[\]` | 员工直属 BP 信息，当员工所在部门、属地无 BP 时，会上钻找到最近的 BP |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `employment_id` | `string` | 员工雇佣 ID > 可以使用[搜索员工信息](https://open.larkoffice.com/document/server-docs/corehr-v1/employee/search)接口获取员工其他信息。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `employment_id` | `string` | 员工雇佣 ID &gt; 可以使用[搜索员工信息](https://open.larkoffice.com/document/server-docs/corehr-v1/employee/search)接口获取员工其他信息。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `hrbp_ids` | `string\[\]` | 员工直属 HRBP 雇佣 ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `location_bp_ids` | `string\[\]` | 员工直属属地 BP 雇佣 ID |
 | &nbsp;&nbsp;└ `employment_all_bps` | `employment_bp\[\]` | 员工全部 BP 信息<br>**字段权限要求**： `corehr:employee.all_bp:read` 查看员工的全部 BP 信息 |

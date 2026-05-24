@@ -69,14 +69,14 @@ updateTime: "1774235771000"
 
 | 类型 | Type 值 | 传入 Value 格式 | 说明 |
 | --- | --- | --- | --- |
-| 文本 | 1 | 单语单行："field__c": "\"这是一段单行文本\"" 单语多行："field__c": "\"这是多行文本第一行\\n这是多行文本第二行\"" 多语单行："field__c": "{\"en-US\":\"这是英文\",\"zh-CN\":\"这是中文\"}" 多语多行："field__c": "{\"en-US\":\"这是英文第一行\\n这是英文第二行\",\"zh-CN\":\"这是中文第一行\\n这是中文第二行\"}" | 文本属性（是否多语、是否多行等）可通过[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)接口获得 |
+| 文本 | 1 | 单语单行："field__c": "\"这是一段单行文本\"" 单语多行："field__c": "\"这是多行文本第一行\\n这是多行文本第二行\"" 多语单行："field__c": "`{\"en-US\":\"这是英文\",\"zh-CN\":\"这是中文\"}`" 多语多行："field__c": "`{\"en-US\":\"这是英文第一行\\n这是英文第二行\",\"zh-CN\":\"这是中文第一行\\n这是中文第二行\"}`" | 文本属性（是否多语、是否多行等）可通过[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)接口获得 |
 | 是否 | 2 | `"field__c": "\"true\""` |  |
 | 数字 | 3 | `"field__c": "\"2334.00\""` |  |
 | 选项 | 4 | 单选："field__c": "\"enum_api_name\"" 多选："field__c": "[\"enum_api_name_1\",\"enum_api_name_2\"]" | 传入选项的 API name，可通过[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)接口获得 |
-| 查找 | 5 | 人员（单选）："field__c": "\"7050076802819163661\"" 人员（多选）："field__c": "[\"6976524804564321805\",\"6976446378482484773\"]" 自定义分组："field__c": "[{\"wk_id\":\"7251542212374136358\",\"field_api_name_1\":\"文本1\",\"field_api_name_2\":\"enum_api_name_1\",\"field_api_name_3\":\"文本2\"}]" | 人员（单选）和人员（多选）组件传入雇佣 ID，且只能用 people_corehr_id 类型的 `user_id_type`            自定义分组中的数据要更新时，需要输入 wk_id，可通过查询接口获得，不传 wk_id 认为是新增 |
+| 查找 | 5 | 人员（单选）："field__c": "\"7050076802819163661\"" 人员（多选）："field__c": "[\"6976524804564321805\",\"6976446378482484773\"]" 自定义分组："field__c": "[`{\"wk_id\":\"7251542212374136358\",\"field_api_name_1\":\"文本1\",\"field_api_name_2\":\"enum_api_name_1\",\"field_api_name_3\":\"文本2\"}`]" | 人员（单选）和人员（多选）组件传入雇佣 ID，且只能用 people_corehr_id 类型的 `user_id_type`            自定义分组中的数据要更新时，需要输入 wk_id，可通过查询接口获得，不传 wk_id 认为是新增 |
 | 自动编码 | 6 | `"field__c": "\"ABC123456XYZ\""` | 只能查询，不可修改 |
 | 日期时间 | 7 | 日期："field__c": "\"2023-01-24\"" 日期时间："field__c": "\"2024-01-23 05:06:07\"" |  |
-| 附件 | 8 | 附件单选："field__c": [{"field_name": "field_api_name","value": "\"[{\\\"file_id\\\":\\\"64489fc45cc11e4688d3daf1_d80d327756bd4140ad292fc94d9e9e0f\\\"}]\""}] 附件多选："field__c": [{"field_name": "field_api_name","value": "\"[{\\\"file_id\\\":\\\"64489fc716ba39874c68c077_6fc1ba59668a4fae8a7f045816a18ecc\\\"},{\\\"file_id\\\":\\\"63eb3433fb14e3de87ac7f78_8f74c25f2e85401fbea1d787feea041b\\\"}]\""}] |  |
+| 附件 | 8 | 附件单选："field__c": [`{"field_name": "field_api_name","value": "\"[{\\\"file_id\\\":\\\"64489fc45cc11e4688d3daf1_d80d327756bd4140ad292fc94d9e9e0f\\\"}`]\""}] 附件多选："field__c": [`{"field_name": "field_api_name","value": "\"[{\\\"file_id\\\":\\\"64489fc716ba39874c68c077_6fc1ba59668a4fae8a7f045816a18ecc\\\"}`,`{\\\"file_id\\\":\\\"63eb3433fb14e3de87ac7f78_8f74c25f2e85401fbea1d787feea041b\\\"}]\""}`] |  |
 | 图片 | 9 | - | 只能查询，不可修改 |
 | 计算字段 | 10 | - | 只能查询，不可修改 |
 | 反向查找 | 11 | - | 只能查询，不可修改 |

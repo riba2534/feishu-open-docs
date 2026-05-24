@@ -44,15 +44,15 @@ updateTime: "1727087317000"
 | &nbsp;&nbsp;└ `api_name` | `string` | 否 | 对象 APIName<br>**示例值**："_user"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `256` 字符 |
 | &nbsp;&nbsp;└ `search_fields` | `string\[\]` | 否 | 搜索字段 SearchFields 列表<br>**示例值**：["_id"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `500` |
 | &nbsp;&nbsp;└ `select` | `string\[\]` | 否 | 召回字段 APIID/APIName 列表<br>**示例值**：["_id"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `1000` |
-| &nbsp;&nbsp;└ `filter` | `criterion` | 否 | 过滤条件，序列化的结果{"filter": "「标准Criterion」"} |
+| &nbsp;&nbsp;└ `filter` | `criterion` | 否 | 过滤条件，序列化的结果 `{"filter": "「标准Criterion」"}` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `conditions` | `condition\[\]` | 否 | 查询条件<br>**数据校验规则**：<br>- 长度范围：`0` ～ `10` |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `index` | `string` | 否 | 序号<br>**示例值**："1" |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `left` | `condition_value` | 否 | 左值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 否 | 左值类型，只支持 "metadataVariable"，表示字段<br>**示例值**："metadataVariable" |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `settings` | `string` | 否 | 字段具体值，以 JSONString 表示，格式：{"fieldPath":[{"fieldApiName": "字段名","objectApiName": "对象名"}]}<br>**示例值**："{\"fieldPath\":[{\"fieldApiName\": \"_id\",\"objectApiName\": \"_user\"}]}" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `settings` | `string` | 否 | 字段具体值，以 JSONString 表示，格式：`{"fieldPath":[{"fieldApiName": "字段名","objectApiName": "对象名"}`]}<br>**示例值**："`{\"fieldPath\":[{\"fieldApiName\": \"_id\",\"objectApiName\": \"_user\"}`]}" |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `right` | `condition_value` | 否 | 右值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 否 | 右值类型，只支持 "constant"，表示常量<br>**示例值**："constant" |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `settings` | `string` | 否 | 常量具体值，以 JSONString 表示，格式：{"data":"常量具体值"}<br>**示例值**："{\"fieldPath\":[{\"fieldApiName\": \"_id\",\"objectApiName\": \"_user\"}]}" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `settings` | `string` | 否 | 常量具体值，以 JSONString 表示，格式：`{"data":"常量具体值"}`<br>**示例值**："`{\"fieldPath\":[{\"fieldApiName\": \"_id\",\"objectApiName\": \"_user\"}`]}" |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `operator` | `string` | 否 | 操作符<br>**示例值**："equal" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `logic_expression` | `string` | 否 | 逻辑关系<br>**示例值**："1 and 2" |
 | &nbsp;&nbsp;└ `order_by` | `order_condition` | 否 | 排序条件 |

@@ -78,7 +78,7 @@ updateTime: "1752154988000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `url` | `string` | 否 | 知识空间URL<br>**示例值**："https://ai-tenant.feishu-boe.cn/wiki/space/7283525110814736404"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `65535` 字符 |
 | &nbsp;&nbsp;└ `lark_helpdesk` | `data_asset_import_knowledge_helpdesk` | 否 | 知识导入-飞书服务台 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `helpdesk_id` | `string` | 是 | 飞书服务台ID，可以通过[服务台-接入指南](https://open.larkoffice.com/document/server-docs/helpdesk-v1/access-guide) 获取<br>**示例值**："123"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
-| `description` | `map<string, string>` | 否 | 数据知识描述信息<br>**示例值**：{"zh_cn":"描述"} |
+| `description` | `map<string, string>` | 否 | 数据知识描述信息<br>**示例值**：`{"zh_cn":"描述"}` |
 
 
 ### 请求体示例

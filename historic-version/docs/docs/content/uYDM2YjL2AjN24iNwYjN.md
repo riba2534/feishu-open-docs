@@ -45,8 +45,8 @@ updateTime: "1702889189000"
 | 参数| 类型| 必须 | 说明| 
 | ------ | ------------ | ---- | -----|
 |docToken|string|是|文件的 token，获取方式见[如何获取云文档资源相关 token](https://open.larkoffice.com/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#08bb5df6)|
-| Revision      | int          | 是   | 文档的指定版本，文档新创建后版本号是0，[获取方式](https://open.larkoffice.com/document/ukTMukTMukTM/uUDM2YjL1AjN24SNwYjN)，要求>=0，post body json 字段 |
-| Requests      | list<string> | 是   | post body json， OperationRequest 类型序列化 string 数组                         | 
+| Revision      | int          | 是   | 文档的指定版本，文档新创建后版本号是0，[获取方式](https://open.larkoffice.com/document/ukTMukTMukTM/uUDM2YjL1AjN24SNwYjN)，要求&gt;=0，post body json 字段 |
+| Requests      | `list<string>` | 是   | post body json， OperationRequest 类型序列化 string 数组                         | 
   
 
 #### OperationRequest

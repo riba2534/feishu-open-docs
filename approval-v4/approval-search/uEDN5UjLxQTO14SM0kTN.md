@@ -28,8 +28,8 @@ updateTime: "1745207231000"
 | 名称         | 类型           | 必须        | 说明        |
 | --------- | --------------- | -------   | --------- |
 |tenant_key | string | 否 |  企业标识（user_id_list 不为空时必须） |
-|user_id_list | list<string> | 否 | Employee ID 数组（最大100个）  |
-|lark_id_list | list<i64> | 否 |  Lark User ID 数组（最大100个） |
+|user_id_list | `list<string>` | 否 | Employee ID 数组（最大100个）  |
+|lark_id_list | `list<i64>` | 否 |  Lark User ID 数组（最大100个） |
   
 ### 请求体示例
 

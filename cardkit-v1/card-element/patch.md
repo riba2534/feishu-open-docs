@@ -46,7 +46,7 @@ updateTime: "1755832643000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `partial_element` | `string` | 是 | 组件的新的配置项字段。传入 `element_id` 参数后，原组件的 ID 将更新。<br>**注意**： - 不支持修改 `tag` 参数。  - 以下示例值未转义，使用时请注意将其转为 JSON 序列化后的字符串。 - 仅支持[卡片 JSON 2.0 结构](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-v2-structure)。<br>**示例值**："{\"content\":\"更新后的组件文本\"}"<br>**数据校验规则**：<br>- 长度范围：`1` ～ `1000000` 字符 |
+| `partial_element` | `string` | 是 | 组件的新的配置项字段。传入 `element_id` 参数后，原组件的 ID 将更新。<br>**注意**： - 不支持修改 `tag` 参数。  - 以下示例值未转义，使用时请注意将其转为 JSON 序列化后的字符串。 - 仅支持[卡片 JSON 2.0 结构](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-v2-structure)。<br>**示例值**："`{\"content\":\"更新后的组件文本\"}`"<br>**数据校验规则**：<br>- 长度范围：`1` ～ `1000000` 字符 |
 | `uuid` | `string` | 否 | 幂等 ID，可通过传入唯一的 UUID 以保证相同批次的操作只进行一次。<br>**示例值**："a0d69e20-1dd1-458b-k525-dfeca4015204"<br>**数据校验规则**：<br>- 长度范围：`1` ～ `64` 字符 |
 | `sequence` | `int` | 是 | 操作卡片的序号。用于保证多次更新的时序性。<br>**注意**： 请确保在通过卡片 OpenAPI 操作同一张卡片时，sequence 的值相较于上一次操作严格递增。<br>**数据校验规则**：int32 范围（ `1`~`2147483647`）内的正整数。<br>**示例值**：1 |
 

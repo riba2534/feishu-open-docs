@@ -45,7 +45,7 @@ updateTime: "1755251578000"
 | --- | --- | --- | --- |
 | dataValidationRanges | array | 是 | 指定要删除的下拉列表的范围和 ID。可指定多个范围。    **注意**： - 删除某个范围失败不影响其它范围的执行。响应体中将返回每个范围的执行结果。 - 单个范围指定的单元格不可超过 5,000 个，范围的总数不可超过 100 个。 |
 | &nbsp;&nbsp;└ range | string | 是 | 要删除的下拉列表的范围。格式为 `!<开始位置>:<结束位置>`。其中： - `sheetId` 为工作表 ID，通过[获取工作表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/historic-version/docs/sheets/datavalidation/query-datavalidation) 获取 - `<开始位置>:<结束位置>` 为工作表中单元格的范围，数字表示行索引，字母表示列索引。如 `A2:B2` 表示该工作表第 2 行的 A 列到 B 列。`range`支持四种写法，详情参考[电子表格概述](https://open.larkoffice.com/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/overview) |
-| &nbsp;&nbsp;└ dataValidationIds | array<int> | 是 | 要删除的下拉列表的 ID。可通过调用[查询下拉列表设置](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/historic-version/docs/sheets/datavalidation/query-datavalidation)获取 |
+| &nbsp;&nbsp;└ dataValidationIds | `array<int>` | 是 | 要删除的下拉列表的 ID。可通过调用[查询下拉列表设置](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/historic-version/docs/sheets/datavalidation/query-datavalidation)获取 |
 
 
 ### 请求体示例

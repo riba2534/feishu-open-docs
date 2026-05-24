@@ -21,7 +21,7 @@ updateTime: "1774528229000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `vc:meeting.meetingevent:read` 获取会议信息 `vc:meeting:readonly` 获取会议信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID `vc:meeting.artifact.note:read` 获取智能纪要信息 `vc:meeting.artifact.verbatim:read` 获取逐字稿信息 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID `vc:meeting.artifact.note:read` 获取智能纪要信息 `vc:meeting.artifact.verbatim:read` 获取逐字稿信息 |
 
 ### 请求头
 

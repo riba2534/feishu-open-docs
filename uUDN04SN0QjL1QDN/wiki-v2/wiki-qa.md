@@ -103,7 +103,7 @@ warning
 
 | 列1 |
 | --- |
-| 添加应用为知识库管理员（成员）当前有两种方式： - 通过添加群为知识库管理员（成员）方式（**较容易**） 	1. 在飞书客户端中创建一个群聊，并将应用添加至群聊中。    2. 知识库管理员前往「**知识库设置**」-> 「**成员设置**」->「**添加管理员**」中。           		 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/f2d8f0e7168dc1a7d9e4e7264ff2af51_XFAHwdOfD3.png?height=878&lazyload=true&maxWidth=483&width=1920)          3. 搜索包含机器人的群聊，添加该群为管理员。              ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/dae728569130e1ca3438e931769e92a2_0S52GbbvjE.png?height=838&lazyload=true&maxWidth=483&width=1135) - 通过 API 接口方式(**较繁琐**) 	- 参考本页 **问题2 中将应用添加知识空间成员的方式** |
+| 添加应用为知识库管理员（成员）当前有两种方式： - 通过添加群为知识库管理员（成员）方式（**较容易**） 	1. 在飞书客户端中创建一个群聊，并将应用添加至群聊中。    2. 知识库管理员前往「**知识库设置**」-&gt; 「**成员设置**」-&gt;「**添加管理员**」中。           		 ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/f2d8f0e7168dc1a7d9e4e7264ff2af51_XFAHwdOfD3.png?height=878&lazyload=true&maxWidth=483&width=1920)          3. 搜索包含机器人的群聊，添加该群为管理员。              ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/dae728569130e1ca3438e931769e92a2_0S52GbbvjE.png?height=838&lazyload=true&maxWidth=483&width=1135) - 通过 API 接口方式(**较繁琐**) 	- 参考本页 **问题2 中将应用添加知识空间成员的方式** |
 
   
 ## 4. 如何迁移云空间中的文档到知识库？

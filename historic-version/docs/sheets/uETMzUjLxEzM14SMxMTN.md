@@ -68,7 +68,7 @@ curl --location --request GET 'https://open.feishu.cn/open-apis/sheets/v2/spread
 | &emsp;∟ownerUserID                  | string              | 所有者的 id，取决于user_id_type的值，仅user_id_type不为空时返回该值                                                  |
 | &emsp;∟sheetCount                 | int              | spreadsheet 下的 sheet 数                                    |
 | &emsp;∟revision                   | int              | 该 sheet 的版本                                              |
-| sheets                            | array<interface> | spreadsheet 下的sheet列表                                    |
+| sheets                            | `array<interface>` | spreadsheet 下的sheet列表                                    |
 | &emsp;∟sheetId                    | string           | sheet 的 id                                                  |
 | &emsp;∟title                      | string           | sheet 的标题                                                 |
 | &emsp;∟index                      | int              | sheet 的位置                                                 |
@@ -76,12 +76,12 @@ curl --location --request GET 'https://open.feishu.cn/open-apis/sheets/v2/spread
 | &emsp;∟columnCount                | int              | sheet 的最大列数                                             |
 | &emsp;∟frozenRowCount             | int              | 该 sheet 的冻结行数，小于等于 sheet 的最大行数，0表示未设置冻结 |
 | &emsp;∟frozenColCount             | int              | 该 sheet 的冻结列数，小于等于 sheet 的最大列数，0表示未设置冻结 |
-| &emsp;∟merges                     | array<interface> | 该 sheet 中合并单元格的范围                                  |
+| &emsp;∟merges                     | `array<interface>` | 该 sheet 中合并单元格的范围                                  |
 | &emsp;&emsp;∟startRowIndex        | int              | 合并单元格范围的开始行下标，index 从 0 开始                  |
 | &emsp;&emsp;∟startColumnIndex     | int              | 合并单元格范围的开始列下标，index 从 0 开始                  |
 | &emsp;&emsp;∟rowCount             | int              | 合并单元格范围的行数量                                       |
 | &emsp;&emsp;∟columnCount          | int              | 合并单元格范围的列数量                                       |
-| &emsp;∟protectedRange             | array<interface> | 该 sheet 中保护范围                                          |
+| &emsp;∟protectedRange             | `array<interface>` | 该 sheet 中保护范围                                          |
 | &emsp;&emsp;∟dimension            |                  | 保护行列的信息，如果为保护工作表，则该字段为空               |
 | &emsp;&emsp;&emsp;∟startIndex     | int              | 保护行列的起始位置，位置从1开始                              |
 | &emsp;&emsp;&emsp;∟endIndex       | int              | 保护行列的结束位置，位置从1开始                              |

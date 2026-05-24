@@ -18,7 +18,7 @@ updateTime: "1734434079000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:bp.get_by_department:read` 查看部门 BP 信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -41,7 +41,7 @@ updateTime: "1734434079000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `department_id` | `string` | 是 | 部门 ID，ID类型与department_id_type的取值意义一致。   >  可以使用 [ID转换服务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/common_data-id/convert)换取 ==department_id==   >  部门id也可通过[搜索部门信息](https://open.larkoffice.com/document/server-docs/corehr-v1/organization-management/department/search)接口获取。<br>**示例值**："6893014062142064111" |
+| `department_id` | `string` | 是 | 部门 ID，ID类型与department_id_type的取值意义一致。   &gt;  可以使用 [ID转换服务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/common_data-id/convert)换取 ==department_id==   &gt;  部门id也可通过[搜索部门信息](https://open.larkoffice.com/document/server-docs/corehr-v1/organization-management/department/search)接口获取。<br>**示例值**："6893014062142064111" |
 
 
 ### 请求体示例
@@ -64,8 +64,8 @@ updateTime: "1734434079000"
 | `msg` | `string` | 错误描述 |
 | `data` | `\-` | \- |
 | &nbsp;&nbsp;└ `items` | `department_hrbp\[\]` | 部门 HRBP 信息，依次为部门及各层级上级部门 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `department_id` | `string` | 部门 ID，ID类型与department_id_type的取值意义一致。   >  如想获取部门详细信息，可通过[搜索部门信息](https://open.larkoffice.com/document/server-docs/corehr-v1/organization-management/department/search)接口获取。 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `hrbp_ids` | `string\[\]` | 部门 HRBP 员工 ID，ID类型与user_id_type的取值意义一致。   >  如想获取员工详细信息，可通过[搜索员工信息](https://open.larkoffice.com/document/server-docs/corehr-v1/employee/search)接口获取。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `department_id` | `string` | 部门 ID，ID类型与department_id_type的取值意义一致。   &gt;  如想获取部门详细信息，可通过[搜索部门信息](https://open.larkoffice.com/document/server-docs/corehr-v1/organization-management/department/search)接口获取。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `hrbp_ids` | `string\[\]` | 部门 HRBP 员工 ID，ID类型与user_id_type的取值意义一致。   &gt;  如想获取员工详细信息，可通过[搜索员工信息](https://open.larkoffice.com/document/server-docs/corehr-v1/employee/search)接口获取。 |
 
 
 ### 响应体示例

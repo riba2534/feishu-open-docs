@@ -44,7 +44,7 @@ updateTime: "1694443377000"
 | `items` | `list<Item>` | 是 | 待进入索引的item列表 |
 | ∟ `id` | `string` | 是 | item 在 datasource 中的唯一标识 **示例值**："my_item_01010111" |
 | ∟ `acl` | `acl\[\]` | 是 | item 的访问权限控制。 acl 字段为空数组，则默认数据不可见。如果数据是全员可见，需要设置 access="allow"; type="user"; value="everyone" |
-| ∟ ∟ `access` | `string` | 否 | 权限类型，优先级：Deny > Allow。 **示例值**："allow" **可选值有**： - `allow`：允许访问 - `deny`：禁止访问 |
+| ∟ ∟ `access` | `string` | 否 | 权限类型，优先级：Deny &gt; Allow。 **示例值**："allow" **可选值有**： - `allow`：允许访问 - `deny`：禁止访问 |
 | ∟ ∟ `value` | `string` | 否 | 设置的权限值，例如 userID ，依赖 type 描述。 注：在 type 为 user 且 access 为 allow 时，可填 "everyone" 来表示该数据项对全员可见； **示例值**："d35e3c23" |
 | ∟ ∟ `type` | `string` | 否 | 权限值类型 **示例值**："user" **可选值有**： - `user`：访问权限控制中指定“用户”可以访问或拒绝访问该条数据 |
 | ∟ `metadata` | `item_metadata` | 是 | item 的元信息 |
@@ -53,7 +53,7 @@ updateTime: "1694443377000"
 | ∟ ∟ `create_time` | `int` | 否 | 数据项的创建时间。Unix 时间，单位为秒 **示例值**：1618831236 |
 | ∟ ∟ `update_time` | `int` | 是 | 数据项的更新时间。Unix 时间，单位为秒 **示例值**：1618831236 |
 | ∟ ∟ `source_url_mobile` | `string` | 是 | 移动端搜索命中的跳转地址。如果您PC端和移动端有不同的跳转地址，可以在这里写入移动端专用的url，我们会在搜索时为您选择合适的地址 **示例值**："https://www.feishu.cn" |
-| ∟ `structured_data` | `string` | 是 | 结构化数据（以 json 字符串传递），这些字段是搜索结果的展示字段（title字段无须在此另外指定），这里的示例值遵循了数据范式示例中的schema定义，请按你在“数据范式”中创建的schema约束填写数据 **示例值**："{"description":"description1", "priority":"HIGH"}" |
+| ∟ `structured_data` | `string` | 是 | 结构化数据（以 json 字符串传递），这些字段是搜索结果的展示字段（title字段无须在此另外指定），这里的示例值遵循了数据范式示例中的schema定义，请按你在“数据范式”中创建的schema约束填写数据 **示例值**："`{"description":"description1", "priority":"HIGH"}`" |
 | ∟ `content` | `item_content` | 否 | 非结构化数据，如文档文本，飞书搜索会用来做召回 |
 | ∟ ∟ `format` | `string` | 否 | 内容的格式 **示例值**："html" **可选值有**： - `html`：html格式 - `plaintext`：纯文本格式 |
 | ∟ ∟ `content_data` | `string` | 否 | 全文数据 **示例值**："这是一个很长的文本" |

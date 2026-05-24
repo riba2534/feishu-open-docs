@@ -28,8 +28,8 @@ updateTime: "1778137780000"
 |&emsp;∟app_id|string|应用 ID|
 |&emsp;∟tenant_key|string|租户 Key|
 |event|-|事件体|
-|&emsp;∟employee_id|string|[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的用户 ID|
-|&emsp;∟employee_no|string|[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的工号|
+|&emsp;∟employee_id|string|[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) &gt; 组织架构 &gt; 成员与部门 &gt; 成员详情中的用户 ID|
+|&emsp;∟employee_no|string|[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) &gt; 组织架构 &gt; 成员与部门 &gt; 成员详情中的工号|
 |&emsp;∟group_id|string|考勤组 ID，可用于[按 ID 查询考勤组](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/group/get) |
 |&emsp;∟shift_id|string|班次 ID，可用于[按 ID 查询班次](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/shift/get)|
 |&emsp;∟date|int|日期，格式为yyyyMMdd|

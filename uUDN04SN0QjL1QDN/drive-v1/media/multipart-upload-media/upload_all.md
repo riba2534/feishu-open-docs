@@ -42,7 +42,7 @@ updateTime: "1740463288000"
 | `parent_node` | `string` | 是 | 上传点的 token，即要上传的云文档的 token，用于指定素材将要上传到的云文档或位置。参考[素材概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/introduction)了解上传点类型与上传点 token 的对应关系 |
 | `size` | `int` | 是 | 文件的大小，单位为字节<br>**示例值**：1024<br>**数据校验规则**：<br>- 最大值：`20971520` |
 | `checksum` | `string` | 否 | 文件的 Adler-32 校验和<br>**示例值**："3248270248" |
-| `extra` | `string` | 否 | 以下场景的上传点需通过该参数传入素材所在云文档的 token。extra 参数的格式为`"{\"drive_route_token\":\"素材所在云文档的 token\"}"`。详情参考[素材概述-extra 参数说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/introduction#3b8635d3)。<br>**示例值**："{\"drive_route_token\":\"doxcnXgNGAtaAraIRVeCfmabcef\"}" |
+| `extra` | `string` | 否 | 以下场景的上传点需通过该参数传入素材所在云文档的 token。extra 参数的格式为`"`{\"drive_route_token\":\"素材所在云文档的 token\"}`"`。详情参考[素材概述-extra 参数说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/introduction#3b8635d3)。<br>**示例值**："`{\"drive_route_token\":\"doxcnXgNGAtaAraIRVeCfmabcef\"}`" |
 | `file` | `file` | 是 | 文件的二进制内容<br>**示例值**：file binary |
 
 

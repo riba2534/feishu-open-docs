@@ -104,7 +104,7 @@ updateTime: "1732700103000"
 | 400 | 231019 | Due to the settings of this user, you are temporarily unable to perform this operation. | 由于目标用户（消息发送者）的设置（例如屏蔽消息），暂时无法执行此操作。 |
 | 400 | 231020 | Due to the configuration of the tenant administrator, you cannot perform this operation on the target user temporarily. | 由于租户管理员的配置，暂时无法对目标用户（消息发送者）执行此操作，请联系租户管理员协助排查。 |
 | 400 | 231021 | No permission to operate external chats. | 没有权限操作外部群。 |
-| 400 | 231022 | Bot has NO availability to this user. | 单聊用户（以群聊的 chat_id 指定的消息接收者，但 chat_id 对应的群聊类型为单聊 `p2p`）不在应用机器人的可用范围内，或者是在应用的禁用范围内。 解决方案： 1. 登录[开发者后台](https://open.feishu.cn/app)，找到并进入指定应用详情页。 2. 在左侧导航栏进入 **应用发布** >  **版本管理与发布** 页面，点击 **创建版本**。 3. 在 **版本详情** 页面，找到 **可用范围** 区域，点击 **编辑**。 4. 在弹出的对话框内，配置应用的可用范围，将用户添加至可用范围内。 5. 在页面底部点击 **保存**，并发布应用使配置生效。 6. （可选）如果以上配置完成后仍报错，则需要联系企业管理员登录[管理后台](https://feishu.cn/admin)，在 **工作台** > **应用管理** 中进入指定应用详情页，在 **应用可用范围** 内查看该用户是否被设置为了 **禁用成员**。 具体操作参见[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。 |
+| 400 | 231022 | Bot has NO availability to this user. | 单聊用户（以群聊的 chat_id 指定的消息接收者，但 chat_id 对应的群聊类型为单聊 `p2p`）不在应用机器人的可用范围内，或者是在应用的禁用范围内。 解决方案： 1. 登录[开发者后台](https://open.feishu.cn/app)，找到并进入指定应用详情页。 2. 在左侧导航栏进入 **应用发布** &gt;  **版本管理与发布** 页面，点击 **创建版本**。 3. 在 **版本详情** 页面，找到 **可用范围** 区域，点击 **编辑**。 4. 在弹出的对话框内，配置应用的可用范围，将用户添加至可用范围内。 5. 在页面底部点击 **保存**，并发布应用使配置生效。 6. （可选）如果以上配置完成后仍报错，则需要联系企业管理员登录[管理后台](https://feishu.cn/admin)，在 **工作台** &gt; **应用管理** 中进入指定应用详情页，在 **应用可用范围** 内查看该用户是否被设置为了 **禁用成员**。 具体操作参见[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。 |
 | 400 | 232009 | Your request specifies a chat which has already been dissolved. | 群组已被解散，无法执行操作。 |
 
 

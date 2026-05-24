@@ -18,7 +18,7 @@ updateTime: "1745206965000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `approval:approval` 查看、创建、更新、删除审批应用相关信息 `approval:approval:readonly` 访问审批应用 `approval:task` 同意、拒绝、退回、加签等原生审批任务操作 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -45,7 +45,7 @@ updateTime: "1745206965000"
 | `user_id` | `string` | 是 | 审批人的用户 ID，ID 类型与查询参数 user_id_type 取值一致。<br>**示例值**："f7cb567e" |
 | `comment` | `string` | 否 | 审批意见<br>**示例值**："OK" |
 | `task_id` | `string` | 是 | 审批任务 ID，调用[获取单个审批实例详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/get)，从返回结果的 task_list 中获取所需的 id。<br>**示例值**："12345" |
-| `form` | `string` | 否 | 如果审批定义的流程设计中添加了条件分支，则需要传入条件分支所需的控件数据（JSON 数组），否则会影响后续的分支条件流转。<br>**说明**：传值时需要将 JSON 序列化为字符串。参数示例值未进行转义，正确的传值示例可参见下文 **请求体示例**。<br>**示例值**："[{\"id\":\"user_name\", \"type\": \"input\", \"value\":\"test\"}]" |
+| `form` | `string` | 否 | 如果审批定义的流程设计中添加了条件分支，则需要传入条件分支所需的控件数据（JSON 数组），否则会影响后续的分支条件流转。<br>**说明**：传值时需要将 JSON 序列化为字符串。参数示例值未进行转义，正确的传值示例可参见下文 **请求体示例**。<br>**示例值**："[`{\"id\":\"user_name\", \"type\": \"input\", \"value\":\"test\"}`]" |
 
 
 ### 请求体示例

@@ -20,7 +20,7 @@ updateTime: "1750217062000"
 | HTTP Method | GET |
 | 接口频率限制 | [5 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
-| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `minutes:minute:download` 导出妙记文件 `minutes:minutes.transcript:export` 导出妙记转写的文字内容 > **Tip**: “导出妙记文件”权限不再开放，已添加权限的应用不受影响，新应用请使用“导出妙记转写的文字内容”权限。 |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `minutes:minute:download` 导出妙记文件 `minutes:minutes.transcript:export` 导出妙记转写的文字内容 &gt; **Tip**: “导出妙记文件”权限不再开放，已添加权限的应用不受影响，新应用请使用“导出妙记转写的文字内容”权限。 |
 
 ### 请求头
 

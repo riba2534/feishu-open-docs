@@ -18,7 +18,7 @@ updateTime: "1745207196000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `approval:approval` 查看、创建、更新、删除审批应用相关信息 `approval:instance.comment` 查看、创建、更新、删除原生审批评论相关信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -48,7 +48,7 @@ updateTime: "1745207196000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `content` | `string` | 否 | 评论内容，JSON 格式，传入时需要压缩转义为字符串。以下示例值未转义，你可参考请求体示例中的示例 content 进行编辑。<br>**JSON 内参数说明**：<br>- text：string 类型，评论文本内容。 - files：Attachment[] 类型，附件信息。     - url：string 类型，附件链接。     - thumbnailURL：string 类型，缩略图链接。     - fileSize：int64 类型，文件大小。     - title：string 类型，标题。     - type：string 类型，附件类型，取值 image 表示图片类型。<br>**注意**： - 如需 @用户，则需要在该参数内设置用户名的文本，例如 `@username`，同时通过 at_info_list 参数实现 @ 效果。 - 对于附件，在 PC 端使用 HTTP 资源链接传图片资源可能会导致缩略图异常，建议使用 HTTPS 传资源附件。<br>**示例值**："{\"text\":\"@username艾特展示\",\"files\":[{\"url\":\"xxx\",\"fileSize\":155149,\"title\":\"9a9fedc5cfb01a4a20c715098.png\",\"type\":\"image\",\"extra\":\"\"}]}" |
+| `content` | `string` | 否 | 评论内容，JSON 格式，传入时需要压缩转义为字符串。以下示例值未转义，你可参考请求体示例中的示例 content 进行编辑。<br>**JSON 内参数说明**：<br>- text：string 类型，评论文本内容。 - files：Attachment[] 类型，附件信息。     - url：string 类型，附件链接。     - thumbnailURL：string 类型，缩略图链接。     - fileSize：int64 类型，文件大小。     - title：string 类型，标题。     - type：string 类型，附件类型，取值 image 表示图片类型。<br>**注意**： - 如需 @用户，则需要在该参数内设置用户名的文本，例如 `@username`，同时通过 at_info_list 参数实现 @ 效果。 - 对于附件，在 PC 端使用 HTTP 资源链接传图片资源可能会导致缩略图异常，建议使用 HTTPS 传资源附件。<br>**示例值**："`{\"text\":\"@username艾特展示\",\"files\":[{\"url\":\"xxx\",\"fileSize\":155149,\"title\":\"9a9fedc5cfb01a4a20c715098.png\",\"type\":\"image\",\"extra\":\"\"}`]}" |
 | `at_info_list` | `comment_at_info\[\]` | 否 | 评论中艾特人信息 |
 | &nbsp;&nbsp;└ `user_id` | `string` | 是 | 被艾特人的 ID，ID 类型与查询参数 user_id_type 取值一致。<br>**示例值**："579fd9c4" |
 | &nbsp;&nbsp;└ `name` | `string` | 是 | 被艾特人的姓名<br>**示例值**："张敏" |
@@ -56,7 +56,7 @@ updateTime: "1745207196000"
 | `parent_comment_id` | `string` | 否 | 父评论 ID，如果是回复评论，需要传入该值。获取方式：<br>- 调用当前接口成功后会返回本次评论的 ID，你可以保存用于下次使用。 - 调用[获取评论](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance-comment/list)接口，获取评论 ID。<br>**示例值**："7081516627711524883" |
 | `comment_id` | `string` | 否 | 评论 ID。如果需要编辑、删除一条评论，则需要将该评论的 ID 传入当前参数。获取方式：<br>- 调用当前接口成功后会返回本次评论的 ID，你可以保存用于下次使用。 - 调用[获取评论](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance-comment/list)接口，获取评论 ID。<br>**示例值**："7081516627711524883" |
 | `disable_bot` | `boolean` | 否 | 是否不启用 Bot，取值为 true 时只同步数据，不触发 Bot。<br>**说明**：飞书审批中自定义审批填写 false，其他情况填写 true。<br>**示例值**：false |
-| `extra` | `string` | 否 | 附加字段，JSON 格式，传入时需要压缩转义为字符串。<br>**示例值**："{\"a\":\"a\"}" |
+| `extra` | `string` | 否 | 附加字段，JSON 格式，传入时需要压缩转义为字符串。<br>**示例值**："`{\"a\":\"a\"}`" |
 
 
 ### 请求体示例

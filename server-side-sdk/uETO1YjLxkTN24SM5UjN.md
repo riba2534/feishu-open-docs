@@ -44,10 +44,10 @@ SDK 提供的主要能力包括：
 
 **GitHub 项目**                                               | **Issues**                                                  | **场景示例** | **语言**       |
 | ----------------------------------------------------------- | ----------------------------------------------------------- | -------- | ------------ |
-| [oapi-sdk-go](https://github.com/larksuite/oapi-sdk-go)     | [Issues](https://github.com/larksuite/oapi-sdk-go/issues)   | [oapi-sdk-go-demo](https://github.com/larksuite/oapi-sdk-go-demo)        | Golang >= 1.5 |
-| [oapi-sdk-python](https://github.com/larksuite/oapi-sdk-python) | [Issues](https://github.com/larksuite/oapi-sdk-python/issues) | [oapi-sdk-python-demo](https://github.com/larksuite/oapi-sdk-python-demo)      | Python >= 3.8    |
-| [oapi-sdk-java](https://github.com/larksuite/oapi-sdk-java) | [Issues](https://github.com/larksuite/oapi-sdk-java/issues) | [oapi-sdk-java-demo](https://github.com/larksuite/oapi-sdk-java-demo)      | Java >= 1.8    |
-| [oapi-sdk-nodejs](https://github.com/larksuite/node-sdk)    | [Issues](https://github.com/larksuite/node-sdk/issues)      | -   | NodeJS >= 10.0.0 
+| [oapi-sdk-go](https://github.com/larksuite/oapi-sdk-go)     | [Issues](https://github.com/larksuite/oapi-sdk-go/issues)   | [oapi-sdk-go-demo](https://github.com/larksuite/oapi-sdk-go-demo)        | Golang &gt;= 1.5 |
+| [oapi-sdk-python](https://github.com/larksuite/oapi-sdk-python) | [Issues](https://github.com/larksuite/oapi-sdk-python/issues) | [oapi-sdk-python-demo](https://github.com/larksuite/oapi-sdk-python-demo)      | Python &gt;= 3.8    |
+| [oapi-sdk-java](https://github.com/larksuite/oapi-sdk-java) | [Issues](https://github.com/larksuite/oapi-sdk-java/issues) | [oapi-sdk-java-demo](https://github.com/larksuite/oapi-sdk-java-demo)      | Java &gt;= 1.8    |
+| [oapi-sdk-nodejs](https://github.com/larksuite/node-sdk)    | [Issues](https://github.com/larksuite/node-sdk/issues)      | -   | NodeJS &gt;= 10.0.0 
 
 
 ## SDK 问题交流群

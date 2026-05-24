@@ -49,7 +49,7 @@ updateTime: "1723174802000"
 | &nbsp;&nbsp;└ `category_id` | `string` | 否 | 知识库分类ID<br>**示例值**："6836004780707807251" |
 | &nbsp;&nbsp;└ `question` | `string` | 是 | 问题<br>**示例值**："问题" |
 | &nbsp;&nbsp;└ `answer` | `string` | 否 | 答案<br>**示例值**："答案" |
-| &nbsp;&nbsp;└ `answer_richtext` | `string` | 否 | 富文本答案和答案必须有一个必填。Json Array格式，富文本结构请见[了解更多: 富文本](https://open.larkoffice.com/document/ukTMukTMukTM/uITM0YjLyEDN24iMxQjN)。<br>**注意**： 以下示例值未转义，使用时请注意转义。<br>**示例值**："[{\"content\":\"答案\",\"type\":\"text\"},{\"content\":\"这只是一个测试，医保问题\",\"type\":\"text\"}]" |
+| &nbsp;&nbsp;└ `answer_richtext` | `string` | 否 | 富文本答案和答案必须有一个必填。Json Array格式，富文本结构请见[了解更多: 富文本](https://open.larkoffice.com/document/ukTMukTMukTM/uITM0YjLyEDN24iMxQjN)。<br>**注意**： 以下示例值未转义，使用时请注意转义。<br>**示例值**："[`{\"content\":\"答案\",\"type\":\"text\"},{\"content\":\"这只是一个测试，医保问题\",\"type\":\"text\"}`]" |
 | &nbsp;&nbsp;└ `tags` | `string\[\]` | 否 | 相似问题<br>**示例值**：["问","题"] |
 
 

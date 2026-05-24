@@ -18,7 +18,7 @@ updateTime: "1692084863000"
 | 接口频率限制 | [20 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `helpdesk:all` 更新服务台资源详情 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -59,12 +59,12 @@ updateTime: "1692084863000"
 | `id` | `string` | 否 | 非必填，创建成功后返回<br>**示例值**："6981801914270744596" |
 | `job_name` | `string` | 否 | 必填，任务名称<br>**示例值**："测试推送任务" |
 | `status` | `int` | 否 | 非必填，创建成功后返回<br>**示例值**：0 |
-| `create_user` | `notification_user` | 否 | 非必填，创建人<br>**示例值**：{"avatar_url":"","name":"","user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"} |
+| `create_user` | `notification_user` | 否 | 非必填，创建人<br>**示例值**：`{"avatar_url":"","name":"","user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"}` |
 | &nbsp;&nbsp;└ `user_id` | `string` | 否 | 非必填，用户id<br>**示例值**："ou_7277fd1262bfafc363d5b2a1f9c2ac90" |
 | &nbsp;&nbsp;└ `avatar_url` | `string` | 否 | 非必填，头像地址<br>**示例值**："http://*.com/*.png" |
 | &nbsp;&nbsp;└ `name` | `string` | 否 | 非必填，用户名称<br>**示例值**："test" |
 | `created_at` | `string` | 否 | 非必填，创建时间（毫秒时间戳）<br>**示例值**："1626332244719" |
-| `update_user` | `notification_user` | 否 | 非必填，更新用户<br>**示例值**：{"avatar_url":"","name":"","user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"} |
+| `update_user` | `notification_user` | 否 | 非必填，更新用户<br>**示例值**：`{"avatar_url":"","name":"","user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"}` |
 | &nbsp;&nbsp;└ `user_id` | `string` | 否 | 非必填，用户id<br>**示例值**："ou_7277fd1262bfafc363d5b2a1f9c2ac90" |
 | &nbsp;&nbsp;└ `avatar_url` | `string` | 否 | 非必填，头像地址<br>**示例值**："http://*.com/*.png" |
 | &nbsp;&nbsp;└ `name` | `string` | 否 | 非必填，用户名称<br>**示例值**："test" |
@@ -73,21 +73,21 @@ updateTime: "1692084863000"
 | `sent_user_count` | `int` | 否 | 非必填，已推送用户总数<br>**示例值**：1 |
 | `read_user_count` | `int` | 否 | 非必填，已读用户总数<br>**示例值**：1 |
 | `send_at` | `string` | 否 | 非必填，推送任务触发时间（毫秒时间戳）<br>**示例值**："1626332244719" |
-| `push_content` | `string` | 否 | 必填，推送内容，详见：https://open.feishu.cn/tool/cardbuilder?from=howtoguide<br>**示例值**："{   \"config\": {     \"wide_screen_mode\": true   },   \"elements\": [     {       \"tag\": \"div\",       \"text\": {         \"tag\": \"lark_md\",         \"content\": \"[飞书](https://www.feishu.cn)整合即时沟通、日历、音视频会议、云文档、云盘、工作台等功能于一体，成就组织和个人，更高效、更愉悦。\"       }     }   ] }" |
+| `push_content` | `string` | 否 | 必填，推送内容，详见：https://open.feishu.cn/tool/cardbuilder?from=howtoguide<br>**示例值**："`{   \"config\": {     \"wide_screen_mode\": true   }`,   \"elements\": [     `{       \"tag\": \"div\",       \"text\": {         \"tag\": \"lark_md\",         \"content\": \"[飞书](https://www.feishu.cn)整合即时沟通、日历、音视频会议、云文档、云盘、工作台等功能于一体，成就组织和个人，更高效、更愉悦。\"       }`     }   ] }" |
 | `push_type` | `int` | 否 | 必填， 0（定时推送：push_scope不能等于3） 1（新人入职推送：push_scope必须等于1或者3；new_staff_scope_type不能为空）<br>**示例值**：0 |
-| `push_scope_type` | `int` | 否 | 必填， 推送范围（服务台私信） 0：组织内全部成员（user_list和department_list必须为空） 1：不推送任何成员（user_list和department_list必须为空，chat_list不可为空） 2：推送到部分成员（user_list或department_list不能为空） 3：入职新人 以上四种状态，chat_list都相对独立，只有在推送范围为1时，必须需要设置chat_list<br>**示例值**：0 |
+| `push_scope_type` | `int` | 否 | 必填， 推送范围（服务台私信） 0：组织内全部成员（user_list和department_list必须为空） 1：不推送任何成员（user_list和department_list必须为空，chat_list不可为空） 2：推送到部分成员（user_list或department_list不能为空） 3：入职新人 以上四种状态，chat_list都相对独立，只有在推送范围为1时，必须需要设置chat_`list<br>`**示例值**：0 |
 | `new_staff_scope_type` | `int` | 否 | 非必填， 新人入职范围类型（push_type为1时生效） 0：组织内所有新人 1：组织内特定的部门（new_staff_scope_department_list 字段不能为空）<br>**示例值**：0 |
-| `new_staff_scope_department_list` | `notification_department\[\]` | 否 | 非必填，新人入职生效部门列表<br>**示例值**：[{"department_id":"od_7c1a2815c9846b5e518b950de0e62de8"}] |
+| `new_staff_scope_department_list` | `notification_department\[\]` | 否 | 非必填，新人入职生效部门列表<br>**示例值**：[`{"department_id":"od_7c1a2815c9846b5e518b950de0e62de8"}`] |
 | &nbsp;&nbsp;└ `department_id` | `string` | 否 | 部门ID<br>**示例值**："od_7277fd1262bfafc363d5b2a1f9c2ac90" |
 | &nbsp;&nbsp;└ `name` | `string` | 否 | 非必填，部门名称<br>**示例值**："测试部门" |
-| `user_list` | `notification_user\[\]` | 否 | 非必填，push推送到成员列表<br>**示例值**：[{"user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"}] |
+| `user_list` | `notification_user\[\]` | 否 | 非必填，push推送到成员列表<br>**示例值**：[`{"user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"}`] |
 | &nbsp;&nbsp;└ `user_id` | `string` | 否 | 非必填，用户id<br>**示例值**："ou_7277fd1262bfafc363d5b2a1f9c2ac90" |
 | &nbsp;&nbsp;└ `avatar_url` | `string` | 否 | 非必填，头像地址<br>**示例值**："http://*.com/*.png" |
 | &nbsp;&nbsp;└ `name` | `string` | 否 | 非必填，用户名称<br>**示例值**："test" |
-| `department_list` | `notification_department\[\]` | 否 | 非必填，push推送到的部门信息列表<br>**示例值**：[{"department_id":"od_7c1a2815c9846b5e518b950de0e62de8"}] |
+| `department_list` | `notification_department\[\]` | 否 | 非必填，push推送到的部门信息列表<br>**示例值**：[`{"department_id":"od_7c1a2815c9846b5e518b950de0e62de8"}`] |
 | &nbsp;&nbsp;└ `department_id` | `string` | 否 | 部门ID<br>**示例值**："od_7277fd1262bfafc363d5b2a1f9c2ac90" |
 | &nbsp;&nbsp;└ `name` | `string` | 否 | 非必填，部门名称<br>**示例值**："测试部门" |
-| `chat_list` | `notification_chat\[\]` | 否 | 非必填，push推送到的会话列表(群)<br>**示例值**：[{"chat_id":"oc_7c1a2815c9846b5e518b950de0e62de8"}] |
+| `chat_list` | `notification_chat\[\]` | 否 | 非必填，push推送到的会话列表(群)<br>**示例值**：[`{"chat_id":"oc_7c1a2815c9846b5e518b950de0e62de8"}`] |
 | &nbsp;&nbsp;└ `chat_id` | `string` | 否 | 非必填，会话ID<br>**示例值**："oc_7277fd1262bfafc363d5b2a1f9c2ac90" |
 | &nbsp;&nbsp;└ `name` | `string` | 否 | 非必填，会话名称<br>**示例值**："测试群聊" |
 | `ext` | `string` | 否 | 非必填，预留扩展字段<br>**示例值**："{}" |

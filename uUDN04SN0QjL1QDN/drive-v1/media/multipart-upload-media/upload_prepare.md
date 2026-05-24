@@ -46,7 +46,7 @@ updateTime: "1740463289000"
 | `parent_type` | `string` | 是 | 上传点的类型。你可根据上传的文件类型与云文档类型确定上传点类型。例如，要将一张图片插入到新版文档（文件类型为 `docx`）中，需指定上传点为 `docx_image`；要将一个附件上传到新版文档中，需指定上传点为 `docx_file`。<br>**示例值**："docx_image"<br>**可选值有**：<br>- `doc_image`: 旧版文档图片 - `docx_image`: 新版文档图片 - `sheet_image`: 电子表格图片 - `doc_file`: 文档文件 - `docx_file`: 新版文档文件 - `sheet_file`: 电子表格文件 - `vc_virtual_background`: vc 虚拟背景（灰度中，暂未开放） - `bitable_image`: 多维表格图片 - `bitable_file`: 多维表格文件 - `moments`: 同事圈（灰度中，暂未开放） - `ccm_import_open`: 云文档导入文件 |
 | `parent_node` | `string` | 是 | 上传点的 token，即要上传的云文档的 token，用于指定素材将要上传到的云文档或位置。参考 [素材概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/introduction) 了解上传点类型与上传点 token 的对应关系。<br>**示例值**："doccnFivLCfJfblZjGZtxgabcef" |
 | `size` | `int` | 是 | 文件的大小，单位为字节<br>**示例值**：1024<br>**数据校验规则**：<br>- 最小值：`0` |
-| `extra` | `string` | 否 | 以下场景的上传点需通过该参数传入素材所在云文档的 token。extra 参数的格式为`"{\"drive_route_token\":\"素材所在云文档的 token\"}"`。详情参考[素材概述-extra 参数说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/introduction#3b8635d3)。<br>**示例值**："{\"drive_route_token\":\"doxcnXgNGAtaAraIRVeCfmabcef\"}" |
+| `extra` | `string` | 否 | 以下场景的上传点需通过该参数传入素材所在云文档的 token。extra 参数的格式为`"`{\"drive_route_token\":\"素材所在云文档的 token\"}`"`。详情参考[素材概述-extra 参数说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/introduction#3b8635d3)。<br>**示例值**："`{\"drive_route_token\":\"doxcnXgNGAtaAraIRVeCfmabcef\"}`" |
 
 
 ### 请求体示例

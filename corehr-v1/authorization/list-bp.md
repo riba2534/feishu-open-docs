@@ -18,7 +18,7 @@ updateTime: "1720773427000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:bp.list:read` 查看 BP 列表 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -48,8 +48,8 @@ updateTime: "1720773427000"
 | `msg` | `string` | 错误描述 |
 | `data` | `\-` | \- |
 | &nbsp;&nbsp;└ `items` | `bp\[\]` | HRBP 信息 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `department_id` | `string` | 部门 ID   >  如想获取部门详细信息，可通过[搜索部门信息](https://open.larkoffice.com/document/server-docs/corehr-v1/organization-management/department/search)接口获取。 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `hrbp_id` | `string` | 部门 HRBP 的雇佣 ID，不包括上级部门的 HRBP   >  如想获取员工详细信息，可通过[搜索员工信息](https://open.larkoffice.com/document/server-docs/corehr-v1/employee/search)接口获取。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `department_id` | `string` | 部门 ID   &gt;  如想获取部门详细信息，可通过[搜索部门信息](https://open.larkoffice.com/document/server-docs/corehr-v1/organization-management/department/search)接口获取。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `hrbp_id` | `string` | 部门 HRBP 的雇佣 ID，不包括上级部门的 HRBP   &gt;  如想获取员工详细信息，可通过[搜索员工信息](https://open.larkoffice.com/document/server-docs/corehr-v1/employee/search)接口获取。 |
 | &nbsp;&nbsp;└ `page_token` | `string` | 分页标记，当 has_more 为 true 时，会同时返回新的 page_token，否则不返回 page_token |
 | &nbsp;&nbsp;└ `has_more` | `boolean` | 是否还有更多项 |
 

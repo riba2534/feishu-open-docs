@@ -47,7 +47,7 @@ updateTime: "1725591032000"
 | &nbsp;&nbsp;└ `item` | `item` | 数据项实例 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | item 在 datasource 中的唯一标识，只允许英文字母、数字和下划线 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `acl` | `acl\[\]` | item 的访问权限控制。 acl 字段为空数组，则默认数据不可见。如果数据是全员可见，需要设置 access="allow"; type="user"; value="everyone" |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `access` | `string` | 权限类型，优先级：Deny > Allow。<br>**可选值有**：<br>- `allow`: 允许访问 - `deny`: 禁止访问 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `access` | `string` | 权限类型，优先级：Deny &gt; Allow。<br>**可选值有**：<br>- `allow`: 允许访问 - `deny`: 禁止访问 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 设置的权限值，例如 userID ，依赖 type 描述。<br>**注**：在 type 为 user 且 access 为 allow 时，可填 "everyone" 来表示该数据项对全员可见； |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `string` | 权限值类型<br>**可选值有**：<br>- `user_id`: 用户在租户内的身份ID，详细说明请参考：https://open.feishu.cn/document/home/user-identity-introduction/introduction - `open_id`: 用户在应用内的身份ID，详细说明请参考：https://open.feishu.cn/document/home/user-identity-introduction/introduction - `union_id`: 用户在同一应用开发商提供的多个应用间的统一身份ID，详细说明请参考：https://open.feishu.cn/document/home/user-identity-introduction/introduction - `department_id`: 部门在租户内的唯一ID，详细说明请参考：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/field-overview#23857fe0 - `open_department_id`: 部门在应用内的唯一ID，详细说明请参考：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/field-overview#23857fe0 - `group_id`: GroupID（灰度中，对部分租户开放） - `app_group_id`: AppGroupID（灰度中，对部分租户开放） - `user`: 访问权限控制中指定“用户”可以访问或拒绝访问该条数据 - `group`: (已下线)访问权限控制中指定“用户组”可以访问或拒绝访问该条数据 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `metadata` | `item_metadata` | item 的元信息 |

@@ -22,7 +22,7 @@ updateTime: "1767869960000"
 | 接口频率限制 | [10 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `hire:offer` 更新 offer 信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -63,7 +63,7 @@ updateTime: "1767869960000"
 | &nbsp;&nbsp;└ `contract_period` | `contract_period_info` | 否 | 合同期（年/月） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `period_type` | `int` | 是 | 合同周期类型<br>**示例值**：1<br>**可选值有**：<br>- `1`: 月 - `2`: 年 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `period` | `int` | 是 | 合同时长<br>**示例值**：3<br>**数据校验规则**：<br>- 取值范围：`0` ～ `100` |
-| &nbsp;&nbsp;└ `expected_onboard_date` | `string` | 否 | 预计入职日期。以下示例值未转义，使用时请注意转义<br>**示例值**："{\"date\":\"2022-04-07\"}" |
+| &nbsp;&nbsp;└ `expected_onboard_date` | `string` | 否 | 预计入职日期。以下示例值未转义，使用时请注意转义<br>**示例值**："`{\"date\":\"2022-04-07\"}`" |
 | &nbsp;&nbsp;└ `onboard_address_id` | `string` | 否 | 入职地点 ID，详情请参考：[获取地址列表](https://open.larkoffice.com/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/location/list)<br>**示例值**："6897079709306259719" |
 | &nbsp;&nbsp;└ `work_address_id` | `string` | 否 | 办公地点 ID，详情请参考：[获取地址列表](https://open.larkoffice.com/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/location/list)<br>**示例值**："6897079709306259719" |
 | &nbsp;&nbsp;└ `owner_user_id` | `string` | 是 | Offer负责人 ID，与入参`user_id_type`类型一致<br>**示例值**："ou_ce613028fe74745421f5dc320bb9c709" |
@@ -88,7 +88,7 @@ updateTime: "1767869960000"
 | &nbsp;&nbsp;└ `half_year_bonus` | `string` | 否 | 半年奖金额，单位元、支持小数点后两位<br>**示例值**："10000" |
 | `customized_info_list` | `offer_customized_info\[\]` | 否 | 自定义信息 |
 | &nbsp;&nbsp;└ `id` | `string` | 否 | 自定义字段 ID<br>**示例值**："6972464088568269100" |
-| &nbsp;&nbsp;└ `value` | `string` | 否 | 自定义字段信息，以字符串形式传入，如： 1. 单选： "1" 2. 多选："[\"1\", \"2\"]" 3. 日期："{"date":"2022-01-01"}" 4. 年份选择："{"date":"2022"}" 5. 月份选择："{"date":"2022-01"}" 6. 单行文本："xxx " 7. 多行文本："xxx " 8. 数字："123" 9. 金额："123.1" 10. 附件："[{\"common_attachment_id\":\"通用附件 ID\"},...]"<br>**示例值**："1" |
+| &nbsp;&nbsp;└ `value` | `string` | 否 | 自定义字段信息，以字符串形式传入，如： 1. 单选： "1" 2. 多选："[\"1\", \"2\"]" 3. 日期："`{"date":"2022-01-01"}`" 4. 年份选择："`{"date":"2022"}`" 5. 月份选择："`{"date":"2022-01"}`" 6. 单行文本："xxx " 7. 多行文本："xxx " 8. 数字："123" 9. 金额："123.1" 10. 附件："[`{\"common_attachment_id\":\"通用附件 ID\"}`,...]"<br>**示例值**："1" |
 
 
 ### 请求体示例
@@ -201,7 +201,7 @@ updateTime: "1767869960000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `half_year_bonus` | `string` | 半年奖金额 |
 | &nbsp;&nbsp;└ `customized_info_list` | `offer_customized_info\[\]` | 自定义信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 自定义字段 ID |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 自定义字段信息，以字符串形式传入，如： 1. 单选： "1" 2. 多选："[\"1\", \"2\"]" 3. 日期："{"date":"2022-01-01"}" 4. 年份选择："{"date":"2022"}" 5. 月份选择："{"date":"2022-01"}" 6. 单行文本："xxx " 7. 多行文本："xxx " 8. 数字："123" 9. 金额："123.1" |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 自定义字段信息，以字符串形式传入，如： 1. 单选： "1" 2. 多选："[\"1\", \"2\"]" 3. 日期："`{"date":"2022-01-01"}`" 4. 年份选择："`{"date":"2022"}`" 5. 月份选择："`{"date":"2022-01"}`" 6. 单行文本："xxx " 7. 多行文本："xxx " 8. 数字："123" 9. 金额："123.1" |
 
 
 ### 响应体示例

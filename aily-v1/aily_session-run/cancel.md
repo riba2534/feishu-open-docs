@@ -58,7 +58,7 @@ updateTime: "1752203091000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `created_at` | `string` | 运行的创建时间，毫秒时间戳 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `app_id` | `string` | 应用 ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `session_id` | `string` | 会话 ID |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `status` | `string` | 运行状态；详见 [Run 状态机说明](https://bytedance.larkoffice.com/wiki/UTU6wVTVGigefykjO1acAOOvnNc#part-LGZrdJTUFo5c8XxSpYXcm3oknEd)<br>>   如中止已在终态（如 `COMPLETED`）的 `Run`，不会改变 `Run` 的状态 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `status` | `string` | 运行状态；详见 [Run 状态机说明](https://bytedance.larkoffice.com/wiki/UTU6wVTVGigefykjO1acAOOvnNc#part-LGZrdJTUFo5c8XxSpYXcm3oknEd)<br>&gt;   如中止已在终态（如 `COMPLETED`）的 `Run`，不会改变 `Run` 的状态 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `started_at` | `string` | 开始时间，毫秒时间戳 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `ended_at` | `string` | 结束时间，毫秒时间戳 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `error` | `run_error` | 失败时的错误信息 |

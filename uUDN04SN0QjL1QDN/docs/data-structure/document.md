@@ -42,7 +42,7 @@ updateTime: "1713950831000"
 | 参数名称 | 数据类型 | 是否必须 | 示例值 | 描述 |
 | --- | --- | --- | --- | --- |
 | document_id | string | required | TLLKdcpDro9ijQxA33ycNMabcef | 文档的唯一标识，也是该文档对应的页面 Block 的 ID。了解如何获取 document_id，参考[文档概述](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-overview)。 |
-| revision_id | int | required | 378 | 文档版本的标识，指定要查询或更新的文档版本。文档被编辑或评论会导致 revision_id 更改。取值范围为：-1 或 0 < revision_id <= 文档最新版本。其中，-1 表示文档最新版本。文档创建后，版本为 1。**注意**：revision_id 发生更改通常意味着文档更新，但不一定是文档内容的变化，也有可能是文档被他人评论所致。 |
+| revision_id | int | required | 378 | 文档版本的标识，指定要查询或更新的文档版本。文档被编辑或评论会导致 revision_id 更改。取值范围为：-1 或 0 &lt; revision_id &lt;= 文档最新版本。其中，-1 表示文档最新版本。文档创建后，版本为 1。**注意**：revision_id 发生更改通常意味着文档更新，但不一定是文档内容的变化，也有可能是文档被他人评论所致。 |
 | title | string | required | 工作周报 | 文档标题，只支持返回纯文本。 |
 | display_setting | object | optional | / | 文档展示设置。 |
 | display_setting.show_authors | boolean | required | true | 文档信息中是否展示文档作者。 |

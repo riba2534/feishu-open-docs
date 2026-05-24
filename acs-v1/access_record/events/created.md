@@ -16,7 +16,7 @@ updateTime: "1671441948000"
 | 事件类型 | acs.access_record.created_v1 |
 | 支持的应用类型 | custom |
 | 权限要求             订阅该事件所需的权限，开启其中任意一项权限即可订阅 | `acs:access_record:readonly` 查看智能门禁记录 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 | 推送方式 | `Webhook` |
 
 

@@ -31,7 +31,7 @@ updateTime: "1752155047000"
 | --- | --- | --- | --- |
 | Authorization | string | 是 | `tenant_access_token` 或 `user_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
 | Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
-| X-Aily-BizUserID | string | 否 | 标识创建会话的唯一用户 ID >  建议使用唯一内部 ID 或其他可标识用户唯一身份的字段（如飞书账号的 `user_id`），可用于分析来自 API 的具体用户 **示例值**："ou_5ad573a6411d72b8305fda3a9c15c70e" **数据校验规则**： - 长度范围：`0` ～ `255` 字符 |
+| X-Aily-BizUserID | string | 否 | 标识创建会话的唯一用户 ID &gt;  建议使用唯一内部 ID 或其他可标识用户唯一身份的字段（如飞书账号的 `user_id`），可用于分析来自 API 的具体用户 **示例值**："ou_5ad573a6411d72b8305fda3a9c15c70e" **数据校验规则**： - 长度范围：`0` ～ `255` 字符 |
 
 
 ### 路径参数
@@ -49,10 +49,10 @@ updateTime: "1752155047000"
 | --- | --- | --- | --- |
 | `global_variable` | `skill_global_variable` | 否 | 技能的全局变量 |
 | &nbsp;&nbsp;└ `query` | `string` | 否 | 触发技能的消息文本；即用户在飞书机器人等渠道**对话输入的内容**<br>**示例值**："你好"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `40960` 字符 |
-| &nbsp;&nbsp;└ `files` | `string\[\]` | 否 | 触发技能的文件信息（如 OCR 节点等所需消费的图片文件）<br>> 如技能不需要文件，`files` 参数传空即可<br>**示例值**：["file_4d9nu1ev3a2rq"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `32` |
+| &nbsp;&nbsp;└ `files` | `string\[\]` | 否 | 触发技能的文件信息（如 OCR 节点等所需消费的图片文件）<br>&gt; 如技能不需要文件，`files` 参数传空即可<br>**示例值**：["file_4d9nu1ev3a2rq"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `32` |
 | &nbsp;&nbsp;└ `channel` | `channel` | 否 | 渠道信息 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `variables` | `string` | 否 | 自定义传入的变量；可在 Workflow 技能全局变量中消费<br>**示例值**："{"custom_key": "custom_value"}"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
-| `input` | `string` | 否 | 技能的自定义变量<br>**示例值**："{\"custom_string\":\"my string\",\"custom_integer\":22}"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `40960` 字符 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `variables` | `string` | 否 | 自定义传入的变量；可在 Workflow 技能全局变量中消费<br>**示例值**："`{"custom_key": "custom_value"}`"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| `input` | `string` | 否 | 技能的自定义变量<br>**示例值**："`{\"custom_string\":\"my string\",\"custom_integer\":22}`"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `40960` 字符 |
 
 
 ### 请求体示例

@@ -24,7 +24,7 @@ updateTime: "1736910244000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `corehr:contract:read` 查看合同信息 `corehr:contract:write` 创建、更新、删除合同信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:contract.company:read` 获取合同主体信息 `corehr:contract.period:read` 获取合同期限信息 `corehr:contract.company:write` 读写合同主体信息 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:contract.period:write` 读写合同期限信息 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:contract.company:read` 获取合同主体信息 `corehr:contract.period:read` 获取合同期限信息 `corehr:contract.company:write` 读写合同主体信息 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:contract.period:write` 读写合同期限信息 |
 
 ### 请求头
 
@@ -49,7 +49,7 @@ updateTime: "1736910244000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `employment_id_list` | `string\[\]` | 否 | 雇佣 ID 列表，雇佣ID可通过[【查询员工信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/batch_get)接口查询；最多支持传入20个ID。<br>**示例值**：["7140964208476371111"] |
-| `contract_id_list` | `string\[\]` | 否 | 合同 ID 列表，该ID可以通过[【批量查询合同】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/contract/list)接口获取；最多支持传入20个ID。<br>> **Tip**: 注意：以上两个筛选条件如果都填写，则是 「与」 的关系；如果都不填写，默认返回所有的合同列表信息<br>**示例值**：["7140964208476372371"] |
+| `contract_id_list` | `string\[\]` | 否 | 合同 ID 列表，该ID可以通过[【批量查询合同】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/contract/list)接口获取；最多支持传入20个ID。<br>&gt; **Tip**: 注意：以上两个筛选条件如果都填写，则是 「与」 的关系；如果都不填写，默认返回所有的合同列表信息<br>**示例值**：["7140964208476372371"] |
 
 
 ### 请求体示例

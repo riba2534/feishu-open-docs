@@ -21,7 +21,7 @@ updateTime: "1758704092000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `corehr:offboarding:read` 获取员工离职信息 `corehr:offboarding:write` 读写员工离职信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:employment.offboarding_reason:read` 获取员工离职原因 `corehr:offboarding.custom_field:read` 获取离职信息自定义字段信息 `corehr:offboarding.block_list:read` 获取离职屏蔽名单 `corehr:offboarding.block_list:write` 读写离职屏蔽名单 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:offboarding.last_attendance_date:read` 获取离职申请的最后出勤日 `corehr:offboarding.noncompete_agreement:read` 获取离职申请的竞业信息 `corehr:offboarding.retain_account:read` 获取离职后是否保留账号字段 `corehr:offboarding.retain_account:write` 读写离职后是否保留账号字段 `corehr:offboarding.signature:read` 获取离职申请的电子签相关字段 `corehr:offboarding.social_insurance:read` 获取离职申请的社保信息 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:employment.offboarding_reason:read` 获取员工离职原因 `corehr:offboarding.custom_field:read` 获取离职信息自定义字段信息 `corehr:offboarding.block_list:read` 获取离职屏蔽名单 `corehr:offboarding.block_list:write` 读写离职屏蔽名单 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:offboarding.last_attendance_date:read` 获取离职申请的最后出勤日 `corehr:offboarding.noncompete_agreement:read` 获取离职申请的竞业信息 `corehr:offboarding.retain_account:read` 获取离职后是否保留账号字段 `corehr:offboarding.retain_account:write` 读写离职后是否保留账号字段 `corehr:offboarding.signature:read` 获取离职申请的电子签相关字段 `corehr:offboarding.social_insurance:read` 获取离职申请的社保信息 |
 
 ### 请求头
 

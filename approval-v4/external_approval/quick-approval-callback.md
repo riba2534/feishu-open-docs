@@ -37,8 +37,8 @@ updateTime: "1745207207000"
 | &nbsp;&nbsp;└ url | string | 是 | 附件 URL |
 | token | string | 是 | 三方审批定义配置的 action_callback_token，用于验证请求来自飞书审批中心。 |
 | encrypt | string | 否 | 如果三方审批定义配置了加密密钥（action_callback_key），则以上参数会进行加密后放在该参数内，接收回调后需要使用 key 进行解密。 |
-| message | string | 否 | HTTP code > 400 时，自定义返回错误信息。当 without_prefix 取值为 true 时会在报错里展示。 |
-| without_prefix | string | 否 | HTTP code > 400 时，是否返回自定义错误信息。<br>**可能值有**： - true：返回 - false：不返回 |
+| message | string | 否 | HTTP code &gt; 400 时，自定义返回错误信息。当 without_prefix 取值为 true 时会在报错里展示。 |
+| without_prefix | string | 否 | HTTP code &gt; 400 时，是否返回自定义错误信息。<br>**可能值有**： - true：返回 - false：不返回 |
 
 
 ## 回调示例

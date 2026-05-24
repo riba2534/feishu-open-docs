@@ -28,7 +28,7 @@ updateTime: "1775548432000"
 | HTTP Method | GET |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `contact:department.organize:readonly` 获取部门组织架构信息 `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:contact:readonly` 读取通讯录 `contact:contact:access_as_app` 以应用身份访问通讯录 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.base:readonly` 获取用户基本信息 `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:user.employee:readonly` 获取用户雇佣信息 `contact:user.department:readonly` 获取用户组织架构信息 `contact:user.gender:readonly` 获取用户性别 `contact:user.email:readonly` 获取用户邮箱信息 `contact:user.phone:readonly` 获取用户手机号 `contact:user.employee_id:readonly` 获取用户 user ID `contact:contact:readonly` 读取通讯录 `contact:contact:access_as_app` 以应用身份访问通讯录 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.base:readonly` 获取用户基本信息 `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:user.employee:readonly` 获取用户雇佣信息 `contact:user.department:readonly` 获取用户组织架构信息 `contact:user.gender:readonly` 获取用户性别 `contact:user.email:readonly` 获取用户邮箱信息 `contact:user.phone:readonly` 获取用户手机号 `contact:user.employee_id:readonly` 获取用户 user ID `contact:contact:readonly` 读取通讯录 `contact:contact:access_as_app` 以应用身份访问通讯录 |
 
 ### 请求头
 
@@ -92,7 +92,7 @@ updateTime: "1775548432000"
 | ∟ `department_id` | `string` | 排序信息对应的部门 ID，表示用户所在的、且需要排序的部门。该 ID 均包含在用户所属部门 ID 列表（department_ids）的参数值当中。 |
 | ∟ `user_order` | `int` | 用户在其直属部门内的排序，数值越大，排序越靠前。 |
 | ∟ `department_order` | `int` | 用户所属的多个部门间的排序，数值越大，排序越靠前。 |
-| ∟ `custom_attrs` | `user_custom_attr\[\]` | 自定义字段。如果企业管理员已在管理后台 > 组织架构 > 成员字段管理 > 自定义字段管理 > 全局设置中开启了 **允许开放平台 API 调用**，则该字段生效。 更多信息可参见[用户接口相关问题](https://open.larkoffice.com/document/ugTN1YjL4UTN24CO1UjN/uQzN1YjL0cTN24CN3UjN#77061525)。 **字段权限要求（满足任一）**： `contact:user.employee:readonly` 获取用户雇佣信息 `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:contact:readonly` 读取通讯录 `contact:contact:access_as_app` 以应用身份访问通讯录 |
+| ∟ `custom_attrs` | `user_custom_attr\[\]` | 自定义字段。如果企业管理员已在管理后台 &gt; 组织架构 &gt; 成员字段管理 &gt; 自定义字段管理 &gt; 全局设置中开启了 **允许开放平台 API 调用**，则该字段生效。 更多信息可参见[用户接口相关问题](https://open.larkoffice.com/document/ugTN1YjL4UTN24CO1UjN/uQzN1YjL0cTN24CN3UjN#77061525)。 **字段权限要求（满足任一）**： `contact:user.employee:readonly` 获取用户雇佣信息 `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:contact:readonly` 读取通讯录 `contact:contact:access_as_app` 以应用身份访问通讯录 |
 | ∟ `type` | `string` | 自定义字段类型。 **可能值有：** - `TEXT`：文本 - `HREF`：网页 - `ENUMERATION`：枚举 - `PICTURE_ENUM`：图片 - `GENERIC_USER`：用户 |
 | ∟ `id` | `string` | 自定义字段 ID。 |
 | ∟ `value` | `user_custom_attr_value` | 自定义字段取值。 |

@@ -18,7 +18,7 @@ updateTime: "1713178780000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `task:task` 查看、创建、编辑和删除任务（旧版） |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -48,25 +48,25 @@ updateTime: "1713178780000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `task` | `task` | 是 | 被更新的任务实体基础信息 |
-| &nbsp;&nbsp;└ `summary` | `string` | 否 | 任务的标题，类型为文本字符串。 如果要在任务标题中插入 URL 或者 @某个用户，请使用rich_summary字段。 创建任务时，任务标题(summary字段)和任务富文本标题(rich_summary字段)不能同时为空，需要至少填充其中一个字段。<br>> **Info**: 任务标题和任务富文本标题同时存在时只使用富文本标题。<br>**示例值**："完成本季度OKR编写"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `1000` 字符 |
-| &nbsp;&nbsp;└ `description` | `string` | 否 | 任务的描述，类型为文本字符串。 如果要在任务描述中插入 URL 或者 @某个用户，请使用rich_description字段。<br>> **Info**: 任务备注和任务富文本备注同时存在时只使用富文本备注。<br>**示例值**："对本次会议内容复盘总结，编写更新本季度OKR"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `65536` 字符 |
+| &nbsp;&nbsp;└ `summary` | `string` | 否 | 任务的标题，类型为文本字符串。 如果要在任务标题中插入 URL 或者 @某个用户，请使用rich_summary字段。 创建任务时，任务标题(summary字段)和任务富文本标题(rich_summary字段)不能同时为空，需要至少填充其中一个字段。<br>&gt; **Info**: 任务标题和任务富文本标题同时存在时只使用富文本标题。<br>**示例值**："完成本季度OKR编写"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `1000` 字符 |
+| &nbsp;&nbsp;└ `description` | `string` | 否 | 任务的描述，类型为文本字符串。 如果要在任务描述中插入 URL 或者 @某个用户，请使用rich_description字段。<br>&gt; **Info**: 任务备注和任务富文本备注同时存在时只使用富文本备注。<br>**示例值**："对本次会议内容复盘总结，编写更新本季度OKR"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `65536` 字符 |
 | &nbsp;&nbsp;└ `extra` | `string` | 否 | 附属信息。 接入方可以传入base64 编码后的自定义的数据。用户如果需要对当前任务备注信息，但对外不显示，可使用该字段进行存储。 该数据会在获取任务详情时，原样返回给用户。<br>**示例值**："dGVzdA=="<br>**数据校验规则**：<br>- 长度范围：`0` ～ `65536` 字符 |
 | &nbsp;&nbsp;└ `due` | `due` | 否 | 任务的截止时间设置 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `time` | `string` | 否 | 表示截止时间的Unix时间戳（单位为秒）。<br>**示例值**："1623124318" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `timezone` | `string` | 否 | 截止时间对应的时区。 传入值需要符合IANA Time Zone Database标准，规范见[Time Zone Database](https://www.iana.org/time-zones)。<br>**示例值**："Asia/Shanghai"<br>**默认值**：`Asia/Shanghai` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `is_all_day` | `boolean` | 否 | 标记任务是否为全天任务。 包括如下取值： - true：表示是全天任务，全天任务的截止时间为当天 UTC 时间的 0 点。 - false：表示不是全天任务。<br>**示例值**：false<br>**默认值**：`false` |
 | &nbsp;&nbsp;└ `origin` | `origin` | 否 | 任务关联的第三方平台来源信息 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `platform_i18n_name` | `string` | 是 | 任务来源的名称。 用于在任务中心详情页展示。需要提供一个字典，支持多种语言名称映射。应用在使用不同语言时，导入来源也将展示对应的内容。详细参见：[任务字段补充说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/task-v1/Supplementary-directions-of-task-fields)<br>**示例值**："{\"zh_cn\": \"IT 工作台\", \"en_us\": \"IT Workspace\"}"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `1024` 字符 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `platform_i18n_name` | `string` | 是 | 任务来源的名称。 用于在任务中心详情页展示。需要提供一个字典，支持多种语言名称映射。应用在使用不同语言时，导入来源也将展示对应的内容。详细参见：[任务字段补充说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/task-v1/Supplementary-directions-of-task-fields)<br>**示例值**："`{\"zh_cn\": \"IT 工作台\", \"en_us\": \"IT Workspace\"}`"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `1024` 字符 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `href` | `href` | 否 | 任务关联的来源平台详情页链接 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `url` | `string` | 否 | 具体链接地址。 URL仅支持解析http、https。详细参见：[任务字段补充说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/task-v1/Supplementary-directions-of-task-fields)<br>**示例值**："https://support.feishu.com/internal/foo-bar"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `1024` 字符 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `title` | `string` | 否 | 链接对应的标题<br>**示例值**："反馈一个问题，需要协助排查"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `512` 字符 |
-| &nbsp;&nbsp;└ `can_edit` | `boolean` | 否 | 此字段用于控制该任务在飞书任务中心是否可编辑，默认为false<br>> **Info**: 已经废弃，向前兼容故仍然保留，但不推荐使用<br>**示例值**：true<br>**默认值**：`false` |
-| &nbsp;&nbsp;└ `custom` | `string` | 否 | 自定义完成配置。 此字段用于设置完成任务时的页面跳转，或展示提示语。详细参见：[任务字段补充说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/task-v1/Supplementary-directions-of-task-fields)<br>**示例值**："{\"custom_complete\":{\"android\":{\"href\":\"https://www.feishu.cn/\",\"tip\":{\"zh_cn\":\"你好\",\"en_us\":\"hello\"}},\"ios\":{\"href\":\"https://www.feishu.cn/\",\"tip\":{\"zh_cn\":\"你好\",\"en_us\":\"hello\"}},\"pc\":{\"href\":\"https://www.feishu.cn/\",\"tip\":{\"zh_cn\":\"你好\",\"en_us\":\"hello\"}}}}"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `65536` 字符 |
+| &nbsp;&nbsp;└ `can_edit` | `boolean` | 否 | 此字段用于控制该任务在飞书任务中心是否可编辑，默认为false<br>&gt; **Info**: 已经废弃，向前兼容故仍然保留，但不推荐使用<br>**示例值**：true<br>**默认值**：`false` |
+| &nbsp;&nbsp;└ `custom` | `string` | 否 | 自定义完成配置。 此字段用于设置完成任务时的页面跳转，或展示提示语。详细参见：[任务字段补充说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/task-v1/Supplementary-directions-of-task-fields)<br>**示例值**："{\"custom_complete\":{\"android\":`{\"href\":\"https://www.feishu.cn/\",\"tip\":{\"zh_cn\":\"你好\",\"en_us\":\"hello\"}`},\"ios\":`{\"href\":\"https://www.feishu.cn/\",\"tip\":{\"zh_cn\":\"你好\",\"en_us\":\"hello\"}`},\"pc\":`{\"href\":\"https://www.feishu.cn/\",\"tip\":{\"zh_cn\":\"你好\",\"en_us\":\"hello\"}`}}}"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `65536` 字符 |
 | &nbsp;&nbsp;└ `followers` | `follower\[\]` | 否 | 任务的关注者<br>**示例值**：ou_03c21c80caea2c816665f8056dc59027 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 否 | 任务关注人 ID<br>**示例值**："ou_99e1a581b36ecc4862cbfbce473f3123" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `id_list` | `string\[\]` | 否 | 要删除的关注人ID列表<br>**示例值**：["ou_99e1a581b36ecc4862cbfbce473f3123"] |
 | &nbsp;&nbsp;└ `collaborators` | `collaborator\[\]` | 否 | 任务的执行者<br>**示例值**：ou_558d4999baae26e32aa2fd9bb228660b |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 否 | 任务执行者的 ID。 传入的值为 user_id 或 open_id，由user_id_type 决定。user_id和open_id的获取可见文档[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。<br>> **Info**: 已经废弃，为了向前兼容早期只支持单次添加一个人的情况而保留，但不再推荐使用，建议使用id_list字段<br>**示例值**："ou_99e1a581b36ecc4862cbfbce473f1234" |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 否 | 任务执行者的 ID。 传入的值为 user_id 或 open_id，由user_id_type 决定。user_id和open_id的获取可见文档[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。<br>&gt; **Info**: 已经废弃，为了向前兼容早期只支持单次添加一个人的情况而保留，但不再推荐使用，建议使用id_list字段<br>**示例值**："ou_99e1a581b36ecc4862cbfbce473f1234" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `id_list` | `string\[\]` | 否 | 执行者的用户ID列表。 传入的值为 user_id 或 open_id，由user_id_type 决定。user_id和open_id的获取可见文档[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。<br>**示例值**：["ou_99e1a581b36ecc4862cbfbce473f3123"] |
 | &nbsp;&nbsp;└ `collaborator_ids` | `string\[\]` | 否 | 创建任务时添加的执行者用户id列表。 传入的值为 user_id 或 open_id ，由user_id_type 决定。user_id和open_id的获取可见文档：[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。<br>**示例值**：["ou_49dadcd6fd55da971d887087c4f3a37a"]<br>**数据校验规则**：<br>- 最大长度：`100` |
 | &nbsp;&nbsp;└ `follower_ids` | `string\[\]` | 否 | 创建任务时添加的关注者用户id列表。 传入的值为 user_id 或 open_id ，由user_id_type 决定。user_id和open_id的获取可见文档：[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。<br>**示例值**：["ou_49dadcd6fd55da971d887087c4f3a37a"]<br>**数据校验规则**：<br>- 最大长度：`100` |
@@ -117,8 +117,8 @@ updateTime: "1713178780000"
 | `data` | `\-` | \- |
 | &nbsp;&nbsp;└ `task` | `task` | 返回修改后的任务详情 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 任务的唯一ID，例如"83912691-2e43-47fc-94a4-d512e03984fa" |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `summary` | `string` | 任务的标题，类型为文本字符串。 如果要在任务标题中插入 URL 或者 @某个用户，请使用rich_summary字段。 创建任务时，任务标题(summary字段)和任务富文本标题(rich_summary字段)不能同时为空，需要至少填充其中一个字段。<br>> **Info**: 任务标题和任务富文本标题同时存在时只使用富文本标题。 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `description` | `string` | 任务的描述，类型为文本字符串。 如果要在任务描述中插入 URL 或者 @某个用户，请使用rich_description字段。<br>> **Info**: 任务备注和任务富文本备注同时存在时只使用富文本备注。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `summary` | `string` | 任务的标题，类型为文本字符串。 如果要在任务标题中插入 URL 或者 @某个用户，请使用rich_summary字段。 创建任务时，任务标题(summary字段)和任务富文本标题(rich_summary字段)不能同时为空，需要至少填充其中一个字段。<br>&gt; **Info**: 任务标题和任务富文本标题同时存在时只使用富文本标题。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `description` | `string` | 任务的描述，类型为文本字符串。 如果要在任务描述中插入 URL 或者 @某个用户，请使用rich_description字段。<br>&gt; **Info**: 任务备注和任务富文本备注同时存在时只使用富文本备注。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `complete_time` | `string` | 任务的完成时间戳（单位为秒），完成时间为0则表示任务尚未完成。 不支持部分完成，只有整个任务完成，该字段才会有非0值。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `creator_id` | `string` | 任务的创建者 ID。 其中查询字段 user_id_type 是用于控制返回体中 creator_id 的类型，不传时默认返回 open_id。 特别的，使用tenant_access_token 调用接口时，如果是user_id_type是openid，则返回代表该应用身份的openid；当user_id_type为user_id时，不返回creator_id。原因是user_id代表一个真实飞书用户的id，应用身份没有user_id。使用user_access_token调用接口正常返回创建者。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `extra` | `string` | 附属信息。 接入方可以传入base64 编码后的自定义的数据。用户如果需要对当前任务备注信息，但对外不显示，可使用该字段进行存储。 该数据会在获取任务详情时，原样返回给用户。 |
@@ -139,7 +139,7 @@ updateTime: "1713178780000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 任务关注人 ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id_list` | `string\[\]` | 要删除的关注人ID列表 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `collaborators` | `collaborator\[\]` | 任务的执行者 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 任务执行者的 ID。 传入的值为 user_id 或 open_id，由user_id_type 决定。user_id和open_id的获取可见文档[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。<br>> **Info**: 已经废弃，为了向前兼容早期只支持单次添加一个人的情况而保留，但不再推荐使用，建议使用id_list字段 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 任务执行者的 ID。 传入的值为 user_id 或 open_id，由user_id_type 决定。user_id和open_id的获取可见文档[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。<br>&gt; **Info**: 已经废弃，为了向前兼容早期只支持单次添加一个人的情况而保留，但不再推荐使用，建议使用id_list字段 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id_list` | `string\[\]` | 执行者的用户ID列表。 传入的值为 user_id 或 open_id，由user_id_type 决定。user_id和open_id的获取可见文档[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `collaborator_ids` | `string\[\]` | 创建任务时添加的执行者用户id列表。 传入的值为 user_id 或 open_id ，由user_id_type 决定。user_id和open_id的获取可见文档：[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `follower_ids` | `string\[\]` | 创建任务时添加的关注者用户id列表。 传入的值为 user_id 或 open_id ，由user_id_type 决定。user_id和open_id的获取可见文档：[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。 |

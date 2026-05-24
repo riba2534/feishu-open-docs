@@ -18,7 +18,7 @@ updateTime: "1721719980000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `vc:room` 更新视频会议室信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -52,7 +52,7 @@ updateTime: "1721719980000"
 | &nbsp;&nbsp;└ `approval_switch` | `int` | 否 | 预定审批开关：0 代表关闭，1 代表打开。 说明： 1.  未设置值时不更新原开关的值，但此时必填  approval_condition 2.  设置值为 1 时，必填  approval_condition                                  3.  设置值为 0 时整个  approval_config 其他字段均可省略。<br>**示例值**：1<br>**数据校验规则**：<br>- 取值范围：`0` ～ `1` |
 | &nbsp;&nbsp;└ `approval_condition` | `int` | 否 | 预定审批条件：0 代表所有预定均需审批，1 代表满足条件的需审批 说明：为 1 时必填 meeting_duration<br>**示例值**：1<br>**数据校验规则**：<br>- 取值范围：`0` ～ `1` |
 | &nbsp;&nbsp;└ `meeting_duration` | `number(float)` | 否 | 超过 meeting_duration 的预定需要审批（单位：小时，取值范围[0.1-99]）<br>说明： 1.  当 approval_condition   为 0 ，更新时如果未设置值，默认更新为 99 . 2.  传入的值小数点后超过 2 位，自动四舍五入保留两位。<br>**示例值**：3 |
-| &nbsp;&nbsp;└ `approvers` | `subscribe_user\[\]` | 否 | 审批人列表，当打开审批开关时，至少需要设置一位审批人<br>**示例值**：[{user_id:"ou_e8bce6c3935ef1fc1b432992fd9d3db8"}] |
+| &nbsp;&nbsp;└ `approvers` | `subscribe_user\[\]` | 否 | 审批人列表，当打开审批开关时，至少需要设置一位审批人<br>**示例值**：[`{user_id:"ou_e8bce6c3935ef1fc1b432992fd9d3db8"}`] |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 是 | 预定管理员ID<br>**示例值**："ou_a27b07a9071d90577c0177bcec98f856" |
 | `time_config` | `time_config` | 否 | 预定时间设置 |
 | &nbsp;&nbsp;└ `if_cover_child_scope` | `boolean` | 否 | 是否覆盖子层级及会议室<br>**示例值**：true |
@@ -65,9 +65,9 @@ updateTime: "1721719980000"
 | `reserve_scope_config` | `reserve_scope_config` | 否 | 预定范围设置 |
 | &nbsp;&nbsp;└ `if_cover_child_scope` | `boolean` | 否 | 是否覆盖子层级及会议室<br>**示例值**：true |
 | &nbsp;&nbsp;└ `allow_all_users` | `int` | 否 | 可预定成员范围：0 代表部分成员，1 代表全部成员。 说明： 1.  此值必填。 2.  当设置为 0 时，至少需要 1 个预定部门或预定人<br>**示例值**：0<br>**数据校验规则**：<br>- 取值范围：`0` ～ `1` |
-| &nbsp;&nbsp;└ `allow_users` | `subscribe_user\[\]` | 否 | 可预定成员列表<br>**示例值**：[{user_id:"ou_e8bce6c3935ef1fc1b432992fd9d3db8"}] |
+| &nbsp;&nbsp;└ `allow_users` | `subscribe_user\[\]` | 否 | 可预定成员列表<br>**示例值**：[`{user_id:"ou_e8bce6c3935ef1fc1b432992fd9d3db8"}`] |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 是 | 预定管理员ID<br>**示例值**："ou_a27b07a9071d90577c0177bcec98f856" |
-| &nbsp;&nbsp;└ `allow_depts` | `subscribe_department\[\]` | 否 | 可预定部门列表<br>**示例值**：[{department_id:"od-5c07f0c117cf8795f25610a69363ce31"}] |
+| &nbsp;&nbsp;└ `allow_depts` | `subscribe_department\[\]` | 否 | 可预定部门列表<br>**示例值**：[`{department_id:"od-5c07f0c117cf8795f25610a69363ce31"}`] |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `department_id` | `string` | 是 | 预定管理部门ID，使用open_department_id<br>**示例值**："od-47d8b570b0a011e9679a755efcc5f61a" |
 
 

@@ -34,7 +34,7 @@ updateTime: "1756439436000"
 | HTTP Method | POST |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `docx:document.block:convert` 文本内容转换为云文档块 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -57,7 +57,7 @@ updateTime: "1756439436000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `content_type` | `string` | 是 | 内容类型<br>**示例值**："markdown"<br>**可选值有**：<br>- `markdown`: Markdown 格式 - `html`: HTML 格式 |
-| `content` | `string` | 是 | 文本内容<br>**示例值**："Text \*\*Bold\*\* \*Italic\* \~\~Strikethrough\~\~ \`inline code\` Hyperlink: \[Feishu Open Platform\]\(https://open.feishu.cn\)\n\n\!\[image\]\(https://sf3-scmcdn-cn.feishucdn.com/obj/feishu-static/lark/open/website/share-logo.png\)\n\n\# Heading1\n\n\`\`\`\n   hello word\n\`\`\`\n\n\> quote\n\n1\. ordered1\n2\. ordered2\n\n\- bullet1\n\- bullet2\n\n|Location|Features|Cuisine|\n|\----|\----|\----|\n\|Seafood Street|Seafood Market|Fresh Seafood, Lobsters, Crabs, scallops|"<br>**数据校验规则**：<br>- 长度范围：`1` ～ `10485760` 字符 |
+| `content` | `string` | 是 | 文本内容<br>**示例值**："Text \*\*Bold\*\* \*Italic\* \~\~Strikethrough\~\~ \`inline code\` Hyperlink: \[Feishu Open Platform\]\(https://open.feishu.cn\)\n\n\!\[image\]\(https://sf3-scmcdn-cn.feishucdn.com/obj/feishu-static/lark/open/website/share-logo.png\)\n\n\# Heading1\n\n\`\`\`\n   hello word\n\`\`\`\n\n\&gt; quote\n\n1\. ordered1\n2\. ordered2\n\n\- bullet1\n\- bullet2\n\n|Location|Features|Cuisine|\n|\----|\----|\----|\n\|Seafood Street|Seafood Market|Fresh Seafood, Lobsters, Crabs, scallops|"<br>**数据校验规则**：<br>- 长度范围：`1` ～ `10485760` 字符 |
 
 
 ### 请求体示例
@@ -2025,10 +2025,10 @@ updateTime: "1756439436000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `content` | `string` | 描述的文本内容 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `isv` | `isv` | 三方 Block |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `component_id` | `string` | 团队互动应用唯一ID。该 ID 可通过调用[创建 BlockEntity](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/block-v2/entity/create) 接口，并从响应体中的 block_id 中获取，创建时使用的 `block_type_id` 需要与 `component_type_id` 一致。 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `component_type_id` | `string` | 团队互动应用类型，比如信息收集"blk_5f992038c64240015d280958"。该 ID 可在 [开发者后台](https://open.feishu.cn/app) > **应用详情页** > **应用能力** > **云文档小组件** > **BlockTypeID** 获取。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `component_type_id` | `string` | 团队互动应用类型，比如信息收集"blk_5f992038c64240015d280958"。该 ID 可在 [开发者后台](https://open.feishu.cn/app) &gt; **应用详情页** &gt; **应用能力** &gt; **云文档小组件** &gt; **BlockTypeID** 获取。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `add_ons` | `add_ons` | Add-ons |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `component_id` | `string` | 文档小组件 ID。该 ID 可通过调用[创建 BlockEntity](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/block-v2/entity/create) 接口，并从响应体中的 block_id 中获取，创建时使用的 `block_type_id` 需要与 `component_type_id` 一致。 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `component_type_id` | `string` | 文档小组件类型，比如问答互动"blk_636a0a6657db8001c8df5488"。该 ID 可在 [开发者后台](https://open.feishu.cn/app) > **应用详情页** > **应用能力** > **云文档小组件** > **BlockTypeID** 获取。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `component_type_id` | `string` | 文档小组件类型，比如问答互动"blk_636a0a6657db8001c8df5488"。该 ID 可在 [开发者后台](https://open.feishu.cn/app) &gt; **应用详情页** &gt; **应用能力** &gt; **云文档小组件** &gt; **BlockTypeID** 获取。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `record` | `string` | 文档小组件内容数据，JSON 字符串 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `mindnote` | `mindnote` | 思维笔记 Block |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `token` | `string` | 思维导图 token |

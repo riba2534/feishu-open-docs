@@ -22,7 +22,7 @@ updateTime: "1726817428000"
 | 接口频率限制 | [特殊频控](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `contact:contact.base:readonly` 获取通讯录基本信息 `search:department:read` 搜索部门 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly_as_app` 以应用身份读取通讯录 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:department.organize:readonly` 获取通讯录部门组织架构信息 `contact:department.base:readonly` 获取部门基础信息 `contact:user.employee_id:readonly` 获取用户 user ID `contact:department.hrbp:readonly` 查询部门 HRBP 信息 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 `contact:contact:readonly_as_app` 以应用身份读取通讯录 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:department.organize:readonly` 获取通讯录部门组织架构信息 `contact:department.base:readonly` 获取部门基础信息 `contact:user.employee_id:readonly` 获取用户 user ID `contact:department.hrbp:readonly` 查询部门 HRBP 信息 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 `contact:contact:readonly_as_app` 以应用身份读取通讯录 |
 
 ### 请求头
 

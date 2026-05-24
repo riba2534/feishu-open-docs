@@ -35,7 +35,7 @@ updateTime: "1730257051000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `im:chat` 获取与更新群组信息 `im:chat:update` 更新群信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -165,7 +165,7 @@ updateTime: "1730257051000"
 | 400 | 232016 | Non-chat-owner or Non-chat-admin can only edit certain parts. | 非群主或群管理员的普通群成员，只能修改部分群信息 ，包括：群头像（avatar）、群名称（name）、群描述（description）、群国际化名称（i18n_names)。 |
 | 400 | 232019 | The request has been rate limited. | 触发群限流，请控制请求的速度，详情参见[频控策略](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)。 |
 | 400 | 232023 | Chat information review failed while updating the chat. | 群组相关信息审核没有通过，请检查群名称或群描述中是否存在敏感内容。 |
-| 400 | 232025 | Bot ability is not activated. | 应用未启用机器人能力。你需要登录[开发者后台](https://open.feishu.cn/app)，在应用详情页的 **应用能力** > **添加应用能力** 页面内，添加 **机器人** 能力，并发布应用使配置生效。具体操作参见[机器人能力](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
+| 400 | 232025 | Bot ability is not activated. | 应用未启用机器人能力。你需要登录[开发者后台](https://open.feishu.cn/app)，在应用详情页的 **应用能力** &gt; **添加应用能力** 页面内，添加 **机器人** 能力，并发布应用使配置生效。具体操作参见[机器人能力](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
 | 400 | 232026 | This name is already used in an existing public chat. Names of public chats are supposed to be different. | 公开群群名已存在。 |
 | 400 | 232030 | Your request specifies a user_id which is invalid. | 请检查user_id是否正确。 |
 | 400 | 232031 | The chat and the new designated chat owner must be in the same tenant. | 不允许跨租户转让群主，请修改 `owner_id` 参数，确保对应用户与被操作群组在同一租户内，且用户在群组中。 |

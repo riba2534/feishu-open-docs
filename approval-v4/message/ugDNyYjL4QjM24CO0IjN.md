@@ -75,7 +75,7 @@ updateTime: "1750674809000"
 | i18n_resources | list | 是 | 国际化文案。部分参数（如 approval_name、comment 或 note 等）设置了国际化文案 Key 后，需要通过 i18n_resources 设置 Key:Value 关系为参数赋值。<br>例如，approval_name取值为 @i18n@8，则需要在 i18n_resources.texts 中传入 `@i18n@8： 审批实例名称` 为参数赋值。 |
 | &nbsp;&nbsp;└ locale | string | 是 | 语言。可选值有：<br>- zh-CN：中文 - en-US：英文 - ja-JP：日文<br>**示例值**：zh-CN |
 | &nbsp;&nbsp;└ is_default | boolean | 是 | 当前语言是否为默认语言。默认语言需要在 texts 中传入所有的 Key:Value，非默认语言如果缺失 Key，则会使用默认语言代替。<br>**示例值**：true |
-| &nbsp;&nbsp;└ texts | map | 是 | 文案的 Key:Value。Key 需要以 `@i18n@` 开头，并按照各个参数的要求传入 Value。<br>**示例值**：<br>``` { 	"@i18n@1": "权限申请"， 	"@i18n@2": "OA审批"， 	"@i18n@3": "Permission" } ``` |
+| &nbsp;&nbsp;└ texts | map | 是 | 文案的 Key:Value。Key 需要以 `@i18n@` 开头，并按照各个参数的要求传入 Value。<br>**示例值**：<br>``` `{ 	"@i18n@1": "权限申请"， 	"@i18n@2": "OA审批"， 	"@i18n@3": "Permission" }` ``` |
 
 
 ### 通用模板请求体示例
@@ -170,7 +170,7 @@ updateTime: "1750674809000"
 | i18n_resources | list | 是 | 国际化文案。部分参数（如 approval_name、comment 或 note 等）设置了国际化文案 Key 后，需要通过 i18n_resources 设置 Key：value 关系为参数赋值。<br>例如，approval_name取值为 @i18n@8，则需要在 i18n_resources.texts 中传入 `@i18n@8： 审批实例名称` 为参数赋值。 |
 | &nbsp;&nbsp;└ locale | string | 是 | 语言。可选值有：<br>- zh-CN：中文 - en-US：英文 - ja-JP：日文<br>**示例值**：zh-CN |
 | &nbsp;&nbsp;└ is_default | boolean | 是 | 当前语言是否为默认语言。默认语言需要在 texts 中传入所有的 Key：Value，非默认语言如果缺失 Key，则会使用默认语言代替。<br>**示例值**：true |
-| &nbsp;&nbsp;└ texts | map | 是 | 文案的 Key:Value。Key 需要以 `@i18n@` 开头，并按照各个参数的要求传入 Value。<br>**示例值**：<br>``` { 	"@i18n@1": "权限申请"， 	"@i18n@2": "OA审批"， 	"@i18n@3": "Permission" } ``` |
+| &nbsp;&nbsp;└ texts | map | 是 | 文案的 Key:Value。Key 需要以 `@i18n@` 开头，并按照各个参数的要求传入 Value。<br>**示例值**：<br>``` `{ 	"@i18n@1": "权限申请"， 	"@i18n@2": "OA审批"， 	"@i18n@3": "Permission" }` ``` |
 
 
 ### 自定义模板请求体示例

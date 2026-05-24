@@ -166,8 +166,8 @@ updateTime: "1745207159000"
 |msg|string|返回码的描述。|
 |data|object|返回业务信息。|
 |&emsp;∟result|object|请求结果的内容。|
-|&emsp;&emsp;∟options|list<externalData>|选项列表。|
-|&emsp;&emsp;∟i18nResources|list<i18nResource>|国际化文案。i18nResources 必须返回，返回空会导致显示是空的，请至少返回一种语言数据。|
+|&emsp;&emsp;∟options|`list<externalData>`|选项列表。|
+|&emsp;&emsp;∟i18nResources|`list<i18nResource>`|国际化文案。i18nResources 必须返回，返回空会导致显示是空的，请至少返回一种语言数据。|
 |&emsp;&emsp;∟hasMore|bool|是否有下一页数据。只对设置了**支持模糊、分页搜索**的数据源有效。|
 |&emsp;&emsp;∟nextPageToken|string|分页标记，当 hasMore 为 true 时，会同时返回新的 nextPageToken，否则不返回 nextPageToken。只对设置了**支持模糊、分页搜索**的数据源有效。|
 

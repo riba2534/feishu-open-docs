@@ -25,7 +25,7 @@ updateTime: "1731575565000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:additional_job:read` 获取兼职信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:additional_job.compensation_type:read` 获取兼职的薪资类型 `corehr:additional_job.compensation_type:write` 读写兼职的薪资类型 `corehr:additional_job.job:read` 获取兼职的职务信息 `corehr:additional_job.job:write` 读写兼职的职务信息 `corehr:additional_job.job_level:read` 获取兼职的职级信息 `corehr:additional_job.job_level:write` 读写兼职的职级信息 `corehr:additional_job.position:read` 读取兼职的岗位 `corehr:additional_job.position:write` 读写兼职的岗位 `corehr:additional_job.service_company:read` 获取兼职的任职公司 `corehr:additional_job.service_company:write` 读写兼职的任职公司 `corehr:additional_job.work_shift:read` 获取兼职的排班信息 `corehr:additional_job.work_shift:write` 读写兼职的排班信息 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:additional_job.compensation_type:read` 获取兼职的薪资类型 `corehr:additional_job.compensation_type:write` 读写兼职的薪资类型 `corehr:additional_job.job:read` 获取兼职的职务信息 `corehr:additional_job.job:write` 读写兼职的职务信息 `corehr:additional_job.job_level:read` 获取兼职的职级信息 `corehr:additional_job.job_level:write` 读写兼职的职级信息 `corehr:additional_job.position:read` 读取兼职的岗位 `corehr:additional_job.position:write` 读写兼职的岗位 `corehr:additional_job.service_company:read` 获取兼职的任职公司 `corehr:additional_job.service_company:write` 读写兼职的任职公司 `corehr:additional_job.work_shift:read` 获取兼职的排班信息 `corehr:additional_job.work_shift:write` 读写兼职的排班信息 |
 
 ### 请求头
 

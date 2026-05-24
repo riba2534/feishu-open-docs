@@ -18,7 +18,7 @@ updateTime: "1713178781000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `task:task` 查看、创建、编辑和删除任务（旧版） `task:task:readonly` 查看任务详情 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -54,7 +54,7 @@ updateTime: "1713178781000"
 | `msg` | `string` | 错误描述 |
 | `data` | `\-` | \- |
 | &nbsp;&nbsp;└ `items` | `collaborator\[\]` | 返回的执行者ID列表 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 任务执行者的 ID。 传入的值为 user_id 或 open_id，由user_id_type 决定。user_id和open_id的获取可见文档[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。<br>> **Info**: 已经废弃，为了向前兼容早期只支持单次添加一个人的情况而保留，但不再推荐使用，建议使用id_list字段 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 任务执行者的 ID。 传入的值为 user_id 或 open_id，由user_id_type 决定。user_id和open_id的获取可见文档[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。<br>&gt; **Info**: 已经废弃，为了向前兼容早期只支持单次添加一个人的情况而保留，但不再推荐使用，建议使用id_list字段 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `id_list` | `string\[\]` | 执行者的用户ID列表。 传入的值为 user_id 或 open_id，由user_id_type 决定。user_id和open_id的获取可见文档[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。 |
 | &nbsp;&nbsp;└ `page_token` | `string` | 分页标记，当 has_more 为 true 时，会同时返回新的 page_token，否则不返回 page_token |
 | &nbsp;&nbsp;└ `has_more` | `boolean` | 是否还有更多项 |

@@ -21,7 +21,7 @@ updateTime: "1777370108000"
 | 接口频率限制 | [10 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:compensation.lump_sum_payment:read` 读取一次性支付记录 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:compensation_lump_sum_payment.binding_period_offboarding_type:read` 获取一次性支付的绑定期内离职信息 `corehr:compensation_lump_sum_payment.return_amount_after_tax:read` 获取一次性支付的应退回金额（税后） `corehr:compensation_lump_sum_payment.return_amount_before_tax:read` 获取一次性支付的应退回金额（税前） `corehr:compensation_lump_sum_payment_detail.belong_time:read` 获取一次性支付金额的申请发放日期 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:compensation_lump_sum_payment.binding_period_offboarding_type:read` 获取一次性支付的绑定期内离职信息 `corehr:compensation_lump_sum_payment.return_amount_after_tax:read` 获取一次性支付的应退回金额（税后） `corehr:compensation_lump_sum_payment.return_amount_before_tax:read` 获取一次性支付的应退回金额（税前） `corehr:compensation_lump_sum_payment_detail.belong_time:read` 获取一次性支付金额的申请发放日期 |
 
 ### 请求头
 

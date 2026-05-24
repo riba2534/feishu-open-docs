@@ -18,7 +18,7 @@ updateTime: "1764323959000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:signature_file:read` 查看电子签文件 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -33,7 +33,7 @@ updateTime: "1764323959000"
 | --- | --- | --- | --- |
 | `signature_file_id` | `string` | 否 | 电子签文件ID<br>**示例值**：6891251722631890445 |
 | `page_size` | `int` | 否 | 分页大小<br>**示例值**：10 |
-| `page_token` | `string` | 否 | 分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果<br>**示例值**：{"cn":"[\"7371387495822411308\"]"} |
+| `page_token` | `string` | 否 | 分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果<br>**示例值**：`{"cn":"[\"7371387495822411308\"]"}` |
 | `states` | `string\[\]` | 否 | 电子签文件状态，枚举值可通过文档[【飞书人事枚举常量】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/feishu-people-enum-constant)的signature_file_state枚举定义部分获得 注意：多个状态之间为「或」的关系；<br>**示例值**：sign_finished<br>**数据校验规则**：<br>- 长度范围：`0` ～ `30` |
 | `update_time_start` | `string` | 否 | 更新时间早于等于某个时间点，按照东八区时区<br>**示例值**：2022-01-01 00:00:00 |
 | `update_time_end` | `string` | 否 | 更新时间晚于等于某个时间点，按照东八区时区<br>**示例值**：2022-01-01 00:00:00 |

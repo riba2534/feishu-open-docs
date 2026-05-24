@@ -31,7 +31,7 @@ updateTime: "1727245979000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `im:message.urgent` 发送应用内加急消息 `im:message.urgent:app_send` 发送应用内加急消息（历史版本） |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -110,8 +110,8 @@ updateTime: "1727245979000"
 | 400 | 230002 | The bot can not be outside the group. | 机器人不在对应群组中。你需要将应用机器人添加到接收消息的群组中。如何添加机器人参考[机器人使用指南](https://open.larkoffice.com/document/ukTMukTMukTM/uATM04CMxQjLwEDN)。 |
 | 400 | 230006 | Bot ability is not activated. | 应用未启用机器人能力。启用方式参见[如何启用机器人能力](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
 | 400 | 230012 | Bot is NOT the sender of the message. | 机器人不是消息的发送者，无法加急该消息。应用机器人只能操作自己发送的消息。 |
-| 400 | 230013 | Bot has NO availability to this user. | 目标用户（以用户的 user_id/open_id/union_id/email 指定的消息接收者）或单聊用户（以群聊的 chat_id 指定的消息接收者，但 chat_id 对应的群聊类型为单聊 `p2p`）不在应用机器人的可用范围内，或者是在应用的禁用范围内。 **注意**：如果目标用户已离职，也会报错 230013。 解决方案： 1. 登录[开发者后台](https://open.feishu.cn/app)，找到并进入指定应用详情页。 2. 在左侧导航栏进入 **应用发布** >  **版本管理与发布** 页面，点击 **创建版本**。 3. 在 **版本详情** 页面，找到 **可用范围** 区域，点击 **编辑**。 4. 在弹出的对话框内，配置应用的可用范围，将用户添加至可用范围内。 5. 在页面底部点击 **保存**，并发布应用使配置生效。 6. （可选）如果以上配置完成后仍报错，则需要联系企业管理员登录[管理后台](https://feishu.cn/admin)，在 **工作台** > **应用管理** 中进入指定应用详情页，在 **应用可用范围** 内查看该用户是否被设置为了 **禁用成员**。 具体操作参见[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。 |
-| 400 | 230023 | The user has too many unread urgent messages. | 用户未读的加急消息过多。加急用户的未读加急总数不能超过 200 条，需要用户处理一部分被加急的消息，在不超过 200 条未读加急消息时，才可以继续加急。处理方式： - 用户在客户端的会话内阅读加急消息（必须在会话内阅读消息，点掉终端弹出的加急提醒弹框不会视为已读加急消息）。 - 如果某一群聊内存在大量加急消息，在确保不需要一条条阅读的情况下，可以通过群聊的 **设置** > **清空聊天记录** 功能清理群聊内的加急消息。 |
+| 400 | 230013 | Bot has NO availability to this user. | 目标用户（以用户的 user_id/open_id/union_id/email 指定的消息接收者）或单聊用户（以群聊的 chat_id 指定的消息接收者，但 chat_id 对应的群聊类型为单聊 `p2p`）不在应用机器人的可用范围内，或者是在应用的禁用范围内。 **注意**：如果目标用户已离职，也会报错 230013。 解决方案： 1. 登录[开发者后台](https://open.feishu.cn/app)，找到并进入指定应用详情页。 2. 在左侧导航栏进入 **应用发布** &gt;  **版本管理与发布** 页面，点击 **创建版本**。 3. 在 **版本详情** 页面，找到 **可用范围** 区域，点击 **编辑**。 4. 在弹出的对话框内，配置应用的可用范围，将用户添加至可用范围内。 5. 在页面底部点击 **保存**，并发布应用使配置生效。 6. （可选）如果以上配置完成后仍报错，则需要联系企业管理员登录[管理后台](https://feishu.cn/admin)，在 **工作台** &gt; **应用管理** 中进入指定应用详情页，在 **应用可用范围** 内查看该用户是否被设置为了 **禁用成员**。 具体操作参见[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。 |
+| 400 | 230023 | The user has too many unread urgent messages. | 用户未读的加急消息过多。加急用户的未读加急总数不能超过 200 条，需要用户处理一部分被加急的消息，在不超过 200 条未读加急消息时，才可以继续加急。处理方式： - 用户在客户端的会话内阅读加急消息（必须在会话内阅读消息，点掉终端弹出的加急提醒弹框不会视为已读加急消息）。 - 如果某一群聊内存在大量加急消息，在确保不需要一条条阅读的情况下，可以通过群聊的 **设置** &gt; **清空聊天记录** 功能清理群聊内的加急消息。 |
 | 400 | 230024 | Reach the upper limit of urgent message. | 加急额度超限，请联系企业管理员。相关说明参见[加急功能](https://www.feishu.cn/hc/zh-CN/articles/360024757913)。 |
 | 400 | 230027 | Lack of necessary permissions. | 暂不支持在外部群中进行本操作。 |
 | 400 | 230052 | Can not urgent this message. | 无权加急或被鉴别为风险操作。请排查群聊内是否已开启 **仅群主和管理员可加急**，或联系企业管理员。 |

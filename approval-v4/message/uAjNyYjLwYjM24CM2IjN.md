@@ -46,7 +46,7 @@ updateTime: "1745207136000"
 | i18n_resources | list | 是 | 国际化文案。status_name、detail_action_name 参数设置了国际化文案 Key 后，需要通过 i18n_resources 设置 Key：value 关系为参数赋值。<br>例如，status_name取值为 @i18n@1，则需要在 i18n_resources.texts 中传入 `@i18n@1： 已废弃` 为参数赋值。 |
 | &nbsp;&nbsp;└ locale | string | 是 | 语言。可选值有：<br>- zh-CN：中文 - en-US：英文 - ja-JP：日文<br>**示例值**：zh-CN |
 | &nbsp;&nbsp;└ is_default | boolean | 是 | 当前语言是否为默认语言。默认语言需要在 texts 中传入所有的 Key：Value，非默认语言如果缺失 Key，则会使用默认语言代替。<br>**示例值**：true |
-| &nbsp;&nbsp;└ texts | map | 是 | 文案的 Key:Value。Key 需要以 `@i18n@` 开头，并按照各个参数的要求传入 Value。<br>**示例值**：<br>``` { 	"@i18n@1": "demotext1"， 	"@i18n@2": "demotext2" } ``` |
+| &nbsp;&nbsp;└ texts | map | 是 | 文案的 Key:Value。Key 需要以 `@i18n@` 开头，并按照各个参数的要求传入 Value。<br>**示例值**：<br>``` `{ 	"@i18n@1": "demotext1"， 	"@i18n@2": "demotext2" }` ``` |
 
 
 ### 请求体示例

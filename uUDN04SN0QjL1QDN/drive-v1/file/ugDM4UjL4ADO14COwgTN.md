@@ -32,10 +32,10 @@ updateTime: "1749454584000"
 | --- | --- | --- | --- |
 | search_key | string | 是 | 指定搜索的关键字。 |
 | count | int | 否 | 指定搜索返回的文件数量。取值范围为 [0,50]。 |
-| offset | int | 否 | 指定搜索的偏移量，该参数最小为 0，即不偏移。该参数的值与返回的文件数量之和不得大于或等于 200（即 offset + count < 200）。 |
-| owner_ids | list<string> | 否 | 文件所有者的 Open ID。了解更多，参考[如何获取 Open ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。 |
-| chat_ids | list<string> | 否 | 文件所在群的 ID。了解更多，参考[群 ID 说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-id-description)。 |
-| docs_types | list<string> | 否 | 文件类型，支持以下枚举： - `doc`：文档，包括旧版文档（doc）和新版文档（docx） - `sheet`：电子表格 - `slides`：幻灯片 - `bitable`：多维表格 - `mindnote`：思维笔记 - `file`：文件 |
+| offset | int | 否 | 指定搜索的偏移量，该参数最小为 0，即不偏移。该参数的值与返回的文件数量之和不得大于或等于 200（即 offset + count &lt; 200）。 |
+| owner_ids | `list<string>` | 否 | 文件所有者的 Open ID。了解更多，参考[如何获取 Open ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。 |
+| chat_ids | `list<string>` | 否 | 文件所在群的 ID。了解更多，参考[群 ID 说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-id-description)。 |
+| docs_types | `list<string>` | 否 | 文件类型，支持以下枚举： - `doc`：文档，包括旧版文档（doc）和新版文档（docx） - `sheet`：电子表格 - `slides`：幻灯片 - `bitable`：多维表格 - `mindnote`：思维笔记 - `file`：文件 |
 
 
 ### 请求体示例

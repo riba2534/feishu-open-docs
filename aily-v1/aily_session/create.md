@@ -34,7 +34,7 @@ updateTime: "1752154881000"
 | --- | --- | --- | --- |
 | Authorization | string | 是 | `tenant_access_token` 或 `user_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
 | Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
-| X-Aily-BizUserID | string | 否 | 唯一用户身份标识。 > 建议使用唯一内部 ID 或其他可标识用户唯一身份的字段（如飞书账号的 `user_id`），可用于分析来自 API 的具体用户 **示例值**："ou_5ad573a6411d72b8305fda3a9c15c70e" **数据校验规则**： - 长度范围：`0` ～ `255` 字符 |
+| X-Aily-BizUserID | string | 否 | 唯一用户身份标识。 &gt; 建议使用唯一内部 ID 或其他可标识用户唯一身份的字段（如飞书账号的 `user_id`），可用于分析来自 API 的具体用户 **示例值**："ou_5ad573a6411d72b8305fda3a9c15c70e" **数据校验规则**： - 长度范围：`0` ～ `255` 字符 |
 
 
 ### 请求体

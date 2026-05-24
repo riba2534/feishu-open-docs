@@ -61,11 +61,11 @@ updateTime: "1731048811000"
 
 | **[方法 (API)](https://open.larkoffice.com/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
 | --- | --- | --- | --- | --- |
-| `[预约会议](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/reserve/apply)`    `POST` /open-apis/vc/v1/reserves/apply >预约一场视频会议 | 更新会议预约信息 | `user_access_token` | **✓** | **✓** |
-| `[更新会议](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/reserve/update)`    `PUT` /open-apis/vc/v1/reserves/:reserve_id >更新一场已预约的视频会议配置，包括会议主题、会议权限配置等 | 更新会议预约信息 | `user_access_token` | **✓** | **✓** |
-| `[删除预约](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/reserve/delete)`    `DELETE`/open-apis/vc/v1/reserves/:reserve_id >删除一场已预约的视频会议 | 更新会议预约信息 | `user_access_token` | **✓** | **✓** |
-| `[获取预约](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/reserve/get)`    `GET`/open-apis/vc/v1/reserves/:reserve_id >获取一场已预约的视频会议的详情，包括会议 ID、会议链接、会议权限 | 获取会议预约信息 | `user_access_token` | **✓** | **✓** |
-| `[获取活跃会议](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/reserve/get_active_meeting)`    `GET`/open-apis/vc/v1/reserves/:reserve_id/get_active_meeting >获取一场进行中的预约会议详情，包括参会人数、参会人详情等 | 获取会议预约信息 | `user_access_token` | **✓** | **✓** |
+| `[预约会议](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/reserve/apply)`    `POST` /open-apis/vc/v1/reserves/apply &gt;预约一场视频会议 | 更新会议预约信息 | `user_access_token` | **✓** | **✓** |
+| `[更新会议](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/reserve/update)`    `PUT` /open-apis/vc/v1/reserves/:reserve_id &gt;更新一场已预约的视频会议配置，包括会议主题、会议权限配置等 | 更新会议预约信息 | `user_access_token` | **✓** | **✓** |
+| `[删除预约](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/reserve/delete)`    `DELETE`/open-apis/vc/v1/reserves/:reserve_id &gt;删除一场已预约的视频会议 | 更新会议预约信息 | `user_access_token` | **✓** | **✓** |
+| `[获取预约](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/reserve/get)`    `GET`/open-apis/vc/v1/reserves/:reserve_id &gt;获取一场已预约的视频会议的详情，包括会议 ID、会议链接、会议权限 | 获取会议预约信息 | `user_access_token` | **✓** | **✓** |
+| `[获取活跃会议](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/reserve/get_active_meeting)`    `GET`/open-apis/vc/v1/reserves/:reserve_id/get_active_meeting &gt;获取一场进行中的预约会议详情，包括参会人数、参会人详情等 | 获取会议预约信息 | `user_access_token` | **✓** | **✓** |
 
 
 ### 资源：会议
@@ -77,12 +77,12 @@ updateTime: "1731048811000"
 
 | **[方法 (API)](https://open.larkoffice.com/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
 | --- | --- | --- | --- | --- |
-| `[获取会议详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting/get)` `GET` /open-apis/vc/v1/meetings/:meeting_id    >获取一个会议的详细数据，包括会议主题、会议 ID、会议链接、开始时间、会议状态、参会人列表等 | 获取会议信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[获取与会议号相关联的会议列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting/list_by_no)`   `GET` /open-apis/vc/v1/meetings/list_by_no    >获取指定时间范围会议号关联的会议简要信息列表 | 获取会议信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[邀请参会人](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting/invite)`   `PATCH` /open-apis/vc/v1/meetings/:meeting_id/invite    >邀请参会人加入会议 | 更新会议信息 | `user_access_token` | **✓** | **✓** |
-| `[移除参会人](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting/kickout)` `POST` /open-apis/vc/v1/meetings/:meeting_id/kickout    >将参会人从会议中移除 | 更新会议信息 | `tenant_access_token` | **✓** | **✓** |
-| `[设置主持人](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting/set_host)`   `PATCH` /open-apis/vc/v1/meetings/:meeting_id/set_host    >将某一参会人设置为主持人 | 更新会议信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[结束会议](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting/end)` `PATCH` /open-apis/vc/v1/meetings/:meeting_id/end >结束一场正在进行的会议 | 更新会议信息 | `user_access_token` | **✓** | **✓** |
+| `[获取会议详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting/get)` `GET` /open-apis/vc/v1/meetings/:meeting_id    &gt;获取一个会议的详细数据，包括会议主题、会议 ID、会议链接、开始时间、会议状态、参会人列表等 | 获取会议信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[获取与会议号相关联的会议列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting/list_by_no)`   `GET` /open-apis/vc/v1/meetings/list_by_no    &gt;获取指定时间范围会议号关联的会议简要信息列表 | 获取会议信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[邀请参会人](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting/invite)`   `PATCH` /open-apis/vc/v1/meetings/:meeting_id/invite    &gt;邀请参会人加入会议 | 更新会议信息 | `user_access_token` | **✓** | **✓** |
+| `[移除参会人](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting/kickout)` `POST` /open-apis/vc/v1/meetings/:meeting_id/kickout    &gt;将参会人从会议中移除 | 更新会议信息 | `tenant_access_token` | **✓** | **✓** |
+| `[设置主持人](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting/set_host)`   `PATCH` /open-apis/vc/v1/meetings/:meeting_id/set_host    &gt;将某一参会人设置为主持人 | 更新会议信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[结束会议](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting/end)` `PATCH` /open-apis/vc/v1/meetings/:meeting_id/end &gt;结束一场正在进行的会议 | 更新会议信息 | `user_access_token` | **✓** | **✓** |
 
 
 #### 事件列表
@@ -110,10 +110,10 @@ updateTime: "1731048811000"
 
 | **[方法 (API)](https://open.larkoffice.com/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
 | --- | --- | --- | --- | --- |
-| `[开始录制](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting-recording/start)` `PATCH` /open-apis/vc/v1/meetings/:meeting_id/recording/start    >在会议中开始录制 | 更新会议录制信息 | `user_access_token` | **✓** | **✓** |
-| `[停止录制](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting-recording/stop)`   `PATCH` /open-apis/vc/v1/meetings/:meeting_id/recording/stop    >在会议中停止录制 | 更新会议录制信息 | `user_access_token` | **✓** | **✓** |
-| `[获取录制文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting-recording/get)`   `GET` /open-apis/vc/v1/meetings/:meeting_id/recording    >获取一个会议的录制文件 | 获取会议录制信息 | `user_access_token` | **✓** | **✓** |
-| `[授权录制文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting-recording/set_permission)` `PATCH` /open-apis/vc/v1/meetings/:meeting_id/recording/set_permission    >将一个会议的录制文件授权给组织、用户或公开到公网 | 更新会议录制信息 | `user_access_token` | **✓** | **✓** |
+| `[开始录制](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting-recording/start)` `PATCH` /open-apis/vc/v1/meetings/:meeting_id/recording/start    &gt;在会议中开始录制 | 更新会议录制信息 | `user_access_token` | **✓** | **✓** |
+| `[停止录制](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting-recording/stop)`   `PATCH` /open-apis/vc/v1/meetings/:meeting_id/recording/stop    &gt;在会议中停止录制 | 更新会议录制信息 | `user_access_token` | **✓** | **✓** |
+| `[获取录制文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting-recording/get)`   `GET` /open-apis/vc/v1/meetings/:meeting_id/recording    &gt;获取一个会议的录制文件 | 获取会议录制信息 | `user_access_token` | **✓** | **✓** |
+| `[授权录制文件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting-recording/set_permission)` `PATCH` /open-apis/vc/v1/meetings/:meeting_id/recording/set_permission    &gt;将一个会议的录制文件授权给组织、用户或公开到公网 | 更新会议录制信息 | `user_access_token` | **✓** | **✓** |
 
 
 ### 资源：会议报告
@@ -124,8 +124,8 @@ updateTime: "1731048811000"
 
 | **[方法 (API)](https://open.larkoffice.com/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
 | --- | --- | --- | --- | --- |
-| `[获取会议报告](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/report/get_daily)` `GET` /open-apis/vc/v1/reports/get_daily    >获取一段时间内组织的每日会议使用报告，包括总会议数量、总会议时长、总参会人数等 | 获取会议报告 | `tenant_access_token` | **✓** | **✓** |
-| `[获取 Top 用户列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/report/get_top_user)`   `GET` /open-apis/vc/v1/reports/get_top_user    >获取一段时间内组织内会议使用的 Top 用户列表 | 获取会议报告 | `tenant_access_token` | **✓** | **✓** |
+| `[获取会议报告](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/report/get_daily)` `GET` /open-apis/vc/v1/reports/get_daily    &gt;获取一段时间内组织的每日会议使用报告，包括总会议数量、总会议时长、总参会人数等 | 获取会议报告 | `tenant_access_token` | **✓** | **✓** |
+| `[获取 Top 用户列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/report/get_top_user)`   `GET` /open-apis/vc/v1/reports/get_top_user    &gt;获取一段时间内组织内会议使用的 Top 用户列表 | 获取会议报告 | `tenant_access_token` | **✓** | **✓** |
 
 
 ### 资源：会议室
@@ -137,13 +137,13 @@ updateTime: "1731048811000"
 
 | **[方法 (API)](https://open.larkoffice.com/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)**（选择其一） | 商店 | 自建 |
 | --- | --- | --- | --- | --- |
-| `[查询会议室列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room/list)`         `GET` /open-apis/vc/v1/rooms        >查询某个会议室层级下会议室列表 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[查询会议室详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room/get)`         `GET` /open-apis/vc/v1/rooms/:room_id        >使用会议室ID查询会议室详情 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[批量查询会议室详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room/mget)`         `POST` /open-apis/vc/v1/rooms/mget   >使用会议室ID批量查询会议室详情 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[创建会议室](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room/create)`         `POST` /open-apis/vc/v1/rooms        >用于创建会议室 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[更新会议室](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room/patch)`         `PATCH` /open-apis/vc/v1/rooms/:room_id        >用于更新会议室 | 更新视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[删除会议室](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room/delete)`         `DELETE` /open-apis/vc/v1/rooms/:room_id        >用于删除会议室 | 更新视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[搜索会议室](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room/search)`         `POST` /open-apis/vc/v1/rooms/search        >用于搜索会议室 | 更新视频会议室信息 获取视频会议室信息 | `user_access_token` | **✓** | **✓** |
+| `[查询会议室列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room/list)`         `GET` /open-apis/vc/v1/rooms        &gt;查询某个会议室层级下会议室列表 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[查询会议室详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room/get)`         `GET` /open-apis/vc/v1/rooms/:room_id        &gt;使用会议室ID查询会议室详情 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[批量查询会议室详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room/mget)`         `POST` /open-apis/vc/v1/rooms/mget   &gt;使用会议室ID批量查询会议室详情 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[创建会议室](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room/create)`         `POST` /open-apis/vc/v1/rooms        &gt;用于创建会议室 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[更新会议室](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room/patch)`         `PATCH` /open-apis/vc/v1/rooms/:room_id        &gt;用于更新会议室 | 更新视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[删除会议室](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room/delete)`         `DELETE` /open-apis/vc/v1/rooms/:room_id        &gt;用于删除会议室 | 更新视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[搜索会议室](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room/search)`         `POST` /open-apis/vc/v1/rooms/search        &gt;用于搜索会议室 | 更新视频会议室信息 获取视频会议室信息 | `user_access_token` | **✓** | **✓** |
 
 
 ### 资源：会议室层级
@@ -155,13 +155,13 @@ updateTime: "1731048811000"
 
 | **[方法 (API)](https://open.larkoffice.com/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)**（选择其一） | 商店 | 自建 |
 | --- | --- | --- | --- | --- |
-| `[查询会议室层级列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room_level/list)`         `GET` /open-apis/vc/v1/room_levels        >查询某个会议室层级下的子层级列表 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[查询会议室层级详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room_level/get)`         `GET` /open-apis/vc/v1/room_levels/:room_level_id   >使用会议室层级ID查询会议室层级详情 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[批量查询会议室层级详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room_level/mget)`         `POST` /open-apis/vc/v1/room_levels/mget   >使用会议室层级ID批量查询会议室层级详情 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[创建会议室层级](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room_level/create)`         `POST` /open-apis/vc/v1/room_levels        >用于创建会议室层级 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[更新会议室层级](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room_level/patch)`         `PATCH` /open-apis/vc/v1/room_levels/:room_level_id        >用于更新会议室层级 | 更新视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[删除会议室层级](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room_level/del)`         `POST` /open-apis/vc/v1/room_levels/del        >用于删除会议室层级 | 更新视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[搜索会议室层级](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room_level/search)`         `POST` /open-apis/vc/v1/room_levels/search        >用来搜索会议室层级 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[查询会议室层级列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room_level/list)`         `GET` /open-apis/vc/v1/room_levels        &gt;查询某个会议室层级下的子层级列表 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[查询会议室层级详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room_level/get)`         `GET` /open-apis/vc/v1/room_levels/:room_level_id   &gt;使用会议室层级ID查询会议室层级详情 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[批量查询会议室层级详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room_level/mget)`         `POST` /open-apis/vc/v1/room_levels/mget   &gt;使用会议室层级ID批量查询会议室层级详情 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[创建会议室层级](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room_level/create)`         `POST` /open-apis/vc/v1/room_levels        &gt;用于创建会议室层级 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[更新会议室层级](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room_level/patch)`         `PATCH` /open-apis/vc/v1/room_levels/:room_level_id        &gt;用于更新会议室层级 | 更新视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[删除会议室层级](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room_level/del)`         `POST` /open-apis/vc/v1/room_levels/del        &gt;用于删除会议室层级 | 更新视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[搜索会议室层级](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room_level/search)`         `POST` /open-apis/vc/v1/room_levels/search        &gt;用来搜索会议室层级 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
 
 
 ### 资源：会议室配置
@@ -173,8 +173,8 @@ updateTime: "1731048811000"
 
 | **[方法 (API)](https://open.larkoffice.com/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)**（选择其一） | 商店 | 自建 |
 | --- | --- | --- | --- | --- |
-| `[设置会议室配置](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/scope_config/create)` `POST` /open-apis/vc/v1/scope_config    >设置某个会议层级范围下或者某个会议室的配置 | 更新视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[查询会议室配置](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/scope_config/get)`         `GET` /open-apis/vc/v1/scope_config        >查询某个会议层级范围下或者某个会议室的配置 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[设置会议室配置](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/scope_config/create)` `POST` /open-apis/vc/v1/scope_config    &gt;设置某个会议层级范围下或者某个会议室的配置 | 更新视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[查询会议室配置](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/scope_config/get)`         `GET` /open-apis/vc/v1/scope_config        &gt;查询某个会议层级范围下或者某个会议室的配置 | 更新视频会议室信息 获取视频会议室信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
 
 
 ### 资源：导出
@@ -186,9 +186,9 @@ updateTime: "1731048811000"
 
 | **[方法 (API)](https://open.larkoffice.com/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)**（选择其一） | 商店 | 自建 |
 | --- | --- | --- | --- | --- |
-| `[查询导出任务结果](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/export/get)` `GET` /open-apis/vc/v1/exports/:task_id    >查看异步导出的进度 | 导出视频会议信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[导出会议明细](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/export/meeting_list)` `POST` /open-apis/vc/v1/exports/meeting_list    >导出会议明细 | 导出视频会议信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[导出参会人明细](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/export/participant_list)` `POST` /open-apis/vc/v1/exports/participant_list    >导出一个会议的参会人详情列表 | 导出视频会议信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[导出参会人会议质量数据](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/export/participant_quality_list)` `POST` /open-apis/vc/v1/exports/participant_quality_list    >导出一场会议一个参会人的音视频和共享质量数据 | 导出视频会议信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
-| `[导出会议室预定数据](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/export/resource_reservation_list)` `POST` /open-apis/vc/v1/exports/resource_reservation_list    >导出会议室预定数据 | 导出视频会议信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[查询导出任务结果](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/export/get)` `GET` /open-apis/vc/v1/exports/:task_id    &gt;查看异步导出的进度 | 导出视频会议信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[导出会议明细](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/export/meeting_list)` `POST` /open-apis/vc/v1/exports/meeting_list    &gt;导出会议明细 | 导出视频会议信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[导出参会人明细](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/export/participant_list)` `POST` /open-apis/vc/v1/exports/participant_list    &gt;导出一个会议的参会人详情列表 | 导出视频会议信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[导出参会人会议质量数据](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/export/participant_quality_list)` `POST` /open-apis/vc/v1/exports/participant_quality_list    &gt;导出一场会议一个参会人的音视频和共享质量数据 | 导出视频会议信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
+| `[导出会议室预定数据](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/export/resource_reservation_list)` `POST` /open-apis/vc/v1/exports/resource_reservation_list    &gt;导出会议室预定数据 | 导出视频会议信息 | `tenant_access_token` `user_access_token` | **✓** | **✓** |
 

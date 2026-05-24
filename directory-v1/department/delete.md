@@ -22,7 +22,7 @@ updateTime: "1749798775000"
 | 接口频率限制 | [10 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `directory:department.delete:write` 删除部门 `directory:department:write` 创建、更新、删除部门 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `directory:employee.base.external_id:read` 查看员工自定义 ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `directory:employee.base.external_id:read` 查看员工自定义 ID |
 
 ### 请求头
 

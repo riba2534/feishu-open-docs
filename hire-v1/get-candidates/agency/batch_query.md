@@ -18,7 +18,7 @@ updateTime: "1764573288000"
 | 接口频率限制 | [10 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `hire:agency:readonly` 获取招聘猎头信息 `hire:agency` 更新招聘猎头信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID `hire:agency.email:readonly` 查看猎头相关用户邮箱 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID `hire:agency.email:readonly` 查看猎头相关用户邮箱 |
 
 ### 请求头
 
@@ -57,10 +57,10 @@ updateTime: "1764573288000"
 
 | key 取值 | value_type 取值 | 描述 | 需填写字段 | 需填写字段的描述 | 筛选示例 |
 | --- | --- | --- | --- | --- | --- |
-| `cooperation_create_time` | 2：表示根据范围进行过滤 | 根据合作创建时间过滤 | range_list | 筛选项范围。支持以下字段： - from：起始值 - to：终止值 | ```json {   "filter_list": [     {       "key": "cooperation_create_time",       "value_type": 2,       "range_filter": {         "from": "1704038400000",         "to": "1706716800000"       }     }   ] } ``` |
-| `cooperation_status` | 1：表示值过滤 | 根据合作状态进行过滤 | value_list | 筛选项值的列表，string[] 类型，可选值如下： - 1：正式合作 - 2：试单 - 3：合作终止 - 4：邀请中（暂不支持） | ```json {   "filter_list": [     {       "key": "cooperation_status",       "value_type": 1,       "value_list": [         "1",         "2"       ]     }   ] } ``` |
-| `supplier_area` | 1：表示值过滤 | 根据猎头地区过滤 | value_list | 筛选项值的列表，string[] 类型，可选值如下： - 1：中国大陆 - 2：非中国大陆 | ```json {   "filter_list": [     {       "key": "supplier_area",       "value_type": 1,       "value_list": [         "1"       ]     }   ] } ``` |
-| `label_id_list` | 1：表示值过滤 | 根据猎头标签进行过滤 | value_list | 筛选项值的列表，string[] 类型，填充值为猎头标签 ID，暂不支持获取猎头标签接口，期待后续接口支持。 | ```json {   "filter_list": [     {       "key": "label_id_list",       "value_type": 1,       "value_list": [         "7319760942773485572"       ]     }   ] } ``` |
+| `cooperation_create_time` | 2：表示根据范围进行过滤 | 根据合作创建时间过滤 | range_list | 筛选项范围。支持以下字段： - from：起始值 - to：终止值 | ```json {   "filter_list": [     `{       "key": "cooperation_create_time",       "value_type": 2,       "range_filter": {         "from": "1704038400000",         "to": "1706716800000"       }`     }   ] } ``` |
+| `cooperation_status` | 1：表示值过滤 | 根据合作状态进行过滤 | value_list | 筛选项值的列表，string[] 类型，可选值如下： - 1：正式合作 - 2：试单 - 3：合作终止 - 4：邀请中（暂不支持） | ```json `{   "filter_list": [     {       "key": "cooperation_status",       "value_type": 1,       "value_list": [         "1",         "2"       ]     }`   ] } ``` |
+| `supplier_area` | 1：表示值过滤 | 根据猎头地区过滤 | value_list | 筛选项值的列表，string[] 类型，可选值如下： - 1：中国大陆 - 2：非中国大陆 | ```json `{   "filter_list": [     {       "key": "supplier_area",       "value_type": 1,       "value_list": [         "1"       ]     }`   ] } ``` |
+| `label_id_list` | 1：表示值过滤 | 根据猎头标签进行过滤 | value_list | 筛选项值的列表，string[] 类型，填充值为猎头标签 ID，暂不支持获取猎头标签接口，期待后续接口支持。 | ```json `{   "filter_list": [     {       "key": "label_id_list",       "value_type": 1,       "value_list": [         "7319760942773485572"       ]     }`   ] } ``` |
 
   
   

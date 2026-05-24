@@ -21,7 +21,7 @@ updateTime: "1764644266000"
 | 接口频率限制 | [20 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `hire:talent:readonly` 获取人才信息 `hire:talent` 更新人才信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -365,7 +365,7 @@ updateTime: "1764644266000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh_name` | `string` | 中文名 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en_name` | `string` | 英文名 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `interview_registration_list` | `talent_interview_registration_simple\[\]` | 面试登记表<br>> **Tip**: 推荐使用 registration_list 字段获取完整登记表列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `interview_registration_list` | `talent_interview_registration_simple\[\]` | 面试登记表<br>&gt; **Tip**: 推荐使用 registration_list 字段获取完整登记表列表 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `registration_time` | `int` | 创建时间 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `download_url` | `string` | 下载链接 |

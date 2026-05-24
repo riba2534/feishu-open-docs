@@ -129,7 +129,7 @@ struct{
 | &nbsp;&nbsp;└ `viewer_user_id` | `string` | 当 view_type 是 USER 时，需要填写指定的用户 ID。<br>**示例值**：19a294c2 |
 | &nbsp;&nbsp;└ `viewer_department_id` | `string` | 当 view_type 为DEPARTMENT，需要填写指定的部门 ID。<br>**示例值**："od-ac9d697abfa990b715dcc33d58a62a9d" |
 | `form` | `approval_form` | 审批定义的表单 |
-| &nbsp;&nbsp;└ `form_content` | `string` | 表单内容，JSON 数组格式，数组内由一个或多个表单控件组成。<br>**示例值**："[{"id":"user_name", "type": "input", "required":true, "name":"@i18n@widget1"}]" |
+| &nbsp;&nbsp;└ `form_content` | `string` | 表单内容，JSON 数组格式，数组内由一个或多个表单控件组成。<br>**示例值**："[`{"id":"user_name", "type": "input", "required":true, "name":"@i18n@widget1"}`]" |
 | `node_list` | `approval_node\[\]` | 审批定义节点，即审批流程。流程的开始和结束有两个固定节点，因此该参数传值时，需要将开始节点作为 list 第一个元素，结束节点作为 list 最后一个元素。 |
 | &nbsp;&nbsp;└ `id` | `string` | 节点 ID。开始节点的 ID 为 START，结束节点的 ID 为 END，开始和结束节点不需要指定 name、node_type 以及 approver 参数值。<br>**示例值**："START" |
 | &nbsp;&nbsp;└ `name` | `string` | 节点名称的国际化文案 Key，以 @i18n@ 开头，长度不得少于 9 个字符。<br>**示例值**："@i18n@node_name" |

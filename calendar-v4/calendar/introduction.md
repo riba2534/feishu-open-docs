@@ -15,7 +15,7 @@ updateTime: "1712717869000"
 
 | 概念 | 介绍 |
 | --- | --- |
-| 身份 | 身份分为用户身份和应用身份。用户或应用（需开启机器人能力）均可以创建或订阅一个或多个日历。 > **Tip**: 开放平台设计了访问凭证（access_token）机制，以确保 API 调用的安全性。详情可参见[获取访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)。你在实际调用 API 时，需要使用访问凭证来表明当前的身份。 |
+| 身份 | 身份分为用户身份和应用身份。用户或应用（需开启机器人能力）均可以创建或订阅一个或多个日历。 &gt; **Tip**: 开放平台设计了访问凭证（access_token）机制，以确保 API 调用的安全性。详情可参见[获取访问凭证](https://open.larkoffice.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)。你在实际调用 API 时，需要使用访问凭证来表明当前的身份。 |
 | 日历 | 飞书日历主要分为主日历、共享日历两类。此外也支持同步第三方日历（例如 [Exchange](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/exchange_binding/introduction)）。 - 主日历：用户或者应用（需开启机器人能力）默认拥有的日历，与用户或应用同名，且不可删除。 - 共享日历：由用户或应用（需开启机器人能力）创建的日历，在创建时可自定义名称、描述以及公开范围等属性。    日历支持调整公开范围，因此你可以将指定的日历作为个人私密日历使用，或者是公开日历与团队内其他成员共享使用。 |
 | 订阅 | 用户可以订阅公开的日历。订阅后，用户可以查看或管理该日历中的日程，实现团队协作与沟通。 |
 | 工作时间 | 用户在客户端日历设置中自定义的工作时间，用于标记工作时间段与非工作时间段。 |

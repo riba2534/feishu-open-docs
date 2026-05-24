@@ -27,11 +27,11 @@ updateTime: "1719483700000"
 
 | range 写法 | 描述 | 示例 | 图示 |
 | --- | --- | --- | --- |
-| <sheetId> | 填写实际的工作表 ID，表示将筛选应用于整表。 | 0bdf12 | / |
-| <sheetId>!<开始行>:<结束行> | 填写工作表 ID 和行数区间，表示将筛选应用于整行。 | 0bdf12!1:2 | ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/94218c55f4bdb9c5b9af4a595c449007_W5EaNJW9QA.png?height=323&lazyload=true&maxWidth=222&width=1327) |
-| <sheetId>!<开始列>:<结束列> | 填写工作表 ID 和列的区间，表示将筛选应用于整列。 | 0bdf12!A:B | ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/c6a46f088f63e2f4c81dc6bc41811b2c_ZkQTxGQ1m5.png?height=596&lazyload=true&maxWidth=222&width=534) |
-| <sheetId>!<开始单元格>:<结束单元格> | 填写工作表 ID 和单元格区间，表示将筛选应用于单元格选定的区域中。 | 0bdf12!A1:B5 | ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/76498891d78bff326b0bcffe43427fa9_fUFkCG77Vw.png?height=484&lazyload=true&maxWidth=222&width=722) |
-| <sheetId>!<开始单元格>:<结束列> | 填写工作表 ID 和起始单元格和结束列索引，表示将筛选应用于 ID 为 <sheetId> 的工作表中从开始单元格所在行到结束行的行范围、开始单元格所在列到结束列的列范围圈定的区域。 | 0bdf12!A2:B | ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/f727b1806cd1a5cbe6ceb74ecb6c2ed5_pyYMAKxMfB.png?height=564&lazyload=true&maxWidth=222&width=537) |
+| &lt;sheetId&gt; | 填写实际的工作表 ID，表示将筛选应用于整表。 | 0bdf12 | / |
+| &lt;sheetId&gt;!&lt;开始行&gt;:&lt;结束行&gt; | 填写工作表 ID 和行数区间，表示将筛选应用于整行。 | 0bdf12!1:2 | ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/94218c55f4bdb9c5b9af4a595c449007_W5EaNJW9QA.png?height=323&lazyload=true&maxWidth=222&width=1327) |
+| &lt;sheetId&gt;!&lt;开始列&gt;:&lt;结束列&gt; | 填写工作表 ID 和列的区间，表示将筛选应用于整列。 | 0bdf12!A:B | ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/c6a46f088f63e2f4c81dc6bc41811b2c_ZkQTxGQ1m5.png?height=596&lazyload=true&maxWidth=222&width=534) |
+| &lt;sheetId&gt;!&lt;开始单元格&gt;:&lt;结束单元格&gt; | 填写工作表 ID 和单元格区间，表示将筛选应用于单元格选定的区域中。 | 0bdf12!A1:B5 | ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/76498891d78bff326b0bcffe43427fa9_fUFkCG77Vw.png?height=484&lazyload=true&maxWidth=222&width=722) |
+| &lt;sheetId&gt;!&lt;开始单元格&gt;:&lt;结束列&gt; | 填写工作表 ID 和起始单元格和结束列索引，表示将筛选应用于 ID 为 &lt;sheetId&gt; 的工作表中从开始单元格所在行到结束行的行范围、开始单元格所在列到结束列的列范围圈定的区域。 | 0bdf12!A2:B | ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/f727b1806cd1a5cbe6ceb74ecb6c2ed5_pyYMAKxMfB.png?height=564&lazyload=true&maxWidth=222&width=537) |
 
 
 ### 筛选条件 condition

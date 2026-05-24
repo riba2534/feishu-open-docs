@@ -59,7 +59,7 @@ updateTime: "1657280149000"
 |code |int |是 |错误码，非0表示失败 |
 |msg | string |是| 返回码的描述|
 |data | map |是| 返回业务信息 |
-|&emsp;∟instance_code_list|list<string>|是|审批实例 Code|
+|&emsp;∟instance_code_list|`list<string>`|是|审批实例 Code|
 
 
 ### 响应体示例

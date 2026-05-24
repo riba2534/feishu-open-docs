@@ -371,7 +371,7 @@ updateTime: "1689824557000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `updated_at` | `string` | 任务最后一次更新的时间戳(ms) |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `status` | `string` | 任务的状态，支持"todo"和"done"两种状态 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `url` | `string` | 任务的分享链接 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `start` | `start` | 任务的开始时间。<br>如果同时设置任务的开始时间和截止时间，开始时间必须<=截止时间，并且开始/截止时间的is_all_day设置必须相同。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `start` | `start` | 任务的开始时间。<br>如果同时设置任务的开始时间和截止时间，开始时间必须&lt;=截止时间，并且开始/截止时间的is_all_day设置必须相同。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `timestamp` | `string` | 开始时间/日期的时间戳，距1970-01-01 00:00:00 UTC的毫秒数。如果开始时间是一个日期，需要把日期转换成时间戳，并设置 is_all_day=true。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_all_day` | `boolean` | 是否开始于一个日期。如果设为true，timestamp中只有日期的部分会被解析和存储。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `subtask_count` | `int` | 该任务的子任务的个数。 |

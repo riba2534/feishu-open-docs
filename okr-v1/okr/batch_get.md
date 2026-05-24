@@ -21,7 +21,7 @@ updateTime: "1704766578000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `okr:okr:readonly` 获取 OKR 信息 `okr:okr` 更新 OKR 信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -62,7 +62,7 @@ updateTime: "1704766578000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `score` | `int` | Objective 分数（0 - 100） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `weight` | `number(float)` | Objective的权重（0 - 100） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `progress_rate` | `okr_objective_progress_rate` | Objective进度 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `percent` | `int` | Objective 进度百分比 >= 0 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `percent` | `int` | Objective 进度百分比 &gt;= 0 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `status` | `string` | Objective 进度状态: - "-1" 暂无 - "0" 正常 - "1" 风险 - "2" 延期 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `kr_list` | `okr_objective_kr\[\]` | Objective KeyResult 列表 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | Key Result ID |
@@ -71,7 +71,7 @@ updateTime: "1704766578000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `weight` | `int` | KeyResult权重（0 - 100）（废弃） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `kr_weight` | `number(float)` | KeyResult的权重（0 - 100） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `progress_rate` | `okr_objective_progress_rate` | KR进度 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `percent` | `int` | Objective 进度百分比 >= 0 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `percent` | `int` | Objective 进度百分比 &gt;= 0 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `status` | `string` | Objective 进度状态: - "-1" 暂无 - "0" 正常 - "1" 风险 - "2" 延期 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `progress_record_list` | `progress_record_simplify\[\]` | 该KR的进度列表 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | OKR 进展记录ID |

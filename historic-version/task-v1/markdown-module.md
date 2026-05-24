@@ -15,7 +15,7 @@ updateTime: "1697014962000"
 
 | 名称 | 语法                         | 效果        | 说明         | 可用范围        |
 | --- | -------------------------   | ---------- | ----------- | --------- |
-|@指定人|<at id=open_id></at><br><at id=user_id></at> | @用户名 | 注意：<br>[自定义机器人](https://open.larkoffice.com/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)仅支持使用open_id@人；[应用机器人](https://open.larkoffice.com/document/ukTMukTMukTM/uATM04CMxQjLwEDN)则支持权限范围内的3种@人方式 | 任务标题、任务备注、任务评论 |
+|@指定人|&lt;at id=open_id&gt;&lt;/at&gt;<br>&lt;at id=user_id&gt;&lt;/at&gt; | @用户名 | 注意：<br>[自定义机器人](https://open.larkoffice.com/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)仅支持使用open_id@人；[应用机器人](https://open.larkoffice.com/document/ukTMukTMukTM/uATM04CMxQjLwEDN)则支持权限范围内的3种@人方式 | 任务标题、任务备注、任务评论 |
 |超链接|<a>https://open.example.com</a>|[https://open.example.com/](https://open.example.com/)|超链接必须包含schema才能生效，目前仅支持：https、http|任务标题、任务备注、任务评论|
 |文字链接|\[测试网站\](https://open.example.com/)|[测试网站](https://open.example.com/)|超链接必须包含schema才能生效，目前仅支持：https、http|任务标题、任务备注、任务评论|
 

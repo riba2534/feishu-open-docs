@@ -21,7 +21,7 @@ updateTime: "1773998692000"
 | 接口频率限制 | [20 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `mail:user_mailbox.mail_contact:write` 查看、创建、更新、删除邮箱联系人 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `mail:user_mailbox.mail_contact.mail_address:read` 读取邮箱联系人邮箱地址字段 `mail:user_mailbox.mail_contact.phone:read` 读取邮箱联系人手机号字段 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `mail:user_mailbox.mail_contact.mail_address:read` 读取邮箱联系人邮箱地址字段 `mail:user_mailbox.mail_contact.phone:read` 读取邮箱联系人手机号字段 |
 
 ### 请求头
 

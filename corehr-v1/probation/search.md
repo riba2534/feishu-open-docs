@@ -18,7 +18,7 @@ updateTime: "1750836113000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `corehr:probation:read` 获取试用期信息 `corehr:probation:write` 读写试用期信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:probation.assessment:read` 获取试用期考核信息 `corehr:probation.assessment:write` 读写试用期考核信息 `corehr:probation.custom_field:read` 获取试用期自定义字段信息 `corehr:probation.custom_field:write` 读写试用期自定义字段信息 `corehr:probation.notes:read` 读取试用期备注信息 `corehr:probation.notes:write` 读写试用期备注信息 `corehr:probation.self_review:read` 读取员工自评信息 `corehr:probation.self_review:write` 读写员工自评信息 `corehr:probation.probation_outcome:write` 写试用期结果字段 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:probation.probation_outcome:read` 获取试用期结果字段 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:probation.assessment:read` 获取试用期考核信息 `corehr:probation.assessment:write` 读写试用期考核信息 `corehr:probation.custom_field:read` 获取试用期自定义字段信息 `corehr:probation.custom_field:write` 读写试用期自定义字段信息 `corehr:probation.notes:read` 读取试用期备注信息 `corehr:probation.notes:write` 读写试用期备注信息 `corehr:probation.self_review:read` 读取员工自评信息 `corehr:probation.self_review:write` 读写员工自评信息 `corehr:probation.probation_outcome:write` 写试用期结果字段 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:probation.probation_outcome:read` 获取试用期结果字段 |
 
 ### 请求头
 

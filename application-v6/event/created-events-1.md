@@ -20,7 +20,7 @@ updateTime: "1726661618000"
 | 事件类型 | application.application.created_v6 |
 | 支持的应用类型 | custom |
 | 权限要求             订阅该事件所需的权限，开启其中任意一项权限即可订阅 | `admin:app.info:readonly` 获取应用信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 | 推送方式 | `Webhook` |
 
 

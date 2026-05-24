@@ -17,8 +17,8 @@ updateTime: "1753858950000"
 | HTTP Method | GET |
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
-| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `vc:room:readonly` 获取视频会议室信息 `vc:rooms.room.detailinfo:read` 获取视频会议明细信息 > **Tip**: 上方为历史权限，已无法继续申请。 > 新权限只支持使用user_access_token |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `vc:room:readonly` 获取视频会议室信息 `vc:rooms.room.detailinfo:read` 获取视频会议明细信息 &gt; **Tip**: 上方为历史权限，已无法继续申请。 &gt; 新权限只支持使用user_access_token |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 

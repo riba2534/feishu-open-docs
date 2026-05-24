@@ -44,7 +44,7 @@ updateTime: "1745206964000"
 | `user_id` | `string` | 审批人的用户 ID，ID 类型与查询参数 user_id_type 取值一致。<br>**示例值**："f7cb567e" |
 | `comment` | `string` | 审批意见<br>**示例值**："OK" |
 | `task_id` | `string` | 审批任务 ID，调用[获取单个审批实例详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/get)，从返回结果的 task_list 中获取所需的 id。<br>**示例值**："12345" |
-| `form` | `string` | 如果审批定义的流程设计中添加了条件分支，则需要传入条件分支所需的控件数据（JSON 数组），否则会影响后续的分支条件流转。<br>**说明**：传值时需要将 JSON 序列化为字符串。参数示例值未进行转义，正确的传值示例可参见下文 **数据示例**。<br>**示例值**："[{\"id\":\"111\", \"type\": \"input\", \"value\":\"test\"}]" |
+| `form` | `string` | 如果审批定义的流程设计中添加了条件分支，则需要传入条件分支所需的控件数据（JSON 数组），否则会影响后续的分支条件流转。<br>**说明**：传值时需要将 JSON 序列化为字符串。参数示例值未进行转义，正确的传值示例可参见下文 **数据示例**。<br>**示例值**："[`{\"id\":\"111\", \"type\": \"input\", \"value\":\"test\"}`]" |
 
 
 ## 数据示例

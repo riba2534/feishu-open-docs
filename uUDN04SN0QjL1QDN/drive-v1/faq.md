@@ -51,14 +51,14 @@ html
 
 | 列1 |
 | --- |
-| 要允许应用访问个人云空间中的文件夹，参考以下步骤： 1. 访问[飞书开放平台开发者后台](https://open.feishu.cn/app)，选择目标应用。 1. 在应用管理页面，点击**添加应用能力**，找到机器人卡片，点击 **+添加**。 1. 在飞书客户端，创建一个新的群组，将应用添加为群机器人。 1. 在 **云文档** > **云盘**中找到对应的文件夹，将文件夹分享给刚刚新建的群组。        	![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/14260564b64bd8f1bae4c45854350fa2_esP3BQQmDu.png?height=957&lazyload=true&maxWidth=728&width=1550) |
+| 要允许应用访问个人云空间中的文件夹，参考以下步骤： 1. 访问[飞书开放平台开发者后台](https://open.feishu.cn/app)，选择目标应用。 1. 在应用管理页面，点击**添加应用能力**，找到机器人卡片，点击 **+添加**。 1. 在飞书客户端，创建一个新的群组，将应用添加为群机器人。 1. 在 **云文档** &gt; **云盘**中找到对应的文件夹，将文件夹分享给刚刚新建的群组。        	![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/14260564b64bd8f1bae4c45854350fa2_esP3BQQmDu.png?height=957&lazyload=true&maxWidth=728&width=1550) |
 
   
 ## 3. 如何为应用身份（tenant_access_token）开通文件、素材的下载权限?
 
 | 列1 |
 | --- |
-| 要分享文件、素材的下载权限给应用，参考以下步骤： 1. 访问[开发者后台](https://open.feishu.cn/app)，选择目标应用。 1. 在应用管理页面，点击**添加应用能力**，找到机器人卡片，点击 **+添加**。 1. 根据分享的文件是否位于文件夹中，选择不同的开通权限方式：     -  如果文件或素材不在文件夹中：              	**文档所有者、知识库管理员 或 其他协作者** 将应用添加为文档协作者。                   	 ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/22c027f63c540592d3ca8f41d48bb107_CSas7OYJBR.png?height=1994&lazyload=true&maxWidth=583&width=3278)         - 如果文件或素材位于**文件夹中：**        1. 在飞书客户端，创建一个新的群组，将应用添加为群机器人。        2. 在 **云文档** > **云盘**中找到对应的文件夹，将文件夹分享给刚刚新建的群组。默认情况下，可阅读用户拥有当前文件的下载权限。              		![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/14260564b64bd8f1bae4c45854350fa2_esP3BQQmDu.png?height=957&lazyload=true&maxWidth=728&width=1550) 4. 如果应用已经是文档协作者，但仍无文件、素材的下载权限，请进一步查看素材所在的云文档或文件的**权限设置面板**中关于**谁可以创建副本、打印和下载**的设置，确认应用已在允许的权限范围内。 |
+| 要分享文件、素材的下载权限给应用，参考以下步骤： 1. 访问[开发者后台](https://open.feishu.cn/app)，选择目标应用。 1. 在应用管理页面，点击**添加应用能力**，找到机器人卡片，点击 **+添加**。 1. 根据分享的文件是否位于文件夹中，选择不同的开通权限方式：     -  如果文件或素材不在文件夹中：              	**文档所有者、知识库管理员 或 其他协作者** 将应用添加为文档协作者。                   	 ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/22c027f63c540592d3ca8f41d48bb107_CSas7OYJBR.png?height=1994&lazyload=true&maxWidth=583&width=3278)         - 如果文件或素材位于**文件夹中：**        1. 在飞书客户端，创建一个新的群组，将应用添加为群机器人。        2. 在 **云文档** &gt; **云盘**中找到对应的文件夹，将文件夹分享给刚刚新建的群组。默认情况下，可阅读用户拥有当前文件的下载权限。              		![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/14260564b64bd8f1bae4c45854350fa2_esP3BQQmDu.png?height=957&lazyload=true&maxWidth=728&width=1550) 4. 如果应用已经是文档协作者，但仍无文件、素材的下载权限，请进一步查看素材所在的云文档或文件的**权限设置面板**中关于**谁可以创建副本、打印和下载**的设置，确认应用已在允许的权限范围内。 |
 
   
       

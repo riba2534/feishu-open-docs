@@ -18,7 +18,7 @@ updateTime: "1745981687000"
 | 接口频率限制 | [10 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:compensation_plan:read` 获取基础薪酬的薪资方案信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:compensation_plan_detail.indicators:read` 获取薪资方案的关联薪资指标 `corehr:compensation_plan_detail.items:read` 获取薪资方案的关联薪资项 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:compensation_plan_detail.indicators:read` 获取薪资方案的关联薪资指标 `corehr:compensation_plan_detail.items:read` 获取薪资方案的关联薪资项 |
 
 ### 请求头
 

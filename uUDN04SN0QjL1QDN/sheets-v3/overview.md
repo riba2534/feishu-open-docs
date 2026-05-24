@@ -51,10 +51,10 @@ updateTime: "1750843216000"
 
 | range 写法 | 示例 | 描述 | 图示 |
 | --- | --- | --- | --- |
-| <sheetId>!<开始单元格>:<结束单元格> | 0bdf12!A1:B5 | ID 为 <0bdf12> 的工作表中，从 A1 到 B5 的区域。 | ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/76498891d78bff326b0bcffe43427fa9_fUFkCG77Vw.png?height=484&lazyload=true&maxWidth=222&width=722) |
-| <sheetId>!<开始列>:<结束列> | 0bdf12!A:B | ID 为 <0bdf12> 的工作表中，从 A 列到 B 列的区域。 | ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/c6a46f088f63e2f4c81dc6bc41811b2c_ZkQTxGQ1m5.png?height=596&lazyload=true&maxWidth=222&width=534) |
-| <sheetId>!<开始单元格>:<结束列> | 0bdf12!A2:B | ID 为 <0bdf12> 的工作表中，从 A2 所在行到结束行的行范围、A 列到 B 列的列范围圈定的区域。 | ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/f727b1806cd1a5cbe6ceb74ecb6c2ed5_pyYMAKxMfB.png?height=564&lazyload=true&maxWidth=222&width=537) |
-| <sheetId> | ID 为 <sheetId> 的工作表的所有区域。 | 0bdf12 | / |
+| &lt;sheetId&gt;!&lt;开始单元格&gt;:&lt;结束单元格&gt; | 0bdf12!A1:B5 | ID 为 &lt;0bdf12&gt; 的工作表中，从 A1 到 B5 的区域。 | ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/76498891d78bff326b0bcffe43427fa9_fUFkCG77Vw.png?height=484&lazyload=true&maxWidth=222&width=722) |
+| &lt;sheetId&gt;!&lt;开始列&gt;:&lt;结束列&gt; | 0bdf12!A:B | ID 为 &lt;0bdf12&gt; 的工作表中，从 A 列到 B 列的区域。 | ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/c6a46f088f63e2f4c81dc6bc41811b2c_ZkQTxGQ1m5.png?height=596&lazyload=true&maxWidth=222&width=534) |
+| &lt;sheetId&gt;!&lt;开始单元格&gt;:&lt;结束列&gt; | 0bdf12!A2:B | ID 为 &lt;0bdf12&gt; 的工作表中，从 A2 所在行到结束行的行范围、A 列到 B 列的列范围圈定的区域。 | ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/f727b1806cd1a5cbe6ceb74ecb6c2ed5_pyYMAKxMfB.png?height=564&lazyload=true&maxWidth=222&width=537) |
+| &lt;sheetId&gt; | ID 为 &lt;sheetId&gt; 的工作表的所有区域。 | 0bdf12 | / |
 
 ## 使用限制
 

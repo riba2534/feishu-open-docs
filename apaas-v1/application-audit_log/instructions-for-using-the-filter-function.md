@@ -80,25 +80,25 @@ updateTime: "1752136653000"
 
 | 支持筛选的字段（左值）     | 数据类型             | 描述        |筛选示例|
 | --------- | --------------- | -------   | --------- | ---------|
-|`operator` | `string` | 操作人 |[{left: "operator", operator: "=", right: ["1806739689315545"]}]|
-|`logType` | `enum` | 日志类型（10000：所有类型；10001：企业管理日志；10002：登录日志；10003：应用管理日志；10005：应用开发日志） |[{left: "operator", operator: "=", right: ["1806739689315545"]}]|
-|`eventName` | `enum` | 事件名称,支持筛选的事件请见【审计事件列表】 |[{left: "eventName", operator: "in", right: [19055, 19056]}]}|
-|`status` | `enum` | 操作状态（18001：成功；18002：失败）|[{left: "status", operator: "=", right: [18001]}]|
-|`outsider` | `bool` | 是否为外部用户（true：是；false：否） |[{left: "outsider", operator: "=", right: [true]}]|
-|`auditScope` | `enum` | 审计域（操作在哪里产生，15001：企业管理后台；15002：应用管理后台；15003：应用开发态；15004：应用运行时） |[{left: "auditScope", operator: "notIn", right: [15003, 15004]}]|
-|`namespace` | `string` | 应用命名空间 |[{left: "namespace", operator: "=", right: ["package_810ea6__c"]}]|
-|`appName` | `string` | 应用名称 |[{left: "appName", operator: "=", right: ["这是一个应用名称"]}]|
-|`envType` | `enum` | 环境类型（16001：开发环境；16002：测试环境；16003：生产环境） |[{left: "envType", operator: "in", right: [16001, 16003]}]|
-|`keywordFieldAppVersion` | `string` | 应用版本 |[{left: "namespace", operator: "=", right: ["package_810ea6__c"]},{left: "keywordFieldAppVersion", operator: "contain", right: ["0.5.0"]}]|
-|`opSource` | `enum` | 操作来源（20001：用户界面操作；20002：流程执行；20003：云函数；20004：OpenAPI；20005：未知来源） |[{left: "opSource", operator: "in", right: [20001, 20002, 20003]}]|
-|`dataObject` | `string` | 数据对象 |[{left: "dataObject", operator: "=", right: ["test"]}]|
-|`clientIP` | `string` | 请求 IP |[{left: "clientIP", operator: "contain", right: [".118.2"]}]|
-|`ipLoc` | `string` | IP 地理位置 |[{left: "ipLoc", operator: "contain", right: ["CN-Hebei"]}]|
-|`ipProvider` | `string` | IP 供应商 |[{left: "ipProvider", operator: "=", right: ["feishu"]}]|
-|`deviceID` | `string` | 设备 ID |[{left: "deviceID", operator: "notEmpty"}]|
-|`webDeviceID` | `string` | WEB 设备 ID |[{left: "webDeviceID", operator: "=", right: ["7386524913106124803"]}]|
-|`terminalType` | `enum` | 端类型（13001：未知；13002：PC；13003：Web；13004：Android；13005：iOS；13006：MiniProgram） |[{left: "terminalType", operator: "=", right: [13002]}]|
-|`osType` | `enum` | 操作系统类型（14001：未知；14002：Windows；14003：Linux；14004:Mac；14005：Android；14006：iOS） |[{left: "osType", operator: "=", right: [14006]}]|
-|`osVersion` | `string` | 操作系统版本 |[{left: "osType", operator: "=", right: [14006]}]|
+|`operator` | `string` | 操作人 |[`{left: "operator", operator: "=", right: ["1806739689315545"]}`]|
+|`logType` | `enum` | 日志类型（10000：所有类型；10001：企业管理日志；10002：登录日志；10003：应用管理日志；10005：应用开发日志） |[`{left: "operator", operator: "=", right: ["1806739689315545"]}`]|
+|`eventName` | `enum` | 事件名称,支持筛选的事件请见【审计事件列表】 |[`{left: "eventName", operator: "in", right: [19055, 19056]}`]}|
+|`status` | `enum` | 操作状态（18001：成功；18002：失败）|[`{left: "status", operator: "=", right: [18001]}`]|
+|`outsider` | `bool` | 是否为外部用户（true：是；false：否） |[`{left: "outsider", operator: "=", right: [true]}`]|
+|`auditScope` | `enum` | 审计域（操作在哪里产生，15001：企业管理后台；15002：应用管理后台；15003：应用开发态；15004：应用运行时） |[`{left: "auditScope", operator: "notIn", right: [15003, 15004]}`]|
+|`namespace` | `string` | 应用命名空间 |[`{left: "namespace", operator: "=", right: ["package_810ea6__c"]}`]|
+|`appName` | `string` | 应用名称 |[`{left: "appName", operator: "=", right: ["这是一个应用名称"]}`]|
+|`envType` | `enum` | 环境类型（16001：开发环境；16002：测试环境；16003：生产环境） |[`{left: "envType", operator: "in", right: [16001, 16003]}`]|
+|`keywordFieldAppVersion` | `string` | 应用版本 |[`{left: "namespace", operator: "=", right: ["package_810ea6__c"]},{left: "keywordFieldAppVersion", operator: "contain", right: ["0.5.0"]}`]|
+|`opSource` | `enum` | 操作来源（20001：用户界面操作；20002：流程执行；20003：云函数；20004：OpenAPI；20005：未知来源） |[`{left: "opSource", operator: "in", right: [20001, 20002, 20003]}`]|
+|`dataObject` | `string` | 数据对象 |[`{left: "dataObject", operator: "=", right: ["test"]}`]|
+|`clientIP` | `string` | 请求 IP |[`{left: "clientIP", operator: "contain", right: [".118.2"]}`]|
+|`ipLoc` | `string` | IP 地理位置 |[`{left: "ipLoc", operator: "contain", right: ["CN-Hebei"]}`]|
+|`ipProvider` | `string` | IP 供应商 |[`{left: "ipProvider", operator: "=", right: ["feishu"]}`]|
+|`deviceID` | `string` | 设备 ID |[`{left: "deviceID", operator: "notEmpty"}`]|
+|`webDeviceID` | `string` | WEB 设备 ID |[`{left: "webDeviceID", operator: "=", right: ["7386524913106124803"]}`]|
+|`terminalType` | `enum` | 端类型（13001：未知；13002：PC；13003：Web；13004：Android；13005：iOS；13006：MiniProgram） |[`{left: "terminalType", operator: "=", right: [13002]}`]|
+|`osType` | `enum` | 操作系统类型（14001：未知；14002：Windows；14003：Linux；14004:Mac；14005：Android；14006：iOS） |[`{left: "osType", operator: "=", right: [14006]}`]|
+|`osVersion` | `string` | 操作系统版本 |[`{left: "osType", operator: "=", right: [14006]}`]|
 
 

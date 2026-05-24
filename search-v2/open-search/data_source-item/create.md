@@ -40,7 +40,7 @@ updateTime: "1680147707000"
 | --- | --- | --- | --- |
 | `id` | `string` | 是 | item 在 datasource 中的唯一标识，只允许英文字母、数字和下划线<br>**示例值**："my_item_01010111"<br>**数据校验规则**：<br>- 最大长度：`128` 字符 |
 | `acl` | `acl\[\]` | 是 | item 的访问权限控制。 acl 字段为空数组，则默认数据不可见。如果数据是全员可见，需要设置 access="allow"; type="user"; value="everyone" |
-| &nbsp;&nbsp;└ `access` | `string` | 否 | 权限类型，优先级：Deny > Allow。<br>**示例值**："allow"<br>**可选值有**：<br>- `allow`: 允许访问 - `deny`: 禁止访问 |
+| &nbsp;&nbsp;└ `access` | `string` | 否 | 权限类型，优先级：Deny &gt; Allow。<br>**示例值**："allow"<br>**可选值有**：<br>- `allow`: 允许访问 - `deny`: 禁止访问 |
 | &nbsp;&nbsp;└ `value` | `string` | 否 | 设置的权限值，例如 userID ，依赖 type 描述。<br>**注**：在 type 为 user 且 access 为 allow 时，可填 "everyone" 来表示该数据项对全员可见；<br>**示例值**："d35e3c23" |
 | &nbsp;&nbsp;└ `type` | `string` | 否 | 权限值类型<br>**示例值**："user"<br>**可选值有**：<br>- `user`: 访问权限控制中指定“用户”可以访问或拒绝访问该条数据 - `group`: (已下线)访问权限控制中指定“用户组”可以访问或拒绝访问该条数据 - `open_id`: 用户的open_id |
 | `metadata` | `item_metadata` | 是 | item 的元信息 |
@@ -49,7 +49,7 @@ updateTime: "1680147707000"
 | &nbsp;&nbsp;└ `create_time` | `int` | 否 | 数据项的创建时间。Unix 时间，单位为秒<br>**示例值**：1618831236 |
 | &nbsp;&nbsp;└ `update_time` | `int` | 否 | 数据项的更新时间。Unix 时间，单位为秒<br>**示例值**：1618831236 |
 | &nbsp;&nbsp;└ `source_url_mobile` | `string` | 否 | 移动端搜索命中的跳转地址。如果您PC端和移动端有不同的跳转地址，可以在这里写入移动端专用的url，我们会在搜索时为您选择合适的地址<br>**示例值**："https://www.feishu.cn" |
-| `structured_data` | `string` | 是 | 结构化数据（以 json 字符串传递），这些字段是搜索结果的展示字段(特殊字段无须在此另外指定);具体格式可参参考 [接入指南](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/search-v2/common-template-intergration-handbook) **请求创建数据项**部分。这里的示例遵循了”创建数据范式“部分中的数据范式示例，请按自己定义的数据范式填写数据<br>**示例值**："{"description":"问题出现的环境和复现方法描述……", "priority":"HIGH"}" |
+| `structured_data` | `string` | 是 | 结构化数据（以 json 字符串传递），这些字段是搜索结果的展示字段(特殊字段无须在此另外指定);具体格式可参参考 [接入指南](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/search-v2/common-template-intergration-handbook) **请求创建数据项**部分。这里的示例遵循了”创建数据范式“部分中的数据范式示例，请按自己定义的数据范式填写数据<br>**示例值**："`{"description":"问题出现的环境和复现方法描述……", "priority":"HIGH"}`" |
 | `content` | `item_content` | 否 | 非结构化数据，如文档文本，飞书搜索会用来做召回 |
 | &nbsp;&nbsp;└ `format` | `string` | 否 | 内容的格式<br>**示例值**："html"<br>**可选值有**：<br>- `html`: html格式 - `plaintext`: 纯文本格式 |
 | &nbsp;&nbsp;└ `content_data` | `string` | 否 | 全文数据<br>**示例值**："这是一个很长的文本" |

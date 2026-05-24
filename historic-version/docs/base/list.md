@@ -21,7 +21,7 @@ updateTime: "1726655467000"
 | 接口频率限制 | [20 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `bitable:app` 查看、评论、编辑和管理多维表格 `bitable:app:readonly` 查看、评论和导出多维表格 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.base:readonly` 获取用户基本信息 `contact:user.employee_id:readonly` 获取用户 user ID `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 `contact:contact:readonly_as_app` 以应用身份读取通讯录 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.base:readonly` 获取用户基本信息 `contact:user.employee_id:readonly` 获取用户 user ID `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 `contact:contact:readonly_as_app` 以应用身份读取通讯录 |
 
 ### 请求头
 
@@ -43,7 +43,7 @@ updateTime: "1726655467000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `view_id` | `string` | 否 | 视图的唯一标识符，获取指定视图下的记录[view_id 参数说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/bitable/notification#8121eebe)<br>注意： 当 filter 参数 或 sort 参数不为空时，请求视为对数据表中的全部数据做条件过滤，指定的view_id 会被忽略。<br>**示例值**：vewqhz51lk |
-| `filter` | `string` | 否 | 筛选参数，用于指定本次查询的筛选条件<br>注意：<br>1.不支持对“人员”以及“关联字段”的属性进行过滤筛选，如人员的 OpenID。<br>2.指定筛选条件时，参数长度不超过2000个字符。<br>详细请参考[筛选条件支持的公式](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/filter)<br>**示例值**：AND(CurrentValue.[身高]>180, CurrentValue.[体重]>150) |
+| `filter` | `string` | 否 | 筛选参数，用于指定本次查询的筛选条件<br>注意：<br>1.不支持对“人员”以及“关联字段”的属性进行过滤筛选，如人员的 OpenID。<br>2.指定筛选条件时，参数长度不超过2000个字符。<br>详细请参考[筛选条件支持的公式](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/filter)<br>**示例值**：AND(CurrentValue.[身高]&gt;180, CurrentValue.[体重]&gt;150) |
 | `sort` | `string` | 否 | 排序参数，用于指定本次查询返回结果的顺序<br>注意：<br>1.不支持对带“公式”和“关联字段”的表的使用。<br>2.指定排序条件时，参数长度不超过1000字符。<br>3.当存在多个排序条件时，数据将根据条件顺序逐层排序<br>**示例值**：["字段1 DESC","字段2 ASC"] |
 | `field_names` | `string` | 否 | 字段名称，用于指定本次查询返回记录中包含的字段<br>**示例值**：["字段1","字段2"] |
 | `text_field_as_array` | `boolean` | 否 | 控制多行文本字段数据的返回格式，true 表示以数组形式返回。<br>注意：<br>1.多行文本中如果有超链接部分，则会返回链接的 URL。<br>2.目前可以返回多行文本中 URL 类型为多维表格链接、飞书 doc、飞书 sheet的URL类型以及@人员的数据结构。<br>**示例值**：true |

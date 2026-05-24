@@ -37,7 +37,7 @@ updateTime: "1741160307000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | range | string | 是 | 指定写入图片的单元格。格式为``。其中： - `sheetId` 为工作表 ID，通过[获取工作表](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet/query) 获取 - `<开始单元格>:<结束单元格>` 用于指定单元格，开始单元格与结束单元格需保持一致，如：`A1:A1`。其中，数字表示行索引，字母表示列索引。如 `A1:A1` 表示该工作表第 1 行 A 列的单元格。了解更多，参考[电子表格概述](https://open.larkoffice.com/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/overview) |
-| image | array<byte> | 是 | 需要写入的图片的二进制流，支持 "PNG"、"JPEG"、"JPG"、"GIF"、"BMP"、"JFIF"、"EXIF"、 "TIFF"、"BPG"、"HEIC" 等图片格式。 |
+| image | `array<byte>` | 是 | 需要写入的图片的二进制流，支持 "PNG"、"JPEG"、"JPG"、"GIF"、"BMP"、"JFIF"、"EXIF"、 "TIFF"、"BPG"、"HEIC" 等图片格式。 |
 | name | string | 是 | 写入的图片名称。<br>**注意**：该参数需加后缀名，如 `test.png`。支持的后缀名有："PNG"、"JPEG"、"JPG"、"GIF"、"BMP"、"JFIF"、"EXIF"、 "TIFF"、"BPG"、"HEIC"。不区分大小写。 |
 
 ### 请求体示例

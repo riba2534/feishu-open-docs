@@ -16,7 +16,7 @@ updateTime: "1728531078000"
 | 事件类型 | moments.comment.created_v1 |
 | 支持的应用类型 | custom,isv |
 | 权限要求             订阅该事件所需的权限，开启其中任意一项权限即可订阅 开启任一权限即可 | `moments:moments:readonly` 查询公司圈内容、板块 `moments:moments:access_all` 允许管理租户公司圈全部数据 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 | 推送方式 | `Webhook` |
 
 

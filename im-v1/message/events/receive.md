@@ -40,7 +40,7 @@ updateTime: "1776674852000"
 | 事件类型 | im.message.receive_v1 |
 | 支持的应用类型 | custom,isv |
 | 权限要求             订阅该事件所需的权限，开启其中任意一项权限即可订阅 开启任一权限即可 | `im:message.p2p_msg:readonly` 读取用户发给机器人的单聊消息 `im:message.group_at_msg:readonly` 获取群组中用户@机器人消息 `im:message.group_msg` 获取群组中所有消息（敏感权限） `im:message.group_at_msg.include_bot:readonly` 获取群组中其他机器人和用户@当前机器人的消息 `im:message.group_at_msg` 获取用户在群组中@机器人的消息（历史版本） `im:message.group_msg:readonly` 获取群聊中所有的用户聊天消息 `im:message.p2p_msg` 获取用户发给机器人的单聊消息（历史版本） |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 | 推送方式 | `Webhook` |
 
 

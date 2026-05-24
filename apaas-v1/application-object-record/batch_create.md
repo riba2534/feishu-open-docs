@@ -40,7 +40,7 @@ updateTime: "1727087497000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `records` | `string` | 是 | 记录详情列表，格式为 List>，操作记录数上限为 500 条<br>**示例值**："[{\"book_name\":\"name21\",\"book_count\":2}]" |
+| `records` | `string` | 是 | 记录详情列表，格式为 List&gt;，操作记录数上限为 500 条<br>**示例值**："[`{\"book_name\":\"name21\",\"book_count\":2}`]" |
 
 
 ### 请求体示例

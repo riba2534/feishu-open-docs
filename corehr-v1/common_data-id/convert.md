@@ -18,7 +18,7 @@ updateTime: "1714300114000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:common_data.id.convert:read` 获取 ID 转换信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -32,7 +32,7 @@ updateTime: "1714300114000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `id_transform_type` | `int` | 是 | ID 转换类型<br>**示例值**：1<br>**可选值有**：<br>- `1`: 飞书人事 -> 飞书通讯录 - `2`: 飞书通讯录 -> 飞书人事 - `3`: people admin -> 飞书通讯录 - `4`: people admin -> 飞书人事 |
+| `id_transform_type` | `int` | 是 | ID 转换类型<br>**示例值**：1<br>**可选值有**：<br>- `1`: 飞书人事 -&gt; 飞书通讯录 - `2`: 飞书通讯录 -&gt; 飞书人事 - `3`: people admin -&gt; 飞书通讯录 - `4`: people admin -&gt; 飞书人事 |
 | `id_type` | `string` | 是 | 要转换的ID类型<br>**示例值**：user_id<br>**可选值有**：<br>- `user_id`: 员工ID，当选择 user_id 且 id_transform_type 为 1、2、4 时，feishu_user_id_type 必填 - `department_id`: 部门ID，当选择 department_id 且 id_transform_type 为 1、2、4 时，feishu_department_id_type 必填 - `job_level_id`: 职级ID - `job_family_id`: 序列ID - `employee_type_id`: 人员类型ID，people admin 的人员类型ID 即为飞书通讯录人员类型的  enum_value，因此id_transform_type 为 3 时无须转换 |
 | `feishu_user_id_type` | `string` | 否 | 用户 ID 类型<br>**示例值**：open_id<br>**可选值有**：<br>- `open_id`: 标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid) - `union_id`: 标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id) - `user_id`: 标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[了解更多：如何获取 User ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)<br>**默认值**：`open_id`<br>**当值为 `user_id`，字段权限要求**： `contact:user.employee_id:readonly` 获取用户 user ID |
 | `feishu_department_id_type` | `string` | 否 | 此次调用中使用的部门 ID 类型<br>**示例值**：open_department_id<br>**可选值有**：<br>- `open_department_id`: 以 open_department_id 来标识部门 - `department_id`: 以 department_id 来标识部门<br>**默认值**：`open_department_id` |

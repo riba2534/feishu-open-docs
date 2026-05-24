@@ -82,7 +82,7 @@ updateTime: "1775126197000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh_cn` | `string` | 中文 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en_us` | `string` | 英文 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `int` | 自定义字段类型。自定义字段详细见[【获取自定义字段列表】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/query) |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(如"2334.00", "文本"，"{\"zh-CN\":\"部门3\"}") - 自定义字段详细见[【获取自定义字段列表】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/query) |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(如"2334.00", "文本"，"`{\"zh-CN\":\"部门3\"}`") - 自定义字段详细见[【获取自定义字段列表】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/query) |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `job_grade` | `string\[\]` | 职等 ID 列表 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `pathway_ids` | `string\[\]` | 通道ID，详情可以参考[【获取通道信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/batch_get) |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `view_order` | `int` | 排序 - 数值越小，排序越靠前 - 取值范围： 1  ～  999999 |

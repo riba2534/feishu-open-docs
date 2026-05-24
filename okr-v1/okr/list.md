@@ -21,7 +21,7 @@ updateTime: "1714017377000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `okr:okr:readonly` 获取 OKR 信息 `okr:okr` 更新 OKR 信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -42,7 +42,7 @@ updateTime: "1714017377000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `user_id_type` | `string` | 否 | 用户 ID 类型<br>**示例值**：open_id<br>**可选值有**：<br>- `open_id`: 标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid) - `union_id`: 标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id) - `user_id`: 标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[了解更多：如何获取 User ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id) - `people_admin_id`: 以people_admin_id来识别用户<br>**默认值**：`open_id`<br>**当值为 `user_id`，字段权限要求**： `contact:user.employee_id:readonly` 获取用户 user ID |
-| `offset` | `string` | 是 | 请求列表的偏移（对应响应体的 okr_list 字段），offset>=0<br>**示例值**：0 |
+| `offset` | `string` | 是 | 请求列表的偏移（对应响应体的 okr_list 字段），offset&gt;=0<br>**示例值**：0 |
 | `limit` | `string` | 是 | 列表长度，0-10<br>**示例值**：5 |
 | `lang` | `string` | 否 | 请求OKR的语言版本（比如@的人名），lang=en_us/zh_cn<br>**示例值**：zh_cn<br>**默认值**：`zh_cn` |
 | `period_ids` | `string\[\]` | 否 | period_id列表，最多10个<br>**示例值**：6990181559036610092<br>**数据校验规则**：<br>- 最大长度：`10` |
@@ -72,7 +72,7 @@ updateTime: "1714017377000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `score` | `int` | Objective 分数（0 - 100） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `weight` | `number(float)` | Objective的权重（0 - 100） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `progress_rate` | `okr_objective_progress_rate` | Objective进度 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `percent` | `int` | Objective 进度百分比 >= 0 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `percent` | `int` | Objective 进度百分比 &gt;= 0 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `status` | `string` | Objective 进度状态: - "-1" 暂无 - "0" 正常 - "1" 风险 - "2" 延期 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `kr_list` | `okr_objective_kr\[\]` | Objective KeyResult 列表 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | Key Result ID |
@@ -81,7 +81,7 @@ updateTime: "1714017377000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `weight` | `int` | KeyResult权重（0 - 100）（废弃） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `kr_weight` | `number(float)` | KeyResult的权重（0 - 100） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `progress_rate` | `okr_objective_progress_rate` | KR进度 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `percent` | `int` | Objective 进度百分比 >= 0 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `percent` | `int` | Objective 进度百分比 &gt;= 0 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `status` | `string` | Objective 进度状态: - "-1" 暂无 - "0" 正常 - "1" 风险 - "2" 延期 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `progress_record_list` | `progress_record_simplify\[\]` | 该KR的进度列表 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | OKR 进展记录ID |

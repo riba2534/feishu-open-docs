@@ -22,7 +22,7 @@ updateTime: "1729677506000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `drive:drive:readonly` 查看、评论和下载云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 `sheets:spreadsheet:readonly` 查看、评论和导出电子表格 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -85,7 +85,7 @@ updateTime: "1729677506000"
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
 | 400 | 1310251 | Invalid Parameter | 参考响应体中的错误提示 |
-| 400 | 1310213 | Permission Fail | 当前调用身份没有电子表格的阅读（获取相关接口）或编辑（创建、更新等相关接口）权限。请参考以下方式解决： - 如果你使用的是 `tenant_access_token`，意味着当前应用没有电子表格的阅读或编辑权限。你需通过电子表格网页页面右上方 **「...」** -> **「...更多」** ->**「添加文档应用」** 入口为应用添加权限。     **说明**：在 **添加文档应用** 前，你需确保目标应用至少开通了一个云文档 [API 权限](https://open.larkoffice.com/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/scope-list)。否则你将无法在文档应用窗口搜索到目标应用。    ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/22c027f63c540592d3ca8f41d48bb107_CSas7OYJBR.png?height=1994&maxWidth=550&width=3278) - 如果你使用的是 `user_access_token`，意味着当前用户没有电子表格的阅读或编辑权限。你需通过电子表格网页页面右上方 **分享** 入口为当前用户添加权限。   ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/3e052d3bac56f9441296ae22e2969d63_a2DEYrJup8.png?height=278&maxWidth=550&width=1383) 了解具体操作步骤或其它添加权限方式，参考[云文档常见问题 3](https://open.larkoffice.com/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#16c6475a)。 |
+| 400 | 1310213 | Permission Fail | 当前调用身份没有电子表格的阅读（获取相关接口）或编辑（创建、更新等相关接口）权限。请参考以下方式解决： - 如果你使用的是 `tenant_access_token`，意味着当前应用没有电子表格的阅读或编辑权限。你需通过电子表格网页页面右上方 **「...」** -&gt; **「...更多」** -&gt;**「添加文档应用」** 入口为应用添加权限。     **说明**：在 **添加文档应用** 前，你需确保目标应用至少开通了一个云文档 [API 权限](https://open.larkoffice.com/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/scope-list)。否则你将无法在文档应用窗口搜索到目标应用。    ![](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/22c027f63c540592d3ca8f41d48bb107_CSas7OYJBR.png?height=1994&maxWidth=550&width=3278) - 如果你使用的是 `user_access_token`，意味着当前用户没有电子表格的阅读或编辑权限。你需通过电子表格网页页面右上方 **分享** 入口为当前用户添加权限。   ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/3e052d3bac56f9441296ae22e2969d63_a2DEYrJup8.png?height=278&maxWidth=550&width=1383) 了解具体操作步骤或其它添加权限方式，参考[云文档常见问题 3](https://open.larkoffice.com/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#16c6475a)。 |
 | 400 | 1310249 | Spreadsheet Deleted | 当前电子表格已删除。请恢复表格后重试 |
 | 500 | 1315210 | Server Error | 服务内部错误，[详询客服](https://applink.feishu.cn/client/helpdesk/open?id=6626260912531570952) |
 | 500 | 1315203 | Server Error | 服务内部错误，[详询客服](https://applink.feishu.cn/client/helpdesk/open?id=6626260912531570952) |

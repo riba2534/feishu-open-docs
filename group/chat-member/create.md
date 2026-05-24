@@ -34,7 +34,7 @@ updateTime: "1741868620000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `im:chat` 获取与更新群组信息 `im:chat.members:write_only` 添加、移除群成员 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -125,10 +125,10 @@ updateTime: "1741868620000"
 | 400 | 232010 | Operator and chat can NOT be in different tenants. | 调用接口的操作者和被操作的群组不在同一租户下，无法操作。需确保当前的操作者和被操作的群组在同一租户下。 |
 | 400 | 232011 | Operator can NOT be out of the chat. | 调用接口的操作者不在群组内，无法操作。你需要将当前调用 API 的应用或用户[加入待操作的群组](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-members/create)后重试。 |
 | 400 | 232013 | You have reached the limit of maximum number of members a chat can have. | 加入群组时，群成员数量已达到上限。对于已认证企业的飞书的群人数默认上限：普通群 5000 人，会议群 3000 人，话题群 5000 人。 |
-| 400 | 232017 | No Permission: If the operator is NOT owner or creator with the scope, the operator can NOT complete the request. | 当前的操作者在群中不具备群主、群管理员、群创建者身份，无法完成本操作。解决方案： - 方案一：调用[指定群管理员](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-managers/add_managers)接口，将当前操作者置为群管理员，然后重试。 - 方案二：在 **飞书客户端 > 群组 > 设置 > 群管理** 中，将 **谁可以添加群成员、分享群** 设置为 **所有群成员**，然后重试。 |
+| 400 | 232017 | No Permission: If the operator is NOT owner or creator with the scope, the operator can NOT complete the request. | 当前的操作者在群中不具备群主、群管理员、群创建者身份，无法完成本操作。解决方案： - 方案一：调用[指定群管理员](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-managers/add_managers)接口，将当前操作者置为群管理员，然后重试。 - 方案二：在 **飞书客户端 &gt; 群组 &gt; 设置 &gt; 群管理** 中，将 **谁可以添加群成员、分享群** 设置为 **所有群成员**，然后重试。 |
 | 400 | 232019 | The request has been rate limited. | 触发群限流，请控制请求的速度，详情参见[频控策略](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)。 **说明**：调用[将用户或机器人拉入群聊](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-members/create)和[将用户或机器人移出群聊](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-members/delete)接口操作同一个群组时，如果同时多次调用接口，可能会出现当前报错，建议你串行调用，即等待当前调用完成后再进行下一次调用。 |
-| 400 | 232024 | Users do not have the visibility of the app, or the operator does not have collaboration permissions with the target users. | 机器人对用户没有可见性，或操作者与用户间没有协作权限。 - 如果是机器人对用户没有可见性，需要在[开发者后台](https://open.feishu.cn/app) > **应用详情页** > **应用发布** > **版本管理与发布** 编辑应用对用户的可见性并发布应用。具体操作参考[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。 - 如果是操作者与用户之间没有协作权限，请检查是否与目标用户有协作权限，如屏蔽、未添加为联系人等。 |
-| 400 | 232025 | Bot ability is not activated. | 应用未启用机器人能力。你需要登录[开发者后台](https://open.feishu.cn/app)，在应用详情页的 **应用能力** > **添加应用能力** 页面内，添加 **机器人** 能力，并发布应用使配置生效。具体操作参见[机器人能力](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
+| 400 | 232024 | Users do not have the visibility of the app, or the operator does not have collaboration permissions with the target users. | 机器人对用户没有可见性，或操作者与用户间没有协作权限。 - 如果是机器人对用户没有可见性，需要在[开发者后台](https://open.feishu.cn/app) &gt; **应用详情页** &gt; **应用发布** &gt; **版本管理与发布** 编辑应用对用户的可见性并发布应用。具体操作参考[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。 - 如果是操作者与用户之间没有协作权限，请检查是否与目标用户有协作权限，如屏蔽、未添加为联系人等。 |
+| 400 | 232025 | Bot ability is not activated. | 应用未启用机器人能力。你需要登录[开发者后台](https://open.feishu.cn/app)，在应用详情页的 **应用能力** &gt; **添加应用能力** 页面内，添加 **机器人** 能力，并发布应用使配置生效。具体操作参见[机器人能力](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
 | 400 | 232027 | There are no valid members in the ID list specified in your request. | 成员 ID 列表为空或不存在有效的成员。 |
 | 400 | 232028 | External members can Not be added to an internal group chat. | 外部租户成员不能被加入内部群。 |
 | 400 | 232033 | The operator or invited bots does NOT have the authority to manage external chats without the scope. | 没有权限操作外部群。 |

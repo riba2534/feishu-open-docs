@@ -29,7 +29,7 @@ updateTime: "1775548347000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `contact:contact` 更新通讯录 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.base:readonly` 获取用户基本信息 `contact:user.department:readonly` 获取用户组织架构信息 `contact:user.dotted_line_leader_info.read` 查看成员的虚线上级 ID `contact:user.employee:readonly` 获取用户受雇信息 `contact:user.employee_number:read` 查看成员工号 `contact:user.gender:readonly` 获取用户性别 `contact:user.email:readonly` 获取用户邮箱信息 `contact:user.job_level:readonly` 查询用户职级 `contact:user.employee_id:readonly` 获取用户 user ID `contact:user.phone:readonly` 获取用户手机号 `contact:user.user_geo` 查看成员数据驻留地 `contact:user.job_family:readonly` 查询用户所属的工作序列 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 `contact:contact:readonly_as_app` 以应用身份读取通讯录 |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.base:readonly` 获取用户基本信息 `contact:user.department:readonly` 获取用户组织架构信息 `contact:user.dotted_line_leader_info.read` 查看成员的虚线上级 ID `contact:user.employee:readonly` 获取用户受雇信息 `contact:user.employee_number:read` 查看成员工号 `contact:user.gender:readonly` 获取用户性别 `contact:user.email:readonly` 获取用户邮箱信息 `contact:user.job_level:readonly` 查询用户职级 `contact:user.employee_id:readonly` 获取用户 user ID `contact:user.phone:readonly` 获取用户手机号 `contact:user.user_geo` 查看成员数据驻留地 `contact:user.job_family:readonly` 查询用户所属的工作序列 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 `contact:contact:readonly_as_app` 以应用身份读取通讯录 |
 
 ### 请求头
 
@@ -378,7 +378,7 @@ public class Main {
 | --- | --- | --- | --- |
 | 400 | 40001 | param error | 参数错误，请对照接口文档修改输入参数后重试。 |
 | 400 | 40003 | internal error | 内部错误。您可以获取请求的 X-Request-Id，并联系[技术支持](https://applink.feishu.cn/TLJpeNdW)协助排查。 |
-| 403 | 40004 | no dept authority error | 应用没有部门权限，检查该部门是否在应用的通讯录权限范围内。你可以登录[开发者后台](https://open.feishu.cn/app) ，在应用详情页的 **开发配置 > 权限管理 > 数据权限** 功能页查看 **通讯录权限范围** 内是否有相应部门，如果没有则需要在 **通讯录权限范围** 内添加上部门，并发布应用使配置生效。具体操作参考[配置应用数据权限](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/configure-app-data-permissions)。 **注意**：如果通讯录权限范围设置的是 **与应用的可用范围一致**，则你需要在应用发布阶段（点击 **应用发布 > 版本管理与发布 > 创建版本** 后的 **版本详情** 页面内）配置应用的可用范围，并发布应用使配置生效。具体操作参考[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。 |
+| 403 | 40004 | no dept authority error | 应用没有部门权限，检查该部门是否在应用的通讯录权限范围内。你可以登录[开发者后台](https://open.feishu.cn/app) ，在应用详情页的 **开发配置 &gt; 权限管理 &gt; 数据权限** 功能页查看 **通讯录权限范围** 内是否有相应部门，如果没有则需要在 **通讯录权限范围** 内添加上部门，并发布应用使配置生效。具体操作参考[配置应用数据权限](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/configure-app-data-permissions)。 **注意**：如果通讯录权限范围设置的是 **与应用的可用范围一致**，则你需要在应用发布阶段（点击 **应用发布 &gt; 版本管理与发布 &gt; 创建版本** 后的 **版本详情** 页面内）配置应用的可用范围，并发布应用使配置生效。具体操作参考[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。 |
 | 400 | 40021 | no a same request error | 非同一请求。两次请求如果传入了相同的 client_token，则当传入的其他参数取值不相同时，会报该错误。你需要根据实际场景选择是否传入 client_token 参数。 |
 | 400 | 41001 | mobile has already exist error | 手机号已存在。你需要修改传入的手机号，确保租户内唯一。如何通过手机号查询用户信息，可参见[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)。 |
 | 400 | 41002 | email has already exist error | 邮箱已存在。你需要修改传入的邮箱，确保租户内唯一。如何通过邮箱查询用户信息，可参见[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)。 |
@@ -404,7 +404,7 @@ public class Main {
 | 400 | 41022 | user tenant not match error | 用户租户不匹配。你需要检查是否使用其他企业的凭证访问了当前企业的资源。 |
 | 400 | 41025 | order department invalid error | 排序信息中的部门无效。请求中，用户排序信息的部门 ID，必须是用户所属部门的部门 ID 之一。 |
 | 504 | 41027 | create account failed error | 创建用户失败。请稍后重试，如果仍然失败请咨询[技术支持](https://applink.feishu.cn/TLJpeNdW)。 |
-| 405 | 41028 | user multi department need upgrade visibility error | 企业管理后台的权限规则未升级，不支持多部门。你需要登录[管理后台](https://feishu.cn/admin)，在 **安全** > **成员权限** > **组织架构可见范围** 页面内，根据页面提示提升权限规则。 |
+| 405 | 41028 | user multi department need upgrade visibility error | 企业管理后台的权限规则未升级，不支持多部门。你需要登录[管理后台](https://feishu.cn/admin)，在 **安全** &gt; **成员权限** &gt; **组织架构可见范围** 页面内，根据页面提示提升权限规则。 |
 | 400 | 41029 | create or update user multi department error | 当前企业不支持用户同时加入多个部门，如有疑问，请咨询[技术支持](https://applink.feishu.cn/TLJpeNdW)。 |
 | 400 | 41030 | set leader to oneself error | 不能将直属上级设置为自己。你需要将传入的直属上级参数值修改为用户实际对应的直属上级用户 ID，如无直属上级，则无需设置。 |
 | 504 | 41031 | position feature not enable error | 当前企业不支持设置用户岗位信息，如有疑问，请咨询[技术支持](https://applink.feishu.cn/TLJpeNdW)。 |
@@ -461,7 +461,7 @@ public class Main {
 | 400 | 44046 | user license subscription id must not empty in multi-license tenant | 多许可证租户内创建用户时，必须指定席位 ID 参数。你可以调用[获取企业席位信息接口](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/tenant-v2/tenant-product_assign_info/query)接口查询席位详情，然后选择使用正确可用的席位 ID。 |
 | 400 | 44047 | license subscription id exceed limit | 设置的席位 ID 已超过上限，请更换席位 ID。你可以调用[获取企业席位信息接口](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/tenant-v2/tenant-product_assign_info/query)接口查询席位详情，然后选择使用正确可用的席位 ID。 |
 | 400 | 44048 | user license subscription id invalid | 请确认传入的席位 ID 正确有效。你可以调用[获取企业席位信息接口](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/tenant-v2/tenant-product_assign_info/query)接口查询席位详情，然后选择使用正确可用的席位 ID。 |
-| 403 | 44050 | not set subscription ids auth | 未开通 **分配用户席位** 权限。你需要在 [开发者后台](https://open.feishu.cn/app) > **应用详情页** > **权限管理** > **API 权限** 内申请 **分配用户席位** 权限，并确保权限生效。 |
+| 403 | 44050 | not set subscription ids auth | 未开通 **分配用户席位** 权限。你需要在 [开发者后台](https://open.feishu.cn/app) &gt; **应用详情页** &gt; **权限管理** &gt; **API 权限** 内申请 **分配用户席位** 权限，并确保权限生效。 |
 | 400 | 44051 | employee_no already existed | 员工工号重复，请修改后重试。 |
 | 400 | 44054 | create user success and create city fail | 创建用户成功，创建工作城市字段失败。 可能原因： 1. 枚举值数量超过上限。工作城市枚举值数量上限均为 10,000。 2. 传入的值不合法。单个工作城市字符数量上限为 100。传入的内容也需要确保有效、无敏感信息。 3. 枚举值未启用。你可以调用[获取租户工作城市列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/work_city/list)接口，获取状态为已启用的工作城市信息。 如问题仍未解决请咨询[技术支持](https://applink.feishu.cn/TLJpeNdW)。 |
 | 400 | 44055 | create user success and create job title fail | 创建用户成功，创建职务字段失败。 可能原因： 1. 枚举值数量超过上限。职务的枚举值数量上限均为 10,000。 2. 传入的值不合法。单个职务的字符上限为 255。传入的内容也需要确保有效、无敏感信息。 3. 枚举值未启用。你可以调用[获取租户职务列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/job_title/list)，获取状态为已启用的职务信息。 如问题仍未解决请咨询[技术支持](https://applink.feishu.cn/TLJpeNdW)。 |

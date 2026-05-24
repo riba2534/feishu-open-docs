@@ -23,7 +23,7 @@ updateTime: "1775548359000"
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `contact:contact` 更新通讯录 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -170,9 +170,9 @@ public class Main {
 | --- | --- | --- | --- |
 | 400 | 40001 | param error | 参数错误。你可以自行检查输入参数是否设置有误。如果问题无法解决可联系开放平台[技术支持](https://applink.feishu.cn/TLJpeNdW)。 |
 | 403 | 40004 | no dept authority error | 无部门权限。用户所属部门需要添加在应用的通讯录权限范围内。如何设置应用的通讯录权限范围，可参见[权限范围资源介绍](https://open.larkoffice.com/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。 |
-| 403 | 41050 | no user authority error | 无用户权限。需将当前操作的用户添加到应用或用户的权限范围内。根据调用 API 的身份不同，解决方案也不同，具体说明如下： - **使用 tenant_access_token 调用 API**     当前操作的用户需要添加在应用的通讯录权限范围内。通讯录权限范围定义了应用在调用通讯录 API 时可获取的部门、用户的数据范围。应用无法访问不在通讯录权限范围内的数据。     由开发者登录[开发者后台](https://open.feishu.cn/app)，在应用详情页的 **开发配置** > **权限管理** > **数据权限** 页面内，配置 **通讯录权限范围**，添加指定用户。     ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/a1b281bca2708c7b4d8cdb75b74db80b_d3B7kadw3c.png?height=278&maxWidth=550&width=1383)     已发布的应用企业管理员可在[管理后台](http://feishu.cn/admin) > **工作台** > **应用管理** 页面，修改应用的通讯录权限范围。     ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/30410ff315a6728260c9964a7f035d4a_vtiypMAKJu.png?height=278&maxWidth=550&width=1383) - **使用 user_access_token 调用 API**     当你使用用户身份调用通讯录 API 时，可操作的权限范围不受应用的通讯录权限范围影响，而是受当前用户的组织架构可见范围影响，该范围限制了用户在企业内可见的组织架构数据范围。     由企业管理员在[管理后台](http://feishu.cn/admin) > **安全** > **成员权限** 页面中，点击 **组织架构可见范围** 进行管理。     ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/6699f09b56c17798cb192d06795dc980_hcP4nRZadC.png?height=278&maxWidth=550&width=1383) 完整介绍参见[权限范围资源介绍](https://open.larkoffice.com/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。 |
+| 403 | 41050 | no user authority error | 无用户权限。需将当前操作的用户添加到应用或用户的权限范围内。根据调用 API 的身份不同，解决方案也不同，具体说明如下： - **使用 tenant_access_token 调用 API**     当前操作的用户需要添加在应用的通讯录权限范围内。通讯录权限范围定义了应用在调用通讯录 API 时可获取的部门、用户的数据范围。应用无法访问不在通讯录权限范围内的数据。     由开发者登录[开发者后台](https://open.feishu.cn/app)，在应用详情页的 **开发配置** &gt; **权限管理** &gt; **数据权限** 页面内，配置 **通讯录权限范围**，添加指定用户。     ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/a1b281bca2708c7b4d8cdb75b74db80b_d3B7kadw3c.png?height=278&maxWidth=550&width=1383)     已发布的应用企业管理员可在[管理后台](http://feishu.cn/admin) &gt; **工作台** &gt; **应用管理** 页面，修改应用的通讯录权限范围。     ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/30410ff315a6728260c9964a7f035d4a_vtiypMAKJu.png?height=278&maxWidth=550&width=1383) - **使用 user_access_token 调用 API**     当你使用用户身份调用通讯录 API 时，可操作的权限范围不受应用的通讯录权限范围影响，而是受当前用户的组织架构可见范围影响，该范围限制了用户在企业内可见的组织架构数据范围。     由企业管理员在[管理后台](http://feishu.cn/admin) &gt; **安全** &gt; **成员权限** 页面中，点击 **组织架构可见范围** 进行管理。     ![image.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/6699f09b56c17798cb192d06795dc980_hcP4nRZadC.png?height=278&maxWidth=550&width=1383) 完整介绍参见[权限范围资源介绍](https://open.larkoffice.com/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。 |
 | 400 | 41052 | user resign acceptor is invalid error | 离职用户的资源接受者无效。你需要检查传入的资源接收者 ID 是否有误。 |
-| 400 | 44037 | tenant manager cannot be deleted | 无法删除租户管理员。你可以在[管理后台](https://feishu.cn/admin) > **企业设置** > **管路员权限** 页面，移除该用户的管理员身份后重试。 |
+| 400 | 44037 | tenant manager cannot be deleted | 无法删除租户管理员。你可以在[管理后台](https://feishu.cn/admin) &gt; **企业设置** &gt; **管路员权限** 页面，移除该用户的管理员身份后重试。 |
 | 400 | 44042 | User is in resurrect progress, retry later | 当前用户在恢复流程中，无法完成操作。你需要等待用户恢复完成，请稍后重试。 |
 | 400 | 44062 | According to the settings, this member's account can only be deleted through Member life cycle. | 根据租户管理员规则配置，该用户仅能通过生命周期引擎删除 |
 

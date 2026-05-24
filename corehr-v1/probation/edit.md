@@ -18,7 +18,7 @@ updateTime: "1773228463000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:probation:write` 读写试用期信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -41,16 +41,16 @@ updateTime: "1773228463000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `employment_id` | `string` | 是 | 试用期人员的雇佣 ID，类型与查询参数 user_id_type取值一致：<br>1、当user_id_type取值为open_id时，ID获取方式参考[如何获取自己的Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)。<br>2、当user_id_type取值为user_id时，ID获取方式参考[如何获取自己的 User ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)。<br>3、当user_id_type取值为union_id时，ID获取方式参考[如何获取自己的 Union ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id)。<br>4、当user_id_type取值为people_corehr_id时，先参考[如何获取自己的 User ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)获取User ID。然后通过[ID 转换](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/common_data-id/convert)获取雇佣ID。<br>**示例值**："7140964208476371111" |
-| `probation_start_date` | `string` | 否 | 试用期开始日期，格式："YYYY-MM-DD"，填写时满足以下规则 - 权限要求：`corehr:probation.probation_start_date:write` 读写试用期开始日期信息 - 「试用期开始日期」和「试用期预计结束日期」需要一同填写。  - 若该员工存在试用期记录，且同时填写「试用期开始日期」和「试用期预计结束日期」为空串，则删除该试用期记录。  - 若该员工不存在试用期记录，且填写「试用期开始日期」和「试用期预计结束日期」，则新增试用期记录。  - 若该员工不存在试用期记录，且未填写「试用期开始日期」和「试用期预计结束日期」，则试用期记录不会创建，其他写入数据不会生效。  - 入职日期 <= 试用期开始日期 <= 试用期预计结束日期。<br>**示例值**："2024-01-01" |
-| `probation_expected_end_date` | `string` | 否 | 试用期预计结束日期，格式："YYYY-MM-DD"，填写时满足以下规则  - 权限要求：`corehr:probation.probation_expected_end_date:write` 读写试用期预计结束日期信息 - 「试用期开始日期」和「试用期预计结束日期」需要一同填写。  - 若该员工存在试用期记录，且同时填写「试用期开始日期」和「试用期预计结束日期」为空串，则删除该试用期记录。  - 若该员工不存在试用期记录，且填写「试用期开始日期」和「试用期预计结束日期」，则新增试用期记录。  - 若该员工不存在试用期记录，且未填写「试用期开始日期」和「试用期预计结束日期」，则试用期记录不会创建，其他写入数据不会生效。  - 试用期开始日期 <= 试用期预计结束日期<br>**示例值**："2025-01-01" |
+| `probation_start_date` | `string` | 否 | 试用期开始日期，格式："YYYY-MM-DD"，填写时满足以下规则 - 权限要求：`corehr:probation.probation_start_date:write` 读写试用期开始日期信息 - 「试用期开始日期」和「试用期预计结束日期」需要一同填写。  - 若该员工存在试用期记录，且同时填写「试用期开始日期」和「试用期预计结束日期」为空串，则删除该试用期记录。  - 若该员工不存在试用期记录，且填写「试用期开始日期」和「试用期预计结束日期」，则新增试用期记录。  - 若该员工不存在试用期记录，且未填写「试用期开始日期」和「试用期预计结束日期」，则试用期记录不会创建，其他写入数据不会生效。  - 入职日期 &lt;= 试用期开始日期 &lt;= 试用期预计结束日期。<br>**示例值**："2024-01-01" |
+| `probation_expected_end_date` | `string` | 否 | 试用期预计结束日期，格式："YYYY-MM-DD"，填写时满足以下规则  - 权限要求：`corehr:probation.probation_expected_end_date:write` 读写试用期预计结束日期信息 - 「试用期开始日期」和「试用期预计结束日期」需要一同填写。  - 若该员工存在试用期记录，且同时填写「试用期开始日期」和「试用期预计结束日期」为空串，则删除该试用期记录。  - 若该员工不存在试用期记录，且填写「试用期开始日期」和「试用期预计结束日期」，则新增试用期记录。  - 若该员工不存在试用期记录，且未填写「试用期开始日期」和「试用期预计结束日期」，则试用期记录不会创建，其他写入数据不会生效。  - 试用期开始日期 &lt;= 试用期预计结束日期<br>**示例值**："2025-01-01" |
 | `probation_outcome` | `string` | 否 | 试用期结果，填写时满足以下规则  - 权限要求：`corehr:probation.probation_outcome:write` 写试用期结果字段 - 取值区分大小写。 - 填写「通过」时，必填「试用期实际结束日期」。 - 填写「延长」时，「延长后试用期预计结束日期」和「试用期预计延长时长」至少填写一项。 - 填写「未通过」时，需要置空「试用期实际结束日期」。<br>**示例值**："passed"<br>**可选值有**：<br>- `passed`: 通过 - `failed`: 未通过 - `delayed`: 延期 |
-| `actual_probation_end_date` | `string` | 否 | 试用期实际结束日期，格式："YYYY-MM-DD"，填写时满足以下规则 - 权限要求：`corehr:probation.actual_probation_end_date:write` 读写试用期实际结束日期信息 - 需同时指定试用期结果为「通过」。 - 试用期开始时间 <= 试用期实际结束日期 <= 试用期预计结束日期。<br>**示例值**："2025-01-01" |
-| `probation_extend_expected_end_date` | `string` | 否 | 延长后试用期预计结束日期，格式："YYYY-MM-DD"，填写时满足以下规则 - 权限要求：`corehr:probation.probation_extend_expected_end_date:write` 读写延长后试用期预计结束日期信息 - 需同时指定「试用期结果」为「延期」。 - 若同时填写「试用期预计延长时长」，需保持两者数据一致。 - 延长后试用期预计结束日期 > 试用期预计结束日期。<br>**示例值**："2025-01-01" |
-| `extended_probation_period_duration` | `int` | 否 | 试用期预计延长时长，填写时满足以下规则 - 权限要求：`corehr:probation.extended_probation_period_duration:write` 读写试用期预计延长时长信息 - 需同时指定「试用期结果」为「延期」。 - 填写时需要指定「试用期延长时长单位」。 - 若同时填写「延长后试用期预计结束日期」，需保持两者数据一致。 - 试用期预计延长时长 > 0。<br>**示例值**：1<br>**数据校验规则**：<br>- 取值范围：`1` ～ `500` |
+| `actual_probation_end_date` | `string` | 否 | 试用期实际结束日期，格式："YYYY-MM-DD"，填写时满足以下规则 - 权限要求：`corehr:probation.actual_probation_end_date:write` 读写试用期实际结束日期信息 - 需同时指定试用期结果为「通过」。 - 试用期开始时间 &lt;= 试用期实际结束日期 &lt;= 试用期预计结束日期。<br>**示例值**："2025-01-01" |
+| `probation_extend_expected_end_date` | `string` | 否 | 延长后试用期预计结束日期，格式："YYYY-MM-DD"，填写时满足以下规则 - 权限要求：`corehr:probation.probation_extend_expected_end_date:write` 读写延长后试用期预计结束日期信息 - 需同时指定「试用期结果」为「延期」。 - 若同时填写「试用期预计延长时长」，需保持两者数据一致。 - 延长后试用期预计结束日期 &gt; 试用期预计结束日期。<br>**示例值**："2025-01-01" |
+| `extended_probation_period_duration` | `int` | 否 | 试用期预计延长时长，填写时满足以下规则 - 权限要求：`corehr:probation.extended_probation_period_duration:write` 读写试用期预计延长时长信息 - 需同时指定「试用期结果」为「延期」。 - 填写时需要指定「试用期延长时长单位」。 - 若同时填写「延长后试用期预计结束日期」，需保持两者数据一致。 - 试用期预计延长时长 &gt; 0。<br>**示例值**：1<br>**数据校验规则**：<br>- 取值范围：`1` ～ `500` |
 | `extended_probation_period_unit` | `string` | 否 | 试用期延长时长单位，填写时满足以下规则 - 权限要求：`corehr:probation.extended_probation_period_duration:write` 读写试用期预计延长时长信息 - 取值区分大小写。 - 需要和「试用期预计延长时长」一同填写。 - 需同时指定「试用期结果」为「延期」。<br>**示例值**："day"<br>**可选值有**：<br>- `day`: 天 - `week`: 周 - `month`: 月 |
 | `notes` | `string` | 否 | 备注 - 权限要求：`corehr:probation.notes:write` 读写试用期备注信息<br>**示例值**："试用期表现良好。" |
 | `self_review` | `string` | 否 | 员工自评 - 权限要求：`corehr:probation.self_review:write` 读写员工自评信息<br>**示例值**："试用期表现良好。" |
-| `custom_fields` | `custom_field_data\[\]` | 否 | 自定义字段（当前不支持附件类型字段写入） - 权限要求：`corehr:probation.custom_field:write` 读写试用期自定义字段信息 - 可填写的字段范围参考[人员档案配置](https://people.feishu.cn/people/hr-settings/profile) > 信息配置 > 试用期 中的自定义字段<br>**数据校验规则**：<br>- 长度范围：`0` ～ `1000` |
+| `custom_fields` | `custom_field_data\[\]` | 否 | 自定义字段（当前不支持附件类型字段写入） - 权限要求：`corehr:probation.custom_field:write` 读写试用期自定义字段信息 - 可填写的字段范围参考[人员档案配置](https://people.feishu.cn/people/hr-settings/profile) &gt; 信息配置 &gt; 试用期 中的自定义字段<br>**数据校验规则**：<br>- 长度范围：`0` ～ `1000` |
 | &nbsp;&nbsp;└ `custom_api_name` | `string` | 是 | 自定义字段 apiname，即自定义字段的唯一标识<br>**示例值**："name" |
 | &nbsp;&nbsp;└ `name` | `custom_name` | 否 | 自定义字段名称（无需填写） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `zh_cn` | `string` | 否 | 中文<br>**示例值**："自定义姓名" |

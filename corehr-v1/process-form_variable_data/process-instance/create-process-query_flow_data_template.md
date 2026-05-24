@@ -21,7 +21,7 @@ updateTime: "1769669700000"
 | 接口频率限制 | [20 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:process.instance:write` 通过或拒绝审批任务 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | &gt; **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -44,7 +44,7 @@ updateTime: "1769669700000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `flow_definition_id` | `string` | 是 | 流程定义ID。 获取方式：管理员在设置侧配置的流程，浏览器 URL 为  `https://{域名}/people/approvals/flow-builder/people_7023711013443944467_7554571297192562476`，其中 `people_7023711013443944467_7554571297192562476` 为当前流程的流程定义 ID。<br>**示例值**："people_7023711013443944467_7437160904904494892" |
-| `variable_api_names` | `string\[\]` | 是 | 需要传入的变量的ApiName。如果是多级下钻变量用"."分割。 字段的ApiName查询方式： 1. 进入飞书人事 -> 设置 -> 流程设置 -> 流程管理。 2. 点击flow_definition_id对应的流程的"编辑"按钮，点击右上角"下一步"，进入"2. 流程设计"页面 3. 点击左侧的“变量”，找到你需要查询的变量，点击变量右侧的“API”按钮，复制变量的ApiName。<br>多级下钻变量举例，例如“批量异动.新部门”，分别按上面的步骤找到"批量异动"的ApiName为"batch_job_change"，新部门的ApiName为"target_department"，并用"."分割，则传参为"batch_job_change.target_department"。<br>**示例值**：["custome3adb7eb040.custom_field_2__c"]<br>**数据校验规则**：<br>- 长度范围：`1` ～ `1000` |
+| `variable_api_names` | `string\[\]` | 是 | 需要传入的变量的ApiName。如果是多级下钻变量用"."分割。 字段的ApiName查询方式： 1. 进入飞书人事 -&gt; 设置 -&gt; 流程设置 -&gt; 流程管理。 2. 点击flow_definition_id对应的流程的"编辑"按钮，点击右上角"下一步"，进入"2. 流程设计"页面 3. 点击左侧的“变量”，找到你需要查询的变量，点击变量右侧的“API”按钮，复制变量的ApiName。<br>多级下钻变量举例，例如“批量异动.新部门”，分别按上面的步骤找到"批量异动"的ApiName为"batch_job_change"，新部门的ApiName为"target_department"，并用"."分割，则传参为"batch_job_change.target_department"。<br>**示例值**：["custome3adb7eb040.custom_field_2__c"]<br>**数据校验规则**：<br>- 长度范围：`1` ～ `1000` |
 
 
 ### 请求体示例

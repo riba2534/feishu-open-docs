@@ -138,7 +138,7 @@ updateTime: "1775548301000"
 | 400 | 42404 | job family name not valid | 序列名称无效。请求时 name 参数值支持中、英文及符号，长度限制 1 ~ 100 字符。 |
 | 400 | 42405 | job family description not valid | 描述无效。描述的字符上限为 5,000。 |
 | 400 | 42406 | job family name duplicate | 序列名称重复。你需要修改名称后重试。 |
-| 400 | 42407 | job family has cycle | 序列不支持构成环形层级关系。例如，序列层级分为 A > B > C 三个层级，在 B 层级的序列配置上级序列 ID 时，不能选择 C 层级的序列。 |
+| 400 | 42407 | job family has cycle | 序列不支持构成环形层级关系。例如，序列层级分为 A &gt; B &gt; C 三个层级，在 B 层级的序列配置上级序列 ID 时，不能选择 C 层级的序列。 |
 | 400 | 42408 | parent job family not exist | 上级序列不存在。你需要检查并改为正确的上级序列 ID。 |
 | 400 | 42409 | parent job family not enable | 上级序列处于禁用状态，不支持使用。 |
 | 400 | 42410 | parent job family deleted | 上级序列已被删除，不支持使用。 |

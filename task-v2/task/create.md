@@ -74,7 +74,7 @@ updateTime: "1749018767000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `es_es` | `string` | 否 | 西班牙语<br>**示例值**："banco de trabajo" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `ko_kr` | `string` | 否 | 韩语<br>**示例值**："작업대" |
 | &nbsp;&nbsp;└ `href` | `href` | 否 | 任务关联的来源平台详情页链接 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `url` | `string` | 否 | 来源链接对应的地址，如填写必须以https://或者http://开头。<br>**说明**：如需调整 PC 端链接打开方式，可在飞书客户端的 **设置** > **效率** > **链接打开方式** 内调整。<br>**示例值**："https://www.example.com"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `1024` 字符 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `url` | `string` | 否 | 来源链接对应的地址，如填写必须以https://或者http://开头。<br>**说明**：如需调整 PC 端链接打开方式，可在飞书客户端的 **设置** &gt; **效率** &gt; **链接打开方式** 内调整。<br>**示例值**："https://www.example.com"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `1024` 字符 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `title` | `string` | 否 | 来源链接对应的标题<br>**示例值**："反馈一个问题，需要协助排查"<br>**数据校验规则**：<br>- 最大长度：`512` 字符 |
 | `extra` | `string` | 否 | 调用者可以传入的任意附带到任务上的数据。在获取任务详情时会原样返回。如果是二进制数据可以使用Base64编码。<br>**示例值**："dGVzdA=="<br>**数据校验规则**：<br>- 最大长度：`65536` 字符 |
 | `completed_at` | `string` | 否 | 任务的完成时刻时间戳(ms)。不填写或者设为0表示创建一个未完成任务；填写一个具体的时间戳表示创建一个已完成任务。<br>**示例值**："1675742789470"<br>**默认值**：`0`<br>**数据校验规则**：<br>- 最大长度：`20` 字符 |
@@ -135,7 +135,7 @@ updateTime: "1749018767000"
 | &nbsp;&nbsp;└ `section_guid` | `string` | 否 | 清单中自定义分组的GUID，用于指定在某个清单中创建任务的同时把任务加入到某个具体的分组中。如果填写了清单的GUID，却没填写分组的GUID，则自动加入该清单的默认分组中。<br>**示例值**："e6e37dcc-f75a-5936-f589-12fb4b5c80c2" |
 | `client_token` | `string` | 否 | 幂等token。如果提供则触发后端实现幂等行为。详见[功能概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/overview)中的“ 幂等调用 ”章节。<br>**示例值**："daa2237f-8310-4707-a83b-52c8a81e0fb7"<br>**数据校验规则**：<br>- 长度范围：`10` ～ `100` 字符 |
 | `start` | `start` | 否 | 任务的开始时间(ms), 详见[功能概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/overview)中的“ 如何使用开始时间和截止时间？”章节。 |
-| &nbsp;&nbsp;└ `timestamp` | `string` | 否 | 开始时间/日期的时间戳，距1970-01-01 00:00:00的毫秒数。如果开始时间是一个日期，需要把日期转换成时间戳，并设置 is_all_day=true。<br>如果同时设置任务的开始时间和截止时间，开始时间必须<=截止时间，并且开始/截止时间的is_all_day设置必须相同。<br>**示例值**："1675454764000" |
+| &nbsp;&nbsp;└ `timestamp` | `string` | 否 | 开始时间/日期的时间戳，距1970-01-01 00:00:00的毫秒数。如果开始时间是一个日期，需要把日期转换成时间戳，并设置 is_all_day=true。<br>如果同时设置任务的开始时间和截止时间，开始时间必须&lt;=截止时间，并且开始/截止时间的is_all_day设置必须相同。<br>**示例值**："1675454764000" |
 | &nbsp;&nbsp;└ `is_all_day` | `boolean` | 否 | 是否开始于一个日期。如果设为true，timestamp中只有日期的部分会被解析和存储。<br>**示例值**：true |
 | `reminders` | `reminder\[\]` | 否 | 任务提醒。要设置提醒必须同时设置任务的截止时间。一个任务最多只能设置1个提醒。 |
 | &nbsp;&nbsp;└ `relative_fire_minute` | `int` | 是 | 相对于截止时间的提醒时间分钟数，取值必须大于等于0（调用本接口只能设置截止日期前的提醒时间）。例如30表示截止时间前30分钟提醒；0表示截止时提醒。<br>**示例值**：30 |
