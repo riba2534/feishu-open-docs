@@ -1,7 +1,7 @@
 ---
 title: "查询指定公共邮箱"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/public_mailbox/get"
-updateTime: "1745841708000"
+updateTime: "1773998733000"
 ---
 
 # 查询指定公共邮箱

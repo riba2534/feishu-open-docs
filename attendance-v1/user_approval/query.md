@@ -1,7 +1,7 @@
 ---
 title: "获取审批数据"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_approval/query"
-updateTime: "1756365269000"
+updateTime: "1778137702000"
 ---
 
 # 获取审批数据
@@ -87,7 +87,7 @@ updateTime: "1756365269000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `date` | `string` | 审批作用日期，格式yyyyMMdd |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `outs` | `user_out\[\]` | 外出信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `approval_id` | `string` | 审批实例 ID |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `uniq_id` | `string` | 外出类型唯一 ID，代表一种假期类型，长度小于 14<br>* 此ID对应外出类型(即: i18n_names)，因此需要保证唯一 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `uniq_id` | `string` | 外出类型唯一 ID，代表一种假期类型，长度小于 14 * 此ID对应外出类型(i.e.: i18n_names)，因此需要保证唯一 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `unit` | `int` | 外出时长单位<br>**可选值有**：<br>- `1`: 天 - `2`: 小时 - `3`: 半天 - `4`: 半小时 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `interval` | `int` | 关联审批单外出时长，单位为秒，与unit无关 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `start_time` | `string` | 开始时间，时间格式为 yyyy-MM-dd HH:mm:ss。<br>时间按照审批发起人当前考勤组的时区进行取值，如果发起人已离职，则默认为 0 时区。 |
@@ -106,7 +106,7 @@ updateTime: "1756365269000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `process_id` | `string\[\]` | 发起流程实例 ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `leaves` | `user_leave\[\]` | 请假信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `approval_id` | `string` | 审批实例 ID |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `uniq_id` | `string` | 假期类型唯一 ID，代表一种假期类型，长度小于 14<br>* 此ID对应假期类型(即: i18n_names)，因此需要保证唯一 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `uniq_id` | `string` | 假期类型唯一 ID，代表一种假期类型，长度小于 14 * 此ID对应假期类型(i.e.: i18n_names)，因此需要保证唯一 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `unit` | `int` | 假期时长单位<br>**可选值有**：<br>- `1`: 天 - `2`: 小时 - `3`: 半天 - `4`: 半小时 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `interval` | `int` | 关联审批单休假时长，单位为秒，与unit无关 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `start_time` | `string` | 开始时间，时间格式为 yyyy-MM-dd HH:mm:ss。<br>时间按照审批发起人当前考勤组的时区进行取值，如果发起人已离职，则默认为 0 时区。 |
@@ -153,7 +153,7 @@ updateTime: "1756365269000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `transportation` | `int\[\]` | 交通工具（1 飞机，2 火车，3 汽车，4 高铁/动车，5 船，6 其他） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `trip_type` | `int` | 出差类型(1:单程 2:往返) |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `remarks` | `string` | 出差备注 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `time_zone` | `string` | 计算时间所用的时区信息，为空是0时区 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `time_zone` | `string` | 计算时间所用的时区信息，为空则为0时区 |
 
 
 ### 响应体示例

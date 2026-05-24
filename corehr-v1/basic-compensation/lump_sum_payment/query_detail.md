@@ -1,7 +1,7 @@
 ---
 title: "查询一次性支付授予明细"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/compensation-v1/lump_sum_payment/query_detail"
-updateTime: "1755603236000"
+updateTime: "1777370118000"
 ---
 
 # 查询一次性授予明细
@@ -20,7 +20,7 @@ updateTime: "1755603236000"
 | HTTP Method | POST |
 | 接口频率限制 | [10 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
-| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:compensation.lump_sum_payment:read` 一次性支付读权限 |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:compensation.lump_sum_payment:read` 读取一次性支付记录 |
 | 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:compensation_lump_sum_payment_detail.belong_time:read` 获取一次性支付金额的申请发放日期 |
 
 ### 请求头
@@ -157,6 +157,8 @@ updateTime: "1755603236000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `modify_time` | `string` | 更新时间 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `issuance_country_region_id` | `string` | 发放国家ID（可通过[查询国家/地区信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-country_region/search)进行查询） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `issuance_pay_group_id` | `string` | 发放薪资组ID（可通过[获取薪资组基本信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/paygroup/list) 进行查询） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `detail_reference_period_start_date` | `string` | 一次性支付明细所属期开始日期 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `detail_reference_period_end_date` | `string` | 一次性支付明细所属期结束日期 |
 
 
 ### 响应体示例
@@ -182,7 +184,9 @@ updateTime: "1755603236000"
                 "create_time": "2024-08-01 12:34:56",
                 "modify_time": "2024-08-01 12:34:56",
                 "issuance_country_region_id": "6862995757234914824",
-                "issuance_pay_group_id": "6862995757234914824"
+                "issuance_pay_group_id": "6862995757234914824",
+                "detail_reference_period_start_date": "2024-08-01",
+                "detail_reference_period_end_date": "2024-08-01"
             }
         ]
     }

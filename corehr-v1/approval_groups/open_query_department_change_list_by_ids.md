@@ -175,13 +175,13 @@ updateTime: "1763528815000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `orgrole_infos` | `orgrole_info\[\]` | 调整前后组织角色信息<br>**字段权限要求**： `corehr:orgrole_info:read` 获取组织角色 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `role_id` | `string` | 角色ID - 通过[【批量获取角色列表】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/security_group/list)获取角色其他信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `origin_orgroles` | `orgdraft_orgrole_assignment\[\]` | 原组织角色 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `grantee_id` | `string` | 授权用户id - 通过[【批量获取员工信息】](	https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/directory-v1/employee/mget)获取员工其他信息。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `grantee_id` | `string` | 授权用户id - 通过[【批量获取员工信息】](	/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/directory-v1/employee/mget)获取员工其他信息。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `management_scopes` | `orgrole_assignment.org\[\]` | 管理范围，组织角色为交叉角色时有值。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `org_id` | `string` | 组织ID - 当org_type为location时，可以通过[【通过地点 ID 批量获取地点信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/location/batch_get)获取地点的其他信息。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `org_type` | `string` | 组织类型<br>**可选值有**：<br>- `department`: 部门 - `location`: 地点 - `custom_org_01`: 自定义组织 - `custom_org_02`: 自定义组织 - `custom_org_03`: 自定义组织 - `custom_org_04`: 自定义组织 - `custom_org_05`: 自定义组织 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `org_name` | `string` | 组织名称 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `target_orgroles` | `orgdraft_orgrole_assignment\[\]` | 新组织角色 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `grantee_id` | `string` | 授权用户id - 通过[【批量获取员工信息】](	https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/directory-v1/employee/mget)获取员工其他信息。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `grantee_id` | `string` | 授权用户id - 通过[【批量获取员工信息】](	/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/directory-v1/employee/mget)获取员工其他信息。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `management_scopes` | `orgrole_assignment.org\[\]` | 管理范围，组织角色为交叉角色时有值。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `org_id` | `string` | 组织ID - 当org_type为location时，可以通过[【通过地点 ID 批量获取地点信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/location/batch_get)获取地点的其他信息。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `org_type` | `string` | 组织类型<br>**可选值有**：<br>- `department`: 部门 - `location`: 地点 - `custom_org_01`: 自定义组织 - `custom_org_02`: 自定义组织 - `custom_org_03`: 自定义组织 - `custom_org_04`: 自定义组织 - `custom_org_05`: 自定义组织 |

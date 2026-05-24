@@ -1,7 +1,7 @@
 ---
 title: "添加公共邮箱成员"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/public_mailbox-member/create"
-updateTime: "1745841720000"
+updateTime: "1773998734000"
 ---
 
 # 添加公共邮箱成员
@@ -96,6 +96,6 @@ updateTime: "1745841720000"
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
 | 404 | 1234016 | public mailbox not found | 请确认公共邮箱是否存在 |
-| 400 | 1234027 | the user have exceeded the limit on the number of bindable public mailboxes | 公共邮箱成员数已达上限，请尝试删除后再添加 |
+| 400 | 1234027 | the user has exceeded the limit on the number of bindable public mailboxes | 公共邮箱成员数已达上限，请尝试删除后再添加 |
 
 

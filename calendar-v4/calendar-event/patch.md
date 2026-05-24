@@ -1,7 +1,7 @@
 ---
 title: "更新日程"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event/patch"
-updateTime: "1759029466000"
+updateTime: "1777023357000"
 ---
 
 # 更新日程
@@ -18,7 +18,6 @@ updateTime: "1759029466000"
 
 - 当前身份为日程组织者时，可修改该接口内的所有可编辑字段。
 - 当前身份为日程参与者时，仅可编辑部分字段（包括 visibility、free_busy_status、color、reminders）。
-- 重复日程如果存在例外日程，则可以通过该接口更新例外日程。如果重复日程没有例外日程，则无法通过该接口更新重复日程中的某一个日程。
 
 ## 请求
 

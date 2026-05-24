@@ -1,12 +1,15 @@
 ---
 title: "查询用户所属用户组"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group/member_belong"
-updateTime: "1726297244000"
+updateTime: "1775548371000"
 ---
 
 # 查询用户所属用户组
 
 调用该接口查询指定用户所属的用户组列表。
+
+
+> **Tip**: x
 
 
 ## 注意事项
@@ -82,7 +85,7 @@ updateTime: "1726297244000"
 | 400 | 40001 | param error | 参数错误。请检查输入参数是否设置有误，你可以参考接口文档内的参数描述，修复输入参数值。 |
 | 500 | 40003 | internal error | 内部错误，你可以获取请求的 X-Request-Id，并联系[技术支持](https://applink.feishu.cn/TLJpeNdW)。 |
 | 400 | 40011 | page size is invalid | page_size 无效。page_size 取值范围为 1 ~ 1000，请调整参数值后重试。 |
-| 400 | 40012 | page token is invalid error | page_token 无效。你需要检查传入的 page_token 是否为上次请求返回的 page_token 值。 |
+| 400 | 40012 | page token is invalid | page_token 无效。你需要检查传入的 page_token 是否为上次请求返回的 page_token 值。 |
 | 400 | 41071 | invalid member_id_type | 成员 ID 类型无效。member_id_type 的枚举值仅支持 open_id、union_id、user_id。 |
 | 400 | 41073 | invalid member_id | 成员 ID 无效。你可以按以下步骤进行检查，并修改为正确的成员 ID 值。 1. 检查设置的 member_id_type 类型是否与传入的 member_id 类型一致。 2. 根据 member_id_type 参数描述，重新获取指定类型的成员 ID 值，并重试。 |
 | 400 | 41074 | invalid member_type | 无效的成员类型。group_type 的枚举值仅支持 `1` 或 `2`。 |

@@ -1,19 +1,16 @@
 ---
 title: "如何通过 OpenAPI 维护自定义字段"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/how-to"
-updateTime: "1767611792000"
+updateTime: "1774235771000"
 ---
 
 # 如何通过 OpenAPI 维护自定义字段
 ## 如何获取自定义字段的元数据？
 ### 1.调用方式
-**Step 1:** 调用「[获取飞书人事对象列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/list_object_api_name)」，查询自定义字段所属对象的 `object_api_name`
-> 说明：该接口中会返回系统预置对象和自定义对象
+**Step 1:** 传入`employment`和`person`调用「[获取自定义字段列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/query)」接口，获取自定义对象的的 API name
 >
-> - 系统预置对象：飞书人事开箱时预置生成，不需要租户再创建
-> - 自定义对象：当用户在[「人员档案配置」](https://people.feishu.cn/people/hr-settings/profile)页面添加自定义分组时，默认会创建一个与分组同名的自定义对象
->
-![Xnip2024-07-12_17-57-55_副本.jpg](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/6baa837a34731827c311cb0e3bf11b67_IHtEOsKG1T.jpg?lazyload=true&width=3558&height=1822)
+> - 自定义对象：当用户在[「人员档案配置」](https://people.feishu.cn/people/hr-settings/profile)页面添加自定义分组时，默认会创建一个与分组同名的自定义对象；人员档案工作信息下创建的自定义分组对应对象为`employment`；个人信息、履历信息及资料附件下创建的自定义分组对应对象为`person`
+![Xnip2024-07-12_17-57-55_副本.jpg](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/6baa837a34731827c311cb0e3bf11b67_IHtEOsKG1T.jpg?height=1822&lazyload=true&width=3558)
 
 **Step 2:** 根据对象的 `object_api_name` 调用「[获取自定义字段列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/query)」接口，获取字段的 API name
 

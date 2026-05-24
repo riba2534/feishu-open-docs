@@ -1,7 +1,7 @@
 ---
 title: "查询所有归档规则"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/archive_rule/list"
-updateTime: "1721704381000"
+updateTime: "1778137742000"
 ---
 
 # 查询所有归档规则

@@ -1,7 +1,7 @@
 ---
 title: "删除筛选条件"
 fullPath: "/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/delete"
-updateTime: "1722417439000"
+updateTime: "1778317473000"
 ---
 
 # 删除筛选条件
@@ -17,7 +17,7 @@ updateTime: "1722417439000"
 | HTTP Method | DELETE |
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
-| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 `sheets:spreadsheet:write_only` 编辑电子表格 |
 
 ### 请求头
 

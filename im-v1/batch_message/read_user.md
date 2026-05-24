@@ -38,7 +38,7 @@ updateTime: "1735820030000"
 
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
-| `batch_message_id` | `string` | 待查询的批量消息任务 ID，该 ID 为[批量发送消息](	https://open.larkoffice.com/document/ukTMukTMukTM/ucDO1EjL3gTNx4yN4UTM)接口返回值中的 `message_id` 字段，用于标识一次批量发送消息请求。<br>**示例值**："bm_dc13264520392913993dd051dba21dcf" |
+| `batch_message_id` | `string` | 待查询的批量消息任务 ID，该 ID 为[批量发送消息](	/ssl:ttdoc/ukTMukTMukTM/ucDO1EjL3gTNx4yN4UTM)接口返回值中的 `message_id` 字段，用于标识一次批量发送消息请求。<br>**示例值**："bm_dc13264520392913993dd051dba21dcf" |
 
 
 ## 响应

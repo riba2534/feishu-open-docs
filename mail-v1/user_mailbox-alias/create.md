@@ -1,7 +1,7 @@
 ---
 title: "创建用户邮箱别名"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-alias/create"
-updateTime: "1745841721000"
+updateTime: "1773998735000"
 ---
 
 # 创建用户邮箱别名
@@ -92,6 +92,6 @@ updateTime: "1745841721000"
 | 409 | 1235002 | email alias address has been used | 别名邮件地址已被占用，请使用其它邮件地址 |
 | 400 | 1235003 | Service unavailable | 请稍后重试 |
 | 404 | 1235013 | user not found | 请确认用户邮箱是否存在 |
-| 409 | 1234033 | email address has been used by another member as login account | 邮件地址已被他人用作于登录邮箱，请使用其它邮件地址 |
+| 409 | 1234033 | email address has been used by another member as login account | 邮件地址已被他人用作登录邮箱，请使用其它邮件地址 |
 
 

@@ -1,7 +1,7 @@
 ---
 title: "搜索成本中心信息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/cost_center/search"
-updateTime: "1770621271000"
+updateTime: "1777289085000"
 ---
 
 # 搜索成本中心信息
@@ -93,8 +93,8 @@ updateTime: "1770621271000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `description` | `i18n\[\]` | 成本中心描述 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 信息的语言，支持中文和英文。中文用zh-CN；英文用en-US |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 内容 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `effective_time` | `string` | 生效日期 - 返回格式：YYYY-MM-DD （最小单位到日） - 日期范围:1900-01-01 ～9999-12-31 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `expiration_time` | `string` | 失效日期 - 返回格式：YYYY-MM-DD （最小单位到日） - 日期范围:1900-01-01 ～9999-12-31 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `effective_time` | `string` | 版本生效日期 - 返回格式：YYYY-MM-DD （最小单位到日） - 日期范围:1900-01-01 ～9999-12-31 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `expiration_time` | `string` | 版本失效日期 - 返回格式：YYYY-MM-DD （最小单位到日） - 日期范围:1900-01-01 ～9999-12-31 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `active` | `boolean` | 当前实体是否启用 |
 | &nbsp;&nbsp;└ `page_token` | `string` | 分页标记，当 has_more 为 true 时，会同时返回新的 page_token，否则不返回 page_token |
 | &nbsp;&nbsp;└ `has_more` | `boolean` | 是否还有更多项 |

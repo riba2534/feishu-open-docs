@@ -39,7 +39,7 @@ updateTime: "1735820030000"
 
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
-| `image_key` | `string` | 图片的 Key，通过[上传图片](	https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口上传图片后，在返回结果中获取。<br>**示例值**："img_8d5181ca-0aed-40f0-b0d1-b1452132afbg" |
+| `image_key` | `string` | 图片的 Key，通过[上传图片](	/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口上传图片后，在返回结果中获取。<br>**示例值**："img_8d5181ca-0aed-40f0-b0d1-b1452132afbg" |
 
 
 ## 响应

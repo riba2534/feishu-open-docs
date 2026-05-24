@@ -1,7 +1,7 @@
 ---
 title: "更新部门所有信息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/update"
-updateTime: "1747194461000"
+updateTime: "1775548384000"
 ---
 
 # 更新部门所有信息

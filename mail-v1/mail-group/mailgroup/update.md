@@ -1,7 +1,7 @@
 ---
 title: "修改邮件组全部信息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/mailgroup/update"
-updateTime: "1745841705000"
+updateTime: "1773998730000"
 ---
 
 # 修改邮件组全部信息
@@ -103,7 +103,7 @@ updateTime: "1745841705000"
 | --- | --- | --- | --- |
 | 404 | 1234013 | mail group not found | 请确认邮件组是否存在 |
 | 400 | 1234008 | request parameter error | 请检查请求参数是否正确 |
-| 409 | 1234033 | email address has been used by another member as login account | 邮件地址已被他人用作于登录邮箱，请使用其它邮件地址 |
+| 409 | 1234033 | email address has been used by another member as login account | 邮件地址已被他人用作登录邮箱，请使用其它邮件地址 |
 | 409 | 1234006 | email address has been used | 邮件地址已被占用，请使用其它邮件地址 |
 | 409 | 1234023 | email address alias exceed the number limit | 超出了邮箱别名限制 |
 | 400 | 1234030 | mailing group count is over max limit | 邮件组成员已达上限，请删除后重新尝试 |

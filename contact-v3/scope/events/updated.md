@@ -1,7 +1,7 @@
 ---
 title: "通讯录权限范围变更"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/scope/events/updated"
-updateTime: "1743142527000"
+updateTime: "1775548336000"
 ---
 
 # 通讯录权限范围变更
@@ -74,7 +74,7 @@ updateTime: "1743142527000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `avatar_240` | `string` | 240*240 像素头像链接。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `avatar_640` | `string` | 640*640 像素头像链接。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `avatar_origin` | `string` | 原始头像链接。 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `status` | `user_status` | 用户状态。通过 is_frozen、is_resigned、is_activated、is_exited 布尔值类型参数进行展示。<br>用户状态的转关逻辑可参见[用户资源介绍](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/field-overview#4302b5a1)。<br>**字段权限要求（满足任一）**： `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:user.employee:readonly` 获取用户受雇信息 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `status` | `user_status` | 用户状态。通过 is_frozen、is_resigned、is_activated、is_exited 布尔值类型参数进行展示。<br>用户状态的流转逻辑可参见[用户资源介绍](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/field-overview#4302b5a1)。<br>**字段权限要求（满足任一）**： `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:user.employee:readonly` 获取用户受雇信息 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_frozen` | `boolean` | 是否为暂停状态。<br>**可能值有**：<br>- true：是 - false：否 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_resigned` | `boolean` | 是否为离职状态。<br>**可能值有**：<br>- true：是 - false：否 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_activated` | `boolean` | 是否为激活状态。<br>**可能值有**：<br>- true：是 - false：否 |
@@ -176,7 +176,7 @@ updateTime: "1743142527000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `avatar_240` | `string` | 240*240 像素头像链接。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `avatar_640` | `string` | 640*640 像素头像链接。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `avatar_origin` | `string` | 原始头像链接。 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `status` | `user_status` | 用户状态。通过 is_frozen、is_resigned、is_activated、is_exited 布尔值类型参数进行展示。<br>用户状态的转关逻辑可参见[用户资源介绍](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/field-overview#4302b5a1)。<br>**字段权限要求（满足任一）**： `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:user.employee:readonly` 获取用户受雇信息 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `status` | `user_status` | 用户状态。通过 is_frozen、is_resigned、is_activated、is_exited 布尔值类型参数进行展示。<br>用户状态的流转逻辑可参见[用户资源介绍](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/field-overview#4302b5a1)。<br>**字段权限要求（满足任一）**： `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:user.employee:readonly` 获取用户受雇信息 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_frozen` | `boolean` | 是否为暂停状态。<br>**可能值有**：<br>- true：是 - false：否 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_resigned` | `boolean` | 是否为离职状态。<br>**可能值有**：<br>- true：是 - false：否 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_activated` | `boolean` | 是否为激活状态。<br>**可能值有**：<br>- true：是 - false：否 |

@@ -1,7 +1,7 @@
 ---
 title: "获取 user_access_token"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/get-user-access-token"
-updateTime: "1766383301000"
+updateTime: "1775631536000"
 ---
 
 # 获取 user_access_token
@@ -86,10 +86,10 @@ user_access_token
 | `code` | `int` | 错误码，为 0 时表明请求成功，非 0 表示失败，请参照下文[错误码](#错误码)一节进行相应处理 |
 | `access_token` | `string` | 即 `user_access_token`，仅在请求成功时返回 |
 | `expires_in` | `int` | 即 `user_access_token` 的有效期，单位为秒，仅在请求成功时返回 > **Tip**: 建议使用该字段以确定 `user_access_token` 的过期时间，不要硬编码有效期 |
-| `refresh_token` | `string` | 用于刷新 `user_access_token`，详见[刷新 user_access_token](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/refresh-user-access-token)。该字段仅在请求成功且用户授予 `offline_access` 权限时返回。   > **Tip**: 如果你在获取 `user_access_token` 时设置了 `scope` 请求参数，且需要返回 `refresh_token`，则需要在 `scope` 参数中包括 `offline_access`。另外，`refresh_token` 仅能被使用一次。 |
+| `refresh_token` | `string` | 用于刷新 `user_access_token`，详见[刷新 user_access_token](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/refresh-user-access-token)。该字段仅在请求成功且用户授予 `offline_access` 权限时返回。   > **Tip**: `refresh_token` 仅能被使用一次。 |
 | `refresh_token_expires_in` | `int` | 即 `refresh_token` 的有效期，单位为秒，仅在返回 `refresh_token` 时返回。                > **Tip**: 建议在到期前调用[刷新 user_access_token](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/refresh-user-access-token) 接口获取新的 `refresh_token`。 |
 | `token_type` | `string` | 值固定为 `Bearer`，仅在请求成功时返回 |
-| `scope` | `string` | 本次请求所获得的 `access_token` 所具备的权限列表，以空格分隔，仅在请求成功时返回 |
+| `scope` | `string` | 本次请求所获得的 `access_token` 实际具备的权限列表，以空格分隔。服务端会根据情况对申请的 scope 进行裁剪，最终实际授予的权限范围请以该字段为准。该字段仅在请求成功时返回。 |
 | `error` | `string` | 错误类型，仅在请求失败时返回 |
 | `error_description` | `string` | 具体的错误信息，仅在请求失败时返回 |
 

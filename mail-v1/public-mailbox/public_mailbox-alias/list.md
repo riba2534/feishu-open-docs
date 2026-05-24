@@ -1,7 +1,7 @@
 ---
 title: "查询公共邮箱的所有别名"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/public_mailbox-alias/list"
-updateTime: "1745841721000"
+updateTime: "1773998734000"
 ---
 
 # 查询公共邮箱的所有别名

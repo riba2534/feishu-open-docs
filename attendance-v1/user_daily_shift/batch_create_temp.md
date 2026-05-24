@@ -1,7 +1,7 @@
 ---
 title: "创建或修改临时排班"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_daily_shift/batch_create_temp"
-updateTime: "1740743004000"
+updateTime: "1778137691000"
 ---
 
 # 创建或更改临时排班
@@ -10,8 +10,7 @@ updateTime: "1740743004000"
 临时排班为付费功能，如需使用请联系您的客户经理。
 
 
-> **Warning**: 注意：如果返回code=0，且msg不为空，表示临时排班部分成功。
-> 如msg返回{人员：[日期，日期]}格式，代表人员在排班日期下未临时排班成功。这种一般是考勤组id与人员不匹配造成。
+> **Warning**: 注意：如果返回code=0，且msg不为空，表示临时排班部分成功。 如msg返回{人员：[日期，日期]}格式，代表人员在排班日期下临时排班未成功。这种一般是考勤组id与人员不匹配造成的。
 
 
 ## 请求
@@ -36,7 +35,7 @@ updateTime: "1740743004000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `employee_type` | `string` | 是 | 请求体和响应体中的 user_id 的员工ID类型。如果没有后台管理权限，可使用[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)<br>**示例值**：employee_id<br>**可选值有**：<br>- `employee_id`: 员工 employee ID，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的用户 ID，或者[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)获取的userid。 - `employee_no`: 员工工号，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的工号 |
+| `employee_type` | `string` | 是 | 请求体和响应体中的 user_id 的员工ID类型。如果没有后台管理权限，可使用[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)<br>**示例值**：employee_id<br>**可选值有**：<br>- `employee_id`: 员工 employee ID，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的用户 ID，或者[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)获取的user_id。 - `employee_no`: 员工工号，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的工号 |
 
 
 ### 请求体

@@ -1,7 +1,7 @@
 ---
 title: "员工入职"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/events/created"
-updateTime: "1720166743000"
+updateTime: "1775548359000"
 ---
 
 # 员工入职
@@ -58,13 +58,13 @@ updateTime: "1720166743000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `avatar_240` | `string` | 240*240 像素头像链接。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `avatar_640` | `string` | 640*640 像素头像链接。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `avatar_origin` | `string` | 原始头像链接。 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `status` | `user_status` | 用户状态。通过 is_frozen、is_resigned、is_activated、is_exited 布尔值类型参数进行展示。<br>用户状态的转关逻辑可参见[用户资源介绍](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/field-overview#4302b5a1)。<br>**字段权限要求（满足任一）**： `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:user.employee:readonly` 获取用户受雇信息 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `status` | `user_status` | 用户状态。通过 is_frozen、is_resigned、is_activated、is_exited 布尔值类型参数进行展示。<br>用户状态的流转逻辑可参见[用户资源介绍](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/field-overview#4302b5a1)。<br>**字段权限要求（满足任一）**： `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:user.employee:readonly` 获取用户受雇信息 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_frozen` | `boolean` | 是否为暂停状态。<br>**可能值有**：<br>- true：是 - false：否 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_resigned` | `boolean` | 是否为离职状态。<br>**可能值有**：<br>- true：是 - false：否 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_activated` | `boolean` | 是否为激活状态。<br>**可能值有**：<br>- true：是 - false：否 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_exited` | `boolean` | 是否为主动退出状态。主动退出一段时间后用户状态会自动转为已离职。<br>**可能值有**：<br>- true：是 - false：否 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_unjoin` | `boolean` | 是否为未加入状态，需要用户自主确认才能加入企业或团队。<br>**可能值有**：<br>- true：是 - false：否 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `department_ids` | `string\[\]` | 用户所属部门的 ID 列表。部门 ID 类型为open_department_id，了解部门 ID 可参见[部门 ID 说明](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/field-overview#23857fe0)。<br>**字段权限要求（满足任一）**： `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:user.department:readonly` 获取用户组织架构信息 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `department_ids` | `string\[\]` | 用户所属部门的 ID 列表。<br>**注意**：该参数实际无返回值。该事件返回的用户所属部门 ID 请通过 old_object.department_ids 参数获取。<br>**字段权限要求（满足任一）**： `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:user.department:readonly` 获取用户组织架构信息 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `leader_user_id` | `string` | 用户直属主管的用户 open_id 。了解用户 ID 可参见[用户相关的 ID 概念](https://open.larkoffice.com/document/home/user-identity-introduction/introduction)。<br>**字段权限要求（满足任一）**： `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:user.employee:readonly` 获取用户受雇信息 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `city` | `string` | 城市。<br>**字段权限要求（满足任一）**： `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:user.employee:readonly` 获取用户受雇信息 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `country` | `string` | 国家。<br>**字段权限要求（满足任一）**： `contact:contact:readonly_as_app` 以应用身份读取通讯录 `contact:user.employee:readonly` 获取用户受雇信息 `contact:contact:access_as_app` 以应用身份访问通讯录 `contact:contact:readonly` 读取通讯录 |

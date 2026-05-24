@@ -1,7 +1,7 @@
 ---
 title: "更新部门"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/department/patch"
-updateTime: "1765434757000"
+updateTime: "1778206835000"
 ---
 
 # 更新部门
@@ -65,7 +65,7 @@ updateTime: "1765434757000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 是 | 语言信息，中文用zh-CN，英文用en-US<br>**示例值**："zh-CN" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 文本内容<br>**示例值**："中文示例" |
 | &nbsp;&nbsp;└ `active` | `boolean` | 否 | 部门启用状态，true为启用，false为停用<br>**示例值**：true |
-| &nbsp;&nbsp;└ `code` | `string` | 否 | 部门编码 (不能与其他记录的编码重复)，当开启自动编码时，该字段会失效<br>**示例值**："12456" |
+| &nbsp;&nbsp;└ `code` | `string` | 否 | 部门编码 (不能与其他记录的编码重复)<br>它的生效规则和 is_prefer_manual_encoding (是否优先使用手动编码)相关： -  当系统开启自动编码时：       若 is_prefer_manual_encoding=true：传入的 code 会生效，不传则自动生成编码。         若 is_prefer_manual_encoding=false：传的 code 会被忽略，以系统自动生成的编码为准。 -  当系统未开启自动编码时：无论 is_prefer_manual_encoding取值如何，均以传入的 code 为准。<br>**示例值**："12456" |
 | &nbsp;&nbsp;└ `description` | `i18n\[\]` | 否 | 描述 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 是 | 语言信息，中文用zh-CN，英文用en-US<br>**示例值**："zh-CN" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 文本内容<br>**示例值**："中文示例" |
@@ -76,6 +76,7 @@ updateTime: "1765434757000"
 | `cost_center_id` | `string` | 否 | 成本中心 ID，可以通过[搜索成本中心信息](https://open.feishu.cn/document/server-docs/corehr-v1/organization-management/cost_center/search)接口获取对应的成本中心信息<br>**示例值**："7142384817131652652" |
 | `staffing_model` | `enum` | 否 | 岗职管理模式 - 详细枚举类型请查看[枚举场景](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/feishu-people-enum-constant)中关于staffing_model定义 |
 | &nbsp;&nbsp;└ `enum_name` | `string` | 是 | 枚举值：job、position、non_job<br>**示例值**："job" |
+| `is_prefer_manual_encoding` | `boolean` | 否 | 是否优先使用手动编码 - 设为 true：优先使用传入的 code。即使系统开启了自动编码，只要传了 code，以传入值为准；        未传code时，会回退到自动生成编码。 - 设为 false：遵循系统默认策略。此时若系统开启了自动编码，传入的 code 不会生效，以系统自动生成的编码为准<br>**示例值**：false |
 
 
 ### 请求体示例
@@ -115,7 +116,8 @@ updateTime: "1765434757000"
     "cost_center_id": "7142384817131652652",
     "staffing_model": {
         "enum_name": "job"
-    }
+    },
+    "is_prefer_manual_encoding": false
 }
 ```
 

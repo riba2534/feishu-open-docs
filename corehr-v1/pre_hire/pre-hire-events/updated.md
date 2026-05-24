@@ -1,7 +1,7 @@
 ---
 title: "入职信息变更"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/pre_hire/events/updated"
-updateTime: "1741944393000"
+updateTime: "1777344441000"
 ---
 
 # 入职信息变更
@@ -14,7 +14,8 @@ updateTime: "1741944393000"
 
 
 > **Warning**: - 通过开放平台删除待入职接口不会触发事件。
-> - 本事件基于mysql binlog 设计，会存在发送冗余事件情况，后续会提供无冗余事件版本。
+> - 本事件基于mysql binlog 设计，会存在发送冗余事件情况，新增计算字段也会触发事件触发，后续会提供无冗余事件版本。
+> - 建议通过字段白名单指定需监听字段，减少无效事件。
 
 
 ## 事件

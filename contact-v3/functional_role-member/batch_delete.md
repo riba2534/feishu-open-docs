@@ -1,7 +1,7 @@
 ---
 title: "删除角色下的成员"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/functional_role-member/batch_delete"
-updateTime: "1720167459000"
+updateTime: "1775548410000"
 ---
 
 # 删除角色下的成员

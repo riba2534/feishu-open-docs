@@ -1,7 +1,7 @@
 ---
 title: "创建邮件组"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/mailgroup/create"
-updateTime: "1745841705000"
+updateTime: "1773998730000"
 ---
 
 # 创建邮件组

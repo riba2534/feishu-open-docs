@@ -1,7 +1,7 @@
 ---
 title: "查询归档报表表头"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/archive_rule/user_stats_fields_query"
-updateTime: "1722305679000"
+updateTime: "1778137713000"
 ---
 
 # 查询归档报表表头

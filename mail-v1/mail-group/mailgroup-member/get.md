@@ -1,7 +1,7 @@
 ---
 title: "查询指定邮件组成员"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/mailgroup-member/get"
-updateTime: "1745841706000"
+updateTime: "1773998731000"
 ---
 
 # 查询指定邮件组成员
@@ -68,7 +68,7 @@ updateTime: "1745841706000"
     "msg": "success",
     "data": {
         "member_id": "xxxxxxxxxxxxxxx",
-        "email": "test_memeber@xxx.xx",
+        "email": "test_member@xxx.xx",
         "user_id": "xxxxxxxxxx",
         "department_id": "xxxxxxxxxx",
         "type": "USER"

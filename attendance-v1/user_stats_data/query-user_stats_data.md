@@ -1,7 +1,7 @@
 ---
 title: "查询统计数据"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_stats_data/query"
-updateTime: "1723544574000"
+updateTime: "1778137702000"
 ---
 
 # 查询统计数据
@@ -91,7 +91,7 @@ updateTime: "1723544574000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `key` | `string` | 统计数据列附加属性的名称 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 统计数据列附加属性的值。<br>* 先展示上下班的打卡结果，再展示假勤申请时间(如果有) |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `title` | `string` | 字段标题 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `duration_num` | `user_stats_data_duration` | 时长，这个字段是一个map，key位时间单位，value为对应的时长值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `duration_num` | `user_stats_data_duration` | 时长，这个字段是一个map，key为时间单位，value为对应的时长值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `day` | `string` | 天 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `half_day` | `string` | 半天 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `hour` | `string` | 小时 |
@@ -145,9 +145,9 @@ updateTime: "1723544574000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 400 | 1220001 | param is invalis | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220001 | param is invalid | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1220002 | tenant_id is empty | 请检查入参中的 tenant_access_token是否正确 |
-| 400 | 1220004 | param is invalis | 请参考实际返回的错误信息排查问题。例如“user_id is not exist or does not have permission”代表入参传入的用户id不存在或者没有权限。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220004 | param is invalid | 请参考实际返回的错误信息排查问题。例如“user_id is not exist or does not have permission”代表入参传入的用户id不存在或者没有权限。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 500 | 1228000 | 历史错误码，不再使用 | - |
 | 400 | 1220600 | 通用错误信息 | 通用错误信息包含多条，详细的错误信息以及处理建议可参见 [错误信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines) |
 

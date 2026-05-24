@@ -1,12 +1,12 @@
 ---
 title: "批量获取评论"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file-comment/batch_query"
-updateTime: "1744103612000"
+updateTime: "1775723479000"
 ---
 
 # 批量获取评论
 
-该接口用于根据评论 ID 列表批量获取云文档评论信息，包括评论和回复 ID、回复的内容、评论人和回复人的用户 ID 等。支持返回全局评论以及局部评论（可通过 is_whole 字段区分）。
+该接口用于根据评论 ID 列表批量获取云文档评论信息，包括评论和回复 ID、回复的内容、评论人和回复人的用户 ID 等。支持返回全局评论以及局部评论，可通过 is_whole （是否为全局评论标识）字段区分。
 
 
 ## 请求
@@ -32,7 +32,7 @@ updateTime: "1744103612000"
 
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
-| `file_token` | `string` | 文档 Token<br>**示例值**："doxbcdl03Vsxhm7Qmnj110abcef" |
+| `file_token` | `string` | 文档 Token<br>可以通过浏览器该文档的 URL 栏上直接获取文档 Token 。<br>**示例值**："doxbcdl03Vsxhm7Qmnj110abcef" |
 
 
 ### 查询参数
@@ -48,7 +48,8 @@ updateTime: "1744103612000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `comment_ids` | `string\[\]` | 是 | 需要获取数据的评论 ID ，可通过调用获取云文档所有评论接口获取 comment_id<br>**示例值**：["1654857036541812356"] |
+| `comment_ids` | `string\[\]` | 是 | 需要获取数据的评论 ID ，可通过调用获取云文档所有评论接口获取 comment_id，允许的最大元素个数为100<br>**示例值**：["1654857036541812356"] |
+| `need_reaction` | `boolean` | 否 | 是否需要获取评论卡片上挂载的Reaction数据，默认值为false<br>**示例值**：true |
 
 
 ### 请求体示例
@@ -57,7 +58,8 @@ updateTime: "1744103612000"
 {
     "comment_ids": [
         "1654857036541812356"
-    ]
+    ],
+    "need_reaction": true
 }
 ```
 
@@ -75,10 +77,10 @@ updateTime: "1744103612000"
 | &nbsp;&nbsp;└ `items` | `file.comment\[\]` | 评论的相关信息、回复的信息、回复分页的信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `comment_id` | `string` | 评论 ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 用户 ID |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `create_time` | `int` | 创建时间 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `update_time` | `int` | 更新时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `create_time` | `int` | 创建时间（单位：秒） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `update_time` | `int` | 更新时间（单位：秒） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `is_solved` | `boolean` | 是否已解决 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `solved_time` | `int` | 解决评论时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `solved_time` | `int` | 解决评论时间（单位：秒） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `solver_user_id` | `string` | 解决评论者的用户 ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `has_more` | `boolean` | 是否有更多回复 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `page_token` | `string` | 回复分页标记 |
@@ -97,10 +99,14 @@ updateTime: "1744103612000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 添加用户的 user_id 以@用户 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `reply_id` | `string` | 回复 ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 用户 ID |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `create_time` | `int` | 创建时间 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `update_time` | `int` | 更新时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `create_time` | `int` | 创建时间（单位：秒） |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `update_time` | `int` | 更新时间（单位：秒） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `extra` | `reply_extra` | 回复的其他内容，图片 Token 等 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `image_list` | `string\[\]` | 评论中的图片 Token list |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `reactions` | `file_comment_v2_batch_query_reaction_data\[\]` | 评论回复卡片上对应的表情回复信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `reaction_key` | `string` | 表情回复的唯一标识，用于区分不同类型的评论表情（如点赞、鼓掌等）。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `count` | `int` | 该表情回复的累计使用次数，统计范围为当前评论下所有用户的有效回复记录。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `ahead_users` | `string\[\]` | 用于在界面优先展示核心互动用户。用户ID可通过用户信息查询接口获取。 |
 
 
 ### 响应体示例
@@ -116,10 +122,10 @@ updateTime: "1744103612000"
                 "user_id": "ou_cc19b2bfb93f8a44db4b4d6eababcef",
                 "create_time": 1610281603,
                 "update_time": 1610281603,
-                "is_solved": false,
+                "is_solved": true,
                 "solved_time": 1610281603,
-                "solver_user_id": "null",
-                "has_more": false,
+                "solver_user_id": null,
+                "has_more": true,
                 "page_token": "6916106822734512356",
                 "is_whole": true,
                 "quote": "划词评论引用内容",
@@ -134,10 +140,10 @@ updateTime: "1744103612000"
                                             "text": "comment text"
                                         },
                                         "docs_link": {
-                                            "url": "https://example.feishu.cn/docs/doccnHh7U87HOFpii5u5Gabcef"
+                                            "url": null
                                         },
                                         "person": {
-                                            "user_id": "ou_cc19b2bfb93f8a44db4b4d6eababcef"
+                                            "user_id": null
                                         }
                                     }
                                 ]
@@ -150,7 +156,16 @@ updateTime: "1744103612000"
                                 "image_list": [
                                     "xfsfseewewabcef"
                                 ]
-                            }
+                            },
+                            "reactions": [
+                                {
+                                    "reaction_key": "ANGRY",
+                                    "count": 10,
+                                    "ahead_users": [
+                                        "ou_8f1991a29a47f1ad295a119dadf224d1"
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
@@ -165,15 +180,15 @@ updateTime: "1744103612000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 400 | 1069301 | fail | 重试，若稳定失败请联系相关业务方oncall人员 |
+| 400 | 1069301 | fail | 重试，若稳定失败请联系[技术支持](https://applink.feishu.cn/client/helpdesk) |
 | 400 | 1069302 | param error | 检查参数有效性 |
 | 403 | 1069303 | forbidden | 检查是否有待评论云文档的评论权限 |
 | 400 | 1069304 | docs had been deleted | 检查待评论云文档是否已被删除 |
 | 400 | 1069305 | docs not exist | 检查待评论云文档是否能正常访问 |
 | 400 | 1069306 | content review not pass | 排查评论内容是否存在不合法内容 |
 | 404 | 1069307 | not exist | 检查待评论云文档是否能正常访问、检查评论内容at人或云文档是否存在 |
-| 400 | 1069308 | exceeded limit | 评论数据超过上限限制，详情请咨询客服 |
-| 400 | 1069399 | internal error | 重试，若稳定失败请联系相关业务方oncall人员 |
-| 400 | 1064230 | locked for data migration | 数据迁移中，暂时无法上传。 |
+| 400 | 1069308 | exceeded limit | 评论数据超过上限限制，请联系[技术支持](https://applink.feishu.cn/client/helpdesk) |
+| 400 | 1069399 | internal error | 重试，若稳定失败请联系[技术支持](https://applink.feishu.cn/client/helpdesk) |
+| 400 | 1064230 | locked for data migration | 数据迁移中，暂时无法上传，请等待迁移完成后重试 |
 
 

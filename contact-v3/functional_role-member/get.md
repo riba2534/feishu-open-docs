@@ -1,7 +1,7 @@
 ---
 title: "查询角色下某个成员的管理范围"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/functional_role-member/get"
-updateTime: "1720167459000"
+updateTime: "1775548410000"
 ---
 
 # 查询角色下某个成员的管理范围

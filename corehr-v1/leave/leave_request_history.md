@@ -1,7 +1,7 @@
 ---
 title: "批量查询员工请假记录"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/leave/leave_request_history"
-updateTime: "1745980180000"
+updateTime: "1778153718000"
 ---
 
 # 批量查询员工请假记录
@@ -34,8 +34,8 @@ updateTime: "1745980180000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `page_token` | `string` | 否 | 分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果<br>**示例值**：[1712932008000,"7356863257632491046"] |
-| `page_size` | `string` | 是 | 分页大小<br>**示例值**：100 |
+| `page_token` | `string` | 否 | 分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果<br>**示例值**："7356863257632491046" |
+| `page_size` | `string` | 是 | 分页大小，最小10，最大1000<br>**示例值**：100 |
 | `employment_id_list` | `string\[\]` | 否 | 员工 ID 列表，最大 100 个（不传则默认查询全部员工），ID 类型与 user_id_type 一致。请注意：此接口为get请求，所以传入数组时需要满足get请求传入数组的规范，例如employment_id_list=6919733291281024522&employment_id_list=6919733291281024523<br>**示例值**：6919733291281024522 |
 | `initiator_id_list` | `string\[\]` | 否 | 休假发起人 ID 列表，最大 100 个，ID 类型与 user_id_type 一致。请注意：此接口为get请求，所以传入数组时需要满足get请求传入数组的规范，例如initiator_id_list=6919733291281024522&initiator_id_list=6919733291281024523<br>**示例值**：6919733291281024522 |
 | `leave_request_status` | `string\[\]` | 否 | 请假记录的状态，不填为不过滤状态。请注意：此接口为get请求，所以传入数组时需要满足get请求传入数组的规范，例如leave_request_status =1&leave_request_status=2<br>可选值有：<br>- 1：已通过<br>- 2：审批中<br>- 3：审批中（更正）<br>- 4：审批中（取消休假）<br>- 5：审批中（返岗）<br>- 6：已返岗<br>- 7：已拒绝<br>- 8：已取消<br>- 9：已撤回<br>**示例值**：1 |
@@ -90,7 +90,7 @@ updateTime: "1745980180000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `submitted_at` | `string` | 发起时间，格式为秒级时间戳 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `submitted_by` | `string` | 发起人，ID 类型与 user_id_type 一致 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `notes` | `string` | 备注 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `approval_date` | `string` | 审批通过日期，格式为yyyy-MM-dd |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `approval_date` | `string` | （暂未开放）审批通过日期，格式为yyyy-MM-dd |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `is_deducted` | `boolean` | （暂未开放）是否带薪 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `details` | `leave_request_detail\[\]` | 请假详情 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `leave_request_id` | `string` | 请假记录id |
@@ -112,6 +112,13 @@ updateTime: "1745980180000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `process_id` | `string` | 流程id。注意：导入的请假不会返回leave_process_id。详情可查看[获取单个流程详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/process/get) |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `process_status` | `string` | 流程状态 可选值有 - "inProgress"：审批中<br>- "rejected"：已拒绝<br>- "withdrawn"：已撤回<br>- "passed"：已通过<br>- "revoked"：已撤销<br>- "toStart"：待发起 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `process_apply_time` | `string` | 流程发起时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `workday_extend_infos` | `leave_extend_item\[\]` | workday扩展字段信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `key` | `string` | 扩展字段的键 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 扩展字段的值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `leave_tag_conf` | `leave_tag_conf` | （暂未开放）请假标签配置 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `tags` | `tag\[\]` | 请假标签列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `key` | `string` | 标签键 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `values` | `string\[\]` | 标签值列表 |
 | &nbsp;&nbsp;└ `has_more` | `boolean` | 是否还有更多项 |
 | &nbsp;&nbsp;└ `page_token` | `string` | 分页标记，当 has_more 为 true 时，会同时返回新的 page_token，否则不返回 page_token |
 
@@ -137,7 +144,7 @@ updateTime: "1745980180000"
                 "leave_type_name": [
                     {
                         "lang": "zh-CN",
-                        "value": "张三"
+                        "value": "年假"
                     }
                 ],
                 "start_time": "2022-07-06",
@@ -185,7 +192,23 @@ updateTime: "1745980180000"
                         "process_status": "passed",
                         "process_apply_time": "2024-01-01 00:00:00"
                     }
-                ]
+                ],
+                "workday_extend_infos": [
+                    {
+                        "key": "SampleKey",
+                        "value": "SampleValue"
+                    }
+                ],
+                "leave_tag_conf": {
+                    "tags": [
+                        {
+                            "key": "leave_category",
+                            "values": [
+                                "Life events"
+                            ]
+                        }
+                    ]
+                }
             }
         ],
         "has_more": true,
@@ -200,7 +223,7 @@ updateTime: "1745980180000"
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
 | 400 | 1160001 | No tenant ID | 租户ID为空 |
-| 400 | 1160002 | Invalid granting unit | 授予单位出错 |
+| 400 | 1160002 | Invalid granting unit | 授予单位参数不合法，请检查参数是否符合接口要求 |
 | 400 | 1160003 | Invalid effective date | 日期格式必须是类似“2020-01-01” |
 | 400 | 1160004 | Invalid granting quantity | 必须是能解析成数字的字符串，例如“2.5” |
 | 400 | 1160005 | Accessed data object not found | 检查leaveTypeID是否正确 |
@@ -209,10 +232,10 @@ updateTime: "1745980180000"
 | 400 | 1160008 | Error occurred while checking if the employee is eligible for the vacation plan | 员工不适用于假期计划版本，请检查该假期计划适用人员范围是否和员工信息匹配 |
 | 400 | 1160009 | Accrual rule not found | 检查该假期计划版本是否正确创建，是否存在有效的发放规则 |
 | 400 | 1160010 | Granting record already exists | response里会带上已存在的授予记录的信息，用户可以将其取出，不需要再重试请求 |
-| 500 | 1160011 | Error occurred when getting employment information | 获取员工信息失败 |
+| 500 | 1160011 | Error occurred when getting employment information | 获取员工信息失败，请稍后重试，若仍失败请联系[技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 500 | 1160012 | An exception occurs in the database | 数据库异常，请联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 500 | 1160013 | Error occurred while checking if the employee is eligible for the scope of application of the vacation plan | 检查员工是否符合假期计划适用范围时发生错误 |
-| 500 | 1160014 | Error occurred when calculate accrual record | 计算授予计划错误 |
+| 500 | 1160013 | Error occurred while checking if the employee is eligible for the scope of application of the vacation plan | 检查员工是否符合假期计划适用范围时发生错误，请稍后重试，若仍失败请联系[技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 500 | 1160014 | Error occurred when calculate accrual record | 计算授予计划错误，请稍后重试，若仍失败请联系[技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1160024 | There is a subclass for the leave type, but the subclass ID has not been passed | 如果假期类型存在子类，那么leaveTypeID必须传子类ID |
 | 400 | 1160025 | The granting quantity range is from -9999 to 9999 | 额度范围为-9999～9999 |
 | 400 | 1160026 | The number of decimal places of the granted quantity cannot exceed 6 | 发放数量最多6位小数 |
@@ -222,18 +245,18 @@ updateTime: "1745980180000"
 | 500 | 1169999 | Unknown error | 未知错误，请联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 500 | 1160015 | Internal error | 内部错误，请联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1160016 | Invalid param | 对照接口文档的入参排查，是否漏填参数、格式错误等（例如数值参数传了字母、日期格式错误等） |
-| 400 | 1160017 | User not found | 未找到用户信息 |
-| 500 | 1160018 | Invalid leave balance calculate Conf | 无效的假期余额计算配置 |
-| 500 | 1160019 | The calculation result of leave balance is empty | 假期余额计算为空 |
-| 400 | 1160020 | When calculating the leave balance, there is no leave plan version that matches the employee | 没有与员工匹配的假期计划版本 |
+| 400 | 1160017 | User not found | 未找到用户信息，请检查传入的用户 ID 是否正确，确认用户存在 |
+| 500 | 1160018 | Invalid leave balance calculate Conf | 无效的假期余额计算配置，请检查配置是否符合接口文档要求 |
+| 500 | 1160019 | The calculation result of leave balance is empty | 假期余额计算为空，请检查员工假期计划配置是否正确 |
+| 400 | 1160020 | When calculating the leave balance, there is no leave plan version that matches the employee | 没有与员工匹配的假期计划版本，请检查假期计划适用范围是否匹配该员工 |
 | 400 | 1160021 | For the leave type that is not granted according to the cycle, balance calculation is not supported | 不按周期授予的假期类型，不支持余额计算 |
-| 400 | 1160022 | The data of the leave plan version is invalid | 假期计划版本数据不合法 |
-| 500 | 1160023 | Error occurred when calculating the leave balance | 假期余额计算出错 |
+| 400 | 1160022 | The data of the leave plan version is invalid | 假期计划版本数据不合法，请检查假期计划版本的配置信息是否合法 |
+| 500 | 1160023 | Error occurred when calculating the leave balance | 假期余额计算出错，请稍后重试，若仍失败请联系[技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1160030 | The length of the granted unique ID cannot exceed 64 | 授予唯一ID长度不能超过64 |
 | 400 | 1160031 | This granting record cannot be edited or deleted | 该授予记录不可编辑或删除 |
 | 400 | 1160032 | The expiration time of this granting record is invalid | 该授予记录过期时间不合法 |
 | 400 | 1160033 | The effective date is after the granting date | 生效日期在发放日期之后 |
 | 400 | 1160034 | The expiration date format is incorrect | 失效日期格式错误 |
-| 400 | 1160035 | No permission to access the employee data | 无权访问该员工数据 |
+| 400 | 1160035 | No permission to access the employee data | 无权访问该员工数据，请确认应用已获取访问该员工数据的权限 |
 
 

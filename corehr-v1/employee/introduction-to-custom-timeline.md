@@ -1,7 +1,7 @@
 ---
 title: "自定义时间轴介绍"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/introduction-to-custom-timeline"
-updateTime: "1740040400000"
+updateTime: "1774864061000"
 ---
 
 # 自定义时间轴
@@ -12,7 +12,7 @@ updateTime: "1740040400000"
 
 ### 查询人员接口
 
-[批量查询员工信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/batch_get)
+[批量查询员工信息](/ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/batch_get)
 
 自定义时间轴分组查询方式与更新和普通自定义分组类似。
   
@@ -48,14 +48,13 @@ URL：open-apis/corehr/v2/employees/:employment_id
 注意：下面使用的域名和数据均为测试数据，使用时需要替换为自己的域名和数据
 
 #### 新增第一个版本
-
+- custom_groups中"custom_obj_7293841034264462892_1713343313_7293641346149138452__c"对应分组新增一个版本
 ```
 curl --location --request PUT 'https://open.feishu-boe.cn/open-apis/corehr/v2/employees/7332037633013253676?user_id_type=people_corehr_id' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer xxx' \
 --data '{"personal_info":{"personal_basic_info":{"custom_fields":[{"field_name":"buerceshi_7293641346149138452__c","value":"abcdefg"}]},"custom_groups":[{"group_name":"custom_obj_7293841034264462892_1712715147_7293641346149138452__c","items":[{"custom_fields":[{"field_name":"wenben1_7293641346149138452__c","value":"hello123"}]}]},{"group_name":"custom_obj_7293841034264462892_1713343313_7293641346149138452__c","items":[{"custom_fields":[{"field_name":"_append_type","value":"_append_"},{"field_name":"effective_time","value":"2024-03-02"},{"field_name":"zidingyidanxingwenben_729364134614913845__c","value":"文本12345"}]}]}]},"employment_info":{"basic_info":{"custom_fields":[{"field_name":"kpdanxingwenben_7293641346149138452__c","value":"test000"}]},"custom_groups":[{"group_name":"custom_obj_7293841027780068908_1713343556_7293641346149138452__c","items":[{"custom_fields":[{"field_name":"danxingwenbenbitian_7293641346149138452__c","value":"这是工作信息下的单行文本。。。。"}]}]}]},"update_fields":["personal_info.personal_basic_info.custom_fields","personal_info.custom_groups","employment_info.basic_info.custom_fields"]}'
 ```
-custom_groups中“custom_obj_7293841034264462892_1713343313_7293641346149138452__c”对应分组新增一个版本
 
 #### 新增其它版本
 
@@ -78,6 +77,7 @@ curl --location --request PUT 'https://open.feishu-boe.cn/open-apis/corehr/v2/em
   
 
 #### 撤销一个版本
+- 时间轴对象如果存在多个版本时，第一个版本不支持撤销
 
 ```
 curl --location --request PUT 'https://open.feishu-boe.cn/open-apis/corehr/v2/employees/7332037633013253676?user_id_type=people_corehr_id' \

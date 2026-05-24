@@ -1,7 +1,7 @@
 ---
 title: "获取可补卡时间"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_task_remedy/query_user_allowed_remedys"
-updateTime: "1723544608000"
+updateTime: "1778137703000"
 ---
 
 # 获取可补卡时间
@@ -64,7 +64,7 @@ updateTime: "1723544608000"
 | `msg` | `string` | 错误描述 |
 | `data` | `\-` | \- |
 | &nbsp;&nbsp;└ `user_allowed_remedys` | `user_allowed_remedy\[\]` | 用户可补卡时间 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 用户 ID，对应employe_type |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 用户 ID，对应employee_type |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `remedy_date` | `int` | 补卡日期，格式为yyyyMMdd |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `is_free_punch` | `boolean` | 是否为自由班次，若为自由班次，则不用选择考虑第几次上下班，直接选择补卡时间即可 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `punch_no` | `int` | 第几次上下班，0：第 1 次上下班，1：第 2 次上下班，2：第 3 次上下班 |
@@ -104,17 +104,17 @@ updateTime: "1723544608000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 400 | 1220001 | param is invalis | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220001 | param is invalid | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1220002 | tenant_id is empty | 请检查入参中的 tenant_access_token是否正确 |
-| 400 | 1220004 | param is invalis | 请参考实际返回的错误信息排查问题。例如“user_id is not exist or does not have permission”代表入参传入的用户id不存在或者没有权限。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220004 | param is invalid | 请参考实际返回的错误信息排查问题。例如“user_id is not exist or does not have permission”代表入参传入的用户id不存在或者没有权限。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1220005 | 没有权限 | 请前往[考勤管理后台](https://oa.feishu.cn/attendance/manage/member/list)检查数据权限范围 |
-| 500 | 1225000 | param is invalis | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 500 | 1225000 | param is invalid | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 500 | 1226500 | 历史错误码，不再使用 | - |
 | 400 | 1226501 | no need remedy | 当天没有异常考勤，无需补卡 |
 | 400 | 1226502 | not allowed remedy | 考勤组设置不允许补卡 |
 | 400 | 1226503 | approval time beyond the time range | 考勤组设置只允许补过去多少天的卡，超出可补卡日期 |
 | 400 | 1226504 | no remedy time left | 超出补卡次数，当前周期的补卡次数已用完 |
-| 500 | 1227500 | param is invalis | 班次服务异常错误码，请参考实际返回的错误信息排查问题。例如“[BatchGetLarkIDByOpenID] not find user larkID”代表没有找到对应lark uid。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 500 | 1227500 | param is invalid | 班次服务异常错误码，请参考实际返回的错误信息排查问题。例如“[BatchGetLarkIDByOpenID] not find user larkID”代表没有找到对应lark uid。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1220600 | 通用错误信息 | 通用错误信息包含多条，详细的错误信息以及处理建议可参见[错误信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines)。 |
 
 

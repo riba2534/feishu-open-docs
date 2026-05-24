@@ -1,7 +1,7 @@
 ---
 title: "查询指定时间范围地点版本"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/location/query_multi_timeline"
-updateTime: "1770621176000"
+updateTime: "1777289045000"
 ---
 
 # 查询指定时间范围地点版本
@@ -39,7 +39,7 @@ updateTime: "1770621176000"
 | `location_ids` | `string\[\]` | 是 | 地点ID。ID获取方式： - 调用[【创建地点】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/location/create)[【批量分页查询地点】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/location/list)等接口可以返回地点ID<br>**示例值**：["7094136522860922111"]<br>**数据校验规则**：<br>- 长度范围：`1` ～ `10` |
 | `start_date` | `string` | 否 | 查询开始时间（包含）<br>**示例值**："2024-01-01"<br>**数据校验规则**：<br>- 长度范围：`10` ～ `10` 字符 - 正则校验：`^((([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29))$` |
 | `end_date` | `string` | 否 | 查询结束时间(不包含)<br>**示例值**："2024-12-31"<br>**数据校验规则**：<br>- 长度范围：`10` ～ `10` 字符 - 正则校验：`^((([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29))$` |
-| `fields` | `string\[\]` | 否 | 返回数据的字段列表，可选["location_name", "code", "active", "parent_location", "description", "effective_date", "expiration_date", "location_usage", "working_hours_type", "locale", "time_zone", "display_language", "address"]<br>**示例值**：["location_name"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
+| `fields` | `string\[\]` | 否 | 返回数据的字段列表，可选值 - location_name：地点名称 -  code：编码 -  active ：是否启用 - parent_location：上级地点 - description：描述 -  effective_date：当前版本生效日期 - expiration_date：当前版本失效日期 - location_usage：地点用途 - working_hours_type：工时制度 - locale：区域设置 - time_zone：时区 - display_language：默认语言 - address：地址<br>**示例值**：["location_name"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
 
 
 ### 请求体示例

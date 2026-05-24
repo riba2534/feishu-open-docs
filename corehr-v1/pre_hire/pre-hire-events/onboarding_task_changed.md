@@ -1,7 +1,7 @@
 ---
 title: "入职流程状态变更"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/pre_hire/events/onboarding_task_changed"
-updateTime: "1757933282000"
+updateTime: "1777344441000"
 ---
 
 # 入职流程状态变更
@@ -41,7 +41,7 @@ updateTime: "1757933282000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `after_status` | `string` | 变更后任务状态<br>**可选值有**：<br>- `uninitialized`: 未初始化（内部状态无需关注） - `not_started`: 未开始 - `in_progress`: 进行中 - `in_review`: 审核中/审批中 - `rejected`: 已拒绝 - `failed`: 失败 - `skipped`: 自动跳过 - `completed`: 已完成 - `terminated`: 已终止 - `initiating`: 初始化中 - `exception`: 异常 - `manual_skipped`: 手动跳过 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `task_code` | `string` | 任务标识码<br>如果是系统内置的任务，标识码与名称对应关系如下：<br>其中『创建账户SSO』为隐藏的任务节点，在『个人信息』前自动执行<br>| 名称 | task code | | ---- | --- | | 职位信息 | 1   | | 个人信息 | 2   | |创建账户SSO|3| |签到| 4| |签署入职文件|9|<br>如果标识码不在上面，说明是自定义任务节点，如：3095697a-065f-4627-a47c-46fe958a6754，名称的获取方式如下： - 通过pre_hire_id调用[搜索待入职人员信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/pre_hire/search)接口或[查询待入职](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/pre_hire/query) - 查询字段fields中添加onboarding_info.onboarding_task_list - 查询后返回的onboarding_task_list结构体中则包含code和名字的对应关系，示例如下 ``` {     "code": 0,     "data": {         "has_more": false,         "items": [             {                 "onboarding_info": {                     "onboarding_task_list": [                         {                             "task_code": "2",                             "task_name": "填写个人信息",                             "task_status": "in_progress"                         },                         {                             "task_code": "3095697a-065f-4627-a47c-46fe958a6754",                             "task_name": "修改入职日期",                             "task_status": "uninitialized"                         },                         {                             "task_code": "d37b9d7c-232d-4a55-98fa-541318234ede",                             "task_name": "工签补充任务",                             "task_status": "uninitialized"                         }                     ]                 },                 "pre_hire_id": "7186491930107561516"             }         ]     },     "msg": "success" } ``` |
 | &nbsp;&nbsp;└ `onboarding_flow_change` | `onboarding_flow_change` | 入职流程状态变更 - 当流程状态无变更，仅有任务状态变更时，此字段的会返回空 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `after_status` | `string` | 入职流程状态变更<br>**可选值有**：<br>- `not_started`: 未开始 - `in_progress`: 进行中 - `completed`: 已完成（完成入职） - `withdrawn`: 已撤销（撤销待入职） - `others`: 其他(异常情况) - `expired`: 已失效(回退至Offer沟通阶段) |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `after_status` | `string` | 入职流程状态变更<br>**可选值有**：<br>- `not_started`: 未开始 - `in_progress`: 进行中 - `completed`: 已完成（所有任务节点均已完成） - `withdrawn`: 已撤销（撤销待入职） - `others`: 其他(异常情况) - `expired`: 已失效(回退至Offer沟通阶段) |
 | &nbsp;&nbsp;└ `onboarding_flow_id` | `string` | 待入职流程ID |
 | &nbsp;&nbsp;└ `flow_info` | `onboarding_flow` | 流程信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 流程id |

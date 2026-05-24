@@ -1,12 +1,12 @@
 ---
-title: "查询消息已读信息"
+title: "消息发送者查询消息已读状态"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/read_users"
-updateTime: "1735820030000"
+updateTime: "1775740261000"
 ---
 
-# 查询消息已读信息
+# 消息发送者查询消息已读状态
 
-查询指定消息是否已读。接口只返回已读用户的信息，不返回未读用户的信息。
+作为消息发送者，查询指定消息是否已读。接口只返回已读用户的信息，不返回未读用户的信息。
 
 
 ## 前提条件
@@ -101,7 +101,7 @@ updateTime: "1735820030000"
 | 400 | 230006 | Bot ability is not activated. | 应用未启用机器人能力。启用方式参见[如何启用机器人能力](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
 | 400 | 230012 | Bot is NOT the sender of the message. | 当前机器人不是消息的发送者。应用机器人只能操作自己发送的消息。 |
 | 400 | 230013 | Bot has NO availability to this user. | 目标用户（以用户的 user_id/open_id/union_id/email 指定的消息接收者）或单聊用户（以群聊的 chat_id 指定的消息接收者，但 chat_id 对应的群聊类型为单聊 `p2p`）不在应用机器人的可用范围内，或者是在应用的禁用范围内。 **注意**：如果目标用户已离职，也会报错 230013。 解决方案： 1. 登录[开发者后台](https://open.feishu.cn/app)，找到并进入指定应用详情页。 2. 在左侧导航栏进入 **应用发布** >  **版本管理与发布** 页面，点击 **创建版本**。 3. 在 **版本详情** 页面，找到 **可用范围** 区域，点击 **编辑**。 4. 在弹出的对话框内，配置应用的可用范围，将用户添加至可用范围内。 5. 在页面底部点击 **保存**，并发布应用使配置生效。 6. （可选）如果以上配置完成后仍报错，则需要联系企业管理员登录[管理后台](https://feishu.cn/admin)，在 **工作台** > **应用管理** 中进入指定应用详情页，在 **应用可用范围** 内查看该用户是否被设置为了 **禁用成员**。 具体操作参见[配置应用可用范围](https://open.larkoffice.com/document/home/introduction-to-scope-and-authorization/availability)。 |
-| 400 | 230027 | Lack of necessary permissions. | 无权进行本次操作。可能的原因有： 1. 缺少相应权限，可根据实际的错误信息进行排查。 2. 未检查到用户授权信息。 3. 暂不支持在外部群中进行本操作。 |
+| 400 | 230027 | Lack of necessary permissions. | 无权进行本次操作。可能的原因有： 1. 缺少相应权限，可根据实际的错误信息进行排查。 2. 暂不支持在外部群中进行本操作，请切换到内部群操作。 |
 | 400 | 230033 | Get the reading status must be done within 7 days after the message is sent. | 在消息发送后的 7 天内允许查询消息的读取情况，超过 7 天则无法查询。 |
 | 400 | 230110 | Action unavailable as the message has been deleted. | 消息已删除，无法执行操作。 |
 

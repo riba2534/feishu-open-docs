@@ -1,7 +1,7 @@
 ---
 title: "创建邮件组成员"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/mailgroup-member/create"
-updateTime: "1745841706000"
+updateTime: "1773998731000"
 ---
 
 # 创建邮件组成员
@@ -48,7 +48,7 @@ updateTime: "1745841706000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `email` | `string` | 否 | 成员邮箱地址（当成员类型是EXTERNAL_USER/MAIL_GROUP/OTHER_MEMBER时有值）<br>**示例值**："test_memeber@xxx.xx" |
+| `email` | `string` | 否 | 成员邮箱地址（当成员类型是EXTERNAL_USER/MAIL_GROUP/OTHER_MEMBER时有值）<br>**示例值**："test_member@xxx.xx" |
 | `user_id` | `string` | 否 | 租户内用户的唯一标识（当成员类型是USER时有值）<br>**示例值**："xxxxxxxxxx" |
 | `department_id` | `string` | 否 | 租户内部门的唯一标识（当成员类型是DEPARTMENT时有值）<br>**示例值**："xxxxxxxxxx" |
 | `type` | `string` | 否 | 成员类型<br>**示例值**："USER"<br>**可选值有**：<br>- `USER`: 内部用户 - `DEPARTMENT`: 部门 - `COMPANY`: 全员 - `EXTERNAL_USER`: 外部用户 - `MAIL_GROUP`: 邮件组 - `PUBLIC_MAILBOX`: member is a public mailbox - `OTHER_MEMBER`: 内部成员 |
@@ -58,7 +58,7 @@ updateTime: "1745841706000"
 
 ```json
 {
-    "email": "test_memeber@xxx.xx",
+    "email": "test_member@xxx.xx",
     "user_id": "xxxxxxxxxx",
     "department_id": "xxxxxxxxxx",
     "type": "USER"
@@ -91,7 +91,7 @@ updateTime: "1745841706000"
     "msg": "success",
     "data": {
         "member_id": "xxxxxxxxxxxxxxx",
-        "email": "test_memeber@xxx.xx",
+        "email": "test_member@xxx.xx",
         "user_id": "xxxxxxxxxx",
         "department_id": "xxxxxxxxxx",
         "type": "USER"

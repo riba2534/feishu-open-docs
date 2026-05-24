@@ -1,7 +1,7 @@
 ---
 title: "列出邮件"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-message/list"
-updateTime: "1745841546000"
+updateTime: "1776073482000"
 ---
 
 # 列出邮件
@@ -9,7 +9,7 @@ updateTime: "1745841546000"
 列出邮件
 
 
-> **Tip**: 使用 tenant_access_token 时，需要申请邮件数据资源的数据权限。
+> **Tip**: 使用应用权限访问时，需要申请邮件数据资源的数据权限。
 
 
 ## 请求
@@ -33,7 +33,7 @@ updateTime: "1745841546000"
 
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
-| `user_mailbox_id` | `string` | 用户邮箱地址 或 输入me代表当前调用接口用户<br>**示例值**："user@xxx.xx 或 me" |
+| `user_mailbox_id` | `string` | 用户邮箱地址。当使用用户身份访问时，可以输入"me"代表当前调用接口用户<br>**示例值**："user@xxx.xx 或 me" |
 
 
 ### 查询参数
@@ -42,8 +42,9 @@ updateTime: "1745841546000"
 | --- | --- | --- | --- |
 | `page_size` | `int` | 是 | 分页大小<br>**示例值**：1<br>**数据校验规则**：<br>- 取值范围：`1` ～ `20` |
 | `page_token` | `string` | 否 | 分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果<br>**示例值**：xxx |
-| `folder_id` | `string` | 是 | 文件夹 id， 获取方式见 [列出文邮箱文件夹](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-folder/list)<br>**示例值**：INBOX 或者用户文件夹 id |
+| `folder_id` | `string` | 否 | 文件夹 id， 获取方式见 [列出邮箱文件夹](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-folder/list)<br>**示例值**：INBOX 或者用户文件夹 id |
 | `only_unread` | `boolean` | 否 | 是否只查询未读邮件<br>**示例值**：true |
+| `label_id` | `string` | 否 | 标签id，支持IMPORTANT、OTHER、FLAGGED、SCHEDULED以及自定义文件夹标签<br>**示例值**：FLAGGED |
 
 
 ## 响应
@@ -82,8 +83,8 @@ updateTime: "1745841546000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 400 | 1230001 | 参数错误 | 修改参数后重试 |
-| 403 | 1230002 | 无权限 | 成为公共邮箱成员或申请相关数据权限后调用该接口 |
-| 500 | 1230003 | 内部错误 | 请稍后重试 |
+| 400 | 1230001 | invalid param | 修改参数后重试 |
+| 403 | 1230002 | no permission | 无权限访问，请确认应用是否具备访问该资源的权限。如使用用户身份访问，请确认具备此用户的访问权限；如使用租户身份访问，请确认已申请对应的数据范围权限。 |
+| 500 | 1230003 | internal error | 请稍后重试 |
 
 

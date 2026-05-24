@@ -1,7 +1,7 @@
 ---
 title: "修改角色名称"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/functional_role/update"
-updateTime: "1720167427000"
+updateTime: "1775548409000"
 ---
 
 # 修改角色名称

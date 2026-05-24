@@ -1,7 +1,7 @@
 ---
 title: "删除打卡流水"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_flow/batch_del"
-updateTime: "1740018250000"
+updateTime: "1778137752000"
 ---
 
 # 删除打卡流水
@@ -35,7 +35,7 @@ updateTime: "1740018250000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `record_ids` | `string\[\]` | 是 | 打卡流水记录 ID，获取方式：1）[批量查询打卡流水记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_flow/query) 2）[获取打卡结果](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_task/query) 3）[导入打卡流水记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_flow/batch_create)<br>**示例值**：["6709359313699356941"]<br>**数据校验规则**：<br>- 长度范围：`1` ～ `10` |
+| `record_ids` | `string\[\]` | 是 | 打卡流水记录 ID，获取方式：1）[批量查询打卡流水记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_flow/query) 2）[获取打卡结果](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_flow/query) 3）[导入打卡流水记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_flow/batch_create)<br>**示例值**：["6709359313699356941"]<br>**数据校验规则**：<br>- 长度范围：`1` ～ `10` |
 
 
 ### 请求体示例

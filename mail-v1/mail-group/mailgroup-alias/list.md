@@ -1,7 +1,7 @@
 ---
 title: "获取邮件组所有别名"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/mailgroup-alias/list"
-updateTime: "1745841707000"
+updateTime: "1773998732000"
 ---
 
 # 获取邮件组所有别名

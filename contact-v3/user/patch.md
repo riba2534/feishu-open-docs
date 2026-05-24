@@ -1,7 +1,7 @@
 ---
 title: "修改用户部分信息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/patch"
-updateTime: "1763637686000"
+updateTime: "1775548348000"
 ---
 
 # 修改用户部分信息
@@ -14,7 +14,7 @@ updateTime: "1763637686000"
 - 发送请求时，未传递的参数不会更新。
 - 并发操作冻结用户时，因事务冲突会遇到概率性的接口调用失败。因此，请尝试降低请求速率或改为串行执行。
 - 更新 `department_ids`、`is_frozen` 时，限制调用频率为 1 QPS。
-- userAccessToken只允许修改这三个字段'Name'、'EnName'、'AvatarKey'。
+- user_access_token 只允许修改这三个字段'name'、'en_name'、'avatar_key'。
 
 ## 请求
 

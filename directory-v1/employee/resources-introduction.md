@@ -1,10 +1,10 @@
 ---
 title: "资源介绍"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/directory-v1/employee/resources-introduction"
-updateTime: "1747972133000"
+updateTime: "1773996350000"
 ---
 
-# 资源定义
+# 资源介绍
 员工指飞书企业内身份为「Employee」的成员，等同于通讯录OpenAPI中的「User」。
 
 员工在飞书的身份标识包括`employee_id`、`open_id` 和 `union_id`，其中`employee_id`的值等同于通讯录中的 `user_id`，其余两个也和通讯录的User的值相同。有关员工各类ID的详细介绍，参考 [用户身份概述](https://open.larkoffice.com/document/home/user-identity-introduction/introduction)。
@@ -20,7 +20,7 @@ updateTime: "1747972133000"
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
 | `base_info` | `employee_base_entity` | 员工基础信息 |
-| &nbsp;&nbsp;└ `employee_id` | `string` | 企业内在职员工的唯一标识。支持自定义，未自定义时系统自动生成。ID支持修改。 获取employee_id的方式： - 企业管理员在 管理后台 > 组织架构 > 成员与部门 页面，点击 成员详情，查询员工ID - 通过 [批量获取员工列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/directory-v1/employee/filter) 的接口，通过手机号或邮箱查询员工ID。 `employee_id_type`为`open_id`或者`union_id`时无需权限，使用`employee_id`类型时，权限要求如下**字段权限要求**： `directory:employee.base.external_id:read` 查看员工自定义 ID |
+| &nbsp;&nbsp;└ `employee_id` | `string` | 企业内在职员工的唯一标识，与employee_id_type类型保持一致。注：当 required_fields 字段未指定获取 employee_id 时，系统会返回无意义的 ID；若需获取该字段的值，请在 required_fields 中添加对应的字段名称。 获取employee_id的方式： - 企业管理员在 管理后台 > 组织架构 > 成员与部门 页面，点击 成员详情，查询员工ID - 通过 [批量获取员工列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/directory-v1/employee/filter) 的接口，通过手机号或邮箱查询员工ID。 `employee_id_type`为`open_id`或者`union_id`时无需权限，使用`employee_id`类型时，权限要求如下**字段权限要求**： `directory:employee.base.external_id:read` 查看员工自定义 ID |
 | &nbsp;&nbsp;└ `name` | `name` | 姓名 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n_text` | 员工的姓名<br>**字段权限要求（满足任一）**： `directory:employee.base.base:read` 查看员工个人基本信息 `directory:employee.base.name.name:read` 查看员工的姓名 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `default_value` | `string` | 默认值 |

@@ -1,7 +1,7 @@
 ---
 title: "创建用户"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/create"
-updateTime: "1748337476000"
+updateTime: "1775548347000"
 ---
 
 # 创建用户
@@ -67,7 +67,7 @@ updateTime: "1748337476000"
 | `city` | `string` | 否 | 工作城市。字符长度上限为 100。<br>**说明**：<br>- 你可以调用[获取租户工作城市列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/work_city/list)接口获取当前租户内已有的工作城市名称。 - 如果你传入的工作城市名称不存在，则系统会自动生成该工作城市。工作城市的枚举值数量上限为 10,000。<br>**默认值**：空<br>**示例值**："杭州" |
 | `country` | `string` | 否 | 国家或地区 Code 缩写。具体写入格式参考 [国家/地区 Code 参照表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/country-code-description)。<br>**默认值**：空<br>**示例值**："CN" |
 | `work_station` | `string` | 否 | 工位。字符长度上限为 255。<br>**默认值**：空<br>**示例值**："北楼-H34" |
-| `join_time` | `int` | 否 | 入职时间。秒级时间戳格式，表示从 1970 年 1 月 1 日开始所经过的秒数。如果不传入该参数，则默认填充当前请求时的时间。<br>**示例值**：2147483647 |
+| `join_time` | `int` | 否 | 入职时间。秒级时间戳格式，表示从 1970 年 1 月 1 日开始所经过的秒数。如果不传入该参数，则默认填充当前请求时的时间。创建用户传入 0 时，入职时间是1970-01-01。<br>**示例值**：2147483647 |
 | `employee_no` | `string` | 否 | 工号。字符长度上限为 255。<br>**注意**：同一租户下，用户工号不能重复。<br>**默认值**：空<br>**示例值**："1" |
 | `employee_type` | `int` | 是 | 员工类型。<br>**可选值有**： - 1：正式员工 - 2：实习生 - 3：外包 - 4：劳务 - 5：顾问   <br>该参数支持读取自定义的员工类型的 int 值。你可通过[获取人员类型](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/employee_type_enum/list)接口获取到该租户的自定义员工类型的编号值（enum_value）。<br>**示例值**：1 |
 | `orders` | `user_order\[\]` | 否 | 用户排序信息列表。该参数用于标记通讯录下组织架构的人员顺序，人员可能存在多个部门中，且有不同的排序。 |
@@ -87,7 +87,7 @@ updateTime: "1748337476000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 是 | 引用人员的用户 ID。<br>- ID 类型与查询参数 `user_id_type` 保持一致。<br>- 如何获取用户 ID 可参见[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。<br>**示例值**："9b2fabg5" |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `int` | 是 | 用户类型。<br>**可选值有**： 1：用户<br>**说明**：目前仅支持取值 1，表示用户。<br>**示例值**：1 |
 | `enterprise_email` | `string` | 否 | 企业邮箱。        **注意事项**：企业管理员在管理后台启用飞书邮箱服务后，才会生效该参数。如果设置企业邮箱失败，请联系企业管理员确认是否在管理后台启用了相应的企业邮箱域名。<br>**默认值**：空<br>**示例值**："demo@mail.com" |
-| `job_title` | `string` | 否 | 职务名称。字符数量上限为 255。<br>- 你可以调用[获取租户职务列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/job_title/list)接口获取相应的职务名称。 - 如果传入的职务名称不存在，则系统会自动创建并使用该名称。职务枚举值数量上限为 10,000。<br>**默认值**：空<br>**示例值**："xxxxx" |
+| `job_title` | `string` | 否 | 职务名称。字符数量上限为 255。<br>- 你可以调用[获取租户职务列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/job_title/list)接口获取相应的职务名称。 - 如果传入的职务名称不存在，则系统会自动创建并使用该名称。职务枚举值数量上限为 10,000。 - 如果传入空格字符串，则意味着清空职务。 **默认值**：空<br>**示例值**："xxxxx" |
 | `geo` | `string` | 否 | 数据驻留地。<br>**注意事项**：需联系服务台技术支持开通使用。<br>**默认值**：空<br>**示例值**："cn" |
 | `job_level_id` | `string` | 否 | 职级 ID。你可以调用[获取租户职级列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/job_level/list)接口查询相应的职级 ID。<br>**默认值**：空<br>**示例值**："mga5oa8ayjlp9rb" |
 | `job_family_id` | `string` | 否 | 序列 ID。你可以调用[获取租户序列列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/job_family/list)接口查询相应的序列 ID。<br>**默认值**：空<br>**示例值**："mga5oa8ayjlp9rb" |

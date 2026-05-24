@@ -1,7 +1,7 @@
 ---
 title: "搜索部门信息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/department/search"
-updateTime: "1761013926000"
+updateTime: "1779277918000"
 ---
 
 # 搜索部门信息
@@ -53,7 +53,7 @@ updateTime: "1761013926000"
 | `name_list` | `string\[\]` | 否 | 部门名称列表，需精确匹配，用于筛选条件 - 传非空值则返回指定部门名称的部门，传空值则不加该筛选条件<br>**示例值**：["后端研发部"] |
 | `parent_department_id` | `string` | 否 | 上级部门 ID  - 可通过[批量查询部门V2](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/department/batch_get) 或者[搜索部门信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/department/search) 获取详情 - 传非空值返回指定上级部门ID的子部门，传空值则不加该筛选条件<br>**示例值**："7094136522860922222" |
 | `code_list` | `string\[\]` | 否 | 部门编码列表 - 传非空值返回指定编码的部门，传空值则不加该筛选条件<br>**示例值**：["D00000123"] |
-| `fields` | `string\[\]` | 否 | 返回数据的字段列表，如果传空只返回部门id，可选值： - version_id：当前版本ID - sub_type：部门类型 - manager：负责人 - is_root：是否根部门 - is_confidential：是否保密 - effective_date：当前版本生效日期 - expiration_date：当前版本失效日期 - department_name：部门名称 - parent_department_id：上级部门ID - tree_order：树形排序 - list_order：列表排序 - code：部门编码 - active：是否启用 - description：部门描述 - custom_fields：自定义字段 - staffing_model：岗职务模式 - cost_center_id：部门默认成本中心 - created_time：创建时间 - updated_time：更新时间 - created_by：创建人 - updated_by：更新人 - record_created_time：记录创建时间 - record_updated_time：记录更新时间 - record_created_by：记录创建人 - record_updated_by：记录更新人<br>**示例值**：["department_name"] |
+| `fields` | `string\[\]` | 否 | 返回数据的字段列表，如果传空只返回部门id，可选值： - version_id：当前版本ID - sub_type：部门类型 - manager：负责人 - is_root：是否根部门 - is_confidential：是否保密 - effective_date：当前版本生效日期 - expiration_date：当前版本失效日期 - department_name：部门名称 - parent_department_id：上级部门ID - tree_order：树形排序 - list_order：列表排序 - code：部门编码 - active：是否启用 - description：部门描述 - custom_fields：自定义字段 - staffing_model：岗职务模式 - cost_center_id：部门默认成本中心 - created_time：创建时间(版本创建时间) - updated_time：更新时间 - created_by：创建人 - updated_by：更新人 - record_created_time：记录创建时间(第一个版本的创建时间) - record_updated_time：记录更新时间 - record_created_by：记录创建人 - record_updated_by：记录更新人<br>**示例值**：["department_name"] |
 
 
 ### 请求体示例
@@ -105,11 +105,11 @@ updateTime: "1761013926000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 文本内容 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `parent_department_id` | `string` | 上级部门 ID  - 可通过[批量查询部门V2](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/department/batch_get) 或者[搜索部门信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/department/search) 获取详情<br>**字段权限要求**： `corehr:department.organize:read` 获取部门组织架构信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `manager` | `string` | 部门负责人雇佣 ID - 详细信息可通过[【搜索员工信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/search) 或 [【批量查询员工】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/batch_get) 接口获取<br>**字段权限要求**： `corehr:department.manager:read` 获取部门负责人信息 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `tree_order` | `string` | 树形排序，代表同层级的部门排序序号 - 创建部门场景tree_order不会实时生成，10分钟内更新完毕 - 在页面拖动部门排序时tree_order可以实时生成 - 变更部门上级时，会清空tree_order，并触发重算list_order和tree_order，10分钟内更新完毕 - 同层部门（相同上级）数量超过1000时，该字段不再更新 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `tree_order` | `string` | 树形排序，代表同层级的部门排序序号 - 数据类型为字符串，实际按数值大小排序，数值越小，同层级部门展示越靠前；仅对同一父部门下的直接子部门生效 - 数值生成规则：   -  编号长度由同层级部门数量动态决定：同层级部门≤10 个为 6 位编号，10~20 个为 7 位编号，超过 100 个统一为 16 位编号，以此类推   - 新建部门时系统自动赋值：同层级下一个新部门编号，会在上一个部门编号基础上按固定数值自动累加；例如 6 位编号每次固定加 1000，7 位编号每次固定加 10000   - 重排触发：当同层级部门数量超出当前编号长度可容纳范围，或多次拖拽排序无法正常插入位置时，会触发同层级编号全局重新编排；所有部门编号会按新的长度和累加规则重新生成，数值可能出现明显变大   - 当同一父部门下的子部门数量超过 1000 个时，系统在维护排序编号时可能出现异常问题。 - 更新时机：   - 创建部门场景tree_order不会实时生成，10分钟内更新完毕   - 在页面拖动部门排序时tree_order可以实时生成   - 变更部门上级时，会清空tree_order，并触发重算list_order和tree_order，10分钟内更新完毕（list_order由部门上级路径的所有tree_order用“-”拼接生成） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `list_order` | `string` | 列表排序，代表所有部门的混排序号，为该部门上级路径上所有tree_order用“-”拼接。 - 该字段在新建/更新场景非立即更新，10分钟后会延迟更新 - 由于list_order变更会导致[部门变更接口](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/department/events/updated)产生大量事件，因此事件接口不会针对该字段同步变更事件，如果有需求订阅请联系[Oncall](https://applink.feishu.cn/TLJpeNdW)单独开启。 - 同层部门（相同上级）数量超过1000时，该字段不再更新 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `code` | `string` | 编码 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `is_root` | `boolean` | 是否根部门 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `is_confidential` | `boolean` | 是否保密（该功能暂不支持，可忽略） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `is_confidential` | `boolean` | 是否保密（该功能暂不支持，可以忽略） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `effective_date` | `string` | 当前版本生效日期 - 返回格式：YYYY-MM-DD（最小单位到日） - 日期范围:1900-01-01～9999-12-31 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `expiration_date` | `string` | 当前版本失效日期 - 返回格式：YYYY-MM-DD（最小单位到日） - 日期范围:1900-01-01～9999-12-31 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `active` | `boolean` | 是否启用 |
@@ -129,11 +129,11 @@ updateTime: "1761013926000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 语言，中文用zh-CN，英文用en-US |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 文本内容 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `cost_center_id` | `string` | 成本中心id<br>**字段权限要求**： `corehr:department.cost_center_id:read` 获取部门成本中心字段信息 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `created_time` | `string` | 创建时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `created_time` | `string` | 创建时间(版本创建时间) |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `updated_time` | `string` | 更新时间 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `created_by` | `string` | 创建人 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `updated_by` | `string` | 更新人 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `record_created_time` | `string` | 记录创建时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `record_created_time` | `string` | 记录创建时间(第一个版本的创建时间) |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `record_updated_time` | `string` | 记录更新时间 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `record_created_by` | `string` | 记录创建人 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `record_updated_by` | `string` | 记录更新人 |

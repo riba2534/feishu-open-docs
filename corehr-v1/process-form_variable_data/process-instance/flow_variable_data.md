@@ -1,12 +1,15 @@
 ---
 title: "获取流程数据"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/process/flow_variable_data"
-updateTime: "1769396393000"
+updateTime: "1773911039000"
 ---
 
 # 获取流程数据
 
 根据流程实例 id（process_id）获取流程字段数据，包括业务字段和自定义字段，还有流程的数据（比如流程发起人、发起时间等），仅支持飞书人事、假勤相关业务流程。
+
+
+> **Tip**: 此接口只返回流程数据列表里的字段信息，对于流程数据的关联数据，如员工的部门、入职日期等，需调用各自领域的接口去查询。例如，只返回异动员工是谁，员工的其他信息需通过人员接口查询。
 
 
 ## 请求
@@ -55,7 +58,7 @@ updateTime: "1769396393000"
 | `data` | `\-` | \- |
 | &nbsp;&nbsp;└ `field_variable_values` | `field_variable_value\[\]` | 流程数据 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `variable_api_name` | `string` | 变量唯一标识 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `variable_name` | `field_variable_value_i18n` | 变量名称 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `variable_name` | `field_variable_value_i18n` | 变量名称，在查询流程数据场景不会返回变量名称 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `zh_cn` | `string` | 中文值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en_us` | `string` | 英文值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `variable_value` | `field_variable_value_to` | 变量值 |

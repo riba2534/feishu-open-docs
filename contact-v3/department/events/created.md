@@ -1,7 +1,7 @@
 ---
 title: "部门新建"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/events/created"
-updateTime: "1720167101000"
+updateTime: "1775548407000"
 ---
 
 # 部门新建

@@ -1,7 +1,7 @@
 ---
 title: "新增人员类型"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/employee_type_enum/create"
-updateTime: "1720166959000"
+updateTime: "1775548371000"
 ---
 
 # 新增人员类型

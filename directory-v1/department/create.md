@@ -1,7 +1,7 @@
 ---
 title: "创建部门"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/directory-v1/department/create"
-updateTime: "1752138940000"
+updateTime: "1775548431000"
 ---
 
 # 创建部门

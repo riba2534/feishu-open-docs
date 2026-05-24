@@ -1,7 +1,7 @@
 ---
 title: "查询编制规划方案"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/workforce_plan/list"
-updateTime: "1740481866000"
+updateTime: "1774424544000"
 ---
 
 # 查询编制规划方案
@@ -9,7 +9,9 @@ updateTime: "1740481866000"
 根据传入的筛选项获取编制规划的方案列表
 
 
-> **Tip**: - 请求体入参如果没有特殊说明，不填写默认为空，不参与筛选。
+> **Tip**: 该接口会按照应用拥有的「部门数据」的权限范围返回数据，请确定在「开发者后台 - 权限管理 - 数据权限」中有申请「部门资源」权限范围
+> 
+> - 请求体入参如果没有特殊说明，不填写默认为空，不参与筛选。
 > - 所有筛选项可一起使用，之间为 AND 关系。
 > - 延迟说明：数据库主从延迟 2s 以内，即：直接创建编制规划方案后 2s 内调用此接口可能查询不到数据。
 
@@ -95,5 +97,8 @@ updateTime: "1740481866000"
 | 429 | 1161604 | QPS over limit | 请求量过大，请稍后访问。如无法解决可联系飞书开放平台[技术支持](https://applink.feishu.cn/TLJpeNdW)。 |
 | 400 | 1160109 | param is invalid | 请检查是否传入了无效参数。如无法解决可联系飞书开放平台[技术支持](https://applink.feishu.cn/TLJpeNdW)。 |
 | 403 | 1160100 | no permission | 请检查是否申请对应权限。如无法解决可联系飞书开放平台[技术支持](https://applink.feishu.cn/TLJpeNdW)。 |
+
+
+其他错误码参考: [全量错误码详细描述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/workforce_plan/the-full-set-of-error-codes)
 
 

@@ -11,8 +11,6 @@ updateTime: "1687769386000"
 :::note
 
 本接口适用于 [小程序登录](https://open.larkoffice.com/document/uYjL24iN/uETO5QjLxkTO04SM5kDN) 及[小组件登录](https://open.larkoffice.com/document/uAjLw4CM/uYjL24iN/block/guide/open-ability/block-login)。
-:::
-
 
 ## 请求
 

@@ -1,7 +1,7 @@
 ---
 title: "对收信规则进行排序"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-rule/reorder"
-updateTime: "1745841659000"
+updateTime: "1776073555000"
 ---
 
 # 对收信规则进行排序
@@ -86,8 +86,8 @@ updateTime: "1745841659000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 400 | 1230001 | 参数错误 | 修改参数后重试 |
-| 500 | 1230003 | 内部错误 | 请稍后重试 |
-| 403 | 1230002 | 无权限 | 成为公共邮箱成员或申请相关数据权限后调用该接口 |
+| 400 | 1230001 | param invalid | 修改参数后重试 |
+| 500 | 1230003 | internal server error | 请稍后重试 |
+| 403 | 1230002 | no permission | 成为公共邮箱成员或申请相关数据权限后调用该接口 |
 
 

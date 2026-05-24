@@ -1,7 +1,7 @@
 ---
 title: "批量移除用户组成员"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group-member/batch_remove"
-updateTime: "1726297245000"
+updateTime: "1775548408000"
 ---
 
 # 批量移除用户组成员

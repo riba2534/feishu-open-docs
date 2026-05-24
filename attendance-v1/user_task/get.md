@@ -1,7 +1,7 @@
 ---
 title: "查询打卡流水"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_flow/get"
-updateTime: "1723544609000"
+updateTime: "1778137742000"
 ---
 
 # 查询打卡流水
@@ -12,7 +12,7 @@ updateTime: "1723544609000"
 * 打卡位置信息、时间信息
 * 打卡方式信息
    * GPS 打卡：location_name（定位地址信息）
-   * Wi-Fi 打卡：ssid（wifi名称）、bssid（mac地址）
+   * Wi-Fi 打卡：ssid（Wi-Fi名称）、bssid（mac地址）
    * 考勤机打卡：device_id（考勤机设备id）
 
 对应页面功能打卡管理-[打卡记录](https://example.feishu.cn/people/workforce-management/manage/statistics/flow)
@@ -111,11 +111,11 @@ updateTime: "1723544609000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 400 | 1220001 | param is invalis | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220001 | param is invalid | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1220002 | tenant_id is empty | 请检查入参中的 tenant_access_token是否正确 |
-| 400 | 1220004 | param is invalis | 请参考实际返回的错误信息排查问题。例如“user_id is not exist or does not have permission”代表入参传入的用户id不存在或者没有权限。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220004 | param is invalid | 请参考实际返回的错误信息排查问题。例如“user_id is not exist or does not have permission”代表入参传入的用户id不存在或者没有权限。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1220005 | 没有权限 | 请前往[考勤管理后台](https://oa.feishu.cn/attendance/manage/member/list)检查数据权限范围 |
-| 500 | 1225000 | param is invalis | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 500 | 1225000 | param is invalid | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 500 | 1226500 | 历史错误码，不再使用 | - |
 | 500 | 1227500 | 组织架构服务系统错误 | 班次服务异常错误码，请参考实际返回的错误信息排查问题。例如“[BatchGetLarkIDByOpenID] not find user larkID”代表没有找到对应lark uid。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1220600 | 通用错误信息 | 通用错误信息包含多条，详细的错误信息以及处理建议可参见[错误信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines)。 |

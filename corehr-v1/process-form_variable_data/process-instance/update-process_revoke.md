@@ -1,7 +1,7 @@
 ---
 title: "撤销流程"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/process_revoke/update"
-updateTime: "1734434247000"
+updateTime: "1774531996000"
 ---
 
 # 撤销流程
@@ -17,7 +17,7 @@ updateTime: "1734434247000"
 | HTTP Method | PUT |
 | 接口频率限制 | [50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
-| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:process.instance:write` 通过/拒绝审批任务 |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:process.instance:write` 通过或拒绝审批任务 |
 | 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
@@ -94,5 +94,6 @@ updateTime: "1734434247000"
 | 403 | 1161003 | 无权限 | 指定用户非流程管理员、审批单管理员或未申请OpenAPI撤销流程权限 |
 | 400 | 1160100 | 流程不存在 | 请检查流程ID是否正确 |
 | 400 | 1161007 | 流程不能撤销 | 请检查当前流程状态是否为已完成 |
+| 400 | 1161008 | 流程不能撤销 | 业务逻辑校验不通过，请参考返回原因自查 |
 
 

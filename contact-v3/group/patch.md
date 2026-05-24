@@ -1,7 +1,7 @@
 ---
 title: "更新用户组"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group/patch"
-updateTime: "1720166883000"
+updateTime: "1775548370000"
 ---
 
 # 更新用户组
@@ -112,7 +112,7 @@ updateTime: "1720166883000"
 | 400 | 42021 | exist unsupported dynamic group operation | 动态用户组的匹配规则表达式中传入了不支持的关系操作指令 |
 | 400 | 42022 | exist invalid expression value or values | 动态用户组的匹配规则表达式中传入了错误、不支持的值，或者传入的单值、多值与关系操作符不匹配 |
 | 400 | 42024 | no permission to create a dynamic group | 没有创建动态用户组的权限，请确认后重试 |
-| 400 | 42025 | invalid joinner rule | 非法的连接规则，请修改后重试 |
+| 400 | 42025 | invalid joiner rule | 非法的连接规则，请修改后重试 |
 | 400 | 42026 | department scope exceed limit | 部门范围超过限制，请确认后重试 |
 
 

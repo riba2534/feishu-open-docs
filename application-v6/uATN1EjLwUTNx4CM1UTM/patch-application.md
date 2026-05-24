@@ -1,7 +1,7 @@
 ---
 title: "更新应用分组信息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/application-v6/application/patch"
-updateTime: "1689924101000"
+updateTime: "1773409068000"
 ---
 
 # 更新应用分组信息
@@ -15,9 +15,9 @@ updateTime: "1689924101000"
 | --- | --- |
 | HTTP URL | https://open.feishu.cn/open-apis/application/v6/applications/:app_id |
 | HTTP Method | PATCH |
-| 接口频率限制 | [特殊频控](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 接口频率限制 | [10 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
-| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `application:application` 更新应用信息 |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `admin:app.category:update` 更新应用分组 `application:application` 更新应用信息 |
 
 ### 请求头
 
@@ -47,6 +47,11 @@ updateTime: "1689924101000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `common_categories` | `string\[\]` | 否 | 应用分类的国际化描述<br>**示例值**：["分析工具"]<br>**数据校验规则**：<br>- 长度范围：`1` ～ `3` |
+| `allow_refresh_token` | `boolean` | 否 | 是否允许刷新user_access_token<br>**示例值**：false |
+| `callback_info` | `callback_info` | 否 | 应用回调配置 |
+| &nbsp;&nbsp;└ `callback_type` | `string` | 否 | 回调类型<br>**示例值**："webhook"<br>**可选值有**：<br>- `webhook`: 将回调发送至开发者服务器 - `websocket`: 使用长连接接收回调 |
+| &nbsp;&nbsp;└ `request_url` | `string` | 否 | 回调地址<br>**示例值**："https://open.feishu.cn/" |
+| &nbsp;&nbsp;└ `subscribed_callbacks` | `string\[\]` | 否 | 订阅的回调列表<br>**示例值**：["url.preview.get"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `99999` |
 
 
 ### 请求体示例
@@ -55,7 +60,15 @@ updateTime: "1689924101000"
 {
     "common_categories": [
         "分析工具"
-    ]
+    ],
+    "allow_refresh_token": false,
+    "callback_info": {
+        "callback_type": "webhook",
+        "request_url": "https://open.feishu.cn/",
+        "subscribed_callbacks": [
+            "url.preview.get"
+        ]
+    }
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: "通讯录常见问题"
 fullPath: "/ugTN1YjL4UTN24CO1UjN/uQzN1YjL0cTN24CN3UjN"
-updateTime: "1753076559000"
+updateTime: "1775548335000"
 ---
 
 # 通讯录常见问题
@@ -47,7 +47,7 @@ updateTime: "1753076559000"
 	2. 确保应用配置的通讯录权限范围包含了所要查询的用户。如何配置通讯录权限范围，参见[权限范围详解](https://open.larkoffice.com/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。
 
 
-### tenant_access_token 与 user_accss_token 的权限差异是什么？
+### tenant_access_token 与 user_access_token 的权限差异是什么？
 
 二者获取或操作数据时，权限过滤范围不一样。
 
@@ -55,7 +55,7 @@ updateTime: "1753076559000"
 	- 应用开发者可以在[开发者后台](https://open.feishu.cn/app)为自己的应用配置通讯录权限范围。详情参见[权限范围详解](https://open.larkoffice.com/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。
 	- 企业管理员可以在[管理后台](https://www.feishu.cn/admin/appCenter/manage) > **工作台** > **应用管理** 页面，进入指定应用配置页来调整应用的 **通讯录设置**。
 
-- `user_accss_token` 基于用户的可见组织架构范围来做权限过滤。用户可见的组织架构范围为 App 端上 **通讯录 > 组织架构** 部分可见的信息。企业管理员可以在 [管理后台](https://www.feishu.cn/admin) > **安全** > **成员权限** 页面，配置 **组织架构可见范围**。
+- `user_access_token` 基于用户的可见组织架构范围来做权限过滤。用户可见的组织架构范围为 App 端上 **通讯录 > 组织架构** 部分可见的信息。企业管理员可以在 [管理后台](https://www.feishu.cn/admin) > **安全** > **成员权限** 页面，配置 **组织架构可见范围**。
 
 在部分接口中，使用 tenant_access_token 和 user_access_token 存在一定的差异，具体可参见 API 文档的置顶说明。例如[获取单个部门信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/get)。
 
@@ -152,7 +152,7 @@ updateTime: "1753076559000"
 
 `user_id` 可能会被新增的员工占用。
 
-系统默认生成的 `user_id` 在企业内是有效用户（无效表示已离职用户）的唯一 ID。当开发者或管理员对用户进行删除，再添加新用户时，可能会存在新添加的用户的 `user_id` 和历史上已经删除的用户 `user_id` 一致的情况。因此建议你在新增用户时，使用具有唯一性标示的 ID 作为 `user_id`，避免造成相关困扰。
+系统默认生成的 `user_id` 在企业内是有效用户（无效表示已离职用户）的唯一 ID。当开发者或管理员对用户进行删除，再添加新用户时，可能会存在新添加的用户的 `user_id` 和历史上已经删除的用户 `user_id` 一致的情况。因此建议你在新增用户时，使用具有唯一性标识的 ID 作为 `user_id`，避免造成相关困扰。
 :::note
 **说明：** 部门的自定义 ID 设置逻辑与 user_id 一致。
 :::

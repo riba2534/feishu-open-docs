@@ -1,7 +1,7 @@
 ---
 title: "查询单个公司"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/company/get"
-updateTime: "1770621214000"
+updateTime: "1777289045000"
 ---
 
 # 查询单个公司
@@ -35,7 +35,7 @@ updateTime: "1770621214000"
 
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
-| `company_id` | `string` | 需要查询的公司ID。ID获取方式： - 调用[【创建公司】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/company/create)[【批量查询公司】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/company/list)等接口可以返回部门ID<br>**示例值**："151515" |
+| `company_id` | `string` | 需要查询的公司ID。ID获取方式： - 调用[【创建公司】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/company/create)[【批量查询公司】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/company/list)等接口可以返回公司ID<br>**示例值**："151515" |
 
 
 ## 响应
@@ -62,7 +62,7 @@ updateTime: "1770621214000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 名称信息的内容 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `active` | `boolean` | 是否启用 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `effective_time` | `string` | 当前版本生效日期 - 返回格式：YYYY-MM-DD 00:00:00（最小单位到日） - 日期范围:1900-01-01 00:00:00～9999-12-31 23:59:59 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `expiration_time` | `string` | 当前失效日期 - 返回格式：YYYY-MM-DD 00:00:00（最小单位到日） - 日期范围:1900-01-01 00:00:00～9999-12-31 23:59:59 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `expiration_time` | `string` | 当前版本失效日期 - 返回格式：YYYY-MM-DD 00:00:00（最小单位到日） - 日期范围:1900-01-01 00:00:00～9999-12-31 23:59:59 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `code` | `string` | 公司编码 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `description` | `i18n\[\]` | 描述 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 语言信息，中文用zh-CN，英文用en-US |

@@ -1,7 +1,7 @@
 ---
 title: "查询筛选条件"
 fullPath: "/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/query"
-updateTime: "1722417439000"
+updateTime: "1778317473000"
 ---
 
 # 查询筛选条件
@@ -17,7 +17,7 @@ updateTime: "1722417439000"
 | HTTP Method | GET |
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
-| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `drive:drive:readonly` 查看、评论和下载云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 `sheets:spreadsheet:readonly` 查看、评论和导出电子表格 |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `drive:drive` 查看、评论、编辑和管理云空间中所有文件 `drive:drive:readonly` 查看、评论和下载云空间中所有文件 `sheets:spreadsheet` 查看、评论、编辑和管理电子表格 `sheets:spreadsheet:read` 查看电子表格 `sheets:spreadsheet:readonly` 查看、评论和导出电子表格 |
 
 ### 请求头
 
@@ -54,7 +54,7 @@ curl --location --request GET 'https://open.feishu.cn/open-apis/sheets/v3/spread
 | `data` | `\-` | \- |
 | &nbsp;&nbsp;└ `items` | `filter_view_condition\[\]` | 筛选视图的所有筛选条件 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `condition_id` | `string` | 设置了筛选条件的列 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `filter_type` | `string` | 筛选类型。枚举值如下所示。了解更多，参考[筛选条件指南](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/filter-view-condition-user-guide)。<br>- hiddenValue：隐藏值筛选 - number：数字筛选 - text：文本筛选 - color：颜色筛选 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `filter_type` | `string` | 筛选类型。枚举值如下所示。了解更多，参考[筛选条件指南](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/filter-view-condition-user-guide)。<br>- multiValue ：多值筛选 - number：数字筛选 - text：文本筛选 - color：颜色筛选 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `compare_type` | `string` | 比较类型。了解更多，参考[筛选条件指南](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/filter-view-condition-user-guide)。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `expected` | `string\[\]` | 筛选参数。了解更多，参考[筛选条件指南](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/filter-view-condition-user-guide)。 |
 

@@ -1,7 +1,7 @@
 ---
 title: "批量查询打卡流水"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_flow/query"
-updateTime: "1726831208000"
+updateTime: "1778137742000"
 ---
 
 # 批量查询打卡流水
@@ -46,7 +46,7 @@ updateTime: "1726831208000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `employee_type` | `string` | 是 | 请求体中的 user_ids 和响应体中的 user_id 的员工ID类型。如果没有后台管理权限，可使用[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)<br>**示例值**：employee_id<br>**可选值有**：<br>- `employee_id`: 员工 employee ID，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的用户 ID - `employee_no`: 员工工号，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的工号 |
+| `employee_type` | `string` | 是 | 请求体中的 user_ids 和响应体中的 user_id 的员工ID类型(user_ids的类型必须与本参数的取值一致)。如果没有后台管理权限，可使用[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)<br>**示例值**：employee_id<br>**可选值有**：<br>- `employee_id`: 员工 employee ID，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的用户 ID - `employee_no`: 员工工号，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的工号 |
 | `include_terminated_user` | `boolean` | 否 | 由于新入职用户可以复用已离职用户的employee_no/employee_id。如果true，返回employee_no/employee_id对应的所有在职+离职用户数据；如果false，只返回employee_no/employee_id对应的在职或最近一个离职用户数据<br>**示例值**：true |
 
 
@@ -56,8 +56,8 @@ updateTime: "1726831208000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `user_ids` | `string\[\]` | 是 | employee_no 或 employee_id 列表，长度不超过 50<br>**示例值**：["abd754f7"] |
-| `check_time_from` | `string` | 是 | 查询的起始时间，秒级时间戳<br>**示例值**："1566641088" |
-| `check_time_to` | `string` | 是 | 查询的结束时间，秒级时间戳<br>**示例值**："1566641088" |
+| `check_time_from` | `string` | 是 | 查询的起始时间(包含)，秒级时间戳。[check_time_from, check_time_to) 为左闭右开区间<br>**示例值**："1566641088" |
+| `check_time_to` | `string` | 是 | 查询的结束时间(不包含)，秒级时间戳。[check_time_from, check_time_to) 为左闭右开区间<br>**示例值**："1566641088" |
 
 
 ### 请求体示例
@@ -140,13 +140,13 @@ updateTime: "1726831208000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 400 | 1220001 | param is invalis | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 400 | 1220002 | 租户不存在 | 请检查入参中的 tenant_access_token是否正确 |
-| 400 | 1220004 | param is invalis | 请参考实际返回的错误信息排查问题。例如“user_id is not exist or does not have permission”代表入参传入的用户id不存在或者没有权限。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 400 | 1220005 | 没有权限 | 请前往[考勤管理后台](https://oa.feishu.cn/attendance/manage/member/list)检查数据权限范围 |
-| 500 | 1225000 | param is invalis | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 500 | 1226500 | 历史错误码，不再使用 | - |
-| 500 | 1227500 | param is invalis | 班次服务异常错误码，请参考实际返回的错误信息排查问题。例如“[BatchGetLarkIDByOpenID] not find user larkID”代表没有找到对应lark uid。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 400 | 1220600 | 通用错误信息 | 通用错误信息包含多条，详细的错误信息以及处理建议可参见 [错误信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines) |
+| 400 | 1220001 | param is invalid | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220002 | Tenant does not exist | 请检查请求Header中的 tenant_access_token(tenant_access_token 通常位于请求Header的Authorization字段中，格式为Bearer {tenant_access_token})是否正确 |
+| 400 | 1220004 | param is invalid | 请参考实际返回的错误信息排查问题。例如“user_id is not exist or does not have permission”代表入参传入的用户id不存在或者没有权限。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220005 | Permission denied | 请前往[考勤管理后台](https://oa.feishu.cn/attendance/manage/member/list)检查数据权限范围 |
+| 500 | 1225000 | param is invalid | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 500 | 1226500 | Historical error code, no longer in use | 请使用最新的错误码进行排查，如仍有问题可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 500 | 1227500 | param is invalid | 班次服务异常错误码，请参考实际返回的错误信息排查问题。例如“[BatchGetLarkIDByOpenID] not find user larkID”代表没有找到对应lark uid。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220600 | General error information | 通用错误信息包含多条，详细的错误信息以及处理建议可参见 [错误信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines) |
 
 

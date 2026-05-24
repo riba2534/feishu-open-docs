@@ -1,7 +1,7 @@
 ---
 title: "列出邮箱联系人"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-mail_contact/list"
-updateTime: "1745841704000"
+updateTime: "1773998729000"
 ---
 
 # 列出邮箱联系人
@@ -85,7 +85,7 @@ updateTime: "1745841704000"
                 "mail_address": "zhangsan@example.com",
                 "tag": "朋友",
                 "remark": "飞书发布会认识",
-                "avatar": "https://exampeimg.com/xxxx.jpg",
+                "avatar": "https://exampleimg.com/xxxx.jpg",
                 "position": "CEO"
             }
         ],

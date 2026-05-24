@@ -1,7 +1,7 @@
 ---
 title: "查询指定时间范围序列版本"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/job_family/query_multi_timeline"
-updateTime: "1770621327000"
+updateTime: "1777289163000"
 ---
 
 # 查询指定时间范围序列版本
@@ -40,7 +40,7 @@ updateTime: "1770621327000"
 | `job_family_ids` | `string\[\]` | 是 | 序列ID。ID获取方式： - 调用[【新建序列】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/job_family/create)[【查询租户的序列信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/job_family/list)等接口可以返回序列ID<br>**示例值**：["7094136522860922111"]<br>**数据校验规则**：<br>- 长度范围：`1` ～ `10` |
 | `start_date` | `string` | 否 | 查询开始时间（包含） - start_date 不能大于 end_date - 必填字段，无默认值<br>**示例值**："2024-01-01"<br>**数据校验规则**：<br>- 长度范围：`10` ～ `10` 字符 - 正则校验：`^((([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29))$` |
 | `end_date` | `string` | 否 | 查询结束时间(不包含) - 必填字段，无默认值<br>**示例值**："2024-12-31"<br>**数据校验规则**：<br>- 长度范围：`10` ～ `10` 字符 - 正则校验：`^((([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29))$` |
-| `fields` | `string\[\]` | 否 | 返回数据的字段列表，可选["job_family_name", "code", "active",  "parent_job_family", "selectable","pathway","description",  "effective_date", "expiration_date"] - 无默认值，为空时只能查询到ID<br>**示例值**：["job_family_name"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
+| `fields` | `string\[\]` | 否 | 返回数据的字段列表，可选 - job_family_name：序列名称 - code：编码 - active：是否启用 - parent_job_family：上级序列  - selectable：是否可被使用 - pathway：通道 - description：描述 - effective_date：当前版本生效日期  - expiration_date：当前版本失效日期 - 无默认值，为空时只能查询到ID<br>**示例值**：["job_family_name"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
 
 
 ### 请求体示例

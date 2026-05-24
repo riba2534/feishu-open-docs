@@ -1,7 +1,7 @@
 ---
 title: "删除用户"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/delete"
-updateTime: "1732262967000"
+updateTime: "1775548359000"
 ---
 
 # 删除用户
@@ -56,7 +56,7 @@ updateTime: "1732262967000"
 | `external_chat_acceptor_user_id` | `string` | 否 | 外部群接收者的用户 ID。被删除用户为外部群群主时，转让群主给指定接收者。<br>**注意**： - ID 类型需要与查询参数中的 user_id_type 类型保持一致。用户 ID 获取方式可参见[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。 - 不指定该参数时，如果被删除用户是外部群群主，则群主会默认转让给群内与被删除用户在同一组织的第一个入群的人。如果组织内只有被删除用户在群里，则解散外部群。<br>**示例值**："ou_7dab8a3d3cdcc9da365777c7ad535d62" |
 | `docs_acceptor_user_id` | `string` | 否 | 文档接收者的用户 ID。用户被删除时，其拥有的文档转让给接收者。<br>**注意**： - ID 类型需要与查询参数中的 user_id_type 类型保持一致。用户 ID 获取方式可参见[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。 - 不指定接收者则默认转让给被删除用户的直属上级。如果被删除用户无直属上级，则将文档资源保留在该用户名下。 - 文档转让后，只改变文档所有者，其他权限不受影响。<br>**示例值**："ou_7dab8a3d3cdcc9da365777c7ad535d62" |
 | `calendar_acceptor_user_id` | `string` | 否 | 日程接收者的用户 ID。用户被删除时，其拥有的日程转让给接收者。<br>**注意**： - ID 类型需要与查询参数中的 user_id_type 类型保持一致。用户 ID 获取方式可参见[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。 - 不指定接收者则默认转让给被删除用户的直属上级。如果被删除用户无直属上级，则直接删除日程资源。<br>**示例值**："ou_7dab8a3d3cdcc9da365777c7ad535d62" |
-| `application_acceptor_user_id` | `string` | 否 | 应用接受者的用户 ID。用户被删除时，其创建的应用转让给接收者。<br>**注意**： - ID 类型需要与查询参数中的 user_id_type 类型保持一致。用户 ID 获取方式可参见[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。 - 不指定接收者则默认转让给被删除用户的直属上级。如果被删除用户无直属上级，则保留应用在该用户名下，但该用户无法登录开发者后台进行应用管理。企业管理员可以在管理后台手动转移应用给其他人。<br>**示例值**："ou_7dab8a3d3cdcc9da365777c7ad535d62" |
+| `application_acceptor_user_id` | `string` | 否 | 应用接收者的用户 ID。用户被删除时，其创建的应用转让给接收者。<br>**注意**： - ID 类型需要与查询参数中的 user_id_type 类型保持一致。用户 ID 获取方式可参见[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。 - 不指定接收者则默认转让给被删除用户的直属上级。如果被删除用户无直属上级，则保留应用在该用户名下，但该用户无法登录开发者后台进行应用管理。企业管理员可以在管理后台手动转移应用给其他人。<br>**示例值**："ou_7dab8a3d3cdcc9da365777c7ad535d62" |
 | `minutes_acceptor_user_id` | `string` | 否 | 妙记接收者的用户 ID。用户被删除时，其拥有的妙记资源转让给接收者。<br>**注意**： - ID 类型需要与查询参数中的 user_id_type 类型保持一致。用户 ID 获取方式可参见[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。 - 如果不指定接收者，则默认转让给被删除用户的直属上级。如果被删除用户无直属上级，则将妙记保留在该用户名下。 - 妙记转让后，只改变妙记所有者，不影响已分享的妙记链接。<br>**示例值**："ou_7dab8a3d3cdcc9da365777c7ad535d62" |
 | `survey_acceptor_user_id` | `string` | 否 | 飞书问卷接收者的用户 ID。用户被删除时，其拥有的飞书问卷资源转让给接收者。<br>**注意**： - ID 类型需要与查询参数中的 user_id_type 类型保持一致。用户 ID 获取方式可参见[如何获取不同的用户 ID](https://open.larkoffice.com/document/home/user-identity-introduction/open-id)。 - 不指定接收者则默认转让给被删除用户的直属上级。如果被删除用户无直属上级，则直接删除飞书问卷资源。<br>**示例值**："ou_7dab8a3d3cdcc9da365777c7ad535d62" |
 | `email_acceptor` | `resource_acceptor` | 否 | 用户邮件资源的处理方式。<br>该参数为可选参数，如果未传值，则默认将邮件资源转让给被删除用户的直属上级。如果被删除用户无直属上级，则保留邮件资源在该用户名下。 |

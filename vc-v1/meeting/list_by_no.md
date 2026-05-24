@@ -1,12 +1,15 @@
 ---
 title: "获取与会议号关联的会议列表"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting/list_by_no"
-updateTime: "1716194050000"
+updateTime: "1774530962000"
 ---
 
 # 获取与会议号关联的会议列表
 
-获取指定时间范围（90天内)会议号关联的会议简要信息列表。
+获取指定时间范围内与会议号关联的会议简要信息列表。
+
+
+> **Warning**: 仅支持查询 90 天内的数据。
 
 
 ## 请求
@@ -17,7 +20,7 @@ updateTime: "1716194050000"
 | HTTP Method | GET |
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
-| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `vc:meeting:readonly` 获取会议信息 |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `vc:meeting.meetingid:read` 获取会议基本信息 `vc:meeting:readonly` 获取会议信息 |
 
 ### 请求头
 
@@ -30,8 +33,8 @@ updateTime: "1716194050000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `meeting_no` | `string` | 是 | 9位会议号<br>**示例值**：123456789 |
-| `start_time` | `string` | 是 | 查询开始时间（unix时间，单位sec）<br>**示例值**：1608888867 |
+| `meeting_no` | `string` | 是 | 9位会议号（会议链接最后9位数）<br>**示例值**：123456789 |
+| `start_time` | `string` | 是 | 查询开始时间（unix时间，单位sec），需小于end_time的值<br>**示例值**：1608888867 |
 | `end_time` | `string` | 是 | 查询结束时间（unix时间，单位sec）<br>**示例值**：1608888867 |
 | `page_token` | `string` | 否 | 分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果<br>**示例值**：5 |
 | `page_size` | `int` | 否 | 分页大小<br>**示例值**：10<br>**默认值**：`20`<br>**数据校验规则**：<br>- 最大值：`50` |
@@ -55,6 +58,8 @@ updateTime: "1716194050000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `url` | `string` | 会议链接（飞书用户可通过点击会议链接快捷入会） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `meeting_no` | `string` | 会议号 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `password` | `string` | 会议密码 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `meeting_connect` | `boolean` | 该会议是否支持互通 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `note_id` | `string` | 纪要ID |
 
 
 ### 响应体示例
@@ -89,7 +94,7 @@ updateTime: "1716194050000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 500 | 121001 | internal error | 服务器内部错误，如果重试无效可联系管理员 |
+| 500 | 121001 | internal error | 服务器内部错误，如果重试无效可联系[技术支持](https://applink.larkoffice.com/TLJpeNdW) |
 | 400 | 121003 | param error | 参数错误，检查参数的取值范围（请按照上面字段说明自查） |
 
 

@@ -1,7 +1,7 @@
 ---
 title: "审批概述"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval-overview"
-updateTime: "1744631047000"
+updateTime: "1779350983000"
 ---
 
 # 审批概述
@@ -44,6 +44,9 @@ updateTime: "1744631047000"
 
 
 > **Warning**: 使用审批定义的 Approval Code 可以获取审批定义下的所有数据，以及可以订阅该定义下所有审批实例的变更事件，因此需要注意妥善保管审批定义的 Approval Code，避免因 Approval Code 泄露导致的数据安全风险。
+
+
+> **Warning**: 审批域下以tenant_access_token访问的接口默认拥有租户下的所有数据权限，应用审核时需要注意管控，对于有个人只操作用户自身范围可见数据的诉求，可以开通审批支持user_access_token的权限点，使用其相应的接口。
 
 
 #### 表单（Form）

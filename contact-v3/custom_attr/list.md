@@ -1,7 +1,7 @@
 ---
 title: "获取企业自定义用户字段"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/custom_attr/list"
-updateTime: "1756451345000"
+updateTime: "1775548371000"
 ---
 
 # 获取企业自定义用户字段

@@ -1,7 +1,7 @@
 ---
 title: "获取工作日历日期详情"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/leave/work_calendar_date"
-updateTime: "1766405785000"
+updateTime: "1778153738000"
 ---
 
 # 获取工作日历日期详情
@@ -37,7 +37,7 @@ updateTime: "1766405785000"
 | `begin_date` | `string` | 否 | 日期范围-开始日期，格式："2006-01-02"；需要和end_date一起使用；<br>**注意**： - 如果不传 ids 参数，则必须传 dates 参数或 [begin_date，end_date]参数 - 如果传 ids 参数，则仅生效 ids 参数，无需传 dates 参数或 [begin_date，end_date]参数<br>**示例值**："2006-01-02" |
 | `end_date` | `string` | 否 | 日期范围-结束日期(含)，格式："2006-01-02"；需要和begin_date一起使用<br>**示例值**："2006-01-02" |
 | `offset` | `int` | 否 | 分页<br>**示例值**：0 |
-| `limit` | `int` | 否 | 分页大小<br>**示例值**：10 |
+| `limit` | `int` | 否 | 分页大小，无默认值需手动设置<br>**示例值**：10 |
 | `ids` | `string\[\]` | 否 | 日期id，可使用响应体中的data.calendar_dates.id<br>**注意**： - 如果不传 ids 参数，则必须传 dates 参数或 [begin_date，end_date]参数 - 如果传 ids 参数，则仅生效 ids 参数，无需传 dates 参数或 [begin_date，end_date]参数<br>**示例值**：["7390282135276635692"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `1000` |
 
 

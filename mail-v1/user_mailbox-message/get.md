@@ -1,7 +1,7 @@
 ---
 title: "获取邮件详情"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-message/get"
-updateTime: "1755223456000"
+updateTime: "1776073492000"
 ---
 
 # 获取邮件详情
@@ -9,7 +9,7 @@ updateTime: "1755223456000"
 获取邮件详情
 
 
-> **Tip**: 使用 tenant_access_token 时，需要申请邮件数据资源的数据权限。
+> **Tip**: 使用应用权限访问时，需要申请邮件数据资源的数据权限。
 
 
 ## 请求
@@ -38,6 +38,13 @@ updateTime: "1755223456000"
 | `message_id` | `string` | 用户邮件 id，获取方式见 [列出邮件](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-message/list)<br>**示例值**："TUlHc1NoWFhJMXgyUi9VZTNVL3h6UnlkRUdzPQ==" |
 
 
+### 查询参数
+
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `format` | `string` | 否 | 需要获取的邮件内容。支持选择full/plain_text_full/metadata<br>**示例值**：full<br>**可选值有**：<br>- `full`: 全文，包括标签、文件夹、主题、收发件人、纯文本、HTML等信息 - `plain_text_full`: 全文，只返回纯文本正文内容，不返回HTML。返回内容包括标签、文件夹、主题、收发件人、纯文本等信息 - `metadata`: 邮件元数据信息，包括标签、文件夹、主题、收发件人、摘要等信息，不返回正文内容 |
+
+
 ## 响应
 
 
@@ -56,7 +63,7 @@ updateTime: "1755223456000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `cc` | `mail_address\[\]` | 抄送<br>**字段权限要求**： `mail:user_mailbox.message.address:read` 获取邮件内容中地址相关字段 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `mail_address` | `string` | 邮件地址 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `string` | 名称 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `bcc` | `mail_address\[\]` | 秘送<br>**字段权限要求**： `mail:user_mailbox.message.address:read` 获取邮件内容中地址相关字段 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `bcc` | `mail_address\[\]` | 密送<br>**字段权限要求**： `mail:user_mailbox.message.address:read` 获取邮件内容中地址相关字段 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `mail_address` | `string` | 邮件地址 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `string` | 名称 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `head_from` | `mail_address` | 发件人<br>**字段权限要求**： `mail:user_mailbox.message.address:read` 获取邮件内容中地址相关字段 |
@@ -67,14 +74,30 @@ updateTime: "1755223456000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `message_state` | `int` | 邮件状态，1为收信，2为发信，3为草稿 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `smtp_message_id` | `string` | RFC协议id |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `message_id` | `string` | 邮件id |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `body_plain_text` | `string` | 正文纯文本(base64url)<br>**字段权限要求**： `mail:user_mailbox.message.body:read` 获取邮件正文 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `attachments` | `attachment\[\]` | 邮件附件列表<br>**字段权限要求**： `mail:user_mailbox.message.body:read` 获取邮件正文 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `filename` | `string` | 附件文件名 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 附件 id |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `attachment_type` | `int` | 附件类型<br>**可选值有**：<br>- `1`: 普通附件 - `2`: 超大附件 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_inline` | `boolean` | 是否为内联图片，true 表示是内联图片 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `cid` | `string` | 内容 ID，HTML 中通过 cid: 协议引用该图片 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `body_plain_text` | `string` | 正文纯文本(base64url)<br>**字段权限要求**： `mail:user_mailbox.message.body:read` 获取邮件正文 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `thread_id` | `string` | 会话id |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `body_preview` | `string` | 邮件正文纯文本内容的前100个字符，基于base64url编码，用于快速预览邮件核心内容，无需解码完整正文 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `label_ids` | `string\[\]` | 标签ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `folder_id` | `string` | 文件夹ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `in_reply_to` | `string` | In-Reply-To邮件头 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `reply_to` | `string` | Reply-To邮件头 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `priority_type` | `string` | 邮件优先级<br>**可选值有**：<br>- `0`: 无优先级 - `1`: 高优先级 - `3`: 正常优先级 - `5`: 低优先级 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `security_level` | `security_level` | 安全信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_risk` | `boolean` | 是否风险邮件 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `risk_banner_level` | `string` | 风险邮件等级<br>**可选值有**：<br>- `WARNING`: 警告 - `DANGER`: 危险 - `INFO`: 提示 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `risk_banner_reason` | `string` | 风险邮件原因<br>**可选值有**：<br>- `NO_REASON`: 未知 - `IMPERSONATE_DOMAIN`: 相似域名仿冒 - `IMPERSONATE_KP_NAME`: KP姓名仿冒 - `UNAUTH_EXTERNAL`: 未认证外部域名 - `MALICIOUS_URL`: 恶意链接 - `MALICIOUS_ATTACHMENT`: 高危附件 - `PHISHING`: 钓鱼邮件 - `IMPERSONATE_PARTNER`: 仿冒合作伙伴 - `EXTERNAL_ENCRYPTION_ATTACHMENT`: 外部邮件携带加密附件 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_header_from_external` | `boolean` | 发件人是否外部邮件 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `via_domain` | `string` | 代发或伪造邮件展示SPF或DKIM域名 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `spam_banner_type` | `string` | 垃圾邮件原因<br>**可选值有**：<br>- `USER_REPORT`: 用户曾标记邮件是垃圾邮件 - `USER_BLOCK`: 用户曾将发件人的邮件标记为垃圾邮件 - `ANTI_SPAM`: 系统判为垃圾邮件 - `USER_RULE`: 命中收信规则进入垃圾邮件 - `BLOCK_DOMIN`: 用户已拦截来自该域名的邮件 - `BLOCK_ADDRESS`: 用户已拦截来自该邮件地址的邮件 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `spam_user_rule_id` | `string` | 命中的收信规则ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `spam_banner_info` | `string` | 命中用户黑名单的地址或域名信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `references` | `string` | References邮件头 |
 
 
 ### 响应体示例
@@ -113,7 +136,6 @@ updateTime: "1755223456000"
             "message_state": 1,
             "smtp_message_id": "ay0azrJDvbs3FJAg@outlook.com",
             "message_id": "tfuh9N4WnzU6jdDw=",
-            "body_plain_text": "xxxxx",
             "attachments": [
                 {
                     "filename": "helloworld.txt",
@@ -123,7 +145,27 @@ updateTime: "1755223456000"
                     "cid": "image1@example.com"
                 }
             ],
-            "thread_id": "tfuh9N4WnzU6jdDw="
+            "body_plain_text": "xxxxx",
+            "thread_id": "tfuh9N4WnzU6jdDw=",
+            "body_preview": "xxxxx",
+            "label_ids": [
+                "FLAGGED"
+            ],
+            "folder_id": "INBOX",
+            "in_reply_to": "06d20.dbf451a3.808a.475a.acc9.1363dfd20f36@larksuite.com",
+            "reply_to": "06d20.dbf451a3.808a.475a.acc9.1363dfd20f36@larksuite.com",
+            "priority_type": "0",
+            "security_level": {
+                "is_risk": true,
+                "risk_banner_level": "1",
+                "risk_banner_reason": "101",
+                "is_header_from_external": false,
+                "via_domain": "larksuite.com",
+                "spam_banner_type": "1",
+                "spam_user_rule_id": "7618365627924925388",
+                "spam_banner_info": "larksuite.com"
+            },
+            "references": "<5678.abcd@test.com>\r\n\t<1234.abcd@message-id>"
         }
     }
 }
@@ -134,8 +176,9 @@ updateTime: "1755223456000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 404 | 1235013 | mail box not found | 请检查邮箱地址是否正确 |
+| 404 | 1235013 | mailbox not found | 请检查邮箱地址是否正确 |
 | 400 | 1234008 | wrong parameters | 参数错误，请检查参数格式或取值是否符合接口要求后重试 |
 | 404 | 1234034 | message not found | 请检查邮件 id 是否正确，获取邮件 id 的方式可参考 [列出邮件](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-message/list) |
+| 403 | 1234017 | permission not granted | 无权限访问，请确认应用是否具备访问该资源的权限。如使用用户身份访问，请确认具备此用户的访问权限；如使用租户身份访问，请确认已申请对应的数据范围权限。 |
 
 

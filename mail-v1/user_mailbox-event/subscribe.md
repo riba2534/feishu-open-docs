@@ -1,7 +1,7 @@
 ---
 title: "订阅事件"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-event/subscribe"
-updateTime: "1745841579000"
+updateTime: "1773998617000"
 ---
 
 # 订阅事件

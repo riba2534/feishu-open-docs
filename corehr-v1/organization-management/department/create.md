@@ -1,12 +1,15 @@
 ---
 title: "创建部门"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/department/create"
-updateTime: "1765434746000"
+updateTime: "1779277878000"
 ---
 
 # 创建部门
 
 支持在单个接口中进行部门信息添加，包括部门基本信息、部门负责人、部门自定义字段信息等
+
+
+> **Tip**: 此接口字段是否必填以【飞书人事-组织配置】为准。建议参照【飞书人事-组织管理-部门-新建】页面来传参
 
 
 ## 请求
@@ -52,7 +55,7 @@ updateTime: "1765434746000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 是 | 名称信息的语言，支持中文和英文。中文用zh-CN；英文用en-US。<br>**示例值**："zh-CN" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 名称信息的内容，支持中文和英文。填写规范 - 名称不能包含「/」「；」「;」「\」「'」字符。 - 同一个上级部门的启用的部门名称不允许重复<br>**示例值**："研发部" |
 | &nbsp;&nbsp;└ `active` | `boolean` | 是 | 是否启用该部门<br>**示例值**：true |
-| &nbsp;&nbsp;└ `code` | `string` | 否 | 部门编码 (不能与其他记录的编码重复) - 开启自动编码时，以自动生成的编码值为准，传入值不生效 - 未开启自动编码时，编码字段值以传入值为准<br>**示例值**："12456" |
+| &nbsp;&nbsp;└ `code` | `string` | 否 | 部门编码 (不能与其他记录的编码重复)<br>它的生效规则和 is_prefer_manual_encoding (是否优先使用手动编码)相关： -  当系统开启自动编码时：       若 is_prefer_manual_encoding=true：传入的 code 会生效，不传则自动生成编码。         若 is_prefer_manual_encoding=false：传的 code 会被忽略，以系统自动生成的编码为准。 -  当系统未开启自动编码时：无论 is_prefer_manual_encoding取值如何，均以传入的 code 为准。<br>**示例值**："12456" |
 | &nbsp;&nbsp;└ `description` | `i18n\[\]` | 否 | 描述 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 是 | 描述信息的语言，支持中文和英文。中文用zh-CN；英文用en-US。<br>**示例值**："zh-CN" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 描述信息的内容<br>**示例值**："张三" |
@@ -63,6 +66,7 @@ updateTime: "1765434746000"
 | `cost_center_id` | `string` | 否 | 成本中心id 详细信息可通过[【搜索成本中心信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/cost_center/search)接口查询获得<br>**示例值**："7142384817131652652" |
 | `staffing_model` | `enum` | 否 | 岗职管理模式 - 详细枚举类型请查看[枚举场景](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/feishu-people-enum-constant)中关于staffing_model定义 |
 | &nbsp;&nbsp;└ `enum_name` | `string` | 是 | 枚举值<br>**示例值**："position" |
+| `is_prefer_manual_encoding` | `boolean` | 否 | 是否优先使用手动编码<br>- 设为 true：优先使用传入的 code。即使系统开启了自动编码，只要传了 code，以传入值为准；        未传code时，会回退到自动生成编码。 - 设为 false：遵循系统默认策略。此时若系统开启了自动编码，传入的 code 不会生效，以系统自动生成的编码为准<br>**示例值**：false |
 
 
 ### 请求体示例
@@ -101,7 +105,8 @@ updateTime: "1765434746000"
     "cost_center_id": "7142384817131652652",
     "staffing_model": {
         "enum_name": "position"
-    }
+    },
+    "is_prefer_manual_encoding": false
 }
 ```
 
@@ -124,7 +129,7 @@ updateTime: "1765434746000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 枚举值信息的语言，支持中文和英文。中文用zh-CN；英文用en-US。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 枚举值信息的内容 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `manager` | `string` | 部门负责人，填写员工的雇佣ID 详细信息可通过[【搜索员工信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/search)接口获取 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `is_confidential` | `boolean` | 是否保密 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `is_confidential` | `boolean` | 是否保密（该功能暂不支持，可忽略） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `hiberarchy_common` | `hiberarchy_common` | 组织实体公共字段，包括名称、描述、上级、启停用状态、生效日期、编码等基础信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `parent_id` | `string` | 上级组织 ID，详细信息可通过[【查询单个部门】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/department/get)接口获得 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n\[\]` | 名称 |
@@ -142,13 +147,13 @@ updateTime: "1765434746000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `description` | `i18n\[\]` | 描述 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 名称信息的语言，支持中文和英文。中文用zh-CN；英文用en-US。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 名称信息的内容 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `tree_order` | `string` | 树形排序，代表同层级的部门排序序号 - 创建部门场景tree_order不会实时生成，10分钟内更新完毕 - 在页面拖动部门排序时tree_order可以实时生成 - 变更部门上级时，会清空tree_order，并触发重算list_order和tree_order，10分钟内更新完毕 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `tree_order` | `string` | 树形排序，代表同层级的部门排序序号 - 数据类型为字符串，实际按数值大小排序，数值越小，同层级部门展示越靠前；仅对同一父部门下的直接子部门生效 - 数值生成规则：    - 编号长度由同层级部门数量动态决定：同层级部门≤10 个为 6 位编号，10~20 个为 7 位编号，超过 100 个统一为 16 位编号，以此类推   - 新建部门时系统自动赋值：同层级下一个新部门编号，会在上一个部门编号基础上按固定数值自动累加；例如 6 位编号每次固定加 1000，7 位编号每次固定加 10000   - 重排触发：当同层级部门数量超出当前编号长度可容纳范围，或多次拖拽排序无法正常插入位置时，会触发同层级编号全局重新编排；所有部门编号会按新的长度和累加规则重新生成，数值可能出现明显变大   - 当同一父部门下的子部门数量超过 1000 个时，系统在维护排序编号时可能出现异常问题。 - 更新时机：   - 创建部门场景tree_order不会实时生成，10分钟内更新完毕   - 在页面拖动部门排序时tree_order可以实时生成   - 变更部门上级时，会清空tree_order，并触发重算list_order和tree_order，10分钟内更新完毕（list_order由部门上级路径的所有tree_order用“-”拼接生成） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `list_order` | `string` | ListOrder 列表排序，代表所有部门的混排序号，为该部门上级路径上所有tree_order用“-”拼接。 - 该字段在新建/更新场景非立即更新，10分钟后会延迟更新 - 由于list_order变更会导致[部门变更接口](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/department/events/updated)产生大量事件，因此事件接口不会针对该字段同步变更事件，如果有需求订阅请联系Oncall单独开启。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `custom_fields` | `object_field_data\[\]` | 自定义字段类型，详细见[获取自定义字段列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/query) |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `field_name` | `string` | 自定义字段 API Name，即自定义字段的唯一标识 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同。如：```("\"123\"", "\"123.23\"", "\"true\"", [\"id1\",\"id2\"], \"2006-01-02 15:04:05\")``` |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `effective_time` | `string` | 生效时间 - 返回格式：YYYY-MM-DD 00:00:00（最小单位到日） - 日期范围:1900-01-01 00:00:00～9999-12-31 23:59:59 - 和data.hiberarchy_common.effective_time值一致 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `expiration_time` | `string` | 失效时间 - 返回格式：YYYY-MM-DD 00:00:00（最小单位到日） - 日期范围:1900-01-01 00:00:00～9999-12-31 23:59:59 - 和data.hiberarchy_common.expiration_time值一致 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `effective_time` | `string` | 版本生效时间 - 返回格式：YYYY-MM-DD 00:00:00（最小单位到日） - 日期范围:1900-01-01 00:00:00～9999-12-31 23:59:59 - 和data.hiberarchy_common.effective_time值一致 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `expiration_time` | `string` | 版本失效时间 - 返回格式：YYYY-MM-DD 00:00:00（最小单位到日） - 日期范围:1900-01-01 00:00:00～9999-12-31 23:59:59 - 和data.hiberarchy_common.expiration_time值一致 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `custom_fields` | `object_field_data\[\]` | 自定义字段 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `field_name` | `string` | 字段名 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(如123, 123.23, "true", [\"id1\",\"id2\"], "2006-01-02 15:04:05") |
@@ -249,7 +254,7 @@ updateTime: "1765434746000"
 | 400 | 1160106 | date format should be yyyy-mm-dd hh:mm:ss | 请检查时间类型字段的格式是否正确 |
 | 400 | 1160251 | superior department is required | 上级部门为必填，请检查上级部门是否为空 |
 | 400 | 1160252 | the number of characters in the text field exceeds the limit | 文本类字段的长度超过限制，请减少字符数 |
-| 400 | 1160253 | the name can't contain "/", "；", or ";" | 部门名称中包含「/」、「；」、「;」、「\」、「'」请删除相关特殊字符 |
+| 400 | 1160253 | the name can't contain "/","；",or ";" | 部门名称中包含「/」、「；」、「;」、「\」、「'」请删除相关特殊字符 |
 | 400 | 1160254 | name already exists | 请检查名称是否与其他记录重复 |
 | 400 | 1160258 | the individual hasn't been onboard on effective date | 请检查人员在生效日期下是否未入职 |
 | 400 | 1160259 | the individual offboarded on effective date | 请检查人员在生效日期下是是否已离职 |
@@ -259,7 +264,7 @@ updateTime: "1765434746000"
 | 400 | 1160321 | the name already exists | 名称已存在，请使用其他名称 |
 | 400 | 1160322 | department still have active subordinates on or after the effective date | 已废弃 |
 | 400 | 1160327 | the field doesn't exist | 请检查字段是否正确 |
-| 400 | 1160337 | effective date  is required | 请检查生效日期是否为空 |
+| 400 | 1160337 | effective date is required | 请检查生效日期是否为空 |
 | 400 | 1160340 | field must be in the yyyy-MM-dd HH:mm:ss format | 已废弃 |
 | 400 | 1160341 | doesn't exist | 已废弃 |
 | 400 | 1160343 | Duplicate code | 已废弃 |

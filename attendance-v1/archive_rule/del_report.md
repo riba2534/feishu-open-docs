@@ -1,7 +1,7 @@
 ---
 title: "删除归档报表行数据"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/archive_rule/del_report"
-updateTime: "1722519312000"
+updateTime: "1778137731000"
 ---
 
 # 删除归档报表行数据
@@ -34,7 +34,7 @@ updateTime: "1722519312000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `employee_type` | `string` | 是 | 请求体中的 user_ids 和响应体中的 user_id 的员工ID类型。如果没有后台管理权限，可使用[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)<br>* `employee_id `：员工 employee ID，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的用户 ID * `employee_no`：员工工号，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的工号<br>**示例值**：employee_id |
+| `employee_type` | `string` | 是 | 请求体中的 user_ids 和响应体中的 user_id 的员工ID类型。如果没有后台管理权限，可使用[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id) * `employee_id`：员工 employee ID，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的用户 ID * `employee_no`：员工工号，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的工号<br>**示例值**：employee_id |
 
 
 ### 请求体
@@ -43,7 +43,7 @@ updateTime: "1722519312000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `month` | `string` | 是 | 月份，格式yyyyMM<br>**示例值**："202409" |
-| `operator_id` | `string` | 是 | 操作者ID，对应employee_type<br>**示例值**："a111xd" |
+| `operator_id` | `string` | 是 | 操作者ID，corresponding to employee_type<br>**示例值**："a111xd" |
 | `archive_rule_id` | `string` | 是 | 归档规则id，可根据[查询所有归档规则](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/archive_rule/list)获得<br>**示例值**："1" |
 | `user_ids` | `string\[\]` | 否 | 用户id，对应employee_type<br>**示例值**：["xx1uad"] |
 

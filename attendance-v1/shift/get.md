@@ -1,12 +1,12 @@
 ---
 title: "按 ID 查询班次"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/shift/get"
-updateTime: "1757646480000"
+updateTime: "1778137679000"
 ---
 
-# 按 ID 查询班次
+# 查询班次
 
-通过班次 ID 获取班次详情。对应功能为假勤设置-[班次设置](https://example.feishu.cn/people/workforce-management/setting/group/shifts)班次列表中的具体班次，班次信息可以点击班次名称查看
+通过班次 ID 获取班次详情。
 
 
 ## 请求
@@ -47,7 +47,7 @@ updateTime: "1757646480000"
 | &nbsp;&nbsp;└ `shift_name` | `string` | 班次名称 |
 | &nbsp;&nbsp;└ `punch_times` | `int` | 打卡次数 |
 | &nbsp;&nbsp;└ `sub_shift_leader_ids` | `string\[\]` | 无效字段，请勿使用 |
-| &nbsp;&nbsp;└ `is_flexible` | `boolean` | 是否弹性打卡 |
+| &nbsp;&nbsp;└ `is_flexible` | `boolean` | 是否弹性打卡。true为弹性，false是非弹性 |
 | &nbsp;&nbsp;└ `flexible_minutes` | `int` | 弹性打卡时间,单位：分钟，设置【上班最多可晚到】与【下班最多可早走】时间，如果不设置flexible_rule则生效 |
 | &nbsp;&nbsp;└ `flexible_rule` | `flexible_rule\[\]` | 弹性打卡时间设置 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `flexible_early_minutes` | `int` | 下班最多可早走，单位：分钟（上班早到几分钟，下班可早走几分钟） |
@@ -74,7 +74,7 @@ updateTime: "1757646480000"
 | &nbsp;&nbsp;└ `overtime_rule` | `overtime_rule\[\]` | 加班规则（仅飞书人事企业版可用） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `on_overtime` | `string` | 上班时间，格式为mm:ss |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `off_overtime` | `string` | 下班时间，格式为mm:ss |
-| &nbsp;&nbsp;└ `day_type` | `int` | 日期类型，【是否弹性打卡 = ture】时，不可设置为“休息日”  可选值：1：工作日 2：休息日     示例值：（默认值）1 |
+| &nbsp;&nbsp;└ `day_type` | `int` | 日期类型，【是否弹性打卡 = true】时，不可设置为“休息日” 可选值：1：工作日 2：休息日 示例值：（默认值）1 |
 | &nbsp;&nbsp;└ `overtime_rest_time_rule` | `rest_rule\[\]` | 班外休息规则 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `rest_begin_time` | `string` | 休息开始 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `rest_end_time` | `string` | 休息结束 |
@@ -83,9 +83,9 @@ updateTime: "1757646480000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `middle_time_type` | `int` | 半天分割类型<br>**可选值有**：<br>- `0`: 按全天班次时长（含休息）的中点分割 - `1`: 按全天班次时长（不含休息）的中点分割 - `2`: 按休息时间分割 - `3`: 按固定时间点分割 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `fixed_middle_time` | `string` | 固定分割时间点（middle_time_type 为 3 时有效） |
 | &nbsp;&nbsp;└ `shift_attendance_time_config` | `shift_attendance_time_config` | 应出勤配置 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `attendance_time` | `number(float)` | 应出勤时长 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `on_attendance_time` | `number(float)` | 上半天应出勤时长 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `off_attendance_time` | `number(float)` | 下半天应出勤时长 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `attendance_time` | `number(float)` | 应出勤时长，单位为分钟。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `on_attendance_time` | `number(float)` | 上半天应出勤时长，单位为分钟。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `off_attendance_time` | `number(float)` | 下半天应出勤时长，单位为分钟。 |
 | &nbsp;&nbsp;└ `late_off_late_on_setting` | `late_off_late_on_setting` | 晚走次日晚到配置规则 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `late_off_base_on_time_type` | `int` | 当日晚走时间计算规则<br>**可选值有**：<br>- `0`: 弹性规则 - `1`: 固定规则 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `late_on_base_on_time_type` | `int` | 次日晚到时间计算规则<br>**可选值有**：<br>- `0`: 固定规则 - `1`: 弹性规则 |
@@ -98,88 +98,7 @@ updateTime: "1757646480000"
 ### 响应体示例
 
 ```json
-{
-    "code": 0,
-    "msg": "success",
-    "data": {
-        "shift_id": "6919358778597097404",
-        "shift_name": "早班",
-        "punch_times": 1,
-        "sub_shift_leader_ids": [
-            "dd31248a"
-        ],
-        "is_flexible": false,
-        "flexible_minutes": 60,
-        "flexible_rule": [
-            {
-                "flexible_early_minutes": 60,
-                "flexible_late_minutes": 60
-            }
-        ],
-        "no_need_off": true,
-        "punch_time_rule": [
-            {
-                "on_time": "9:00",
-                "off_time": "18:00， 第二天凌晨2点， 26:00",
-                "late_minutes_as_late": 30,
-                "late_minutes_as_lack": 60,
-                "on_advance_minutes": 60,
-                "early_minutes_as_early": 30,
-                "early_minutes_as_lack": 60,
-                "off_delay_minutes": 60,
-                "late_minutes_as_serious_late": 40,
-                "no_need_on": true,
-                "no_need_off": true
-            }
-        ],
-        "late_off_late_on_rule": [
-            {
-                "late_off_minutes": 60,
-                "late_on_minutes": 30
-            }
-        ],
-        "rest_time_rule": [
-            {
-                "rest_begin_time": "13:00",
-                "rest_end_time": "14:00"
-            }
-        ],
-        "overtime_rule": [
-            {
-                "on_overtime": "9:00",
-                "off_overtime": "18:00"
-            }
-        ],
-        "day_type": 1,
-        "overtime_rest_time_rule": [
-            {
-                "rest_begin_time": "13:00",
-                "rest_end_time": "14:00"
-            }
-        ],
-        "late_minutes_as_serious_late": 40,
-        "shift_middle_time_rule": {
-            "middle_time_type": 0,
-            "fixed_middle_time": "12:00"
-        },
-        "shift_attendance_time_config": {
-            "attendance_time": 1,
-            "on_attendance_time": 1,
-            "off_attendance_time": 1
-        },
-        "late_off_late_on_setting": {
-            "late_off_base_on_time_type": 0,
-            "late_on_base_on_time_type": 0
-        },
-        "id": "6919358778597097404",
-        "rest_time_flexible_configs": [
-            {
-                "need_flexible": false,
-                "late_mins": 0
-            }
-        ]
-    }
-}
+{ "code": 0, "msg": "success", "data": { "shift_id": "6919358778597097404", "shift_name": "早班", "punch_times": 1, "is_flexible": false, "flexible_minutes": 60, "flexible_rule": [ { "flexible_early_minutes": 60, "flexible_late_minutes": 60 } ], "no_need_off": true, "punch_time_rule": [ { "on_time": "9:00", "off_time": "18:00", "late_minutes_as_late": 30, "late_minutes_as_lack": 60, "on_advance_minutes": 60, "early_minutes_as_early": 30, "early_minutes_as_lack": 60, "off_delay_minutes": 60, "late_minutes_as_serious_late": 40, "no_need_on": true, "no_need_off": true } ], "late_off_late_on_rule": [ { "late_off_minutes": 60, "late_on_minutes": 30 } ], "rest_time_rule": [ { "rest_begin_time": "13:00", "rest_end_time": "14:00" } ], "overtime_rule": [ { "on_overtime": "9:00", "off_overtime": "18:00" } ], "day_type": 1, "overtime_rest_time_rule": [ { "rest_begin_time": "13:00", "rest_end_time": "14:00" } ], "late_minutes_as_serious_late": 40, "shift_middle_time_rule": { "middle_time_type": 0, "fixed_middle_time": "12:00" }, "shift_attendance_time_config": { "attendance_time": 1, "on_attendance_time": 1, "off_attendance_time": 1 }, "late_off_late_on_setting": { "late_off_base_on_time_type": 0, "late_on_base_on_time_type": 0 }, "id": "6919358778597097404", "rest_time_flexible_configs": [ { "need_flexible": false, "late_mins": 0 } ] } }
 ```
 
 
@@ -187,11 +106,11 @@ updateTime: "1757646480000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 400 | 1220001 | param is invalis | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220001 | param is invalid | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1220002 | tenant_id is empty | 请检查入参中的 tenant_access_token是否正确 |
-| 500 | 1225000 | param is invalis | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 500 | 1226000 | param is invalis | 班次服务异常错误码，请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 400 | 1226003 | param is invalis | 请参考实际返回的错误信息排查问题。例如“default shift are not allowed to change.”代表默认班次不能修改。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 400 | 1220600 | 通用错误信息 | 通用错误信息包含多条，详细的错误信息以及处理建议可参见[错误信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines)。 |
+| 500 | 1225000 | param is invalid | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 500 | 1226000 | param is invalid | 班次服务异常错误码，请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1226003 | param is invalid | 请参考实际返回的错误信息排查问题。例如“default shift are not allowed to change.”代表默认班次不能修改。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220600 | General error message | 通用错误信息包含多条，详细的错误信息以及处理建议可参见[错误信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines)。 |
 
 

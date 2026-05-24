@@ -1,7 +1,7 @@
 ---
 title: "从回收站删除用户邮箱地址"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox/delete"
-updateTime: "1745841721000"
+updateTime: "1773998735000"
 ---
 
 # 从回收站删除用户邮箱地址
@@ -37,7 +37,7 @@ updateTime: "1745841721000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `transfer_mailbox` | `string` | 否 | 用于接受转移的邮箱地址<br>**示例值**：888888@abc.com |
+| `transfer_mailbox` | `string` | 否 | 用于接收转移的邮箱地址<br>**示例值**：888888@abc.com |
 
 
 ## 响应

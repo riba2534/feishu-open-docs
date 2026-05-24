@@ -1,7 +1,7 @@
 ---
 title: "人员类型资源介绍"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/employee_type_enum/overview"
-updateTime: "1720166959000"
+updateTime: "1775548371000"
 ---
 
 # 人员类型资源介绍

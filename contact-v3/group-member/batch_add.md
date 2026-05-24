@@ -1,7 +1,7 @@
 ---
 title: "批量添加用户组成员"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group-member/batch_add"
-updateTime: "1754568414000"
+updateTime: "1775548408000"
 ---
 
 # 批量添加用户组成员

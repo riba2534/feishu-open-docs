@@ -1,7 +1,7 @@
 ---
 title: "批量创建邮件组权限成员"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/mailgroup-permission_member/batch_create"
-updateTime: "1745841707000"
+updateTime: "1773998732000"
 ---
 
 # 批量创建邮件组权限成员

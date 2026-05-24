@@ -1,7 +1,7 @@
 ---
 title: "创建或修改考勤组"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/group/create"
-updateTime: "1750247299000"
+updateTime: "1778137701000"
 ---
 
 # 创建或修改考勤组
@@ -42,7 +42,7 @@ updateTime: "1750247299000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `employee_type` | `string` | 是 | 响应体中的 user_id 的员工ID类型。如果没有后台管理权限，可使用[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)<br>**示例值**：employee_id<br>**可选值有**：<br>- `employee_id`: 员工 employee ID，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的用户 ID - `employee_no`: 员工工号，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的工号 |
-| `dept_type` | `string` | 是 | 部门 ID 的类型<br>**示例值**：open_id<br>**可选值有**：<br>- `open_id`: 暂时只支持部门的 openid。具体概念请参考[部门资源介绍](https://open.larkoffice.com/document/server-docs/contact-v3/department/field-overview)中的open_department_id |
+| `dept_type` | `string` | 是 | 部门 ID 的类型<br>**示例值**：open_id<br>**可选值有**：<br>- `open_id`: 暂时只支持部门的 open_id。具体概念请参考[部门资源介绍](https://open.larkoffice.com/document/server-docs/contact-v3/department/field-overview)中的open_department_id |
 
 
 ### 请求体
@@ -91,7 +91,7 @@ updateTime: "1750247299000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `intercept_suspected_cheat_punch` | `boolean` | 是 | 是否拦截疑似作弊打卡，不传入时默认关闭/不更新；关闭时，其余防作弊开关都会关闭<br>**示例值**：true |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `check_cheat_software_punch` | `boolean` | 否 | 是否校验疑似作弊软件打卡，不传入时默认关闭/不更新<br>**示例值**：true |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `check_buddy_punch` | `boolean` | 否 | 是否校验疑似他人代打卡，不传入时默认关闭/不更新<br>**示例值**：true |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `check_simulate_wifi_punch` | `boolean` | 否 | 是否校验疑似模拟 WI-FI 打卡，不传入时默认关闭/不更新（仅灰度租户有效，如需使用请联系技术支持）<br>**示例值**：true |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `check_simulate_wifi_punch` | `boolean` | 否 | 是否校验疑似模拟 Wi-Fi 打卡，不传入时默认关闭/不更新（仅灰度租户有效，如需使用请联系技术支持）<br>**示例值**：true |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `check_change_device_punch` | `boolean` | 否 | 是否校验更换设备打卡，不传入时默认关闭/不更新<br>**示例值**：true |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `allow_change_device_num` | `int` | 否 | 同一考勤人员最多可绑定打卡设备数量上限，开启校验更换设备打卡时必填<br>**示例值**：1<br>**数据校验规则**：<br>- 取值范围：`1` ～ `3` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `suspected_cheat_handle_method` | `int` | 否 | 疑似作弊打卡时的处理方式，开启拦截疑似作弊打卡时必填<br>**示例值**：1<br>**可选值有**：<br>- `1`: 使用人脸识别打卡 - `2`: 仅记录疑似作弊信息<br>**数据校验规则**：<br>- 取值范围：`1` ～ `2` |
@@ -101,7 +101,7 @@ updateTime: "1750247299000"
 | &nbsp;&nbsp;└ `gps_range` | `int` | 否 | GPS 打卡的有效范围<br>**示例值**：300 |
 | &nbsp;&nbsp;└ `locations` | `location\[\]` | 否 | 地址列表（仅追加，不会覆盖之前的列表） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `location_name` | `string` | 是 | 地址名称<br>**示例值**："浙江省杭州市余杭区五常街道木桥头西溪八方城" |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `location_type` | `int` | 是 | 地址类型<br>**可选值有：** * 1：GPS * 2：Wi-Fi * 8：IP<br>**示例值**：1 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `location_type` | `int` | 是 | 地址类型  **可选值有：** * 1：GPS * 2：Wi-Fi * 8：IP<br>**示例值**：1 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `latitude` | `number(float)` | 否 | 地址纬度（需配合gps_range使用）<br>**示例值**：30.28994 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `longitude` | `number(float)` | 否 | 地址经度（需配合gps_range使用）<br>**示例值**：120.04509 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `ssid` | `string` | 否 | Wi-Fi 名称<br>**示例值**："TP-Link-af12ca" |
@@ -463,7 +463,7 @@ updateTime: "1750247299000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `intercept_suspected_cheat_punch` | `boolean` | 是否拦截疑似作弊打卡，默认关闭；关闭时，其余防作弊开关都为关闭 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `check_cheat_software_punch` | `boolean` | 是否校验疑似作弊软件打卡 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `check_buddy_punch` | `boolean` | 是否校验疑似他人代打卡 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `check_simulate_wifi_punch` | `boolean` | 是否校验疑似模拟 WI-FI 打卡 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `check_simulate_wifi_punch` | `boolean` | 是否校验疑似模拟 Wi-Fi 打卡 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `check_change_device_punch` | `boolean` | 是否校验更换设备打卡 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `allow_change_device_num` | `int` | 同一考勤人员最多可绑定打卡设备数量上限，开启校验更换设备打卡时必填 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `suspected_cheat_handle_method` | `int` | 疑似作弊打卡时的处理方式，开启拦截疑似作弊打卡时必填<br>**可选值有**：<br>- `1`: 使用人脸识别打卡 - `2`: 仅记录疑似作弊信息 |
@@ -798,14 +798,14 @@ updateTime: "1750247299000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 400 | 1220001 | param is invalis | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220001 | param is invalid | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1220002 | tenant_id is empty | 请检查入参中的 tenant_access_token是否正确 |
 | 400 | 1220003 | user_id type is not employee_id or employee_no | employee_type只支持取值为 employee_id或者employee_no |
-| 400 | 1220004 | param is invalis | 请参考实际返回的错误信息排查问题。例如“user_id is not exist or does not have permission”代表入参传入的用户id不存在或者没有权限。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220004 | param is invalid | 请参考实际返回的错误信息排查问题。例如“user_id is not exist or does not have permission”代表入参传入的用户id不存在或者没有权限。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1220005 | 没有权限 | 请前往[考勤管理后台](https://oa.feishu.cn/attendance/manage/member/list)检查数据权限范围 |
 | 400 | 1220600 | 通用错误信息 | 通用错误信息包含多条，详细的错误信息以及处理建议可参见[错误信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines)。 |
-| 500 | 1225000 | param is invalis | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 400 | 1227500 | param is invalis | 班次服务异常错误码，请参考实际返回的错误信息排查问题。例如“[BatchGetLarkIDByOpenID] not find user larkID”代表没有找到对应lark uid。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 400 | 1227000 | param is invalis | 请参考实际返回的错误信息排查问题，如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 500 | 1225000 | param is invalid | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1227500 | param is invalid | 班次服务异常错误码，请参考实际返回的错误信息排查问题。例如“[BatchGetLarkIDByOpenID] not find user larkID”代表没有找到对应lark uid。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1227000 | param is invalid | 请参考实际返回的错误信息排查问题，如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 
 

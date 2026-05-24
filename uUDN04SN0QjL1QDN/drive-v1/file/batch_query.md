@@ -1,12 +1,12 @@
 ---
 title: "获取文件元数据"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/meta/batch_query"
-updateTime: "1716972201000"
+updateTime: "1778208952000"
 ---
 
 # 获取文件元数据
 
-该接口用于根据文件 token 获取其元数据，包括标题、所有者、创建时间、密级、访问链接等数据。
+该接口用于根据文件 token （文件的唯一标识）获取其元数据，包括标题、所有者、创建时间、密级、访问链接等数据。
 
 
 ## 请求
@@ -42,8 +42,8 @@ updateTime: "1716972201000"
 | --- | --- | --- | --- |
 | `request_docs` | `request_doc\[\]` | 是 | 请求的文件的 token 和类型。一次请求中不可超过 200 个<br>**数据校验规则**：<br>- 长度范围：`1` ～ `200` |
 | &nbsp;&nbsp;└ `doc_token` | `string` | 是 | 文件的 token，获取方式见[文件概述](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/file-overview)<br>**示例值**："doccnfYZzTlvXqZIGTdAHKabcef" |
-| &nbsp;&nbsp;└ `doc_type` | `string` | 是 | 文件的类型<br>**示例值**："doc"<br>**可选值有**：<br>- `doc`: 飞书文档 - `sheet`: 飞书电子表格 - `bitable`: 飞书多维表格 - `mindnote`: 飞书思维笔记 - `file`: 飞书文件 - `wiki`: 飞书知识库 - `docx`: 飞书新版文档 - `folder`: 飞书文件夹 - `synced_block`: 文档同步块（灰度中） |
-| `with_url` | `boolean` | 否 | 是否获取文件的访问链接<br>**示例值**：false |
+| &nbsp;&nbsp;└ `doc_type` | `string` | 是 | 文件的类型<br>**示例值**："doc"<br>**可选值有**：<br>- `doc`: 飞书文档 - `sheet`: 飞书电子表格 - `bitable`: 飞书多维表格 - `mindnote`: 飞书思维笔记 - `file`: 飞书文件 - `wiki`: 飞书知识库 - `docx`: 飞书新版文档 - `folder`: 飞书文件夹 - `synced_block`: 文档同步块（灰度中） - `slides`: 文档幻灯片 |
+| `with_url` | `boolean` | 否 | 是否获取文件的访问链接，默认值为false。<br>**示例值**：false |
 
 
 ### 请求体示例
@@ -81,7 +81,10 @@ updateTime: "1716972201000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `latest_modify_time` | `string` | 最后编辑时间。UNIX 时间戳，单位为秒 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `url` | `string` | 文档访问链接 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `sec_label_name` | `string` | 文档密级标签名称<br>**字段权限要求**： `drive:file.meta.sec_label.read_only` 获取文档密级标签名称 |
-| &nbsp;&nbsp;└ `failed_list` | `meta.failed\[\]` | 获取元数据失败的文档 token 列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `request_doc_info` | `request_doc` | 用于回显入参(requst_doc_info中的字段信息即为为请求体中的request_docs字段信息)，如果入参中有相同token时无效 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `doc_token` | `string` | 文件的 token，获取方式见[概述](https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/files/guide/introduction) |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `doc_type` | `string` | 文件类型<br>**可选值有**：<br>- `doc`: 飞书文档 - `sheet`: 飞书电子表格 - `bitable`: 飞书多维表格 - `mindnote`: 飞书思维笔记 - `file`: 飞书文件 - `wiki`: 飞书wiki - `docx`: 飞书新版文档 - `folder`: 飞书文件夹 - `synced_block`: 文档同步块 - `slides`: 文档幻灯片 |
+| &nbsp;&nbsp;└ `failed_list` | `meta_failed\[\]` | 获取元数据失败的文档 token 列表 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `token` | `string` | 获取元数据失败的文档token |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `code` | `int` | 获取元数据失败的错误码<br>**可选值有**：<br>- `970002`: 文档类型不支持 - `970003`: 当前应用或用户没有获取该文件元数据的权限 - `970005`: 文件 token 和 doc_type 不匹配或该文件不存在 |
 
@@ -103,7 +106,11 @@ updateTime: "1716972201000"
                 "latest_modify_user": "ou_b13d41c02edc52ce66aaae67bf1abcef",
                 "latest_modify_time": "1652066345",
                 "url": "https://sample.feishu.cn/docs/doccnfYZzTlvXqZIGTdAHKabcef",
-                "sec_label_name": "L2-内部"
+                "sec_label_name": "L2-内部",
+                "request_doc_info": {
+                    "doc_token": "TLLKdcpDro9ijQxA33ycNMabcef",
+                    "doc_type": "docx"
+                }
             }
         ],
         "failed_list": [
@@ -122,6 +129,6 @@ updateTime: "1716972201000"
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
 | 401 | 1069701 | User identity verification failed | 检查appid是否正确 |
-| 503 | 1069704 | Internal server error | 服务端错误 |
+| 503 | 1069704 | Internal server error | 服务端错误，请稍后重试，若仍报错可联系[技术支持](https://applink.feishu.cn/client/helpdesk) |
 
 

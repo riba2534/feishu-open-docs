@@ -1,12 +1,12 @@
 ---
 title: "获取云文档所有评论"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file-comment/list"
-updateTime: "1744103612000"
+updateTime: "1775723480000"
 ---
 
 # 获取云文档所有评论
 
-该接口用于根据云文档 Token 分页获取文档所有评论信息，包括评论和回复 ID、回复的内容、评论人和回复人的用户 ID 等。该接口支持返回全局评论以及局部评论（可通过 is_whole 字段区分）。默认每页返回 50 个评论。
+该接口用于根据云文档 Token 分页获取文档所有评论信息，包括评论和回复 ID、回复的内容、评论人和回复人的用户 ID 等。该接口支持返回全局评论以及局部评论，可通过 is_whole（是否为全局评论）字段区分。默认每页返回 50 个评论。
 
 
 ## 请求
@@ -39,11 +39,12 @@ updateTime: "1744103612000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `file_type` | `string` | 是 | 云文档类型<br>**示例值**：doc<br>**可选值有**：<br>- `doc`: 旧版文档类型，已不推荐使用 - `docx`: 新版文档类型 - `sheet`: 电子表格类型 - `file`: 文件类型 - `slides`: 幻灯片 |
-| `is_whole` | `boolean` | 否 | 是否全文评论<br>**示例值**：false |
-| `is_solved` | `boolean` | 否 | 是否已解决（可选）<br>**示例值**：false |
+| `is_whole` | `boolean` | 否 | 是否全文评论，默认值为false<br>**示例值**：false |
+| `is_solved` | `boolean` | 否 | 是否已解决（可选），默认值为false<br>**示例值**：false |
 | `page_token` | `string` | 否 | 分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果<br>**示例值**：7153511712153412356 |
 | `page_size` | `int` | 否 | 分页大小，默认每页返回 50 个评论<br>**示例值**：10<br>**数据校验规则**：<br>- 最大值：`100` |
 | `user_id_type` | `string` | 否 | 用户 ID 类型<br>**示例值**：open_id<br>**可选值有**：<br>- `open_id`: 标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid) - `union_id`: 标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id) - `user_id`: 标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[了解更多：如何获取 User ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)<br>**默认值**：`open_id`<br>**当值为 `user_id`，字段权限要求**： `contact:user.employee_id:readonly` 获取用户 user ID |
+| `need_reaction` | `boolean` | 否 | 是否需要获取评论卡片上挂载的Reaction数据，默认值为false<br>**示例值**：false |
 
 
 ## 响应
@@ -61,10 +62,10 @@ updateTime: "1744103612000"
 | &nbsp;&nbsp;└ `items` | `file.comment\[\]` | 评论列表 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `comment_id` | `string` | 评论 ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 用户 ID |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `create_time` | `int` | 创建时间 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `update_time` | `int` | 更新时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `create_time` | `int` | 创建时间（单位：秒） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `update_time` | `int` | 更新时间（单位：秒） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `is_solved` | `boolean` | 是否已解决 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `solved_time` | `int` | 解决评论时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `solved_time` | `int` | 解决评论时间（单位：秒） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `solver_user_id` | `string` | 解决评论者的用户 ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `has_more` | `boolean` | 是否有更多回复 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `page_token` | `string` | 回复分页标记 |
@@ -83,10 +84,14 @@ updateTime: "1744103612000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 添加用户的 user_id 以@用户。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `reply_id` | `string` | 回复 ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 用户 ID |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `create_time` | `int` | 创建时间 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `update_time` | `int` | 更新时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `create_time` | `int` | 创建时间（单位：秒） |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `update_time` | `int` | 更新时间（单位：秒） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `extra` | `reply_extra` | 回复的其他内容，图片 Token 等 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `image_list` | `string\[\]` | 评论中的图片 Token list。暂不支持通过接口下载图片。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `reactions` | `file_comment_v2_batch_query_reaction_data\[\]` | 评论回复卡片上对应的表情回复信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `reaction_key` | `string` | 表情回复的唯一标识，用于区分不同类型的评论表情（如点赞、鼓掌等）。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `count` | `int` | 该表情回复的累计使用次数，统计范围为当前评论下所有用户的有效回复记录。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `ahead_users` | `string\[\]` | 用于在界面优先展示核心互动用户。用户ID可通过用户信息查询接口获取。 |
 
 
 ### 响应体示例
@@ -104,20 +109,16 @@ updateTime: "1744103612000"
                 "user_id": "ou_cc19b2bfb93f8a44db4b4d6eababcef",
                 "create_time": 1610281603,
                 "update_time": 1610281603,
-                "is_solved": false,
+                "is_solved": true,
                 "solved_time": 1610281603,
-                "solver_user_id": "null",
-                "has_more": false,
+                "solver_user_id": "ou_cc19b2bfb93f8a44db4b4d6eababcef",
+                "has_more": true,
                 "page_token": "6916106822734512356",
                 "is_whole": true,
                 "quote": "划词评论引用内容",
                 "reply_list": {
                     "replies": [
                         {
-                            "reply_id": "6916106822734512356",
-                            "user_id": "ou_cc19b2bfb93f8a44db4b4d6eab2abcef",
-                            "create_time": 1610281603,
-                            "update_time": 1610281603,
                             "content": {
                                 "elements": [
                                     {
@@ -134,11 +135,24 @@ updateTime: "1744103612000"
                                     }
                                 ]
                             },
+                            "reply_id": "6916106822734512357",
+                            "user_id": "ou_cc19b2bfb93f8a44db4b4d6eab2abcef",
+                            "create_time": 1610281603,
+                            "update_time": 1610281603,
                             "extra": {
                                 "image_list": [
                                     "xfsfseewewabcef"
                                 ]
-                            }
+                            },
+                            "reactions": [
+                                {
+                                    "reaction_key": "ANGRY",
+                                    "count": 10,
+                                    "ahead_users": [
+                                        "ou_8f1991a29a47f1ad295a119dadf224d1"
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }

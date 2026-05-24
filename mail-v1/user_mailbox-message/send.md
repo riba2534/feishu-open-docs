@@ -1,7 +1,7 @@
 ---
 title: "发送邮件"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-message/send"
-updateTime: "1755077627000"
+updateTime: "1773998578000"
 ---
 
 # 发送邮件
@@ -144,11 +144,11 @@ updateTime: "1755077627000"
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
 | 404 | 1234013 | user mailbox not found or user mailbox not active | 邮箱地址状态错误，请更换邮箱地址 |
-| 403 | 1234017 | permission deny | 申请邮箱使用权限 |
+| 403 | 1234017 | permission denied | 申请邮箱使用权限 |
 | 400 | 1234008 | request parameter error | 请检查请求参数是否正确 |
 | 400 | 1236001 | raw size over limit | 邮件大小超过限制，请减小邮件大小 |
-| 429 | 1236006 | too many request | 同用户请勿并发请求 |
-| 400 | 1236002 | invalid mime format | 非法MIME格式邮件，请检查邮件格式以及确保基于base64url编码 |
+| 429 | 1236006 | too many requests | 同用户请勿并发请求 |
+| 400 | 1236002 | invalid MIME format | 非法MIME格式邮件，请检查邮件格式以及确保基于base64url编码 |
 | 400 | 1236003 | the number of recipients exceeds the limit | 邮件收件人数量超过500限制，请减少邮件收件人 |
 | 400 | 1236004 | the number of attachments exceeds the limit | 邮件附件数量超过500限制，请减少邮件附件数量 |
 | 409 | 1236005 | send mail repeatedly | 重复发送邮件，请勿使用相同Message-ID发送邮件 |
@@ -159,8 +159,8 @@ updateTime: "1755077627000"
 | 429 | 1236012 | reach send mail restriction | 用户发送的邮件达到发信阈值限制 |
 | 429 | 1236013 | tenant storage limit | 租户存储空间已满，无法发送更多邮件 |
 | 400 | 1236014 | content risk | 由于邮件内容被识别为风险内容，邮件发送失败 |
-| 400 | 1236017 | sender check fail | 邮件发件人检测失败，请检查发件人信息和状态 |
-| 400 | 1236018 | receiver check fail | 邮件收件人检测失败，请检查收件人信息 |
+| 400 | 1236017 | sender check failed | 邮件发件人检测失败，请检查发件人信息和状态 |
+| 400 | 1236018 | receiver check failed | 邮件收件人检测失败，请检查收件人信息 |
 | 500 | 1236019 | internal server error | 系统内部报错 |
 
 

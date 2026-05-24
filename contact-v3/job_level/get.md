@@ -1,7 +1,7 @@
 ---
 title: "获取单个职级信息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/job_level/get"
-updateTime: "1720167692000"
+updateTime: "1775199043000"
 ---
 
 # 获取单个职级信息

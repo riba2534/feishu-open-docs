@@ -1,7 +1,7 @@
 ---
 title: "撤销入职"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/pre_hire/withdraw_onboarding"
-updateTime: "1734606425000"
+updateTime: "1777344386000"
 ---
 
 # 撤销入职
@@ -33,7 +33,7 @@ updateTime: "1734606425000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `pre_hire_id` | `string` | 是 | 待入职ID，可以通过[搜索待入职人员信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/pre_hire/search)接口获得<br>**示例值**："7345005664477775407" |
-| `withdraw_reason` | `string` | 是 | 撤销原因，上限为500字<br>**示例值**："withdraw reason" |
+| `withdraw_reason` | `string` | 是 | 撤销原因，上限为500字<br>**示例值**："候选人主动放弃入职" |
 
 
 ### 请求体示例
@@ -41,7 +41,7 @@ updateTime: "1734606425000"
 ```json
 {
     "pre_hire_id": "7345005664477775407",
-    "withdraw_reason": "withdraw reason"
+    "withdraw_reason": "候选人主动放弃入职"
 }
 ```
 

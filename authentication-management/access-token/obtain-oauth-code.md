@@ -1,7 +1,7 @@
 ---
 title: "获取授权码"
 fullPath: "/common-capabilities/sso/api/obtain-oauth-code"
-updateTime: "1758188215000"
+updateTime: "1773910858000"
 ---
 
 # 获取授权码
@@ -44,6 +44,7 @@ updateTime: "1758188215000"
 | `state` | `string` | 否 | 用来维护请求和回调之间状态的附加字符串，在授权完成回调时会原样回传此参数。应用可以根据此字符串来判断上下文关系，同时该参数也可以用以防止 CSRF 攻击，请务必校验 `state` 参数前后是否一致。 **示例值：** `RANDOMSTRING` |
 | `code_challenge` | `string` | 否 | 用于通过 PKCE（Proof Key for Code Exchange）流程增强授权码的安全性。 **示例值：** `E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM`          有关 PKCE 的详细信息，请参阅[RFC-7636 - Proof Key for Code Exchange by OAuth Public Clients](https://datatracker.ietf.org/doc/html/rfc7636)。 |
 | `code_challenge_method` | `string` | 否 | 生成 `code_challenge` 的方法。 **可选值**：   1. **`S256`**（推荐）：      使用 SHA-256 哈希算法计算 `code_verifier` 的哈希值，并将结果进行 Base64URL 编码，生成 `code_challenge`。   2. **`plain`**（默认值）：      直接将 `code_verifier` 作为 `code_challenge`，无需进行额外处理。 以上 `code_verifier` 是指在发起授权前，本地生成的随机字符串。 |
+| `prompt` | `string` | 否 | 用于指定授权过程中需要的用户交互类型。   **可选值**：   - **`consent`**：当 `prompt=consent` 时，用户侧显式可见授权页并完成确认。   **示例值：** `consent` |
 
  
 ### 请求示例
@@ -51,7 +52,7 @@ updateTime: "1758188215000"
 > 注意仅为示例请求 URL，请根据前文描述将其中的查询参数替换为真实的值
 
 ``` http
-https://accounts.feishu.cn/open-apis/authen/v1/authorize?client_id=cli_a5d611352af9d00b&response_type=code&redirect_uri=https%3A%2F%2Fexample.com%2Fapi%2Foauth%2Fcallback&scope=bitable:app:readonly%20contact:contact&state=RANDOMSTRING
+https://accounts.feishu.cn/open-apis/authen/v1/authorize?client_id=cli_a5d611352af9d00b&response_type=code&redirect_uri=https%3A%2F%2Fexample.com%2Fapi%2Foauth%2Fcallback&scope=bitable:app:readonly%20contact:contact&prompt=consent&state=RANDOMSTRING
 ```
 
 ## 响应

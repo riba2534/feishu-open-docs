@@ -1,7 +1,7 @@
 ---
 title: "创建角色"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/functional_role/create"
-updateTime: "1720167427000"
+updateTime: "1775548408000"
 ---
 
 # 创建角色

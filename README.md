@@ -1,7 +1,7 @@
 # 飞书开放平台 Server API 文档
 
-> 自动爬取于 2026-03-06 12:27:22
-> 文档总数: 2065 | 目录数: 614
+> 自动爬取于 2026-05-24 14:45:12
+> 文档总数: 2157 | 目录数: 634
 
 ## 目录
 
@@ -79,6 +79,7 @@
     - [获取授权码](authentication-management/access-token/obtain-oauth-code.md)
     - [获取 user_access_token](authentication-management/access-token/get-user-access-token.md)
     - [刷新 user_access_token](authentication-management/access-token/refresh-user-access-token.md)
+    - [刷新 user_access_token（仅字节）](authentication-management/access-token/bytedance-only.md)
     - [重新获取 app_ticket](authentication-management/access-token/app_ticket_resend.md)
     - [商店应用获取 app_access_token](authentication-management/access-token/app_access_token.md)
     - [商店应用获取 tenant_access_token](authentication-management/access-token/tenant_access_token.md)
@@ -100,6 +101,7 @@
     - [修改用户部分信息](contact-v3/user/patch.md)
     - [更新用户 ID](contact-v3/user/update_user_id.md)
     - [获取单个用户信息](contact-v3/user/get.md)
+    - [通过 ID 获取用户姓名](contact-v3/user/basic_batch.md)
     - [批量获取用户信息](contact-v3/user/batch.md)
     - [获取部门直属用户列表](contact-v3/user/find_by_department.md)
     - [通过手机号或邮箱获取用户 ID](contact-v3/user/batch_get_id.md)
@@ -245,7 +247,7 @@
     - [转发话题](im-v1/message/forward-thread.md)
     - [撤回消息](im-v1/message/delete.md)
     - [添加跟随气泡](im-v1/message/push_follow_up.md)
-    - [查询消息已读信息](im-v1/message/read_users.md)
+    - [消息发送者查询消息已读状态](im-v1/message/read_users.md)
     - [获取会话历史消息](im-v1/message/list.md)
     - [获取消息中的资源文件](im-v1/message/get-message-resource.md)
     - [获取指定消息的内容](im-v1/message/get-message.md)
@@ -274,6 +276,7 @@
     - [表情文案说明](im-v1/message-reaction/emojis-introduce.md)
     - [添加消息表情回复](im-v1/message-reaction/create.md)
     - [获取消息表情回复](im-v1/message-reaction/list.md)
+    - [批量获取消息表情回复](im-v1/message-reaction/batch_query.md)
     - [删除消息表情回复](im-v1/message-reaction/delete.md)
     - **事件**
       - [新增消息表情回复](im-v1/message-reaction/event/created.md)
@@ -454,7 +457,11 @@
       - [订阅云文档事件](uUDN04SN0QjL1QDN/drive-v1/event/subscribe.md)
       - [查询云文档事件订阅状态](uUDN04SN0QjL1QDN/drive-v1/event/get_subscribe.md)
       - [取消云文档事件订阅](uUDN04SN0QjL1QDN/drive-v1/event/delete_subscribe.md)
-      - **事件列表**
+      - **用户云文档事件订阅**
+        - [订阅用户云文档事件](uUDN04SN0QjL1QDN/drive-v1/event/user/subscription.md)
+        - [取消用户云文档事件订阅](uUDN04SN0QjL1QDN/drive-v1/event/user/remove_subscription.md)
+        - [查询用户云文档事件订阅状态](uUDN04SN0QjL1QDN/drive-v1/event/user/subscription_status.md)
+      - **云文档事件列表**
         - [文件夹下文件创建](uUDN04SN0QjL1QDN/drive-v1/event/list/created_in_folder.md)
         - [文件标题变更](uUDN04SN0QjL1QDN/drive-v1/event/list/file-title-update.md)
         - [文件已读](uUDN04SN0QjL1QDN/drive-v1/event/list/file-read.md)
@@ -464,6 +471,8 @@
         - [文件协作者移除](uUDN04SN0QjL1QDN/drive-v1/event/list/file-collaborator-remove.md)
         - [文件删除到回收站](uUDN04SN0QjL1QDN/drive-v1/event/list/delete-file-to-trash-can.md)
         - [文件彻底删除](uUDN04SN0QjL1QDN/drive-v1/event/list/file-deleted-completely.md)
+      - **用户云文档事件**
+        - [添加评论、回复通知事件](uUDN04SN0QjL1QDN/drive-v1/event/events/comment_add.md)
   - **知识库**
     - [知识库概述](uUDN04SN0QjL1QDN/wiki-v2/wiki-overview.md)
     - [知识库常见问题](uUDN04SN0QjL1QDN/wiki-v2/wiki-qa.md)
@@ -695,11 +704,13 @@
     - [获取云文档所有评论](uUDN04SN0QjL1QDN/CommentAPI/list-file-comment.md)
     - [批量获取评论](uUDN04SN0QjL1QDN/CommentAPI/batch_query.md)
     - [解决/恢复评论](uUDN04SN0QjL1QDN/CommentAPI/patch.md)
-    - [添加全文评论](uUDN04SN0QjL1QDN/CommentAPI/create.md)
+    - [添加全文评论](uUDN04SN0QjL1QDN/CommentAPI/create-file-comment.md)
     - [获取全文评论](uUDN04SN0QjL1QDN/CommentAPI/get.md)
+    - [添加回复](uUDN04SN0QjL1QDN/CommentAPI/create-file-comment-reply.md)
     - [获取回复信息](uUDN04SN0QjL1QDN/CommentAPI/list-file-comment-reply.md)
     - [更新回复的内容](uUDN04SN0QjL1QDN/CommentAPI/update.md)
     - [删除回复](uUDN04SN0QjL1QDN/CommentAPI/delete.md)
+    - [添加/取消表情回应](uUDN04SN0QjL1QDN/CommentAPI/update_reaction.md)
   - **云文档助手**
     - **订阅**
       - [获取订阅状态](uUDN04SN0QjL1QDN/docs-assistant/file-subscription/get.md)
@@ -784,6 +795,9 @@
     - [解除 Exchange 账户绑定](calendar-v4/exchange_binding/delete.md)
     - [查询 Exchange 账户的绑定状态](calendar-v4/exchange_binding/get.md)
 - **视频会议**
+  - **纪要**
+    - [获取纪要详情](vc-v1/note/get.md)
+    - [纪要概述](vc-v1/note/notes_overview.md)
   - [视频会议概述](vc-v1/video-conferencing-overview.md)
   - **预约**
     - [资源介绍](vc-v1/reserve/schedule-meeting-overview.md)
@@ -793,6 +807,7 @@
     - [获取预约](vc-v1/reserve/get.md)
     - [获取活跃会议](vc-v1/reserve/get_active_meeting.md)
   - **会议管理**
+    - [搜索会议记录](vc-v1/meeting/search.md)
     - [资源介绍](vc-v1/meeting/meeting-overview.md)
     - [邀请参会人](vc-v1/meeting/invite.md)
     - [移除参会人](vc-v1/meeting/kickout.md)
@@ -886,6 +901,8 @@
   - **妙记统计数据**
     - [获取妙记统计数据](minutes-v1/minute-statistics/get.md)
   - **妙记信息**
+    - [搜索妙记](minutes-v1/minute/search.md)
+    - [获取妙记AI产物](minutes-v1/minute/artifacts.md)
     - [获取妙记信息](minutes-v1/minute/get.md)
 - **考勤打卡**
   - [考勤打卡概述](attendance-v1/overview.md)
@@ -1024,6 +1041,9 @@
       - [换班审批](approval-v4/event/special-event/shift-change.md)
       - [加班审批](approval-v4/event/special-event/overtime.md)
       - [请假审批](approval-v4/event/special-event/leave.md)
+  - **地理库信息**
+    - [查询地理库信息](approval-v4/district/list.md)
+    - [搜索地理库信息](approval-v4/district/search.md)
 - **机器人**
   - [获取机器人信息](bot-v3/uAjMxEjLwITMx4CMyETM.md)
   - **事件**
@@ -1176,12 +1196,50 @@
     - [创建自定义任务选项](task-v2/custom_field-option/create.md)
     - [更新自定义字段选项](task-v2/custom_field-option/patch.md)
 - **邮箱**
+  - **邮件模板**
+    - [获取模板附件下载链接](mail-v1/user_mailbox-template/download_url.md)
+    - [更新邮件模板](mail-v1/user_mailbox-template/update.md)
+    - [列出邮件模板](mail-v1/user_mailbox-template/list.md)
+    - [获取邮件模板](mail-v1/user_mailbox-template/get.md)
+    - [创建邮件模板](mail-v1/user_mailbox-template/create.md)
+    - [删除邮件模板](mail-v1/user_mailbox-template/delete.md)
+  - **邮箱设置项**
+    - [列出可发信邮箱](mail-v1/user_mailbox-setting/send_as.md)
+  - **邮件会话**
+    - [批量删除邮件会话](mail-v1/user_mailbox-thread/batch_trash.md)
+    - [批量修改邮件会话](mail-v1/user_mailbox-thread/batch_modify.md)
+    - [删除邮件会话](mail-v1/user_mailbox-thread/trash.md)
+    - [修改邮件会话](mail-v1/user_mailbox-thread/modify.md)
+    - [获取邮件会话详情](mail-v1/user_mailbox-thread/get.md)
+    - [列出邮件会话](mail-v1/user_mailbox-thread/list.md)
+  - **邮件标签**
+    - [更新标签](mail-v1/user_mailbox-label/patch.md)
+    - [列出标签](mail-v1/user_mailbox-label/list.md)
+    - [获取标签信息](mail-v1/user_mailbox-label/get.md)
+    - [删除标签](mail-v1/user_mailbox-label/delete.md)
+    - [创建标签](mail-v1/user_mailbox-label/create.md)
+  - **草稿**
+    - [更新草稿](mail-v1/user_mailbox-draft/update.md)
+    - [发送草稿](mail-v1/user_mailbox-draft/send.md)
+    - [列出草稿列表](mail-v1/user_mailbox-draft/list.md)
+    - [获取草稿内容](mail-v1/user_mailbox-draft/get.md)
+    - [删除草稿](mail-v1/user_mailbox-draft/delete.md)
+    - [创建草稿](mail-v1/user_mailbox-draft/create.md)
+  - **用户邮箱**
+    - [列出可访问的邮箱](mail-v1/user_mailbox/accessible_mailboxes.md)
   - **邮箱文件夹**
+    - [获取邮箱文件信息](mail-v1/user_mailbox-folder/get.md)
     - [创建邮箱文件夹](mail-v1/user_mailbox-folder/create.md)
     - [删除邮箱文件夹](mail-v1/user_mailbox-folder/delete.md)
     - [修改邮箱文件夹](mail-v1/user_mailbox-folder/patch.md)
     - [列出邮箱文件夹](mail-v1/user_mailbox-folder/list.md)
   - **用户邮件**
+    - [批量删除邮件](mail-v1/user_mailbox-message/batch_trash.md)
+    - [批量修改邮件](mail-v1/user_mailbox-message/batch_modify.md)
+    - [删除邮件](mail-v1/user_mailbox-message/trash.md)
+    - [修改邮件](mail-v1/user_mailbox-message/modify.md)
+    - [批量获取邮件详情](mail-v1/user_mailbox-message/batch_get.md)
+    - [查询会话下邮件信息](mail-v1/user_mailbox-message/list_thread_message.md)
     - [获取邮件卡片的邮件列表](mail-v1/user_mailbox-message/get_by_card.md)
     - [列出邮件](mail-v1/user_mailbox-message/list.md)
     - [获取邮件详情](mail-v1/user_mailbox-message/get.md)
@@ -1256,7 +1314,7 @@
       - [创建公共邮箱别名](mail-v1/public-mailbox/public_mailbox-alias/create.md)
       - [删除公共邮箱别名](mail-v1/public-mailbox/public_mailbox-alias/delete.md)
       - [查询公共邮箱的所有别名](mail-v1/public-mailbox/public_mailbox-alias/list.md)
-  - **用户邮箱**
+  - **用户邮箱别名**
     - [从回收站删除用户邮箱地址](mail-v1/user_mailbox-alias/delete-user_mailbox.md)
     - [创建用户邮箱别名](mail-v1/user_mailbox-alias/create.md)
     - [删除用户邮箱别名](mail-v1/user_mailbox-alias/delete-user_mailbox-alias.md)
@@ -1265,9 +1323,14 @@
     - [查询邮箱地址状态](mail-v1/user/query.md)
 - **应用信息**
   - **应用**
+    - [上传应用图标](application-v6/application/create-app_avatar-upload.md)
     - [转移应用所有者](application-v6/application/update-application-owner.md)
     - [更新应用协作者](application-v6/application/update-application-collaborators.md)
     - [获取应用协作者列表](application-v6/application/get-application-collaborators.md)
+    - [更新应用基础信息配置](application-v6/application/patch-application-base.md)
+    - [更新应用能力配置](application-v6/application/patch-application-ability.md)
+    - [更新应用开发配置](application-v6/application/patch-application-config.md)
+    - [提交发布自建应用](application-v6/application/create-application-publish.md)
     - [获取应用信息](application-v6/application/get-application.md)
     - [获取应用版本信息](application-v6/application/get-application-app_version.md)
     - [获取应用版本列表](application-v6/application/list.md)
@@ -1400,6 +1463,38 @@
   - **机器翻译**
     - [识别文本语种](ai/translation-v1/detect.md)
     - [翻译文本](ai/translation-v1/translate.md)
+- **飞书妙搭**
+  - [概述](spark-v1/overview.md)
+  - **数据表**
+    - [获取数据表列表](spark-v1/app-table/get_table_list.md)
+    - [获取数据表详细信息](spark-v1/app-table/get_table_detail.md)
+    - [查询数据表数据记录](spark-v1/app-table/get_table_record_list.md)
+    - [向数据表中添加或更新记录](spark-v1/app-table/post_table_records.md)
+    - [按条件更新数据表中的记录](spark-v1/app-table/patch_table_records.md)
+    - [批量更新数据表中的记录](spark-v1/app-table/batch_update_table_records.md)
+    - [删除数据表中的记录](spark-v1/app-table/delete_table_records.md)
+  - **视图**
+    - [查询视图数据记录](spark-v1/app-view/get_view_record_list.md)
+  - **枚举**
+    - [获取自定义枚举列表](spark-v1/app-enum/get_enum_list.md)
+    - [获取自定义枚举详细信息](spark-v1/app-enum/get_enum_detail.md)
+  - **文件存储**
+    - [上传文件](spark-v1/app-storage/upload.md)
+    - [下载文件](spark-v1/app-storage/download.md)
+    - [分片上传文件 - 创建上传请求](spark-v1/app-storage/upload_initialize.md)
+    - [分片上传文件 - 上传分片](spark-v1/app-storage/upload_part.md)
+    - [分片上传文件 - 完成上传](spark-v1/app-storage/upload_complete.md)
+  - [执行 SQL](spark-v1/sql_commands.md)
+  - **妙搭应用**
+    - [上传 HTML 代码并发布](spark-v1/app/upload_html_code_and_release.md)
+    - [更新妙搭应用可用范围](spark-v1/app/update_app_visibility.md)
+    - [获取妙搭应用可用范围](spark-v1/app/get_app_visibility.md)
+    - [批量获取妙搭应用](spark-v1/app/list.md)
+    - [上传妙搭应用图标](spark-v1/app/icon.md)
+    - [更新妙搭应用信息](spark-v1/app/patch.md)
+    - [创建妙搭应用](spark-v1/app/create.md)
+  - **通讯录**
+    - [妙搭和飞书用户 ID 转换](spark-v1/directory-user/id_convert.md)
 - **飞书 aPaaS**
   - **应用**
     - [查看应用基本信息](apaas-v1/app/list.md)
@@ -1454,23 +1549,6 @@
       - [查询人工任务可退回的位置](apaas-v1/flow/user-task/rollback_points.md)
       - [退回人工任务](apaas-v1/flow/user-task/rollback.md)
       - [基于人工任务发起群聊](apaas-v1/flow/user-task/chat_group.md)
-  - **数据平台**
-    - **数据表**
-      - [获取工作空间下的数据表列表](apaas-v1/workspace/workspace-table/list.md)
-      - [获取数据表详细信息](apaas-v1/workspace/workspace-table/table_get.md)
-      - [查询数据表数据记录](apaas-v1/workspace/workspace-table/records_get.md)
-      - [向数据表中添加或更新记录](apaas-v1/workspace/workspace-table/records_post.md)
-      - [按条件更新数据表中的记录](apaas-v1/workspace/workspace-table/records_patch.md)
-      - [批量更新数据表中的记录](apaas-v1/workspace/workspace-table/records_batch_update.md)
-      - [删除数据表中的记录](apaas-v1/workspace/workspace-table/records_delete.md)
-    - **视图**
-      - [查询视图数据记录](apaas-v1/workspace/workspace-view/views_get.md)
-    - **枚举**
-      - [获取工作空间下的自定义枚举列表](apaas-v1/workspace/workspace-enum/list.md)
-      - [获取自定义枚举详细信息](apaas-v1/workspace/workspace-enum/enum_get.md)
-    - [执行SQL](apaas-v1/workspace/sql_commands.md)
-    - **事件**
-      - [数据记录变更](apaas-v1/workspace/events/record_change.md)
   - [常见问题](apaas-v1/faqs.md)
 - **飞书 Aily**
   - **会话**
@@ -1647,6 +1725,12 @@
         - [更新兼职](corehr-v1/employee/job_data/employees-additional_job/patch.md)
         - [删除兼职](corehr-v1/employee/job_data/employees-additional_job/delete.md)
         - [批量查询兼职信息](corehr-v1/employee/job_data/employees-additional_job/batch.md)
+    - **自定义组织变更记录**
+      - [新增人员自定义组织变更记录](corehr-v1/employee/employee-custom_org/create_emp_custom_org.md)
+      - [更新人员自定义组织变更记录](corehr-v1/employee/employee-custom_org/edit_emp_custom_org.md)
+      - [查询单个人员自定义组织变更记录](corehr-v1/employee/employee-custom_org/querybyid.md)
+      - [批量查询人员自定义组织变更记录](corehr-v1/employee/employee-custom_org/employment_custom_org_record.md)
+      - [删除人员自定义组织变更记录](corehr-v1/employee/employee-custom_org/del.md)
     - **默认成本中心**
       - [更新默认成本中心](corehr-v1/employee/default_cost_center/update_version.md)
       - [删除默认成本中心](corehr-v1/employee/default_cost_center/remove_version.md)
@@ -1714,6 +1798,8 @@
       - [创建成本中心](corehr-v1/organization-management/cost_center/create.md)
       - [启用 / 停用成本中心](corehr-v1/organization-management/cost_center/patch.md)
       - [查询当前生效信息发生变更的成本中心](corehr-v1/organization-management/cost_center/query_recent_change.md)
+      - [批量查询成本中心版本信息](corehr-v1/organization-management/cost_center/query_multi_timeline.md)
+      - [查询指定生效日期的成本中心架构树](corehr-v1/organization-management/cost_center/tree.md)
       - [搜索成本中心信息](corehr-v1/organization-management/cost_center/search.md)
       - [删除成本中心](corehr-v1/organization-management/cost_center/delete.md)
       - **成本中心版本**
@@ -1826,7 +1912,6 @@
     - [查询待入职信息](corehr-v1/pre_hire/query.md)
     - [搜索待入职信息](corehr-v1/pre_hire/search.md)
     - [获取入职流程列表](corehr-v1/pre_hire/onboarding-flow.md)
-    - [流转入职任务](corehr-v1/pre_hire/transit_task.md)
     - [流转入职任务](corehr-v1/pre_hire/transform_onboarding_task.md)
     - [操作员工完成入职](corehr-v1/pre_hire/complete.md)
     - **扫码入职**
@@ -1839,6 +1924,7 @@
       - [入职信息变更](corehr-v1/pre_hire/pre-hire-events/updated.md)
       - [员工完成入职](corehr-v1/pre_hire/pre-hire-events/employed.md)
   - **试用期**
+    - [编辑试用期](corehr-v1/probation/edit.md)
     - [新增试用期考核信息](corehr-v1/probation/create.md)
     - [启用/停用试用期考核功能](corehr-v1/probation/enable_disable_assessment.md)
     - [更新试用期考核信息](corehr-v1/probation/patch.md)
@@ -2401,6 +2487,13 @@
     - [功能介绍](security_and_compliance-v1/audit_log/audit_log.md)
     - [获取行为审计日志数据](security_and_compliance-v1/audit_log/audit_data_get.md)
     - [枚举值列表](security_and_compliance-v1/audit_log/appendix.md)
+  - **数据驻留**
+    - [数据驻留概述](security_and_compliance-v1/user_migration/overview.md)
+    - [获取地理位置列表](security_and_compliance-v1/user_migration/get-multi_geo_entity-tenant.md)
+    - [迁移用户](security_and_compliance-v1/user_migration/create.md)
+    - [获取单个用户迁移状态](security_and_compliance-v1/user_migration/get-user_migration.md)
+    - [批量获取用户迁移状态](security_and_compliance-v1/user_migration/search.md)
+    - [取消用户迁移](security_and_compliance-v1/user_migration/cancel.md)
 - **关联组织**
   - **关联组织**
     - [获取可见关联组织的列表](trust_party-v1/-collaboraiton-organization/list-collaboration_tenant.md)
@@ -2447,6 +2540,24 @@
       - [课程学习进度更新事件](elearning-v2/course_registration/events/updated.md)
       - [课程学习进度删除事件](elearning-v2/course_registration/events/deleted.md)
 - **历史版本（不推荐）**
+  - **飞书 aPaaS**
+    - **数据平台**
+      - **数据表**
+        - [获取工作空间下的数据表列表](historic-version/apaas-v3/workspace/workspace-table/list.md)
+        - [获取数据表详细信息](historic-version/apaas-v3/workspace/workspace-table/table_get.md)
+        - [查询数据表数据记录](historic-version/apaas-v3/workspace/workspace-table/records_get.md)
+        - [向数据表中添加或更新记录](historic-version/apaas-v3/workspace/workspace-table/records_post.md)
+        - [按条件更新数据表中的记录](historic-version/apaas-v3/workspace/workspace-table/records_patch.md)
+        - [批量更新数据表中的记录](historic-version/apaas-v3/workspace/workspace-table/records_batch_update.md)
+        - [删除数据表中的记录](historic-version/apaas-v3/workspace/workspace-table/records_delete.md)
+      - **视图**
+        - [查询视图数据记录](historic-version/apaas-v3/workspace/workspace-view/views_get.md)
+      - **枚举**
+        - [获取工作空间下的自定义枚举列表](historic-version/apaas-v3/workspace/workspace-enum/list.md)
+        - [获取自定义枚举详细信息](historic-version/apaas-v3/workspace/workspace-enum/enum_get.md)
+      - [执行SQL](historic-version/apaas-v3/workspace/sql_commands.md)
+      - **事件**
+        - [数据记录变更](historic-version/apaas-v3/workspace/events/record_change.md)
   - **任务**
     - [任务概述](historic-version/task-v1/overview.md)
     - [Markdown 模块](historic-version/task-v1/markdown-module.md)
@@ -2624,6 +2735,7 @@
       - [获取 Offer 申请表详细信息](historic-version/hire_internal/uETO3YjLxkzN24SM5cjN/get.md)
   - **飞书人事**
     - **入职**
+      - [流转入职任务](historic-version/feishu-people/pre-hire/transit_task.md)
       - [查询单个待入职信息](historic-version/feishu-people/pre-hire/get.md)
       - [批量查询待入职信息](historic-version/feishu-people/pre-hire/list.md)
       - [更新待入职信息（不推荐）](historic-version/feishu-people/pre-hire/patch.md)

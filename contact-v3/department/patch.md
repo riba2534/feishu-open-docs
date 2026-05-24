@@ -1,7 +1,7 @@
 ---
 title: "修改部门部分信息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/patch"
-updateTime: "1747194460000"
+updateTime: "1775548384000"
 ---
 
 # 修改部门部分信息

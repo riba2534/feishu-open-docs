@@ -1,7 +1,7 @@
 ---
 title: "创建邮件组别名"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/mailgroup-alias/create"
-updateTime: "1745841706000"
+updateTime: "1773998732000"
 ---
 
 # 创建邮件组别名
@@ -31,7 +31,7 @@ updateTime: "1745841706000"
 
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
-| `mailgroup_id` | `string` | 邮件组id或邮件组邮箱地址<br>**示例值**："xxxxxx 或者 xxx@xx.xxx" |
+| `mailgroup_id` | `string` | 邮件组ID或邮件组邮箱地址<br>**示例值**："xxxxxx 或者 xxx@xx.xxx" |
 
 
 ### 请求体
@@ -92,6 +92,6 @@ updateTime: "1745841706000"
 | 409 | 1235002 | email alias address has been used | 别名邮件地址已被占用，请使用其它邮件地址 |
 | 400 | 1235003 | Service unavailable | 请稍后重试 |
 | 404 | 1234019 | mail address's domain not found | 请确认域名是否存在 |
-| 409 | 1234033 | email address has been used by another member as login account | 邮件地址已被他人用作于登录邮箱，请使用其它邮件地址 |
+| 409 | 1234033 | email address has been used by another member as login account | 邮件地址已被他人用作登录邮箱，请使用其它邮件地址 |
 
 

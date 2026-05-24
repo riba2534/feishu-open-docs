@@ -1,7 +1,7 @@
 ---
 title: "查询指定生效日期的部门基本信息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/department/query_timeline"
-updateTime: "1770621138000"
+updateTime: "1779277899000"
 ---
 
 # 查询指定日期的部门基本信息
@@ -21,7 +21,7 @@ updateTime: "1770621138000"
 | 接口频率限制 | [5 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `corehr:department:read` 获取部门信息 `corehr:department:write` 读写部门信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:department.custom_fields:read` 获取部门自定义字段 `corehr:department.manager:read` 获取部门负责人信息 `corehr:department.organize:read` 获取部门组织架构信息 `contact:user.employee_id:readonly` 获取用户 user ID |
+| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:department.cost_center_id:read` 获取部门成本中心字段信息 `corehr:department.custom_fields:read` 获取部门自定义字段 `corehr:department.manager:read` 获取部门负责人信息 `corehr:department.organize:read` 获取部门组织架构信息 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
@@ -46,7 +46,7 @@ updateTime: "1770621138000"
 | --- | --- | --- | --- |
 | `department_ids` | `string\[\]` | 是 | 部门 ID 列表 - 可通过[批量查询部门V2](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/department/batch_get) 或者[搜索部门信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/department/search) 获取详情<br>**示例值**：["7094136522860922111"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
 | `effective_date` | `string` | 是 | 版本生效日期 - 填写格式：YYYY-MM-DD - 系统默认为填写日期当天的 00:00:00 生效  - 该接口只支持到最小单位为日 - 日期范围要求:1900-01-01～9999-12-31<br>**示例值**："2020-01-01"<br>**数据校验规则**：<br>- 长度范围：`10` ～ `10` 字符 - 正则校验：`^((([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29))$` |
-| `fields` | `string\[\]` | 否 | 需要返回的字段列表，字段可填写的列表如下： - department_name - sub_type - code - active - parent_department_id - manager - description - effective_date - expiration_date - custom_fields(自定义字段需传入具体的"custom_api_name"详细见[获取自定义字段列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/query) ,比如:"shifouleixing_7795__c)<br>**示例值**：["department_name"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
+| `fields` | `string\[\]` | 否 | 需要返回的字段列表，字段可填写的列表如下： - department_name：部门名称 - sub_type：部门子类型 - tree_order：树形排序 - list_order：列表排序 - is_root：是否根部门 - is_confidential：是否保密 - staffing_model：岗职务模式 - cost_center_id：部门默认成本中心 - code：部门编码 - active：是否启用 - parent_department_id：上级部门ID - manager：负责人 - description：部门描述 - effective_date：当前版本生效日期 - expiration_date：当前版本失效日期 - custom_fields(自定义字段需传入具体的"custom_api_name"详细见[获取自定义字段列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/query) ,比如:"shifouleixing_7795__c)<br>**示例值**：["department_name"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
 
 
 ### 请求体示例
@@ -76,7 +76,7 @@ updateTime: "1770621138000"
 | `data` | `\-` | \- |
 | &nbsp;&nbsp;└ `items` | `department_timeline\[\]` | 部门信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 部门 ID |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `version_id` | `string` | 部门版本 ID |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `version_id` | `string` | 部门版本 ID(默认返回) |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `names` | `i18n\[\]` | 部门名称 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 语言，中文用zh-CN，英文用en-US |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 文本内容 |
@@ -101,6 +101,16 @@ updateTime: "1770621138000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `int` | 自定义字段类型，详细见[获取自定义字段列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/query) |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 字段值，是 json 转义后的字符串，根据元数据定义不同，字段格式不同（如 123, 123.23, "true", ["id1","id2"], "2006-01-02 15:04:05"） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `expiration_date` | `string` | 当前版本失效日期 - 返回格式：YYYY-MM-DD（最小单位到日） - 日期范围：1900-01-01 ～9999-12-31 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `tree_order` | `string` | 树形排序，代表同层级的部门排序序号 - 数据类型为字符串，实际按数值大小排序，数值越小，同层级部门展示越靠前；仅对同一父部门下的直接子部门生效 - 数值生成规则：   -  编号长度由同层级部门数量动态决定：同层级部门≤10 个为 6 位编号，10~20 个为 7 位编号，超过 100 个统一为 16 位编号，以此类推   - 新建部门时系统自动赋值：同层级下一个新部门编号，会在上一个部门编号基础上按固定数值自动累加；例如 6 位编号每次固定加 1000，7 位编号每次固定加 10000   - 重排触发：当同层级部门数量超出当前编号长度可容纳范围，或多次拖拽排序无法正常插入位置时，会触发同层级编号全局重新编排；所有部门编号会按新的长度和累加规则重新生成，数值可能出现明显变大   - 当同一父部门下的子部门数量超过 1000 个时，系统在维护排序编号时可能出现异常问题。 - 更新时机：   - 创建部门场景tree_order不会实时生成，10分钟内更新完毕   - 在页面拖动部门排序时tree_order可以实时生成   - 变更部门上级时，会清空tree_order，并触发重算list_order和tree_order，10分钟内更新完毕（list_order由部门上级路径的所有tree_order用“-”拼接生成） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `list_order` | `string` | 列表排序，代表所有部门的混排序号，为该部门上级路径上所有tree_order用“-”拼接。 - 该字段在新建/更新场景非立即更新，10分钟后会延迟更新 - 由于list_order变更会导致[部门变更接口](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/department/events/updated)产生大量事件，因此事件接口不会针对该字段同步变更事件，如果有需求订阅请联系[Oncall](https://applink.feishu.cn/TLJpeNdW)单独开启。 - 同层部门（相同上级）数量超过1000时，该字段不再更新 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `is_root` | `boolean` | 是否根部门(默认返回) |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `is_confidential` | `boolean` | 是否保密（该功能暂不支持，可以忽略） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `staffing_model` | `enum` | 岗职管理模式 - 详细枚举类型请查看[枚举场景](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/feishu-people-enum-constant)中关于staffing_model定义 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `enum_name` | `string` | 枚举值 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `display` | `i18n\[\]` | 枚举多语展示 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 中文用zh-CN，英文用en-US |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 文本内容 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `cost_center_id` | `string` | 成本中心id<br>**字段权限要求**： `corehr:department.cost_center_id:read` 获取部门成本中心字段信息 |
 
 
 ### 响应体示例
@@ -151,7 +161,21 @@ updateTime: "1770621138000"
                         "value": "\"231\""
                     }
                 ],
-                "expiration_date": "2020-05-02"
+                "expiration_date": "2020-05-02",
+                "tree_order": "001000",
+                "list_order": "001000-001000",
+                "is_root": false,
+                "is_confidential": false,
+                "staffing_model": {
+                    "enum_name": "phone_type",
+                    "display": [
+                        {
+                            "lang": "zh-CN",
+                            "value": "中文示例"
+                        }
+                    ]
+                },
+                "cost_center_id": "7142384817131652652"
             }
         ]
     }

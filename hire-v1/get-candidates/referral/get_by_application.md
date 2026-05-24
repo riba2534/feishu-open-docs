@@ -1,12 +1,24 @@
 ---
 title: "获取内推信息"
 fullPath: "/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/referral/get_by_application"
-updateTime: "1724725376000"
+updateTime: "1776656033000"
 ---
 
 # 获取内推信息
 
 根据投递 ID 获取内推信息，包含内推人信息、内推创建时间等。
+
+
+注意：
+
+
+1.本接口根据 application_id （投递ID）查询内推信息时，仅适用于内推时选择了具体职位的场景
+
+
+2.对于 无职位内推 （内推时未选择职位），内推信息中不存储投递ID，使用 application_id 查询将返回空结果
+
+
+3.查询无职位内推信息，请使用 referral_id （内推ID）或 talent_id （人才ID）作为查询条件
 
 
 ## 请求
@@ -86,7 +98,7 @@ updateTime: "1724725376000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 500 | 1002001 | 系统错误 | 请根据实际报错信息定位或咨询[技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 400 | 1002002 | 参数错误 | 检查参数是否正确，例如类型，大小 |
+| 500 | 1002001 | System error | 请根据实际报错信息定位或咨询[技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1002002 | Invalid parameter | 检查参数是否正确，例如类型，大小 |
 
 

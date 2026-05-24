@@ -1,7 +1,7 @@
 ---
 title: "序列资源介绍"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/job_family/job-family-resource-introduction"
-updateTime: "1720167723000"
+updateTime: "1775548410000"
 ---
 
 # 序列资源介绍

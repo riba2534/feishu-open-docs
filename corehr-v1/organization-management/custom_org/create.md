@@ -1,7 +1,7 @@
 ---
 title: "创建自定义组织"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/custom_org/create"
-updateTime: "1765434816000"
+updateTime: "1774424438000"
 ---
 
 # 创建自定义组织
@@ -11,6 +11,7 @@ updateTime: "1765434816000"
 
 > **Tip**: - 每种自定义组织都可以通过此接口创建，不同种自定义组织通过不同 object_api_name 区分。
 > - 非必填字段，不传时默认为空。
+> - 此接口字段是否必填以【飞书人事-组织配置】为准。建议参照【飞书人事-组织管理-自定义组织-新建】页面来传参
 
 
 ## 请求

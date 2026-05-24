@@ -1,7 +1,7 @@
 ---
 title: "通过过期时间获取发放记录"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/leave_employ_expire_record/get"
-updateTime: "1724136509000"
+updateTime: "1778137762000"
 ---
 
 # 通过过期时间获取发放记录
@@ -54,7 +54,7 @@ updateTime: "1724136509000"
 | `leave_type_id` | `string` | 是 | 假期类型ID，可通过[获取假期类型列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/leave/leave_types)获取<br>**示例值**："7111688079785723436" |
 | `start_expiration_date` | `string` | 是 | 失效最早日期，格式为yyyy-MM-dd<br>**示例值**："2023-04-10" |
 | `end_expiration_date` | `string` | 是 | 失效最晚日期，格式为yyyy-MM-dd<br>**示例值**："2023-05-10" |
-| `time_offset` | `int` | 否 | 时间偏移，东八区：480    8*60， 如果没有这个参数，默认东八区<br>**示例值**：480 |
+| `time_offset` | `int` | 否 | Time offset, East Eighth District: 480 = 8 * 60, if this parameter is not provided, East Eighth District is used by default<br>**示例值**：480 |
 
 
 ### 请求体示例
@@ -151,7 +151,7 @@ updateTime: "1724136509000"
 | 500 | 1220012 | An exception occurs in the database | 数据库异常，请联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 500 | 1220013 | Error occurred while checking if the employee is eligible for the vacation plan. | 检查员工是否符合假期计划适用范围时发生错误 |
 | 500 | 1220028 | There is an error in the unit conversion configuration in the granting rule | 检查假期计划版本的单位转换规则是否配置正确 |
-| 500 | 1220014 | Error occurred when calculate accrual record | 计算授予计划错误 |
+| 500 | 1220014 | Error occurred when calculating accrual record | 计算授予计划错误 |
 | 400 | 1220024 | There is a subclass for the leave type, but the subclass ID has not been passed | 如果假期类型存在子类，那么leaveTypeID必须传子类ID |
 | 400 | 1220025 | The granting quantity range is from -9999 to 9999 | 额度范围为-9999～9999 |
 | 400 | 1220026 | The number of decimal places of the granted quantity cannot exceed 6 | 最多6位小数 |

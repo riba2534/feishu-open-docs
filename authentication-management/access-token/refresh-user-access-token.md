@@ -1,7 +1,7 @@
 ---
 title: "刷新 user_access_token"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/refresh-user-access-token"
-updateTime: "1750847835000"
+updateTime: "1775631547000"
 ---
 
 # 刷新 user_access_token
@@ -28,17 +28,10 @@ refresh_token
 
 ![开通 offline_access 权限.png](https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/f8b75edae2c682ab98b6984170707a64_gYt5eNq84a.png?height=703&lazyload=true&width=1867)
 
-在开通 `offline_access` 权限后，如需获取 `refresh_token`，具体的请求参数设置如下：
-1. 首先在[发起授权](https://open.larkoffice.com/document/common-capabilities/sso/api/obtain-oauth-code)时，授权链接的`scope` 参数中必须拼接 `offline_access`，例如：
+在开通 `offline_access` 权限后，如需获取 `refresh_token`，在[发起授权](https://open.larkoffice.com/document/common-capabilities/sso/api/obtain-oauth-code)时，授权链接的`scope` 参数中必须拼接 `offline_access`，例如：
 ```
 https://accounts.feishu.cn/open-apis/authen/v1/authorize?client_id=cli_a5d611352af9d00b&redirect_uri=https%3A%2F%2Fexample.com%2Fapi%2Foauth%2Fcallback&scope=bitable:app:readonly%20offline_access
 ```
-2. 在[获取 user_access_token](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/get-user-access-token)时，
-	+ 如果不需要缩减权限，即该接口的 `scope` 参数为空，则无需做其他操作，即可正常获得 `refresh_token`；
-	+ 如果需要缩减权限，即该接口的 `scope` 参数不为空，
-		+ 且需要获取 `refresh_token`，则此处的 `scope` 参数中需要拼接 `offline_access`；
-		+ 如不需要获取 `refresh_token`，则无需特殊处理；
-3. 在[刷新 user_access_token](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/refresh-user-access-token)时，同第二步的逻辑。
 
 ### 开启刷新 user_access_token 的安全设置
 
@@ -57,7 +50,7 @@ https://accounts.feishu.cn/open-apis/authen/v1/authorize?client_id=cli_a5d611352
 > **Warning**: 为了避免刷新 `user_access_token` 的行为被滥用，在用户授权应用 365 天后，应用必须通过用户[重新授权](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/get-user-access-token)的方式来获取 `user_access_token` 与 `refresh_token`。如果 `refresh_token` 到期后继续刷新`user_access_token`将报错（错误码为 20037），可参考以下[错误码描述信息](#错误码)进行处理。
 
 
-> **Warning**: 刷新后请更新本地 `user_access_token` 和 `refresh_token`，原令牌将无法再使用（`user_access_token` 会有一分钟的豁免时间以供应用完成令牌轮转）。
+> **Warning**: 刷新后请更新本地`refresh_token`，原`refresh_token`将无法再使用。原 `user_access_token` 不受影响，在其过期时间到达前仍可正常使用。
 
 
 | 项目 | 值 |
@@ -110,10 +103,10 @@ https://accounts.feishu.cn/open-apis/authen/v1/authorize?client_id=cli_a5d611352
 | `code` | `int` | 错误码，为 0 时表明请求成功，非 0 表示失败，请参照下文错误码一节妥善处理 |
 | `access_token` | `string` | 即 `user_access_token`，仅在请求成功时返回 |
 | `expires_in` | `int` | 即 `user_access_token` 的有效期，单位为秒，仅在请求成功时返回 > **Tip**: 建议使用该字段以确定 `user_access_token` 的过期时间，不要硬编码有效期 |
-| `refresh_token` | `string` | 用于刷新 `user_access_token`，该字段仅在请求成功且用户授予 `offline_access` 权限时返回： `offline_access` offline_access > **Tip**: 如果你在获取 `user_access_token` 时设置了 `scope` 请求参数，且需要返回 `refresh_token`，则需要在 `scope` 参数中包括 `offline_access`。另外，`refresh_token` 仅能被使用一次。 |
+| `refresh_token` | `string` | 用于刷新 `user_access_token`，该字段仅在请求成功且用户授予 `offline_access` 权限时返回： `offline_access` offline_access > **Tip**: `refresh_token` 仅能被使用一次。 |
 | `refresh_token_expires_in` | `int` | 即 `refresh_token` 的有效期，单位为秒，仅在返回 `refresh_token` 时返回。          > **Tip**: 建议在到期前重新调用当前接口获取新的 `refresh_token`。 |
 | `token_type` | `string` | 值固定为 `Bearer`，仅在请求成功时返回 |
-| `scope` | `string` | 本次请求所获得的 `access_token` 所具备的权限列表，以空格分隔，仅在请求成功时返回 |
+| `scope` | `string` | 本次请求所获得的 `access_token` 实际具备的权限列表，以空格分隔。服务端会根据情况对申请的 scope 进行裁剪，最终实际授予的权限范围请以该字段为准。该字段仅在请求成功时返回。 |
 | `error` | `string` | 错误类型，仅在请求失败时返回 |
 | `error_description` | `string` | 具体的错误信息，仅在请求失败时返回 |
 

@@ -1,7 +1,7 @@
 ---
 title: "批量创建一次性支付记录"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/compensation-v1/lump_sum_payment/batch_create"
-updateTime: "1755603208000"
+updateTime: "1777370087000"
 ---
 
 # 批量创建一次性支付记录
@@ -22,7 +22,7 @@ updateTime: "1755603208000"
 | HTTP Method | POST |
 | 接口频率限制 | [10 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
-| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:compensation.lump_sum_payment:write` 一次性支付写权限 |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:compensation.lump_sum_payment:write` 写入一次性支付记录 |
 | 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
@@ -53,8 +53,8 @@ updateTime: "1755603208000"
 | &nbsp;&nbsp;└ `currency_id` | `string` | 是 | 币种 id（通过[【查询币种】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-currency/search)) 接口进行查询）<br>**示例值**："6863329932261459464"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
 | &nbsp;&nbsp;└ `issuance_frequency` | `int` | 是 | 发放次数，必须与 details 的长度一致<br>**示例值**：3<br>**数据校验规则**：<br>- 取值范围：`0` ～ `2147483647` |
 | &nbsp;&nbsp;└ `item_id` | `string` | 是 | 薪酬项 id（通过[【查询薪酬项】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/compensation-v1/item/list)) 接口进行查询）<br>**示例值**："7411039006180312620"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
-| &nbsp;&nbsp;└ `reference_period_start_date` | `string` | 否 | 所属期开始日期<br>**示例值**："2024-08-01"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
-| &nbsp;&nbsp;└ `reference_period_end_date` | `string` | 否 | 所属期结束日期<br>**示例值**："2024-08-01"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| &nbsp;&nbsp;└ `reference_period_start_date` | `string` | 否 | 一次性支付记录所属期开始日期<br>**示例值**："2024-08-01"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| &nbsp;&nbsp;└ `reference_period_end_date` | `string` | 否 | 一次性支付记录所属期结束日期<br>**示例值**："2024-08-01"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
 | &nbsp;&nbsp;└ `details` | `lump_sum_payment_detail_for_create\[\]` | 是 | 发放明细列表<br>**数据校验规则**：<br>- 长度范围：`0` ～ `2147483647` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `issuance_amount` | `string` | 是 | 一次性支付明细发放金额，可转数字的字符串，单位为入参中 currency_id 给定的币种<br>**示例值**："2000.00"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `issuance_status` | `string` | 是 | 发放状态<br>**示例值**："to_be_issued"<br>**可选值有**：<br>- `to_be_issued`: 应发放 - `not_issued`: 不发放<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
@@ -63,7 +63,10 @@ updateTime: "1755603208000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `belong_time` | `string` | 是 | 申请发放日期<br>**示例值**："2025-01-20"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `issuance_country_region_id` | `string` | 否 | 发放国家ID（可通过[查询国家/地区信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-country_region/search)进行查询）<br>**示例值**："6862995757234914824"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `issuance_pay_group_id` | `string` | 否 | 发放薪资组ID（可通过[获取薪资组基本信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/paygroup/list) 进行查询）<br>**示例值**："6862995757234914824"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `detail_reference_period_start_date` | `string` | 否 | 一次性支付明细所属期开始日期<br>**示例值**："2024-08-01"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `detail_reference_period_end_date` | `string` | 否 | 一次性支付明细所属期结束日期<br>**示例值**："2024-08-01"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
 | &nbsp;&nbsp;└ `remark` | `string` | 否 | 备注<br>**示例值**："该员工表现优异，为其发放一笔奖金"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `3000` 字符 |
+| &nbsp;&nbsp;└ `binding_period_decimal` | `string` | 否 | 绑定期带小数<br>**示例值**："12.56"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `255` 字符 |
 
 
 ### 请求体示例
@@ -89,10 +92,13 @@ updateTime: "1755603208000"
                     "issuance_time": "2024-08-01",
                     "belong_time": "2025-01-20",
                     "issuance_country_region_id": "6862995757234914824",
-                    "issuance_pay_group_id": "6862995757234914824"
+                    "issuance_pay_group_id": "6862995757234914824",
+                    "detail_reference_period_start_date": "2024-08-01",
+                    "detail_reference_period_end_date": "2024-08-01"
                 }
             ],
-            "remark": "该员工表现优异，为其发放一笔奖金"
+            "remark": "该员工表现优异，为其发放一笔奖金",
+            "binding_period_decimal": "12.56"
         }
     ]
 }
@@ -112,7 +118,7 @@ updateTime: "1755603208000"
 | &nbsp;&nbsp;└ `operate_results` | `lump_sum_payment_operate_result\[\]` | 每条记录的操作结果。对于创建成功的记录，会返回创建后的一次性支付记录id |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 操作的记录的 id |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `unique_id` | `string` | 操作的记录的 unique_id |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `code` | `int` | 操作结果状态码<br>**可选值有**：<br>- `0`: "Success" 操作成功 - `21270201`: "The bonus to be changed does not exist" 要更改的奖金不存在 - `21270202`: "Idempotent ID conflict" 幂等id冲突 - `21270203`: "The total amount format is incorrect" 总金额格式不正确 - `21270205`: "Only use the number of decimal places specified in the bonus item rules" 仅限使用奖金项规则中规定的小数位数 - `21270206`: "The sum of the bonus details does not equal the total amount" 奖金明细金额之和不等于总金额 - `21270207`: "issuance frequency not equal to size of details" 奖金明细总数不等于发放次数 - `21270208`: "The number of issuances is less than or equal to 0" 发放次数小于等于0 - `21270209`: "The currency is empty or does not exist" 币种为空或不存在 - `21270210`: "Notes are too long" 备注超长 - `21270211`: "The bonus details amount format is incorrect" 奖金明细金额格式不正确 - `21270213`: "The bonus details payment time format is incorrect" 奖金明细的发放时间格式不正确 - `21270214`: "The bonus details are issued in an illegal manner" 奖金明细的发放方式不合法 - `21270215`: "The bonus details are not in a valid payment status" 奖金明细的发放状态不合法 - `21270217`: "Employees are not covered by the bonus rules" 员工不在奖金项规则适用范围之内 - `21270218`: "The method of awarding bonus details is not covered by the bonus item rules" 奖金明细的发放方式不在奖金项规则适用范围之内 - `21270219`: "Bonus item rules do not support configuration of binding period" 奖金项规则不支持配置绑定期 - `21270220`: "The bonus details payment status is "paid", and cannot be modified" 奖金明细发放状态为「已发放」，不支持修改 - `21270221`: "The bonus item rules already include the currency, and other currencies cannot be specified" 奖金项规则已包含币种，不支持指定其他币种 - `21270222`: "The salary item does not exist" 薪酬项不存在 - `21270223`: "Employee does not exist" 员工不存在 - `21270224`: "The bonus details payment status is "paid", and deletion is not supported" 奖金明细发放状态为「已发放」，不支持删除 - `21270225`: "Bonus rules do not allow multiple awards" 奖金项规则不允许多次发放 - `21270226`: "No data permission" 无数据权限 - `21270227`: "Only positive integers are allowed for the binding period" 绑定期只允许正整数 - `21270228`: "This bonus does not currently support custom binding periods. Please configure and write according to the rules for the binding period of the salary item" 该奖金暂不支持自定义绑定期，请按照薪酬项绑定期规则配置写入 - `21270229`: "The application issuance date must not be later than the issuance date" 申请发放日期不得晚于发放日期 - `21270230`: "The application payment date format of the bonus details is incorrect" 奖金明细的申请发放日期格式不正确 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `code` | `int` | 操作结果状态码<br>**可选值有**：<br>- `0`: "Success" 操作成功 - `21270201`: "The bonus to be changed does not exist" 要更改的奖金不存在 - `21270202`: "Idempotent ID conflict" 幂等id冲突 - `21270203`: "The total amount format is incorrect" 总金额格式不正确 - `21270205`: "Only use the number of decimal places specified in the bonus item rules" 仅限使用奖金项规则中规定的小数位数 - `21270206`: "The sum of the bonus details does not equal the total amount" 奖金明细金额之和不等于总金额 - `21270207`: "issuance frequency not equal to size of details" 奖金明细总数不等于发放次数 - `21270208`: "The number of issuances is less than or equal to 0" 发放次数小于等于0 - `21270209`: "The currency is empty or does not exist" 币种为空或不存在 - `21270210`: "Notes are too long" 备注超长 - `21270211`: "The bonus details amount format is incorrect" 奖金明细金额格式不正确 - `21270213`: "The bonus details payment time format is incorrect" 奖金明细的发放时间格式不正确 - `21270214`: "The bonus details are issued in an illegal manner" 奖金明细的发放方式不合法 - `21270215`: "The bonus details are not in a valid payment status" 奖金明细的发放状态不合法 - `21270217`: "Employees are not covered by the bonus rules" 员工不在奖金项规则适用范围之内 - `21270218`: "The method of awarding bonus details is not covered by the bonus item rules" 奖金明细的发放方式不在奖金项规则适用范围之内 - `21270219`: "Bonus item rules do not support configuration of binding period" 奖金项规则不支持配置绑定期 - `21270220`: "The bonus details payment status is "paid", and cannot be modified" 奖金明细发放状态为「已发放」，不支持修改 - `21270221`: "The bonus item rules already include the currency, and other currencies cannot be specified" 奖金项规则已包含币种，不支持指定其他币种 - `21270222`: "The salary item does not exist" 薪酬项不存在 - `21270223`: "Employee does not exist" 员工不存在 - `21270224`: "The bonus details payment status is "paid", and deletion is not supported" 奖金明细发放状态为「已发放」，不支持删除 - `21270225`: "Bonus rules do not allow multiple awards" 奖金项规则不允许多次发放 - `21270226`: "No data permission" 无数据权限 - `21270227`: "Only positive integers are allowed for the binding period" 绑定期只允许正整数 - `21270228`: "This bonus does not currently support custom binding periods. Please configure and write according to the rules for the binding period of the salary item" 该奖金暂不支持自定义绑定期，请按照薪酬项绑定期规则配置写入 - `21270229`: "The application issuance date must not be later than the issuance date" 申请发放日期不得晚于发放日期 - `21270230`: "The application payment date format of the bonus details is incorrect" 奖金明细的申请发放日期格式不正确 - `21270070`: "The binding period and the ownership period start and end dates do not match"       绑定期和所属期开始结束日期不匹配 - `21270239`: "One time payment detail reference period start date and One time payment detail reference period end date shall be filled in or left blank at the same time. Please confirm"       「一次性支付明细所属期开始日期」、「一次性支付明细所属期结束日期」需同时填写或同时为空，请确认 - `21270240`: "One time payment detail reference period start date must be earlier than or equal to One time payment detail reference period end date. Please confirm"       「一次性支付明细所属期开始日期」需早于等于「一次性支付明细结束日期」，请确认 - `21270241`: "One time payment detail reference period must fall within the scope of One time payment record reference period. Please adjust"       「一次性支付明细所属期」需包含在「一次性支付记录所属期」范围内，请调整 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `message` | `string` | 操作结果描述 |
 
 

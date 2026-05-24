@@ -1,7 +1,7 @@
 ---
 title: "修改邮箱联系人信息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-mail_contact/patch"
-updateTime: "1745841693000"
+updateTime: "1773998711000"
 ---
 
 # 修改邮箱联系人信息

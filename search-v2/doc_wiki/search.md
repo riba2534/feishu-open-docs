@@ -1,7 +1,7 @@
 ---
 title: "搜索文档"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/search-v2/doc_wiki/search"
-updateTime: "1769653253000"
+updateTime: "1773308296000"
 ---
 
 # 文档搜索
@@ -33,7 +33,7 @@ updateTime: "1769653253000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `query` | `string` | 是 | 搜索关键词（query至少搭配一种doc/wiki筛选器）<br>**示例值**："飞书文档使用指南"<br>**数据校验规则**：<br>- 长度范围：`0` ～ `50` 字符 |
-| `doc_filter` | `doc_filter` | 否 | 文档过滤参数<br>**示例值**：{"folder_tokens": ["fld_123456"]} |
+| `doc_filter` | `doc_filter` | 否 | 文档过滤参数（doc_filter与wiki_filter至少传一个）<br>**示例值**：{"folder_tokens": ["fld_123456"]} |
 | &nbsp;&nbsp;└ `creator_ids` | `string\[\]` | 否 | 文档所有者OpenID<br>**示例值**：["ou_789012"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `20` |
 | &nbsp;&nbsp;└ `doc_types` | `string\[\]` | 否 | 文档类型<br>**示例值**：["SHORTCUT"]<br>**可选值有**：<br>- `DOC`: 文档 - `SHEET`: 表格 - `BITABLE`: 多维表格 - `MINDNOTE`: 思维导图 - `FILE`: 文件 - `WIKI`: wiki - `DOCX`: 新版文档 - `FOLDER`: space文件夹 - `CATALOG`: wiki2.0文件夹 - `SLIDES`: 新版本幻灯片 - `SHORTCUT`: 快捷方式<br>**数据校验规则**：<br>- 长度范围：`0` ～ `10` |
 | &nbsp;&nbsp;└ `folder_tokens` | `string\[\]` | 否 | 搜索文件夹内的文档（文件夹token列表） 注：如果存在该字段则wiki筛选器失效<br>**示例值**：["fld_123456"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `50` |
@@ -41,11 +41,11 @@ updateTime: "1769653253000"
 | &nbsp;&nbsp;└ `open_time` | `time_range` | 否 | 浏览文档的时间范围（秒级时间戳，包含start和end字段） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `start` | `int` | 否 | 时间范围的起始时间戳<br>**示例值**：1742348544<br>**数据校验规则**：<br>- 取值范围：`0` ～ `9223372036854775807` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `end` | `int` | 否 | 时间范围的截止时间戳<br>**示例值**：1742348544<br>**数据校验规则**：<br>- 取值范围：`0` ～ `9223372036854775807` |
-| &nbsp;&nbsp;└ `sort_type` | `string` | 否 | 排序方式<br>**示例值**："CREATE_TIME"<br>**可选值有**：<br>- `DEFAULT_TYPE`: 默认排序 - `OPEN_TIME`: User打开时间排序 - `EDIT_TIME`: User编辑时间降序 - `EDIT_TIME_ASC`: User编辑时间升序 - `ENTITY_CREATE_TIME_ASC`: 实体创建时间升序 - `ENTITY_CREATE_TIME_DESC`: 实体创建时间降序 - `CREATE_TIME`: 按文档创建时间排序 - `CREATE_TIME_ASC`: 按文档创建时间正序（该排序暂不支持） |
+| &nbsp;&nbsp;└ `sort_type` | `string` | 否 | 排序方式<br>**示例值**："CREATE_TIME"<br>**可选值有**：<br>- `DEFAULT_TYPE`: 默认排序 - `OPEN_TIME`: User打开时间排序 - `EDIT_TIME`: User编辑时间降序 - `EDIT_TIME_ASC`: User编辑时间升序 - `ENTITY_CREATE_TIME_ASC`: 实体创建时间升序（已废弃） - `ENTITY_CREATE_TIME_DESC`: 实体创建时间降序（已废弃） - `CREATE_TIME`: 按文档创建时间排序 - `CREATE_TIME_ASC`: 按文档创建时间正序（该排序暂不支持） |
 | &nbsp;&nbsp;└ `create_time` | `time_range` | 否 | 文档创建的时间范围（秒级时间戳，包含start和end字段） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `start` | `int` | 否 | 时间范围的起始时间戳<br>**示例值**：1742348544<br>**数据校验规则**：<br>- 取值范围：`0` ～ `9223372036854775807` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `end` | `int` | 否 | 时间范围的截止时间戳<br>**示例值**：1742348544<br>**数据校验规则**：<br>- 取值范围：`0` ～ `9223372036854775807` |
-| `wiki_filter` | `wiki_filter` | 否 | Wiki过滤参数<br>**示例值**：{"creator_ids": ["ou_789012"], "space_ids": ["space_123456"]} |
+| `wiki_filter` | `wiki_filter` | 否 | Wiki过滤参数（doc_filter与wiki_filter至少传一个）<br>**示例值**：{"creator_ids": ["ou_789012"], "space_ids": ["space_123456"]} |
 | &nbsp;&nbsp;└ `creator_ids` | `string\[\]` | 否 | Wiki所有者OpenID<br>**示例值**：["ou_7890123456abcdef"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `20` |
 | &nbsp;&nbsp;└ `doc_types` | `string\[\]` | 否 | Wiki类型<br>**示例值**：["SHORTCUT"]<br>**可选值有**：<br>- `DOC`: 文档 - `SHEET`: 表格 - `BITABLE`: 多维表格 - `MINDNOTE`: 思维导图 - `FILE`: 文件 - `WIKI`: 维基 - `DOCX`: 新版文档 - `FOLDER`: space文件夹 - `CATALOG`: wiki2.0文件夹 - `SLIDES`: 新版本幻灯片 - `SHORTCUT`: 快捷方式<br>**数据校验规则**：<br>- 长度范围：`0` ～ `10` |
 | &nbsp;&nbsp;└ `space_ids` | `string\[\]` | 否 | 搜索某个Space下的Wiki（Space ID列表）<br>**示例值**：["space_1234567890fedcba"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `50` |
@@ -53,7 +53,7 @@ updateTime: "1769653253000"
 | &nbsp;&nbsp;└ `open_time` | `time_range` | 否 | 浏览文档的时间范围（秒级时间戳，包含start和end字段） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `start` | `int` | 否 | 时间范围的起始时间戳<br>**示例值**：1742348544<br>**数据校验规则**：<br>- 取值范围：`0` ～ `9223372036854775807` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `end` | `int` | 否 | 时间范围的截止时间戳<br>**示例值**：1742348544<br>**数据校验规则**：<br>- 取值范围：`0` ～ `9223372036854775807` |
-| &nbsp;&nbsp;└ `sort_type` | `string` | 否 | 排序方式<br>**示例值**："CREATE_TIME"<br>**可选值有**：<br>- `DEFAULT_TYPE`: 默认排序 - `OPEN_TIME`: User打开时间排序 - `EDIT_TIME`: User编辑时间降序 - `EDIT_TIME_ASC`: User编辑时间升序 - `ENTITY_CREATE_TIME_ASC`: 实体创建时间升序 - `ENTITY_CREATE_TIME_DESC`: 实体创建时间降序 - `CREATE_TIME`: 按文档创建时间排序 - `CREATE_TIME_ASC`: 按文档创建时间正序（该排序暂不支持） |
+| &nbsp;&nbsp;└ `sort_type` | `string` | 否 | 排序方式<br>**示例值**："CREATE_TIME"<br>**可选值有**：<br>- `DEFAULT_TYPE`: 默认排序 - `OPEN_TIME`: User打开时间排序 - `EDIT_TIME`: User编辑时间降序 - `EDIT_TIME_ASC`: User编辑时间升序 - `ENTITY_CREATE_TIME_ASC`: 实体创建时间升序（已废弃） - `ENTITY_CREATE_TIME_DESC`: 实体创建时间降序（已废弃） - `CREATE_TIME`: 按文档创建时间排序 - `CREATE_TIME_ASC`: 按文档创建时间正序（该排序暂不支持） |
 | &nbsp;&nbsp;└ `create_time` | `time_range` | 否 | Wiki创建的时间范围（秒级时间戳，包含start和end字段） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `start` | `int` | 否 | 时间范围的起始时间戳<br>**示例值**：1742348544<br>**数据校验规则**：<br>- 取值范围：`0` ～ `9223372036854775807` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `end` | `int` | 否 | 时间范围的截止时间戳<br>**示例值**：1742348544<br>**数据校验规则**：<br>- 取值范围：`0` ～ `9223372036854775807` |

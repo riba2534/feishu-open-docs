@@ -1,7 +1,7 @@
 ---
 title: "停止录制"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting/events/recording_ended"
-updateTime: "1679916446000"
+updateTime: "1774528231000"
 ---
 
 # 停止录制
@@ -15,7 +15,7 @@ updateTime: "1679916446000"
 | --- | --- |
 | 事件类型 | vc.meeting.recording_ended_v1 |
 | 支持的应用类型 | custom,isv |
-| 权限要求             订阅该事件所需的权限，开启其中任意一项权限即可订阅 | `vc:meeting:readonly` 获取会议信息 |
+| 权限要求             订阅该事件所需的权限，开启其中任意一项权限即可订阅 开启任一权限即可 | `vc:meeting:readonly` 获取会议信息 `vc:meeting.meetingevent:read` 获取会议信息 |
 | 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 | 推送方式 | `Webhook` |
 
@@ -37,7 +37,8 @@ updateTime: "1679916446000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 会议ID（视频会议的唯一标识，视频会议开始后才会产生） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `topic` | `string` | 会议主题 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `meeting_no` | `string` | 9位会议号（飞书用户可通过输入9位会议号快捷入会） |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `start_time` | `string` | 会议结束时间（unix时间，单位：秒） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `meeting_source` | `int` | 会议创建源<br>**可选值有**：<br>- `1`: 日程会议 - `2`: 即时会议 - `3`: 面试会议 - `4`: 开放平台会议 - `100`: 其他会议类型 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `start_time` | `string` | 会议开始时间（unix时间，单位：秒） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `end_time` | `string` | 会议结束时间（unix时间，单位：秒） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `host_user` | `meeting_event_user` | 会议主持人 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `user_id` | 用户 ID |
@@ -45,21 +46,33 @@ updateTime: "1679916446000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 用户的 user id<br>**字段权限要求**： `contact:user.employee_id:readonly` 获取用户 user ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `open_id` | `string` | 用户的 open id |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_role` | `int` | 用户会中角色<br>**可选值有**：<br>- `1`: 普通参会人 - `2`: 主持人 - `3`: 联席主持人 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_type` | `int` | 用户类型<br>**可选值有**：<br>- `1`: 飞书用户 - `2`: rooms用户 - `3`: 文档用户 - `4`: neo单品用户 - `5`: neo单品游客用户 - `6`: pstn用户 - `7`: sip用户 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_type` | `int` | 用户类型<br>**可选值有**：<br>- `1`: 飞书用户 - `2`: rooms用户 - `3`: 文档用户 - `4`: neo单品用户 - `5`: neo单品游客用户 - `6`: pstn用户 - `7`: sip用户 - `8`: sharebox用户 - `9`: 开放平台应用 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `owner` | `meeting_event_user` | 会议拥有者 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `user_id` | 用户 ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `union_id` | `string` | 用户的 union id |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 用户的 user id<br>**字段权限要求**： `contact:user.employee_id:readonly` 获取用户 user ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `open_id` | `string` | 用户的 open id |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_role` | `int` | 用户会中角色<br>**可选值有**：<br>- `1`: 普通参会人 - `2`: 主持人 - `3`: 联席主持人 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_type` | `int` | 用户类型<br>**可选值有**：<br>- `1`: 飞书用户 - `2`: rooms用户 - `3`: 文档用户 - `4`: neo单品用户 - `5`: neo单品游客用户 - `6`: pstn用户 - `7`: sip用户 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_type` | `int` | 用户类型<br>**可选值有**：<br>- `1`: 飞书用户 - `2`: rooms用户 - `3`: 文档用户 - `4`: neo单品用户 - `5`: neo单品游客用户 - `6`: pstn用户 - `7`: sip用户 - `8`: sharebox用户 - `9`: 开放平台应用 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `meeting_sub_type` | `int` | 会议子类型<br>**可选值有**：<br>- `1`: 会前投屏 - `2`: 有线共享 - `3`: 会前妙享 - `4`: 企业办公电话 - `5`: IP Phone - `6`: 网络研讨会 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `security_setting` | `meeting_security_setting` | 会议安全设置 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `security_level` | `int` | 安全级别<br>**可选值有**：<br>- `1`: 所有人可加入 - `2`: 仅企业内用户可加入 - `3`: 仅指定联系人和群可加入 - `4`: 仅主持人可参会（锁定会议） |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `group_ids` | `string\[\]` | 允许入会的群组ID列表<br>**数据校验规则**：<br>- 长度范围：`0` ～ `200` |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_ids` | `user_id\[\]` | 允许入会的用户ID列表<br>**数据校验规则**：<br>- 长度范围：`0` ～ `200` |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `union_id` | `string` | 用户的 union id |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 用户的 user id |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `open_id` | `string` | 用户的 open id |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `room_ids` | `string\[\]` | 允许入会的会议室ID列表<br>**数据校验规则**：<br>- 长度范围：`0` ～ `200` |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `has_set_security_contacts_and_group` | `boolean` | 是否设置了仅指定联系人和群组可参会 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `webinar_setting` | `meeting_webinar_setting` | 研讨会相关设置 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `webinar_type` | `int` | 网络研讨会类型<br>**可选值有**：<br>- `1`: 普通网络研讨会 - `2`: 直播网络研讨会 |
 | &nbsp;&nbsp;└ `operator` | `meeting_event_user` | 事件操作人 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `user_id` | 用户 ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `union_id` | `string` | 用户的 union id |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 用户的 user id<br>**字段权限要求**： `contact:user.employee_id:readonly` 获取用户 user ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `open_id` | `string` | 用户的 open id |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `user_role` | `int` | 用户会中角色<br>**可选值有**：<br>- `1`: 普通参会人 - `2`: 主持人 - `3`: 联席主持人 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `user_type` | `int` | 用户类型<br>**可选值有**：<br>- `1`: 飞书用户 - `2`: rooms用户 - `3`: 文档用户 - `4`: neo单品用户 - `5`: neo单品游客用户 - `6`: pstn用户 - `7`: sip用户 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `user_type` | `int` | 用户类型<br>**可选值有**：<br>- `1`: 飞书用户 - `2`: rooms用户 - `3`: 文档用户 - `4`: neo单品用户 - `5`: neo单品游客用户 - `6`: pstn用户 - `7`: sip用户 - `8`: sharebox用户 - `9`: 开放平台应用 |
 
 
 ### 事件体示例
@@ -80,6 +93,7 @@ updateTime: "1679916446000"
             "id": "6911188411934433028",
             "topic": "my meeting",
             "meeting_no": "235812466",
+            "meeting_source": 1,
             "start_time": "1608883322",
             "end_time": "1608883899",
             "host_user": {
@@ -99,6 +113,27 @@ updateTime: "1679916446000"
                 },
                 "user_role": 1,
                 "user_type": 1
+            },
+            "meeting_sub_type": 1,
+            "security_setting": {
+                "security_level": 1,
+                "group_ids": [
+                    "[oc_XXXXf6a28a0d08c45d895267e8b4a91i]"
+                ],
+                "user_ids": [
+                    {
+                        "union_id": "on_785a8cda5345f665f7187d7d876cb790",
+                        "user_id": "f3e15a6a",
+                        "open_id": "ou_2cc0462a0597358575e771bea74e3304"
+                    }
+                ],
+                "room_ids": [
+                    "[omm_XXe32cf10a4358788ff4e09e37ebbf9b]"
+                ],
+                "has_set_security_contacts_and_group": true
+            },
+            "webinar_setting": {
+                "webinar_type": 1
             }
         },
         "operator": {

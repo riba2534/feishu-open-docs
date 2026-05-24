@@ -1,12 +1,12 @@
 ---
 title: "创建班次"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/shift/create"
-updateTime: "1740742982000"
+updateTime: "1778137679000"
 ---
 
 # 创建班次
 
-班次是描述一次考勤任务时间规则的统称，比如一天打多少次卡，每次卡的上下班时间，晚到多长时间算迟到，晚到多长时间算缺卡等。在假勤设置-[班次设置](https://example.feishu.cn/people/workforce-management/setting/group/shifts)中点击班次名称可以进行班次详情查看。如果入参中传入了班次id，那么支持编辑班次的能力
+该接口用于创建企业的考勤班次。
 
 
 > **Tip**: - 创建一个考勤组前，必须先创建一个或者多个班次。
@@ -35,7 +35,7 @@ updateTime: "1740742982000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `employee_type` | `string` | 否 | 请求体中的 user_ids 和响应体中的 user_id 的员工ID类型。如果没有后台管理权限，可使用[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)<br>**示例值**：employee_id<br>**可选值有**：<br>- `employee_id`: 员工 employee ID，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的用户 ID，或者[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)获取的userid。 - `employee_no`: 员工工号，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的工号 |
+| `employee_type` | `string` | 否 | 请求体中的 user_ids 和响应体中的 user_id 的员工ID类型。如果没有后台管理权限，可使用[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)<br>**示例值**：employee_id<br>**可选值有**：<br>- `employee_id`: 员工 employee ID，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的用户 ID，或者[通过手机号或邮箱获取用户 ID](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/batch_get_id)获取的user_id。 - `employee_no`: 员工工号，即[飞书管理后台](https://example.feishu.cn/admin/contacts/departmentanduser) > 组织架构 > 成员与部门 > 成员详情中的工号 |
 
 
 ### 请求体
@@ -46,8 +46,8 @@ updateTime: "1740742982000"
 | `shift_name` | `string` | 是 | 班次名称，不可重复<br>**示例值**："早班" |
 | `punch_times` | `int` | 是 | 打卡次数（历史字段，已无用，以punch_time_rule为准）<br>**示例值**：1 |
 | `sub_shift_leader_ids` | `string\[\]` | 否 | 班次负责人，与employee_type类型对应<br>**示例值**：["456123"] |
-| `is_flexible` | `boolean` | 否 | 是否弹性打卡，默认为false，不开启<br>**示例值**：false |
-| `flexible_minutes` | `int` | 否 | 弹性打卡时间，单位：分钟，设置【上班最多可晚到】与【下班最多可早走】时间。仅当未设置 flexible_rule 参数时，该参数生效。如果设置了 flexible_rule 参数，则该参数不生效<br>**示例值**：60 |
+| `is_flexible` | `boolean` | 否 | 是否弹性打卡。true 为开启，false 为不开启。默认为 false。<br>**示例值**：false |
+| `flexible_minutes` | `int` | 否 | 弹性打卡时间，单位为分钟。设置“上班最多可晚到”与“下班最多可早走”的时间。仅当 flexible_rule 参数未设置时，该参数生效。<br>**示例值**：60 |
 | `flexible_rule` | `flexible_rule\[\]` | 否 | 弹性打卡时间设置 |
 | &nbsp;&nbsp;└ `flexible_early_minutes` | `int` | 是 | 下班最多可早走，单位：分钟（上班早到几分钟，下班可早走几分钟）<br>**示例值**：60 |
 | &nbsp;&nbsp;└ `flexible_late_minutes` | `int` | 是 | 上班最多可晚到，单位：分钟（上班晚到几分钟，下班须晚走几分钟）<br>**示例值**：60 |
@@ -73,7 +73,7 @@ updateTime: "1740742982000"
 | `overtime_rule` | `overtime_rule\[\]` | 否 | 加班时段（仅飞书人事企业版可用） |
 | &nbsp;&nbsp;└ `on_overtime` | `string` | 是 | 开始时间<br>**示例值**："9:00" |
 | &nbsp;&nbsp;└ `off_overtime` | `string` | 是 | 结束时间<br>**示例值**："18:00" |
-| `day_type` | `int` | 否 | 日期类型，【是否弹性打卡 = ture】时，不可设置为“休息日”  可选值：1：工作日 2：休息日。默认值：1<br>**示例值**：1 |
+| `day_type` | `int` | 否 | 日期类型，【是否弹性打卡 = true】时，不可设置为“休息日”  可选值：1：工作日 2：休息日。默认值：1<br>**示例值**：1 |
 | `overtime_rest_time_rule` | `rest_rule\[\]` | 否 | 班外休息规则 |
 | &nbsp;&nbsp;└ `rest_begin_time` | `string` | 是 | 休息开始<br>**示例值**："13:00" |
 | &nbsp;&nbsp;└ `rest_end_time` | `string` | 是 | 休息结束<br>**示例值**："14:00" |
@@ -89,6 +89,9 @@ updateTime: "1740742982000"
 | &nbsp;&nbsp;└ `late_off_base_on_time_type` | `int` | 否 | 当日晚走时间计算规则<br>**示例值**：0<br>**可选值有**：<br>- `0`: 弹性规则 - `1`: 固定规则<br>**默认值**：`0` |
 | &nbsp;&nbsp;└ `late_on_base_on_time_type` | `int` | 否 | 次日晚到时间计算规则<br>**示例值**：0<br>**可选值有**：<br>- `0`: 固定规则 - `1`: 弹性规则<br>**默认值**：`0` |
 | `id` | `string` | 否 | 班次id(更新班次时需要传递)，获取方式：1）[按名称查询班次](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/shift/query) 2）[创建班次](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/shift/create)<br>**示例值**："6919358778597097404" |
+| `rest_time_flexible_configs` | `rest_time_flexible_config\[\]` | 否 | 休息弹性设置 |
+| &nbsp;&nbsp;└ `need_flexible` | `boolean` | 否 | 是否开启休息弹性班次<br>**示例值**：false |
+| &nbsp;&nbsp;└ `late_mins` | `int` | 否 | 休息弹性向后弹的分钟数<br>**示例值**：0<br>**数据校验规则**：<br>- 取值范围：`0` ～ `1500` |
 
 
 ### 请求体示例
@@ -163,7 +166,13 @@ updateTime: "1740742982000"
         "late_off_base_on_time_type": 0,
         "late_on_base_on_time_type": 0
     },
-    "id": "6919358778597097404"
+    "id": "6919358778597097404",
+    "rest_time_flexible_configs": [
+        {
+            "need_flexible": false,
+            "late_mins": 0
+        }
+    ]
 }
 ```
 
@@ -210,7 +219,7 @@ updateTime: "1740742982000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `overtime_rule` | `overtime_rule\[\]` | 打卡规则（暂不支持） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `on_overtime` | `string` | 上班时间 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `off_overtime` | `string` | 下班时间 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `day_type` | `int` | 日期类型，【是否弹性打卡 = ture】时，不可设置为“休息日”  可选值：1：工作日 2：休息日。默认值：1 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `day_type` | `int` | 日期类型，【是否弹性打卡 = true】时，不可设置为“休息日”  可选值：1：工作日 2：休息日。默认值：1 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `overtime_rest_time_rule` | `rest_rule\[\]` | 班外休息规则 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `rest_begin_time` | `string` | 休息开始 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `rest_end_time` | `string` | 休息结束 |
@@ -226,6 +235,9 @@ updateTime: "1740742982000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `late_off_base_on_time_type` | `int` | 当日晚走时间计算规则<br>**可选值有**：<br>- `0`: 弹性规则 - `1`: 固定规则 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `late_on_base_on_time_type` | `int` | 次日晚到时间计算规则<br>**可选值有**：<br>- `0`: 固定规则 - `1`: 弹性规则 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 班次id(更新班次时需要传递) |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `rest_time_flexible_configs` | `rest_time_flexible_config\[\]` | 休息弹性设置 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `need_flexible` | `boolean` | 是否开启休息弹性班次 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `late_mins` | `int` | 休息弹性向后弹的分钟数 |
 
 
 ### 响应体示例
@@ -305,7 +317,13 @@ updateTime: "1740742982000"
                 "late_off_base_on_time_type": 0,
                 "late_on_base_on_time_type": 0
             },
-            "id": "6919358778597097404"
+            "id": "6919358778597097404",
+            "rest_time_flexible_configs": [
+                {
+                    "need_flexible": false,
+                    "late_mins": 0
+                }
+            ]
         }
     }
 }
@@ -316,13 +334,13 @@ updateTime: "1740742982000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 400 | 1220001 | param is invalis | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 400 | 1220002 | tenant_id is empty | 请检查入参中的 tenant_access_token是否正确 |
-| 400 | 1220005 | 没有权限 | 请前往[考勤管理后台](https://oa.feishu.cn/attendance/manage/member/list)检查数据权限范围 |
-| 500 | 1225000 | param is invalis | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 500 | 1226000 | param is invalis | 班次服务异常错误码，请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 400 | 1226001 | 历史错误码，不再使用 | - |
-| 400 | 1226002 | 历史错误码，不再使用 | - |
-| 400 | 1220600 | 通用错误信息 | 通用错误信息包含多条，详细的错误信息以及处理建议可参见[错误信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines)。 |
+| 400 | 1220001 | Invalid parameter | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220002 | Tenant does not exist | 请检查入参中的 tenant_access_token是否正确 |
+| 400 | 1220005 | No permission | 请前往[考勤管理后台](https://oa.feishu.cn/attendance/manage/member/list)检查数据权限范围 |
+| 500 | 1225000 | System error | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 500 | 1226000 | Shift service system error | 班次服务异常错误码，请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1226001 | Shift has been used | - |
+| 400 | 1226002 | Shift name has been used | - |
+| 400 | 1220600 | General error message | See the error message for details |
 
 

@@ -1,7 +1,7 @@
 ---
 title: "查询邮箱地址状态"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user/query"
-updateTime: "1745841721000"
+updateTime: "1773998735000"
 ---
 
 # 查询邮箱地址状态
@@ -56,7 +56,7 @@ updateTime: "1745841721000"
 | `code` | `int` | 错误码，非 0 表示失败 |
 | `msg` | `string` | 错误描述 |
 | `data` | `\-` | \- |
-| &nbsp;&nbsp;└ `user_list` | `user\[\]` | 邮箱地址以及其对应的类型类型和状态 |
+| &nbsp;&nbsp;└ `user_list` | `user\[\]` | 邮箱地址以及其对应的类型和状态 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `email` | `string` | 邮箱地址 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `status` | `int` | 邮箱地址状态<br>**可选值有**：<br>- `1`: 邮箱地址格式错误 - `2`: 邮箱地址域名不存在 - `3`: 邮箱地址不存在 - `4`: 启用 - `5`: 已删除（邮箱回收站中） - `6`: 禁用 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `int` | 邮箱地址类型<br>**可选值有**：<br>- `1`: 成员邮箱 - `2`: 成员邮箱别名 - `3`: 公共邮箱 - `4`: 公共邮箱别名 - `5`: 邮件组 - `6`: 邮件组别名 |

@@ -1,7 +1,7 @@
 ---
 title: "批量获取部门信息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/batch"
-updateTime: "1726817427000"
+updateTime: "1775548406000"
 ---
 
 # 批量获取部门信息

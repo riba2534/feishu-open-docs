@@ -1,7 +1,7 @@
 ---
 title: "修改发放记录"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/leave_accrual_record/patch"
-updateTime: "1724136532000"
+updateTime: "1778137771000"
 ---
 
 # 修改发放记录
@@ -53,7 +53,7 @@ updateTime: "1724136532000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `leave_granting_record_id` | `string` | 是 | 发放记录的唯一ID，可通过[创建假期发放记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/leave_granting_record/create)<br>**示例值**："6893014062142064135" |
+| `leave_granting_record_id` | `string` | 是 | 发放记录的唯一ID，可通过[创建假期发放记录](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/leave_granting_record/create)获取<br>**示例值**："6893014062142064135" |
 | `employment_id` | `string` | 是 | 员工ID，类型对应user_id_type<br>**示例值**："6982509313466189342" |
 | `leave_type_id` | `string` | 是 | 假期类型ID，可通过[获取假期类型列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/leave/leave_types)获取<br>**示例值**："7111688079785723436" |
 | `reason` | `lang_text\[\]` | 是 | 修改发放记录原因 |
@@ -151,7 +151,7 @@ updateTime: "1724136532000"
 | 400 | 1220016 | Invalid param | 对照接口文档的入参排查，是否漏填参数、格式错误等（例如数值参数传了字母、日期格式错误等） |
 | 400 | 1220003 | Invalid effective date | 日期格式必须是类似“2020-01-01” |
 | 400 | 1220001 | No tenant ID | 租户ID为空 |
-| 400 | 1220006 | Employment not found | 检查employmentID是否正确 |
+| 400 | 1220006 | Employment not found | 检查employment_id是否正确 |
 | 400 | 1220002 | Invalid granting unit | 授予单位出错 |
 | 400 | 1220004 | Invalid granting quantity | 必须是能解析成数字的字符串，例如“2.5” |
 | 400 | 1220005 | Accessed data object not found | 检查leaveTypeID是否正确 |
@@ -163,7 +163,7 @@ updateTime: "1724136532000"
 | 500 | 1220012 | An exception occurs in the database | 数据库异常，请联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 500 | 1220013 | Error occurred while checking if the employee is eligible for the vacation plan. | 检查员工是否符合假期计划适用范围时发生错误 |
 | 500 | 1220028 | There is an error in the unit conversion configuration in the granting rule | 检查假期计划版本的单位转换规则是否配置正确 |
-| 500 | 1220014 | Error occurred when calculate accrual record | 计算授予计划错误 |
+| 500 | 1220014 | Error occurred when calculating accrual record | 计算授予计划错误 |
 | 400 | 1220024 | There is a subclass for the leave type, but the subclass ID has not been passed | 如果假期类型存在子类，那么leaveTypeID必须传子类ID |
 | 400 | 1220025 | The granting quantity range is from -9999 to 9999 | 额度范围为-9999～9999 |
 | 400 | 1220026 | The number of decimal places of the granted quantity cannot exceed 6 | 最多6位小数 |
@@ -173,7 +173,7 @@ updateTime: "1724136532000"
 | 500 | 1229999 | Unknown error | 未知错误，请联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 500 | 1220015 | Internal error | 内部错误，请联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1220017 | User not found | 获取员工信息失败，请检查员工ID |
-| 500 | 1220018 | Invalid leave balance calculate Conf | 联系研发 |
+| 500 | 1220018 | Invalid leave balance calculation configuration | 联系研发 |
 | 500 | 1220019 | The calculation result of leave balance is empty | 联系研发 |
 | 400 | 1220020 | When calculating the leave balance, there is no leave plan version that matches the employee | 检查该员工任职期间是否有对应的假期计划版本 |
 | 400 | 1220021 | For the leave type that is not granted according to the cycle, balance calculation is not supported | 不按周期发放的假期类型，不支持余额计算，联系研发 |

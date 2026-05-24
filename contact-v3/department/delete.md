@@ -1,7 +1,7 @@
 ---
 title: "删除部门"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/delete"
-updateTime: "1720167074000"
+updateTime: "1775548406000"
 ---
 
 # 删除部门

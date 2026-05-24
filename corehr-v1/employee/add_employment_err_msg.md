@@ -1,7 +1,7 @@
 ---
 title: "添加/更新人员错误校验说明"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/add_employment_err_msg"
-updateTime: "1744631327000"
+updateTime: "1774864037000"
 ---
 
 #  添加/更新人员错误校验
@@ -147,6 +147,7 @@ updateTime: "1744631327000"
 |1160004 | 校验工号编码规则 | 按工号自动编码规则，无法生成工号，请维护该人员的「人员类型」，或至「飞书人事-设置-人事设置-自动编码设置」取消工号编码规则中的「人员类型」配置 | Unable to generate employee number according to the automatic coding rules. Please edit the individual's \"Workforce type\", or go to \"Feishu CoreHR - Settings - HR Settings - Auto Number Settings\" to cancel the \"Workforce type\" settings in \"employee ID auto number\"
 |1160004 | 校验工号编码规则 | 按工号自动编码规则，无法生成工号，请维护该人员的「人员类型」以及合同协议中的「公司」，或至「飞书人事-设置-人事设置-自动编码设置」取消工号编码规则中的「人员类型」和「所属公司」配置 | Unable to generate employee number according to the automatic coding rules. Please edit the individual's "Workforce type" and the "Company" in the individual's contract agreement, or go to "Feishu CoreHR - Settings - HR Settings - Auto Number Settings" to cancel the "Workforce type" and "Company" settings in "employee ID auto number"
 |1160004 | 校验职务和部门关系 | 所选部门使用职务，需填写职务，请重新确认部门信息 | The selected department uses jobs. Please provide a job and confirm the department information again
+|1160004 | 校验自定义时间轴对象 | 所选记录为第一条记录，如需删除请先删除其他记录 | The selected record is the first record. Please delete other records before deleting this on
 |1160005 | 校验业务规则 | 所选部门不使用职务，将清空职务数据 | The selected department doesn't use jobs, and the job data will be cleared
 |1160006 | 校验编制规划 | 不允许超编 | Unable to submit the form due to insufficient headcount
 |1160007 | 校验编制规划 | 需要超编确认 | Insufficient headcount. Please set force_submit = true to confirm

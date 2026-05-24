@@ -1,7 +1,7 @@
 ---
 title: "列出收信规则"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-rule/list"
-updateTime: "1745841647000"
+updateTime: "1776073545000"
 ---
 
 # 列出收信规则
@@ -55,10 +55,10 @@ updateTime: "1745841647000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `operator` | `int` | 匹配条件操作符<br>**可选值有**：<br>- `1`: 包含 - `2`: 不包含 - `3`: 开头是 - `4`: 结尾是 - `5`: 是 - `6`: 不是 - `7`: 包含自己 - `10`: 为空 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `input` | `string` | 匹配条件右值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `action` | `rule_action` | 匹配命中后的操作 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `items` | `rule_action_item\[\]` | 匹配中规则后的操作列表 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `items` | `rule_action_item\[\]` | 匹配命中规则后的操作列表 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `int` | 操作类型<br>**可选值有**：<br>- `1`: 归档 - `2`: 删除邮件 - `3`: 标记为已读 - `4`: 移至垃圾邮件 - `5`: 不移至垃圾邮件 - `8`: 添加用户标签（暂不支持） - `9`: 添加旗标 - `10`: 不弹出通知 - `11`: 移至用户文件夹 - `12`: 自动转发（暂不支持） - `13`: 分享到会话（暂不支持） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `input` | `string` | 当 type 为移动到文件夹时，该字段填文件夹的 id |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `ignore_the_rest_of_rules` | `boolean` | 是否终点规则 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `ignore_the_rest_of_rules` | `boolean` | 是否终止规则 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `string` | 规则名称 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `is_enable` | `boolean` | 是否启用 |
 
@@ -105,8 +105,8 @@ updateTime: "1745841647000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 400 | 1230001 | 参数错误 | 修改参数后重试 |
-| 500 | 1230003 | 内部错误 | 请稍后重试 |
-| 403 | 1230002 | 无权限 | 成为公共邮箱成员或申请相关数据权限后调用该接口 |
+| 400 | 1230001 | param invalid | 修改参数后重试 |
+| 500 | 1230003 | internal server error | 请稍后重试 |
+| 403 | 1230002 | no permission | 成为公共邮箱成员或申请相关数据权限后调用该接口 |
 
 

@@ -1,7 +1,7 @@
 ---
 title: "数据结构"
 fullPath: "/ukTMukTMukTM/uUDN04SN0QjL1QDN/board-v1/data-structure"
-updateTime: "1758627855000"
+updateTime: "1773664879000"
 ---
 
 #  画板节点的数据结构
@@ -121,7 +121,7 @@ updateTime: "1758627855000"
 | text_color | string | 文字颜色 | 16 进制 RGB 值，文字颜色不支持自定义，具体颜色值可以查看画板[主题简介](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/board-v1/theme-introduction) |
 | text_background_color | string | 文字背景颜色 | 16 进制 RGB 值，文字背景颜色不支持自定义，具体颜色值可以查看画板[主题简介](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/board-v1/theme-introduction) |
 | line_through | bool | 是否存在删除线 - `true`: 文本内容存在删除线 - `false`: 文本内容不存在删除线 | optional，默认 false |
-| under_line | bool | 是否存在下划线 - `true`: 文本内容存在下划线 - `false`: 文本内容不存在下划线 | optional，默认 false |
+| underline | bool | 是否存在下划线 - `true`: 文本内容存在下划线 - `false`: 文本内容不存在下划线 | optional，默认 false |
 | italic | bool | 是否斜体 - `true`: 文本内容为斜体 - `false`: 文本内容不是斜体 | optional，默认 false |
 | angle | int | 文字旋转角度 | 支持的角度有: 0、90、180、270 度 |
 | theme_text_color_code | int | 主题色表盘下文字颜色 code 值 | code 对应主题下文字颜色色表盘上颜色的下标值，同一个 code 值，对于不同主题会有不同的颜色，可以做到文字颜色随主题切换功能，具体可参考 [主题简介](https://open.larkoffice.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/board-v1/theme-introduction)。与 text_color 作用相同，推荐使用此字段。同时设置时 text_color 生效。 |
@@ -186,7 +186,7 @@ updateTime: "1758627855000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `y` | `float` | `连线连接图形的 y 相对坐标比例` | `optional` |
 | `start` | `connector.info` | `连线开始端点` | `required` |
 | &nbsp;&nbsp;└ `attached_object` | `connector.attached_object` | `连接图形信息` | `optional` |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | `连接图形的 id ` | `optional，position 与 attched_object 二选一` |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | `连接图形的 id ` | `optional，position 与 attached_object 二选一` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `snap_to` | `string` | `连接图形的方向`<br>- `top`: 连接图形的上边 - `right`: 连接图形的右边 - `bottom`: 连接图形的下边 - `left`: 连接图形的左边 | `required` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `position` | `point` | `连线连接图形的相对坐标比例，x=0，y=0 表示图形的左上角，x=1，y=1 表示图形的右下角` | `optional` |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `x` | `float` | `连线连接图形的 x 相对坐标比例` | `optional` |
@@ -260,7 +260,7 @@ updateTime: "1758627855000"
 
 | 名称 | 数据类型 | 描述 | 属性 |
 | --- | --- | --- | --- |
-| `type` | `string` | `画笔类型`<br>- `highlight`: 高亮笔 - `marker`: 马克笔 | `optional，默认 highlgiht` |
+| `type` | `string` | `画笔类型`<br>- `highlight`: 高亮笔 - `marker`: 马克笔 | `optional，默认 highlight` |
 | `lines` | `point[]` | `画笔图形线段列表，由系列点坐标组成` | `required` |
 | &nbsp;&nbsp;└ `x` | `float` | `点 x 坐标` | `required` |
 | &nbsp;&nbsp;└ `y` | `float` | `点 y 坐标` | `required` |
@@ -290,7 +290,7 @@ updateTime: "1758627855000"
 
 | 名称 | 数据类型 | 描述 | 属性 |
 | --- | --- | --- | --- |
-| layout | string | 思维导图节点布局方式 - `left_right`: 左右布局 - `up_down`: 上下布局 - `tree_left`: 左树布局 - `tree_right`: 右树布局 - `tree_balance`: 右树布局 - `horizontal_time_line`: 水平时间线布局 - `vertical_time_line`: 垂直时间线布局 | optional，默认左右布局 |
+| layout | string | 思维导图节点布局方式 - `left_right`: 左右布局 - `up_down`: 上下布局 - `tree_left`: 左树布局 - `tree_right`: 右树布局 - `tree_balance`: 左右交替平衡树布局 - `horizontal_time_line`: 水平时间线布局 - `vertical_time_line`: 垂直时间线布局 | optional，默认左右布局 |
 | type | string | 思维导图节点类型 - `mind_map_text`: 文本节点 - `mind_map_full_round_rect`: 全圆角矩形节点 - `mind_map_round_rect`: 圆角矩形节点 | optional，默认圆角矩形 |
 | line_style | string | 思维导图节点分支连接线样式 - `curve`: 曲线 - `right_angle`: 直角折线 - `round_angle`: 圆角折线 | optional，默认圆角折线 |
 | up_children | []string | 在根节点上方的子节点列表 | read only，只读属性，在 up_down 布局方式时可以设置子节点在根节点的上方 |

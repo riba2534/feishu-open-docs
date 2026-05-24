@@ -1,7 +1,7 @@
 ---
 title: "更新部门 ID"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/update_department_id"
-updateTime: "1720167100000"
+updateTime: "1775548395000"
 ---
 
 # 更新部门ID

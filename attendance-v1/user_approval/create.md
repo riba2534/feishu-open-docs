@@ -1,14 +1,13 @@
 ---
 title: "写入审批结果"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_approval/create"
-updateTime: "1747624969000"
+updateTime: "1778137703000"
 ---
 
 # 写入审批结果
 
 由于部分企业使用的是自己的审批系统，而不是飞书审批系统，因此员工的请假、加班等数据无法流入到飞书考勤系统中，导致员工在请假时间段内依然收到打卡提醒，并且被记为缺卡。
-
-对于这些只使用飞书考勤系统，而未使用飞书审批系统的企业，可以通过考勤开放接口的形式，将三方审批结果数据回写到飞书考勤系统中。
+对于这些只使用飞书考勤系统，而未使用飞书审批系统的企业，可以通过考勤开放接口的形式，将三方审批结果数据回写到飞书考勤系统中。（请注意，如果在飞书审批、自助服务或假勤应用中发起加班，请勿使用该接口写入和系统同一天生成的加班数据，否则写入的数据不计入）
 
 
 > **Tip**: 1. 目前支持写入加班、请假、出差和外出这四种审批结果，写入只会追加(insert)，不会覆盖(update)（开放接口导入的加班假期记录，在管理后台的假期加班里查不到，可以在考勤统计报表查看，或者通过[获取审批通过数据](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_approval/query)来查询）
@@ -65,9 +64,9 @@ updateTime: "1747624969000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `cancel_process_id` | `string\[\]` | 否 | 撤销流程实例 ID。该字段由系统自动生成，在写入审批结果时，无需传入该参数。<br>**示例值**：["7304865941202929196"] |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `process_id` | `string\[\]` | 否 | 发起流程实例 ID。该字段由系统自动生成，在写入审批结果时，无需传入该参数。<br>**示例值**：["7304865941202929196"] |
 | &nbsp;&nbsp;└ `leaves` | `user_leave\[\]` | 否 | 请假信息 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `uniq_id` | `string` | 否 | 审批实例id<br>**示例值**："6852582717813440527" |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `unit` | `int` | 是 | 假期时长单位<br>**示例值**：1<br>**可选值有**：<br>- `1`: 天 - `2`: 小时 - `3`: 半天 - `4`: 半小时 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `interval` | `int` | 是 | 关联审批单假期时长，单位为秒，与unit无关<br>**示例值**：3600 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `uniq_id` | `string` | 否 | 假期类型唯一ID，代表一种假期类型<br>**示例值**："6852582717813440527" |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `unit` | `int` | 是 | 假期时长单位。假期时长单位若传3，不足半天按照半天计算，以此类推<br>**示例值**：1<br>**可选值有**：<br>- `1`: 天 - `2`: 小时 - `3`: 半天 - `4`: 半小时 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `interval` | `int` | 是 | 无效字段，暂时不支持<br>**示例值**：3600 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `start_time` | `string` | 是 | 开始时间，时间格式为 yyyy-MM-dd HH:mm:ss<br>**示例值**："2021-01-04 09:00:00" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `end_time` | `string` | 是 | 结束时间，时间格式为 yyyy-MM-dd HH:mm:ss<br>**示例值**："2021-01-04 19:00:00" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `i18n_names` | `i18n_names` | 是 | 假期多语言展示，格式为 map，key 为 ["ch"、"en"、"ja"]，其中 ch 代表中文、en 代表英语、ja 代表日语 |
@@ -77,6 +76,11 @@ updateTime: "1747624969000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `default_locale` | `string` | 是 | 默认语言类型，由于飞书客户端支持中、英、日三种语言，当用户切换语言时，如果假期名称没有所对应的语言，会使用默认语言的名称<br>**示例值**："ch"<br>**可选值有**：<br>- `ch`: 中文 - `en`: 英文 - `ja`: 日文 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `reason` | `string` | 是 | 请假理由，必选字段<br>**示例值**："家里有事" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `idempotent_id` | `string` | 否 | 请假记录的唯一幂等键，用于避免请假记录重复创建，可以填入三方的请假记录id<br>**示例值**："1233432312" |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `leave_detail_range_objs` | `time_range_list\[\]` | 否 | 根据班次计算出来的请假具体时间，格式为list<br>**数据校验规则**：<br>- 长度范围：`0` ～ `30` |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `day` | `int` | 否 | 日期day<br>**示例值**：20220501<br>**数据校验规则**：<br>- 取值范围：`17000101` ～ `20990101` |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `time_ranges` | `time_range\[\]` | 否 | 时间范围，是一个list<br>**数据校验规则**：<br>- 长度范围：`0` ～ `20` |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `start_time_stamp` | `int` | 否 | 开始时间<br>**示例值**：1751385600<br>**数据校验规则**：<br>- 取值范围：`0` ～ `9223372036` |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `end_time_stamp` | `int` | 否 | 结束时间<br>**示例值**：1751385600<br>**数据校验规则**：<br>- 取值范围：`0` ～ `9223372036` |
 | &nbsp;&nbsp;└ `overtime_works` | `user_overtime_work\[\]` | 否 | 加班信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `duration` | `number(float)` | 是 | 加班时长，如需使用此字段进行加班时长计算，请联系[技术支持](https://applink.feishu.cn/TLJpeNdW)开通。默认采用start_time和end_time计算<br>**示例值**：1.5 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `unit` | `int` | 是 | 加班时长单位<br>**示例值**：1<br>**可选值有**：<br>- `1`: 天 - `2`: 小时 - `3`: 半天 - `4`: 半小时 |
@@ -158,7 +162,18 @@ updateTime: "1747624969000"
                 },
                 "default_locale": "ch",
                 "reason": "家里有事",
-                "idempotent_id": "1233432312"
+                "idempotent_id": "1233432312",
+                "leave_detail_range_objs": [
+                    {
+                        "day": 20220501,
+                        "time_ranges": [
+                            {
+                                "start_time_stamp": 1751385600,
+                                "end_time_stamp": 1751385600
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "overtime_works": [
@@ -270,6 +285,11 @@ updateTime: "1747624969000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `approve_pass_time` | `string` | 审批通过时间，时间格式为 yyyy-MM-dd HH:mm:ss |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `approve_apply_time` | `string` | 审批申请时间，时间格式为 yyyy-MM-dd HH:mm:ss |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `idempotent_id` | `string` | 请假记录的唯一幂等键，响应体中无需关注 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `leave_detail_range_objs` | `time_range_list\[\]` | 根据班次计算出来的请假具体时间，格式为list |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `day` | `int` | 日期day |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `time_ranges` | `time_range\[\]` | 时间范围，是一个list |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `start_time_stamp` | `int` | 开始时间 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `end_time_stamp` | `int` | 结束时间 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `overtime_works` | `user_overtime_work\[\]` | 加班信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `approval_id` | `string` | 审批实例 ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `duration` | `number(float)` | 加班时长 |
@@ -362,7 +382,18 @@ updateTime: "1747624969000"
                     "reason": "家里有事",
                     "approve_pass_time": "2021-01-04 12:00:00",
                     "approve_apply_time": "2021-01-04 11:00:00",
-                    "idempotent_id": "1233432312"
+                    "idempotent_id": "1233432312",
+                    "leave_detail_range_objs": [
+                        {
+                            "day": 20220501,
+                            "time_ranges": [
+                                {
+                                    "start_time_stamp": 1751385600,
+                                    "end_time_stamp": 1751385600
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "overtime_works": [
@@ -433,12 +464,12 @@ updateTime: "1747624969000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 400 | 1220001 | param is invalis | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220001 | param is invalid | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1220002 | tenant_id is empty | 请检查入参中的 tenant_access_token是否正确 |
-| 400 | 1220004 | param is invalis | 请参考实际返回的错误信息排查问题。例如“user_id is not exist or does not have permission”代表入参传入的用户id不存在或者没有权限。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 400 | 1220005 | 没有权限 | 请前往[考勤管理后台](https://oa.feishu.cn/attendance/manage/member/list)检查数据权限范围 |
-| 500 | 1225000 | param is invalis | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 400 | 1225001 | param is invalis | 请参考实际返回的错误信息排查问题。返回错误格式为导入的审批数据，格式为：{"TripErrorRecords":"","OvertimeWorkErrorRecords":"","LeaveErrorRecords":"","OutErrorRecords":""}。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 400 | 1220600 | 通用错误信息 | 通用错误信息包含多条，详细的错误信息以及处理建议可参见[错误信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines)。 |
+| 400 | 1220004 | param is invalid | 请参考实际返回的错误信息排查问题。例如“user_id is not exist or does not have permission”代表入参传入的用户id不存在或者没有权限。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220005 | permission denied | 请前往[考勤管理后台](https://oa.feishu.cn/attendance/manage/member/list)检查数据权限范围 |
+| 500 | 1225000 | param is invalid | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1225001 | param is invalid | 请参考实际返回的错误信息排查问题。返回错误格式为导入的审批数据，格式为：{"TripErrorRecords":"","OvertimeWorkErrorRecords":"","LeaveErrorRecords":"","OutErrorRecords":""}。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220600 | general error information | 通用错误信息包含多条，详细的错误信息以及处理建议可参见[错误信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines)。 |
 
 

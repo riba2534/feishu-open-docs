@@ -1,12 +1,12 @@
 ---
 title: "直接创建待入职"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/pre_hire/create"
-updateTime: "1764323725000"
+updateTime: "1777344387000"
 ---
 
 # 直接创建待入职
 
-使用指定数据创建一个待入职人员。
+使用指定数据创建一个待入职人员信息。
 
 
 ## 请求
@@ -56,7 +56,7 @@ updateTime: "1764323725000"
 | &nbsp;&nbsp;└ `nationality_v2_id` | `string` | 否 | 国籍（新），可以通过[查询国籍信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-nationality/search)接口获得<br>**示例值**："6862995757234914824" |
 | &nbsp;&nbsp;└ `additional_nationality_id_list` | `string\[\]` | 否 | 其他国籍，可以通过[查询国籍信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-nationality/search)接口获得<br>**示例值**：["6862995757234914824"] |
 | &nbsp;&nbsp;└ `citizenship_status_id_list` | `string\[\]` | 否 | 公民身份，如需获取具体值，请联系人员档案管理员<br>**示例值**：["6862995757234914824"] |
-| &nbsp;&nbsp;└ `home_address` | `string` | 否 | 家庭地址（待废弃）<br>**示例值**："home addr" |
+| &nbsp;&nbsp;└ `home_address` | `string` | 否 | 家庭地址（待废弃）<br>**示例值**："xx市xx街道xx路xx号" |
 | &nbsp;&nbsp;└ `worker_id` | `string` | 否 | 人员编号<br>**示例值**："DDD00001" |
 | &nbsp;&nbsp;└ `user_geo` | `string` | 否 | 数据驻留地（部分租户开通此功能），枚举值可查询[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)接口获取。 按如下参数查询即可：  - object_api_name = pre_hire - custom_api_name = user_geo<br>**示例值**："cn" |
 | &nbsp;&nbsp;└ `legal_name` | `name` | 否 | 法定姓名 |
@@ -104,6 +104,18 @@ updateTime: "1764323725000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_public` | `boolean` | 是 | 公开地址<br>**示例值**：true |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `city_id_v2` | `string` | 否 | 城市，可以通过接口[查询城市信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-city/search)获取详情<br>**示例值**："6863333254578046471" |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `district_id_v2` | `string` | 否 | 区/县，可以通过接口[查询区/县信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-district/search)获取详情<br>**示例值**："6863333516579440141" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `custom_fields` | `object_field_data\[\]` | 否 | 自定义字段<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `field_name` | `string` | 是 | 字段名<br>**示例值**："name" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(123, 123.23, true, [\"id1\",\"id2\], 2006-01-02 15:04:05])<br>**示例值**："Sandy" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line1` | `string` | 否 | 地址行 1<br>**示例值**："丹佛测试地址-纽埃时区" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line2` | `string` | 否 | 地址行 2<br>**示例值**："PoewH" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line3` | `string` | 否 | 地址行 3<br>**示例值**："PoewH" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line4` | `string` | 否 | 地址行 4<br>**示例值**："jmwJc" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line5` | `string` | 否 | 地址行 5<br>**示例值**："jmwJc" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line6` | `string` | 否 | 地址行 6<br>**示例值**："jmwJc" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line7` | `string` | 否 | 地址行 7<br>**示例值**："jmwJc" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line8` | `string` | 否 | 地址行 8<br>**示例值**："rafSu" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line9` | `string` | 否 | 地址行 9<br>**示例值**："McPRG" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `resident_status_specification` | `string` | 否 | 居民纳税身份说明<br>**示例值**："文本内容，对纳税身份的补充说明信息" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `year_resident_tax` | `string` | 否 | 年度<br>**示例值**："2006-01-01" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `custom_fields` | `object_field_data\[\]` | 否 | 自定义字段 |
@@ -160,6 +172,18 @@ updateTime: "1764323725000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_public` | `boolean` | 是 | 公开地址<br>**示例值**：true |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `city_id_v2` | `string` | 否 | 城市，可以通过接口[查询城市信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-city/search)获取详情<br>**示例值**："6863333254578046471" |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `district_id_v2` | `string` | 否 | 区/县，可以通过接口[查询区/县信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-district/search)获取详情<br>**示例值**："6863333516579440141" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `custom_fields` | `object_field_data\[\]` | 否 | 自定义字段<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `field_name` | `string` | 是 | 字段名<br>**示例值**："name" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(123, 123.23, true, [\"id1\",\"id2\], 2006-01-02 15:04:05])<br>**示例值**："Sandy" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line1` | `string` | 否 | 地址行 1<br>**示例值**："丹佛测试地址-纽埃时区" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line2` | `string` | 否 | 地址行 2<br>**示例值**："PoewH" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line3` | `string` | 否 | 地址行 3<br>**示例值**："PoewH" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line4` | `string` | 否 | 地址行 4<br>**示例值**："jmwJc" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line5` | `string` | 否 | 地址行 5<br>**示例值**："jmwJc" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line6` | `string` | 否 | 地址行 6<br>**示例值**："jmwJc" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line7` | `string` | 否 | 地址行 7<br>**示例值**："jmwJc" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line8` | `string` | 否 | 地址行 8<br>**示例值**："rafSu" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line9` | `string` | 否 | 地址行 9<br>**示例值**："McPRG" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `custom_fields` | `object_field_data\[\]` | 否 | 自定义字段 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `field_name` | `string` | 是 | 字段名<br>**示例值**："name" |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(123, 123.23, true, [\"id1\",\"id2\], 2006-01-02 15:04:05])<br>**示例值**："Sandy" |
@@ -217,6 +241,18 @@ updateTime: "1764323725000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_public` | `boolean` | 是 | 公开地址<br>**示例值**：true |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `city_id_v2` | `string` | 否 | 城市，可以通过接口[查询城市信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-city/search)获取详情<br>**示例值**："6863333254578046471" |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `district_id_v2` | `string` | 否 | 区/县，可以通过接口[查询区/县信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-district/search)获取详情<br>**示例值**："6863333516579440141" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `custom_fields` | `object_field_data\[\]` | 否 | 自定义字段<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `field_name` | `string` | 是 | 字段名<br>**示例值**："name" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(123, 123.23, true, [\"id1\",\"id2\], 2006-01-02 15:04:05])<br>**示例值**："Sandy" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line1` | `string` | 否 | 地址行 1<br>**示例值**："丹佛测试地址-纽埃时区" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line2` | `string` | 否 | 地址行 2<br>**示例值**："PoewH" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line3` | `string` | 否 | 地址行 3<br>**示例值**："PoewH" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line4` | `string` | 否 | 地址行 4<br>**示例值**："jmwJc" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line5` | `string` | 否 | 地址行 5<br>**示例值**："jmwJc" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line6` | `string` | 否 | 地址行 6<br>**示例值**："jmwJc" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line7` | `string` | 否 | 地址行 7<br>**示例值**："jmwJc" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line8` | `string` | 否 | 地址行 8<br>**示例值**："rafSu" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `address_line9` | `string` | 否 | 地址行 9<br>**示例值**："McPRG" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `email` | `email_for_update` | 否 | 邮箱 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `email` | `string` | 是 | 邮箱地址<br>**示例值**："1234567@bytedance.com" |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_primary` | `boolean` | 是 | 是否为主要邮箱，若有多个邮箱，只能有一个邮箱的「is_primary」为true<br>**示例值**：true |
@@ -244,6 +280,18 @@ updateTime: "1764323725000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `is_public` | `boolean` | 是 | 公开地址<br>**示例值**：true |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `city_id_v2` | `string` | 否 | 城市，可以通过接口[查询城市信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-city/search)获取详情<br>**示例值**："6863333254578046471" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `district_id_v2` | `string` | 否 | 区/县，可以通过接口[查询区/县信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-district/search)获取详情<br>**示例值**："6863333516579440141" |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `custom_fields` | `object_field_data\[\]` | 否 | 自定义字段<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `field_name` | `string` | 是 | 字段名<br>**示例值**："name" |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(123, 123.23, true, [\"id1\",\"id2\], 2006-01-02 15:04:05])<br>**示例值**："Sandy" |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `address_line1` | `string` | 否 | 地址行 1<br>**示例值**："丹佛测试地址-纽埃时区" |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `address_line2` | `string` | 否 | 地址行 2<br>**示例值**："PoewH" |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `address_line3` | `string` | 否 | 地址行 3<br>**示例值**："PoewH" |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `address_line4` | `string` | 否 | 地址行 4<br>**示例值**："jmwJc" |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `address_line5` | `string` | 否 | 地址行 5<br>**示例值**："jmwJc" |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `address_line6` | `string` | 否 | 地址行 6<br>**示例值**："jmwJc" |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `address_line7` | `string` | 否 | 地址行 7<br>**示例值**："jmwJc" |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `address_line8` | `string` | 否 | 地址行 8<br>**示例值**："rafSu" |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `address_line9` | `string` | 否 | 地址行 9<br>**示例值**："McPRG" |
 | &nbsp;&nbsp;└ `marital_status` | `string` | 否 | 婚姻状况，枚举值可查询[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)接口获取，按如下参数查询即可： - object_api_name：person - custom_api_name：marital_status<br>**示例值**："single" |
 | &nbsp;&nbsp;└ `ethnicity_race` | `string` | 否 | 民族 / 种族，枚举值可查询[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)接口获取，按如下参数查询即可： - object_api_name：person - custom_api_name：ethnicity_race<br>**示例值**："han" |
 | &nbsp;&nbsp;└ `native_region` | `string` | 否 | 籍贯，可以通过[查询省份/行政区信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-country_region_subdivision/search)接口获取<br>**示例值**："6822114062122064111" |
@@ -253,8 +301,10 @@ updateTime: "1764323725000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `field_name` | `string` | 是 | 字段名<br>**示例值**："custom_field_1__c" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(123, 123.23, true, [\"id1\",\"id2\], 2006-01-02 15:04:05])<br>**示例值**："Sandy" |
 | &nbsp;&nbsp;└ `expected_graduate_date` | `string` | 否 | 预计毕业日期<br>**示例值**："2023-01-10" |
+| &nbsp;&nbsp;└ `political_affiliation` | `string` | 否 | 政治面貌，枚举值可查询[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)接口获取，按如下参数查询即可： - object_api_name：person_info_chn - custom_api_name：political_affiliation<br>**示例值**："public" |
 | `offer_info` | `offer_info` | 是 | 职位信息 |
 | &nbsp;&nbsp;└ `offer_id` | `string` | 否 | Offer ID，仅支持飞书招聘 ID，可以通过飞书招聘[获取Offer列表](https://open.larkoffice.com/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/offer/list)接口获取，如果未使用飞书招聘请置空<br>**示例值**："7032210902531327521" |
+| &nbsp;&nbsp;└ `offer` | `string` | 否 | Offer id查找类型ID<br>**示例值**："7032210902531327521" |
 | &nbsp;&nbsp;└ `offer_hr_id` | `string` | 否 | Offer HR 雇佣 ID，可以通过[批量查询员工信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/batch_get)接口获取<br>**示例值**："7032210902531327521" |
 | &nbsp;&nbsp;└ `department_id` | `string` | 否 | 部门 ID，可以通过[批量查询部门](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/department/batch_get)接口获取<br>**示例值**："7147562782945478177" |
 | &nbsp;&nbsp;└ `direct_leader_id` | `string` | 否 | 直属领导的雇佣 ID，可以通过[批量查询员工信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/batch_get)接口获取<br>**示例值**："7032210902531327521" |
@@ -273,7 +323,7 @@ updateTime: "1764323725000"
 | &nbsp;&nbsp;└ `onboarding_location_id` | `string` | 否 | 入职地点 ID，可以通过[批量查询地点](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/location/list)接口获取<br>**示例值**："6977976687350924832" |
 | &nbsp;&nbsp;└ `office_location_id` | `string` | 否 | 办公地点 ID，可以通过[批量查询地点](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/location/list)接口获取<br>**示例值**："6977976687350924832" |
 | &nbsp;&nbsp;└ `recruitment_type_id` | `string` | 否 | 招聘来源，枚举值可查询[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)接口获取，按如下参数查询即可： - object_api_name：pre_hire - custom_api_name：recruitment_type<br>**示例值**："experienced_professionals" |
-| &nbsp;&nbsp;└ `probation_period` | `string` | 否 | 试用期时长<br>**示例值**："6" |
+| &nbsp;&nbsp;└ `probation_period` | `string` | 否 | 试用期时长（单位：月）<br>**示例值**："6" |
 | &nbsp;&nbsp;└ `employee_type_id` | `string` | 否 | 人员类型 ID，可以通过接口[批量查询人员类型](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/employee_type/list)获取<br>**示例值**："6977973225846343171" |
 | &nbsp;&nbsp;└ `employee_subtype_id` | `string` | 否 | 人员子类型id<br>**示例值**："6977973225846343171" |
 | &nbsp;&nbsp;└ `employment_type_id` | `string` | 否 | 雇佣类型，请注意该字段为必填，枚举值可查询[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)接口获取，按如下参数查询即可： - object_api_name：pre_hire - custom_api_name：employment_type<br>**示例值**："employee" |
@@ -286,8 +336,8 @@ updateTime: "1764323725000"
 | &nbsp;&nbsp;└ `company` | `string` | 否 | 公司 ID，可以通过[批量查询公司](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/company/list)接口获取<br>**示例值**："6738317738688661772" |
 | &nbsp;&nbsp;└ `cost_center_rate` | `job_data_cost_center\[\]` | 否 | 成本中心分摊信息 - 待废弃，建议使用cost_allocation |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `cost_center_id` | `string` | 否 | 成本中心 ID，可以通过[搜索成本中心信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/cost_center/search)接口获取<br>**示例值**："6950635856373745165" |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `rate` | `int` | 否 | 分摊比例，大于0小于等于100的正整数<br>**示例值**：100 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `new_rate` | `number(float)` | 否 | 分摊比例<br>**示例值**：50.2 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `rate` | `int` | 否 | 分摊比例（%），大于0小于等于100的正整数<br>**示例值**：100 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `new_rate` | `number(float)` | 否 | 分摊比例（%）<br>**示例值**：50.2 |
 | &nbsp;&nbsp;└ `job_grade_id` | `string` | 否 | 职等ID，可以通过[查询职等](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/job_grade/query)接口获取<br>**示例值**："6738317738688661772" |
 | &nbsp;&nbsp;└ `custom_fields` | `object_field_data\[\]` | 否 | pre_hire对象上的自定义字段，可以通过[获取自定义字段列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/query)接口获得 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `field_name` | `string` | 是 | 字段名<br>**示例值**："name" |
@@ -358,17 +408,19 @@ updateTime: "1764323725000"
 | &nbsp;&nbsp;└ `custom_fields` | `object_field_data\[\]` | 否 | 自定义字段 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `field_name` | `string` | 是 | 字段名<br>**示例值**："name" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(123, 123.23, true, [\"id1\",\"id2\], 2006-01-02 15:04:05])<br>**示例值**："Sandy" |
+| &nbsp;&nbsp;└ `degree` | `string` | 否 | 学位，枚举值可查询[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)接口获取，按如下参数查询即可： - object_api_name：education - custom_api_name：degree<br>**示例值**："phd" |
 | `work_experience` | `work_experience\[\]` | 否 | 工作经历 |
 | &nbsp;&nbsp;└ `company_name` | `string` | 否 | 公司名称<br>**示例值**："猎豹" |
 | &nbsp;&nbsp;└ `start_time` | `string` | 否 | 开始时间，格式："YYYY-MM-DD"<br>**示例值**："2015-02-01" |
 | &nbsp;&nbsp;└ `end_time` | `string` | 否 | 结束时间，格式："YYYY-MM-DD"<br>**示例值**："2017-02-01" |
 | &nbsp;&nbsp;└ `job_title` | `string` | 否 | 岗位<br>**示例值**："产品经理" |
-| &nbsp;&nbsp;└ `description` | `string` | 否 | 工作描述<br>**示例值**："app" |
+| &nbsp;&nbsp;└ `description` | `string` | 否 | 工作描述<br>**示例值**："负责岗位日常工作，遵守公司制度，确保工作按时保质完成" |
 | &nbsp;&nbsp;└ `department` | `string` | 否 | 部门<br>**示例值**："部门名称" |
 | &nbsp;&nbsp;└ `custom_fields` | `object_field_data\[\]` | 否 | 自定义字段 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `field_name` | `string` | 是 | 字段名<br>**示例值**："name" |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 是 | 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(123, 123.23, true, [\"id1\",\"id2\], 2006-01-02 15:04:05])<br>**示例值**："Sandy" |
 | `ats_application_id` | `string` | 否 | 招聘应用 ID，仅支持飞书招聘 ID，可以通过[获取投递列表](https://open.larkoffice.com/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/application/list)接口获取<br>**示例值**："7140946969586010376" |
+| `application` | `string` | 否 | 查找类型招聘应用ID<br>**示例值**："7140946969586010376" |
 | `out_biz_id` | `string` | 否 | 外部业务唯一编码，用于支持幂等创建 - 外部接入方需要保证id的唯一，相同id最多唯一对应一个待入职数据 - 如果id对应的待入职数据已经存在，执行创建操作则直接返回待入职id，且不会更新本次传入的数据到待入职<br>**示例值**："7140946969586010376" |
 
 
@@ -389,7 +441,7 @@ updateTime: "1764323725000"
         "phone_number": "138xxxx1234",
         "international_area_code": "86_china",
         "email": "xxxx@bytedance.com",
-        "date_of_birth": "2011-99-99",
+        "date_of_birth": "2011-09-09",
         "personal_id_number": "311xxxx23127",
         "date_entered_workforce": "2100-09-09",
         "gender_id": "male",
@@ -580,11 +632,20 @@ updateTime: "1764323725000"
 | 400 | 1161126 | 邮箱前缀包含敏感词 | 邮箱前缀包含敏感词 |
 | 400 | 1161127 | 与系统中已存在的邮箱重复 | 与系统中已存在的邮箱重复 |
 | 400 | 1161131 | 手机号为空 | 手机号为空 |
-| 400 | 1161145 | 你已填写默认成本中心（手动选择），“是否继承岗位/部门的默认成本中心”必须为空或者“否” | 你已填写默认成本中心（手动选择），“是否继承岗位/部门的默认成本中心”必须为空或者“否” |
-| 400 | 1161146 | 是否继承岗位/部门的默认成本中心”填写为否，请补充默认成本中心（手动选择） | 是否继承岗位/部门的默认成本中心”填写为否，请补充默认成本中心（手动选择） |
+| 400 | 1161142 | Notice period is invalid | 你已填写默认成本中心（手动选择），“是否继承岗位/部门的默认成本中心”必须为空或者“否” |
+| 400 | 1161143 | Notice period is invalid with not editable condition | 是否继承岗位/部门的默认成本中心”填写为否，请补充默认成本中心（手动选择） |
+| 400 | 1161144 | Notice period rule not match | 入职日期缺失，无法补充默认成本中心或者成本分摊的生效日期 |
+| 400 | 1161145 | 你已填写默认成本中心（手动选择），“是否继承岗位/部门的默认成本中心”必须为空或者“否” | 部门/岗位上的默认成本中心为空，无法继承 |
+| 400 | 1161146 | 是否继承岗位/部门的默认成本中心”填写为否，请补充默认成本中心（手动选择） | 成本分摊中的成本中心和分摊比例需填写完整 |
 | 400 | 1161147 | 入职日期缺失，无法补充默认成本中心或者成本分摊的生效日期 | 入职日期缺失，无法补充默认成本中心或者成本分摊的生效日期 |
 | 400 | 1161148 | 部门/岗位上的默认成本中心为空，无法继承 | 部门/岗位上的默认成本中心为空，无法继承 |
 | 400 | 1161149 | 成本分摊中的成本中心和分摊比例需填写完整 | 成本分摊中的成本中心和分摊比例需填写完整 |
+| 400 | 1161150 | offer_id与offer查找字段不匹配 | offer_id与offer查找字段不匹配 |
+| 400 | 1161151 | ats_application_id与application查找字段不匹配 | ats_application_id与application查找字段不匹配 |
+| 400 | 1161152 | offer查找字段有值时offer_id (text) 必填 | offer查找字段有值时offer_id (text) 必填 |
+| 400 | 1161153 | application查找字段有值时ats_application_id (text)必填 | application查找字段有值时ats_application_id (text)必填 |
+| 400 | 1161160 | 部门在入职日期时可能不存在或无效 | 部门在入职日期时可能不存在或无效 |
+| 400 | 1161161 | 岗位在入职日期时可能不存在或无效 | 岗位在入职日期时可能不存在或无效 |
 
 
  

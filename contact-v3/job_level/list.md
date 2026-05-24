@@ -1,7 +1,7 @@
 ---
 title: "获取租户职级列表"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/job_level/list"
-updateTime: "1720167692000"
+updateTime: "1775199043000"
 ---
 
 # 获取租户职级列表
@@ -32,7 +32,7 @@ updateTime: "1720167692000"
 | --- | --- | --- | --- |
 | `page_size` | `int` | 否 | 分页大小，用于限制一次请求所返回的数据条目数。<br>**示例值**：10<br>**默认值**：`10`<br>**数据校验规则**：<br>- 取值范围：`1` ～ `50` |
 | `page_token` | `string` | 否 | 分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果<br>**示例值**：AQD9/Rn9eij9Pm39ED40/RD/cIFmu77WxpxPB/2oHfQLZ+G8JG6tK7+ZnHiT7COhD2hMSICh/eBl7cpzU6JEC3J7COKNe4jrQ8ExwBCR |
-| `name` | `string` | 否 | 职级名称。<br>- 传入该字段时，可查询指定职级名称对应的职级信息（不支持模糊查询）。 - 不传入该字段时，查询当前租户下所以职级的信息。<br>**示例值**：高级专家<br>**数据校验规则**：<br>- 长度范围：`1` ～ `255` 字符 |
+| `name` | `string` | 否 | 职级名称。<br>- 传入该字段时，可查询指定职级名称对应的职级信息（不支持模糊查询）。 - 不传入该字段时，查询当前租户下所有职级的信息。<br>**示例值**：高级专家<br>**数据校验规则**：<br>- 长度范围：`1` ～ `255` 字符 |
 
 
 ## 响应

@@ -1,7 +1,7 @@
 ---
 title: "获取单位绑定的部门列表"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/unit/list_department"
-updateTime: "1720167378000"
+updateTime: "1775548407000"
 ---
 
 # 获取单位绑定的部门列表
@@ -79,7 +79,7 @@ updateTime: "1720167378000"
 | --- | --- | --- | --- |
 | 500 | 40003 | internal error | 内部错误，请获取请求的 X-Request-Id，并向[技术支持](https://applink.feishu.cn/TLJpeNdW)进行反馈。 |
 | 400 | 40011 | page size is invalid | page_size 无效。你需要参考接口文档的 page_size 参数描述，设置正确的值。 |
-| 400 | 40012 | page token is invalid error | page_token 无效。你需要参考接口文档的 page_token 参数描述，设置正确的值。 |
+| 400 | 40012 | page token is invalid | page_token 无效。你需要参考接口文档的 page_token 参数描述，设置正确的值。 |
 | 400 | 43051 | unit_id invalid | 非法的单位 ID。调用[获取单位列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/unit/list)接口，获取正确的单位 ID 后重试。 |
 
 

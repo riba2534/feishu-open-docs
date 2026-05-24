@@ -1,7 +1,7 @@
 ---
 title: "按 ID 查询考勤组"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/group/get"
-updateTime: "1749126320000"
+updateTime: "1778137701000"
 ---
 
 # 按 ID 查询考勤组
@@ -61,7 +61,7 @@ updateTime: "1749126320000"
 | &nbsp;&nbsp;└ `group_leader_ids` | `string\[\]` | 考勤主负责人 ID 列表，必选字段（需至少拥有考勤组管理员权限），对应employee_type |
 | &nbsp;&nbsp;└ `sub_group_leader_ids` | `string\[\]` | 考勤子负责人 ID 列表，对应employee_type |
 | &nbsp;&nbsp;└ `allow_out_punch` | `boolean` | 是否允许外勤打卡 |
-| &nbsp;&nbsp;└ `out_punch_need_approval` | `boolean` | 外勤打卡需审批（需要允许外勤打卡才能设置生效） |
+| &nbsp;&nbsp;└ `out_punch_need_approval` | `boolean` | 外勤打卡需审批，先审批后打卡（需要允许外勤打卡才能设置生效） |
 | &nbsp;&nbsp;└ `out_punch_need_post_approval` | `boolean` | 外勤打卡需审批，先打卡后审批（需要允许外勤打卡才能设置生效） |
 | &nbsp;&nbsp;└ `out_punch_need_remark` | `boolean` | 外勤打卡需填写备注（需要允许外勤打卡才能设置生效） |
 | &nbsp;&nbsp;└ `out_punch_need_photo` | `boolean` | 外勤打卡需拍照（需要允许外勤打卡才能设置生效） |
@@ -91,7 +91,7 @@ updateTime: "1749126320000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `intercept_suspected_cheat_punch` | `boolean` | 是否拦截疑似作弊打卡总开关；关闭时，其余防作弊开关都为关闭状态 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `check_cheat_software_punch` | `boolean` | 是否校验疑似作弊软件打卡 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `check_buddy_punch` | `boolean` | 是否校验疑似他人代打卡 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `check_simulate_wifi_punch` | `boolean` | 是否校验疑似模拟 WI-FI 打卡 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `check_simulate_wifi_punch` | `boolean` | Whether to check the suspected analog Wi-Fi clock in |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `check_change_device_punch` | `boolean` | 是否校验更换设备打卡 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `allow_change_device_num` | `int` | 同一考勤人员最多可绑定打卡设备数量上限 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `suspected_cheat_handle_method` | `int` | 疑似作弊打卡时的处理方式，开启拦截疑似作弊打卡时必填<br>**可选值有**：<br>- `1`: 使用人脸识别打卡 - `2`: 仅记录疑似作弊信息 |
@@ -105,8 +105,8 @@ updateTime: "1749126320000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `location_type` | `int` | 地址类型<br>**可选值有：** * 1：GPS * 2：Wi-Fi * 8：IP |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `latitude` | `number(float)` | 地址纬度 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `longitude` | `number(float)` | 地址经度 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `ssid` | `string` | Wi-Fi 名称 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `bssid` | `string` | Wi-Fi 的 MAC 地址 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `ssid` | `string` | Wi-Fi |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `bssid` | `string` | Wi-Fi |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `map_type` | `int` | 地图类型，1：高德， 2：谷歌 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `address` | `string` | 地址名称 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `ip` | `string` | IP 地址 |
@@ -121,6 +121,9 @@ updateTime: "1749126320000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `work_day_no_punch_as_lack` | `boolean` | 工作日不打卡是否记为缺卡 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `work_hours_demand` | `boolean` | 工作日出勤是否需满足时长要求 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `work_hours` | `int` | 每日工作时长（分钟),范围[0,1440] |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `free_clock_setting` | `free_clock_setting` | 自由班制的打卡配置 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `clock_mode` | `int` | 打卡模式 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `clock_internal_hhmm` | `int` | 最小打卡间隔 |
 | &nbsp;&nbsp;└ `calendar_id` | `int` | 国家日历  ID，0：不根据国家日历排休，1：中国大陆，2：美国，3：日本，4：印度，5：新加坡，默认 1 |
 | &nbsp;&nbsp;└ `need_punch_special_days` | `punch_special_date_shift\[\]` | 必须打卡的特殊日期 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `punch_day` | `int` | 打卡日期 |
@@ -250,7 +253,7 @@ updateTime: "1749126320000"
         "hide_clock_in_rule": false,
         "face_punch": true,
         "face_punch_cfg": 1,
-        "face_live_need_action": false,
+        "face_live_need_action": true,
         "face_downgrade": true,
         "replace_basic_pic": true,
         "anti_cheat_punch_config": {
@@ -296,6 +299,7 @@ updateTime: "1749126320000"
             "work_day_no_punch_as_lack": true,
             "work_hours_demand": false,
             "work_hours": 480
+           
         },
         "calendar_id": 1,
         "need_punch_special_days": [
@@ -415,10 +419,10 @@ updateTime: "1749126320000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 400 | 1220001 | param is invalis | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220001 | param is invalid | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1220002 | tenant_id is empty | 请检查入参中的 tenant_access_token是否正确 |
 | 400 | 1220003 | user_id type is not employee_id or employee_no | employee_type只支持取值为 employee_id或者employee_no |
-| 500 | 1225000 | param is invalis | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 500 | 1225000 | param is invalid | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 500 | 1227000 | 历史错误码，不再使用 | - |
 | 400 | 1220600 | 通用错误信息 | 通用错误信息包含多条，详细的错误信息以及处理建议可参见 [错误信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines) |
 

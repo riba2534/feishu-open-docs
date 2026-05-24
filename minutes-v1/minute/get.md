@@ -1,12 +1,12 @@
 ---
 title: "获取妙记信息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/minutes-v1/minute/get"
-updateTime: "1750217062000"
+updateTime: "1774523641000"
 ---
 
-# 获取妙记信息
+# 获取单个妙记信息
 
-通过这个接口，可以得到一篇妙记的基础概述信息，包含 `owner_id`、`create_time`、标题、封面、时长和 URL。
+获取一篇妙记的基础概述信息，包含 `owner_id`（妙记所有者）、`create_time`（妙记创建时间）、标题、封面、时长和 URL
 
 
 ## 请求
@@ -59,6 +59,7 @@ updateTime: "1750217062000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `cover` | `string` | 妙记封面链接 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `duration` | `string` | 妙记时长（ms级别） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `url` | `string` | 妙记链接 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `note_id` | `string` | 纪要ID |
 
 
 ### 响应体示例
@@ -72,10 +73,11 @@ updateTime: "1750217062000"
             "token": "obcnq3b9jl72l83w4f14xxxx",
             "owner_id": "ou_612b787ccd3259fb3c816b3f678dxxxx",
             "create_time": "1669098360477",
-            "title": "xxx的视频会议",
+            "title": "产品周会的视频会议",
             "cover": "https://internal-api-drive-stream.feishu-pre.cn/space/api/box/stream/download/all/boxcncsI4EIhCSA1RLDsXDpxxxx",
             "duration": "314000",
-            "url": "https://bytedance.feishu-pre.cn/minutes/obcnq3b9jl72l83w4f14xxxx"
+            "url": "https://bytedance.feishu-pre.cn/minutes/obcnq3b9jl72l83w4f14xxxx",
+            "note_id": "7616590025794260496"
         }
     }
 }
@@ -87,7 +89,7 @@ updateTime: "1750217062000"
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
 | 400 | 2091001 | param is invalid | 检查参数是否正确 |
-| 404 | 2091002 | resource not found | 无法找到对应妙记，检查Token是否正确 |
+| 404 | 2091002 | resource not found | 无法找到对应妙记，请检查minute_token（妙记唯一标识）是否正确 |
 | 400 | 2091003 | minute not ready , try later | 检查妙记是否转写完成 |
 | 400 | 2091004 | resource deleted | 检查妙记是否已被删除 |
 | 403 | 2091005 | permission deny | 检查是否有该篇妙记的阅读权限 |

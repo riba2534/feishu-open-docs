@@ -1,7 +1,7 @@
 ---
 title: "批量删除邮件组管理员"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/mailgroup-manager/batch_delete"
-updateTime: "1745841705000"
+updateTime: "1773998730000"
 ---
 
 # 批量删除邮件组管理员

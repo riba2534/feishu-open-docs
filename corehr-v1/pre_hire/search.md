@@ -1,7 +1,7 @@
 ---
 title: "搜索待入职信息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/pre_hire/search"
-updateTime: "1756127437000"
+updateTime: "1777344440000"
 ---
 
 # 搜索待入职人员信息
@@ -23,7 +23,7 @@ updateTime: "1756127437000"
 | 接口频率限制 | [100 次/分钟](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
 | 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `corehr:pre_hire.search:read` 搜索待入职人员信息 `corehr:pre_hire:read` 查看待入职人员信息 `corehr:pre_hire:write` 读写待入职人员信息 |
-| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:contract.company:read` 获取合同主体信息 `corehr:contract.period:read` 获取合同期限信息 `corehr:employment.compensation_type:read` 查看员工的薪资类型信息 `corehr:employment.custom_field:read` 获取雇佣信息自定义字段信息 `corehr:employment.has_offer_salary:read` 查看是否有 Offer 薪酬 `corehr:employment.job:read` 获取员工的职务信息 `corehr:employment.job_level:read` 获取职务级别信息 `corehr:employment.non_compete_covenant:read` 查看竞业状态 `corehr:employment.pay_group:read` 获取薪资组信息 `corehr:employment.position:read` 获取员工的岗位信息 `corehr:employment.position:write` 读写员工的岗位信息 `corehr:employment.recruitment_project_id:read` 查看待入职的招聘项目 `corehr:person.address:read` 读取个人地址信息 `corehr:person.address:write` 读写个人地址信息 `corehr:person.bank_account:read` 获取银行账号列表信息 `corehr:person.bank_account:write` 读写银行账号信息 `corehr:person.born_country_region:read` 获取出生国家/地区信息 `corehr:person.custom_field:read` 获取个人信息自定义字段信息 `corehr:person.date_entered_workforce:read` 获取参加工作日期 `corehr:person.date_entered_workforce:write` 读写参加工作日期 `corehr:person.date_of_birth:read` 获取生日信息 `corehr:person.date_of_birth:write` 读写生日信息 `corehr:person.dependent:read` 获取家庭成员信息 `corehr:person.dependent:write` 读写家庭成员信息 `corehr:person.education:read` 获取教育经历信息 `corehr:person.education:write` 读写教育经历信息 `corehr:person.email:read` 获取个人邮箱信息 `corehr:person.email:write` 读写个人邮箱信息 `corehr:person.emergency_contact:read` 获取紧急联系人信息 `corehr:person.emergency_contact:write` 读写紧急联系人信息 `corehr:person.gender:read` 获取性别信息 `corehr:person.gender:write` 读写性别信息 `corehr:person.hukou:read` 获取户口信息 `corehr:person.hukou:write` 读写户口信息 `corehr:person.is_disabled:read` 获取残疾信息 `corehr:person.is_old_alone:read` 获取孤老信息 `corehr:person.legal_name:read` 获取法定姓名信息 `corehr:person.legal_name:write` 读写法定姓名信息 `corehr:person.marital_status:read` 获取婚姻状况信息 `corehr:person.marital_status:write` 读写婚姻状况信息 `corehr:person.martyr_family:read` 获取烈属信息 `corehr:person.martyr_family:write` 读写烈属信息 `corehr:person.national_id:read` 获取证件信息 `corehr:person.national_id:write` 读写证件信息 `corehr:person.nationality:read` 获取国籍信息 `corehr:person.native_region:read` 获取籍贯信息 `corehr:person.native_region:write` 读写籍贯信息 `corehr:person.passport_number:read` 获取护照号码 `corehr:person.personal_profile:read` 获取个人资料信息 `corehr:person.personal_profile:write` 读写个人资料信息 `corehr:person.phone:read` 获取个人手机号信息 `corehr:person.phone:write` 读写个人手机号信息 `corehr:person.political_affiliation:read` 获取政治面貌信息 `corehr:person.race:read` 获取民族/种族信息 `corehr:person.religion:read` 查看宗教信仰信息 `corehr:person.resident_tax:read` 获取居民身份信息 `corehr:person.resident_tax:write` 读写居民身份信息 `corehr:person.resident_tax_custom_field:read` 获取居民身份自定义字段信息 `corehr:person.resident_tax_custom_field:write` 读写居民身份自定义字段信息 `corehr:person.work_experience:read` 获取工作履历信息 `corehr:person.work_experience:write` 读写工作履历信息 `corehr:pre_hire.abnormal_reason_field:read` 获取待入职的异常信息 `corehr:pre_hire.check_in_data:read` 获取待入职人员的签到数据 `corehr:pre_hire.company_manual_updated:read` 查看待入职是否被更新过公司主体 `corehr:pre_hire.company_sponsored_visa:read` 查看签证要求 `corehr:pre_hire.cost_center:read` 查看待入职人员的成本中心信息 `corehr:pre_hire.flow_id:read` 获取入职流程 `corehr:pre_hire.office_address:read` 获取办公地址 `corehr:pre_hire.onboarding_address:read` 获取入职地址 `corehr:pre_hire.suspected_rehiring:read` 获取是否疑似重聘 `corehr:pre_hire.working_calendar:read` 获取工作日历 `corehr:employment.compensation_type:write` 读写员工的薪资类型信息 `corehr:employment.job_level:write` 读写员工的职务级别信息 `corehr:person.nationality:write` 读写国籍信息 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:person.is_disabled:write` 读写残疾信息 `corehr:employment.non_compete_covenant:write` 读写竞业状态 `corehr:pre_hire.background_check_order_account_name:read` 获取待入职人员背调账号名称 `corehr:pre_hire.background_check_order_complete_time:read` 获取待入职人员背调完成时间 `corehr:pre_hire.background_check_order_id:read` 获取待入职人员背调订单ID `corehr:pre_hire.background_check_order_name:read` 获取待入职人员背调名称 `corehr:pre_hire.background_check_order_package_name:read` 获取待入职人员背调套餐 `corehr:pre_hire.background_check_order_result:read` 获取待入职人员背调结果 `corehr:pre_hire.background_check_order_start_time:read` 获取待入职人员背调开始时间 `corehr:pre_hire.background_check_order_status:read` 获取待入职人员背调状态 `corehr:pre_hire.background_check_order_supplier_name:read` 获取待入职人员背调供应商 `corehr:person.is_old_alone:write` 读写孤老信息 `corehr:contract.period:write` 读写合同期限信息 `corehr:person.born_country_region:write` 读写出生国家/地区信息 `corehr:pre_hire.contract_file_id:read` 待入职员工合同文件ID `corehr:contract.company:write` 读写合同主体信息 `corehr:pre_hire.cost_center:write` 读写待入职人员的成本中心信息 `corehr:pre_hire.dotted_line_manager:read` 获取待入职人员虚线上级 `corehr:person.custom_field:write` 读写个人信息中的自定义字段信息 `corehr:employment.job_grade:read` 获取职等信息 `corehr:employment.job_grade:write` 读写职等信息 `corehr:pre_hire.seniority_adjust_information:read` 获取待入职人员司龄调整信息 `corehr:person.religion:write` 读写宗教信仰信息 `corehr:job_data.work_shift:read` 获取排班信息 |
+| 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `corehr:contract.company:read` 获取合同主体信息 `corehr:contract.period:read` 获取合同期限信息 `corehr:employment.compensation_type:read` 查看员工的薪资类型信息 `corehr:employment.custom_field:read` 获取雇佣信息自定义字段信息 `corehr:employment.has_offer_salary:read` 查看 Offer 薪酬状态 `corehr:employment.job:read` 获取员工的职务信息 `corehr:employment.job_level:read` 获取职务级别信息 `corehr:employment.non_compete_covenant:read` 查看竞业状态 `corehr:employment.pay_group:read` 获取薪资组信息 `corehr:employment.position:read` 获取员工的岗位信息 `corehr:employment.position:write` 读写员工的岗位信息 `corehr:employment.recruitment_project_id:read` 查看待入职招聘项目 `corehr:person.address:read` 读取个人地址信息 `corehr:person.address:write` 读写个人地址信息 `corehr:person.bank_account:read` 获取银行账号列表信息 `corehr:person.bank_account:write` 读写银行账号信息 `corehr:person.born_country_region:read` 获取出生国家/地区信息 `corehr:person.custom_field:read` 获取个人信息自定义字段信息 `corehr:person.date_entered_workforce:read` 获取参加工作日期 `corehr:person.date_entered_workforce:write` 读写参加工作日期 `corehr:person.date_of_birth:read` 获取生日信息 `corehr:person.date_of_birth:write` 读写生日信息 `corehr:person.dependent:read` 获取家庭成员信息 `corehr:person.dependent:write` 读写家庭成员信息 `corehr:person.education:read` 获取教育经历信息 `corehr:person.education:write` 读写教育经历信息 `corehr:person.email:read` 获取个人邮箱信息 `corehr:person.email:write` 读写个人邮箱信息 `corehr:person.emergency_contact:read` 获取紧急联系人信息 `corehr:person.emergency_contact:write` 读写紧急联系人信息 `corehr:person.gender:read` 获取性别信息 `corehr:person.gender:write` 读写性别信息 `corehr:person.hukou:read` 获取户口信息 `corehr:person.hukou:write` 读写户口信息 `corehr:person.is_disabled:read` 获取残疾信息 `corehr:person.is_old_alone:read` 获取孤老信息 `corehr:person.legal_name:read` 获取法定姓名信息 `corehr:person.legal_name:write` 读写法定姓名信息 `corehr:person.marital_status:read` 获取婚姻状况信息 `corehr:person.marital_status:write` 读写婚姻状况信息 `corehr:person.martyr_family:read` 获取烈属信息 `corehr:person.martyr_family:write` 读写烈属信息 `corehr:person.national_id:read` 获取证件信息 `corehr:person.national_id:write` 读写证件信息 `corehr:person.nationality:read` 获取国籍信息 `corehr:person.native_region:read` 获取籍贯信息 `corehr:person.native_region:write` 读写籍贯信息 `corehr:person.passport_number:read` 获取护照号码 `corehr:person.personal_profile:read` 获取个人资料信息 `corehr:person.personal_profile:write` 读写个人资料信息 `corehr:person.phone:read` 获取个人手机号信息 `corehr:person.phone:write` 读写个人手机号信息 `corehr:person.political_affiliation:read` 获取政治面貌信息 `corehr:person.race:read` 获取民族/种族信息 `corehr:person.religion:read` 查看宗教信仰信息 `corehr:person.resident_tax:read` 获取居民身份信息 `corehr:person.resident_tax:write` 读写居民身份信息 `corehr:person.resident_tax_custom_field:read` 获取居民身份自定义字段信息 `corehr:person.resident_tax_custom_field:write` 读写居民身份自定义字段信息 `corehr:person.work_experience:read` 获取工作履历信息 `corehr:person.work_experience:write` 读写工作履历信息 `corehr:pre_hire.abnormal_reason_field:read` 获取待入职异常信息 `corehr:pre_hire.check_in_data:read` 获取待入职人员签到数据 `corehr:pre_hire.company_manual_updated:read` 查看待入职公司主体更新状态 `corehr:pre_hire.company_sponsored_visa:read` 查看签证要求 `corehr:pre_hire.cost_center:read` 查看待入职人员的成本中心信息 `corehr:pre_hire.flow_id:read` 获取入职流程 `corehr:pre_hire.office_address:read` 获取办公地址 `corehr:pre_hire.onboarding_address:read` 获取入职地址 `corehr:pre_hire.suspected_rehiring:read` 获取是否疑似重聘 `corehr:pre_hire.working_calendar:read` 获取工作日历 `corehr:employment.compensation_type:write` 读写员工的薪资类型信息 `corehr:employment.job_level:write` 读写员工的职务级别信息 `corehr:person.nationality:write` 读写国籍信息 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:person.is_disabled:write` 读写残疾信息 `corehr:employment.non_compete_covenant:write` 读写竞业状态 `corehr:pre_hire.background_check_order_account_name:read` 获取待入职人员背调账号名称 `corehr:pre_hire.background_check_order_complete_time:read` 获取待入职人员背调完成时间 `corehr:pre_hire.background_check_order_id:read` 获取待入职人员背调订单ID `corehr:pre_hire.background_check_order_name:read` 获取待入职人员背调名称 `corehr:pre_hire.background_check_order_package_name:read` 获取待入职人员背调套餐 `corehr:pre_hire.background_check_order_result:read` 获取待入职人员背调结果 `corehr:pre_hire.background_check_order_start_time:read` 获取待入职人员背调开始时间 `corehr:pre_hire.background_check_order_status:read` 获取待入职人员背调状态 `corehr:pre_hire.background_check_order_supplier_name:read` 获取待入职人员背调供应商 `corehr:person.is_old_alone:write` 读写孤老信息 `corehr:contract.period:write` 读写合同期限信息 `corehr:person.born_country_region:write` 读写出生国家/地区信息 `corehr:pre_hire.contract_file_id:read` 待入职员工合同文件ID `corehr:contract.company:write` 读写合同主体信息 `corehr:pre_hire.cost_center:write` 读写待入职人员的成本中心信息 `corehr:pre_hire.dotted_line_manager:read` 获取待入职人员虚线上级 `corehr:person.custom_field:write` 读写个人信息中的自定义字段信息 `corehr:employment.job_grade:read` 获取职等信息 `corehr:employment.job_grade:write` 读写职等信息 `corehr:pre_hire.seniority_adjust_information:read` 获取待入职人员司龄调整信息 `corehr:person.religion:write` 读写宗教信仰信息 `corehr:pre_hire.withdrawn_reason:read` 获取待入职撤销原因 `corehr:job_data.work_shift:read` 获取排班信息 |
 
 ### 请求头
 
@@ -343,7 +343,7 @@ updateTime: "1756127437000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `display` | `i18n\[\]` | 枚举多语展示 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 语言编码（IETF BCP 47） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 文本内容 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `payment_rate` | `string` | 分配比例 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `payment_rate` | `string` | 分配比例（%） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `payment_amount` | `string` | 分配金额 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `priority` | `int` | 分配优先级 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `currency_id` | `string` | 货币id，详细信息可通过[查询货币信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-currency/search)接口查询获得 |
@@ -369,7 +369,6 @@ updateTime: "1756127437000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `int` | 自定义字段类型 值类型说明： - 1：文本 Text，“文本”和“超链接”属于该类型 - 2：布尔 Boolean - 3：数字 Number - 4：枚举 Option，“单选”和“多选”为该类型 - 5：查找 Lookup，“人员（单选）”、“人员（多选）”和个人信息中的自定义分组为该类型 - 6：自动编码 Autonumber - 7：日期时间 Datetime - 8：附件 Attachment，“附件单选”和“附件多选”为该类型 - 9：图片 Image - 10：计算字段 Calculated - 11：反向查找 Backlookup |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 字段值，是 json 转义后的字符串，根据元数据定义不同，字段格式不同（如 123, 123.23, "true", ["id1","id2"], "2006-01-02 15:04:05"） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `dependent_list` | `dependent\[\]` | 家庭成员列表<br>**字段权限要求（满足任一）**： `corehr:person.dependent:read` 获取家庭成员信息 `corehr:person.dependent:write` 读写家庭成员信息 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 家庭成员数据ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `person_name` | 姓名 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `local_primary` | `string` | 姓 - 本地文字 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `local_first_name` | `string` | 名 - 本地文字 |
@@ -518,7 +517,6 @@ updateTime: "1756127437000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 文件ID，文件内容可通过[下载文件](https://open.feishu.cn/document/server-docs/corehr-v1/employee/person/get-2)接口获取 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `string` | 文件名 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `emergency_contact_list` | `emergency_contact\[\]` | 紧急联系人列表<br>**字段权限要求（满足任一）**： `corehr:person.emergency_contact:read` 获取紧急联系人信息 `corehr:person.emergency_contact:write` 读写紧急联系人信息 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 紧急联系人ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `person_name` | 姓名 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `local_primary` | `string` | 姓 - 本地文字 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `local_first_name` | `string` | 名 - 本地文字 |
@@ -613,9 +611,8 @@ updateTime: "1756127437000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `en_us` | `string` | 英文 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `int` | 自定义字段类型 值类型说明： - 1：文本 Text，“文本”和“超链接”属于该类型 - 2：布尔 Boolean - 3：数字 Number - 4：枚举 Option，“单选”和“多选”为该类型 - 5：查找 Lookup，“人员（单选）”、“人员（多选）”和个人信息中的自定义分组为该类型 - 6：自动编码 Autonumber - 7：日期时间 Datetime - 8：附件 Attachment，“附件单选”和“附件多选”为该类型 - 9：图片 Image - 10：计算字段 Calculated - 11：反向查找 Backlookup |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 字段值，是 json 转义后的字符串，根据元数据定义不同，字段格式不同（如 123, 123.23, "true", ["id1","id2"], "2006-01-02 15:04:05"） |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `is_primary` | `boolean` | 主要联系人,若有多个联系人，只能有一个联系人的「is_primary」为true |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `date_entered_workforce` | `string` | 参加工作日期<br>**字段权限要求（满足任一）**： `corehr:person.date_entered_workforce:read` 获取参加工作日期 `corehr:person.date_entered_workforce:write` 读写参加工作日期 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `working_years` | `int` | 工龄 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `working_years` | `int` | 工龄（年） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `profile_image_id` | `string` | 头像资源的 ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `email_address` | `string` | 邮箱地址<br>**字段权限要求（满足任一）**： `corehr:person.email:read` 获取个人邮箱信息 `corehr:person.email:write` 读写个人邮箱信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `age` | `int` | 年龄<br>**字段权限要求（满足任一）**： `corehr:person.date_of_birth:read` 获取生日信息 `corehr:person.date_of_birth:write` 读写生日信息 |
@@ -763,8 +760,8 @@ updateTime: "1756127437000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `department_id` | `string` | 部门 ID ，可以通过[搜索部门信息](https://open.feishu.cn/document/server-docs/corehr-v1/organization-management/department/search)接口获取详情，department_id_type使用people_corehr_department_id类型 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `cost_center_rates` | `job_data_cost_center\[\]` | 成本中心分摊信息 - 待废弃，建议使用cost_allocation |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `cost_center_id` | `string` | 成本中心 ID，可以通过[搜索成本中心信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/cost_center/search)接口获取 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `rate` | `int` | 分摊比例(整数) |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `new_rate` | `number(float)` | 分摊比例 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `rate` | `int` | 分摊比例（%）（整数） |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `new_rate` | `number(float)` | 分摊比例（%） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `office_location_id` | `string` | 办公地点 ID，详细信息可通过[查询地点](https://open.feishu.cn/document/server-docs/corehr-v1/organization-management/location/get)接口获得 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `work_location_id` | `string` | 工作地点id ，可通过[批量查询地点](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/location/list)接口获取详情 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `work_station` | `string` | 工位 |
@@ -846,19 +843,19 @@ updateTime: "1756127437000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `type` | `int` | 自定义字段类型 值类型说明： - 1：文本 Text，“文本”和“超链接”属于该类型 - 2：布尔 Boolean - 3：数字 Number - 4：枚举 Option，“单选”和“多选”为该类型 - 5：查找 Lookup，“人员（单选）”、“人员（多选）”和个人信息中的自定义分组为该类型 - 6：自动编码 Autonumber - 7：日期时间 Datetime - 8：附件 Attachment，“附件单选”和“附件多选”为该类型 - 9：图片 Image - 10：计算字段 Calculated - 11：反向查找 Backlookup |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 字段值，是 json 转义后的字符串，根据元数据定义不同，字段格式不同（如 123, 123.23, "true", ["id1","id2"], "2006-01-02 15:04:05"） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `position_id` | `string` | 岗位 ID，可以通过[查询岗位信息]接口获取详情 - 部门的岗职模式会影响岗位数据，在职务模式和岗位模式下，岗位id是必填 - 功能灰度中，如有需求请联系[技术支持](https://applink.feishu.cn/TLJpeNdW)<br>**字段权限要求（满足任一）**： `corehr:employment.position:read` 获取员工的岗位信息 `corehr:employment.position:write` 读写员工的岗位信息 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `company_manual_updated` | `boolean` | 公司主体是否被手动修改<br>**字段权限要求**： `corehr:pre_hire.company_manual_updated:read` 查看待入职是否被更新过公司主体 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `company_manual_updated` | `boolean` | 公司主体是否被手动修改<br>**字段权限要求**： `corehr:pre_hire.company_manual_updated:read` 查看待入职公司主体更新状态 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `pay_group` | `pre_hire_pay_group_info` | 薪资组信息<br>**字段权限要求**： `corehr:employment.pay_group:read` 获取薪资组信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `i18n\[\]` | 薪资组名称 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 语言编码（IETF BCP 47） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 文本内容 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 薪资组 ID |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `whether_the_information_is_abnormal` | `boolean` | 是否信息异常<br>**字段权限要求**： `corehr:pre_hire.abnormal_reason_field:read` 获取待入职的异常信息 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `abnormal_reason` | `pre_hire_abnormal_reason\[\]` | 异常原因列表<br>**字段权限要求**： `corehr:pre_hire.abnormal_reason_field:read` 获取待入职的异常信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `whether_the_information_is_abnormal` | `boolean` | 是否信息异常<br>**字段权限要求**： `corehr:pre_hire.abnormal_reason_field:read` 获取待入职异常信息 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `abnormal_reason` | `pre_hire_abnormal_reason\[\]` | 异常原因列表<br>**字段权限要求**： `corehr:pre_hire.abnormal_reason_field:read` 获取待入职异常信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `descriptions` | `i18n\[\]` | 异常信息描述 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 语言编码（IETF BCP 47） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 文本内容 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `has_offer_salary` | `boolean` | 是否有 Offer 薪酬<br>**字段权限要求**： `corehr:employment.has_offer_salary:read` 查看是否有 Offer 薪酬 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `recruitment_project_id` | `string` | 招聘项目 ID<br>**字段权限要求**： `corehr:employment.recruitment_project_id:read` 查看待入职的招聘项目 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `has_offer_salary` | `boolean` | 是否有 Offer 薪酬<br>**字段权限要求**： `corehr:employment.has_offer_salary:read` 查看 Offer 薪酬状态 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `recruitment_project_id` | `string` | 招聘项目 ID<br>**字段权限要求**： `corehr:employment.recruitment_project_id:read` 查看待入职招聘项目 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `work_shift` | `enum` | 排班类型，枚举值可查询[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)接口获取，按如下参数查询即可： - custom_api_name：work_shift - object_api_name：pre_hire<br>**字段权限要求**： `corehr:job_data.work_shift:read` 获取排班信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `enum_name` | `string` | 枚举值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `display` | `i18n\[\]` | 枚举多语展示 |
@@ -942,10 +939,11 @@ updateTime: "1756127437000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `expiration_time` | `string` | 分摊失效日期 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `cost_center_rates` | `job_data_cost_center\[\]` | 成本分摊信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `cost_center_id` | `string` | 成本中心 ID，可以通过[搜索成本中心信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/cost_center/search)接口获取 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `rate` | `int` | 分摊比例(整数) |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `new_rate` | `number(float)` | 分摊比例 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `rate` | `int` | 分摊比例（%）（整数） |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `new_rate` | `number(float)` | 分摊比例（%） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `reuse_feishu_account` | `string` | 是否复用飞书账号 - 功能灰度中，如有需求请联系[技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `reused_feishu_account_id` | `string` | 复用的飞书账号，返回Lark Union ID - 功能灰度中，如有需求请联系[技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `work_country_id` | `string` | 工作国家/地区id ，详细信息可通过【国家/地区】接口获得 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `onboarding_info` | `pre_hire_onboarding_info` | 入职信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `offer_id` | `string` | Offer ID，可以通过招聘[获取 Offer 列表](https://open.feishu.cn/document/server-docs/hire-v1/candidate-management/delivery-process-management/offer/list)接口获取详情 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `offer_hr_id` | `string` | Offer HR 的 雇佣 ID，可以通过[批量查询员工信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee/batch_get)接口获取详情，user_id_type使用people_corehr_id类型<br>ID转换：不支持根据user_id_type进行ID转换，返回people_corehr_id 类型的ID。 |
@@ -1007,12 +1005,13 @@ updateTime: "1756127437000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 语言编码（IETF BCP 47） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 文本内容 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `flow_id` | `string` | 入职流程 ID<br>**字段权限要求**： `corehr:pre_hire.flow_id:read` 获取入职流程 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `check_in_time` | `string` | 签到时间，时间格式为 2023-09-01 13:21:12<br>**字段权限要求**： `corehr:pre_hire.check_in_data:read` 获取待入职人员的签到数据 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `check_in_method` | `enum` | 招聘来源，枚举值可查询[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)接口获取，按如下参数查询即可： - custom_api_name：check_in_method - object_api_name：pre_hire<br>**字段权限要求**： `corehr:pre_hire.check_in_data:read` 获取待入职人员的签到数据 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `check_in_time` | `string` | 签到时间，时间格式为 2023-09-01 13:21:12<br>**字段权限要求**： `corehr:pre_hire.check_in_data:read` 获取待入职人员签到数据 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `check_in_method` | `enum` | 招聘来源，枚举值可查询[获取字段详情](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)接口获取，按如下参数查询即可： - custom_api_name：check_in_method - object_api_name：pre_hire<br>**字段权限要求**： `corehr:pre_hire.check_in_data:read` 获取待入职人员签到数据 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `enum_name` | `string` | 枚举值 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `display` | `i18n\[\]` | 枚举多语展示 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 语言编码（IETF BCP 47） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 文本内容 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `withdrawn_reason` | `string` | 撤销原因：当流程状态为撤销时,在fields中传入onboarding_info.withdrawn_reason字段，可获取撤销原因<br>**字段权限要求**： `corehr:pre_hire.withdrawn_reason:read` 获取待入职撤销原因 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `probation_info` | `pre_hire_probation_info` | 试用期信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `probation_start_date` | `string` | 试用期开始日期，时间格式为 2022-01-02 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `probation_end_date` | `string` | 试用期结束日期，时间格式为 2022-01-02 |
@@ -1425,7 +1424,6 @@ updateTime: "1756127437000"
                     ],
                     "dependent_list": [
                         {
-                            "id": "123",
                             "name": {
                                 "local_primary": "黄",
                                 "local_first_name": "四",
@@ -1644,7 +1642,6 @@ updateTime: "1756127437000"
                     ],
                     "emergency_contact_list": [
                         {
-                            "id": "123",
                             "name": {
                                 "local_primary": "黄",
                                 "local_first_name": "四",
@@ -1793,8 +1790,7 @@ updateTime: "1756127437000"
                                     "type": 1,
                                     "value": "\"231\""
                                 }
-                            ],
-                            "is_primary": true
+                            ]
                         }
                     ],
                     "date_entered_workforce": "2020-10-01",
@@ -2291,7 +2287,8 @@ updateTime: "1756127437000"
                         ]
                     },
                     "reuse_feishu_account": "reuse",
-                    "reused_feishu_account_id": "6738317738688661772"
+                    "reused_feishu_account_id": "6738317738688661772",
+                    "work_country_id": "6977976687350924123"
                 },
                 "onboarding_info": {
                     "offer_id": "7032210902531327521",
@@ -2380,7 +2377,8 @@ updateTime: "1756127437000"
                                 "value": "中文示例"
                             }
                         ]
-                    }
+                    },
+                    "withdrawn_reason": "撤销原因"
                 },
                 "probation_info": {
                     "probation_start_date": "2022-07-29",

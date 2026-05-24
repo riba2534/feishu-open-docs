@@ -1,7 +1,7 @@
 ---
 title: "批量创建邮件组成员"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/mailgroup-member/batch_create"
-updateTime: "1745841706000"
+updateTime: "1773998731000"
 ---
 
 # 批量创建邮件组成员
@@ -50,7 +50,7 @@ updateTime: "1745841706000"
 | --- | --- | --- | --- |
 | `items` | `mailgroup.member\[\]` | 否 | 本次添加的邮件组成员列表<br>**数据校验规则**：<br>- 长度范围：`1` ～ `200` |
 | &nbsp;&nbsp;└ `member_id` | `string` | 否 | 邮件组内成员唯一标识（在请求体中不用填）<br>**示例值**："xxxxxxxxxxxxxxx" |
-| &nbsp;&nbsp;└ `email` | `string` | 否 | 成员邮箱地址（当成员类型是EXTERNAL_USER/MAIL_GROUP/OTHER_MEMBER时有值）<br>**示例值**："test_memeber@xxx.xx" |
+| &nbsp;&nbsp;└ `email` | `string` | 否 | 成员邮箱地址（当成员类型是EXTERNAL_USER/MAIL_GROUP/OTHER_MEMBER时有值）<br>**示例值**："test_member@xxx.xx" |
 | &nbsp;&nbsp;└ `user_id` | `string` | 否 | 租户内用户的唯一标识（当成员类型是USER时有值）<br>**示例值**："xxxxxxxxxx" |
 | &nbsp;&nbsp;└ `department_id` | `string` | 否 | 租户内部门的唯一标识（当成员类型是DEPARTMENT时有值）<br>**示例值**："xxxxxxxxxx" |
 | &nbsp;&nbsp;└ `type` | `string` | 否 | 成员类型<br>**示例值**："USER"<br>**可选值有**：<br>- `USER`: 内部用户 - `DEPARTMENT`: 部门 - `COMPANY`: 全员 - `EXTERNAL_USER`: 外部用户 - `MAIL_GROUP`: 邮件组 - `PUBLIC_MAILBOX`: member is a public mailbox - `OTHER_MEMBER`: 内部成员 |
@@ -73,11 +73,11 @@ updateTime: "1745841706000"
             "type": "COMPANY"
         },
         {
-            "email": "test_memeber@xxx.xx",
+            "email": "test_member@xxx.xx",
             "type": "MAIL_GROUP"
         },
         {
-            "email": "test_memeber@yyy.yy",
+            "email": "test_member@yyy.yy",
             "type": "EXTERNAL_USER"
         }
     ]
@@ -113,7 +113,7 @@ updateTime: "1745841706000"
         "items": [
             {
                 "member_id": "xxxxxxxxxxxxxxx",
-                "email": "test_memeber@xxx.xx",
+                "email": "test_member@xxx.xx",
                 "user_id": "xxxxxxxxxx",
                 "department_id": "xxxxxxxxxx",
                 "type": "USER"

@@ -1,7 +1,7 @@
 ---
 title: "创建公共邮箱"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/public_mailbox/create"
-updateTime: "1745841707000"
+updateTime: "1773998733000"
 ---
 
 # 创建公共邮箱
@@ -85,12 +85,12 @@ updateTime: "1745841707000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 409 | 1234006 | email address has been used | 邮件地址已被占用，请使用其它邮件地址 |
+| 409 | 1234006 | email address has been used | 邮件地址已被占用，请使用其他邮件地址 |
 | 400 | 1234008 | email or name is invalid | 邮件地址或名称不合法，请修改后重试 |
-| 409 | 1234033 | email address has been used by another member as login account | 邮件地址已被他人用作于登录邮箱，请使用其它邮件地址 |
+| 409 | 1234033 | email address has been used by another member as login account | 邮件地址已被他人用作登录邮箱，请使用其他邮件地址 |
 | 200 | 1234026 | The number of tenant public mailboxes has reached the limit and cannot be created | 公共邮箱创建数已达上限，请删除后重试 |
 | 400 | 1234040 | not set geo name auth | 没有设置geo的权限 |
-| 400 | 1234041 | tenant not open mg not set geo name | 租户没有开通MG不能设置geo字段 |
+| 400 | 1234041 | tenant not open mg not set geo name | 租户没有开通MG，不能设置geo字段 |
 | 400 | 1234042 | req set geo not find in geo list | 您设置的 geo 不在系统支持的 geo 列表中 |
 
 

@@ -1,7 +1,7 @@
 ---
 title: "根据条件批量获取序列信息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/job_family/batch_get"
-updateTime: "1770621309000"
+updateTime: "1777289143000"
 ---
 
 # 根据条件批量查询序列信息
@@ -77,8 +77,8 @@ updateTime: "1770621309000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `selectable` | `boolean` | 是否可被使用，true为可被使用，false为不可被使用 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `parent_id` | `string` | 上级序列 ID，详细信息可通过[【查询单个序列】](get.md)接口查询获得（若查询的是一级序列，则该字段不展示） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `pathway_ids` | `string\[\]` | 通道ID，详情可以参考[【获取通道信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/batch_get) |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `effective_time` | `string` | 生效时间，返回格式：YYYY-MM-DD 00:00:00（最小单位到日） |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `expiration_time` | `string` | 失效时间，返回格式：YYYY-MM-DD 00:00:00（最小单位到日） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `effective_time` | `string` | 当前版本生效时间，返回格式：YYYY-MM-DD 00:00:00（最小单位到日） |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `expiration_time` | `string` | 当前版本失效时间，返回格式：YYYY-MM-DD 00:00:00（最小单位到日） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `code` | `string` | 编码 (不能与其他记录的编码重复) |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `description` | `i18n\[\]` | 描述 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 语言编码（IETF BCP 47） |

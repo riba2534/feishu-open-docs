@@ -1,7 +1,7 @@
 ---
 title: "筛选视图的筛选条件指南"
 fullPath: "/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/filter-view-condition-user-guide"
-updateTime: "1719483725000"
+updateTime: "1778317472000"
 ---
 
 # 筛选视图的筛选条件指南
@@ -40,21 +40,17 @@ updateTime: "1719483725000"
 ```
 筛选条件 `condition` 中的筛选类型 `filter_type` 参数支持以下四种。每种筛选类型需要填写对应的比较类型（compare_type）和比较的值（expected）。具体说明如下所示。
 
-#### ***隐藏值筛选 hiddenValue***
+#### ***多值筛选 multiValue***
 
-隐藏值筛选用于筛选除隐藏值外的数据。当筛选类型为隐藏值时：
+多值筛选指筛选特定的值。当筛选类型为多值时：
 - compare_type：不填
-- expected：要隐藏的值。数组类型，数组长度需大于 0 且小于筛选范围的行数。每个值的字符长度不得超过 50,000。
-示例代码如下所示：
+- expected：要展示的值。数组类型，数组长度需大于 0 且小于等于筛选范围的行数。每个值的字符长度不得超过 50,000 个。
 ```json
 {
-  "condition_id": "E",
-  "filter_type": "hiddenValue",
-  "expected": [
-    "100",
-    "200",
-    "300"
-  ]
+  "condition": {
+    "filter_type": "multiValue",
+    "expected": ["100", "200", "300"]  // 筛选出数据为 100，200 和 300 的单元格
+  }
 }
 ```
 

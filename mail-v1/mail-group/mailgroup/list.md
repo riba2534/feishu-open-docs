@@ -1,7 +1,7 @@
 ---
 title: "批量获取邮件组"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/mailgroup/list"
-updateTime: "1745841705000"
+updateTime: "1773998730000"
 ---
 
 # 批量获取邮件组

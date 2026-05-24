@@ -1,7 +1,7 @@
 ---
 title: "永久删除公共邮箱"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/public_mailbox/delete"
-updateTime: "1745841719000"
+updateTime: "1773998734000"
 ---
 
 # 永久删除公共邮箱

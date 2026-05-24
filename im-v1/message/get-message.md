@@ -1,7 +1,7 @@
 ---
 title: "获取指定消息的内容"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/get"
-updateTime: "1749830573000"
+updateTime: "1775808289000"
 ---
 
 # 获取指定消息的内容
@@ -21,14 +21,14 @@ updateTime: "1749830573000"
 | HTTP Method | GET |
 | 接口频率限制 | [1000 次/分钟、50 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom,isv |
-| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `im:message` 获取与发送单聊、群组消息 `im:message:readonly` 获取单聊、群组消息 |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 开启任一权限即可 | `im:message` 获取与发送单聊、群组消息 `im:message:readonly` 获取单聊、群组消息 > **Tip**: 1. **应用身份**获取消息 >     1. 获取单聊消息 需要开启二个权限任意一个： **获取与发送单聊、群组消息**（im:message）**获取单聊、群组消息**（im:message:readonly）（im:message.history:readonly）。 >      2. 获取群聊消息 需先申请单聊场景的任一权限，此外应用还必须开启 **获取群组中所有消息**（im:message.group_msg） 权限。 > 2. **用户身份**获取消息 >      1. 所有群类型都需要先 开启以下二个权限任意一个**获取与发送单聊、群组消息**（im:message）**获取单聊、群组消息**（im:message:readonly） >      2. 根据群类型额外开启补充权限： >            1.    获取单聊消息 需要开启**以用户身份获取单聊消息**（im:message.p2p_msg:get_as_user）权限 >           2. 获取群聊消息 需要开启**以用户身份获取群聊消息**（im:message.group_msg:get_as_user）权限 |
 | 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 
 ### 请求头
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| Authorization | string | 是 | `tenant_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Authorization | string | 是 | `tenant_access_token` 或 `user_access_token` **值格式**："Bearer `access_token`" **示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560" [了解更多：如何选择与获取 access token](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
 
 
 ### 路径参数
@@ -43,6 +43,7 @@ updateTime: "1749830573000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `user_id_type` | `string` | 否 | 用户 ID 类型<br>**示例值**：open_id<br>**可选值有**：<br>- `open_id`: 标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid) - `union_id`: 标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id) - `user_id`: 标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[了解更多：如何获取 User ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)<br>**默认值**：`open_id`<br>**当值为 `user_id`，字段权限要求**： `contact:user.employee_id:readonly` 获取用户 user ID |
+| `card_msg_content_type` | `string` | 否 | `card_msg_content_type` 参数仅控制卡片消息的返回格式，不会影响其他类型消息的返回格式。<br>1. **不传该参数（默认）**：返回的卡片结构参考[接收消息内容](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/im-v1/message/events/message_content)中的卡片消息结构，不支持返回发送时的原始卡片 JSON。 2. **传入 `user_card_content`**：返回发送时的原始卡片 JSON。1.0 卡片请参考[卡片 JSON 1.0 结构](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-structure)；2.0 卡片请参考[卡片 JSON 2.0 结构](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-v2-structure)。     * **版本区分**：当返回的消息体为卡片时，可通过 `schema` 字段来区分该卡片是 1.0 还是 2.0 版本，详情参考[卡片 JSON 2.0 版本更新说明](https://open.larkoffice.com/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-v2-breaking-changes-release-notes)。<br>> **注意：如果 `card_msg_content_type` 参数的传值方式发生变更，请务必在代码中做好返回格式的兼容处理。**<br>**示例值**：user_card_content |
 
 
 ## 响应
@@ -72,7 +73,7 @@ updateTime: "1749830573000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `sender_type` | `string` | 发送者类型。<br>**可能值有：** - `user`: 用户 - `app`: 应用 - `anonymous`: 匿名 - `unknown`: 未知 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `tenant_key` | `string` | 租户唯一标识。该标识用来识别租户，也可以用来获取租户访问凭证（tenant_access_token）。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `body` | `message_body` | 通过 `body` 内的 `content` 参数，返回当前的消息内容。 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `content` | `string` | 消息内容，JSON 结构序列化后的字符串，不同消息类型（`msg_type`）对应不同内容。<br>**注意**： - 卡片消息内容与在卡片搭建工具中获取的卡片 JSON 不一致，暂不支持返回原始卡片 JSON。 - 暂不支持返回 JSON 2.0 卡片的具体内容。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `content` | `string` | 消息内容，JSON 结构序列化后的字符串，不同消息类型（`msg_type`）对应不同内容。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `mentions` | `mention\[\]` | 消息内被 @ 的用户或机器人列表。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `key` | `string` | 被 @ 的用户或机器人序号。例如，第 3 个被 @ 到的成员，取值为 `@_user_3`。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 被 @ 的用户或机器人的 ID。<br>**注意**： - 当不填写 `user_id_type`时，该字段将返回被 @ 的用户或机器人的  open_id。 - 当填写 `user_id_type` 时，该字段将返回 @ 的用户对应类型的 ID（open_id、union_id 或 user_id）或机器人的 app_id。 |
@@ -118,8 +119,7 @@ updateTime: "1749830573000"
                         "name": "Tom",
                         "tenant_key": "736588c9260f175e"
                     }
-                ],
-                "upper_message_id": "om_40eb06e7b84dc71c03e009ad3c754195"
+                ]
             }
         ]
     }

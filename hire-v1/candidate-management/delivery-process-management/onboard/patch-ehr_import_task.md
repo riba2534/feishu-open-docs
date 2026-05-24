@@ -7,7 +7,7 @@ updateTime: "1720618210000"
 # 更新 e-HR 导入任务结果
 
 在处理完[导入 e-HR](
-https://open.larkoffice.com/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/event/import-ehr)事件后，可调用该接口，更新  e-HR 导入任务结果。
+/ssl:ttdoc/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/event/import-ehr)事件后，可调用该接口，更新  e-HR 导入任务结果。
 
 
 ## 请求
@@ -32,7 +32,7 @@ https://open.larkoffice.com/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/e
 
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
-| `ehr_import_task_id` | `string` | 导入任务 ID，任务 ID 来源于导入 e-HR 事件中的 task_id，详情参考[导入 e-HR]( https://open.larkoffice.com/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/event/import-ehr)<br>**示例值**："6914551145542568199" |
+| `ehr_import_task_id` | `string` | 导入任务 ID，任务 ID 来源于导入 e-HR 事件中的 task_id，详情参考[导入 e-HR]( /ssl:ttdoc/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/event/import-ehr)<br>**示例值**："6914551145542568199" |
 
 
 ### 请求体

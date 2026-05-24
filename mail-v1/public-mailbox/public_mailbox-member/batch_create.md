@@ -1,7 +1,7 @@
 ---
 title: "批量添加公共邮箱成员"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/public_mailbox-member/batch_create"
-updateTime: "1745841720000"
+updateTime: "1773998734000"
 ---
 
 # 批量添加公共邮箱成员

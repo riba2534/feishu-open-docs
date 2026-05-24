@@ -1,7 +1,7 @@
 ---
 title: "获取用户邮箱所有别名"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-alias/list"
-updateTime: "1745841721000"
+updateTime: "1773998735000"
 ---
 
 # 获取用户邮箱所有别名

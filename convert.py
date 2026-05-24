@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 from bs4 import BeautifulSoup, NavigableString, Tag
 
-OUTPUT_DIR = Path("/home/hepengcheng/airepo/feishu-open-docs")
+OUTPUT_DIR = Path(__file__).resolve().parent
 
 
 # ---------------------------------------------------------------------------
@@ -346,6 +346,11 @@ def process_file(content: str) -> str:
         return process_html_block(html)
 
     content = re.sub(r':::html\s*\n(.*?):::', replace_html_block, content, flags=re.DOTALL)
+
+    # 2b. Remove any unmatched/dangling :::html or ::: markers that survived
+    # (some upstream payloads omit the closing :::, leaving the opener orphaned)
+    content = re.sub(r'^:::html\s*$', '', content, flags=re.MULTILINE)
+    content = re.sub(r'^:::\s*$', '', content, flags=re.MULTILINE)
 
     # 3. Handle any remaining inline <md-*> tags outside :::html blocks
     # <md-tag>

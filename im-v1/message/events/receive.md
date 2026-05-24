@@ -1,7 +1,7 @@
 ---
 title: "接收消息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/events/receive"
-updateTime: "1728873865000"
+updateTime: "1776674852000"
 ---
 
 # 接收消息
@@ -16,13 +16,20 @@ updateTime: "1728873865000"
 
 ## 注意事项
 
-- 系统会根据应用具备的权限，判断可推送的信息：
-    - 当具备==获取用户发给机器人的单聊消息（	
-im:message.p2p_msg）== 或者 ==读取用户发给机器人的单聊消息（im:message.p2p_msg:readonly）== 权限，可接收与机器人单聊会话中用户发送的所有消息
-    - 当具备==获取群组中所有消息（im:message.group_msg
-）== 权限时，可接收与机器人所在群聊会话中用户发送的所有消息（不包含机器人发送的消息）
-    - 当具备==获取用户在群组中@机器人的消息（im:message.group_at_msg）== 或者 ==接收群聊中@机器人消息事件（im:message.group_at_msg:readonly）== 权限时，可接收机器人所在群聊中用户 @ 机器人的消息
-    - 当具备 ==获取客户端用户代理信息（im:user_agent:read）== 权限时，可获取`user_agent` 用户代理信息
+- **系统会根据应用接收消息相关权限，判断可推送的信息**：
+    - 接收用户消息
+
+        - 接收单聊消息（用户发给机器人的单聊消息）：需具备 ==获取用户发给机器人的单聊消息（im:message.p2p_msg）== 或 ==读取用户发给机器人的单聊消息（im:message.p2p_msg:readonly）== 权限
+        - 接收群聊中所有用户消息（不含机器人消息）：需具备 ==获取群组中所有消息（im:message.group_msg）== 权限
+        - 接收群聊中用户 @ 机器人的消息（不含机器人消息）：需具备 ==获取用户在群组中@机器人的消息（im:message.group_at_msg）== 或 ==接收群聊中@机器人消息事件（im:message.group_at_msg:readonly）== 权限
+  - 接收机器人和用户的@消息
+      - 接收群聊中用户及群内机器人 @ 当前机器人的消息：需具备 ==获取群组中其他机器人和用户@当前机器人的消息（im:message.group_at_msg.include_bot:readonly）== 权限
+
+- 可以通过sender_type字段来区分消息发送者是user还是bot
+
+- 获取附加信息相关权限：
+
+    - 获取消息中的 user_agent 用户代理信息：需具备 ==获取客户端用户代理信息（im:user_agent:read）== 权限
 
 - 特殊情况下可能会收到重复的推送，如有幂等需求请使用 ==message_id==去重，不要依赖event_id
 
@@ -32,7 +39,7 @@ im:message.p2p_msg）== 或者 ==读取用户发给机器人的单聊消息（im
 | --- | --- |
 | 事件类型 | im.message.receive_v1 |
 | 支持的应用类型 | custom,isv |
-| 权限要求             订阅该事件所需的权限，开启其中任意一项权限即可订阅 开启任一权限即可 | `im:message.p2p_msg:readonly` 读取用户发给机器人的单聊消息 `im:message.group_at_msg:readonly` 接收群聊中@机器人消息事件 `im:message.group_msg` 获取群组中所有消息（敏感权限） `im:message.group_at_msg` 获取用户在群组中@机器人的消息（历史版本） `im:message.group_msg:readonly` 获取群聊中所有的用户聊天消息 `im:message.p2p_msg` 获取用户发给机器人的单聊消息（历史版本） |
+| 权限要求             订阅该事件所需的权限，开启其中任意一项权限即可订阅 开启任一权限即可 | `im:message.p2p_msg:readonly` 读取用户发给机器人的单聊消息 `im:message.group_at_msg:readonly` 获取群组中用户@机器人消息 `im:message.group_msg` 获取群组中所有消息（敏感权限） `im:message.group_at_msg.include_bot:readonly` 获取群组中其他机器人和用户@当前机器人的消息 `im:message.group_at_msg` 获取用户在群组中@机器人的消息（历史版本） `im:message.group_msg:readonly` 获取群聊中所有的用户聊天消息 `im:message.p2p_msg` 获取用户发给机器人的单聊消息（历史版本） |
 | 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID |
 | 推送方式 | `Webhook` |
 
@@ -55,7 +62,7 @@ im:message.p2p_msg）== 或者 ==读取用户发给机器人的单聊消息（im
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `union_id` | `string` | 用户的 union id |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 用户的 user id<br>**字段权限要求**： `contact:user.employee_id:readonly` 获取用户 user ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `open_id` | `string` | 用户的 open id |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `sender_type` | `string` | 消息发送者类型。目前只支持用户(user)发送的消息。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `sender_type` | `string` | 消息发送者类型。"user"（用户）或"bot"（机器人） |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `tenant_key` | `string` | tenant key，为租户在飞书上的唯一标识，用来换取对应的tenant_access_token，也可以用作租户在应用里面的唯一标识 |
 | &nbsp;&nbsp;└ `message` | `event_message` | 事件中包含的消息内容 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `message_id` | `string` | 消息 ID。由系统生成的唯一 ID 标识，基于该 ID 可以[回复消息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/reply) 或其他管理消息的操作。 |
@@ -74,6 +81,7 @@ im:message.p2p_msg）== 或者 ==读取用户发给机器人的单聊消息（im
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `union_id` | `string` | 用户的 union id |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 用户的 user id<br>**字段权限要求**： `contact:user.employee_id:readonly` 获取用户 user ID |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `open_id` | `string` | 用户的 open id |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `mentioned_type` | `string` | 被at者身份，user（用户）或bot（机器人） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `string` | 被提及用户姓名 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `tenant_key` | `string` | tenant key，为租户在飞书上的唯一标识，用来换取对应的tenant_access_token，也可以用作租户在应用里面的唯一标识 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `user_agent` | `string` | 用户代理数据，仅在接收事件的机器人具备==获取客户端用户代理信息（im:user_agent:read）==权限时返回 |
@@ -121,6 +129,7 @@ im:message.p2p_msg）== 或者 ==读取用户发给机器人的单聊消息（im
                         "user_id": "e33ggbyz",
                         "open_id": "ou_84aad35d084aa403a838cf73ee18467"
                     },
+                    "mentioned_type": "user",
                     "name": "Tom",
                     "tenant_key": "736588c9260f175e"
                 }

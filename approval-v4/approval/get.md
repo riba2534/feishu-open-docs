@@ -1,7 +1,7 @@
 ---
 title: "查看指定审批定义"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/get"
-updateTime: "1745207171000"
+updateTime: "1777465019000"
 ---
 
 # 查看指定审批定义
@@ -38,9 +38,12 @@ updateTime: "1745207171000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `locale` | `string` | 否 | 语言可选值，默认为审批定义配置的默认语言。<br>**示例值**：zh-CN<br>**可选值有**：<br>- `zh-CN`: 中文 - `en-US`: 英文 - `ja-JP`: 日文 |
+| `locale` | `string` | 否 | 语言可选值，默认为审批定义配置的默认语言。<br>**示例值**：zh-CN<br>**可选值有**：<br>- `zh-CN`: 中文 - `en-US`: 英文 - `ja-JP`: 日文 - `zh-HK`: 繁体中文（中国香港） - `zh-TW`: 繁体中文（中国台湾） - `de-DE`: 德语 - `es-ES`: 西班牙语 - `fr-FR`: 法语 - `id-ID`: 印度尼西亚语 - `it-IT`: 意大利语 - `ko-KR`: 韩语 - `pt-BR`: 葡萄牙语 - `th-TH`: 泰语 - `vi-VN`: 越南语 - `ms-MY`: 马来语 - `ru-RU`: 俄语 |
 | `with_admin_id` | `boolean` | 否 | 是否返回有数据管理权限的审批流程管理员 ID 列表（即响应参数 approval_admin_ids）。<br>**默认值**：false<br>**示例值**：false |
 | `user_id_type` | `string` | 否 | 用户 ID 类型<br>**示例值**：open_id<br>**可选值有**：<br>- `open_id`: 标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。[了解更多：如何获取 Open ID](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid) - `union_id`: 标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。[了解更多：如何获取 Union ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id) - `user_id`: 标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。[了解更多：如何获取 User ID？](https://open.larkoffice.com/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)<br>**默认值**：`open_id`<br>**当值为 `user_id`，字段权限要求**： `contact:user.employee_id:readonly` 获取用户 user ID |
+| `with_option` | `boolean` | 否 | 可选是否返回外部数据源和假勤控件选项<br>**示例值**：false |
+| `user_id` | `string` | 否 | 用户id<br>**示例值**：ou_7a4aaac5650dc0b77e85e96e7476ff1d |
+| `nested_mutable_group` | `boolean` | 否 | 是否返回完整的多维表格控件<br>**示例值**：true |
 
 
 ## 响应
@@ -72,6 +75,7 @@ updateTime: "1745207171000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 资源 ID。<br>- 在可见人类型为 DEPARTMENT 时，ID 为部门 ID。 - 在可见人类型为 USER 时，ID 为用户 open_id。 - 在可见人类型为 ROLE 时，ID 为角色 ID。 - 在可见人类型为 USER_GROUP 时，ID 为用户组 ID。 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `user_id` | `string` | 在可见人类型为 USER 时，表示可见人用户 open_id。 |
 | &nbsp;&nbsp;└ `approval_admin_ids` | `string\[\]` | 有数据管理权限的审批流程管理员的 open_id，由参数 with_admin_id 控制是否返回。 |
+| &nbsp;&nbsp;└ `form_widget_relation` | `string` | 组件之间值关联关系 |
 
 
 ### form 字段说明
@@ -160,7 +164,7 @@ updateTime: "1745207171000"
                     {
                         "approver_range_type": 2,
                         "approver_range_ids": [
-                            "ou_e03053f0541cecc3269d7a9dc34a0b21"
+                            "0"
                         ]
                     }
                 ],
@@ -176,7 +180,8 @@ updateTime: "1745207171000"
         ],
         "approval_admin_ids": [
             "ou_3cda9c969f737aaa05e6915dce306cb9"
-        ]
+        ],
+        "form_widget_relation": "{\"groups\":[{\"id\":\"1\",\"parent_widgets_ids\":[\"widget1\",\"widget4\"],\"children_widget_ids\":[\"widget2.widget3\"],\"conditions\":[{\"parents_expr\":{\"type\":\"Multi\",\"expr\":{\"type\":\"and\",\"exprs\":[{\"type\":\"SingleWidget\",\"expr\":{\"type\":\"in\",\"widget_id\":\"widget1\",\"expect\":{\"type\":\"local\",\"value\":[{\"value\":\"value_0\"},{\"value\":\"value_1\"}]}}},{\"type\":\"Const\",\"expr\":{\"value\":true,\"widget_ids\":[\"widget4\"]}}]}},\"children_rule\":{\"expr\":{\"type\":\"SingleWidget\",\"expr\":{\"type\":\"in\",\"widget_id\":\"widget2.widget3\",\"expect\":{\"type\":\"local\",\"value\":[{\"value\":\"value_3\"},{\"value\":\"value_5\"}]}}},\"actions\":[{\"type\":\"SetOptions\",\"widget_id\":\"widget2.widget3\",\"value\":{\"type\":\"local\",\"value\":[{\"value\":\"value_3\"},{\"value\":\"value_4\"}]}}]}}]}]}"
     }
 }
 ```

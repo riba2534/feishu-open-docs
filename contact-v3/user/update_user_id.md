@@ -1,7 +1,7 @@
 ---
 title: "更新用户 ID"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/update_user_id"
-updateTime: "1720166743000"
+updateTime: "1775548358000"
 ---
 
 # 更新用户ID
@@ -92,7 +92,7 @@ updateTime: "1720166743000"
 | --- | --- | --- | --- |
 | 400 | 40001 | Invalid params | 参数错误。请参考接口文档的参数描述，检查输入参数是否填写有误。 |
 | 400 | 41009 | no email or mobile error | 无邮箱或者手机号，请添加后重试。 |
-| 400 | 41011 | userID already exist error | 用户的 user_id 已存在，你需要更换 ID 并重试。 |
+| 400 | 41011 | userID already exists error | 用户的 user_id 已存在，你需要更换 ID 并重试。 |
 | 400 | 41013 | exceed userID update limit error | 超过用户 ID 更新次数限制。 |
 | 400 | 41050 | no user authority error | 无用户权限。当前操作的用户需在应用的通讯录权限范围内。通讯录权限范围的介绍与设置方式，参见[权限范围资源介绍](https://open.larkoffice.com/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。 |
 | 400 | 41054 | new user id is required  error | 更新后的 user_id 错误。请更换 user_id 值后重试。 |

@@ -1,7 +1,7 @@
 ---
 title: "查询指定时间范围公司版本"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/company/query_multi_timeline"
-updateTime: "1770621233000"
+updateTime: "1777289065000"
 ---
 
 # 查询指定时间范围公司版本
@@ -39,7 +39,7 @@ updateTime: "1770621233000"
 | `company_ids` | `string\[\]` | 是 | 公司ID。ID获取方式： - 调用[【创建公司】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/company/create)[【批量查询公司】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/company/list)等接口可以返回公司ID<br>**示例值**：["7094136522860922111"]<br>**数据校验规则**：<br>- 长度范围：`1` ～ `10` |
 | `start_date` | `string` | 否 | 查询开始时间（包含）<br>**示例值**："2024-01-01"<br>**数据校验规则**：<br>- 长度范围：`10` ～ `10` 字符 - 正则校验：`^((([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29))$` |
 | `end_date` | `string` | 否 | 查询结束时间（不包含）<br>**示例值**："2024-12-31"<br>**数据校验规则**：<br>- 长度范围：`10` ～ `10` 字符 - 正则校验：`^((([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29))$` |
-| `fields` | `string\[\]` | 否 | 返回数据的字段列表，可选["company_name", "code", "active", "parent_company","description", "effective_date", "expiration_date", "type", "industry_list", "legal_representative", "post_code", "tax_payer_id", "confidential", "sub_type_list", "branch_company", "primary_manager", "currency", "phone", "fax", "registered_office_address", "office_address", "registered_office_address_info", "office_address_info"]<br>**示例值**：["company_name"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
+| `fields` | `string\[\]` | 否 | 返回数据的字段列表，可选 -  company_name：公司名称 -  code ：编码 - active：是否启用 - parent_company：上级公司 - description：描述 - effective_date ：当前版本生效日期 - expiration_date ：当前版本失效日期 - type：公司性质 - industry_list：所在行业 - legal_representative ：法定代表人 - post_code：邮编 - tax_payer_id ：纳税人识别号 - confidential：是否保密 - sub_type_list：公司主体类型 - branch_company：是否为分公司 - primary_manager：主要负责人 - currency：默认币种 - phone：电话 - fax：传真 - registered_office_address：完整注册地址 - office_address：完整办公地址 - registered_office_address_info：注册地址 - office_address_info：办公地址<br>**示例值**：["company_name"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
 
 
 ### 请求体示例

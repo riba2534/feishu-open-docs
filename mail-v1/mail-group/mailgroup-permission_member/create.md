@@ -1,7 +1,7 @@
 ---
 title: "创建邮件组权限成员"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/mailgroup-permission_member/create"
-updateTime: "1745841707000"
+updateTime: "1773998732000"
 ---
 
 # 创建邮件组权限成员

@@ -1,7 +1,7 @@
 ---
 title: "查询单个职级"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/job_level/get"
-updateTime: "1753969020000"
+updateTime: "1775126177000"
 ---
 
 # 查询单个职级
@@ -66,6 +66,7 @@ updateTime: "1753969020000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(如123, 123.23, "true", [\"id1\",\"id2\"], "2006-01-02 15:04:05") |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `job_grade` | `string\[\]` | 职等 ID 列表 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `pathway_ids` | `string\[\]` | 通道ID，详情可以参考[【获取通道信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/batch_get) |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `view_order` | `int` | 排序 - 数值越小，排序越靠前 - 取值范围： 1  ～  999999 |
 
 
 ### 响应体示例
@@ -103,7 +104,8 @@ updateTime: "1753969020000"
             ],
             "pathway_ids": [
                 "4719519211875096301"
-            ]
+            ],
+            "view_order": 123
         }
     }
 }

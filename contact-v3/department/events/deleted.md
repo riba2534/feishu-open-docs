@@ -1,7 +1,7 @@
 ---
 title: "部门被删除"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/events/deleted"
-updateTime: "1722393716000"
+updateTime: "1775548407000"
 ---
 
 # 部门被删除

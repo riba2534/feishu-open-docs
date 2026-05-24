@@ -1,7 +1,7 @@
 ---
 title: "通讯录概述"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/resources"
-updateTime: "1721359947000"
+updateTime: "1775548325000"
 ---
 
 # 通讯录概述
@@ -54,7 +54,7 @@ updateTime: "1721359947000"
 | [职级](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/job_level/create) | 职位等级是用户属性字段。企业可根据组织架构实际情况来自定义管理职级信息。 |
 | [序列](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/job_family/create) | 序列是用户属性字段。企业可根据组织架构实际情况来自定义管理序列信息。 |
 | [职务](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/job_title/get) | 用户属性字段。通讯录业务域提供了职务相关的查询接口。 |
-| [工作城市](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/work_city/get) | 用户属性字段。通讯录业务域进提供了工作城市相关的查询接口。 |
+| [工作城市](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/work_city/get) | 用户属性字段。通讯录业务域仅提供了工作城市相关的查询接口。 |
 
 
 ## 方法列表

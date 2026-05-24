@@ -16,7 +16,7 @@ BASE_URL = "https://open.larkoffice.com"
 DIRECTORY_API = f"{BASE_URL}/api/tools/docment/directory_list"
 CONTENT_API = f"{BASE_URL}/document_portal/v1/document/get_detail"
 SERVER_API_ID = "103"
-OUTPUT_DIR = Path("/home/hepengcheng/airepo/feishu-open-docs")
+OUTPUT_DIR = Path(__file__).resolve().parent
 CONCURRENCY = 8
 RETRY_COUNT = 3
 BATCH_DELAY = 0.3  # seconds between batches
@@ -145,8 +145,9 @@ def create_directory_structure():
 def post_process_content(content: str, doc_info: dict) -> str:
     """Phase 4: Post-process markdown content."""
     # Add frontmatter
+    escaped_title = doc_info['name'].replace('"', '\\"')
     frontmatter = f"""---
-title: "{doc_info['name'].replace('"', '\\"')}"
+title: "{escaped_title}"
 fullPath: "{doc_info['fullPath']}"
 updateTime: "{doc_info.get('updateTime', '')}"
 ---

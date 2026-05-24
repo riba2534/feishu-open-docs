@@ -1,7 +1,7 @@
 ---
 title: "部门群转为普通群"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/unbind_department_chat"
-updateTime: "1720167075000"
+updateTime: "1775548395000"
 ---
 
 # 部门群转为普通群
@@ -135,7 +135,7 @@ public class Main {
 | 400 | 40002 | process root dept error | 不支持对根部门进行操作。请检查是否在请求参数部门 ID 中传入了根部门 ID `0`。 |
 | 400 | 40003 | internal error | 内部错误，请获取请求的 X-Request-Id，并向[技术支持](https://applink.feishu.cn/TLJpeNdW)进行反馈。 |
 | 403 | 40004 | no dept authority error | 当前操作涉及的部门，需在应用通讯录权限范围中，了解更多可参见[权限范围资源介绍](https://open.larkoffice.com/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。 |
-| 403 | 40020 | department do not has a chat error | 操作的部门没有部门群。你可以调用[获取单个部门信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/get)接口，查询指定部门的详细信息，以确保当前操作的部门是你需要转换群组类型的部门。 |
+| 403 | 40020 | department does not have a chat error | 操作的部门没有部门群。你可以调用[获取单个部门信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/get)接口，查询指定部门的详细信息，以确保当前操作的部门是你需要转换群组类型的部门。 |
 
 
 更多错误码信息，参见[通用错误码](https://open.larkoffice.com/document/ukTMukTMukTM/ugjM14COyUjL4ITN)。

@@ -19,7 +19,7 @@ updateTime: "1699520840000"
 
 该接口不能用于更新清单的成员和增删清单中的任务。
 * 如要增删清单中的成员，可以使用[添加清单成员](/ssl:ttdoc:/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist/add_members)和[移除清单成员](/ssl:ttdoc:/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist/remove_members)接口。
-* 如要增删清单中的任务，可以使用[任务加入清单](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_tasklist)和[任务移出清单]( https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/remove_tasklist)接口。
+* 如要增删清单中的任务，可以使用[任务加入清单](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/task-v2/task/add_tasklist)和[任务移出清单]( /ssl:ttdoc/uAjLw4CM/ukTMukTMukTM/task-v2/task/remove_tasklist)接口。
 
 
 > **Tip**: 更新清单名字需要清单的编辑权限。

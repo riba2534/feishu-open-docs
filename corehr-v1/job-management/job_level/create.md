@@ -1,7 +1,7 @@
 ---
 title: "新建职级"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/job_level/create"
-updateTime: "1765434827000"
+updateTime: "1775126177000"
 ---
 
 # 新建单个职级
@@ -55,6 +55,7 @@ updateTime: "1765434827000"
 | &nbsp;&nbsp;└ `value` | `string` | 是 | 字段值，为 JSON 转义后的字符串。 - 最小1字符，最大200字符<br>**注意：具体传值方式参见**[获取自定义字段的元数据](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom-fields-guide)<br>**示例值**："\"Sandy\"" |
 | `job_grade` | `string\[\]` | 否 | 职等 ID 列表<br>**示例值**：["4692446793125560154"] |
 | `pathway_ids` | `string\[\]` | 否 | 通道ID，详情可以参考[【获取通道信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/batch_get)<br>**示例值**：["4719519211875096301"] |
+| `view_order` | `int` | 否 | 排序  - 数值越小，排序越靠前<br>**示例值**：123<br>**数据校验规则**：<br>- 取值范围：`1` ～ `999999` |
 
 
 ### 请求体示例
@@ -87,7 +88,8 @@ updateTime: "1765434827000"
     ],
     "pathway_ids": [
         "4719519211875096301"
-    ]
+    ],
+    "view_order": 123
 }
 ```
 
@@ -118,6 +120,7 @@ updateTime: "1765434827000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同。如：```("\"123\"", "\"123.23\"", "\"true\"", [\"id1\",\"id2\"], \"2006-01-02 15:04:05\")``` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `job_grade` | `string\[\]` | 职等 ID 列表 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `pathway_ids` | `string\[\]` | 通道ID，详情可以参考[【获取通道信息】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/batch_get) |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `view_order` | `int` | 排序。数值越小，排序越靠前 |
 
 
 ### 响应体示例
@@ -155,7 +158,8 @@ updateTime: "1765434827000"
             ],
             "pathway_ids": [
                 "4719519211875096301"
-            ]
+            ],
+            "view_order": 123
         }
     }
 }

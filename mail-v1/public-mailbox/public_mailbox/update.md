@@ -1,7 +1,7 @@
 ---
 title: "修改公共邮箱全部信息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/public_mailbox/update"
-updateTime: "1745841708000"
+updateTime: "1773998733000"
 ---
 
 # 修改公共邮箱全部信息
@@ -88,9 +88,9 @@ updateTime: "1745841708000"
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
 | 404 | 1234016 | public mailbox not found | 请确认公共邮箱是否存在 |
-| 409 | 1234033 | email address has been used by another member as login account | 邮件地址已被他人用作于登录邮箱，请使用其它邮件地址 |
+| 409 | 1234033 | email address has been used by another member as a login account | 邮件地址已被他人用作登录邮箱，请使用其它邮件地址 |
 | 400 | 1234008 | request parameter error | 请检查请求参数是否正确 |
 | 409 | 1234006 | email address has been used | 邮件地址已被占用，请使用其它邮件地址 |
-| 409 | 1234023 | email address alias exceed the number limit | 超出了邮箱别名限制 |
+| 409 | 1234023 | email address alias exceeds the number limit | 超出了邮箱别名限制 |
 
 

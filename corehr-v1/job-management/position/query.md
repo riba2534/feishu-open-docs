@@ -1,7 +1,7 @@
 ---
 title: "查询岗位信息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/position/query"
-updateTime: "1770621346000"
+updateTime: "1777289242000"
 ---
 
 # 查询岗位信息
@@ -54,7 +54,7 @@ updateTime: "1770621346000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `department_ids` | `string\[\]` | 否 | 部门 ID 列表 - department_ids参数的ID类型需与department_id_type参数取值一致 - 可通过飞书人事的[批量查询部门（ V2）](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/department/batch_get) 来获取<br>**示例值**：["7094136522860922111"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
-| `effective_time` | `string` | 否 | 生效日期，格式是 YYYY-MM-DD<br>**示例值**："2020-01-01"<br>**数据校验规则**：<br>- 长度范围：`10` ～ `10` 字符 - 正则校验：`^((([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29))$` |
+| `effective_time` | `string` | 否 | 版本生效日期，格式是 YYYY-MM-DD<br>**示例值**："2020-01-01"<br>**数据校验规则**：<br>- 长度范围：`10` ～ `10` 字符 - 正则校验：`^((([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29))$` |
 | `active` | `boolean` | 否 | 启停用状态：true 为启用，false 为停用，不传则默认都返回<br>**示例值**：true |
 | `fields` | `string\[\]` | 否 | 需要查询的字段列表，为空时仅返回 wk_id。可选以下预置字段及自定义字段： - "wk_id"：岗位 ID - "name"：名称 - "code"：编码 - "active"：状态 - "department"：所属部门 - "cost_center"：岗位默认成本中心 - "job"：职务 - "job_family"：序列 - "job_level"：职级 - "job_grade"：职等 - "work_location"：工作地点 - "employee_type"：人员类型 - "working_hours_type"：工时制度 - "direct_leader"：直属上级 - "dotted_line_leader"：虚线上级 - "is_key_position"：是否关键岗位 - "description"：描述 - "effective_time"：版本生效日期 - "expiration_time"：版本过期时间 - "created_by"：创建人 - "custom_fields"：自定义字段(需传入具体的"custom_api_name")详细见[获取自定义字段列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/query) ,比如:"shifouleixing_7795__c"<br>**示例值**：["name"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `100` |
 | `position_ids` | `string\[\]` | 否 | 岗位 ID 列表<br>**示例值**：["7094136582860923111"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `200` |
@@ -115,8 +115,8 @@ updateTime: "1770621346000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `direct_leader_id` | `string` | 直属上级岗位 ID，可通过本接口查询详细信息 - 若查询的是一级岗位，则该字段不展示 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `dotted_line_leader_id` | `string` | 虚线上级岗位 ID，可通过本接口查询详细信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `is_key_position` | `boolean` | 是否关键岗位 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `effective_time` | `string` | 生效日期 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `expiration_time` | `string` | 失效日期 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `effective_time` | `string` | 版本生效日期 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `expiration_time` | `string` | 版本失效日期 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `custom_fields` | `custom_field_data\[\]` | 自定义字段 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `custom_api_name` | `string` | 自定义字段 apiname，即自定义字段的唯一标识 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `name` | `custom_name` | 自定义字段名称 |

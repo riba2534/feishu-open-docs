@@ -1,7 +1,7 @@
 ---
 title: "创建地点"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/location/create"
-updateTime: "1765434768000"
+updateTime: "1777289025000"
 ---
 
 # 创建地点
@@ -236,8 +236,8 @@ updateTime: "1765434768000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `field_name` | `string` | 字段名 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同。如：```("\"123\"", "\"123.23\"", "\"true\"", [\"id1\",\"id2\"], \"2006-01-02 15:04:05\")``` |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `working_hours_type_id` | `string` | 工时制度 ID，枚举值及详细信息可通过[【批量查询工时制度】](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/working_hours_type/list)接口查询获得 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `effective_time` | `string` | 生效时间 - 填写格式： YY-MM-DD 00:00:00 - 生效时间， 系统默认为填写日期当天的 00:00:00 生效 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `expiration_time` | `string` | 失效时间 - 填写格式： YYYY-MM-DD 00:00:00 - 本次编辑的记录版本失效的时间， 如果用户在本次操作的生效日期之后修改了地点信息，则系统会将下一次操作的日期作为当前记录的失效时间。  - 系统默认为填写日期当天的 00:00:00 失效 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `effective_time` | `string` | 版本生效时间 - 填写格式： YY-MM-DD 00:00:00 - 生效时间， 系统默认为填写日期当天的 00:00:00 生效 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `expiration_time` | `string` | 版本失效时间 - 填写格式： YYYY-MM-DD 00:00:00 - 本次编辑的记录版本失效的时间， 如果用户在本次操作的生效日期之后修改了地点信息，则系统会将下一次操作的日期作为当前记录的失效时间。  - 系统默认为填写日期当天的 00:00:00 失效 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `custom_fields` | `object_field_data\[\]` | 自定义字段 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `field_name` | `string` | 字段名 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同。如：```("\"123\"", "\"123.23\"", "\"true\"", [\"id1\",\"id2\"], \"2006-01-02 15:04:05\")``` |

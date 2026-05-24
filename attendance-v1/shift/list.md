@@ -1,7 +1,7 @@
 ---
 title: "查询所有班次"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/shift/list"
-updateTime: "1757646480000"
+updateTime: "1778137680000"
 ---
 
 # 查询所有班次
@@ -76,7 +76,7 @@ updateTime: "1757646480000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `overtime_rule` | `overtime_rule\[\]` | 加班时段（仅飞书人事企业版可用） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `on_overtime` | `string` | 开始时间 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `off_overtime` | `string` | 结束时间 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `day_type` | `int` | 日期类型，【是否弹性打卡 = ture】时，不可设置为“休息日”  可选值：1：工作日 2：休息日     示例值：（默认值）1 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `day_type` | `int` | 日期类型，【是否弹性打卡 = true】时，不可设置为“休息日” 可选值：1：工作日 2：休息日 示例值：（默认值）1 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `overtime_rest_time_rule` | `rest_rule\[\]` | 班外休息规则 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `rest_begin_time` | `string` | 休息开始 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `rest_end_time` | `string` | 休息结束 |
@@ -177,11 +177,11 @@ updateTime: "1757646480000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 400 | 1220001 | param is invalis | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1220001 | param is invalid | 入参校验失败，请根据具体返回的信息检查入参。例如“employee_type invalid”代表人员类型异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1220002 | tenant_id is empty | 请检查入参中的 tenant_access_token是否正确 |
-| 500 | 1225000 | param is invalis | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 500 | 1226000 | param is invalis | 班次服务异常错误码，请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
-| 400 | 1226003 | param is invalis | 请参考实际返回的错误信息排查问题。例如“default shift are not allowed to change.”代表默认班次不能修改。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 500 | 1225000 | param is invalid | 请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 500 | 1226000 | param is invalid | 班次服务异常错误码，请参考实际返回的错误信息排查问题。例如“internal server error”代表内部服务异常。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
+| 400 | 1226003 | param is invalid | 请参考实际返回的错误信息排查问题。例如“default shift are not allowed to change.”代表默认班次不能修改。如仍无法解决可联系 [技术支持](https://applink.feishu.cn/TLJpeNdW) |
 | 400 | 1220600 | 通用错误信息 | 通用错误信息包含多条，详细的错误信息以及处理建议可参见 [错误信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines) |
 
 

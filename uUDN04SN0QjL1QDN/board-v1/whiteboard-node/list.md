@@ -1,7 +1,7 @@
 ---
 title: "获取所有节点"
 fullPath: "/ukTMukTMukTM/uUDN04SN0QjL1QDN/board-v1/whiteboard-node/list"
-updateTime: "1762224186000"
+updateTime: "1773664888000"
 ---
 
 # 获取所有节点
@@ -988,7 +988,7 @@ updateTime: "1762224186000"
                 },
                 "mind_map_node": {
                     "parent_id": "12345678",
-                    "type": "true",
+                    "type": "mind_map_round_rect",
                     "z_index": 2,
                     "layout_position": "left",
                     "children": [
@@ -999,7 +999,7 @@ updateTime: "1762224186000"
                 "mind_map_root": {
                     "layout": "left_right",
                     "type": "mind_map_text",
-                    "line_style": "rounf_angle",
+                    "line_style": "round_angle",
                     "up_children": [
                         "z1:1"
                     ],

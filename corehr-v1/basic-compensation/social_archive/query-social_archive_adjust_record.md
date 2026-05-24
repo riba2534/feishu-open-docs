@@ -1,7 +1,7 @@
 ---
 title: "通过员工ID批量获取社保增减员记录"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/compensation-v1/social_archive_adjust_record/query"
-updateTime: "1763105443000"
+updateTime: "1773026724000"
 ---
 
 # 批量获取社保增减员记录
@@ -81,8 +81,8 @@ updateTime: "1763105443000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `plan_tid` | `string` | 参保方案版本ID。当record_type为attrition时，不返回该数据 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `location_id` | `string` | 参保城市ID，可通过[获取地点信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/location/list)接口查询详细信息。当record_type为attrition时，不返回该数据 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `company_id` | `string` | 社保缴纳主体ID，可通过[获取公司主体](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/company/batch_get)接口查询详细信息。当record_type为attrition时，不返回该数据 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `account_type` | `string` | 社保账户类型。当record_type为attrition时，不返回该数据 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `insurance_account` | `string` | 社保账号。当record_type为attrition时，不返回该数据 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `account_type` | `string` | 社保/公积金账户类型。当record_type为attrition时，不返回该数据 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `insurance_account` | `string` | 社保/公积金账号。当record_type为attrition时，不返回该数据 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `base_salary` | `string` | 申报缴纳基数，单位：元。当record_type为attrition时，不返回该数据 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `insurance_details` | `social_archive_item\[\]` | 险种数据详情。当record_type为attrition时，不返回该数据 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `insurance_id` | `string` | 险种ID，可通过[获取险种配置列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/compensation-v1/social_insurance/list)接口查询 |

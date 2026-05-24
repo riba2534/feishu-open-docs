@@ -1,7 +1,7 @@
 ---
 title: "查询自定义组织信息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/custom_org/query"
-updateTime: "1770621289000"
+updateTime: "1777289124000"
 ---
 
 # 批量查询当前版本的自定义组织信息
@@ -50,7 +50,7 @@ updateTime: "1770621289000"
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | `object_api_name` | `string` | 是 | 组织类型编码，可在「飞书人事-设置-组织设置」中相应的自定义组织目录下查看<br>**示例值**："custom_org_01" |
-| `org_fields` | `string\[\]` | 否 | 需要返回的字段列表。字段可填写的列表如下： - names - code - parent_id - manager_ids - description - effective_time - org_roles - active - org_id - custom_fields(自定义字段，需传入具体的"custom_api_name") 详细见[获取自定义字段列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/query) ,比如:"shifouleixing_7795__c"<br>**示例值**：["names"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `200` |
+| `org_fields` | `string\[\]` | 否 | 需要返回的字段列表。字段可填写的列表如下： - names： 组织名称 - code：编码 - parent_id：上级自定义组织 ID - manager_ids：负责人 ID 列表 - description：自定义组织描述 - effective_time：当前版本生效日期 - org_roles：组织角色列表 - active：自定义组织是否启用 - org_id：自定义组织 ID - custom_fields(自定义字段，需传入具体的"custom_api_name") 详细见[获取自定义字段列表](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/query) ,比如:"shifouleixing_7795__c"<br>**示例值**：["names"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `200` |
 | `org_role_fields` | `string\[\]` | 否 | 需要返回的组织角色授权信息的列表。 - org_role_fields 可选两种值     - 角色key，可以通过页面「飞书人事-设置-组织配置」选择对应自定义组织，「字段配置-字段编码」获取     - 角色ID，可以通过[批量获取角色列表](https://open.larkoffice.com/document/server-docs/corehr-v1/authorization/list) 获取，数据为返回数据中的 data.items.id 值。筛选条件data.items.group_type == 3（组织角色），data.items.org_truncation 关联的组织有且仅有一个，data.items.org_truncation.org_key 等于当前查询自定义组织 object_api_name<br>**示例值**：["hcm_corehr_xxxx"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `200` |
 | `org_ids` | `string\[\]` | 否 | 需要查询的组织 ID 列表。 - ID 为 [获取自定义组织](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/custom_org/query)返回的 org_id 字段。 - 不传不做 ID 相关限制<br>**示例值**：["7140964208476371111"]<br>**数据校验规则**：<br>- 长度范围：`0` ～ `200` |
 | `code` | `string` | 否 | 只返回和传入编码相同的自定义组织数据。 - 编码为[获取自定义组织](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/custom_org/query)返回的 code 字段。 - 不传默认不做这个限制<br>**示例值**："MDPD00000023" |

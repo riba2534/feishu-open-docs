@@ -1,7 +1,7 @@
 ---
 title: "批量获取邮件组管理员"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/mailgroup-manager/list"
-updateTime: "1745841706000"
+updateTime: "1773998731000"
 ---
 
 # 批量获取邮件组管理员

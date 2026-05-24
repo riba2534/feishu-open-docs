@@ -1,7 +1,7 @@
 ---
 title: "查询一次性支付授予记录"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/compensation-v1/lump_sum_payment/query"
-updateTime: "1755603227000"
+updateTime: "1777370108000"
 ---
 
 # 查询一次性支付授予记录
@@ -20,7 +20,7 @@ updateTime: "1755603227000"
 | HTTP Method | POST |
 | 接口频率限制 | [10 次/秒](https://open.larkoffice.com/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
 | 支持的应用类型 | custom |
-| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:compensation.lump_sum_payment:read` 一次性支付读权限 |
+| 权限要求             调用该 API 所需的权限。开启其中任意一项权限即可调用 | `corehr:compensation.lump_sum_payment:read` 读取一次性支付记录 |
 | 字段权限要求 | > **Tip**: 该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请 `contact:user.employee_id:readonly` 获取用户 user ID `corehr:compensation_lump_sum_payment.binding_period_offboarding_type:read` 获取一次性支付的绑定期内离职信息 `corehr:compensation_lump_sum_payment.return_amount_after_tax:read` 获取一次性支付的应退回金额（税后） `corehr:compensation_lump_sum_payment.return_amount_before_tax:read` 获取一次性支付的应退回金额（税前） `corehr:compensation_lump_sum_payment_detail.belong_time:read` 获取一次性支付金额的申请发放日期 |
 
 ### 请求头
@@ -146,8 +146,8 @@ updateTime: "1755603227000"
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `binding_period_offboarding_type` | `string` | 绑定期内离职类型<br>**可选值有**：<br>- `yes`: 绑定期内离职 - `no`: 绑定期外离职 - `default`: 无绑定期离职标识<br>**字段权限要求**： `corehr:compensation_lump_sum_payment.binding_period_offboarding_type:read` 获取一次性支付的绑定期内离职信息 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `create_time` | `string` | 创建时间 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `modify_time` | `string` | 更新时间 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `reference_period_start_date` | `string` | 所属期开始日期 |
-| &nbsp;&nbsp;&nbsp;&nbsp;└ `reference_period_end_date` | `string` | 所属期结束日期 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `reference_period_start_date` | `string` | 一次性支付记录记录所属期开始日期 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `reference_period_end_date` | `string` | 一次性支付记录记录所属期结束日期 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `details` | `lump_sum_payment_detail\[\]` | 发放明细列表 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `id` | `string` | 一次性支付记录明细id |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `record_id` | `string` | 一次性支付记录id |
@@ -162,6 +162,9 @@ updateTime: "1755603227000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `modify_time` | `string` | 更新时间 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `issuance_country_region_id` | `string` | 发放国家ID（可通过[查询国家/地区信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-country_region/search)进行查询） |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `issuance_pay_group_id` | `string` | 发放薪资组ID（可通过[获取薪资组基本信息](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/paygroup/list) 进行查询） |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `detail_reference_period_start_date` | `string` | 一次性支付明细所属期开始日期 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `detail_reference_period_end_date` | `string` | 一次性支付明细所属期结束日期 |
+| &nbsp;&nbsp;&nbsp;&nbsp;└ `binding_period_decimal` | `string` | 绑定期带小数 |
 
 
 ### 响应体示例
@@ -210,9 +213,12 @@ updateTime: "1755603227000"
                         "create_time": "2024-08-01 12:34:56",
                         "modify_time": "2024-08-01 12:34:56",
                         "issuance_country_region_id": "6862995757234914824",
-                        "issuance_pay_group_id": "6862995757234914824"
+                        "issuance_pay_group_id": "6862995757234914824",
+                        "detail_reference_period_start_date": "2024-08-01",
+                        "detail_reference_period_end_date": "2024-08-01"
                     }
-                ]
+                ],
+                "binding_period_decimal": "12"
             }
         ]
     }

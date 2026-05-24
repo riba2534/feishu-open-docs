@@ -1,7 +1,7 @@
 ---
 title: "部门资源介绍"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/field-overview"
-updateTime: "1720167074000"
+updateTime: "1775548384000"
 ---
 
 # 部门资源介绍

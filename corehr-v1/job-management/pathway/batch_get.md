@@ -1,7 +1,7 @@
 ---
 title: "获取通道信息"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/batch_get"
-updateTime: "1755516885000"
+updateTime: "1773286956000"
 ---
 
 # 获取通道信息
@@ -33,12 +33,22 @@ updateTime: "1755516885000"
 | Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
 
+### 查询参数
+
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| `page_size` | `int` | 否 | 分页大小，最大 100，默认100<br>**示例值**：100<br>**默认值**：`100`<br>**数据校验规则**：<br>- 取值范围：`1` ～ `100` |
+| `page_token` | `string` | 否 | 分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果<br>**示例值**：6891251722631890445 |
+
+
 ### 请求体
 
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `pathway_ids` | `string\[\]` | 是 | 通道 ID 列表。ID获取方式 - 调用[创建通道接口](/document-mod/index?fullPath=%2FuAjLw4CM%2FukTMukTMukTM%2Fcorehr-v2%2Fpathway%2Fcreate)后，从响应结果的`pathway_id`获取。 - 监听[通道创建事件](/document-mod/index?fullPath=/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/events/created)，当触发该事件后可从事件体内获取`pathway_id` - 监听[通道更新事件](/document-mod/index?fullPath=/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/events/updated)，当触发该事件后可从事件体内获取`pathway_id` - 监听[通道删除事件](/document-mod/index?fullPath=%2FuAjLw4CM%2FukTMukTMukTM%2Fcorehr-v2%2Fpathway%2Fevents%2Fdeleted)，当触发该事件后可从事件体内获取`pathway_id`<br>**示例值**：["4692446793125560154"]<br>**数据校验规则**：<br>- 长度范围：`1` ～ `100` |
+| `pathway_ids` | `string\[\]` | 否 | 通道 ID 列表，不填则不做筛选，ID获取方式 - 调用[创建通道接口](/document-mod/index?fullPath=%2FuAjLw4CM%2FukTMukTMukTM%2Fcorehr-v2%2Fpathway%2Fcreate)后，从响应结果的`pathway_id`获取。 - 监听[通道创建事件](/document-mod/index?fullPath=/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/events/created)，当触发该事件后可从事件体内获取`pathway_id` - 监听[通道更新事件](/document-mod/index?fullPath=/uAjLw4CM/ukTMukTMukTM/corehr-v2/pathway/events/updated)，当触发该事件后可从事件体内获取`pathway_id` - 监听[通道删除事件](/document-mod/index?fullPath=%2FuAjLw4CM%2FukTMukTMukTM%2Fcorehr-v2%2Fpathway%2Fevents%2Fdeleted)，当触发该事件后可从事件体内获取`pathway_id`<br>**示例值**：["4692446793125560154"]<br>**数据校验规则**：<br>- 长度范围：`1` ～ `100` |
+| `pathway_codes` | `string\[\]` | 否 | 通道 code 列表，不填则不做筛选<br>**示例值**：["A1234"]<br>**数据校验规则**：<br>- 长度范围：`1` ～ `100` |
+| `active` | `boolean` | 否 | 是否启用，不填则不做筛选<br>**示例值**：true |
 
 
 ### 请求体示例
@@ -47,7 +57,11 @@ updateTime: "1755516885000"
 {
     "pathway_ids": [
         "4692446793125560154"
-    ]
+    ],
+    "pathway_codes": [
+        "A1234"
+    ],
+    "active": true
 }
 ```
 
@@ -72,6 +86,8 @@ updateTime: "1755516885000"
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `lang` | `string` | 中文用zh-CN，英文用en-US |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ `value` | `string` | 文本内容 |
 | &nbsp;&nbsp;&nbsp;&nbsp;└ `active` | `boolean` | 停启用状态；true：启用，false：停用 |
+| &nbsp;&nbsp;└ `page_token` | `string` | 分页标记，当 has_more 为 true 时，会同时返回新的 page_token，否则不返回 page_token |
+| &nbsp;&nbsp;└ `has_more` | `boolean` | 是否还有更多项 |
 
 
 ### 响应体示例
@@ -99,7 +115,9 @@ updateTime: "1755516885000"
                 ],
                 "active": true
             }
-        ]
+        ],
+        "page_token": "eVQrYzJBNDNONlk4VFZBZVlSdzlKdFJ4bVVHVExENDNKVHoxaVdiVnViQT0=",
+        "has_more": true
     }
 }
 ```

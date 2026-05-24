@@ -1,7 +1,7 @@
 ---
 title: "修改邮箱文件夹"
 fullPath: "/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-folder/patch"
-updateTime: "1745841511000"
+updateTime: "1776073399000"
 ---
 
 # 修改邮箱文件夹
@@ -9,7 +9,7 @@ updateTime: "1745841511000"
 修改邮箱文件夹
 
 
-> **Tip**: 使用 tenant_access_token 时，需要申请邮箱文件夹资源的数据权限。
+> **Tip**: 使用应用身份访问时，需要申请邮箱文件夹资源的数据权限。
 
 
 ## 请求
@@ -34,8 +34,8 @@ updateTime: "1745841511000"
 
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
-| `user_mailbox_id` | `string` | 用户邮箱地址 或 输入me代表当前调用接口用户<br>**示例值**："user@xxx.xx 或 me" |
-| `folder_id` | `string` | 文件夹 id，id 获取方式见 [列出文邮箱文件夹](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-folder/list)<br>**示例值**："111111" |
+| `user_mailbox_id` | `string` | 用户邮箱地址。当使用用户身份访问时，可以输入"me"代表当前调用接口用户<br>**示例值**："user@xxx.xx 或 me" |
+| `folder_id` | `string` | 文件夹 id，id 获取方式见 [列出邮箱文件夹](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-folder/list)<br>**示例值**："7620003644728938013" |
 
 
 ### 请求体
@@ -43,8 +43,8 @@ updateTime: "1745841511000"
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| `name` | `string` | 否 | 文件夹名称<br>**示例值**："newsletter 相关"<br>**数据校验规则**：<br>- 长度范围：`1` ～ `250` 字符 |
-| `parent_folder_id` | `string` | 否 | 父文件夹 id，该值为 0 表示根文件夹，id 获取方式见 [列出文邮箱文件夹](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-folder/list)<br>**示例值**："725627422334644" |
+| `name` | `string` | 否 | 文件夹名字<br>**示例值**："newsletter 相关"<br>**数据校验规则**：<br>- 长度范围：`1` ～ `250` 字符 |
+| `parent_folder_id` | `string` | 否 | 父文件夹 id，该值为 0 表示根文件夹，id 获取方式见 [列出邮箱文件夹](https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-folder/list)<br>**示例值**："725627422334644" |
 
 
 ### 请求体示例
@@ -84,8 +84,8 @@ updateTime: "1745841511000"
 
 | HTTP状态码 | 错误码 | 描述 | 排查建议 |
 | --- | --- | --- | --- |
-| 400 | 1230001 | 参数错误 | 修改参数后重试 |
-| 500 | 1230003 | 内部错误 | 请稍后重试 |
-| 403 | 1230002 | 无权限 | 成为公共邮箱成员或申请相关数据权限后调用该接口 |
+| 400 | 1230001 | invalid param | 参数错误，请检查请求参数的类型、格式或值是否与接口要求一致，具体可参考接口文档中的参数说明 |
+| 500 | 1230003 | internal server error | 内部服务错误，请稍后重试 |
+| 403 | 1230002 | permission denied | 无权限访问，请确认应用是否具备访问该资源的权限。如使用用户身份访问，请确认具备此用户的访问权限；如使用租户身份访问，请确认已申请对应的数据范围权限。 |
 
 
