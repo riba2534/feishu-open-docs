@@ -64,10 +64,16 @@ export default defineConfig({
   srcExclude: ['README.md', 'CLAUDE.md'],
 
   head: [
-    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+    ['meta', { name: 'theme-color', content: '#2c84e8' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' }],
+    ['link', { rel: 'shortcut icon', href: '/favicon.ico' }],
+    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
   ],
 
   themeConfig: {
+    logo: '/logo.png',
+
     nav: [
       { text: '首页', link: '/' },
       ...navDropdowns,
